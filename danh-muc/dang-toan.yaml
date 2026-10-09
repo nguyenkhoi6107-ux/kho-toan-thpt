@@ -42,20 +42,20 @@
 12.15.2: {ten: Tìm vectơ chỉ phương từ phương trình chính tắc của đường thẳng, trang_thai: da-duyet}
 12.17.3: {ten: Viết phương trình mặt cầu biết tâm và bán kính, trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D02 (Đề số 2 MỖI NGÀY 1 ĐỀ), ngày 09/10/2026 ---
-10.9.1: {ten: Biểu diễn vectơ qua tỉ số độ dài của hai cạnh song song trong hình thang, trang_thai: de-xuat}
-11.9.2: {ten: Mốt của mẫu số liệu ghép nhóm và so sánh hai mẫu, trang_thai: de-xuat}
-11.21.3: {ten: Giải phương trình lôgarit cơ bản, trang_thai: de-xuat}
-11.24.1: {ten: Góc giữa đường thẳng và mặt phẳng trong hình lập phương, trang_thai: de-xuat}
-11.26.3: {ten: Khoảng cách giữa hai đường thẳng chéo nhau trong hình chóp có đáy hình chữ nhật, trang_thai: de-xuat}
-11.27.2: {ten: Hình chóp có cạnh bên vuông góc với đáy hình chữ nhật (cạnh, góc, khoảng cách, thể tích; dạng Đúng/Sai), trang_thai: de-xuat}
-11.27.3: {ten: Thể tích chi tiết máy ghép từ khối hộp và khối trụ (đọc từ hình vẽ kĩ thuật), trang_thai: de-xuat}
-12.1.4: {ten: Đọc điểm cực tiểu từ đồ thị hàm bậc ba, trang_thai: de-xuat}
-12.2.2: {ten: Giá trị lớn nhất của hàm căn thức dạng căn(a - x^2), trang_thai: de-xuat}
-12.3.2: {ten: Tiệm cận đứng của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số), trang_thai: de-xuat}
-12.5.3: {ten: Mô hình quần thể bậc ba, xác định hệ số từ điều kiện cực đại rồi tính giá trị, trang_thai: de-xuat}
-12.8.3: {ten: Độ dài vectơ trong không gian Oxyz, trang_thai: de-xuat}
-12.8.4: {ten: Chuyển động thẳng đều trong không gian Oxyz (vận tốc, tốc độ, vị trí), trang_thai: de-xuat}
-12.8.5: {ten: Tọa độ giao điểm của đường thẳng đi qua hai điểm với mặt phẳng Oxy (điều kiện thẳng hàng), trang_thai: de-xuat}
-12.11.2: {ten: Nguyên hàm của hàm phân thức đưa về tổng, trang_thai: de-xuat}
-12.12.3: {ten: Tính tích phân bằng tính chất cộng theo cận, trang_thai: de-xuat}
-12.19.3: {ten: Xác suất qua nhiều vòng thi (công thức nhân và công thức Bayes), trang_thai: de-xuat}
+10.9.1: {ten: Biểu diễn vectơ qua tỉ số độ dài của hai cạnh song song trong hình thang, trang_thai: da-duyet}
+11.9.2: {ten: Mốt của mẫu số liệu ghép nhóm và so sánh hai mẫu, trang_thai: da-duyet}
+11.21.3: {ten: Giải phương trình lôgarit cơ bản, trang_thai: da-duyet}
+11.24.1: {ten: Góc giữa đường thẳng và mặt phẳng trong hình lập phương, trang_thai: da-duyet}
+11.26.3: {ten: Khoảng cách giữa hai đường thẳng chéo nhau trong hình chóp có đáy hình chữ nhật, trang_thai: da-duyet}
+11.27.2: {ten: Hình chóp có cạnh bên vuông góc với đáy hình chữ nhật (cạnh, góc, khoảng cách, thể tích; dạng Đúng/Sai), trang_thai: da-duyet}
+11.27.3: {ten: Thể tích chi tiết máy ghép từ khối hộp và khối trụ (đọc từ hình vẽ kĩ thuật), trang_thai: da-duyet}
+12.1.4: {ten: Đọc điểm cực tiểu từ đồ thị hàm bậc ba, trang_thai: da-duyet}
+12.2.2: {ten: Giá trị lớn nhất của hàm căn thức dạng căn(a - x^2), trang_thai: da-duyet}
+12.3.2: {ten: Tiệm cận đứng của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số), trang_thai: da-duyet}
+12.5.3: {ten: Mô hình quần thể bậc ba, xác định hệ số từ điều kiện cực đại rồi tính giá trị, trang_thai: da-duyet}
+12.8.3: {ten: Độ dài vectơ trong không gian Oxyz, trang_thai: da-duyet}
+12.8.4: {ten: Chuyển động thẳng đều trong không gian Oxyz (vận tốc, tốc độ, vị trí), trang_thai: da-duyet}
+12.8.5: {ten: Tọa độ giao điểm của đường thẳng đi qua hai điểm với mặt phẳng Oxy (điều kiện thẳng hàng), trang_thai: da-duyet}
+12.11.2: {ten: Nguyên hàm của hàm phân thức đưa về tổng, trang_thai: da-duyet}
+12.12.3: {ten: Tính tích phân bằng tính chất cộng theo cận, trang_thai: da-duyet}
+12.19.3: {ten: Xác suất qua nhiều vòng thi (công thức nhân và công thức Bayes), trang_thai: da-duyet}
