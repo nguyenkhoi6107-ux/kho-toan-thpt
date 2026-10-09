@@ -6,24 +6,24 @@
 12.13.1: {ten: Thể tích khối tròn xoay sinh bởi hình phẳng quay quanh trục Ox, trang_thai: da-duyet}
 12.13.2: {ten: Thể tích vật thể tính qua diện tích thiết diện S(x), trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D00 (Đề tham khảo TN THPT 2025), ngày 09/10/2026 ---
-10.24.1: {ten: Tìm chu trình ngắn nhất qua 4 đỉnh của đồ thị có trọng số (liệt kê hoán vị), trang_thai: de-xuat}
-11.6.1: {ten: Tìm số hạng của cấp số cộng khi biết hai số hạng đầu, trang_thai: de-xuat}
-11.21.1: {ten: Giải bất phương trình lôgarit cơ bản, trang_thai: de-xuat}
-11.21.2: {ten: Giải phương trình mũ cơ bản a^x = b, trang_thai: de-xuat}
-11.25.1: {ten: Nhận biết mặt phẳng vuông góc với mặt phẳng đáy (chứa đường thẳng vuông góc với đáy), trang_thai: de-xuat}
-11.26.2: {ten: Khoảng cách giữa hai đường thẳng chéo nhau trong lăng trụ đứng, trang_thai: de-xuat}
-12.1.2: {ten: Đọc khoảng đồng biến, nghịch biến từ đồ thị hàm số, trang_thai: de-xuat}
-12.2.1: {ten: Giá trị lớn nhất của hàm số lượng giác trên một đoạn, trang_thai: de-xuat}
-12.3.1: {ten: Đọc tiệm cận từ đồ thị hàm số phân thức bậc nhất trên bậc nhất, trang_thai: de-xuat}
-12.5.1: {ten: Tối ưu lợi nhuận bằng đạo hàm với biến nguyên, trang_thai: de-xuat}
-12.6.1: {ten: Quy tắc hình hộp, cộng vectơ trong hình hộp, trang_thai: de-xuat}
-12.10.1: {ten: So sánh độ lệch chuẩn của hai mẫu số liệu ghép nhóm, trang_thai: de-xuat}
-12.11.1: {ten: Nhận biết nguyên hàm của hàm số mũ, trang_thai: de-xuat}
-12.12.2: {ten: Quãng đường đi được tính từ hàm vận tốc bằng tích phân, trang_thai: de-xuat}
-12.13.3: {ten: Diện tích hình phẳng giới hạn bởi parabol (bài toán thực tế), trang_thai: de-xuat}
-12.14.1: {ten: Vectơ pháp tuyến của mặt phẳng từ phương trình tổng quát, trang_thai: de-xuat}
-12.15.1: {ten: Phương trình chính tắc của đường thẳng qua một điểm và có vectơ chỉ phương, trang_thai: de-xuat}
-12.17.1: {ten: Giao của đường thẳng chuyển động với mặt cầu (vật thể và vùng quan sát), trang_thai: de-xuat}
-12.17.2: {ten: Tìm tọa độ điểm khi biết khoảng cách đến bốn điểm cho trước (hệ bậc nhất ba ẩn), trang_thai: de-xuat}
-12.19.1: {ten: Xác suất toàn phần và Bayes trong khảo sát khách hàng, trang_thai: de-xuat}
-12.19.2: {ten: Xác suất có điều kiện của quả bóng chuyển giữa hai hộp (Bayes), trang_thai: de-xuat}
+10.24.1: {ten: Bài toán chu trình (chu trình ngắn nhất qua 4 đỉnh của đồ thị có trọng số), trang_thai: da-duyet}
+11.6.1: {ten: Tìm số hạng của cấp số cộng khi biết hai số hạng đầu, trang_thai: da-duyet}
+11.21.1: {ten: Giải bất phương trình lôgarit cơ bản, trang_thai: da-duyet}
+11.21.2: {ten: Giải phương trình mũ cơ bản a^x = b, trang_thai: da-duyet}
+11.25.1: {ten: Nhận biết mặt phẳng vuông góc với mặt phẳng đáy (chứa đường thẳng vuông góc với đáy), trang_thai: da-duyet}
+11.26.2: {ten: Khoảng cách giữa hai đường thẳng chéo nhau trong lăng trụ đứng, trang_thai: da-duyet}
+12.1.2: {ten: Đọc khoảng đồng biến, nghịch biến từ đồ thị hàm số, trang_thai: da-duyet}
+12.2.1: {ten: Giá trị lớn nhất của hàm số lượng giác trên một đoạn, trang_thai: da-duyet}
+12.3.1: {ten: Đọc tiệm cận từ đồ thị hàm số phân thức bậc nhất trên bậc nhất, trang_thai: da-duyet}
+12.5.1: {ten: Tối ưu lợi nhuận bằng đạo hàm với biến nguyên, trang_thai: da-duyet}
+12.6.1: {ten: Quy tắc hình hộp, cộng vectơ trong hình hộp, trang_thai: da-duyet}
+12.10.1: {ten: So sánh độ lệch chuẩn của hai mẫu số liệu ghép nhóm, trang_thai: da-duyet}
+12.11.1: {ten: Nhận biết nguyên hàm của hàm số mũ, trang_thai: da-duyet}
+12.12.2: {ten: Quãng đường đi được tính từ hàm vận tốc bằng tích phân, trang_thai: da-duyet}
+12.13.3: {ten: Diện tích hình phẳng giới hạn bởi parabol (bài toán thực tế), trang_thai: da-duyet}
+12.14.1: {ten: Vectơ pháp tuyến của mặt phẳng từ phương trình tổng quát, trang_thai: da-duyet}
+12.15.1: {ten: Phương trình chính tắc của đường thẳng qua một điểm và có vectơ chỉ phương, trang_thai: da-duyet}
+12.17.1: {ten: Giao của đường thẳng chuyển động với mặt cầu (vật thể và vùng quan sát), trang_thai: da-duyet}
+12.17.2: {ten: Tìm tọa độ điểm khi biết khoảng cách đến bốn điểm cho trước (hệ bậc nhất ba ẩn), trang_thai: da-duyet}
+12.19.1: {ten: Xác suất toàn phần và Bayes trong khảo sát khách hàng, trang_thai: da-duyet}
+12.19.2: {ten: Xác suất có điều kiện của quả bóng chuyển giữa hai hộp (Bayes), trang_thai: da-duyet}
