@@ -1,0 +1,32 @@
+[
+ {"lop":10,"chuong":[
+  {"so":1,"ten":"Mệnh đề và tập hợp","bai":[{"so":1,"ten":"Mệnh đề"},{"so":2,"ten":"Tập hợp và các phép toán trên tập hợp"},{"so":3,"ten":"Các tập hợp số"}]},
+  {"so":2,"ten":"Bất phương trình và hệ bất phương trình bậc nhất hai ẩn","bai":[{"so":4,"ten":"Bất phương trình bậc nhất hai ẩn"},{"so":5,"ten":"Hệ bất phương trình bậc nhất hai ẩn"}]},
+  {"so":3,"ten":"Hệ thức lượng trong tam giác","bai":[{"so":6,"ten":"Giá trị lượng giác của một góc từ 0° đến 180°"},{"so":7,"ten":"Hệ thức lượng trong tam giác"}]},
+  {"so":4,"ten":"Vectơ","bai":[{"so":8,"ten":"Khái niệm vectơ"},{"so":9,"ten":"Tổng và hiệu của hai vectơ"},{"so":10,"ten":"Tích của một số với một vectơ"},{"so":11,"ten":"Tích vô hướng của hai vectơ"}]},
+  {"so":5,"ten":"Các số đặc trưng của mẫu số liệu","bai":[{"so":12,"ten":"Số gần đúng và sai số"},{"so":13,"ten":"Các số đặc trưng đo xu thế trung tâm"},{"so":14,"ten":"Các số đặc trưng đo mức độ phân tán"}]},
+  {"so":6,"ten":"Hàm số, đồ thị và ứng dụng","bai":[{"so":15,"ten":"Hàm số"},{"so":16,"ten":"Hàm số bậc hai"},{"so":17,"ten":"Dấu của tam thức bậc hai"},{"so":18,"ten":"Phương trình quy về phương trình bậc hai"}]},
+  {"so":7,"ten":"Phương pháp tọa độ trong mặt phẳng","bai":[{"so":19,"ten":"Phương trình đường thẳng"},{"so":20,"ten":"Vị trí tương đối, góc và khoảng cách"},{"so":21,"ten":"Đường tròn trong mặt phẳng tọa độ"},{"so":22,"ten":"Ba đường conic"}]},
+  {"so":8,"ten":"Đại số tổ hợp","bai":[{"so":23,"ten":"Quy tắc đếm"},{"so":24,"ten":"Hoán vị, chỉnh hợp và tổ hợp"},{"so":25,"ten":"Nhị thức Newton"}]},
+  {"so":9,"ten":"Tính xác suất theo định nghĩa cổ điển","bai":[{"so":26,"ten":"Biến cố và định nghĩa cổ điển của xác suất"},{"so":27,"ten":"Thực hành tính xác suất theo định nghĩa cổ điển"}]}
+ ]},
+ {"lop":11,"chuong":[
+  {"so":1,"ten":"Hàm số lượng giác và phương trình lượng giác","bai":[{"so":1,"ten":"Giá trị lượng giác của góc lượng giác"},{"so":2,"ten":"Công thức lượng giác"},{"so":3,"ten":"Hàm số lượng giác"},{"so":4,"ten":"Phương trình lượng giác cơ bản"}]},
+  {"so":2,"ten":"Dãy số, cấp số cộng và cấp số nhân","bai":[{"so":5,"ten":"Dãy số"},{"so":6,"ten":"Cấp số cộng"},{"so":7,"ten":"Cấp số nhân"}]},
+  {"so":3,"ten":"Mẫu số liệu ghép nhóm","bai":[{"so":8,"ten":"Mẫu số liệu ghép nhóm"},{"so":9,"ten":"Các số đặc trưng đo xu thế trung tâm"}]},
+  {"so":4,"ten":"Quan hệ song song trong không gian","bai":[{"so":10,"ten":"Đường thẳng và mặt phẳng trong không gian"},{"so":11,"ten":"Hai đường thẳng song song"},{"so":12,"ten":"Đường thẳng và mặt phẳng song song"},{"so":13,"ten":"Hai mặt phẳng song song"},{"so":14,"ten":"Phép chiếu song song"}]},
+  {"so":5,"ten":"Giới hạn. Hàm số liên tục","bai":[{"so":15,"ten":"Giới hạn của dãy số"},{"so":16,"ten":"Giới hạn của hàm số"},{"so":17,"ten":"Hàm số liên tục"}]},
+  {"so":6,"ten":"Hàm số mũ và hàm số lôgarit","bai":[{"so":18,"ten":"Lũy thừa với số mũ thực"},{"so":19,"ten":"Lôgarit"},{"so":20,"ten":"Hàm số mũ và hàm số lôgarit"},{"so":21,"ten":"Phương trình, bất phương trình mũ và lôgarit"}]},
+  {"so":7,"ten":"Quan hệ vuông góc trong không gian","bai":[{"so":22,"ten":"Hai đường thẳng vuông góc"},{"so":23,"ten":"Đường thẳng vuông góc với mặt phẳng"},{"so":24,"ten":"Phép chiếu vuông góc. Góc giữa đường thẳng và mặt phẳng"},{"so":25,"ten":"Hai mặt phẳng vuông góc"},{"so":26,"ten":"Khoảng cách"},{"so":27,"ten":"Thể tích"}]},
+  {"so":8,"ten":"Các quy tắc tính xác suất","bai":[{"so":28,"ten":"Biến cố hợp, biến cố giao, biến cố độc lập"},{"so":29,"ten":"Công thức cộng xác suất"},{"so":30,"ten":"Công thức nhân xác suất cho hai biến cố độc lập"}]},
+  {"so":9,"ten":"Đạo hàm","bai":[{"so":31,"ten":"Định nghĩa và ý nghĩa của đạo hàm"},{"so":32,"ten":"Các quy tắc tính đạo hàm"},{"so":33,"ten":"Đạo hàm cấp hai"}]}
+ ]},
+ {"lop":12,"chuong":[
+  {"so":1,"ten":"Ứng dụng đạo hàm để khảo sát và vẽ đồ thị hàm số","bai":[{"so":1,"ten":"Tính đơn điệu và cực trị của hàm số"},{"so":2,"ten":"Giá trị lớn nhất và giá trị nhỏ nhất"},{"so":3,"ten":"Đường tiệm cận của đồ thị hàm số"},{"so":4,"ten":"Khảo sát sự biến thiên và vẽ đồ thị hàm số"},{"so":5,"ten":"Ứng dụng đạo hàm giải quyết vấn đề thực tiễn"}]},
+  {"so":2,"ten":"Vectơ và hệ trục tọa độ trong không gian","bai":[{"so":6,"ten":"Vectơ trong không gian"},{"so":7,"ten":"Hệ trục tọa độ trong không gian"},{"so":8,"ten":"Biểu thức tọa độ của các phép toán vectơ"}]},
+  {"so":3,"ten":"Các số đặc trưng đo mức độ phân tán","bai":[{"so":9,"ten":"Khoảng biến thiên, khoảng tứ phân vị"},{"so":10,"ten":"Phương sai, độ lệch chuẩn"}]},
+  {"so":4,"ten":"Nguyên hàm và tích phân","bai":[{"so":11,"ten":"Nguyên hàm"},{"so":12,"ten":"Tích phân"},{"so":13,"ten":"Ứng dụng hình học của tích phân"}]},
+  {"so":5,"ten":"Phương pháp tọa độ trong không gian","bai":[{"so":14,"ten":"Phương trình mặt phẳng"},{"so":15,"ten":"Phương trình đường thẳng trong không gian"},{"so":16,"ten":"Công thức tính góc trong không gian"}]},
+  {"so":6,"ten":"Xác suất có điều kiện","bai":[{"so":17,"ten":"Xác suất có điều kiện"},{"so":18,"ten":"Công thức xác suất toàn phần và công thức Bayes"}]}
+ ]}
+]

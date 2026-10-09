@@ -1,0 +1,9 @@
+{
+  "ten_kho": "ToánKho",
+  "preamble": [
+    "\\documentclass[12pt,a4paper]{article}",
+    "\\usepackage{preamble/dethi}",
+    "\\input{preamble/mau}"
+  ],
+  "figure_preamble": "\\usepackage{dethi}"
+}

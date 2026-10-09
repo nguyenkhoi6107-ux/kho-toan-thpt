@@ -1,0 +1,51 @@
+# Đặt file này ở .github/workflows/web.yml trong repo kho-toan-thpt.
+# Mỗi lần push thay đổi câu hỏi/danh mục/hình, GitHub tự dựng lại web và đăng lên GitHub Pages.
+name: Web kho bài tập
+
+on:
+  push:
+    branches: [main]
+    paths: ['cau-hoi/**', 'danh-muc/**', 'hinh/**', 'preamble/**', 'web/**', '.github/workflows/web.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest   # có sẵn xelatex + dvisvgm để vẽ hình TikZ thành SVG
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cài Node.js
+        run: apt-get update -qq && apt-get install -y -qq nodejs npm > /dev/null && node --version
+      - name: Bộ nhớ đệm hình
+        uses: actions/cache@v4
+        with:
+          path: web/.hinh-cache
+          key: hinh-${{ github.run_id }}
+          restore-keys: hinh-
+      - name: Dựng web
+        working-directory: web
+        run: |
+          npm ci
+          node tools/build.mjs --src .. --tex
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

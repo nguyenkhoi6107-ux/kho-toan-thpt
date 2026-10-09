@@ -1,0 +1,19 @@
+{
+  "name": "kho-toan-web",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "mau": "node tools/build.mjs --src mau-kho",
+    "serve": "node tools/serve.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "katex": "^0.16.11",
+    "yaml": "^2.5.1"
+  },
+  "private": true
+}
