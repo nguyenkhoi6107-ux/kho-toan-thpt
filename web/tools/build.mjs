@@ -286,7 +286,9 @@ for (const q of questions) for (const f of [...q.hinh, ...q.hinh_lg]) {
 }
 const CACHE = path.join(WEB, ".hinh-cache");   // giữ giữa các lần chạy (actions/cache)
 fs.mkdirSync(CACHE, { recursive: true });
-const hashOf = (f) => crypto.createHash("sha1").update(figPre + "\n" + f.tex).digest("hex").slice(0, 16);
+const HINH_VER = 'pdf-v2';   // đổi khi đổi cách dựng hình, để bỏ bộ nhớ đệm cũ
+const hashOf = (f) => crypto.createHash("sha1").update(HINH_VER + "\n" + figPre + "\n" + f.tex).digest("hex").slice(0, 16);
+const has = (cmd) => { try { execFileSync('sh', ['-c', `command -v ${cmd}`], { stdio: 'ignore' }); return true; } catch { return false; } };
 for (let i = todo.length - 1; i >= 0; i--) {
   const c = path.join(CACHE, hashOf(todo[i]) + ".svg");
   if (exists(c)) { fs.copyFileSync(c, path.join(figDir, todo[i].id + ".svg")); todo[i].svg = `hinh/${todo[i].id}.svg`; todo.splice(i, 1); }
@@ -294,19 +296,31 @@ for (let i = todo.length - 1; i >= 0; i--) {
 if (todo.length) {
   const tmp = fs.mkdtempSync(path.join(process.env.TMPDIR || '/tmp', 'hinh-'));
   const env = { ...process.env, TEXINPUTS: `${SRC}/preamble//:${SRC}:` };
-  console.log(`Biên dịch ${todo.length} hình…`);
+  // XeLaTeX → PDF (giống kho.py), rồi PDF → SVG. Không dùng xdv → dvisvgm: TikZ dưới XeTeX
+  // ghi lệnh vẽ dạng dvipdfmx nên dvisvgm làm mất nét vẽ và dồn chữ về một chỗ.
+  const conv = has('pdftocairo') ? 'pdftocairo' : 'dvisvgm';
+  console.log(`Biên dịch ${todo.length} hình (PDF → SVG bằng ${conv})…`);
+  const logErr = (name) => {
+    const p = path.join(tmp, name + '.log');
+    return exists(p) ? (read(p).match(/^! .*$/m) || [''])[0] : '';
+  };
   for (const f of todo) {
     const tex = path.join(tmp, f.id + '.tex');
+    const pdf = path.join(tmp, f.id + '.pdf');
+    const out = path.join(figDir, f.id + '.svg');
     const compile = (cls) => {
       fs.writeFileSync(tex, `\\documentclass[${cls}]{standalone}\n${figPre}\n\\begin{document}\n${f.tex}\n\\end{document}\n`);
-      execFileSync('xelatex', ['-no-pdf', '-interaction=nonstopmode', '-halt-on-error', '-output-directory', tmp, tex], { env, stdio: 'pipe', cwd: tmp });
+      execFileSync('xelatex', ['-interaction=nonstopmode', '-halt-on-error', '-output-directory', tmp, tex], { env, stdio: 'pipe', cwd: tmp });
     };
     try {
       try { compile('border=6pt'); } catch { compile('border=6pt,varwidth=17cm'); }
-      execFileSync('dvisvgm', ['--no-fonts', '-o', path.join(figDir, f.id + '.svg'), path.join(tmp, f.id + '.xdv')], { stdio: 'pipe' });
+      if (conv === 'pdftocairo') execFileSync('pdftocairo', ['-svg', pdf, out], { stdio: 'pipe' });
+      else execFileSync('dvisvgm', ['--pdf', '--no-fonts', '-o', out, pdf], { stdio: 'pipe' });
+      const w = parseFloat((read(out).match(/<svg[^>]*\swidth="([\d.]+)/) || [])[1] || '0');
+      if (w && w < 25) warn(`Hình ${f.id}: SVG quá nhỏ (${w}pt), có thể bị lỗi`);
       f.svg = `hinh/${f.id}.svg`;
-      fs.copyFileSync(path.join(figDir, f.id + ".svg"), path.join(CACHE, hashOf(f) + ".svg"));
-    } catch (e) { f.svg = null; warn(`Hình ${f.id}: biên dịch lỗi`); }
+      fs.copyFileSync(out, path.join(CACHE, hashOf(f) + ".svg"));
+    } catch (e) { f.svg = null; warn(`Hình ${f.id}: biên dịch lỗi ${logErr(f.id)}`.trim()); }
   }
 }
 for (const q of questions) for (const f of [...q.hinh, ...q.hinh_lg]) if (f.svg === undefined) f.svg = null;
