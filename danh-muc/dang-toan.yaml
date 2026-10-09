@@ -1,7 +1,7 @@
 # Danh mục dạng toán. Mã dạng = lớp.bài.số thứ tự.
 # trang_thai: da-duyet (giáo viên đã đồng ý) | de-xuat (Claude đề xuất, chờ giáo viên duyệt)
-11.26.1: {ten: Khoảng cách từ một điểm đến mặt phẳng (quy về điểm khác bằng tỉ số), trang_thai: de-xuat}
-12.1.1: {ten: Xác định hàm số bậc ba từ bảng biến thiên hoặc cực trị, trang_thai: de-xuat}
-12.12.1: {ten: Giá trị lớn nhất, nhỏ nhất của tích phân có cận chứa tham số, trang_thai: de-xuat}
-12.13.1: {ten: Thể tích khối tròn xoay sinh bởi hình phẳng quay quanh trục Ox, trang_thai: de-xuat}
-12.13.2: {ten: Thể tích vật thể tính qua diện tích thiết diện S(x), trang_thai: de-xuat}
+11.26.1: {ten: Khoảng cách từ một điểm đến mặt phẳng (quy về điểm khác bằng tỉ số), trang_thai: da-duyet}
+12.1.1: {ten: Xác định hàm số bậc ba từ bảng biến thiên hoặc cực trị, trang_thai: da-duyet}
+12.12.1: {ten: Giá trị lớn nhất, nhỏ nhất của tích phân có cận chứa tham số, trang_thai: da-duyet}
+12.13.1: {ten: Thể tích khối tròn xoay sinh bởi hình phẳng quay quanh trục Ox, trang_thai: da-duyet}
+12.13.2: {ten: Thể tích vật thể tính qua diện tích thiết diện S(x), trang_thai: da-duyet}
