@@ -1,0 +1,78 @@
+% dethi.sty -- goi soan cau hoi Toan THPT theo dinh dang thi tu 2025
+% Cu phap giong ex_test (\begin{ex} \choice \True \loigiai) de de trao doi tai lieu.
+% Bien dich: XeLaTeX (Overleaf: Menu > Compiler > XeLaTeX; Mac: MacTeX).
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dethi}[2026/10/09 v1.0]
+
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{tikz,tikz-3dplot,tkz-tab,tkz-euclide,pgfplots}
+\usetikzlibrary{calc,intersections,patterns,angles,quotes,arrows.meta,decorations.markings}
+\pgfplotsset{compat=1.18}
+
+% ---- Che do: \hienloigiai (ban giao vien) / \anloigiai (ban hoc sinh, mac dinh)
+\newif\ifdt@giai
+\newcommand\hienloigiai{\dt@giaitrue}
+\newcommand\anloigiai{\dt@giaifalse}
+\colorlet{dtmau}{blue!70!black}
+
+% ---- Moi cau hoi
+\newcounter{ex}
+\newenvironment{ex}[1][]{%
+  \par\medskip\refstepcounter{ex}\noindent
+  {\color{dtmau}\bfseries Câu \theex.}~%
+  \ifdt@giai\if\relax\detokenize{#1}\relax\else{\footnotesize\color{gray}[#1]}~\fi\fi
+  \ignorespaces}{\par}
+
+% ---- Dau dap an dung (dat trong phuong an)
+\newif\ifdt@true
+\newcommand\True{\global\dt@truetrue}
+\newcommand\dt@nhan[2]{% #1: nhan, #2: noi dung
+  \global\dt@truefalse\sbox\@tempboxa{#2}\leavevmode
+  \ifdt@giai\ifdt@true{\color{red}\bfseries\underline{#1.}}\else\textbf{#1.}\fi
+  \else\textbf{#1.}\fi~#2}
+
+% ---- Trac nghiem 4 lua chon: tu xep 1 hang / 2 hang / 4 hang theo do dai
+\newlength\dt@max \newlength\dt@w
+\newcommand\dt@do[1]{\settowidth\dt@w{\dt@nhan{A}{#1}}\ifdim\dt@w>\dt@max\global\dt@max\dt@w\fi}
+\newcommand\dt@o[2]{\parbox[t]{\dimexpr#1\linewidth-0.5em}{#2}}
+\newcommand\choice[4]{\par\global\dt@max\z@
+  \dt@do{#1}\dt@do{#2}\dt@do{#3}\dt@do{#4}\global\dt@truefalse
+  \noindent\hspace*{1em}%
+  \ifdim\dt@max<\dimexpr.25\linewidth-1.5em\relax
+    \dt@o{.24}{\dt@nhan{A}{#1}}\dt@o{.24}{\dt@nhan{B}{#2}}\dt@o{.24}{\dt@nhan{C}{#3}}\dt@o{.24}{\dt@nhan{D}{#4}}%
+  \else\ifdim\dt@max<\dimexpr.5\linewidth-1.5em\relax
+    \dt@o{.48}{\dt@nhan{A}{#1}}\dt@o{.48}{\dt@nhan{B}{#2}}\par\noindent\hspace*{1em}%
+    \dt@o{.48}{\dt@nhan{C}{#3}}\dt@o{.48}{\dt@nhan{D}{#4}}%
+  \else
+    \dt@o{.96}{\dt@nhan{A}{#1}}\par\noindent\hspace*{1em}\dt@o{.96}{\dt@nhan{B}{#2}}\par\noindent\hspace*{1em}%
+    \dt@o{.96}{\dt@nhan{C}{#3}}\par\noindent\hspace*{1em}\dt@o{.96}{\dt@nhan{D}{#4}}%
+  \fi\fi\par}
+
+% ---- Dung/Sai 4 y: \choiceTF{\True y a}{y b}{\True y c}{y d}
+\newcommand\dt@ds[2]{\global\dt@truefalse\sbox\@tempboxa{#2}%
+  \par\noindent\hspace*{1em}\parbox[t]{\dimexpr\linewidth-1em}{\textbf{#1)}~#2%
+  \ifdt@giai~{\color{red}\bfseries(\ifdt@true Đ\else S\fi)}\fi}}
+\newcommand\choiceTF[4]{\dt@ds{a}{#1}\dt@ds{b}{#2}\dt@ds{c}{#3}\dt@ds{d}{#4}\par}
+
+% ---- Tra loi ngan (toi da 4 ky tu theo quy che 2025)
+\newcommand\shortans[1]{\ifdt@giai\par\noindent\hspace*{1em}{\color{red}\bfseries Đáp số: #1}\par\fi}
+
+% ---- Loi giai (chi hien o ban giao vien)
+\newcommand\loigiai[1]{\ifdt@giai\par\smallskip\noindent{\color{dtmau}\bfseries Lời giải.}~#1\par\fi}
+
+% ---- Tieu de phan trong de thi
+\newcommand\phan[2]{\par\bigskip\noindent{\bfseries PHẦN #1.}~#2\par\smallskip}
+
+% ---- Kieu TikZ dung chung (quy uoc hinh ve)
+\tikzset{
+  every picture/.append style={line join=round,line cap=round,>=Stealth,font=\small},
+  khuat/.style={dashed},
+  truc/.style={->,thin},
+  diem/.style={circle,fill,inner sep=0pt,minimum size=2.5pt},
+  phu/.style={thin,densely dashed,gray},
+  to/.style={fill=green!15},
+}
+\endinput

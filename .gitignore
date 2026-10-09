@@ -1,0 +1,10 @@
+build/
+de/*.pdf
+de/*.tex
+de/*.aux
+de/*.log
+de/*.fls
+de/*.fdb_latexmk
+de/*.xdv
+de/*.png
+__pycache__/

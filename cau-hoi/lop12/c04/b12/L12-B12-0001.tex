@@ -1,0 +1,31 @@
+%% ma: L12-B12-0001
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "43"
+%% nguon: "Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 2"
+%% kien_thuc: "Bài 12 (tích phân), Bài 2 (GTNN, chương 1 — chương trước) — không vượt chương"
+%% ghi_chu: "Hình gốc có ký hiệu góc vuông thừa tại O, đã bỏ khi vẽ lại"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.12.1 mới, chờ giáo viên duyệt"
+\begin{ex}
+Trên đoạn $[0;8]$ cho hàm số
+\[f(x)=\begin{cases}-x(x-4), & 0\le x<4,\\ x-4, & 4\le x\le 8.\end{cases}\]
+Với số thực $a$ thỏa mãn $0\le a\le 4$, giá trị nhỏ nhất của $\displaystyle\int_a^{a+4}f(x)\,\mathrm dx$ là $\dfrac qp$, trong đó $p,q$ là hai số tự nhiên nguyên tố cùng nhau. Tính $p+q$.
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  \draw[truc] (-.6,0)--(9,0) node[below]{$x$};
+  \draw[truc] (0,-.6)--(0,5) node[left]{$y$};
+  \draw[phu] (2,0)--(2,4) (0,4)--(8,4) (8,0)--(8,4);
+  \draw[thick,domain=0:4,samples=50] plot (\x,{-\x*(\x-4)});
+  \draw[thick] (4,0)--(8,4) node[pos=.55,above left]{$y=f(x)$};
+  \path (0,0) node[below left]{$O$} (2,0) node[below]{$2$} (4,0) node[below]{$4$} (8,0) node[below]{$8$} (0,4) node[left]{$4$};
+\end{tikzpicture}
+\end{center}
+\shortans{43}
+\loigiai{Với $0\le a\le4$: $F(a)=\displaystyle\int_a^4(4x-x^2)\,\mathrm dx+\int_4^{a+4}(x-4)\,\mathrm dx=\frac{a^3}{3}-\frac{3a^2}{2}+\frac{32}{3}$.
+$F'(a)=a^2-3a=0\Leftrightarrow a=0$ hoặc $a=3$. So sánh $F(0)=\frac{32}{3}$, $F(3)=\frac{37}{6}$, $F(4)=8$ được $\min F=\frac{37}{6}$, nên $p=6$, $q=37$, $p+q=43$.}
+\end{ex}

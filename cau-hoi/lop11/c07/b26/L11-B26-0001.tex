@@ -1,0 +1,31 @@
+%% ma: L11-B26-0001
+%% lop: 11
+%% chuong: 7
+%% bai: 26
+%% dang: 11.26.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "10,5"
+%% nguon: "Ảnh giáo viên gửi 09/10/2026, Câu 4"
+%% kien_thuc: "Bài 25 (góc giữa hai mặt phẳng), Bài 26 (khoảng cách) — không vượt chương"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 11.26.1 mới, chờ giáo viên duyệt"
+\begin{ex}
+Cho hình lăng trụ đứng $ABCD.A'B'C'D'$ có đáy $ABCD$ là hình thang cân, $AD\parallel BC$, $AB=BC=CD=7\sqrt6$, $AD=14\sqrt6$. Góc giữa mặt phẳng $(A'CD)$ và $(ABCD)$ bằng $45^\circ$. Tính khoảng cách từ $B$ đến mặt phẳng $(A'CD)$.
+\begin{center}
+\begin{tikzpicture}[scale=.9,y={(.8cm,.5cm)},z={(0cm,1cm)}]
+  \path (0,0,0) coordinate (A) (4,0,0) coordinate (D) (1,1.732,0) coordinate (B) (3,1.732,0) coordinate (C);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,0,3.464) coordinate (\P');
+  \fill[blue!10] (A')--(C)--(D)--cycle;
+  \draw (A)--(D)--(C)--(C')--(B')--(A')--cycle (A')--(D')--(C') (D)--(D') (A')--(D);
+  \draw[khuat] (A)--(B)--(C) (B)--(B') (A')--(C);
+  \path (A) node[below left]{$A$} (D) node[below]{$D$} (C) node[right]{$C$} (B) node[below]{$B$}
+        (A') node[left]{$A'$} (D') node[below left]{$D'$} (C') node[above right]{$C'$} (B') node[above]{$B'$};
+\end{tikzpicture}
+\end{center}
+\shortans{10,5}
+\loigiai{$ABCD$ là nửa lục giác đều nội tiếp đường tròn đường kính $AD$ nên $AC\perp CD$, $AC=\sqrt{AD^2-CD^2}=21\sqrt2$.
+$CD\perp AC,\ CD\perp AA'\Rightarrow CD\perp(AA'C)$, nên góc giữa $(A'CD)$ và $(ABCD)$ là $\widehat{A'CA}=45^\circ\Rightarrow AA'=AC$.
+Gọi $H$ là hình chiếu của $A$ lên $A'C$ thì $d\big(A,(A'CD)\big)=AH=\dfrac{AC}{\sqrt2}=21$.
+Gọi $E=AB\cap CD$; vì $BC\parallel AD$, $BC=\tfrac12AD$ nên $B$ là trung điểm $EA$, suy ra $d\big(B,(A'CD)\big)=\tfrac12\,d\big(A,(A'CD)\big)=10{,}5$.}
+\end{ex}

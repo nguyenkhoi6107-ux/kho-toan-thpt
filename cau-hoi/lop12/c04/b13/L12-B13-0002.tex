@@ -1,0 +1,48 @@
+%% ma: L12-B13-0002
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.2
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "0,46"
+%% nguon: "Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 3"
+%% kien_thuc: "Bài 13 (thể tích qua thiết diện), Oxyz chương 2 — góc 30° đã cho sẵn nên không cần Bài 16 (chương 5)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.13.2 mới, chờ giáo viên duyệt"
+\begin{ex}
+Trong không gian $Oxyz$ (đơn vị trên các trục là cm), cho bán cầu tâm $O$, bán kính $1$ cm, đáy nằm trên mặt phẳng $(Oxy)$. Từ phía âm của trục $Oy$, một chùm tia sáng mặt trời song song với vectơ $(0;\sqrt3;-1)$ chiếu tới, hợp với mặt đáy một góc $30^\circ$ (như hình vẽ). Bán cầu không cho ánh sáng xuyên qua. Tính thể tích (cm$^3$) của vùng không gian nằm ngoài bán cầu, phía trên mặt phẳng $(Oxy)$ và không được chiếu sáng. (Làm tròn kết quả đến hàng phần trăm.)
+\begin{center}
+\tdplotsetmaincoords{70}{110}
+\begin{tikzpicture}[scale=1.9,tdplot_main_coords]
+  % bong tren mat dat: {1 <= x^2+y^2, x^2+y^2/4 <= 1, y >= 0}
+  \fill[gray!25,domain=0:180,samples=60] plot ({cos(\x)},{2*sin(\x)},0)
+    -- plot[domain=180:0] ({cos(\x)},{sin(\x)},0) -- cycle;
+  % bien vung toi tren mat cau (giao voi mp z = sqrt3 y) va mot duong sinh
+  \draw[gray,domain=0:117.3,samples=30] plot ({cos(\x)},{.5*sin(\x)},{.866*sin(\x)});
+  \draw[gray,khuat,domain=117.3:180,samples=20] plot ({cos(\x)},{.5*sin(\x)},{.866*sin(\x)});
+  % ban cau
+  \draw[blue!70!black,domain=-70:110,samples=60] plot ({cos(\x)},{sin(\x)},0);
+  \draw[blue!70!black,khuat,domain=110:290,samples=60] plot ({cos(\x)},{sin(\x)},0);
+  \draw[blue!70!black,tdplot_screen_coords] (1,0) arc (0:180:1);
+  % truc toa do
+  \draw[khuat] (0,0,0)--(1,0,0) (0,0,0)--(0,1,0) (0,0,0)--(0,0,1);
+  \draw[truc] (1,0,0)--(1.7,0,0) node[below left]{$x$};
+  \draw[truc] (0,1,0)--(0,2.6,0) node[below]{$y$};
+  \draw[truc] (0,0,1)--(0,0,1.75) node[left]{$z$};
+  \path (0,0,0) node[above left]{$O$};
+  % tia sang cung phuong (0; sqrt3; -1), cham mat cau o phia duoc chieu sang
+  \draw[red,->] (0,-1.06,1.77)--(0,.5,.866);
+  \draw[red,khuat] (0,.5,.866)--(0,2,0);
+  \draw[red,->] (.35,-2,1)--(.35,-.87,.35);
+  \draw[red,->] (.7,-1.52,1.25)--(.7,-.39,.6);
+  % goc 30 do tai M(0;2;0), nam trong mp (Oyz)
+  \draw[red,domain=0:30,samples=10] plot (0,{2-.3*cos(\x)},{.3*sin(\x)});
+  \path (0,1.45,.1) node[red,font=\footnotesize]{$30^\circ$};
+\end{tikzpicture}
+\end{center}
+\shortans{0,46}
+\loigiai{Vectơ chỉ phương của tia sáng có hoành độ bằng $0$ nên mỗi mặt phẳng $x=t$ ($-1\le t\le1$) chứa các tia sáng cắt nó. Mặt cắt của bán cầu là nửa hình tròn bán kính $r=\sqrt{1-t^2}$; gọi $K(t;0;0)$ là tâm. Tia sáng tiếp xúc nửa đường tròn tại $T$ với góc giữa $KT$ và đáy bằng $60^\circ$, cắt mặt đáy tại $M$ với $KM=2r$.
+Diện tích vùng tối trong mặt cắt: $S(t)=S_{\triangle KTM}-S_{\text{quạt}\,60^\circ}=\Big(\dfrac{\sqrt3}{2}-\dfrac{\pi}{6}\Big)(1-t^2)$.
+$V=\displaystyle\int_{-1}^{1}S(t)\,\mathrm dt=\frac43\Big(\frac{\sqrt3}{2}-\frac{\pi}{6}\Big)=\frac{2\sqrt3}{3}-\frac{2\pi}{9}\approx0{,}46$.}
+\end{ex}

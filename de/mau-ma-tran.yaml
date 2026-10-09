@@ -1,0 +1,21 @@
+# Mẫu ma trận đề. Sao chép, đổi tên rồi chạy: python3 cong-cu/kho.py ghep-de de/<ten>.yaml
+ten: "ĐỀ KIỂM TRA THỬ — TOÁN 12"
+hat_giong: 1          # đổi số này để được bộ câu khác
+phan:
+  - so: I
+    tieu_de: "Câu trắc nghiệm nhiều phương án lựa chọn."
+    loai: TN4
+    dong:
+      - {lop: 12, bai: [1, 2], muc: NB, so: 2}
+      - {lop: 12, bai: [12], muc: TH, so: 1}
+  - so: II
+    tieu_de: "Câu trắc nghiệm đúng sai."
+    loai: DS
+    dong:
+      - {lop: 12, bai: [13], muc: VD, so: 1}   # DS: lấy câu có ít nhất 1 ý ở mức này
+  - so: III
+    tieu_de: "Câu trắc nghiệm trả lời ngắn."
+    loai: TLN
+    dong:
+      - {lop: 12, bai: [12, 13], muc: VD, so: 1}
+      - {lop: 12, bai: [13], muc: VDC, so: 1}

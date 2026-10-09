@@ -1,0 +1,42 @@
+%% ma: L12-B13-0001
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.1
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "150"
+%% nguon: "Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 1"
+%% kien_thuc: "Bài 13 (thể tích khối tròn xoay), Bài 1 (cực trị); cần giải hệ bậc nhất 3 ẩn bằng máy tính cầm tay"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.13.1 mới, chờ giáo viên duyệt"
+\begin{ex}
+Một quả bơ và hạt của nó có thể được mô tả xấp xỉ như những khối tròn xoay sinh ra khi quay các hình phẳng ở hình bên quanh trục $Ox$ (đơn vị trên các trục là cm).
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+  \fill[green!15,draw=green!50!black,thick,domain=0:10,samples=120]
+    plot (\x,{sqrt(max(0,(-\x*(\x-10)/80)*((21*\x*\x-368*\x+3536)/80)))}) -- cycle;
+  \fill[orange!20,draw=orange!80!black,thick,domain=1:6,samples=100]
+    plot (\x,{sqrt(max(0,(-(\x-6)*(\x-1)/40)*((21*\x*\x-226*\x+1089)/40)))}) -- cycle;
+  \draw[truc] (-.4,0)--(12.4,0) node[below]{$x$};
+  \draw[truc] (0,-.4)--(0,4.5) node[left]{$y$};
+  \foreach \i in {1,...,10} \draw (\i,.08)--(\i,-.08) node[below]{\footnotesize$\i$};
+  \foreach \j in {1,...,4} \draw (.08,\j)--(-.08,\j) node[left]{\footnotesize$\j$};
+  \path (0,0) node[below left]{\footnotesize$O$} (2,3.05) node[green!40!black]{$s$} (2.1,1.75) node[orange!70!black]{$k$};
+  \draw[->] (11.3,-.45) arc[x radius=.18,y radius=.45,start angle=-90,end angle=200];
+\end{tikzpicture}
+\end{center}
+\begin{itemize}[leftmargin=1.5em,nosep]
+  \item Vỏ quả bơ được mô tả bởi $s(x)=\sqrt{Ax^4+Bx^3+Cx^2+Dx+E}$, $0\le x\le 10$. Phương trình $s(x)=0$ có các nghiệm $x=0$, $x=10$; đồ thị hàm số $y=s(x)$ có điểm cực trị $(4;3)$ và đi qua điểm $(8;2{,}2)$.
+  \item Vỏ hạt bơ được mô tả bởi $k(x)=\sqrt{ax^4+bx^3+cx^2+dx+e}$, $1\le x\le 6$. Phương trình $k(x)=0$ có các nghiệm $x=1$, $x=6$; đồ thị hàm số $y=k(x)$ có điểm cực trị $(3;1{,}5)$ và đi qua điểm $(5;1{,}1)$.
+\end{itemize}
+Phần thịt bơ (phần màu xanh) có khối lượng riêng $\rho=0{,}9\ \mathrm{g/cm^3}$. Quả bơ có bao nhiêu gam thịt bơ? (Làm tròn kết quả đến hàng đơn vị.)
+\shortans{150}
+\loigiai{Đặt $P(x)=s^2(x)=x(10-x)(mx^2+nx+t)$. Từ $P(4)=9$, $P'(4)=0$, $P(8)=4{,}84$ được
+\[P(x)=\frac{x(10-x)(21x^2-368x+3536)}{6400}.\]
+Tương tự
+\[Q(x)=k^2(x)=\frac{(x-1)(6-x)(21x^2-226x+1089)}{1600}.\]
+Thể tích thịt bơ
+\[V=\pi\int_0^{10}P(x)\,\mathrm dx-\pi\int_1^6Q(x)\,\mathrm dx=\pi\Big(\frac{5815}{96}-\frac{5815}{768}\Big)=\frac{40705\pi}{768}\approx166{,}51\ \mathrm{cm^3}.\]
+Khối lượng thịt bơ $m=\rho V\approx149{,}86\approx150$ gam.}
+\end{ex}
