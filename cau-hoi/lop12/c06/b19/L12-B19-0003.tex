@@ -1,0 +1,27 @@
+%% ma: L12-B19-0003
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.1
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần II Câu 3 (THCS THPT Lê Thánh Tông - HCM 2025)"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes), Bài 18 (xác suất có điều kiện, công thức nhân)"
+%% ghi_chu: "Trùng ý tưởng với câu cùng dạng, giáo viên đã duyệt giữ (09/10/2026). Đề gốc có ảnh minh họa khảo sát (không cần cho lời giải). Đáp án gốc Đ S S Đ đúng (kiểm bằng sympy)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Trước $3$ tiếng khi diễn ra trận Derby thành Manchester giữa MU-MC, người ta phỏng vấn ngẫu nhiên $100$ người hâm mộ của MU (có $20$ người đang mặc áo của đội bóng) về việc có nên xem trận đấu đó hay không. Kết quả cho thấy rằng $75$ người trả lời sẽ xem, $25$ người trả lời sẽ không xem. Nhưng thực tế cho thấy rằng tỉ lệ người hâm mộ MU thực sự xem trận đấu tương ứng với những cách trả lời ``có xem'' và ``không xem'' là $80\%$ và $20\%$.
+
+Gọi $A$ là biến cố ``Người được phỏng vấn thực sự sẽ xem trận đấu''. Gọi $B$ là biến cố ``Người được phỏng vấn trả lời sẽ xem trận đấu''.
+\choiceTF
+{\True $P(AB)=0{,}6$.}
+{Tỉ lệ người được phỏng vấn thực sự sẽ xem trận đấu là $72{,}5\%$.}
+{Trong số người được phỏng vấn thực sự sẽ xem có $17\%$ trả lời không xem khi được phỏng vấn.}
+{\True Trong số những người mặc áo đội bóng có $30\%$ người phỏng vấn thực sự sẽ không xem trận đấu biết rằng số người được phỏng vấn thực sự sẽ xem trận đấu mặc áo đội bóng là $14$ người.}
+\loigiai{Từ đề: $P(B)=0{,}75$, $P(\overline B)=0{,}25$, $P(A\mid B)=0{,}8$, $P(A\mid\overline B)=0{,}2$.
+a) $P(AB)=P(B)P(A\mid B)=0{,}75\cdot0{,}8=0{,}6$. Đúng.
+b) $P(A)=0{,}6+0{,}25\cdot0{,}2=0{,}65=65\%\ne72{,}5\%$. Sai.
+c) $P(\overline B\mid A)=\dfrac{P(\overline B)P(A\mid\overline B)}{P(A)}=\dfrac{0{,}05}{0{,}65}=\dfrac1{13}\approx7{,}7\%\ne17\%$. Sai.
+d) Có $20$ người mặc áo đội bóng, trong đó $14$ người thực sự sẽ xem, nên $20-14=6$ người không xem, chiếm $\dfrac{6}{20}=30\%$. Đúng.}
+\end{ex}

@@ -28,16 +28,16 @@
 12.19.1: {ten: Xác suất toàn phần và Bayes trong khảo sát khách hàng, trang_thai: da-duyet}
 12.19.2: {ten: Xác suất có điều kiện của quả bóng chuyển giữa hai hộp (Bayes), trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D01 (Đề số 1 MỖI NGÀY 1 ĐỀ), ngày 09/10/2026 ---
-11.6.2: {ten: Tính số hạng của cấp số cộng khi biết số hạng đầu và công sai, trang_thai: de-xuat}
-11.9.1: {ten: So sánh số trung bình của hai mẫu số liệu ghép nhóm, trang_thai: de-xuat}
-11.19.1: {ten: Rút gọn biểu thức lôgarit bằng quy tắc lôgarit của một thương, trang_thai: de-xuat}
-11.25.2: {ten: Góc giữa mặt bên và mặt đáy của hình chóp tứ giác đều (số liệu thực tế), trang_thai: de-xuat}
-11.27.1: {ten: Thể tích khối chóp có cạnh bên vuông góc với đáy, trang_thai: de-xuat}
-12.1.3: {ten: Đọc khoảng đồng biến từ bảng biến thiên, trang_thai: de-xuat}
-12.5.2: {ten: Tốc độ thay đổi lớn nhất của mô hình bậc ba trong thực tế (hàm doanh thu), trang_thai: de-xuat}
-12.6.2: {ten: Xét khẳng định đúng/sai về vectơ và độ dài vectơ trong hình lập phương, trang_thai: de-xuat}
-12.8.1: {ten: Tọa độ hóa mô hình nhà kho dạng lăng trụ đứng, trang_thai: de-xuat}
-12.8.2: {ten: Thể tích lăng trụ đứng có đáy là đa giác xác định bằng tọa độ, trang_thai: de-xuat}
-12.13.4: {ten: Diện tích hình phẳng giới hạn bởi đồ thị hàm bậc ba và đường thẳng (đọc từ hình), trang_thai: de-xuat}
-12.15.2: {ten: Tìm vectơ chỉ phương từ phương trình chính tắc của đường thẳng, trang_thai: de-xuat}
-12.17.3: {ten: Viết phương trình mặt cầu biết tâm và bán kính, trang_thai: de-xuat}
+11.6.2: {ten: Tính số hạng của cấp số cộng khi biết số hạng đầu và công sai, trang_thai: da-duyet}
+11.9.1: {ten: So sánh số trung bình của hai mẫu số liệu ghép nhóm, trang_thai: da-duyet}
+11.19.1: {ten: Rút gọn biểu thức lôgarit bằng quy tắc lôgarit của một thương, trang_thai: da-duyet}
+11.25.2: {ten: Góc giữa mặt bên và mặt đáy của hình chóp tứ giác đều (số liệu thực tế), trang_thai: da-duyet}
+11.27.1: {ten: Thể tích khối chóp có cạnh bên vuông góc với đáy, trang_thai: da-duyet}
+12.1.3: {ten: Đọc khoảng đồng biến từ bảng biến thiên, trang_thai: da-duyet}
+12.5.2: {ten: Tốc độ thay đổi lớn nhất của mô hình bậc ba trong thực tế (hàm doanh thu), trang_thai: da-duyet}
+12.6.2: {ten: Xét khẳng định đúng/sai về vectơ và độ dài vectơ trong hình lập phương, trang_thai: da-duyet}
+12.8.1: {ten: Tọa độ hóa mô hình nhà kho dạng lăng trụ đứng, trang_thai: da-duyet}
+12.8.2: {ten: Thể tích lăng trụ đứng có đáy là đa giác xác định bằng tọa độ, trang_thai: da-duyet}
+12.13.4: {ten: Diện tích hình phẳng giới hạn bởi đồ thị hàm bậc ba và đường thẳng (đọc từ hình), trang_thai: da-duyet}
+12.15.2: {ten: Tìm vectơ chỉ phương từ phương trình chính tắc của đường thẳng, trang_thai: da-duyet}
+12.17.3: {ten: Viết phương trình mặt cầu biết tâm và bán kính, trang_thai: da-duyet}
