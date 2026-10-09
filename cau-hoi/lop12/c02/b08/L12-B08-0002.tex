@@ -1,0 +1,36 @@
+%% ma: L12-B08-0002
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "46,8"
+%% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần III Câu 3"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (tích vô hướng, góc giữa hai vectơ theo tọa độ); diện tích đa giác, thể tích lăng trụ đứng"
+%% ghi_chu: "Điều kiện CD vuông góc OD và góc ABC=135° cho hai vị trí C(1;5;0) và C(5;5;0); hình (ngũ giác lồi) chọn C(1;5;0). Đề gốc đã loại nghiệm theo điều kiện 0<x<3 (từ hình), nên hình là bắt buộc. Đáp án gốc 46,8 đúng"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.2 (thể tích lăng trụ đứng có đáy là đa giác xác định bằng tọa độ) chờ giáo viên duyệt"
+\begin{ex}
+Trong không gian $Oxyz$ (đơn vị của các trục tọa độ là mét), người ta thiết kế một căn phòng có dạng hình lăng trụ đứng $OABCD.O'A'B'C'D'$ với $O(0;0;0)$, $O'(0;0;3{,}6)$, $A(3;0;0)$, $B(3;3;0)$, $D(0;5;0)$, $\widehat{ABC}=135^\circ$ và $CD$ vuông góc với $OD$ (tham khảo hình vẽ). Tính thể tích của căn phòng này.
+\begin{center}
+\begin{tikzpicture}[x={(-.5cm,-.36cm)},y={(.62cm,0cm)},z={(0cm,.62cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (A) at (3,0,0); \coordinate (B) at (3,3,0);
+  \coordinate (C) at (1,5,0); \coordinate (D) at (0,5,0);
+  \coordinate (O') at (0,0,3.6); \coordinate (A') at (3,0,3.6); \coordinate (B') at (3,3,3.6);
+  \coordinate (C') at (1,5,3.6); \coordinate (D') at (0,5,3.6);
+  \draw[khuat] (A)--(O)--(D) (O)--(O');
+  \draw (A)--(B)--(C)--(D) (A')--(B')--(C')--(D')--(O')--(A') (A)--(A') (B)--(B') (C)--(C') (D)--(D');
+  \draw[truc] (3,0,0)--(4.6,0,0) node[below left]{$x$};
+  \draw[truc] (0,5,0)--(0,7.6,0) node[above]{$y$};
+  \draw[truc] (0,0,3.6)--(0,0,5.4) node[above]{$z$};
+  \path (O) node[below left,xshift=2pt]{$O$} (A) node[below]{$A$} (B) node[below]{$B$} (C) node[below]{$C$} (D) node[below right]{$D$}
+        (O') node[above left]{$O'$} (A') node[left]{$A'$} (B') node[above]{$B'$} (C') node[above left]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+\shortans{46,8}
+\loigiai{Gọi $C(x;5;0)$ (vì $CD\perp OD$ nên $CD\parallel Ox$). $\overrightarrow{BA}=(0;-3;0)$, $\overrightarrow{BC}=(x-3;2;0)$.
+$\cos\widehat{ABC}=\dfrac{-6}{3\sqrt{(x-3)^2+4}}=-\dfrac{\sqrt2}{2}\Rightarrow(x-3)^2=4\Rightarrow x=1$ hoặc $x=5$. Theo hình, đáy là ngũ giác lồi nên $x=1$, $C(1;5;0)$.
+Với hình chữ nhật $O A E D$ có $E(3;5;0)$ ta có $S_{OABCD}=S_{OAED}-S_{\triangle BCE}=3\cdot5-\dfrac12\cdot2\cdot2=13\ \mathrm{m^2}$.
+Chiều cao lăng trụ là $OO'=3{,}6$ m nên $V=13\cdot3{,}6=46{,}8\ \mathrm{m^3}$.}
+\end{ex}

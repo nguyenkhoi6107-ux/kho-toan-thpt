@@ -1,0 +1,20 @@
+%% ma: L12-B19-0004
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "20"
+%% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần III Câu 6 (THCS THPT Lê Thánh Tông - HCM 2025)"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes), Bài 18 (xác suất có điều kiện); quy tắc tổ hợp (Lớp 10 Bài 24)"
+%% ghi_chu: "Xếp vào dạng 12.19.2 đã duyệt (bóng chuyển giữa hai hộp, dùng Bayes); khác L12-B19-0002 ở chỗ chuyển 2 bi (3 trường hợp) và hỏi xác suất hai bi chuyển khác màu nên không coi là trùng. Đáp án gốc 20 đúng (kiểm bằng sympy: 7/13)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Có hai hộp bi, hộp I có $5$ bi trắng và $7$ bi đỏ, hộp II có $10$ bi trắng và $15$ bi đỏ. Lấy ngẫu nhiên hai viên bi từ hộp I chuyển sang hộp II. Sau đó, từ hộp II lấy ngẫu nhiên $1$ viên bi thì được bi trắng. Xác suất để $2$ bi chuyển từ hộp I sang hộp II không cùng màu là $\dfrac ab$ (là phân số tối giản). Tính $a+b$.
+\shortans{20}
+\loigiai{Gọi $A$: ``hai bi chuyển không cùng màu'', $T$: ``bi lấy ra từ hộp II là bi trắng''. Hộp II sau khi nhận thêm $2$ bi có $27$ bi.
+Hai bi chuyển cùng trắng: xác suất $\dfrac{C_5^2}{C_{12}^2}=\dfrac{10}{66}$, khi đó hộp II có $12$ bi trắng; cùng đỏ: $\dfrac{C_7^2}{C_{12}^2}=\dfrac{21}{66}$, hộp II có $10$ bi trắng; khác màu: $\dfrac{5\cdot7}{C_{12}^2}=\dfrac{35}{66}$, hộp II có $11$ bi trắng.
+$P(T)=\dfrac{10}{66}\cdot\dfrac{12}{27}+\dfrac{21}{66}\cdot\dfrac{10}{27}+\dfrac{35}{66}\cdot\dfrac{11}{27}=\dfrac{715}{1782}$, $P(A\cap T)=\dfrac{35}{66}\cdot\dfrac{11}{27}=\dfrac{385}{1782}$.
+$P(A\mid T)=\dfrac{385}{715}=\dfrac7{13}$. Vậy $a+b=7+13=20$.}
+\end{ex}

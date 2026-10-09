@@ -1,0 +1,46 @@
+%% ma: L12-B08-0001
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.1
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần II Câu 4 (THPT Hàm Rồng - Thanh Hóa 2025)"
+%% kien_thuc: "Bài 7 (hệ trục tọa độ trong không gian, tọa độ điểm), Bài 8 (tọa độ vectơ, độ dài đoạn thẳng); diện tích hình chữ nhật"
+%% ghi_chu: "Đề gốc không định nghĩa điểm K trong lời văn (chỉ có trên hình): đã bổ sung K là giao điểm của trục Oz với cạnh EH, K(0;0;5). Ở ý c đề gốc ghi 'tối thiểu' nhưng độ dài này là cố định, giữ nguyên số liệu 5+2√10. Đáp án gốc S Đ Đ S đúng; hình dựng lại từ tọa độ thật. Ý d: 16√13·130000≈7 499 547 → 7 500 000 đồng (≠ 3 750 000)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.1 (tọa độ hóa mô hình nhà kho dạng lăng trụ đứng) chờ giáo viên duyệt; đề gốc thiếu định nghĩa điểm K, đã bổ sung"
+\begin{ex}
+Một kho chứa hàng có dạng hình lăng trụ đứng $ABFPE.DCGQH$ với $ABFE$ là hình chữ nhật và $EFP$ là tam giác cân tại $P$. Gọi $T$ là trung điểm của $DC$. Các kích thước của kho chứa lần lượt là $AB=6$ m; $AE=5$ m; $AD=8$ m; $QT=7$ m. Người ta mô hình hóa nhà kho bằng cách chọn hệ trục tọa độ có gốc tọa độ là điểm $O$ thuộc đoạn $AD$ sao cho $OA=2$ m và các trục tọa độ tương ứng như hình vẽ dưới đây ($K$ là giao điểm của trục $Oz$ với cạnh $EH$).
+\begin{center}
+\begin{tikzpicture}[x={(-.3cm,-.22cm)},y={(.55cm,0cm)},z={(0cm,.5cm)}]
+  % tọa độ (x,y,z)
+  \coordinate (A) at (2,0,0); \coordinate (B) at (2,6,0); \coordinate (F) at (2,6,5);
+  \coordinate (E) at (2,0,5); \coordinate (P) at (2,3,7);
+  \coordinate (D) at (-6,0,0); \coordinate (C) at (-6,6,0); \coordinate (G) at (-6,6,5);
+  \coordinate (H) at (-6,0,5); \coordinate (Q) at (-6,3,7);
+  \coordinate (O) at (0,0,0); \coordinate (K) at (0,0,5); \coordinate (T) at (-6,3,0);
+  \draw[khuat] (A)--(O)--(D)--(C) (D)--(H)--(G) (O)--(K) (Q)--(T);
+  \draw (A)--(B)--(C) (A)--(E)--(F)--(B) (E)--(P)--(F) (G)--(C) (F)--(G) (E)--(H) (P)--(Q) (H)--(Q)--(G);
+  \draw[truc] (2,0,0)--(4.6,0,0) node[below left]{$x$};
+  \draw[truc] (0,0,0)--(0,10.5,0) node[below]{$y$};
+  \draw[truc] (0,0,5)--(0,0,9) node[left]{$z$};
+  \foreach \P in {A,B,E,F,P,D,C,G,H,Q,O,K,T} \fill (\P) circle (1.2pt);
+  \path (A) node[below]{$A$} (B) node[below]{$B$} (E) node[below left]{$E$} (F) node[right]{$F$}
+        (P) node[below left,xshift=3pt]{$P$} (D) node[left]{$D$} (C) node[right]{$C$} (G) node[right]{$G$}
+        (H) node[above left]{$H$} (Q) node[above]{$Q$} (O) node[above left,xshift=2pt]{$O$} (K) node[above left]{$K$} (T) node[below]{$T$};
+\end{tikzpicture}
+\end{center}
+Khi đó:
+\choiceTF
+{Tọa độ điểm $Q$ là $(-6;3;5)$.}
+{\True Vectơ $\overrightarrow{OC}$ có tọa độ là $(-6;6;0)$.}
+{\True Người ta muốn lắp camera quan sát trong nhà kho tại vị trí trung điểm của $FG$ và đầu thu dữ liệu đặt tại vị trí $O$. Người ta thiết kế đường dây cáp nối từ $O$ đến $K$ sau đó nối thẳng đến camera. Độ dài đoạn cáp nối bằng $5+2\sqrt{10}$ m.}
+{Mái nhà được lợp bằng tôn Hoa Sen, giá tiền mỗi mét vuông tôn là $130\,000$ đồng. Số tiền cần bỏ ra để mua tôn lợp mái nhà là $3\,750\,000$ đồng (không kể hao phí do việc cắt và ghép các miếng tôn, làm tròn kết quả đến hàng nghìn).}
+\loigiai{Từ $OA=2$, $AD=8$, $AB=6$, $AE=5$ ta có $A(2;0;0)$, $B(2;6;0)$, $E(2;0;5)$, $F(2;6;5)$, $D(-6;0;0)$, $C(-6;6;0)$, $G(-6;6;5)$, $H(-6;0;5)$, $K(0;0;5)$. $T(-6;3;0)$ là trung điểm của $DC$.
+a) $Q$ nằm trên đường thẳng qua $T$ vuông góc với mặt đáy nên $Q(-6;3;7)$ (vì $QT=7$). Sai.
+b) $\overrightarrow{OC}=(-6;6;0)$. Đúng.
+c) Trung điểm $L$ của $FG$ là $L(-2;6;5)$. $OK=5$, $KL=\sqrt{(-2)^2+6^2+0^2}=2\sqrt{10}$. Độ dài dây cáp là $5+2\sqrt{10}$ m. Đúng.
+d) $P(2;3;7)$ nên $EP=\sqrt{0+3^2+2^2}=\sqrt{13}$. Mái gồm hai hình chữ nhật kích thước $\sqrt{13}\times8$, diện tích $16\sqrt{13}\approx57{,}69$ m$^2$. Số tiền $\approx57{,}69\cdot130\,000\approx7\,500\,000$ đồng $\ne3\,750\,000$ đồng. Sai.}
+\end{ex}

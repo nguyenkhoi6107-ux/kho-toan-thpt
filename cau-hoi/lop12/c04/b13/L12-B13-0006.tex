@@ -1,0 +1,37 @@
+%% ma: L12-B13-0006
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.4
+%% loai: TN4
+%% muc: VD
+%% dap_an: "B"
+%% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần I Câu 6"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi đồ thị hàm số và đường thẳng), Bài 12 (tích phân của hàm đa thức)"
+%% ghi_chu: "Hình dựng lại từ hàm số thật; đường thẳng đi qua O và điểm (3;2) trên đồ thị (f(3)=2) nên có phương trình y=2x/3. Đề gốc không nói rõ điều này, phải đọc từ hình. Đáp án gốc 39/4 đúng (kiểm bằng sympy)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.4 (diện tích hình phẳng giới hạn bởi đồ thị bậc ba và đường thẳng, đọc từ hình) chờ giáo viên duyệt"
+\begin{ex}
+Cho hàm số $f(x)=-x^3+3x^2+2$ có đồ thị $(C)$ như hình vẽ. Tính diện tích $S$ của hình phẳng được tô đậm trong hình.
+\begin{center}
+\begin{tikzpicture}[x=1.1cm,y=.62cm]
+  \fill[gray!35] (0,0)--(3,2)--plot[domain=3:0,samples=60] (\x,{-\x*\x*\x+3*\x*\x+2})--cycle;
+  \begin{scope}
+    \clip (-.9,-1.4) rectangle (3.6,6.8);
+    \draw[thick,domain=-.8:3.07,samples=80,smooth] plot (\x,{-\x*\x*\x+3*\x*\x+2});
+    \draw[thick] (-.9,-.6)--(3.6,2.4);
+  \end{scope}
+  \draw[phu] (0,2)--(3,2) (3,0)--(3,2);
+  \fill (3,2) circle (1.6pt);
+  \draw[truc] (-1,0)--(3.8,0) node[below]{$x$};
+  \draw[truc] (0,-1.4)--(0,7) node[right]{$y$};
+  \draw (1,.15)--(1,-.15) node[below]{\footnotesize$1$};
+  \draw (3,.15)--(3,-.15) node[below]{\footnotesize$3$};
+  \draw (.08,2)--(-.08,2) node[left]{\footnotesize$2$};
+  \path (0,0) node[below left]{\footnotesize$O$} (2.15,3.4) node{$S$} (-.6,4.6) node{$(C)$};
+\end{tikzpicture}
+\end{center}
+\choice{$S=10$}{\True $S=\dfrac{39}{4}$}{$S=\dfrac{41}{4}$}{$S=13$}
+\loigiai{Đường thẳng đi qua $O(0;0)$ và điểm $(3;2)$ của $(C)$ (vì $f(3)=2$) nên có phương trình $y=\dfrac23x$.
+$S=\displaystyle\int_0^3\left(-x^3+3x^2+2-\dfrac23x\right)\mathrm dx=\left(-\dfrac{x^4}{4}+x^3+2x-\dfrac{x^2}{3}\right)\Big|_0^3=-\dfrac{81}{4}+27+6-3=\dfrac{39}{4}$.}
+\end{ex}
