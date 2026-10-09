@@ -1,0 +1,56 @@
+%% ma: L11-B27-0003
+%% lop: 11
+%% chuong: 7
+%% bai: 27
+%% dang: 11.27.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "39"
+%% nguon: "(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần III Câu 6"
+%% kien_thuc: "Bài 27 (thể tích khối hộp chữ nhật, cách tính thể tích khối ghép), thể tích khối trụ (THCS); đọc kích thước từ hình vẽ kĩ thuật"
+%% ghi_chu: "Hình gốc gồm các hình chiếu vuông góc (hình a) và hình phối cảnh (hình b); đã dựng lại hình phối cảnh từ số liệu của đề (55; 34; 35; 12; 12; 38; 14; Ø18), bỏ hình chiếu. Đề gốc không ghi vị trí tâm lỗ; theo hình chiếu bằng, tâm lỗ cách đầu trái 17 mm (=55-38), trùng mép tấm trên nên rãnh là nửa hình tròn cùng trục (đã nêu trong đề). Đáp án gốc 39 đúng (kiểm bằng sympy: 38,60)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 11.27.3 (thể tích chi tiết máy ghép từ khối hộp và khối trụ), chờ giáo viên duyệt."
+\begin{ex}
+Hình vẽ dưới đây mô tả một chi tiết máy (các kích thước cho trên hình tính theo milimét). Chi tiết gồm một tấm đáy và một tấm trên, hai tấm nối với nhau bằng một khối ở cạnh phải. Tấm đáy có một lỗ tròn xuyên suốt đường kính $18$, tấm trên có một rãnh khuyết hình nửa hình tròn cùng trục với lỗ tròn đó. Thể tích kim loại cần để đúc chi tiết máy đó bằng bao nhiêu centimét khối (kết quả làm tròn đến hàng đơn vị)?
+\begin{center}
+\begin{tikzpicture}[x={(0.06525cm,0.0375cm)},y={(0.06525cm,-0.0375cm)},z={(0cm,0.075cm)},font=\scriptsize]
+  % Tấm đáy [0,55]x[0,34]x[0,12], lỗ tròn tâm (17,17) bán kính 9
+  \path[fill=white,draw] (0,34,0)--(55,34,0)--(55,34,12)--(0,34,12)--cycle;
+  \path[fill=white,draw] (0,0,0)--(0,34,0)--(0,34,12)--(0,0,12)--cycle;
+  \path[fill=white,draw] (0,0,12)--(55,0,12)--(55,34,12)--(0,34,12)--cycle;
+  \path[fill=gray!30,draw,smooth,samples=60,variable=\a,domain=0:360] plot ({17+9*cos(\a)},{17+9*sin(\a)},12);
+  % Khối nối [41,55]x[0,34]x[12,23]
+  \path[fill=white,draw] (41,0,12)--(41,34,12)--(41,34,23)--(41,0,23)--cycle;
+  \path[fill=white,draw] (41,34,12)--(55,34,12)--(55,34,23)--(41,34,23)--cycle;
+  % Tấm trên [17,55]x[0,34]x[23,35], rãnh nửa tròn tâm (17,17) bán kính 9
+  \path[fill=white,draw] (17,0,23)--(17,8,23)--(17,8,35)--(17,0,35)--cycle;
+  \path[fill=white,draw] (17,26,23)--(17,34,23)--(17,34,35)--(17,26,35)--cycle;
+  \path[fill=gray!30,draw,smooth,samples=40,variable=\a]
+     plot[domain=-90:45] ({17+9*cos(\a)},{17+9*sin(\a)},35)
+     -- plot[domain=45:-90] ({17+9*cos(\a)},{17+9*sin(\a)},23) -- cycle;
+  \path[fill=white,draw] (17,34,23)--(55,34,23)--(55,34,35)--(17,34,35)--cycle;
+  \path[fill=white,draw,smooth,samples=40,variable=\a]
+     (17,0,35)--(55,0,35)--(55,34,35)--(17,34,35)--(17,26,35)
+     -- plot[domain=90:-90] ({17+9*cos(\a)},{17+9*sin(\a)},35) -- cycle;
+  % Kích thước
+  \draw[<->] (0,48,0)--(55,48,0) node[midway,below right]{$55$};
+  \draw[phu] (0,34,0)--(0,49,0) (55,34,0)--(55,49,0);
+  \draw[<->] (-9,0,0)--(-9,34,0) node[midway,below left]{$34$};
+  \draw[phu] (0,0,0)--(-10,0,0) (0,34,0)--(-10,34,0);
+  \draw[<->] (0,41,0)--(0,41,12) node[midway,right]{$12$};
+  \draw[phu] (0,34,12)--(0,42,12);
+  \draw[<->] (66,34,0)--(66,34,35) node[midway,right]{$35$};
+  \draw[phu] (55,34,0)--(67,34,0) (55,34,35)--(67,34,35);
+  \draw[<->] (17,-9,23)--(17,-9,35) node[midway,left]{$12$};
+  \draw[<->] (17,-9,35)--(55,-9,35) node[midway,above left]{$38$};
+  \draw[phu] (17,0,23)--(17,-10,23) (17,0,35)--(17,-10,35) (55,0,35)--(55,-10,35);
+  \draw[<->] (41,41,17.5)--(55,41,17.5) node[midway,below right]{$14$};
+  \draw[phu] (41,34,17.5)--(41,42,17.5) (55,34,17.5)--(55,42,17.5);
+  \draw[->] (17,17,12)--(8,17,12) node[midway,above]{$9$};
+\end{tikzpicture}
+\end{center}
+\shortans{39}
+\loigiai{Gọi $V_1$ là thể tích hộp chữ nhật $55\times34\times12$ (tấm đáy), $V_2$ là thể tích hộp chữ nhật $38\times34\times12$ (tấm trên), $V_3$ là thể tích hộp chữ nhật $34\times14\times11$ (khối nối ở giữa, cao $35-12-12=11$), $V_4$ là thể tích phần khoét bỏ gồm khối trụ và nửa khối trụ bán kính đáy $9$, chiều cao $12$.
+$V=V_1+V_2+V_3-V_4=55\cdot34\cdot12+38\cdot34\cdot12+34\cdot14\cdot11-\dfrac32\pi\cdot9^2\cdot12=43\,180-1\,458\pi\approx38\,600\ (\mathrm{mm}^3)\approx39\ (\mathrm{cm}^3)$.}
+\end{ex}

@@ -1,0 +1,24 @@
+%% ma: L12-B12-0005
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.2
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần II Câu 2"
+%% kien_thuc: "Bài 12 (tích phân, quãng đường đi được từ vận tốc), Bài 11 (nguyên hàm); chuyển động chậm dần đều (vận tốc là nguyên hàm của gia tốc)"
+%% ghi_chu: "Trùng ý tưởng với L12-B12-0002 và L12-B12-0003 (cùng dạng 12.12.2: quãng đường từ hàm vận tốc), khác kịch bản và số liệu; dạng đã duyệt nên nhập chính thức (mức TH-VD của dạng hiện có 3 câu, dưới giới hạn). Đề gốc có ảnh minh họa xe (không cần). Đã thêm chú thích thời gian t tính từ lúc bắt đầu chuyển động; lời giải gốc ghi đơn vị cm ở ý a, c (đúng là m). Đáp án gốc Đ Đ S S đúng (kiểm bằng sympy)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một ô tô bắt đầu chuyển động nhanh dần đều với vận tốc $v_1(t)=2t$ (m/s), trong đó thời gian $t$ tính bằng giây. Sau khi chuyển động được $12$ giây, ô tô gặp chướng ngại vật và người tài xế phanh gấp, ô tô tiếp tục chuyển động chậm dần đều với vận tốc $v_2(t)$ và gia tốc $a=-8$ m/s$^2$ cho đến khi dừng hẳn (thời gian $t$ vẫn tính từ lúc ô tô bắt đầu chuyển động).
+\choiceTF
+{\True Quãng đường ô tô chuyển động nhanh dần đều là $144$ m.}
+{\True Thời gian từ lúc ô tô giảm tốc độ cho đến khi dừng hẳn là $3$ giây.}
+{Quãng đường ô tô chuyển động chậm dần đều là $72$ m.}
+{Tổng quãng đường ô tô đi được từ lúc bắt đầu chuyển động đến khi dừng hẳn là $168$ m.}
+\loigiai{a) $s_1=\displaystyle\int_0^{12}2t\,\mathrm dt=t^2\Big|_0^{12}=144$ m. Đúng.
+b) $v_1(12)=24$ m/s nên $v_2(t)=24-8(t-12)=120-8t$; $v_2(t)=0\Leftrightarrow t=15$. Thời gian giảm tốc là $15-12=3$ giây. Đúng.
+c) $s_2=\displaystyle\int_{12}^{15}(120-8t)\,\mathrm dt=\big(120t-4t^2\big)\Big|_{12}^{15}=36$ m $\ne72$ m. Sai.
+d) $s=s_1+s_2=144+36=180$ m $\ne168$ m. Sai.}
+\end{ex}

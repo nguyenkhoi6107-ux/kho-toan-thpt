@@ -1,0 +1,27 @@
+%% ma: L12-B19-0005
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.3
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần II Câu 4"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, công thức nhân), Bài 19 (công thức xác suất toàn phần, công thức Bayes)"
+%% ghi_chu: "Đề gốc có ảnh minh họa cuộc thi (không cần). Đáp án gốc Đ S Đ Đ đúng (kiểm bằng sympy: 47/97)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.19.3 (xác suất qua nhiều vòng thi: công thức nhân và Bayes), chờ giáo viên duyệt."
+\begin{ex}
+Các thí sinh tham dự một cuộc thi hoa khôi phải trải qua ba vòng thi: vòng sơ khảo, vòng bán kết và vòng chung kết. Biết rằng, ban tổ chức sẽ chọn ra $50\%$ thí sinh đã đăng kí để vào vòng sơ khảo. Khi kết thúc vòng sơ khảo, ban tổ chức sẽ chọn ra $30\%$ thí sinh của vòng sơ khảo để vào vòng bán kết. Khi kết thúc vòng bán kết, ban tổ chức sẽ chọn ra $20\%$ thí sinh của vòng bán kết để vào vòng chung kết. Chọn ngẫu nhiên $1$ thí sinh đăng kí tham dự cuộc thi hoa khôi.
+\choiceTF
+{\True Xác suất để thí sinh được chọn lọt vào vòng sơ khảo là $0{,}5$.}
+{Xác suất để thí sinh được chọn lọt vào vòng bán kết là $0{,}3$.}
+{\True Xác suất thí sinh được chọn lọt vào vòng chung kết là $0{,}03$.}
+{\True Biết rằng thí sinh được chọn không lọt vào vòng chung kết, xác suất thí sinh đó lọt vào vòng sơ khảo nhỏ hơn $0{,}49$.}
+\loigiai{Gọi $A,B,C$ lần lượt là các biến cố thí sinh được chọn lọt vào vòng sơ khảo, bán kết, chung kết; $C\subset B\subset A$.
+a) $P(A)=0{,}5$. Đúng.
+b) $P(B)=P(AB)=P(A)P(B\mid A)=0{,}5\cdot0{,}3=0{,}15\ne0{,}3$. Sai.
+c) $P(C)=P(AB)P(C\mid AB)=0{,}15\cdot0{,}2=0{,}03$. Đúng.
+d) $P(C\mid A)=\dfrac{P(C)}{P(A)}=0{,}06$ nên $P(\overline C\mid A)=0{,}94$. Theo công thức Bayes
+$P(A\mid\overline C)=\dfrac{P(\overline C\mid A)P(A)}{P(\overline C)}=\dfrac{0{,}94\cdot0{,}5}{1-0{,}03}=\dfrac{47}{97}\approx0{,}485<0{,}49$. Đúng.}
+\end{ex}

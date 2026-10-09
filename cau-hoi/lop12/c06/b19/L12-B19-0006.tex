@@ -1,0 +1,20 @@
+%% ma: L12-B19-0006
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "9"
+%% nguon: "(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần III Câu 3"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes), Bài 18 (xác suất có điều kiện); tổ hợp (Lớp 10 Bài 24)"
+%% ghi_chu: "Cùng ý tưởng Bayes với L12-B19-0004 nhưng kịch bản khác (một hộp, lấy thêm số bi tùy màu); xếp vào dạng 12.19.2 đã duyệt, giáo viên có thể tách thành dạng riêng nếu muốn. Đề gốc có ảnh hộp bi (không cần). Đáp án gốc 9 đúng (kiểm bằng sympy: 2/7)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một hộp có $9$ viên bi đỏ và $1$ viên bi xanh. Các viên bi có cùng kích thước và khối lượng. Bạn Lan chọn ra ngẫu nhiên $2$ viên bi từ hộp. Nếu $2$ viên bi đó khác màu, Lan chọn ra ngẫu nhiên thêm $2$ viên bi. Ngược lại, bạn Lan chọn ra ngẫu nhiên thêm $3$ viên bi. Biết các viên bi lấy ra lần thứ hai đều có cùng màu, khi đó xác suất lần thứ nhất Lan chọn được viên bi màu xanh là $\dfrac ab$ ($\dfrac ab$ là phân số tối giản). Tính $a+b$.
+\shortans{9}
+\loigiai{Gọi $A$: ``hai bi lấy lần đầu khác màu'', $B$: ``hai bi lấy lần đầu cùng màu đỏ'', $C$: ``các viên bi lấy lần thứ hai cùng màu''.
+$P(A)=\dfrac{9}{C_{10}^2}=\dfrac15$, $P(B)=\dfrac45$. Nếu $A$ xảy ra, trong hộp còn $8$ bi đỏ nên $P(C\mid A)=1$. Nếu $B$ xảy ra, hộp còn $7$ bi đỏ, $1$ bi xanh nên $P(C\mid B)=\dfrac{C_7^3}{C_8^3}=\dfrac58$.
+Theo công thức Bayes: $P(A\mid C)=\dfrac{P(C\mid A)P(A)}{P(C\mid A)P(A)+P(C\mid B)P(B)}=\dfrac{\frac15}{\frac15+\frac58\cdot\frac45}=\dfrac27$.
+Vậy $a+b=2+7=9$.}
+\end{ex}
