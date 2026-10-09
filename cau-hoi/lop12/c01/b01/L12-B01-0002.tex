@@ -1,0 +1,32 @@
+%% ma: L12-B01-0002
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 12"
+%% kien_thuc: "Bài 1 (tính đơn điệu và cực trị: đọc từ đồ thị)"
+%% ghi_chu: "Hình dựng lại từ hàm số y=-x^3+3x (cực tiểu (-1;-2), cực đại (1;2), đi qua O) khớp các số liệu trên hình gốc"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.1.2, chờ giáo viên duyệt"
+\begin{ex}
+Cho hàm số có đồ thị như hình vẽ bên.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \begin{scope}
+    \clip (-2.3,-2.8) rectangle (2.3,2.8);
+    \draw[thick,domain=-2.1:2.1,samples=80,smooth] plot (\x,{-\x*\x*\x+3*\x});
+  \end{scope}
+  \draw[truc] (-2.5,0)--(2.6,0) node[below]{$x$};
+  \draw[truc] (0,-2.9)--(0,3) node[left]{$y$};
+  \draw[phu] (-1,0)--(-1,-2)--(0,-2) (1,0)--(1,2)--(0,2);
+  \path (0,0) node[below left]{\footnotesize$O$} (-1,0) node[below left]{\footnotesize$-1$} (1,0) node[below right]{\footnotesize$1$}
+        (0,2) node[above left]{\footnotesize$2$} (0,-2) node[below right]{\footnotesize$-2$};
+\end{tikzpicture}
+\end{center}
+Hàm số đã cho đồng biến trên khoảng nào sau đây?
+\choice{$(-\infty;-1)$}{$(-\infty;1)$}{\True $(-1;1)$}{$(1;+\infty)$}
+\loigiai{Từ đồ thị, hàm số có cực tiểu tại $x=-1$ và cực đại tại $x=1$; đồ thị đi lên (từ trái sang phải) trên khoảng $(-1;1)$. Vậy hàm số đồng biến trên $(-1;1)$.}
+\end{ex}

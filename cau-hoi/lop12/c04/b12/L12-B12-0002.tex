@@ -1,0 +1,25 @@
+%% ma: L12-B12-0002
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.2
+%% loai: DS
+%% muc: [TH, TH, TH, VD]
+%% dap_an: "ĐĐSS"
+%% nguon: "0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần II Câu 2"
+%% kien_thuc: "Bài 12 (tích phân, quãng đường đi được từ vận tốc), đổi đơn vị km/h sang m/s"
+%% ghi_chu: "Đề gốc ghi 'a, b ∈ R' và câu c) có cận trên là 24 cố định — chủ ý của đề để làm ý sai"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.12.2, chờ giáo viên duyệt"
+\begin{ex}
+Một người điều khiển ô tô đang ở đường dẫn muốn nhập làn vào đường cao tốc. Khi xe ô tô cách điểm nhập làn $200$ m, tốc độ của ô tô là $36$ km/h. Hai giây sau đó, ô tô bắt đầu tăng tốc với tốc độ $v(t)=at+b$ ($a,b\in\mathbb R$, $a>0$), trong đó $t$ là thời gian tính bằng giây kể từ khi bắt đầu tăng tốc. Biết rằng ô tô nhập làn cao tốc sau $12$ giây và duy trì sự tăng tốc đó trong $24$ giây kể từ khi bắt đầu tăng tốc.
+\choiceTF
+{\True Quãng đường ô tô đi được từ khi bắt đầu tăng tốc đến khi nhập làn là $180$ m.}
+{\True Giá trị của $b=10$.}
+{Quãng đường $S(t)$ (đơn vị: mét) mà ô tô đi được trong thời gian $t$ giây ($0\le t\le24$) kể từ khi tăng tốc được tính theo công thức $S(t)=\displaystyle\int_0^{24}v(t)\,\mathrm dt$.}
+{Sau $24$ giây kể từ khi tăng tốc, tốc độ của ô tô không vượt quá tốc độ tối đa cho phép là $100$ km/h.}
+\loigiai{$36$ km/h $=10$ m/s. Trong $2$ giây đầu xe đi được $10\cdot2=20$ m nên còn $200-20=180$ m đến điểm nhập làn.
+a) Đúng. b) $v(0)=b=10$ (m/s). Đúng.
+c) $S(t)=\displaystyle\int_0^{t}v(s)\,\mathrm ds$ (cận trên là $t$, không phải $24$). Sai.
+d) $\displaystyle\int_0^{12}(at+10)\,\mathrm dt=72a+120=180\Rightarrow a=\frac56$. Khi đó $v(24)=\frac56\cdot24+10=30$ m/s $=108$ km/h $>100$ km/h. Sai.}
+\end{ex}

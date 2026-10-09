@@ -1,0 +1,34 @@
+%% ma: L12-B03-0001
+%% lop: 12
+%% chuong: 1
+%% bai: 3
+%% dang: 12.3.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 5"
+%% kien_thuc: "Bài 3 (đường tiệm cận của đồ thị hàm số)"
+%% ghi_chu: "Hình vẽ lại từ đồ thị gốc: đồ thị của y=(x-1)/(2x+2), cắt Ox tại 1, cắt Oy tại -1/2"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.3.1, chờ giáo viên duyệt"
+\begin{ex}
+Cho hàm số $y=\dfrac{ax+b}{cx+d}$ ($c\ne0$, $ad-bc\ne0$) có đồ thị như hình vẽ bên. Tiệm cận ngang của đồ thị hàm số là
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1.6cm]
+  \begin{scope}
+    \clip (-3.2,-1.9) rectangle (3.2,2.1);
+    \draw[thick,domain=-3.1:-1.05,samples=80,smooth] plot (\x,{(\x-1)/(2*\x+2)});
+    \draw[thick,domain=-0.9:3.1,samples=80,smooth] plot (\x,{(\x-1)/(2*\x+2)});
+  \end{scope}
+  \draw[thin] (-3.2,.5) -- (3.2,.5);
+  \draw[truc] (-3.2,0)--(3.4,0) node[below]{$x$};
+  \draw[truc] (0,-2)--(0,2.25) node[left]{$y$};
+  \foreach \p in {-1,1} \draw (\p,.02)--(\p,-.02) node[below]{\footnotesize$\p$};
+  \draw (.06,.5)--(-.06,.5) node[left]{\footnotesize$\frac12$};
+  \draw (.06,-.5)--(-.06,-.5) node[left]{\footnotesize$-\frac12$};
+  \path (0,0) node[below left]{\footnotesize$O$};
+\end{tikzpicture}
+\end{center}
+\choice{$x=-1$}{\True $y=\dfrac12$}{$y=-1$}{$x=\dfrac12$}
+\loigiai{Đồ thị tiến sát đường thẳng nằm ngang cắt trục tung tại điểm có tung độ $\frac12$ khi $x\to\pm\infty$, nên tiệm cận ngang là $y=\frac12$. (Hàm số của hình: $y=\dfrac{x-1}{2x+2}$, tiệm cận đứng $x=-1$.)}
+\end{ex}

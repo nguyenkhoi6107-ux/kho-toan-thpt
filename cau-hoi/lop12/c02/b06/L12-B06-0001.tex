@@ -1,0 +1,29 @@
+%% ma: L12-B06-0001
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 11"
+%% kien_thuc: "Bài 6 (quy tắc hình hộp, tổng các vectơ trong không gian)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.6.1, chờ giáo viên duyệt"
+\begin{ex}
+Cho hình hộp $ABCD.A'B'C'D'$ (minh họa hình bên).
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \path (0,0) coordinate (B) (3,0) coordinate (C) (4,1.1) coordinate (D) (1,1.1) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(.4,2.2) coordinate (\P');
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A') (A)--(C');
+  \path (A) node[left]{$A$} (B) node[below left]{$B$} (C) node[below]{$C$} (D) node[right]{$D$}
+        (A') node[above left]{$A'$} (B') node[left]{$B'$} (C') node[right]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+Phát biểu nào sau đây là đúng?
+\choice{$\overrightarrow{AB}+\overrightarrow{BB'}+\overrightarrow{B'A'}=\overrightarrow{AC'}$}{$\overrightarrow{AB}+\overrightarrow{BC'}+\overrightarrow{C'D'}=\overrightarrow{AC'}$}{$\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AA'}=\overrightarrow{AC'}$}{\True $\overrightarrow{AB}+\overrightarrow{AA'}+\overrightarrow{AD}=\overrightarrow{AC'}$}
+\loigiai{Quy tắc hình hộp: $\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}=\overrightarrow{AC'}$ nên D đúng.
+A: $\overrightarrow{AB}+\overrightarrow{BB'}+\overrightarrow{B'A'}=\overrightarrow{AA'}$. B: $\overrightarrow{AB}+\overrightarrow{BC'}+\overrightarrow{C'D'}=\overrightarrow{AC'}+\overrightarrow{C'D'}=\overrightarrow{AD'}$. C: $\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AA'}=2\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}\ne\overrightarrow{AC'}$.}
+\end{ex}
