@@ -102,3 +102,12 @@
 12.15.3: {ten: "Điểm trên đường thẳng gần gốc tọa độ nhất (hình chiếu của O)", trang_thai: da-duyet}
 12.18.2: {ten: "Xác suất có điều kiện khi lấy không hoàn lại (Đúng/Sai)", trang_thai: da-duyet}
 12.19.4: {ten: "Xác suất ở lần rút thứ hai khi rút không hoàn lại (công thức xác suất toàn phần)", trang_thai: da-duyet}
+# --- Đề xuất từ đề Mệnh đề (ThS. Nguyễn Hoàng Việt, 2 đề A và B), ngày 10/10/2026 ---
+10.1.1: {ten: "Nhận biết câu là mệnh đề, câu không phải mệnh đề", trang_thai: de-xuat}
+10.1.2: {ten: "Xét tính đúng sai của mệnh đề (số học, đại số, hình học)", trang_thai: de-xuat}
+10.1.3: {ten: "Mệnh đề chứa biến: tìm giá trị biến, tính đúng sai khi thay giá trị", trang_thai: de-xuat}
+10.1.4: {ten: "Mệnh đề chứa kí hiệu ∀, ∃: xét tính đúng sai", trang_thai: de-xuat}
+10.1.5: {ten: "Mệnh đề phủ định", trang_thai: de-xuat}
+10.1.6: {ten: "Mệnh đề kéo theo, mệnh đề tương đương: xét tính đúng sai", trang_thai: de-xuat}
+10.1.7: {ten: "Suy luận logic từ các dữ kiện (xếp hàng, thang máy)", trang_thai: de-xuat}
+10.2.1: {ten: "Kí hiệu ∈, ⊂ giữa phần tử và tập hợp", trang_thai: de-xuat}
