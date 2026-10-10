@@ -128,7 +128,7 @@
 11.27.8: {ten: "Thể tích khối chóp cụt đều từ cạnh hai đáy và cạnh bên (bài toán thực tế cái sọt)", trang_thai: da-duyet}
 12.3.4: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc hai trên bậc hai (cho đồ thị)", trang_thai: da-duyet}
 12.5.5: {ten: "Tối ưu diện tích hình chữ nhật nội tiếp phần còn lại của khúc gỗ tròn (mô hình thanh dầm và tấm ván)", trang_thai: da-duyet}
-12.7.1: {ten: "Tọa độ hình chiếu vuông góc của điểm lên mặt phẳng tọa độ", trang_thai: da-duyet}
+12.7.1: {ten: "Tọa độ hình chiếu vuông góc của điểm lên mặt phẳng tọa độ (lên mặt phẳng hoặc trục tọa độ)", trang_thai: da-duyet}
 12.8.9: {ten: "Độ dài ngắn nhất của đoạn nối hai điểm chuyển động trên hai cạnh của hình lập phương (tọa độ hóa)", trang_thai: da-duyet}
 12.17.5: {ten: "Thiên thạch và vệ tinh quanh Trái Đất: khoảng cách đến mặt cầu, tiếp tuyến, mặt phẳng trung trực, va chạm (Đúng/Sai)", trang_thai: da-duyet}
 12.13.10: {ten: "Công hút chất lỏng ra khỏi bể hình nón bằng tích phân (Đúng/Sai)", trang_thai: da-duyet}
@@ -144,11 +144,9 @@
 12.1.7: {ten: "Số giá trị nguyên của tham số m để hàm bậc ba nghịch biến trên R", trang_thai: da-duyet}
 12.2.5: {ten: "Đọc giá trị lớn nhất trên một đoạn từ đồ thị (đạt tại đầu mút)", trang_thai: da-duyet}
 12.5.6: {ten: "Tối ưu thể tích lăng trụ lục giác đều gấp từ tấm tôn hình tam giác đều", trang_thai: da-duyet}
-12.7.2: {ten: "Tọa độ hình chiếu vuông góc của điểm lên trục tọa độ (cùng ý tưởng 12.7.1 nhưng chiếu lên trục)", trang_thai: da-duyet}
 12.7.3: {ten: "Tọa độ hóa cabin thang máy: tìm kích thước từ thể tích và diện tích toàn phần, tọa độ điểm gắn camera", trang_thai: da-duyet}
 12.12.5: {ten: "Tính tích phân cơ bản của đa thức và hàm mũ", trang_thai: da-duyet}
 12.13.11: {ten: "Hàm bậc ba ax^3+bx^2+c đọc từ đồ thị: tìm hệ số, diện tích hình phẳng, tịnh tiến đồ thị lên theo Oy (Đúng/Sai)", trang_thai: da-duyet}
-12.17.6: {ten: "Phương trình mặt cầu biết tâm và một điểm thuộc mặt cầu", trang_thai: da-duyet}
 12.18.3: {ten: "Xác suất có điều kiện khi biết P(A), P(B), P(A∪B)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D08 (Đề số 8 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
 10.6.1: {ten: "Định lí côsin trong bài toán thực tế: độ mở của máy tính xách tay (Đúng/Sai)", trang_thai: da-duyet}
