@@ -161,17 +161,16 @@
 12.18.4: {ten: "Xác suất có điều kiện và công thức nhân từ các tỉ lệ phần trăm (Đúng/Sai)", trang_thai: da-duyet}
 12.19.5: {ten: "Công thức Bayes với xét nghiệm nhanh: xác suất bị bệnh khi cho kết quả dương tính", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D09 (Đề số 9 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
-10.20.1: {ten: "Thấu kính hội tụ: tỉ số ảnh và vật qua giao điểm hai đường thẳng trong tọa độ", trang_thai: de-xuat}
-11.5.1: {ten: "Tính số hạng của dãy số cho bởi công thức số hạng tổng quát", trang_thai: de-xuat}
-11.21.6: {ten: "Tập xác định của hàm số chứa căn của lôgarit", trang_thai: de-xuat}
-11.21.7: {ten: "Cường độ ánh sáng giảm theo độ sâu I = I0.a^d: hằng số a, giá trị, bất phương trình mũ (Đúng/Sai)", trang_thai: de-xuat}
-11.27.10: {ten: "Thể tích khối lăng trụ biết diện tích đáy và chiều cao", trang_thai: de-xuat}
-12.1.8: {ten: "Xét tính đơn điệu của hàm bậc ba qua đạo hàm, chọn khẳng định đúng", trang_thai: de-xuat}
-12.3.5: {ten: "Tiệm cận ngang của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số)", trang_thai: de-xuat}
-12.6.4: {ten: "Tổng ba vectơ từ một đỉnh của tứ diện qua trọng tâm mặt đối diện", trang_thai: de-xuat}
-12.8.10: {ten: "Khoảng cách từ một điểm đến trục tọa độ", trang_thai: de-xuat}
-12.8.11: {ten: "Tọa độ hóa mái nhà: góc giữa hai vectơ", trang_thai: de-xuat}
-12.11.5: {ten: "Nguyên hàm của tan^2 x bằng công thức 1 + tan^2 x = 1/cos^2 x", trang_thai: de-xuat}
-12.13.12: {ten: "Thể tích chi tiết máy có đường sinh là parabol, quay quanh trục tung", trang_thai: de-xuat}
-12.15.4: {ten: "Phương trình tham số của đường thẳng qua một điểm và song song với đường thẳng cho trước", trang_thai: de-xuat}
-12.19.6: {ten: "Xác suất toàn phần và Bayes từ xác suất có điều kiện hai bước (đi học bằng xe đạp, ăn sáng; Đúng/Sai)", trang_thai: de-xuat}
+11.5.1: {ten: "Tính số hạng của dãy số cho bởi công thức số hạng tổng quát", trang_thai: da-duyet}
+11.21.6: {ten: "Tập xác định của hàm số chứa căn của lôgarit", trang_thai: da-duyet}
+11.21.7: {ten: "Cường độ ánh sáng giảm theo độ sâu I = I0.a^d: hằng số a, giá trị, bất phương trình mũ (Đúng/Sai)", trang_thai: da-duyet}
+11.27.10: {ten: "Thể tích khối lăng trụ biết diện tích đáy và chiều cao", trang_thai: da-duyet}
+12.1.8: {ten: "Xét tính đơn điệu của hàm bậc ba qua đạo hàm, chọn khẳng định đúng", trang_thai: da-duyet}
+12.3.5: {ten: "Tiệm cận ngang của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số)", trang_thai: da-duyet}
+12.6.4: {ten: "Tổng ba vectơ từ một đỉnh của tứ diện qua trọng tâm mặt đối diện", trang_thai: da-duyet}
+12.8.10: {ten: "Khoảng cách từ một điểm đến trục tọa độ", trang_thai: da-duyet}
+12.8.11: {ten: "Tọa độ hóa mái nhà: góc giữa hai vectơ", trang_thai: da-duyet}
+12.11.5: {ten: "Nguyên hàm của tan^2 x bằng công thức 1 + tan^2 x = 1/cos^2 x", trang_thai: da-duyet}
+12.13.12: {ten: "Thể tích chi tiết máy có đường sinh là parabol, quay quanh trục tung", trang_thai: da-duyet}
+12.15.4: {ten: "Phương trình tham số của đường thẳng qua một điểm và song song với đường thẳng cho trước", trang_thai: da-duyet}
+12.19.6: {ten: "Xác suất toàn phần và Bayes từ xác suất có điều kiện hai bước (đi học bằng xe đạp, ăn sáng; Đúng/Sai)", trang_thai: da-duyet}
