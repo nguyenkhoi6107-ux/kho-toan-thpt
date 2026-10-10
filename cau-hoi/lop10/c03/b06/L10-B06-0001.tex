@@ -1,0 +1,37 @@
+%% ma: L10-B06-0001
+%% lop: 10
+%% chuong: 3
+%% bai: 6
+%% dang: 10.6.1
+%% loai: DS
+%% muc: [NB, TH, TH, TH]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 1"
+%% kien_thuc: "Bài 6 (định lí côsin), Bài 5 (giá trị lượng giác của góc từ 0° đến 180°). Đề nhắc góc nhị diện (Lớp 11 Bài 25) nhưng lời giải không cần"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 10.6.1 (định lí côsin trong bài toán thực tế: độ mở của máy tính xách tay) là dạng mới đề xuất."
+%% ghi_chu: "Đáp án gốc S Đ S Đ đúng. Hình gốc là ảnh chụp máy tính có đánh dấu ba điểm A, B, C; đã vẽ lại thành sơ đồ (đế máy, màn hình, tam giác BAC), không theo tỉ lệ."
+\begin{ex}
+Hình ảnh máy tính xách tay đang mở ở hình bên gợi nên góc nhị diện và số đo góc $\widehat{BAC}$ được gọi là độ mở của máy tính.
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \coordinate (A) at (0,0); \coordinate (B) at (1.5,-1.3);
+  \coordinate (C) at (.38,1.96); \coordinate (U) at (3.4,.25);
+  \fill[gray!25] (A)--($(A)+(U)$)--($(B)+(U)$)--(B)--cycle;
+  \draw (A)--($(A)+(U)$)--($(B)+(U)$)--(B)--cycle;
+  \fill[blue!10] (A)--($(A)+(U)$)--($(C)+(U)$)--(C)--cycle;
+  \draw (A)--($(A)+(U)$)--($(C)+(U)$)--(C)--cycle;
+  \draw[thick] (B)--(A)--(C);
+  \draw[dashed] (B)--(C);
+  \path (A) node[left]{$A$} (B) node[below]{$B$} (C) node[above]{$C$};
+\end{tikzpicture}
+\end{center}
+\choiceTF{$\cos\widehat{BAC}=-\dfrac{AB^2+AC^2-BC^2}{2AB\cdot AC}$}{\True Nếu $AB=AC=30$ cm và $BC=30\sqrt3$ cm thì $\cos\widehat{BAC}=-\dfrac12$}{Nếu $\cos\widehat{BAC}=-\dfrac12$ thì $\widehat{BAC}=60^\circ$}{\True Độ mở của máy tính là $120^\circ$ nếu $AB=AC=30$ cm và $BC=30\sqrt3$ cm}
+\loigiai{a) Sai: theo định lí côsin, $\cos\widehat{BAC}=\dfrac{AB^2+AC^2-BC^2}{2AB\cdot AC}$ (không có dấu trừ).
+
+b) Đúng: $\cos\widehat{BAC}=\dfrac{30^2+30^2-30^2\cdot3}{2\cdot30\cdot30}=-\dfrac12$.
+
+c) Sai: $\cos\widehat{BAC}=-\dfrac12$ và $0^\circ\le\widehat{BAC}\le180^\circ$ nên $\widehat{BAC}=120^\circ$.
+
+d) Đúng: theo b) và c), $\widehat{BAC}=120^\circ$.}
+\end{ex}

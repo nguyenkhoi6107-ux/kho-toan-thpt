@@ -150,3 +150,15 @@
 12.13.11: {ten: "Hàm bậc ba ax^3+bx^2+c đọc từ đồ thị: tìm hệ số, diện tích hình phẳng, tịnh tiến đồ thị lên theo Oy (Đúng/Sai)", trang_thai: de-xuat}
 12.17.6: {ten: "Phương trình mặt cầu biết tâm và một điểm thuộc mặt cầu", trang_thai: de-xuat}
 12.18.3: {ten: "Xác suất có điều kiện khi biết P(A), P(B), P(A∪B)", trang_thai: de-xuat}
+# --- Đề xuất từ đơn vị D08 (Đề số 8 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
+10.6.1: {ten: "Định lí côsin trong bài toán thực tế: độ mở của máy tính xách tay (Đúng/Sai)", trang_thai: de-xuat}
+11.6.4: {ten: "Tổng n số hạng đầu của cấp số cộng trong bài toán thực tế: tìm n nhỏ nhất để tổng vượt một giá trị", trang_thai: de-xuat}
+11.23.1: {ten: "Xét quan hệ vuông góc giữa hai đường thẳng trong hình chóp có cạnh bên vuông góc với đáy", trang_thai: de-xuat}
+12.5.7: {ten: "Tối ưu thể tích hộp không nắp gấp từ tấm bìa hình vuông (cắt bốn góc)", trang_thai: de-xuat}
+12.5.8: {ten: "Tối ưu quãng đường chạy dọc bờ biển (tổng hai căn thức, đạo hàm)", trang_thai: de-xuat}
+12.10.2: {ten: "Tính độ lệch chuẩn của một mẫu số liệu ghép nhóm (chọn khoảng chứa)", trang_thai: de-xuat}
+12.12.6: {ten: "Mô hình dịch bệnh cho bởi hai công thức: giá trị, giá trị lớn nhất, tích phân hiệu (Đúng/Sai)", trang_thai: de-xuat}
+12.14.5: {ten: "Mặt phẳng trung trực của đoạn thẳng trong không gian Oxyz", trang_thai: de-xuat}
+12.14.6: {ten: "Giao tuyến của hai mặt phẳng: chiều cao nóc nhà (khoảng cách từ đường thẳng đến mặt phẳng Oxy)", trang_thai: de-xuat}
+12.18.4: {ten: "Xác suất có điều kiện và công thức nhân từ các tỉ lệ phần trăm (Đúng/Sai)", trang_thai: de-xuat}
+12.19.5: {ten: "Công thức Bayes với xét nghiệm nhanh: xác suất bị bệnh khi cho kết quả dương tính", trang_thai: de-xuat}

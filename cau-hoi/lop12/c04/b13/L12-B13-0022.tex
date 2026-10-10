@@ -1,0 +1,35 @@
+%% ma: L12-B13-0022
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "9,8"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 3"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi hai đồ thị), Bài 12 (tích phân), Lớp 10 Bài 16 (hàm số bậc hai)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 9,8 đúng (sympy: 4√6 ≈ 9,798). Hình dựng lại từ số liệu của lời giải gốc: f(x) = x^2/4 - 1 (qua (0;-1), (2;0)), g(x) = -x^2/4 + 2 (qua (0;2), (2;1)); nhãn y = f(x), y = g(x) đặt ở nhánh bên trái như hình gốc. Ảnh con mắt/người ngồi bàn là ảnh trang trí, đã bỏ. Cùng ý tưởng với các câu dạng 12.13.3."
+\begin{ex}
+Bạn Hải nhận thiết kế logo hình con mắt (phần được tô đậm) cho một cơ sở y tế. Logo là hình phẳng giới hạn bởi hai parabol $y=f(x)$ và $y=g(x)$ như hình dưới (đơn vị trên mỗi trục toạ độ là decimét). Bạn Hải cần tính diện tích của logo để báo giá cho cơ sở y tế đó trước khi kí hợp đồng. Diện tích của logo là bao nhiêu decimét vuông (làm tròn kết quả đến hàng phần mười)?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \fill[gray!35] plot[domain=-2.449:2.449,samples=60] (\x,{2-\x*\x/4}) -- plot[domain=2.449:-2.449,samples=60] (\x,{\x*\x/4-1}) -- cycle;
+  \draw[truc] (-3.6,0)--(3.8,0) node[below]{$x$};
+  \draw[truc] (0,-1.6)--(0,2.5) node[right]{$y$};
+  \draw[thick,domain=-3.2:3.2,samples=60] plot (\x,{\x*\x/4-1});
+  \draw[thick,domain=-3.2:3.2,samples=60] plot (\x,{2-\x*\x/4});
+  \draw[phu] (0,1)--(2,1)--(2,0);
+  \foreach \t in {-2,2} \draw (\t,.07)--(\t,-.07) node[below,font=\footnotesize]{$\t$};
+  \foreach \t in {-1,1,2} \draw (.07,\t)--(-.07,\t) node[left,font=\footnotesize,xshift=-5pt]{$\t$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[font=\footnotesize] at (-3.05,1.9) {$y=f(x)$};
+  \node[font=\footnotesize] at (-3.0,-1.25) {$y=g(x)$};
+\end{tikzpicture}
+\end{center}
+\shortans{9,8}
+\loigiai{Parabol $y=f(x)$ nhận $Oy$ làm trục đối xứng, đi qua $(0;-1)$ và $(2;0)$ nên $f(x)=\dfrac{x^2}4-1$. Tương tự parabol $y=g(x)$ đi qua $(0;2)$ và $(2;1)$, nhận $Oy$ làm trục đối xứng nên $g(x)=-\dfrac{x^2}4+2$.
+Hoành độ giao điểm: $\dfrac{x^2}4-1=-\dfrac{x^2}4+2\Leftrightarrow x=\pm\sqrt6$.
+Diện tích logo
+\begin{align*}S&=\int_{-\sqrt6}^{\sqrt6}\left[\left(-\dfrac{x^2}4+2\right)-\left(\dfrac{x^2}4-1\right)\right]\mathrm dx=\int_{-\sqrt6}^{\sqrt6}\left(3-\dfrac{x^2}2\right)\mathrm dx\\&=\left(3x-\dfrac{x^3}6\right)\Big|_{-\sqrt6}^{\sqrt6}=4\sqrt6\approx9{,}8\ (\mathrm{dm}^2).\end{align*}}
+\end{ex}

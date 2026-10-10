@@ -1,0 +1,27 @@
+%% ma: L11-B06-0004
+%% lop: 11
+%% chuong: 2
+%% bai: 6
+%% dang: 11.6.4
+%% loai: TLN
+%% muc: VD
+%% dap_an: "18"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 1"
+%% kien_thuc: "Bài 6 (cấp số cộng, tổng của n số hạng đầu), Lớp 10 Bài 17 (bất phương trình bậc hai)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 11.6.4 (tổng n số hạng đầu của cấp số cộng trong bài toán thực tế, tìm n nhỏ nhất) là dạng mới đề xuất."
+%% ghi_chu: "Đáp án gốc 18 đúng (sympy). Đề gốc nói 'hỗ trợ cho bốn người dân ... là 5 triệu đồng/người': số 'bốn người' không dùng đến, giữ nguyên theo gốc. Ảnh gốc (người làm tạp vụ) là ảnh trang trí, đã bỏ."
+\begin{ex}
+Một doanh nghiệp hỗ trợ cho bốn người dân bị thất nghiệp ở một khu phố là $5$ triệu đồng/người với điều kiện như sau:
+\begin{itemize}[leftmargin=1.5em,nosep]
+  \item Người thất nghiệp của khu phố làm việc tạp vụ cho doanh nghiệp trong nhiều ngày liên tiếp.
+  \item Sau ngày đầu tiên, doanh nghiệp cho $110$ nghìn đồng/người.
+  \item Bắt đầu từ ngày thứ hai, mỗi ngày tăng thêm $20$ nghìn đồng/người so với ngày hôm trước.
+\end{itemize}
+Mỗi người thất nghiệp phải làm cho doanh nghiệp đó ít nhất bao nhiêu ngày để có được hơn $5$ triệu đồng (làm tròn kết quả đến hàng đơn vị)?
+\shortans{18}
+\loigiai{Số tiền (nghìn đồng) nhận được ở ngày thứ $n$ lập thành cấp số cộng $u_1=110$, công sai $d=20$. Tổng số tiền sau $n$ ngày
+\[S_n=\dfrac{n\,[2\cdot110+(n-1)\cdot20]}{2}=10\left(n^2+10n\right).\]
+$S_n>5000\Leftrightarrow n^2+10n-500>0\Leftrightarrow n>-5+5\sqrt{21}\approx17{,}9$.
+Vì $n$ nguyên dương nên $n\ge18$. (Kiểm tra: $S_{17}=4590$, $S_{18}=5040$.) Vậy cần làm ít nhất $18$ ngày.}
+\end{ex}

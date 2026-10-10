@@ -1,0 +1,39 @@
+%% ma: L12-B05-0011
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.8
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2932"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 6"
+%% kien_thuc: "Bài 5 (ứng dụng đạo hàm: tối ưu quãng đường), Bài 2 (giá trị nhỏ nhất trên đoạn), định lí Pythagore"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.5.8 (tối ưu quãng đường chạy dọc bờ biển: tổng hai căn thức) là dạng mới đề xuất."
+%% ghi_chu: "Đáp án gốc 2932 đúng (sympy: min = 1,5 + sqrt(2,05) = 2,9318 km). Hình dựng lại theo hình gốc (nhà, chợ, hai mũi tên đi và đến bờ biển, bờ biển có đường nét đứt phía dưới), không theo tỉ lệ; không ghi tên các điểm H, K, B, C vì đề gốc không ghi. Phân vân giữa VD và VDC, chọn VD."
+\begin{ex}
+(Chuyên Phan Bội Châu -- Nghệ An 2025) Nhà thầy Hùng cách bờ biển $1$ km. Mỗi buổi sáng thầy chạy bộ từ nhà ra bờ biển sau đó chạy dọc bờ biển $500$ m, rồi thầy chạy qua chợ hải sản để lấy thức ăn trong ngày, cuối cùng thầy chạy về nhà. Biết chợ hải sản cách bờ biển $400$ m và cách nhà thầy Hùng $1$ km, tính quãng đường ngắn nhất mà thầy Hùng đã chạy trong mỗi buổi sáng (đơn vị m và làm tròn đến hàng đơn vị).
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (A) at (0,2.5); \coordinate (D) at (2,1);
+  \coordinate (B) at (.55,0); \coordinate (C) at (1.8,0);
+  \draw[phu] (A)--(0,0);
+  \draw[phu] (D)--(2,0);
+  \draw[thick] (-.7,0)--(3,0);
+  \draw[dashed,gray] (-.7,-.35)--(3,-.35);
+  \draw[->,thick] (A)--(B);
+  \draw[->,thick] (C)--(D);
+  \draw (A)--(D);
+  \fill (A) circle (1.3pt) (D) circle (1.3pt) (B) circle (1.3pt) (C) circle (1.3pt);
+  \node[above right] at (A) {Nhà};
+  \node[above right] at (D) {Chợ};
+  \node[below,font=\footnotesize] at (1.2,-.35) {Biển};
+\end{tikzpicture}
+\end{center}
+\shortans{2932}
+\loigiai{Đổi $500$ m $=0{,}5$ km, $400$ m $=0{,}4$ km. Đặt nhà là $A$, chợ là $D$; $H,K$ là hình chiếu của $A,D$ lên bờ biển; $B$ là điểm thầy ra bờ biển, $C$ là điểm thầy rời bờ biển ($BC=0{,}5$). Lấy $I$ trên $AH$ sao cho $DI\parallel HK$: $AI=1-0{,}4=0{,}6$, $HK=ID=\sqrt{AD^2-AI^2}=\sqrt{1-0{,}36}=0{,}8$.
+Đặt $HB=x$ (km), $0\le x\le0{,}3$, suy ra $CK=0{,}8-x-0{,}5=0{,}3-x$. Quãng đường mỗi buổi sáng
+\[f(x)=AB+BC+CD+DA=\sqrt{x^2+1}+0{,}5+\sqrt{(0{,}3-x)^2+0{,}4^2}+1.\]
+$f'(x)=\dfrac{x}{\sqrt{x^2+1}}+\dfrac{x-0{,}3}{\sqrt{(0{,}3-x)^2+0{,}16}}=0\Leftrightarrow x=\dfrac3{14}$. Lập bảng biến thiên: $f$ giảm trên $\left[0;\dfrac3{14}\right]$, tăng trên $\left[\dfrac3{14};0{,}3\right]$ nên
+$\min f=f\left(\dfrac3{14}\right)=\dfrac{\sqrt{205}}{10}+1{,}5\approx2{,}932$ km $=2932$ m.}
+\end{ex}

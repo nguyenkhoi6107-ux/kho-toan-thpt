@@ -81,8 +81,10 @@ L10-B02-0042,cau-hoi,10,1,2,10.2.7,TLN,VD,"0,67",chinh-thuc,"Ảnh giáo viên g
 L10-B02-0043,cau-hoi,10,1,2,10.2.7,TLN,VD,5,chinh-thuc,"Ảnh giáo viên gửi 10/10/2026 (ThS. Nguyễn Hoàng Việt, Chương 2 Tập hợp), Đề 2 (đề thứ hai, không ghi tiêu đề), Phần 3 Câu 21",cau-hoi/lop10/c01/b02/L10-B02-0043.tex
 L10-B02-0044,cau-hoi,10,1,2,10.2.7,TLN,VD,"2,67",chinh-thuc,"Ảnh giáo viên gửi 10/10/2026 (ThS. Nguyễn Hoàng Việt, Chương 2 Tập hợp), Đề 2 (đề thứ hai, không ghi tiêu đề), Phần 3 Câu 22",cau-hoi/lop10/c01/b02/L10-B02-0044.tex
 L10-B04-0001,cau-hoi,10,2,4,10.4.1,TLN,VD,"5,8",cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 1",cau-hoi/lop10/c02/b04/L10-B04-0001.tex
+L10-B06-0001,cau-hoi,10,3,6,10.6.1,DS,NB-TH-TH-TH,SĐSĐ,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 1",cau-hoi/lop10/c03/b06/L10-B06-0001.tex
 L10-B09-0001,cau-hoi,10,4,9,10.9.1,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 6",cau-hoi/lop10/c04/b09/L10-B09-0001.tex
 L10-B11-0001,cau-hoi,10,4,11,10.11.1,TN4,TH,A,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 4",cau-hoi/lop10/c04/b11/L10-B11-0001.tex
+L10-B11-0002,cau-hoi,10,4,11,10.11.1,TN4,TH,B,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 3",cau-hoi/lop10/c04/b11/L10-B11-0002.tex
 L10-B22-0001,cau-hoi,10,7,22,10.22.1,TLN,VD,"6,2",chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần III Câu 1",cau-hoi/lop10/c07/b22/L10-B22-0001.tex
 L10-B24-0001,cau-hoi,10,8,24,10.24.1,TLN,VD,43,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần III Câu 2",cau-hoi/lop10/c08/b24/L10-B24-0001.tex
 L10-B24-0002,cau-hoi,10,8,24,10.24.1,TLN,VD,35,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần III Câu 2",cau-hoi/lop10/c08/b24/L10-B24-0002.tex
@@ -92,6 +94,7 @@ L11-B04-0002,cau-hoi,11,1,4,11.4.2,TN4,TH,B,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI
 L11-B06-0001,cau-hoi,11,2,6,11.6.1,TN4,NB,C,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 10",cau-hoi/lop11/c02/b06/L11-B06-0001.tex
 L11-B06-0002,cau-hoi,11,2,6,11.6.2,TN4,NB,D,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần I Câu 11",cau-hoi/lop11/c02/b06/L11-B06-0002.tex
 L11-B06-0003,cau-hoi,11,2,6,11.6.3,TLN,NB,"67,2",chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 1",cau-hoi/lop11/c02/b06/L11-B06-0003.tex
+L11-B06-0004,cau-hoi,11,2,6,11.6.4,TLN,VD,18,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 1",cau-hoi/lop11/c02/b06/L11-B06-0004.tex
 L11-B07-0001,cau-hoi,11,2,7,11.7.1,TN4,NB,A,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 3",cau-hoi/lop11/c02/b07/L11-B07-0001.tex
 L11-B07-0002,cau-hoi,11,2,7,11.7.2,TN4,TH,C,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 5",cau-hoi/lop11/c02/b07/L11-B07-0002.tex
 L11-B09-0001,cau-hoi,11,3,9,11.9.1,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần I Câu 4",cau-hoi/lop11/c03/b09/L11-B09-0001.tex
@@ -105,7 +108,9 @@ L11-B21-0003,cau-hoi,11,6,21,11.21.3,TN4,NB,C,chinh-thuc,"(NBV)-ĐỀ SỐ 2-M�
 L11-B21-0004,cau-hoi,11,6,21,11.21.5,TN4,TH,C,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 3",cau-hoi/lop11/c06/b21/L11-B21-0004.tex
 L11-B21-0005,cau-hoi,11,6,21,11.21.1,TN4,TH,B,chinh-thuc,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 7",cau-hoi/lop11/c06/b21/L11-B21-0005.tex
 L11-B21-0006,cau-hoi,11,6,21,11.21.4,DS,NB-TH-VD-VD,SĐSS,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 1",cau-hoi/lop11/c06/b21/L11-B21-0006.tex
+L11-B21-0007,cau-hoi,11,6,21,11.21.5,TN4,TH,A,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 2",cau-hoi/lop11/c06/b21/L11-B21-0007.tex
 L11-B22-0001,cau-hoi,11,7,22,11.22.1,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 9",cau-hoi/lop11/c07/b22/L11-B22-0001.tex
+L11-B23-0001,cau-hoi,11,7,23,11.23.1,TN4,TH,B,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 10",cau-hoi/lop11/c07/b23/L11-B23-0001.tex
 L11-B24-0001,cau-hoi,11,7,24,11.24.1,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 9",cau-hoi/lop11/c07/b24/L11-B24-0001.tex
 L11-B24-0002,cau-hoi,11,7,24,11.24.2,TN4,TH,D,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 10",cau-hoi/lop11/c07/b24/L11-B24-0002.tex
 L11-B25-0001,cau-hoi,11,7,25,11.25.1,TN4,NB,A,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 8",cau-hoi/lop11/c07/b25/L11-B25-0001.tex
@@ -139,6 +144,7 @@ L12-B01-0008,cau-hoi,12,1,1,12.1.1,TN4,TH,A,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI
 L12-B01-0009,cau-hoi,12,1,1,12.1.3,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 6",cau-hoi/lop12/c01/b01/L12-B01-0009.tex
 L12-B01-0010,cau-hoi,12,1,1,12.1.6,TN4,TH,C,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 1",cau-hoi/lop12/c01/b01/L12-B01-0010.tex
 L12-B01-0011,cau-hoi,12,1,1,12.1.7,TN4,VD,B,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 12",cau-hoi/lop12/c01/b01/L12-B01-0011.tex
+L12-B01-0012,cau-hoi,12,1,1,12.1.3,TN4,TH,B,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 1",cau-hoi/lop12/c01/b01/L12-B01-0012.tex
 L12-B02-0001,cau-hoi,12,1,2,12.2.1,DS,NB-TH-TH-VD,ĐSĐĐ,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần II Câu 1",cau-hoi/lop12/c01/b02/L12-B02-0001.tex
 L12-B02-0002,cau-hoi,12,1,2,12.2.1,DS,TH-VD-VD-VD,SĐSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần II Câu 1 (THCS THPT Lê Thánh Tông - HCM 2025)",cau-hoi/lop12/c01/b02/L12-B02-0002.tex
 L12-B02-0003,cau-hoi,12,1,2,12.2.2,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 4",cau-hoi/lop12/c01/b02/L12-B02-0003.tex
@@ -150,6 +156,7 @@ L12-B03-0002,cau-hoi,12,1,3,12.3.1,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI
 L12-B03-0003,cau-hoi,12,1,3,12.3.2,TN4,NB,B,chinh-thuc,"(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 2",cau-hoi/lop12/c01/b03/L12-B03-0003.tex
 L12-B03-0004,cau-hoi,12,1,3,12.3.3,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 6",cau-hoi/lop12/c01/b03/L12-B03-0004.tex
 L12-B03-0005,cau-hoi,12,1,3,12.3.4,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 5",cau-hoi/lop12/c01/b03/L12-B03-0005.tex
+L12-B03-0006,cau-hoi,12,1,3,12.3.3,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 4",cau-hoi/lop12/c01/b03/L12-B03-0006.tex
 L12-B04-0001,cau-hoi,12,1,4,12.4.1,TN4,NB,B,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 7",cau-hoi/lop12/c01/b04/L12-B04-0001.tex
 L12-B04-0002,cau-hoi,12,1,4,12.4.2,TLN,VDC,"1,92",chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần III Câu 2 (Chuyên Hạ Long 2025)",cau-hoi/lop12/c01/b04/L12-B04-0002.tex
 L12-B05-0001,cau-hoi,12,1,5,12.5.1,TLN,VD,333,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần III Câu 5",cau-hoi/lop12/c01/b05/L12-B05-0001.tex
@@ -161,6 +168,8 @@ L12-B05-0006,cau-hoi,12,1,5,12.5.1,TLN,VDC,253,chinh-thuc,"(NBV)-ĐỀ SỐ 4-M�
 L12-B05-0007,cau-hoi,12,1,5,12.5.1,TLN,VD,19,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 1",cau-hoi/lop12/c01/b05/L12-B05-0007.tex
 L12-B05-0008,cau-hoi,12,1,5,12.5.5,TLN,VDC,"67,3",chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 3 (Sở Ninh Bình 2025)",cau-hoi/lop12/c01/b05/L12-B05-0008.tex
 L12-B05-0009,cau-hoi,12,1,5,12.5.6,TLN,VDC,"98,8",cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 6",cau-hoi/lop12/c01/b05/L12-B05-0009.tex
+L12-B05-0010,cau-hoi,12,1,5,12.5.7,TN4,VD,A,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 12",cau-hoi/lop12/c01/b05/L12-B05-0010.tex
+L12-B05-0011,cau-hoi,12,1,5,12.5.8,TLN,VD,2932,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 6",cau-hoi/lop12/c01/b05/L12-B05-0011.tex
 L12-B06-0001,cau-hoi,12,2,6,12.6.1,TN4,TH,D,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 11",cau-hoi/lop12/c02/b06/L12-B06-0001.tex
 L12-B06-0002,cau-hoi,12,2,6,12.6.2,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần I Câu 3",cau-hoi/lop12/c02/b06/L12-B06-0002.tex
 L12-B06-0003,cau-hoi,12,2,6,12.6.3,TN4,TH,B,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 4",cau-hoi/lop12/c02/b06/L12-B06-0003.tex
@@ -182,16 +191,19 @@ L12-B08-0010,cau-hoi,12,2,8,12.8.8,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI
 L12-B08-0011,cau-hoi,12,2,8,12.8.1,DS,TH-TH-TH-TH,ĐĐSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần II Câu 1 (THPT Gia Bình - Bắc Ninh 2025)",cau-hoi/lop12/c02/b08/L12-B08-0011.tex
 L12-B08-0012,cau-hoi,12,2,8,12.8.9,TLN,VD,"2,89",chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 4 (Sở Ninh Bình 2025)",cau-hoi/lop12/c02/b08/L12-B08-0012.tex
 L12-B08-0013,cau-hoi,12,2,8,12.8.4,DS,NB-NB-VD-VD,ĐĐSS,chinh-thuc,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 2",cau-hoi/lop12/c02/b08/L12-B08-0013.tex
+L12-B08-0014,cau-hoi,12,2,8,12.8.7,TN4,NB,A,chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 9",cau-hoi/lop12/c02/b08/L12-B08-0014.tex
 L12-B09-0001,cau-hoi,12,3,9,12.9.1,TN4,TH,A,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 2",cau-hoi/lop12/c03/b09/L12-B09-0001.tex
 L12-B09-0002,cau-hoi,12,3,9,12.9.2,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 5",cau-hoi/lop12/c03/b09/L12-B09-0002.tex
 L12-B10-0001,cau-hoi,12,3,10,12.10.1,TN4,TH,A,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 3",cau-hoi/lop12/c03/b10/L12-B10-0001.tex
 L12-B10-0002,cau-hoi,12,3,10,12.10.1,TN4,TH,A,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 9",cau-hoi/lop12/c03/b10/L12-B10-0002.tex
 L12-B10-0003,cau-hoi,12,3,10,12.10.1,TN4,TH,A,chinh-thuc,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 2",cau-hoi/lop12/c03/b10/L12-B10-0003.tex
+L12-B10-0004,cau-hoi,12,3,10,12.10.2,TN4,TH,A,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 8",cau-hoi/lop12/c03/b10/L12-B10-0004.tex
 L12-B11-0001,cau-hoi,12,4,11,12.11.1,TN4,NB,B,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 1",cau-hoi/lop12/c04/b11/L12-B11-0001.tex
 L12-B11-0002,cau-hoi,12,4,11,12.11.2,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 5",cau-hoi/lop12/c04/b11/L12-B11-0002.tex
 L12-B11-0003,cau-hoi,12,4,11,12.11.3,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần I Câu 9",cau-hoi/lop12/c04/b11/L12-B11-0003.tex
 L12-B11-0004,cau-hoi,12,4,11,12.11.4,DS,NB-TH-VD-VD,ĐSĐĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần II Câu 4",cau-hoi/lop12/c04/b11/L12-B11-0004.tex
 L12-B11-0005,cau-hoi,12,4,11,12.11.1,TN4,TH,B,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 7",cau-hoi/lop12/c04/b11/L12-B11-0005.tex
+L12-B11-0006,cau-hoi,12,4,11,12.11.3,TN4,TH,D,chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 6",cau-hoi/lop12/c04/b11/L12-B11-0006.tex
 L12-B12-0001,cau-hoi,12,4,12,12.12.1,TLN,VD,43,chinh-thuc,"Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 2",cau-hoi/lop12/c04/b12/L12-B12-0001.tex
 L12-B12-0002,cau-hoi,12,4,12,12.12.2,DS,TH-TH-TH-VD,ĐĐSS,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần II Câu 2",cau-hoi/lop12/c04/b12/L12-B12-0002.tex
 L12-B12-0003,cau-hoi,12,4,12,12.12.2,DS,TH-VD-VD-VD,ĐĐĐS,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần II Câu 2 (THCS THPT Lê Thánh Tông - HCM 2025)",cau-hoi/lop12/c04/b12/L12-B12-0003.tex
@@ -200,6 +212,7 @@ L12-B12-0005,cau-hoi,12,4,12,12.12.2,DS,TH-TH-VD-VD,ĐĐSS,chinh-thuc,"(NBV)-Đ�
 L12-B12-0006,cau-hoi,12,4,12,12.12.3,TN4,NB,A,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 6",cau-hoi/lop12/c04/b12/L12-B12-0006.tex
 L12-B12-0007,cau-hoi,12,4,12,12.12.4,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 9",cau-hoi/lop12/c04/b12/L12-B12-0007.tex
 L12-B12-0008,cau-hoi,12,4,12,12.12.5,TN4,TH,C,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 9",cau-hoi/lop12/c04/b12/L12-B12-0008.tex
+L12-B12-0009,cau-hoi,12,4,12,12.12.6,DS,NB-TH-TH-VD,ĐĐSĐ,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 3",cau-hoi/lop12/c04/b12/L12-B12-0009.tex
 L12-B13-0001,cau-hoi,12,4,13,12.13.1,TLN,VDC,150,chinh-thuc,"Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 1",cau-hoi/lop12/c04/b13/L12-B13-0001.tex
 L12-B13-0002,cau-hoi,12,4,13,12.13.2,TLN,VDC,"0,46",chinh-thuc,"Tổng hợp VDC THPT 2026-2027 (PDF giáo viên gửi), Câu 3",cau-hoi/lop12/c04/b13/L12-B13-0002.tex
 L12-B13-0003,cau-hoi,12,4,13,12.13.1,TN4,NB,D,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 2",cau-hoi/lop12/c04/b13/L12-B13-0003.tex
@@ -220,10 +233,14 @@ L12-B13-0017,cau-hoi,12,4,13,12.13.1,TLN,VD,30,chinh-thuc,"(NBV)-ĐỀ SỐ 6-M�
 L12-B13-0018,cau-hoi,12,4,13,12.13.10,DS,TH-TH-VD-VDC,SSĐĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần II Câu 4 (theo Howard Anton, Irl C. Bivens, Calculus AP Edition 11E)",cau-hoi/lop12/c04/b13/L12-B13-0018.tex
 L12-B13-0019,cau-hoi,12,4,13,12.13.11,DS,NB-VD-VD-VD,SĐĐS,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 4",cau-hoi/lop12/c04/b13/L12-B13-0019.tex
 L12-B13-0020,cau-hoi,12,4,13,12.13.3,TLN,VD,54,chinh-thuc,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 3",cau-hoi/lop12/c04/b13/L12-B13-0020.tex
+L12-B13-0021,cau-hoi,12,4,13,12.13.1,TN4,TH,C,chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 7",cau-hoi/lop12/c04/b13/L12-B13-0021.tex
+L12-B13-0022,cau-hoi,12,4,13,12.13.3,TLN,VD,"9,8",chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 3",cau-hoi/lop12/c04/b13/L12-B13-0022.tex
 L12-B14-0001,cau-hoi,12,5,14,12.14.1,TN4,NB,B,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 7",cau-hoi/lop12/c05/b14/L12-B14-0001.tex
 L12-B14-0002,cau-hoi,12,5,14,12.14.2,TLN,VD,"4,9",chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 5",cau-hoi/lop12/c05/b14/L12-B14-0002.tex
 L12-B14-0003,cau-hoi,12,5,14,12.14.3,TN4,NB,B,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 10",cau-hoi/lop12/c05/b14/L12-B14-0003.tex
 L12-B14-0004,cau-hoi,12,5,14,12.14.4,DS,NB-TH-VD-VD,SĐSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần II Câu 3",cau-hoi/lop12/c05/b14/L12-B14-0004.tex
+L12-B14-0005,cau-hoi,12,5,14,12.14.5,TN4,TH,B,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 11",cau-hoi/lop12/c05/b14/L12-B14-0005.tex
+L12-B14-0006,cau-hoi,12,5,14,12.14.6,TLN,VD,5,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 2",cau-hoi/lop12/c05/b14/L12-B14-0006.tex
 L12-B15-0001,cau-hoi,12,5,15,12.15.1,TN4,NB,C,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần I Câu 4",cau-hoi/lop12/c05/b15/L12-B15-0001.tex
 L12-B15-0002,cau-hoi,12,5,15,12.15.2,TN4,NB,C,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần I Câu 7",cau-hoi/lop12/c05/b15/L12-B15-0002.tex
 L12-B15-0003,cau-hoi,12,5,15,12.15.2,TN4,NB,A,chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 12",cau-hoi/lop12/c05/b15/L12-B15-0003.tex
@@ -235,9 +252,11 @@ L12-B17-0003,cau-hoi,12,5,17,12.17.3,TN4,NB,A,chinh-thuc,"(NBV)-ĐỀ SỐ 1-M�
 L12-B17-0004,cau-hoi,12,5,17,12.17.4,TN4,NB,C,chinh-thuc,"(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 12",cau-hoi/lop12/c05/b17/L12-B17-0004.tex
 L12-B17-0005,cau-hoi,12,5,17,12.17.5,DS,VD-VD-VD-VDC,ĐSSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần II Câu 3 (THCS THPT Lê Thánh Tông - HCM 2025)",cau-hoi/lop12/c05/b17/L12-B17-0005.tex
 L12-B17-0006,cau-hoi,12,5,17,12.17.6,TN4,TH,A,cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 11",cau-hoi/lop12/c05/b17/L12-B17-0006.tex
+L12-B17-0007,cau-hoi,12,5,17,12.17.2,DS,TH-TH-TH-VD,ĐĐĐS,chinh-thuc,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 2",cau-hoi/lop12/c05/b17/L12-B17-0007.tex
 L12-B18-0001,cau-hoi,12,6,18,12.18.1,TLN,TH,"0,75",chinh-thuc,"(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 4",cau-hoi/lop12/c06/b18/L12-B18-0001.tex
 L12-B18-0002,cau-hoi,12,6,18,12.18.2,DS,TH-TH-TH-TH,SSĐĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần II Câu 3",cau-hoi/lop12/c06/b18/L12-B18-0002.tex
 L12-B18-0003,cau-hoi,12,6,18,12.18.3,TLN,VD,"0,3",cho-duyet,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 4",cau-hoi/lop12/c06/b18/L12-B18-0003.tex
+L12-B18-0004,cau-hoi,12,6,18,12.18.4,DS,NB-NB-TH-TH,ĐĐĐĐ,cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 4",cau-hoi/lop12/c06/b18/L12-B18-0004.tex
 L12-B19-0001,cau-hoi,12,6,19,12.19.1,DS,NB-TH-VD-VD,ĐSĐS,chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần II Câu 3",cau-hoi/lop12/c06/b19/L12-B19-0001.tex
 L12-B19-0002,cau-hoi,12,6,19,12.19.2,TLN,VD,"0,08",chinh-thuc,"0. ĐỀ THAM KHẢO TN THPT 2025.pdf (D00), Phần III Câu 6",cau-hoi/lop12/c06/b19/L12-B19-0002.tex
 L12-B19-0003,cau-hoi,12,6,19,12.19.1,DS,TH-TH-VD-VD,ĐSSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần II Câu 3 (THCS THPT Lê Thánh Tông - HCM 2025)",cau-hoi/lop12/c06/b19/L12-B19-0003.tex
@@ -250,3 +269,4 @@ L12-B19-0009,cau-hoi,12,6,19,12.19.4,TLN,VD,"0,3",chinh-thuc,"(NBV)-ĐỀ SỐ 5
 L12-B19-0010,cau-hoi,12,6,19,12.19.4,DS,NB-TH-TH-VD,SSSĐ,chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần II Câu 2",cau-hoi/lop12/c06/b19/L12-B19-0010.tex
 L12-B19-0011,cau-hoi,12,6,19,12.19.1,TLN,TH,"0,29",chinh-thuc,"(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 6",cau-hoi/lop12/c06/b19/L12-B19-0011.tex
 L12-B19-0012,cau-hoi,12,6,19,12.19.1,DS,NB-TH-VD-VD,ĐĐSS,chinh-thuc,"(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 3",cau-hoi/lop12/c06/b19/L12-B19-0012.tex
+L12-B19-0013,cau-hoi,12,6,19,12.19.5,TLN,VD,"0,71",cho-duyet,"(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 4",cau-hoi/lop12/c06/b19/L12-B19-0013.tex

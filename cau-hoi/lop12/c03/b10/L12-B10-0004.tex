@@ -1,0 +1,32 @@
+%% ma: L12-B10-0004
+%% lop: 12
+%% chuong: 3
+%% bai: 10
+%% dang: 12.10.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần I Câu 8"
+%% kien_thuc: "Bài 10 (độ lệch chuẩn của mẫu số liệu ghép nhóm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.10.2 (tính độ lệch chuẩn của một mẫu số liệu ghép nhóm, chọn khoảng chứa) là dạng mới đề xuất."
+%% ghi_chu: "Đáp án gốc A đúng (sympy: phương sai 20,2346, độ lệch chuẩn 4,4983 theo công thức SGK chia cho n; nếu dùng công thức mẫu chia cho n-1 thì 4,5176 thuộc [4,5;5,0)), nên đề ngầm dùng công thức chia cho n."
+\begin{ex}
+Bảng sau ghi lại chỉ số BMI của một số nhân viên nam của một doanh nghiệp.
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Chỉ số BMI & $[14;18)$ & $[18;22)$ & $[22;26)$ & $[26;30)$ & $[30;34)$ \\
+\hline
+Số nhân viên & $12$ & $26$ & $44$ & $22$ & $13$ \\
+\hline
+\end{tabular}
+\end{center}
+Độ lệch chuẩn của mẫu số liệu ghép nhóm trên thuộc khoảng nào sau đây?
+\choice{\True $[4{,}0;4{,}5)$}{$[4{,}5;5{,}0)$}{$[5{,}0;5{,}5)$}{$[5{,}5;6{,}0)$}
+\loigiai{Giá trị đại diện các nhóm: $16;20;24;28;32$ với tần số $12;26;44;22;13$, cỡ mẫu $n=117$.
+Số trung bình $\bar x=\dfrac{16\cdot12+20\cdot26+24\cdot44+28\cdot22+32\cdot13}{117}=\dfrac{2800}{117}\approx23{,}93$.
+Phương sai $s^2=\dfrac{16^2\cdot12+20^2\cdot26+24^2\cdot44+28^2\cdot22+32^2\cdot13}{117}-\bar x^2\approx20{,}235$.
+Độ lệch chuẩn $s=\sqrt{s^2}\approx4{,}498\in[4{,}0;4{,}5)$.}
+\end{ex}

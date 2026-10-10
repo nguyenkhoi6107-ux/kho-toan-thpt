@@ -1,0 +1,28 @@
+%% ma: L12-B12-0009
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.6
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần II Câu 3"
+%% kien_thuc: "Bài 12 (tích phân), Bài 1 và Bài 2 (đạo hàm, tính đơn điệu, giá trị lớn nhất trên đoạn)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.12.6 (mô hình dịch bệnh hai công thức: giá trị, giá trị lớn nhất, tích phân hiệu; Đúng/Sai) là dạng mới đề xuất. Đáp án gốc ý b) và c) mâu thuẫn với chính lời giải gốc, cần giáo viên xác nhận."
+%% ghi_chu: "ĐÁP ÁN GỐC SAI Ở HAI Ý: bảng đáp án gốc ghi Đ S Đ Đ. Ý b): lời giải gốc tính N2(40)=0 nên dịch kết thúc ở tuần 40, tức 20 tuần sau khi tiêm (tuần 20), nên ý b) ĐÚNG (gốc ghi Sai; ngay ý d) gốc cũng viết dịch kết thúc ở tuần 40). Ý c): giá trị lớn nhất là 148 NGHÌN người (đơn vị đề cho là nghìn), đề viết '148 triệu' nên ý c) SAI (gốc ghi Đúng, có vẻ gõ nhầm đơn vị). Đã dùng Đ Đ S Đ. Nếu giáo viên coi '148 triệu' là lỗi gõ cần sửa thành '148 nghìn' thì đáp án c) là Đ. Ý d): phép tích phân cho đơn vị người nhân tuần, mô hình không chặt về đơn vị nhưng giữ theo gốc. Ảnh gốc là ảnh minh họa dịch bệnh, đã bỏ."
+\begin{ex}
+Giả sử một loại dịch bệnh sau khi bùng phát $t$ tuần có số người nhiễm bệnh được tính theo công thức $N_1(t)=0{,}1t^2+0{,}4t+100$, $0\le t\le20$, trong đó $N_1(t)$ tính theo đơn vị nghìn người.
+
+Sau khi dịch bệnh bùng phát được $20$ tuần thì người ta mới điều chế được vắc xin và đưa vào sử dụng cho cộng đồng. Sau khi sử dụng vắc xin, số người nhiễm bệnh được tính theo công thức $N_2(t)=-0{,}2t^2+5t+120$, $20<t\le40$, trong đó $N_2(t)$ tính theo đơn vị nghìn người.
+\choiceTF{\True Sau khi dịch bùng phát $15$ tuần, số người nhiễm bệnh là $128{,}5$ nghìn người}{\True Kể từ thời điểm tiêm vắc xin, sau $20$ tuần thì dịch bệnh kết thúc}{Trong suốt thời gian dịch bệnh, số người nhiễm bệnh nhiều nhất là $148$ triệu người}{\True Số người mà vắc xin đã ngăn ngừa khỏi dịch bệnh trong thời gian xảy ra dịch bệnh là hơn $2$ triệu người}
+\loigiai{a) Đúng: $N_1(15)=0{,}1\cdot15^2+0{,}4\cdot15+100=128{,}5$ (nghìn người).
+
+b) Đúng: vắc xin được dùng từ tuần $20$; $N_2(t)=0\Leftrightarrow t=40$ (với $t>0$), tức dịch kết thúc ở tuần $40$, sau $20$ tuần kể từ lúc tiêm vắc xin.
+
+c) Sai: $N_1$ tăng trên $[0;20]$ nên $N_1\le N_1(20)=148$; $N_2'(t)=-0{,}4t+5<0$ với $t>20$ nên $N_2$ giảm, $N_2(t)<N_2(20)=140$. Số người nhiễm nhiều nhất là $148$ nghìn người, không phải $148$ triệu người.
+
+d) Đúng: nếu không có vắc xin thì số người nhiễm theo $N_1(t)$, nên số người được ngăn ngừa tính theo
+\[\int_{20}^{40}\big[N_1(t)-N_2(t)\big]\mathrm dt=\int_{20}^{40}\left(0{,}3t^2-4{,}6t-20\right)\mathrm dt=\left(0{,}1t^3-2{,}3t^2-20t\right)\Big|_{20}^{40}=2440,\]
+tức $2440$ nghìn người, hay $2{,}44$ triệu người, lớn hơn $2$ triệu.}
+\end{ex}

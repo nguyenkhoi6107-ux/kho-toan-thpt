@@ -1,0 +1,20 @@
+%% ma: L12-B19-0013
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.5
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,71"
+%% nguon: "(NBV)-ĐỀ SỐ 8-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D08, MỖI NGÀY 1 ĐỀ - Đề số 8), Phần III Câu 4"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần và công thức Bayes), Bài 18 (xác suất có điều kiện)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.19.5 (công thức Bayes với xét nghiệm nhanh: độ nhạy, độ đặc hiệu, xác suất bị bệnh khi dương tính) là dạng mới đề xuất."
+%% ghi_chu: "Đáp án gốc 0,71 đúng (sympy 42/59 = 0,7119). Ảnh gốc (dụng cụ thử) là ảnh trang trí, đã bỏ."
+\begin{ex}
+Một công ty dược phẩm giới thiệu một dụng cụ để kiểm tra sớm bệnh sốt xuất huyết. Về báo cáo kiểm định chất lượng của sản phẩm, họ cho biết như sau: Số người được thử là $8000$, trong số đó có $1200$ người đã bị nhiễm bệnh sốt xuất huyết và có $6800$ người không bị nhiễm bệnh sốt xuất huyết. Nhưng khi kiểm tra lại bằng dụng cụ của công ty, trong $1200$ người đã bị nhiễm bệnh sốt xuất huyết, có $70\%$ số người đó cho kết quả dương tính, còn lại cho kết quả âm tính. Trong $6800$ người không bị nhiễm bệnh sốt xuất huyết, có $5\%$ số người đó cho kết quả dương tính, còn lại cho kết quả âm tính. Xác suất mà một bệnh nhân với kết quả kiểm tra dương tính là bị nhiễm bệnh sốt xuất huyết bằng bao nhiêu? (viết kết quả dưới dạng số thập phân và làm tròn đến hàng phần trăm).
+\shortans{0,71}
+\loigiai{Trong $1200$ người nhiễm bệnh có $70\%\cdot1200=840$ người dương tính. Trong $6800$ người không nhiễm bệnh có $5\%\cdot6800=340$ người dương tính. Tổng số người dương tính là $840+340=1180$.
+Gọi $A$: "người được chọn nhiễm bệnh", $C$: "người được chọn có kết quả dương tính". Khi đó $P(C)=\dfrac{1180}{8000}$, $P(A\cap C)=\dfrac{840}{8000}$ và
+\[P(A\mid C)=\dfrac{P(A\cap C)}{P(C)}=\dfrac{840}{1180}=\dfrac{42}{59}\approx0{,}71.\]}
+\end{ex}
