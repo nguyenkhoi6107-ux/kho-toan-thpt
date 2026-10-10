@@ -40,7 +40,7 @@
 12.8.2: {ten: Thể tích lăng trụ đứng có đáy là đa giác xác định bằng tọa độ, trang_thai: da-duyet}
 12.13.4: {ten: Diện tích hình phẳng giới hạn bởi đồ thị hàm bậc ba và đường thẳng (đọc từ hình), trang_thai: da-duyet}
 12.15.2: {ten: Tìm vectơ chỉ phương từ phương trình chính tắc của đường thẳng, trang_thai: da-duyet}
-12.17.3: {ten: Viết phương trình mặt cầu biết tâm và bán kính, trang_thai: da-duyet}
+12.17.3: {ten: Viết phương trình mặt cầu biết tâm và bán kính hoặc một điểm thuộc mặt cầu, trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D02 (Đề số 2 MỖI NGÀY 1 ĐỀ), ngày 09/10/2026 ---
 10.9.1: {ten: Biểu diễn vectơ qua tỉ số độ dài của hai cạnh song song trong hình thang, trang_thai: da-duyet}
 11.9.2: {ten: Mốt của mẫu số liệu ghép nhóm và so sánh hai mẫu, trang_thai: da-duyet}
@@ -128,7 +128,7 @@
 11.27.8: {ten: "Thể tích khối chóp cụt đều từ cạnh hai đáy và cạnh bên (bài toán thực tế cái sọt)", trang_thai: da-duyet}
 12.3.4: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc hai trên bậc hai (cho đồ thị)", trang_thai: da-duyet}
 12.5.5: {ten: "Tối ưu diện tích hình chữ nhật nội tiếp phần còn lại của khúc gỗ tròn (mô hình thanh dầm và tấm ván)", trang_thai: da-duyet}
-12.7.1: {ten: "Tọa độ hình chiếu vuông góc của điểm lên mặt phẳng tọa độ (lên mặt phẳng hoặc trục tọa độ)", trang_thai: da-duyet}
+12.7.1: {ten: "Tọa độ hình chiếu vuông góc của điểm lên mặt phẳng hoặc trục tọa độ", trang_thai: da-duyet}
 12.8.9: {ten: "Độ dài ngắn nhất của đoạn nối hai điểm chuyển động trên hai cạnh của hình lập phương (tọa độ hóa)", trang_thai: da-duyet}
 12.17.5: {ten: "Thiên thạch và vệ tinh quanh Trái Đất: khoảng cách đến mặt cầu, tiếp tuyến, mặt phẳng trung trực, va chạm (Đúng/Sai)", trang_thai: da-duyet}
 12.13.10: {ten: "Công hút chất lỏng ra khỏi bể hình nón bằng tích phân (Đúng/Sai)", trang_thai: da-duyet}
