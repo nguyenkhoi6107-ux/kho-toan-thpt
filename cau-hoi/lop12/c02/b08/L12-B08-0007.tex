@@ -1,0 +1,26 @@
+%% ma: L12-B08-0007
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.6
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "SĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần II Câu 3"
+%% kien_thuc: "Bài 8 (tọa độ vectơ, độ dài vectơ, chuyển động thẳng đều trong Oxyz), phương trình đường thẳng; hàm bậc hai trên một đoạn"
+%% trang_thai: cho-duyet
+%% ghi_chu: "Đáp án gốc ý d ghi Đúng là SAI: lời giải gốc tính d(t)=6 căn(3(t-3)^2+2) (sai biến đổi; đúng là d(t)^2=36(3t^2-10t+29)) và còn tính giá trị tại t=10 để kết luận nhỏ nhất. Đúng: khoảng cách lớn nhất trong 10 giây đầu là d(10)=6 căn 229 xấp xỉ 90,8 m, không phải 73,2 m. Do đó đáp án đúng là S Đ S S (kiểm bằng sympy). Bỏ ảnh minh họa"
+%% ly_do: "Dạng toán mới đề xuất 12.8.6 chờ giáo viên duyệt"
+\begin{ex}
+Trong không gian xét một hệ trục toạ độ $Oxyz$ với đơn vị trên mỗi trục lấy theo mét. Một chiếc máy bay không người lái (drone) xuất phát từ điểm $O$ và bay với tốc độ không đổi, vectơ thể hiện độ dịch chuyển của máy bay sau mỗi giây là $\vec u=(4;-1;3)$. Cùng thời điểm, chiếc máy bay không người lái thứ hai xuất phát từ điểm $A(24;12;18)$ và bay với tốc độ không đổi, vectơ thể hiện độ dịch chuyển của máy bay sau mỗi giây là $\vec v=(-2;5;-3)$.
+\choiceTF
+{Chiếc máy bay thứ nhất di chuyển trên đường thẳng có phương trình là $\dfrac x4=\dfrac y1=\dfrac z{-3}$.}
+{\True Khoảng cách giữa hai chiếc máy bay sau khi xuất phát được $2$ giây được làm tròn đến hàng phần mười là $27{,}5$ mét.}
+{Hai chiếc máy bay có thể va chạm với nhau sau khi xuất phát.}
+{Trong $10$ giây đầu tiên sau khi xuất phát, khoảng cách lớn nhất giữa hai chiếc máy bay được làm tròn đến hàng phần mười là $73{,}2$ mét.}
+\loigiai{Sau $t$ giây, vị trí hai máy bay là $M_1(4t;-t;3t)$ và $M_2(24-2t;12+5t;18-3t)$.
+a) Đường thẳng qua $O$ có vectơ chỉ phương $\vec u=(4;-1;3)$ là $\dfrac x4=\dfrac y{-1}=\dfrac z3$, không phải phương trình đã cho. Sai.
+b) Tại $t=2$: $M_1(8;-2;6)$, $M_2(20;22;12)$, $M_1M_2=\sqrt{12^2+24^2+6^2}=\sqrt{756}\approx27{,}5$ m. Đúng.
+c) $M_1\equiv M_2$ cần $4t=24-2t$ và $-t=12+5t$, tức $t=4$ và $t=-2$, vô lý. Hai máy bay không va chạm. Sai.
+d) $M_1M_2^2=(24-6t)^2+(12+6t)^2+(18-6t)^2=36\left(3t^2-10t+29\right)$. Hàm bậc hai này có đồ thị hướng lên nên trên $[0;10]$ đạt giá trị lớn nhất tại một đầu mút: $t=0$ cho $6\sqrt{29}\approx32{,}3$; $t=10$ cho $6\sqrt{229}\approx90{,}8$. Khoảng cách lớn nhất là khoảng $90{,}8$ m, không phải $73{,}2$ m. Sai.}
+\end{ex}

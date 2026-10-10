@@ -1,0 +1,32 @@
+%% ma: L12-B09-0001
+%% lop: 12
+%% chuong: 3
+%% bai: 9
+%% dang: 12.9.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần I Câu 2"
+%% kien_thuc: "Bài 9 (khoảng tứ phân vị của mẫu số liệu ghép nhóm)"
+%% trang_thai: cho-duyet
+%% ghi_chu: "Đáp án gốc A đúng (kiểm bằng Python: cả hai khoảng tứ phân vị đều bằng 0,2644...). Mẫu B có cùng tần số với mẫu A, dịch đi 0,2 nên khoảng tứ phân vị bằng nhau"
+%% ly_do: "Dạng toán mới đề xuất 12.9.1 chờ giáo viên duyệt"
+\begin{ex}
+Cho hai mẫu số liệu ghép nhóm $A$ và $B$ có bảng tần số ghép nhóm như sau:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+$A$: Nhóm & $[71{,}8;72{,}0)$ & $[72{,}0;72{,}2)$ & $[72{,}2;72{,}4)$ & $[72{,}4;72{,}6)$ & $[72{,}6;72{,}8)$\\\hline
+Tần số & $2$ & $5$ & $9$ & $4$ & $1$\\\hline
+\end{tabular}
+
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+$B$: Nhóm & $[72{,}0;72{,}2)$ & $[72{,}2;72{,}4)$ & $[72{,}4;72{,}6)$ & $[72{,}6;72{,}8)$ & $[72{,}8;73{,}0)$\\\hline
+Tần số & $2$ & $5$ & $9$ & $4$ & $1$\\\hline
+\end{tabular}
+\end{center}
+Gọi $\Delta_A$ và $\Delta_B$ lần lượt là khoảng tứ phân vị của mẫu số liệu ghép nhóm $A$ và $B$. Phát biểu nào sau đây đúng?
+\choice{\True $\Delta_A=\Delta_B$}{$\Delta_A=\Delta_B+0{,}2$}{$\Delta_A=\Delta_B-0{,}2$}{$\left|\Delta_A-\Delta_B\right|>0{,}2$}
+\loigiai{Mẫu $A$ có $n=21$. Tứ phân vị thứ nhất: $\dfrac{21}{4}=5{,}25$ thuộc nhóm $[72{,}0;72{,}2)$ nên $Q_1=72+\dfrac{5{,}25-2}{5}\cdot0{,}2=72{,}13$. Tứ phân vị thứ ba: $\dfrac{3\cdot21}{4}=15{,}75$ thuộc nhóm $[72{,}2;72{,}4)$ nên $Q_3=72{,}2+\dfrac{15{,}75-7}{9}\cdot0{,}2\approx72{,}394$. Vậy $\Delta_A\approx0{,}264$.
+Mẫu $B$ có các tần số như mẫu $A$ nhưng mỗi nhóm dịch đi $0{,}2$ nên $Q_1,Q_3$ cùng tăng $0{,}2$, do đó $\Delta_B=\Delta_A$.}
+\end{ex}

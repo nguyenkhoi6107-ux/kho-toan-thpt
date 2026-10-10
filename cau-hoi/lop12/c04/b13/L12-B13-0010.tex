@@ -1,0 +1,27 @@
+%% ma: L12-B13-0010
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.6
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần II Câu 4"
+%% kien_thuc: "Bài 11 (nguyên hàm), Bài 12 (tích phân), Bài 13 (diện tích hình phẳng, thể tích khối tròn xoay)"
+%% trang_thai: cho-duyet
+%% ghi_chu: "Đáp án gốc Đ Đ S Đ đúng (kiểm bằng sympy: ý b 11/3, ý c 7/3, ý d 22,05). Ý d cần dùng máy tính cầm tay để lấy giá trị gần đúng"
+%% ly_do: "Dạng toán mới đề xuất 12.13.6 chờ giáo viên duyệt"
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}2x+1&\text{khi }x\le1\\4-x^2&\text{khi }x>1.\end{cases}$
+\choiceTF
+{\True $\displaystyle\int f(x)\,\mathrm dx=x^2+x+C$ với $\forall x\in(-\infty;1)$.}
+{\True $\displaystyle\int_0^2f(x)\,\mathrm dx=\dfrac{11}{3}$.}
+{Diện tích hình phẳng giới hạn bởi đồ thị hàm số $y=f(x)$, trục hoành, hai đường thẳng $x=2$, $x=3$ bằng $6$.}
+{\True Gọi $(D)$ là hình phẳng giới hạn bởi đồ thị hàm số $y=f(x)$ và đường thẳng $2x-4y+1=0$. Quay hình phẳng $(D)$ quanh trục hoành ta được khối tròn xoay có thể tích $V\approx22$ (kết quả làm tròn đến hàng đơn vị).}
+\loigiai{a) Với $x<1$: $f(x)=2x+1$ nên $\displaystyle\int f(x)\,\mathrm dx=x^2+x+C$. Đúng.
+b) $\displaystyle\int_0^2f(x)\,\mathrm dx=\int_0^1(2x+1)\,\mathrm dx+\int_1^2\left(4-x^2\right)\mathrm dx=2+\dfrac53=\dfrac{11}{3}$. Đúng.
+c) $S=\displaystyle\int_2^3\left|4-x^2\right|\mathrm dx=\int_2^3\left(x^2-4\right)\mathrm dx=\dfrac73\ne6$. Sai.
+d) Đường thẳng $y=\dfrac{2x+1}{4}$ cắt đồ thị tại $x=-\dfrac12$ (với $2x+1=\dfrac{2x+1}{4}$) và tại $x_0=\dfrac{-1+\sqrt{61}}{4}\approx1{,}70$ (với $4-x^2=\dfrac{2x+1}{4}$). Trên $\left[-\dfrac12;x_0\right]$ cả hai đồ thị nằm phía trên trục hoành, đồ thị $y=f(x)$ ở phía trên đường thẳng. Vậy
+\[V=\pi\int_{-1/2}^1\left[(2x+1)^2-\dfrac{(2x+1)^2}{16}\right]\mathrm dx+\pi\int_1^{x_0}\left[(4-x^2)^2-\dfrac{(2x+1)^2}{16}\right]\mathrm dx\approx22{,}05\approx22.\]
+Đúng.}
+\end{ex}

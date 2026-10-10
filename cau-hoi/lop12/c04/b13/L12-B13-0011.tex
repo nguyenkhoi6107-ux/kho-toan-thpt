@@ -1,0 +1,31 @@
+%% ma: L12-B13-0011
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "6,4"
+%% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 3"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi parabol và trục hoành)"
+%% ghi_chu: "Trùng ý tưởng với L12-B13-0004 (cùng dạng 12.13.3, diện tích có biên là parabol). Hình dựng lại từ số liệu của đề (đối xứng qua trục thẳng đứng, như hình gốc; đã thêm chữ “đối xứng” vào đề). Đáp án gốc 6,4 đúng (S=55/6 m2, 6,4167 triệu đồng)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Ông An muốn làm cửa rào sắt có hình dạng và kích thước như hình bên (đơn vị: mét). Biết đường cong phía trên là một phần của parabol đối xứng qua trục thẳng đứng của cửa. Giá $1\ \mathrm{m}^2$ rào sắt là $700\,000$ đồng. Hỏi ông An phải trả bao nhiêu tiền để làm cái cửa sắt như vậy? (kết quả tính bằng triệu đồng và làm tròn đến chữ số thập phân thứ nhất)
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.9cm]
+  \draw[thick] (0,1.5)--(0,0)--(5,0)--(5,1.5);
+  \draw[thick,domain=0:5,samples=60] plot (\x,{2-0.08*(\x-2.5)^2});
+  \draw[phu] (2.5,2)--(5.6,2);
+  \draw[phu] (0,0)--(0,-0.5);
+  \draw[phu] (5,0)--(5,-0.5);
+  \draw[<->] (0,-0.4)--(5,-0.4) node[midway,below]{$5$};
+  \draw[<->] (-0.4,0)--(-0.4,1.5) node[midway,left]{$1{,}5$};
+  \draw[<->] (5.4,0)--(5.4,2) node[midway,right]{$2$};
+\end{tikzpicture}
+\end{center}
+\shortans{6,4}
+\loigiai{Chọn hệ trục $Oxy$ với $O$ là trung điểm cạnh đáy, $Ox$ theo cạnh đáy. Parabol $y=ax^2+c$ đi qua $(0;2)$ và $(\pm2{,}5;1{,}5)$ nên $c=2$, $a=-\dfrac{2}{25}$, tức $y=-\dfrac{2}{25}x^2+2$.
+Diện tích cửa: $S=\displaystyle\int_{-2,5}^{2,5}\left(-\dfrac{2}{25}x^2+2\right)\mathrm dx=\dfrac{55}{6}\ (\mathrm{m}^2)$.
+Số tiền: $\dfrac{55}{6}\cdot700\,000\approx6\,416\,667$ đồng $\approx6{,}4$ triệu đồng.}
+\end{ex}

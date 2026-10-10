@@ -1,0 +1,26 @@
+%% ma: L11-B04-0001
+%% lop: 11
+%% chuong: 1
+%% bai: 4
+%% dang: 11.4.1
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần II Câu 1"
+%% kien_thuc: "Lớp 11 Bài 3 (hàm số lượng giác, giá trị lớn nhất, nhỏ nhất của sin), Bài 4 (phương trình lượng giác cơ bản)"
+%% trang_thai: cho-duyet
+%% ghi_chu: "Đáp án gốc Đ S Đ S đúng (kiểm bằng sympy). Bỏ ảnh minh họa thủy triều. Ý d: giữ nguyên lời đề gốc; trong ngày, mực nước từ 18 m trở lên là từ 2 giờ đến 10 giờ"
+%% ly_do: "Dạng toán mới đề xuất 11.4.1 chờ giáo viên duyệt"
+\begin{ex}
+Hàng ngày mực nước tại một cảng biển lên xuống theo thuỷ triều. Chiều cao $h$ (m) của mực nước theo thời gian $t$ (giờ) trong một ngày được cho bởi công thức
+\[h=14+8\sin\left(\dfrac{\pi}{12}t\right)\quad\text{với }0\le t\le24.\]
+\choiceTF
+{\True Lúc $6$ giờ sáng thì chiều cao của mực nước tại bến cảng là cao nhất.}
+{Chiều cao của mực nước tại bến cảng thấp nhất vào lúc $12$ giờ.}
+{\True Mực nước tại bến cảng cao $18$ m vào lúc $2$ giờ và $10$ giờ.}
+{Biết tàu chỉ vào được cảng khi mực nước trong cảng không thấp hơn $18$ m. Vậy thời gian tàu vào được cảng là từ $10$ giờ sáng hôm trước đến $2$ giờ sáng hôm sau.}
+\loigiai{a) $h(6)=14+8\sin\dfrac{\pi}{2}=22$ là giá trị lớn nhất của $h$ (vì $\sin\le1$). Đúng.
+b) Giá trị nhỏ nhất của $h$ là $6$, đạt khi $\sin\dfrac{\pi t}{12}=-1$, tức $t=18$; còn $h(12)=14$. Sai.
+c) $h=18\Leftrightarrow\sin\dfrac{\pi t}{12}=\dfrac12\Leftrightarrow\dfrac{\pi t}{12}=\dfrac{\pi}{6}$ hoặc $\dfrac{5\pi}{6}$ (do $0\le t\le24$), tức $t=2$ hoặc $t=10$. Đúng.
+d) $h\ge18\Leftrightarrow\sin\dfrac{\pi t}{12}\ge\dfrac12\Leftrightarrow2\le t\le10$: tàu vào được cảng từ $2$ giờ đến $10$ giờ sáng, không phải từ $10$ giờ sáng hôm trước đến $2$ giờ sáng hôm sau. Sai.}
+\end{ex}
