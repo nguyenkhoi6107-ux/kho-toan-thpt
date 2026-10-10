@@ -9,9 +9,28 @@
 %% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 6 (THPT Đào Duy Từ - Thanh Hóa 2025)"
 %% kien_thuc: "Bài 5 (bài toán thực tiễn, tìm giá trị lớn nhất bằng đạo hàm); Lớp 11 Bài 32 (đạo hàm); định lí Pythagore; khoảng cách từ điểm đến đường thẳng"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Đề gốc dùng ảnh ô tô có số đo và sơ đồ ngõ chữ L; đã viết lại mô tả bằng lời (bỏ hình, hai mép ngoài của hai đoạn đường vuông góc tại góc rẽ). Đáp án gốc 47 đúng (x=37/10, kiểm bằng Python bằng cả cách tối ưu số). Câu nhiều bước, mức VDC"
+%% ghi_chu: "Đề gốc dùng ảnh ô tô có số đo và sơ đồ ngõ chữ L; đã viết lại mô tả bằng lời. Đáp án gốc 47 đúng (x=37/10, kiểm bằng Python bằng cả cách tối ưu số). Câu nhiều bước, mức VDC. Hình minh họa dựng lại theo yêu cầu giáo viên 10/10/2026 (không ghi chiều cao cột thứ năm hay vị trí tới hạn của xe)"
 \begin{ex}
 Thầy Trương muốn mua một chiếc ôtô. Ngõ từ đường vào sân nhà thầy có dạng hình chữ L, gồm hai đoạn đường thẳng vuông góc với nhau, hai mép ngoài của hai đoạn đường gặp nhau vuông góc tại góc rẽ. Đoạn đường đầu tiên có chiều rộng bằng $x$ (m), đoạn đường thẳng vào sân có chiều rộng $2{,}6$ (m). Để tính toán và thiết kế đường đi cho ôtô từ ngõ vào sân, thầy Trương coi ôtô như một khối hộp chữ nhật, nhìn từ trên xuống là hình chữ nhật có chiều dài $5$ (m), chiều rộng $1{,}9$ (m) (đã tính cả khoảng an toàn). Chiều rộng nhỏ nhất của đoạn đường đầu tiên là $x=\dfrac pq$ (m) (với $p,q$ là các số nguyên dương và phân số $\dfrac pq$ tối giản) để ôtô của thầy Trương có thể đi vào được sân (giả thiết ôtô không đi ra ngoài đường, không đi nghiêng và ôtô không bị biến dạng). Khi đó $p+q$ bằng bao nhiêu?
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+  % mép ngoài (đáy và bên phải), mép trong
+  \draw[very thick] (-8,0)--(0,0)--(0,9.5);
+  \draw[very thick] (-8,3)--(-2.6,3)--(-2.6,9.5);
+  % xe trong đoạn đường đầu tiên
+  \draw[rounded corners=3pt,fill=blue!10] (-7.5,0.55) rectangle (-2.5,2.45);
+  \draw (-3.3,0.55)--(-3.3,2.45);
+  % xe trong đoạn đường vào sân
+  \draw[rounded corners=3pt,fill=blue!10] (-2.25,3.8) rectangle (-0.35,8.8);
+  \draw (-2.25,4.6)--(-0.35,4.6);
+  % kích thước
+  \draw[<->] (-8.5,0)--(-8.5,3) node[midway,left]{$x$};
+  \draw[<->] (-2.6,9.9)--(0,9.9) node[midway,above]{$2{,}6$};
+  \draw[<->] (-7.5,-0.5)--(-2.5,-0.5) node[midway,below]{$5$};
+  \draw[<->] (0.6,3.8)--(0.6,8.8) node[midway,right]{$5$};
+  \draw[<->] (-2.25,3.3)--(-0.35,3.3) node[midway,below,font=\scriptsize]{$1{,}9$};
+\end{tikzpicture}
+\end{center}
 \shortans{47}
 \loigiai{Chọn hệ trục $Oxy$ với $O$ là góc rẽ phía ngoài, hai tia $Ox$, $Oy$ nằm trên hai mép ngoài của hai đoạn đường; góc rẽ phía trong là $M(2{,}6;x)$.
 Khi ôtô đang rẽ, cạnh dài phía ngoài của ôtô là đoạn $AB$ dài $5$ với $B(a;0)$, $A(0;\sqrt{25-a^2})$, $0<a<5$. Cạnh dài phía trong song song với $AB$ và cách $AB$ một khoảng $1{,}9$, có phương trình $\dfrac xa+\dfrac y{\sqrt{25-a^2}}=1+\dfrac{9{,}5}{a\sqrt{25-a^2}}$.

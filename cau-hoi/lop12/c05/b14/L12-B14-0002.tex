@@ -9,9 +9,38 @@
 %% nguon: "(NBV)-ĐỀ SỐ 3-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D03, MỖI NGÀY 1 ĐỀ - Đề số 3), Phần III Câu 5"
 %% kien_thuc: "Bài 7 (hệ trục tọa độ trong không gian), Bài 14 (phương trình mặt phẳng đi qua ba điểm)"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Đề gốc dựa vào hình hộp để cho vị trí các cột; đã ghi rõ tọa độ chân cột trong đề (O, A(16;0), B(16;27), C(0;27) theo hình gốc: cạnh 16 m theo trục Ox, cạnh 27 m theo trục Oy) nên bỏ hình. Đáp án gốc 4,9 đúng (533/108 = 4,935)"
+%% ghi_chu: "Đề gốc dựa vào hình hộp để cho vị trí các cột; đã ghi rõ tọa độ chân cột trong đề (O, A(16;0), B(16;27), C(0;27) theo hình gốc: cạnh 16 m theo trục Ox, cạnh 27 m theo trục Oy) . Đáp án gốc 4,9 đúng (533/108 = 4,935). Hình minh họa dựng lại theo yêu cầu giáo viên 10/10/2026 (không ghi chiều cao cột thứ năm hay vị trí tới hạn của xe)"
 \begin{ex}
 Để chuẩn bị cho ngày hội thao, người ta dựng bốn chiếc cột vuông góc với mặt sân tại bốn góc $O$, $A$, $B$, $C$ của một sân bóng hình chữ nhật $OABC$ có kích thước $16\ \mathrm m\times27\ \mathrm m$ ($OA=16$ m, $OC=27$ m). Bốn chiếc cột tại $O$, $A$, $B$, $C$ có chiều cao lần lượt là $3$ m, $4$ m, $6$ m và $5$ m. Một tấm bạt lớn được căng với bốn góc cố định vào đầu của bốn chiếc cột. Chiếc cột thứ năm được dựng vuông góc với mặt sân tại điểm cách hai cạnh $OC$, $OA$ của sân lần lượt là $12$ m và $16$ m. Hỏi chiều cao tối đa của chiếc cột đó là bao nhiêu mét để cột không bị vướng vào tấm bạt (bỏ qua độ võng và bề dày của tấm bạt)? Kết quả viết dưới dạng số thập phân và làm tròn đến hàng phần mười.
+\begin{center}
+\begin{tikzpicture}[x={(-0.17cm,-0.12cm)},y={(0.2cm,0cm)},z={(0cm,0.4cm)}]
+  \coordinate (O) at (0,0,0);   \coordinate (A) at (16,0,0);
+  \coordinate (B) at (16,27,0); \coordinate (C) at (0,27,0);
+  \coordinate (O1) at (0,0,3);  \coordinate (A1) at (16,0,4);
+  \coordinate (B1) at (16,27,6);\coordinate (C1) at (0,27,5);
+  \coordinate (M) at (12,16,0);
+  \fill[green!12] (O1)--(A1)--(B1)--(C1)--cycle;
+  \draw (O)--(A)--(B)--(C)--cycle;
+  \draw (O)--(O1) (A)--(A1) (B)--(B1) (C)--(C1);
+  \draw[green!50!black,thick] (O1)--(A1)--(B1)--(C1)--cycle;
+  \draw[phu] (M)--(0,16,0);
+  \draw[phu] (M)--(12,0,0);
+  \fill (M) circle (1.2pt);
+  \node[below] at (M) {$M$};
+  \node[below right] at (O) {$O$};
+  \node[below] at (A) {$A$};
+  \node[below right] at (B) {$B$};
+  \node[above left] at (C) {$C$};
+  \node[right,inner sep=2pt] at ($(O)!.5!(O1)$) {$3$ m};
+  \node[left] at ($(A)!.5!(A1)$) {$4$ m};
+  \node[right] at ($(B)!.5!(B1)$) {$6$ m};
+  \node[right] at ($(C)!.5!(C1)$) {$5$ m};
+  \node[left,font=\scriptsize] at (8,0,0) {$16$ m};
+  \node[below,font=\scriptsize] at (16,13.5,0) {$27$ m};
+  \node[fill=white,inner sep=1pt,font=\scriptsize] at (6,16,0) {$12$ m};
+  \node[fill=white,inner sep=1pt,font=\scriptsize] at (12,8,0) {$16$ m};
+\end{tikzpicture}
+\end{center}
 \shortans{4,9}
 \loigiai{Chọn hệ trục $Oxyz$ với $O$ là gốc, $Ox$ theo $OA$, $Oy$ theo $OC$, $Oz$ vuông góc mặt sân. Đầu các cột là $(0;0;3)$, $(16;0;4)$, $(16;27;6)$, $(0;27;5)$. Chân cột thứ năm là $M(12;16;0)$.
 Mặt phẳng căng bạt đi qua $(0;0;3)$, $(16;0;4)$, $(0;27;5)$ có phương trình $27x+32y-432z+1296=0$ (điểm $(16;27;6)$ cũng thuộc mặt phẳng này).
