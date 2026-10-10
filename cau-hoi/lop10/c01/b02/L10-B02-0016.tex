@@ -1,0 +1,32 @@
+%% ma: L10-B02-0016
+%% lop: 10
+%% chuong: 1
+%% bai: 2
+%% dang: 10.2.2
+%% loai: DS
+%% muc: [TH, TH, TH, TH]
+%% dap_an: "ĐSSĐ"
+%% nguon: "Ảnh giáo viên gửi 10/10/2026 (ThS. Nguyễn Hoàng Việt, Chương 2 Tập hợp), A-Đề 1, Phần 2 Câu 14"
+%% kien_thuc: "Bài 2 (tập hợp và các phép toán trên tập hợp)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 10.2.2: xác định tập hợp bằng cách liệt kê phần tử (giải phương trình, bất phương trình trong N, Z, Q, R)"
+%% ghi_chu: "Đề gốc không có đáp án; tự giải (kiểm bằng sympy)"
+\begin{ex}
+Cho các tập hợp sau
+\begin{align*}
+A&=\{x\in\mathbb Q\mid x^2-x-6=0\};\\
+B&=\{x\in\mathbb Z\mid x^4-11x^2+18=0\};\\
+C&=\{x\in\mathbb N\mid(x^2-3x-10)(5x^3-6x^2+x)=0\};\\
+D&=\{x\in\mathbb Z\mid-2<3x+7\le10\}.
+\end{align*}
+Khi đó
+\choiceTF
+{\True Tập hợp $A$ có $2$ phần tử.}
+{Tập hợp $B$ có $3$ phần tử.}
+{Tập hợp $C$ có $2$ phần tử.}
+{\True Tập hợp $D$ có $4$ phần tử.}
+\loigiai{a) $x^2-x-6=0\Leftrightarrow x=3$ hoặc $x=-2$: $A=\{-2;3\}$, có $2$ phần tử. Đúng.
+b) $x^4-11x^2+18=0\Leftrightarrow x^2=2$ hoặc $x^2=9$; chỉ $x=\pm3$ là số nguyên nên $B=\{-3;3\}$ có $2$ phần tử. Sai.
+c) $x^2-3x-10=0\Leftrightarrow x=5$ hoặc $x=-2$; $5x^3-6x^2+x=x(5x-1)(x-1)=0\Leftrightarrow x=0,\ \dfrac15,\ 1$. Các nghiệm tự nhiên: $C=\{0;1;5\}$ có $3$ phần tử. Sai.
+d) $-2<3x+7\le10\Leftrightarrow-3<x\le1$, $x\in\mathbb Z$: $D=\{-2;-1;0;1\}$ có $4$ phần tử. Đúng.}
+\end{ex}

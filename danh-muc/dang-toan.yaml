@@ -111,3 +111,13 @@
 10.1.6: {ten: "Mệnh đề kéo theo, mệnh đề tương đương: xét tính đúng sai", trang_thai: da-duyet}
 10.1.7: {ten: "Suy luận logic từ các dữ kiện (xếp hàng, thang máy)", trang_thai: da-duyet}
 10.2.1: {ten: "Kí hiệu ∈, ⊂ giữa phần tử và tập hợp", trang_thai: da-duyet}
+# --- Đề xuất từ đề Tập hợp (ThS. Nguyễn Hoàng Việt, đề A và đề 2), ngày 10/10/2026 ---
+10.2.2: {ten: "Xác định tập hợp bằng cách liệt kê phần tử (giải phương trình, bất phương trình trong N, Z, Q, R)", trang_thai: de-xuat}
+10.2.3: {ten: "Tập hợp rỗng", trang_thai: de-xuat}
+10.2.4: {ten: "Tập con và số tập con", trang_thai: de-xuat}
+10.2.5: {ten: "Phép toán trên các tập hợp hữu hạn (hợp, giao, hiệu)", trang_thai: de-xuat}
+10.2.6: {ten: "Khoảng, đoạn, nửa khoảng và phép toán, phần bù", trang_thai: de-xuat}
+10.2.7: {ten: "Tìm tham số để các tập hợp thỏa quan hệ (giao khác rỗng, tập con, rời nhau)", trang_thai: de-xuat}
+10.2.8: {ten: "Biểu đồ Ven", trang_thai: de-xuat}
+10.2.9: {ten: "Bài toán đếm số phần tử bằng biểu đồ Ven", trang_thai: de-xuat}
+10.2.10: {ten: "Hai tập hợp bằng nhau", trang_thai: de-xuat}
