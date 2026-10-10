@@ -132,3 +132,21 @@
 12.8.9: {ten: "Độ dài ngắn nhất của đoạn nối hai điểm chuyển động trên hai cạnh của hình lập phương (tọa độ hóa)", trang_thai: da-duyet}
 12.17.5: {ten: "Thiên thạch và vệ tinh quanh Trái Đất: khoảng cách đến mặt cầu, tiếp tuyến, mặt phẳng trung trực, va chạm (Đúng/Sai)", trang_thai: da-duyet}
 12.13.10: {ten: "Công hút chất lỏng ra khỏi bể hình nón bằng tích phân (Đúng/Sai)", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị D07 (Đề số 7 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
+10.4.1: {ten: "Quy hoạch tuyến tính: tối đa lợi nhuận đóng hai loại thuyền (hệ bất phương trình bậc nhất hai ẩn)", trang_thai: de-xuat}
+10.11.1: {ten: "Độ dài vectơ hiệu khi biết độ dài hai vectơ và tích vô hướng", trang_thai: de-xuat}
+11.7.2: {ten: "Tính chất của cấp số nhân: u_m u_n = u_p u_q khi m+n=p+q", trang_thai: de-xuat}
+11.21.4: {ten: "Phương trình lôgarit log_3(7-3^x)=1-x: điều kiện, quy về bậc hai theo 3^x, nghiệm và tổng nghiệm (Đúng/Sai)", trang_thai: de-xuat}
+11.21.5: {ten: "Phương trình mũ quy về cùng cơ số", trang_thai: de-xuat}
+11.24.2: {ten: "Góc giữa cạnh bên và mặt đáy của hình chóp có cạnh bên vuông góc với đáy", trang_thai: de-xuat}
+11.27.9: {ten: "Tỉ số thể tích khối chóp cụt tứ giác đều và khối hộp chữ nhật ghép thành ống khói (đọc từ hình chiếu)", trang_thai: de-xuat}
+12.1.6: {ten: "Tìm cực trị của hàm phân thức bậc hai trên bậc nhất, xét khẳng định sai", trang_thai: de-xuat}
+12.1.7: {ten: "Số giá trị nguyên của tham số m để hàm bậc ba nghịch biến trên R", trang_thai: de-xuat}
+12.2.5: {ten: "Đọc giá trị lớn nhất trên một đoạn từ đồ thị (đạt tại đầu mút)", trang_thai: de-xuat}
+12.5.6: {ten: "Tối ưu thể tích lăng trụ lục giác đều gấp từ tấm tôn hình tam giác đều", trang_thai: de-xuat}
+12.7.2: {ten: "Tọa độ hình chiếu vuông góc của điểm lên trục tọa độ (cùng ý tưởng 12.7.1 nhưng chiếu lên trục)", trang_thai: de-xuat}
+12.7.3: {ten: "Tọa độ hóa cabin thang máy: tìm kích thước từ thể tích và diện tích toàn phần, tọa độ điểm gắn camera", trang_thai: de-xuat}
+12.12.5: {ten: "Tính tích phân cơ bản của đa thức và hàm mũ", trang_thai: de-xuat}
+12.13.11: {ten: "Hàm bậc ba ax^3+bx^2+c đọc từ đồ thị: tìm hệ số, diện tích hình phẳng, tịnh tiến đồ thị lên theo Oy (Đúng/Sai)", trang_thai: de-xuat}
+12.17.6: {ten: "Phương trình mặt cầu biết tâm và một điểm thuộc mặt cầu", trang_thai: de-xuat}
+12.18.3: {ten: "Xác suất có điều kiện khi biết P(A), P(B), P(A∪B)", trang_thai: de-xuat}

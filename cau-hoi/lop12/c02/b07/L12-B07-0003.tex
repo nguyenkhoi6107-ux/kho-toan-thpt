@@ -1,0 +1,46 @@
+%% ma: L12-B07-0003
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "22"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 5"
+%% kien_thuc: "Bài 7 (tọa độ của điểm trong không gian), giải phương trình bậc ba (máy tính cầm tay), thể tích và diện tích toàn phần hình hộp chữ nhật (Lớp 8)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.7.3 (Tọa độ hóa cabin thang máy: tìm kích thước từ thể tích và diện tích toàn phần, tọa độ điểm gắn camera); chờ giáo viên duyệt dạng."
+%% ghi_chu: "Đáp án gốc (bảng đáp án ghi 98,8 ở câu 5 do hoán đổi với câu 6; lời giải gốc ghi 50) KHÔNG khớp: lời giải gốc tìm đúng P(2;28;48) nhưng ghi a+b+c=50 trong khi 2+28+48=78, còn đề hỏi a-b+c=22. Dùng đáp án 22 theo hệ trục của hình gốc (O ở chân vách bên phải, trục y chạy dọc vách phải về góc sau, trục x chạy về phía người nhìn, camera ở góc sau của trần, cách hai vách kề nhau 10 cm). Nếu giáo viên hiểu hệ trục khác thì đáp số khác (74 hoặc 48), cần xác nhận. Hình dựng lại bằng phép chiếu song song, vị trí P vẽ minh họa không theo tỉ lệ; bỏ ảnh chụp cabin."
+\begin{ex}
+Một gia đình định lắp thang máy trong nhà ở. Cabin của thang máy có dạng hình hộp chữ nhật có đáy là hình vuông. Thể tích khoang cabin là $5{,}4\ \text{m}^3$ và diện tích toàn phần của nó là $18{,}9\ \text{m}^2$.
+
+Gia đình định lắp $1$ chiếc camera ở vị trí trên trần cabin (điểm $P$), sao cho chiếc camera cách đều hai vách kề nhau của khoang cabin là $10$ cm (hình bên). Chọn hệ trục tọa độ như hình bên, đơn vị trên mỗi trục là $5$ cm. Kí hiệu tọa độ của điểm $P$ là $(a;b;c)$. Tính $a-b+c$ biết rằng cạnh của đáy cabin không quá $2$ m.
+\begin{center}
+\begin{tikzpicture}[x={(-.065cm,-.047cm)},y={(-.105cm,.026cm)},z={(0cm,.062cm)}]
+  \def\a{30}\def\h{48}
+  \draw (0,0,0)--(\a,0,0)--(\a,\a,0);
+  \draw (0,0,0)--(0,0,\h) (\a,0,0)--(\a,0,\h) (\a,\a,0)--(\a,\a,\h);
+  \draw (0,0,\h)--(\a,0,\h)--(\a,\a,\h)--(0,\a,\h)--cycle;
+  \draw[khuat] (0,\a,0)--(\a,\a,0) (0,\a,0)--(0,\a,\h);
+  \draw[truc] (0,0,0)--(\a+9,0,0) node[below left]{$x$};
+  \draw[truc] (0,0,0)--(0,\a+9,0) node[left]{$y$};
+  \draw[truc] (0,0,0)--(0,0,\h+10) node[above]{$z$};
+  \node[right,font=\footnotesize] at (0,0,0) {$O$};
+  \coordinate (P) at (5,25,\h);
+  \coordinate (M1) at (2.5,25,\h);
+  \coordinate (M2) at (5,27.5,\h);
+  \draw[phu] (P)--(0,25,\h);
+  \draw[phu] (P)--(5,\a,\h);
+  \fill (P) circle (1.6pt);
+  \node[font=\footnotesize,anchor=south] at ($(P)+(0cm,.2cm)$) {$P$};
+  \node[font=\scriptsize,anchor=east] (l1) at ($(P)+(-.9cm,-.55cm)$) {$10$};
+  \node[font=\scriptsize,anchor=west] (l2) at ($(P)+(.9cm,-.55cm)$) {$10$};
+  \draw[thin] (l1.north east)--(M1);
+  \draw[thin] (l2.north west)--(M2);
+\end{tikzpicture}
+\end{center}
+\shortans{22}
+\loigiai{Gọi cạnh đáy và chiều cao cabin là $d$, $h$ (m). Từ $d^2h=5{,}4$ suy ra $h=\dfrac{5{,}4}{d^2}$. Diện tích toàn phần $2d^2+4dh=18{,}9\Rightarrow2d^2+\dfrac{21{,}6}{d}=18{,}9\Leftrightarrow2d^3-18{,}9d+21{,}6=0$. Giải phương trình (máy tính cầm tay) được $d=1{,}5$, $d\approx2{,}04$, $d\approx-3{,}54$; với $d\le2$ nhận $d=1{,}5$ m và $h=\dfrac{5{,}4}{2{,}25}=2{,}4$ m.
+
+Đơn vị mỗi trục là $5$ cm nên cabin có kích thước $30\times30\times48$ đơn vị: $0\le x,y\le30$, $0\le z\le48$. Camera ở trần ($z=48$), cách vách $x=0$ là $10$ cm $=2$ đơn vị và cách vách $y=30$ là $2$ đơn vị. Vậy $P(2;28;48)$ và $a-b+c=2-28+48=22$.}
+\end{ex}

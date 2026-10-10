@@ -1,0 +1,32 @@
+%% ma: L11-B24-0002
+%% lop: 11
+%% chuong: 7
+%% bai: 24
+%% dang: 11.24.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 10"
+%% kien_thuc: "Bài 24 (góc giữa đường thẳng và mặt phẳng), Bài 23 (đường thẳng vuông góc với mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 11.24.2 (Góc giữa cạnh bên và mặt đáy của hình chóp có cạnh bên vuông góc với đáy); chờ giáo viên duyệt dạng."
+%% ghi_chu: "Hình dựng lại theo đề (không theo tỉ lệ). Đáp án gốc D đúng."
+\begin{ex}
+Cho hình chóp $S.ABC$ có $SA\perp(ABC)$, $SA=4a\sqrt3$, tam giác $ABC$ vuông tại $B$, $AB=2a$ và $BC=2\sqrt3a$. Góc giữa đường thẳng $SC$ và mặt phẳng $(ABC)$ bằng
+\begin{center}
+\begin{tikzpicture}[x=1cm,y={(.7cm,.5cm)},z={(0cm,1cm)}]
+  \coordinate (B) at (0,0,0);
+  \coordinate (C) at (3,0,0);
+  \coordinate (A) at (0.3,2.4,0);
+  \coordinate (S) at (0.3,2.4,3.4);
+  \draw[khuat] (A)--(B) (A)--(C) (S)--(A);
+  \draw (S)--(B)--(C)--cycle;
+  \fill (S) circle (0pt) node[above]{$S$};
+  \node[below left] at (B) {$B$};
+  \node[below right] at (C) {$C$};
+  \node[above right,inner sep=1pt] at (A) {$A$};
+\end{tikzpicture}
+\end{center}
+\choice{$30^\circ$}{$45^\circ$}{$90^\circ$}{\True $60^\circ$}
+\loigiai{Vì $SA\perp(ABC)$ nên $AC$ là hình chiếu của $SC$ trên $(ABC)$, do đó $\left(SC,(ABC)\right)=\widehat{SCA}$. Ta có $AC=\sqrt{AB^2+BC^2}=\sqrt{4a^2+12a^2}=4a$ và $\tan\widehat{SCA}=\dfrac{SA}{AC}=\dfrac{4\sqrt3a}{4a}=\sqrt3$. Vậy góc bằng $60^\circ$.}
+\end{ex}

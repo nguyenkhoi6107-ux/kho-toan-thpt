@@ -1,0 +1,24 @@
+%% ma: L11-B21-0006
+%% lop: 11
+%% chuong: 6
+%% bai: 21
+%% dang: 11.21.4
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "SĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 1"
+%% kien_thuc: "Bài 21 (phương trình lôgarit, phương trình mũ), Bài 19 (lôgarit), phương trình bậc hai (Lớp 10)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 11.21.4 (Phương trình lôgarit log_3(7-3^x)=1-x: điều kiện, quy về bậc hai theo 3^x, nghiệm và tổng nghiệm (Đúng/Sai)); chờ giáo viên duyệt dạng."
+%% ghi_chu: "Đáp án gốc S Đ S S đúng (kiểm bằng sympy: t1*t2=3). Ở ý b), vì 7-3^x=3^{1-x}>0 nên điều kiện đã nằm trong phương trình."
+\begin{ex}
+Cho phương trình $\log_3\left(7-3^x\right)=1-x$.
+\choiceTF{Điều kiện xác định của phương trình là $7-3^x\ge0$}{\True Phương trình đã cho có chung tập nghiệm với phương trình $7-3^x=\dfrac{3}{3^x}$}{Phương trình có hai nghiệm là $x_1=\log_3\left(7+\sqrt{37}\right)$ và $x_2=\log_3\left(7-\sqrt{37}\right)$}{Tổng hai nghiệm $x_1,x_2$ của phương trình là $x_1+x_2=-1$}
+\loigiai{a) Sai: điều kiện là $7-3^x>0$ (biểu thức dưới dấu lôgarit phải dương).
+
+b) Đúng: $\log_3\left(7-3^x\right)=1-x\Leftrightarrow7-3^x=3^{1-x}=\dfrac{3}{3^x}$ (với điều kiện $7-3^x>0$, chính là $3^{1-x}>0$ luôn đúng nên hai phương trình có cùng tập nghiệm).
+
+c) Sai: đặt $t=3^x>0$ ta có $t^2-7t+3=0\Leftrightarrow t=\dfrac{7\pm\sqrt{37}}2$, cả hai đều thỏa $0<t<7$. Vậy $x_{1,2}=\log_3\dfrac{7\pm\sqrt{37}}2$, thiếu mẫu số $2$ so với khẳng định.
+
+d) Sai: $x_1+x_2=\log_3(t_1t_2)=\log_3 3=1$.}
+\end{ex}

@@ -1,0 +1,40 @@
+%% ma: L12-B08-0013
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.4
+%% loai: DS
+%% muc: [NB, NB, VD, VD]
+%% dap_an: "ĐĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 2"
+%% kien_thuc: "Bài 8 (tọa độ điểm, vectơ chuyển động thẳng đều trong Oxyz), đổi đơn vị m/s sang km/h"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với các câu dạng 12.8.4. Đáp án gốc Đ Đ S S đúng. Ý d) đề viết lẫn 'vận tốc và hướng gió không đổi' với 'trời lặng gió': theo mọi cách hiểu (702, 707 hoặc 720 km) đều khác 723 nên ý d) sai. Hình dựng lại bằng phép chiếu song song theo đề (bỏ biểu tượng máy bay)."
+\begin{ex}
+Hình vẽ sau mô tả vị trí của máy bay vào thời điểm $9$ giờ $30$ phút. Biết các đơn vị tính theo đơn vị km.
+\begin{center}
+\begin{tikzpicture}[x={(-.55cm,-.4cm)},y={(.95cm,0cm)},z={(0cm,.9cm)}]
+  \def\X{1.5}\def\Y{3}\def\Z{2.2}
+  \draw[truc] (0,0,0)--(2.4,0,0) node[below left]{$x$ (Nam)};
+  \draw[truc] (0,0,0)--(0,4.6,0) node[below]{$y$ (Đông)};
+  \draw[truc] (0,0,0)--(0,0,3.3) node[above]{$z$};
+  \draw[phu] (\X,\Y,\Z)--(\X,\Y,0)--(0,\Y,0);
+  \draw[phu] (\X,\Y,0)--(\X,0,0);
+  \draw[phu] (\X,\Y,\Z)--(0,\Y,\Z)--(0,0,\Z);
+  \fill (\X,\Y,\Z) circle (1.8pt);
+  \node[below right] at (\X,\Y,\Z) {máy bay};
+  \node[above left,font=\footnotesize] at (0,0,0) {$O$};
+  \node[below right,font=\footnotesize] at (\X,0,0) {$150$};
+  \node[below,font=\footnotesize] at (0,\Y,0) {$300$};
+  \node[left,font=\footnotesize] at (0,0,\Z) {$9$};
+\end{tikzpicture}
+\end{center}
+\choiceTF{\True Máy bay đang ở độ cao $9$ km}{\True Tọa độ của máy bay lúc $9$ giờ $30$ phút là $(150;300;9)$}{Phi công để máy bay ở chế độ tự động và bay theo hướng đông, độ cao không đổi, lúc $10$ giờ $30$ phút máy bay ở tọa độ $(150;1086;9)$. Khi đó vận tốc của máy bay là $776$ km/h, biết vận tốc gió theo hướng đông là $10$ m/s}{Giả sử vận tốc và hướng gió không đổi thì sau khi bay đến vị trí lúc $10$ giờ $30$ phút, máy bay bay ngược lại (hướng Tây) với vận tốc $800$ km/h với độ cao không đổi, biết lúc đó trời lặng gió, thì lúc $11$ giờ máy bay cách gốc tọa độ một khoảng $723$ km (làm tròn kết quả đến hàng đơn vị)}
+\loigiai{a) Đúng: cao độ $z=9$ km.
+
+b) Đúng: theo hình, $x=150$, $y=300$, $z=9$.
+
+c) Sai: trong $1$ giờ (từ $9$ giờ $30$ đến $10$ giờ $30$) máy bay đi từ $(150;300;9)$ đến $(150;1086;9)$, quãng đường $1086-300=786$ km, nên tốc độ so với mặt đất là $786$ km/h. Gió $10$ m/s $=36$ km/h cùng hướng đông nên tốc độ của máy bay so với không khí là $786-36=750$ km/h, không phải $776$ km/h ($776$ km/h ứng với gió $10$ km/h).
+
+d) Sai: sau $0{,}5$ giờ bay về hướng Tây với $800$ km/h, máy bay đi được $400$ km nên tọa độ là $(150;686;9)$ và $OM=\sqrt{150^2+686^2+9^2}\approx702$ km, không phải $723$ km. (Nếu tính cả gió $10$ km/h thì được $\approx707$ km, vẫn khác $723$.)}
+\end{ex}

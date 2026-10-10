@@ -1,0 +1,31 @@
+%% ma: L12-B02-0006
+%% lop: 12
+%% chuong: 1
+%% bai: 2
+%% dang: 12.2.5
+%% loai: TN4
+%% muc: NB
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 6"
+%% kien_thuc: "Bài 2 (giá trị lớn nhất của hàm số trên một đoạn, đọc từ đồ thị)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.2.5 (Đọc giá trị lớn nhất trên một đoạn từ đồ thị (đạt tại đầu mút)); chờ giáo viên duyệt dạng."
+%% ghi_chu: "Hình dựng lại bằng hàm trùng phương y=(11/45)x^4-(89/45)x^2+2 đi qua (0;2), (±2;-2), (±3;4), cực tiểu khoảng -2 tại x khoảng ±2; đồ thị gốc chỉ mang tính minh họa nên số liệu trên hình là xấp xỉ. Đáp án gốc D đúng."
+\begin{ex}
+Giá trị lớn nhất của hàm số có đồ thị ở hình bên trên đoạn $[-3;3]$ là
+\begin{center}
+\begin{tikzpicture}[x=.75cm,y=.5cm]
+  \draw[phu] (-3,0)--(-3,4)--(3,4)--(3,0);
+  \draw[phu] (-2,0)--(-2,-2)--(2,-2)--(2,0);
+  \draw[truc] (-3.8,0)--(3.9,0) node[right]{$x$};
+  \draw[truc] (0,-2.8)--(0,4.9) node[above]{$y$};
+  \draw[smooth,samples=100,domain=-3:3] plot(\x,{11/45*(\x)^4-89/45*(\x)^2+2});
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \foreach \t in {-3,-2,2,3} \node[below,font=\footnotesize,yshift=-1pt] at (\t,0) {$\t$};
+  \foreach \t in {-2,2,4} \node[left,font=\footnotesize] at (0,\t) {$\t$};
+  \fill (-3,4) circle (1.2pt) (3,4) circle (1.2pt);
+\end{tikzpicture}
+\end{center}
+\choice{$2$}{$-2$}{$3$}{\True $4$}
+\loigiai{Trên đoạn $[-3;3]$, điểm cao nhất của đồ thị là hai đầu mút $x=\pm3$ có tung độ $y=4$ (cực đại $y(0)=2$ thấp hơn). Vậy giá trị lớn nhất bằng $4$.}
+\end{ex}

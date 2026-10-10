@@ -1,0 +1,37 @@
+%% ma: L12-B10-0003
+%% lop: 12
+%% chuong: 3
+%% bai: 10
+%% dang: 12.10.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần I Câu 2"
+%% kien_thuc: "Bài 10 (độ lệch chuẩn của mẫu số liệu ghép nhóm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với L12-B10-0001 (dạng 12.10.1): hai mẫu có cùng độ lệch chuẩn nhưng cơ chế khác (ở đây mẫu B là ảnh đối xứng của mẫu A, không phải tần số gấp đôi). Đáp án gốc A đúng (sympy/numpy: S_A=S_B=0,20836)."
+\begin{ex}
+Cho hai mẫu số liệu ghép nhóm $A$ và $B$ có bảng tần số ghép nhóm như sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Nhóm $A$ & $[1{,}6;1{,}8)$ & $[1{,}8;2{,}0)$ & $[2{,}0;2{,}2)$ & $[2{,}2;2{,}4)$ & $[2{,}4;2{,}6)$ \\
+\hline
+Tần số & $12$ & $25$ & $18$ & $10$ & $2$ \\
+\hline
+\end{tabular}
+
+\medskip
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Nhóm $B$ & $[5{,}0;5{,}2)$ & $[5{,}2;5{,}4)$ & $[5{,}4;5{,}6)$ & $[5{,}6;5{,}8)$ & $[5{,}8;6{,}0)$ \\
+\hline
+Tần số & $2$ & $10$ & $18$ & $25$ & $12$ \\
+\hline
+\end{tabular}
+\end{center}
+Gọi $S_A$ và $S_B$ lần lượt là độ lệch chuẩn của mẫu số liệu ghép nhóm $A$ và $B$. Khẳng định nào sau đây đúng?
+\choice{\True $S_A=S_B$}{$3S_A=S_B$}{$S_B=S_A+3{,}4$}{$\left|S_A-S_B\right|>3{,}4$}
+\loigiai{Giá trị đại diện của mẫu $A$: $1{,}7;1{,}9;2{,}1;2{,}3;2{,}5$ với tần số $12;25;18;10;2$; của mẫu $B$: $5{,}1;5{,}3;5{,}5;5{,}7;5{,}9$ với tần số $2;10;18;25;12$. Mẫu $B$ nhận được từ mẫu $A$ qua phép đối xứng $x\mapsto7{,}6-x$ (giá trị đại diện $1{,}7;1{,}9;2{,}1;2{,}3;2{,}5$ ứng với $5{,}9;5{,}7;5{,}5;5{,}3;5{,}1$ cùng tần số), nên hai mẫu có cùng phương sai. Cụ thể $n=67$, $s_A^2=s_B^2\approx0{,}0434$, $S_A=S_B\approx0{,}208$.}
+\end{ex}

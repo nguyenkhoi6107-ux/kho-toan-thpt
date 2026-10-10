@@ -1,0 +1,33 @@
+%% ma: L12-B13-0020
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "54"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần III Câu 3"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi parabol và đường thẳng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng dạng 12.13.3 (diện tích hình phẳng giới hạn bởi parabol, bài toán thực tế). Đáp án gốc 54 đúng (sympy)."
+\begin{ex}
+Một bể chứa nước có diện tích mặt cắt ngang được tô màu như hình bên, ở đó đơn vị trên các trục đo bằng mét. Trên mặt cắt ngang, phần đáy của bể chứa có phương trình $y=k(x-8)^2$. Tính diện tích của mặt cắt ngang theo mét vuông.
+\begin{center}
+\begin{tikzpicture}[x=.5cm,y=.55cm]
+  \fill[green!15] (0,6)--(12,6)--(12,1.5)--plot[domain=12:0,samples=50] (\x,{3/32*(\x-8)^2})--cycle;
+  \draw[truc] (-.6,0)--(14,0) node[right]{$x$};
+  \draw[truc] (0,-.5)--(0,7.2) node[above]{$y$};
+  \draw[green!50!black,thick,samples=50,domain=0:12] plot(\x,{3/32*(\x-8)^2});
+  \draw (0,6)--(12,6)--(12,0);
+  \draw (11.4,0)--(11.4,.55)--(12,.55);
+  \node[left] at (0,6) {$M$};
+  \node[above] at (12,6) {$N(12;6)$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[below] at (8,0) {$(8;0)$};
+  \node[below right] at (12,0) {$P$};
+\end{tikzpicture}
+\end{center}
+\shortans{54}
+\loigiai{Từ hình vẽ, $M(0;6)$ nằm trên parabol nên $6=k(0-8)^2$, suy ra $k=\dfrac3{32}$. Mặt cắt ngang giới hạn bởi đường thẳng $y=6$, parabol $y=\dfrac3{32}(x-8)^2$ và các đường thẳng $x=0$, $x=12$. Diện tích
+\[S=\int_0^{12}\left[6-\dfrac3{32}(x-8)^2\right]\mathrm dx=6x\Big|_0^{12}-\dfrac{(x-8)^3}{32}\Big|_0^{12}=72-\dfrac{64+512}{32}=72-18=54\ (\text{m}^2).\]}
+\end{ex}

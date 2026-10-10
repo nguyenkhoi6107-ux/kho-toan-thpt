@@ -1,0 +1,41 @@
+%% ma: L12-B13-0019
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.11
+%% loai: DS
+%% muc: [NB, VD, VD, VD]
+%% dap_an: "SĐĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 7-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D07, MỖI NGÀY 1 ĐỀ - Đề số 7), Phần II Câu 4"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng), Bài 1 (cực trị), Bài 12 (tích phân)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.13.11 (Hàm bậc ba ax^3+bx^2+c đọc từ đồ thị: tìm hệ số, diện tích hình phẳng, tịnh tiến đồ thị lên theo Oy (Đúng/Sai)); chờ giáo viên duyệt dạng."
+%% ghi_chu: "Hình dựng lại từ f(x)=x^3/2-3x^2/2+3 (cực đại (0;3), cực tiểu (2;1)). Đáp án gốc S Đ Đ S đúng (kiểm bằng sympy: a=1/2, b=-3/2, S=51/8, k=23/8)."
+\begin{ex}
+Gọi $S$ là diện tích của hình phẳng giới hạn bởi đồ thị $(C)$ của hàm số $y=f(x)=ax^3+bx^2+c$, các đường thẳng $x=-1$, $x=2$ và trục hoành (miền gạch chéo trong hình vẽ bên).
+\begin{center}
+\begin{tikzpicture}[x=1.1cm,y=.8cm]
+  \fill[pattern=north east lines,pattern color=blue!50] (-1,0)--plot[domain=-1:2,samples=40] (\x,{(\x)^3/2-1.5*(\x)^2+3})--(2,0)--cycle;
+  \draw[truc] (-1.6,0)--(3.5,0) node[right]{$x$};
+  \draw[truc] (0,-.5)--(0,4.4) node[above]{$y$};
+  \draw[smooth,samples=60,domain=-1.15:3.1,thick] plot(\x,{(\x)^3/2-1.5*(\x)^2+3});
+  \draw[phu] (0,1)--(2,1)--(2,0);
+  \draw[phu] (-1,0)--(-1,1);
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[below,font=\footnotesize] at (-1,0) {$-1$};
+  \node[below,font=\footnotesize] at (2,0) {$2$};
+  \node[left,font=\footnotesize] at (0,3) {$3$};
+  \node[left,font=\footnotesize,xshift=-1pt] at (0,1) {$1$};
+\end{tikzpicture}
+\end{center}
+\choiceTF{Từ hình vẽ, ta có $c=1$}{\True Giá trị của biểu thức $a+b+c$ là $2$}{\True Giá trị của $S$ bằng $\dfrac{51}{8}$}{Dịch chuyển đồ thị $(C)$ lên trên theo phương $Oy$. Gọi $S'$ là diện tích hình phẳng giới hạn bởi đồ thị $(C)$ sau khi đã dịch chuyển, trục $Ox$ và các đường thẳng $x=-1$, $x=2$. Để $S'=15$ thì ta phải dịch chuyển đồ thị $(C)$ lên trên một đoạn lớn hơn $3$}
+\loigiai{Từ hình vẽ: đồ thị đạt cực đại tại $(0;3)$ và cực tiểu tại $(2;1)$.
+
+a) Sai: $f(0)=c=3$.
+
+b) Đúng: $f'(x)=3ax^2+2bx$, $f'(2)=0\Rightarrow12a+4b=0\Rightarrow b=-3a$; $f(2)=8a+4b+3=1\Rightarrow-4a=-2$, nên $a=\dfrac12$, $b=-\dfrac32$. Vậy $f(x)=\dfrac12x^3-\dfrac32x^2+3$ và $a+b+c=\dfrac12-\dfrac32+3=2$.
+
+c) Đúng: $f(x)>0$ trên $[-1;2]$ (vì $f(-1)=1$, $f(2)=1$, cực tiểu trong đoạn là $1$) nên $S=\displaystyle\int_{-1}^{2}\left(\dfrac12x^3-\dfrac32x^2+3\right)\mathrm dx=\left(\dfrac{x^4}8-\dfrac{x^3}2+3x\right)\Big|_{-1}^{2}=4-\left(-\dfrac{19}8\right)=\dfrac{51}8$.
+
+d) Sai: tịnh tiến lên trên $k$ đơn vị thì $S'=S+3k$ (đoạn $[-1;2]$ dài $3$). $S'=15\Rightarrow3k=15-\dfrac{51}8=\dfrac{69}8\Rightarrow k=\dfrac{23}8<3$.}
+\end{ex}
