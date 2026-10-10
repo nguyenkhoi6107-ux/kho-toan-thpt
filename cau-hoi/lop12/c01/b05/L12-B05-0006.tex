@@ -1,0 +1,20 @@
+%% ma: L12-B05-0006
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.1
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "253"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần III Câu 1 (THCS THPT Lê Thánh Tông - HCM 2025)"
+%% kien_thuc: "Bài 5 (tối ưu hóa bằng đạo hàm, hàm cho bởi hai công thức, biến nguyên); dùng máy tính cầm tay để so sánh f(253), f(254)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng họ dạng 12.5.1 nhưng phức tạp hơn (hàm lợi nhuận cho bởi hai công thức, dùng máy tính). Đề gốc không nói rõ chi phí nguyên vật liệu của phần x-200 sản phẩm sau tính bằng H(x-200); theo cách hiểu của lời giải gốc. Lời giải gốc ghi nghiệm f prime = 0 trên [0;200] là 196,98 nhưng kiểm bằng sympy được 184,03 (không ảnh hưởng đáp số 253). Hình gốc chỉ minh họa nên không vẽ."
+\begin{ex}
+Một doanh nghiệp dự định sản xuất không quá $400$ sản phẩm. Nếu doanh nghiệp sản xuất $x$ sản phẩm ($1\le x\le400$) thì doanh thu nhận được khi bán hết số sản phẩm là $F(x)=x^3-1999x^2+1001000x+250000$ (đồng). Trong đó, chi phí vận hành máy móc cho mỗi sản phẩm là $G(x)=\dfrac{100000x}{\frac32x+1}$ đồng. Tổng chi phí mua nguyên vật liệu là $H(x)=2x^3+100000x-50000$ (đồng) nhưng do doanh nghiệp mua với số lượng lớn nên được giảm $1\%$ cho $200$ sản phẩm đầu tiên doanh nghiệp sản xuất và giảm $2\%$ cho sản phẩm tiếp theo. Doanh nghiệp cần sản xuất bao nhiêu sản phẩm để lợi nhuận thu được là lớn nhất?
+\shortans{253}
+\loigiai{Chi phí nguyên vật liệu cho $200$ sản phẩm đầu là $0{,}99H(200)$, cho $x-200$ sản phẩm tiếp theo là $0{,}98H(x-200)$. Lợi nhuận $f(x)=F(x)-xG(x)-(\text{chi phí nguyên vật liệu})$.
+$\bullet$ Với $1\le x\le200$: $f(x)=F(x)-xG(x)-0{,}99H(x)$, $f'(x)=0$ tại $x\approx184{,}03$; giá trị lớn nhất trên đoạn này là $f(184)\approx80\,262\,059$.
+$\bullet$ Với $200<x\le400$: $f(x)=F(x)-xG(x)-0{,}99H(200)-0{,}98H(x-200)$, $f'(x)=0$ tại $x\approx253{,}11$, $f'$ đổi dấu từ $+$ sang $-$. Vì $x$ nguyên: $f(253)\approx83\,893\,648>f(254)\approx83\,892\,445$.
+Do $83\,893\,648>80\,262\,059$ nên cần sản xuất $253$ sản phẩm.}
+\end{ex}

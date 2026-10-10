@@ -1,0 +1,25 @@
+%% ma: L12-B19-0008
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.1
+%% loai: DS
+%% muc: [NB, NB, TH, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần II Câu 4"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, công thức nhân), Bài 19 (công thức xác suất toàn phần, công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Xếp vào dạng 12.19.1 (công thức xác suất toàn phần và Bayes, dạng Đúng/Sai). Đề gốc có ảnh minh họa (không cần). Ý d) gốc ghi 0,28 mà giá trị đúng là 0,2831 nên đã thêm cụm làm tròn đến hàng phần trăm. Đáp án gốc Đ S S Đ đúng."
+\begin{ex}
+Trong một kì thi bắn cung, mỗi cung thủ cần thực hiện hai lần bắn liên tiếp. Một cung thủ có xác suất bắn trúng hồng tâm trong lần bắn đầu tiên là $0{,}35$. Nếu lần bắn đầu tiên trúng hồng tâm thì xác suất để cung thủ đó bắn trúng hồng tâm trong lần bắn thứ hai là $0{,}45$. Nếu lần bắn đầu tiên không trúng hồng tâm thì xác suất để cung thủ đó bắn trúng hồng tâm trong lần bắn thứ hai là $0{,}25$.
+Gọi $A$ là biến cố ``Lần bắn đầu tiên của cung thủ trúng hồng tâm''. Gọi $B$ là biến cố ``Lần bắn thứ hai của cung thủ trúng hồng tâm''.
+\choiceTF
+{\True $P(\overline A)=0{,}65$.}
+{$P(B\mid A)=0{,}1575$.}
+{$P(B)=0{,}68$.}
+{\True Xác suất để lần bắn đầu tiên của cung thủ trúng hồng tâm, biết rằng lần bắn thứ hai của cung thủ không trúng hồng tâm, là $0{,}28$ (làm tròn đến hàng phần trăm).}
+\loigiai{a) $P(\overline A)=1-0{,}35=0{,}65$. Đúng.
+b) Theo đề $P(B\mid A)=0{,}45$ ($0{,}1575=P(A\cap B)$). Sai.
+c) $P(B)=P(A)P(B\mid A)+P(\overline A)P(B\mid\overline A)=0{,}35\cdot0{,}45+0{,}65\cdot0{,}25=0{,}32$. Sai.
+d) $P(\overline B)=0{,}68$, $P(A\mid\overline B)=\dfrac{P(A)P(\overline B\mid A)}{P(\overline B)}=\dfrac{0{,}35\cdot0{,}55}{0{,}68}\approx0{,}283\approx0{,}28$. Đúng.}
+\end{ex}

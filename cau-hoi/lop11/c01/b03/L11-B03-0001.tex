@@ -1,0 +1,35 @@
+%% ma: L11-B03-0001
+%% lop: 11
+%% chuong: 1
+%% bai: 3
+%% dang: 11.3.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 2"
+%% kien_thuc: "Bài 3 (hàm số lượng giác: tính đơn điệu của hàm số sin đọc từ đồ thị)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng đề xuất mới 11.3.1 chờ giáo viên duyệt"
+\begin{ex}
+Cho hàm số $y=f(x)=\sin x$ có đồ thị như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1.3cm]
+  \draw[phu] (0,1)--(6.4,1) (0,-1)--(6.4,-1);
+  \draw[phu] (1,0)--(1,1) (3,0)--(3,-1) (5,0)--(5,1);
+  \draw[thick,domain=0:6.2,samples=100,smooth] plot (\x,{sin(\x*90)});
+  \draw[truc] (-.5,0)--(6.7,0) node[below]{$x$};
+  \draw[truc] (0,-1.4)--(0,1.5) node[left]{$y$};
+  \foreach \t/\l in {1/{\frac\pi2},5/{\frac{5\pi}2}} \draw (\t,.06)--(\t,-.06) node[below,inner sep=2pt]{\footnotesize$\l$};
+  \draw (3,.06)--(3,-.06) node[above,inner sep=2pt]{\footnotesize$\frac{3\pi}2$};
+  \draw (2,.06)--(2,-.06) node[below left,inner sep=1pt]{\footnotesize$\pi$};
+  \draw (4,.06)--(4,-.06) node[below right,inner sep=1pt]{\footnotesize$2\pi$};
+  \draw (6,.06)--(6,-.06) node[below left,inner sep=1pt]{\footnotesize$3\pi$};
+  \draw (.06,1)--(-.06,1) node[left]{\footnotesize$1$};
+  \draw (.06,-1)--(-.06,-1) node[left]{\footnotesize$-1$};
+  \path (0,0) node[below left]{\footnotesize$O$} (5.5,1.25) node{$y=\sin x$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây đúng?
+\choice{Hàm số đồng biến trên đoạn $[0;\pi]$}{Hàm số nghịch biến trên đoạn $[0;2\pi]$}{Hàm số đồng biến trên đoạn $\left[\dfrac\pi2;\pi\right]$}{\True Hàm số nghịch biến trên đoạn $\left[\pi;\dfrac{3\pi}2\right]$}
+\loigiai{Từ đồ thị: hàm số đồng biến trên $\left[0;\frac\pi2\right]$, nghịch biến trên $\left[\frac\pi2;\frac{3\pi}2\right]$, đồng biến trên $\left[\frac{3\pi}2;\frac{5\pi}2\right]$. Vì $\left[\pi;\frac{3\pi}2\right]\subset\left[\frac\pi2;\frac{3\pi}2\right]$ nên hàm số nghịch biến trên đoạn này. Các phương án A, B, C sai vì mỗi đoạn đó chứa cả khoảng đồng biến lẫn khoảng nghịch biến hoặc nằm trong khoảng nghịch biến.}
+\end{ex}

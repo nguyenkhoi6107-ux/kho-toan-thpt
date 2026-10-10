@@ -1,0 +1,26 @@
+%% ma: L11-B27-0006
+%% lop: 11
+%% chuong: 7
+%% bai: 27
+%% dang: 11.27.2
+%% loai: DS
+%% muc: [NB, VD, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần II Câu 1"
+%% kien_thuc: "Bài 25 (hai mặt phẳng vuông góc, đường thẳng vuông góc với mặt phẳng), Bài 24 (góc giữa đường thẳng và mặt phẳng), Bài 27 (thể tích khối chóp)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Xếp vào dạng 11.27.2 (hình chóp có cạnh bên vuông góc với đáy, dạng Đúng/Sai) dù đáy là tam giác. Đề gốc không có hình. Đáp án gốc Đ S Đ S đúng (sympy: V=3a^3/8)."
+\begin{ex}
+Cho hình chóp $S.ABC$ có $SA$ vuông góc với mặt đáy, hai mặt phẳng $(SAB)$ và $(SBC)$ vuông góc với nhau, $SB=a\sqrt3$, góc giữa $SC$ và $(SAB)$ bằng $45^\circ$ và $\widehat{ASB}=30^\circ$.
+\choiceTF
+{\True Mặt phẳng $(SAB)$ vuông góc với mặt phẳng $(ABC)$.}
+{Tam giác $SBC$ vuông tại $C$.}
+{\True Hai đường thẳng $AB$ và $CB$ vuông góc với nhau.}
+{Thể tích khối chóp $S.ABC$ bằng $\dfrac{8a^3}{3}$.}
+\loigiai{a) $SA\perp(ABC)$ và $SA\subset(SAB)$ nên $(SAB)\perp(ABC)$. Đúng.
+Trong $(SAB)$ kẻ $AH\perp SB$ tại $H$. Vì $(SAB)\perp(SBC)$ theo giao tuyến $SB$ nên $AH\perp(SBC)$, suy ra $AH\perp BC$. Mà $SA\perp BC$ nên $BC\perp(SAB)$.
+b) $BC\perp(SAB)\Rightarrow BC\perp SB$ nên tam giác $SBC$ vuông tại $B$, không phải tại $C$. Sai.
+c) $BC\perp(SAB)\Rightarrow BC\perp AB$. Đúng.
+d) Góc giữa $SC$ và $(SAB)$ là $\widehat{CSB}=45^\circ$ nên $BC=SB=a\sqrt3$. Trong tam giác vuông $SAB$: $SA=SB\cos30^\circ=\frac{3a}2$, $AB=SB\sin30^\circ=\frac{a\sqrt3}2$.
+$V=\frac13\cdot\frac12\cdot AB\cdot BC\cdot SA=\frac16\cdot\frac{a\sqrt3}2\cdot a\sqrt3\cdot\frac{3a}2=\frac{3a^3}8\neq\frac{8a^3}3$. Sai.}
+\end{ex}

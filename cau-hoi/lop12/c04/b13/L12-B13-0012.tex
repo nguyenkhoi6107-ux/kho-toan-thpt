@@ -1,0 +1,45 @@
+%% ma: L12-B13-0012
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.7
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần II Câu 2"
+%% kien_thuc: "Bài 1 (cực trị), Bài 2 (giá trị nhỏ nhất), Bài 13 (diện tích hình phẳng); tiếp tuyến (Lớp 11 Bài 31)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng đề xuất mới 12.13.7 chờ giáo viên duyệt"
+%% ghi_chu: "Hình dựng lại từ f(x)=x^3+3x^2+1 (suy ra từ cực đại (-2;5), cực tiểu (0;1)); (H1) là phần giữa đường y=5 và đồ thị, (H2) là phần dưới đồ thị, đúng như hình gốc. Đáp án gốc Đ Đ Đ S đúng (sympy: S1=27/4, S2=33/4)."
+\begin{ex}
+Cho hàm số $y=f(x)=ax^3+bx^2+cx+d$ có đồ thị như hình bên.
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=.5cm]
+  \fill[gray!30] (-2,0)--(-2,5)--plot[domain=-2:1,samples=60] (\x,{\x*\x*\x+3*\x*\x+1})--(1,0)--cycle;
+  \fill[blue!10] (-2,5)--(1,5)--plot[domain=1:-2,samples=60] (\x,{\x*\x*\x+3*\x*\x+1})--cycle;
+  \draw[phu] (-2,0)--(-2,5) (1,0)--(1,5) (0,5)--(-2,5) (0,5)--(1,5);
+  \begin{scope}
+    \clip (-3.5,-1.2) rectangle (1.45,8.4);
+    \draw[thick,domain=-3.3:1.4,samples=100,smooth] plot (\x,{\x*\x*\x+3*\x*\x+1});
+  \end{scope}
+  \draw[truc] (-3.6,0)--(1.7,0) node[below]{$x$};
+  \draw[truc] (0,-1.2)--(0,8.6) node[right]{$y$};
+  \fill (-2,5) circle (1.4pt) (1,5) circle (1.4pt) (0,1) circle (1.4pt);
+  \draw (.06,5)--(-.06,5) node[left]{\footnotesize$5$};
+  \draw (.06,1)--(-.06,1) node[below left,inner sep=1pt]{\footnotesize$1$};
+  \draw (-2,.1)--(-2,-.1) node[below]{\footnotesize$-2$};
+  \draw (1,.1)--(1,-.1) node[below]{\footnotesize$1$};
+  \path (0,0) node[below left,inner sep=1pt]{\footnotesize$O$} (-.6,4.25) node{\footnotesize$(H_1)$} (-1.1,1.4) node{\footnotesize$(H_2)$} (1.35,8) node[right]{\footnotesize$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Hàm số $y=f(x)+100$ có giá trị nhỏ nhất trên đoạn $[-2;1]$ là $101$.}
+{\True $a+b+c+d=5$.}
+{\True Phương trình tiếp tuyến của đồ thị hàm số tại điểm $M(1;5)$ là $y=9x-4$.}
+{Gọi $S_1,S_2$ lần lượt là diện tích của hình $(H_1),(H_2)$. Khi đó $S_1=S_2$.}
+\loigiai{Từ đồ thị: cực đại $(-2;5)$, cực tiểu $(0;1)$ và $f(1)=5$. Do $f'(x)=3ax(x+2)$ nên $b=3a$, $c=0$; $f(0)=d=1$; $f(-2)=4a+1=5\Rightarrow a=1$. Vậy $f(x)=x^3+3x^2+1$.
+a) $\min\limits_{[-2;1]}f(x)=f(0)=1$ (vì $f(-2)=f(1)=5$) nên giá trị nhỏ nhất của $f(x)+100$ là $101$. Đúng.
+b) $a+b+c+d=f(1)=5$. Đúng.
+c) $f'(1)=9$ nên tiếp tuyến tại $M(1;5)$: $y=9(x-1)+5=9x-4$. Đúng.
+d) $S_2=\int_{-2}^1f(x)\,\mathrm dx=\frac{33}4$, $S_1=5\cdot3-S_2=\frac{27}4$. Vậy $S_1\neq S_2$. Sai.}
+\end{ex}

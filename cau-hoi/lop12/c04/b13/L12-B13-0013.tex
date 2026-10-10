@@ -1,0 +1,19 @@
+%% ma: L12-B13-0013
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.4
+%% loai: TLN
+%% muc: VD
+%% dap_an: "108"
+%% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần III Câu 4"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi đồ thị hàm số và đường thẳng); tiếp tuyến của đồ thị (Lớp 11 Bài 31)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng dạng 12.13.4 (diện tích giữa đồ thị bậc ba và đường thẳng) nhưng không cho hình, cần tự tìm tiếp tuyến. Hình gốc chỉ minh họa nên không vẽ. Lời giải gốc ghi nhầm đơn vị m2 (đúng là cm2). Đáp án gốc 108 đúng (sympy)."
+\begin{ex}
+Phần lưỡi của một con dao được cho bởi một phần của đồ thị hàm số $y=4x-x^3$ ($x,y$ đo bằng centimét), phần sống dao $AB$ nằm trên tiếp tuyến của đồ thị nói trên tại điểm $A(2;0)$ và $B$ là giao điểm của tiếp tuyến với đồ thị. Tính diện tích của bề mặt dao theo centimét vuông. Kết quả làm tròn đến hàng đơn vị.
+\shortans{108}
+\loigiai{$y'=4-3x^2$ nên $y'(2)=-8$, tiếp tuyến tại $A$: $y=-8(x-2)=-8x+16$.
+Hoành độ $B$ là nghiệm khác $2$ của $4x-x^3=-8x+16\Leftrightarrow(x-2)^2(x+4)=0$, nên $B(-4;48)$.
+Diện tích $S=\displaystyle\int_{-4}^{2}\left[(-8x+16)-(4x-x^3)\right]\mathrm dx=\int_{-4}^{2}(x^3-12x+16)\,\mathrm dx=\left(\dfrac{x^4}4-6x^2+16x\right)\Big|_{-4}^{2}=12-(-96)=108\ \mathrm{cm}^2$.}
+\end{ex}
