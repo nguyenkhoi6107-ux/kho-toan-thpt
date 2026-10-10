@@ -1,0 +1,31 @@
+%% ma: L12-B06-0006
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 2"
+%% kien_thuc: "Bài 6 (vectơ trong hình hộp, quy tắc hình bình hành, vectơ bằng nhau)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.6.1 (hình hộp, cộng vectơ) nên nhập cùng dạng. Hình dựng lại theo hình hộp của đề, thêm tâm I, J. Đáp án gốc D đúng"
+\begin{ex}
+Cho hình hộp $ABCD.A'B'C'D'$. Gọi $I$, $J$ lần lượt là tâm của các hình bình hành $ABCD$ và $A'B'C'D'$. Khẳng định nào sau đây sai?
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \path (0,0) coordinate (B) (3,0) coordinate (C) (4,1.1) coordinate (D) (1,1.1) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(.4,2.2) coordinate (\P');
+  \coordinate (I) at (2,.55);
+  \coordinate (J) at (2.4,2.75);
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D') (A')--(C') (B')--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A') (A)--(C) (B)--(D) (I)--(J);
+  \fill (I) circle (1pt) (J) circle (1pt);
+  \path (A) node[above left]{$A$} (B) node[below left]{$B$} (C) node[below]{$C$} (D) node[right]{$D$}
+        (A') node[above left]{$A'$} (B') node[left]{$B'$} (C') node[right]{$C'$} (D') node[above right]{$D'$}
+        (I) node[below,font=\footnotesize,inner sep=2pt]{$I$} (J) node[above,font=\footnotesize,inner sep=2pt]{$J$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{IA}+\overrightarrow{IC}=\vec 0$}{$\overrightarrow{IJ}=\overrightarrow{DD'}$}{$\overrightarrow{AA'}=\overrightarrow{BB'}$}{\True $\overrightarrow{JB}+\overrightarrow{JD}=\vec 0$}
+\loigiai{$I$ là trung điểm của $AC$ nên $\overrightarrow{IA}+\overrightarrow{IC}=\vec0$. Các đoạn $IJ$, $DD'$, $AA'$, $BB'$ song song và bằng nhau (cùng hướng) nên $\overrightarrow{IJ}=\overrightarrow{DD'}$ và $\overrightarrow{AA'}=\overrightarrow{BB'}$. Còn $I$ là trung điểm của $BD$ nên $\overrightarrow{JB}+\overrightarrow{JD}=2\overrightarrow{JI}\ne\vec0$ (do $J\ne I$). Vậy khẳng định sai là $\overrightarrow{JB}+\overrightarrow{JD}=\vec0$.}
+\end{ex}

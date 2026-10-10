@@ -1,0 +1,23 @@
+%% ma: L12-B05-0007
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "19"
+%% nguon: "(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 1"
+%% kien_thuc: "Bài 5 (tối ưu lợi nhuận bằng đạo hàm); Bài 1 (GTLN của hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.5.1 (tối ưu lợi nhuận bằng đạo hàm) nên nhập cùng dạng; hàm lợi nhuận bậc hai, tự lập từ đề. Bỏ ảnh minh họa câu lạc bộ mĩ thuật và tấm thiệp (ảnh đời sống, không chứa dữ kiện toán). Đáp án gốc 19 đúng (sympy)"
+\begin{ex}
+Nhân dịp Ngày Quốc tế phụ nữ $8-3$, câu lạc bộ mĩ thuật của An muốn tổ chức kinh doanh thiệp chúc mừng ngày $8-3$ để gây quỹ sinh hoạt cho câu lạc bộ. Mỗi tấm thiệp mua về với giá $8$ nghìn đồng. Các bạn trong câu lạc bộ sẽ sáng tác thêm nội dung của thiệp (vẽ thêm hình ảnh người, hoa cỏ, lời chúc,\ldots) và sau đó bán lại. Với mức giá bán $20$ nghìn đồng cho $1$ tấm thiệp, câu lạc bộ có thể bán được $500$ chiếc. Nếu giảm giá bán $1$ nghìn đồng mỗi tấm thiệp thì số lượng hàng bán ra tăng thêm $50$ chiếc. Vậy câu lạc bộ nên để giá bán là bao nhiêu nghìn đồng thì gây được nhiều quỹ sinh hoạt nhất?
+\shortans{19}
+\loigiai{Gọi $x$ (nghìn đồng) là số tiền giảm giá cho mỗi tấm thiệp, $0\le x\le12$. Giá bán là $20-x$, số thiệp bán được là $500+50x$.
+
+Lợi nhuận: $P(x)=(500+50x)\big[(20-x)-8\big]=(500+50x)(12-x)=-50x^2+100x+6000$ (nghìn đồng).
+
+$P'(x)=-100x+100=0\Leftrightarrow x=1$. $P(x)$ lớn nhất tại $x=1$ (đồng biến trên $[0;1]$, nghịch biến trên $[1;12]$), $P(1)=6050$.
+
+Vậy giá bán nên là $20-1=19$ nghìn đồng.}
+\end{ex}

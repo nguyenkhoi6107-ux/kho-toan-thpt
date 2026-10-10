@@ -1,0 +1,36 @@
+%% ma: L12-B08-0012
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.9
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2,89"
+%% nguon: "(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần III Câu 4 (Sở Ninh Bình 2025)"
+%% kien_thuc: "Bài 7 (hệ trục tọa độ trong không gian), Bài 8 (độ dài đoạn thẳng bằng tọa độ), Bài 17 lớp 10 (GTNN của tam thức bậc hai)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.8.9 (độ dài ngắn nhất của đoạn nối hai điểm chuyển động trên hai cạnh của hình lập phương, tọa độ hóa), chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 2,89 đúng (MN nhỏ nhất bằng 5√3/3 ≈ 2,887 m). Hình dựng lại bằng TikZ, vị trí M, N trên hình chỉ minh họa"
+\begin{ex}
+Một kỹ sư thiết kế mô hình trang trí cho một sân khấu nổi có dạng hình lập phương $ABCD.A_1B_1C_1D_1$ với độ dài các cạnh bằng $5$ m. Để tạo ra nét độc đáo cho sân khấu, người kỹ sư muốn thiết kế một dàn đèn ánh sáng nối từ một điểm $M$ trên đoạn thẳng $AD_1$ xuống một điểm $N$ trên đoạn thẳng $BD$ thỏa mãn $AM=DN$. Dàn đèn ánh sáng có chiều dài ngắn nhất là bao nhiêu mét (làm tròn kết quả đến hàng phần trăm)?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \path (0,0) coordinate (B) (2.8,0) coordinate (C) (4.2,.9) coordinate (D) (1.4,.9) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,2.8) coordinate (\P1);
+  \coordinate (M) at ($(A)!.4!(D1)$);
+  \coordinate (N) at ($(D)!.4!(B)$);
+  \draw (B)--(C)--(D) (B1)--(C1)--(D1)--(A1)--cycle (B)--(B1) (C)--(C1) (D)--(D1);
+  \draw[khuat] (B)--(A)--(D) (A)--(A1) (B)--(D) (A)--(D1) (M)--(N);
+  \fill (M) circle (1.2pt) (N) circle (1.2pt);
+  \path (A) node[above left]{$A$} (B) node[below left]{$B$} (C) node[below right]{$C$} (D) node[right]{$D$}
+        (A1) node[above left]{$A_1$} (B1) node[left]{$B_1$} (C1) node[below left,inner sep=1pt]{$C_1$} (D1) node[above right]{$D_1$}
+        (M) node[left,font=\footnotesize,inner sep=2pt]{$M$} (N) node[below,font=\footnotesize,inner sep=2pt]{$N$};
+\end{tikzpicture}
+\end{center}
+\shortans{2,89}
+\loigiai{Đặt $AM=DN=a\sqrt2$ với $0<a<5$. Chọn hệ trục $Oxyz$ có gốc $A$, các tia $Ox,Oy,Oz$ lần lượt chứa $AB$, $AD$, $AA_1$. Khi đó $M(0;a;a)$ và $N(a;5-a;0)$.
+
+$MN^2=a^2+(5-2a)^2+a^2=6a^2-20a+25=6\left(a-\dfrac53\right)^2+\dfrac{25}3\ge\dfrac{25}3$.
+
+Dấu bằng xảy ra khi $a=\dfrac53$. Vậy $MN_{\min}=\dfrac{5\sqrt3}3\approx2{,}89$ (m).}
+\end{ex}

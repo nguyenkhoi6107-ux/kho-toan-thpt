@@ -1,0 +1,32 @@
+%% ma: L12-B10-0002
+%% lop: 12
+%% chuong: 3
+%% bai: 10
+%% dang: 12.10.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần I Câu 9"
+%% kien_thuc: "Bài 10 (phương sai của mẫu số liệu ghép nhóm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với L12-B10-0001 (tần số mẫu sau gấp đôi mẫu trước nên cùng phương sai), ở đây thêm phép dịch các nhóm đi 0,4; nhập cùng dạng 12.10.1. Đáp án gốc A đúng (kiểm bằng sympy: cả hai phương sai bằng 4872/112225 ≈ 0,0434)"
+\begin{ex}
+Cho hai mẫu số liệu ghép nhóm $A$ và $B$ có bảng tần số ghép nhóm như sau:
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Nhóm $A$ & $[1{,}6;1{,}8)$ & $[1{,}8;2{,}0)$ & $[2{,}0;2{,}2)$ & $[2{,}2;2{,}4)$ & $[2{,}4;2{,}6)$ \\
+\hline
+Tần số & $12$ & $25$ & $18$ & $10$ & $2$ \\
+\hline
+Nhóm $B$ & $[2{,}0;2{,}2)$ & $[2{,}2;2{,}4)$ & $[2{,}4;2{,}6)$ & $[2{,}6;2{,}8)$ & $[2{,}8;3{,}0)$ \\
+\hline
+Tần số & $24$ & $50$ & $36$ & $20$ & $4$ \\
+\hline
+\end{tabular}
+\end{center}
+Gọi $S_A^2$ và $S_B^2$ lần lượt là phương sai của mẫu số liệu ghép nhóm $A$ và $B$. Khẳng định nào sau đây đúng?
+\choice{\True $S_A^2=S_B^2$}{$S_B^2=4S_A^2$}{$S_B^2=2S_A^2$}{$S_A^2=S_B^2-0{,}16$}
+\loigiai{Các nhóm của $B$ là các nhóm của $A$ dịch đi $0{,}4$, nên giá trị đại diện của $B$ bằng giá trị đại diện của $A$ cộng $0{,}4$; phép dịch không làm đổi phương sai. Tần số của $B$ gấp đôi tần số của $A$ ở mọi nhóm nên tỉ lệ tần số không đổi. Do đó $S_A^2=S_B^2$ $\left(=\dfrac{4872}{112225}\right)$.}
+\end{ex}

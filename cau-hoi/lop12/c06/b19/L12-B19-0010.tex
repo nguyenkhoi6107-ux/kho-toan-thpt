@@ -1,0 +1,29 @@
+%% ma: L12-B19-0010
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.4
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "SSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 6-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D06, MỖI NGÀY 1 ĐỀ - Đề số 6), Phần II Câu 2"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện), Bài 19 (công thức xác suất toàn phần)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.19.4 (xác suất lần rút thứ hai khi rút không hoàn lại) và với L12-B18-0002 nên nhập cùng dạng. Bỏ ảnh minh họa hộp bi (ảnh đời sống, không chứa dữ kiện toán). Đáp án gốc S S S Đ đúng"
+\begin{ex}
+Một hộp có $4$ viên bi xanh và $6$ viên bi đỏ, các viên bi có kích thước và khối lượng như nhau. Lấy lần lượt hai viên bi, không hoàn lại.
+\choiceTF
+{Xác suất lần $1$ lấy được bi xanh là $\dfrac14$.}
+{Xác suất lần $2$ lấy được bi xanh biết lần $1$ lấy được bi đỏ là $\dfrac13$.}
+{Xác suất lần $2$ lấy được bi xanh biết lần $1$ lấy được bi xanh là $\dfrac49$.}
+{\True Xác suất lần $2$ lấy được bi xanh là $\dfrac25$.}
+\loigiai{Gọi $A$ là biến cố ``lần $1$ lấy được bi xanh'', $B$ là biến cố ``lần $2$ lấy được bi xanh''.
+
+a) $P(A)=\dfrac4{10}=\dfrac25\ne\dfrac14$. Sai.
+
+b) Lần $1$ lấy bi đỏ còn $9$ viên, trong đó $4$ bi xanh: $P(B\mid\overline A)=\dfrac49\ne\dfrac13$. Sai.
+
+c) Lần $1$ lấy bi xanh còn $9$ viên, trong đó $3$ bi xanh: $P(B\mid A)=\dfrac39=\dfrac13\ne\dfrac49$. Sai.
+
+d) $P(B)=P(A)P(B\mid A)+P(\overline A)P(B\mid\overline A)=\dfrac4{10}\cdot\dfrac39+\dfrac6{10}\cdot\dfrac49=\dfrac25$. Đúng.}
+\end{ex}

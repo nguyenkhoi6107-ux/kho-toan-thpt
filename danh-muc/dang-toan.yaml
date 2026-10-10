@@ -121,3 +121,16 @@
 10.2.8: {ten: "Biểu đồ Ven", trang_thai: da-duyet}
 10.2.9: {ten: "Bài toán đếm số phần tử bằng biểu đồ Ven", trang_thai: da-duyet}
 10.2.10: {ten: "Hai tập hợp bằng nhau", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị D06 (Đề số 6 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
+11.4.2: {ten: "Giải phương trình lượng giác cơ bản cos(kx) = m", trang_thai: de-xuat}
+11.7.1: {ten: "Tìm số hạng của cấp số nhân khi biết số hạng đầu và công bội", trang_thai: de-xuat}
+11.27.7: {ten: "Hình chóp có mặt bên là tam giác đều vuông góc với đáy (Đúng/Sai: vuông góc, thể tích, khoảng cách)", trang_thai: de-xuat}
+11.27.8: {ten: "Thể tích khối chóp cụt đều từ cạnh hai đáy và cạnh bên (bài toán thực tế cái sọt)", trang_thai: de-xuat}
+12.3.4: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc hai trên bậc hai (cho đồ thị)", trang_thai: de-xuat}
+12.5.5: {ten: "Tối ưu diện tích hình chữ nhật nội tiếp phần còn lại của khúc gỗ tròn (mô hình thanh dầm và tấm ván)", trang_thai: de-xuat}
+12.7.1: {ten: "Tọa độ hình chiếu vuông góc của điểm lên mặt phẳng tọa độ", trang_thai: de-xuat}
+12.8.9: {ten: "Độ dài ngắn nhất của đoạn nối hai điểm chuyển động trên hai cạnh của hình lập phương (tọa độ hóa)", trang_thai: de-xuat}
+12.13.9: {ten: "Diện tích hình phẳng giới hạn bởi đồ thị hàm lượng giác và trục hoành (tách dấu)", trang_thai: de-xuat}
+12.15.4: {ten: "Phương trình tham số của đường thẳng đi qua hai điểm cho trước", trang_thai: de-xuat}
+12.17.5: {ten: "Thiên thạch và vệ tinh quanh Trái Đất: khoảng cách đến mặt cầu, tiếp tuyến, mặt phẳng trung trực, va chạm (Đúng/Sai)", trang_thai: de-xuat}
+12.13.10: {ten: "Công hút chất lỏng ra khỏi bể hình nón bằng tích phân (Đúng/Sai)", trang_thai: de-xuat}
