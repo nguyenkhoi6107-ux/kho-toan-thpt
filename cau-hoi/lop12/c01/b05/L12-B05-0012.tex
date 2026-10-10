@@ -1,0 +1,37 @@
+%% ma: L12-B05-0012
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.8
+%% loai: TLN
+%% muc: VD
+%% dap_an: "15,5"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần III Câu 3 (HSG Sở Hải Phòng 2025)"
+%% kien_thuc: "Bài 5 (ứng dụng đạo hàm: tối ưu chi phí), Bài 2 (giá trị nhỏ nhất của hàm số), định lí Pythagore"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 15,5 đúng (sympy: x = 5/4, f min = 16200 triệu). Hình dựng lại theo hình gốc, vị trí M, N chỉ minh họa, không theo tỉ lệ. Cùng dạng 12.5.8 (đã duyệt, tổng hai căn thức) nhưng khác mô hình (đối xứng, chi phí hai loại đường)."
+\begin{ex}
+Trong rừng, có hai điểm du lịch ở vị trí $X$ và $Y$ đều cách bờ biển một khoảng bằng $3$ km (coi đường bờ biển là một đường thẳng). Khoảng cách giữa hai vị trí $X$ và $Y$ là $18$ km. Người ta dự định đặt hai điểm nghỉ chân tại vị trí $M,N$ trên bờ biển sao cho $XM=YN$ và làm đường từ $X$ lần lượt qua $M,N$ đến $Y$. Biết chi phí làm đường trong rừng là $1300$ triệu/km và đường trên bờ biển là $500$ triệu/km. Khoảng cách giữa hai vị trí $M$ và $N$ là bao nhiêu kilômét để tổng chi phí làm đường nêu trên ít nhất?
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+  \draw (-9.5,0)--(9.5,0);
+  \draw[dashed] (-9,3)--(9,3) node[midway,above,font=\footnotesize]{$18$ km};
+  \draw[dashed] (-9,3)--(-9,0) node[midway,left,font=\footnotesize]{$3$ km};
+  \draw[dashed] (9,3)--(9,0) node[midway,right,font=\footnotesize]{$3$ km};
+  \draw[thick] (-9,3)--(-5.5,0)--(5.5,0)--(9,3);
+  \fill (-9,3) circle (3pt) (9,3) circle (3pt) (-5.5,0) circle (3pt) (5.5,0) circle (3pt);
+  \node[above left] at (-9,3) {$X$};
+  \node[above right] at (9,3) {$Y$};
+  \node[below] at (-5.5,0) {$M$};
+  \node[below] at (5.5,0) {$N$};
+  \node[font=\footnotesize] at (0,1.5) {Rừng};
+  \node[font=\footnotesize,below] at (0,-.5) {Bờ biển};
+\end{tikzpicture}
+\end{center}
+\shortans{15,5}
+\loigiai{Gọi $H,K$ lần lượt là hình chiếu của $X,Y$ lên bờ biển thì $HK=18$. Vì $XM=YN$ nên $HM=KN=x$ (km), $0\le x\le9$, và $MN=18-2x$.
+Tổng chi phí (triệu đồng): $f(x)=2\cdot1300\sqrt{x^2+9}+500(18-2x)=2600\sqrt{x^2+9}+9000-1000x$.
+$f'(x)=\dfrac{2600x}{\sqrt{x^2+9}}-1000=0\Leftrightarrow\sqrt{x^2+9}=2{,}6x\Leftrightarrow x^2+9=6{,}76x^2\Leftrightarrow x=1{,}25$.
+Hàm $\dfrac{x}{\sqrt{x^2+9}}$ tăng nên $f'$ đổi dấu từ âm sang dương tại $x=1{,}25$, do đó $f$ đạt giá trị nhỏ nhất tại $x=1{,}25$.
+Khi đó $MN=18-2\cdot1{,}25=15{,}5$ km.}
+\end{ex}

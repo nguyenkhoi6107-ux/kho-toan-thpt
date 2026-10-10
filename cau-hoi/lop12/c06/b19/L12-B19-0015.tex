@@ -1,0 +1,19 @@
+%% ma: L12-B19-0015
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,44"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần III Câu 6"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, công thức nhân), Bài 19 (công thức xác suất toàn phần, công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 0,44 đúng (sympy: 0,4375). Cùng ý tưởng với 12.19.3 (dạng đã duyệt: hai bước, xác suất toàn phần và Bayes). Đề gốc có ảnh minh họa xạ thủ (ảnh trang trí, không chứa dữ kiện toán) nên bỏ hình."
+\begin{ex}
+Trong một kì thi bắn súng, mỗi xạ thủ cần thực hiện hai lần bắn súng liên tiếp. Một xạ thủ có xác suất bắn trúng hồng tâm trong lần bắn đầu tiên là $0{,}55$. Nếu lần bắn đầu tiên trúng hồng tâm thì xác suất để xạ thủ đó bắn trúng hồng tâm trong lần bắn thứ hai là $0{,}65$. Nếu lần bắn đầu tiên không trúng hồng tâm thì xác suất để xạ thủ đó bắn trúng hồng tâm trong lần bắn thứ hai là $0{,}45$. Tính xác suất để xạ thủ đó bắn trúng hồng tâm trong lần bắn đầu tiên với điều kiện lần bắn thứ hai của xạ thủ đó không trúng hồng tâm (kết quả tính theo số thập phân và làm tròn đến hàng phần trăm).
+\shortans{0,44}
+\loigiai{Gọi $A_1$: "lần bắn đầu trúng hồng tâm", $A_2$: "lần bắn thứ hai trúng hồng tâm". $P(A_1)=0{,}55$, $P(A_2\mid A_1)=0{,}65$, $P(A_2\mid\overline{A_1})=0{,}45$.
+$P(\overline{A_2})=P(A_1)P(\overline{A_2}\mid A_1)+P(\overline{A_1})P(\overline{A_2}\mid\overline{A_1})=0{,}55\cdot0{,}35+0{,}45\cdot0{,}55=0{,}44$.
+$P(A_1\mid\overline{A_2})=\dfrac{P(A_1)P(\overline{A_2}\mid A_1)}{P(\overline{A_2})}=\dfrac{0{,}1925}{0{,}44}=0{,}4375\approx0{,}44$.}
+\end{ex}

@@ -1,0 +1,30 @@
+%% ma: L12-B19-0014
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.6
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần II Câu 4"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, công thức nhân), Bài 19 (công thức xác suất toàn phần, công thức Bayes)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.19.6 (xác suất toàn phần và Bayes từ xác suất có điều kiện của hai bước: đi học bằng xe đạp và ăn sáng, Đúng/Sai) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc Đ S S Đ đúng (kiểm bằng sympy: P(E) = 0,4; P(không ăn sáng) = 0,6; P(không đi xe đạp | ăn sáng) = 0,3). Đề gốc có ảnh minh họa bạn Nam (ảnh trang trí, không chứa dữ kiện toán) nên bỏ hình. Có thể coi cùng ý tưởng với 12.19.1 hoặc 12.18.4; để chờ giáo viên quyết định gộp dạng."
+\begin{ex}
+Xác suất để Nam đi học bằng xe đạp trong một ngày bất kì là $0{,}4$. Nếu Nam đi học bằng xe đạp thì xác suất để Nam ăn sáng là $0{,}7$. Nếu Nam không đi học bằng xe đạp thì xác suất để Nam không ăn sáng là $0{,}8$.
+\choiceTF
+{\True Xác suất để Nam không đi học bằng xe đạp trong một ngày bất kì là $0{,}6$.}
+{Xác suất để Nam ăn sáng với điều kiện Nam không đi học bằng xe đạp là $0{,}3$.}
+{Xác suất để Nam không ăn sáng trong một ngày bất kì nhỏ hơn $0{,}6$.}
+{\True Xác suất để Nam không đi học bằng xe đạp với điều kiện Nam ăn sáng là $0{,}3$.}
+\loigiai{Gọi $B$: "Nam đi học bằng xe đạp", $E$: "Nam ăn sáng". Khi đó $P(B)=0{,}4$, $P(E\mid B)=0{,}7$, $P(\overline E\mid\overline B)=0{,}8$.
+
+a) $P(\overline B)=1-0{,}4=0{,}6$. Đúng.
+
+b) $P(E\mid\overline B)=1-P(\overline E\mid\overline B)=1-0{,}8=0{,}2\ne0{,}3$. Sai.
+
+c) $P(E)=P(B)P(E\mid B)+P(\overline B)P(E\mid\overline B)=0{,}4\cdot0{,}7+0{,}6\cdot0{,}2=0{,}4$ nên $P(\overline E)=1-0{,}4=0{,}6$, không nhỏ hơn $0{,}6$. Sai.
+
+d) $P(\overline B\mid E)=\dfrac{P(\overline B)P(E\mid\overline B)}{P(E)}=\dfrac{0{,}6\cdot0{,}2}{0{,}4}=0{,}3$. Đúng.}
+\end{ex}

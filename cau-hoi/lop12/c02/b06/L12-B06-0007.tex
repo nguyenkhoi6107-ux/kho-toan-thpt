@@ -1,0 +1,30 @@
+%% ma: L12-B06-0007
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần I Câu 2"
+%% kien_thuc: "Bài 6 (quy tắc ba điểm, trọng tâm tam giác, tổng các vectơ trong tứ diện)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.4 (tổng ba vectơ từ một đỉnh của tứ diện qua trọng tâm mặt đối diện) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc D đúng. Hình vẽ lại theo hình gốc (BN, DM nét đứt để thấy G). Gần với dạng 12.6.3 nhưng khác cách hỏi nên đề xuất dạng mới."
+\begin{ex}
+Cho tứ diện $ABCD$. Gọi $M,N$ lần lượt là trung điểm của $BC$ và $CD$. Gọi $G$ là trọng tâm tam giác $BCD$. Khi đó $\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AD}$ bằng
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (1.2,3.4); \coordinate (B) at (0,0); \coordinate (C) at (1.5,-1.1); \coordinate (D) at (4.4,.2);
+  \coordinate (M) at ($(B)!.5!(C)$); \coordinate (N) at ($(C)!.5!(D)$); \coordinate (G) at (1.9667,-.3);
+  \draw (A)--(B) (A)--(C) (A)--(D) (B)--(C) (C)--(D);
+  \draw[khuat] (B)--(D) (B)--(N) (D)--(M);
+  \fill (M) circle (1pt) (N) circle (1pt) (G) circle (1pt);
+  \node[above] at (A) {$A$}; \node[left] at (B) {$B$}; \node[below] at (C) {$C$}; \node[right] at (D) {$D$};
+  \node[below left,font=\footnotesize] at (M) {$M$}; \node[below right,font=\footnotesize] at (N) {$N$}; \node[above right,font=\footnotesize] at (G) {$G$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow 0$}{$4\overrightarrow{AN}$}{$4\overrightarrow{AM}$}{\True $3\overrightarrow{AG}$}
+\loigiai{$G$ là trọng tâm tam giác $BCD$ nên $\overrightarrow{GB}+\overrightarrow{GC}+\overrightarrow{GD}=\overrightarrow 0$. Do đó
+\[\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AD}=(\overrightarrow{AG}+\overrightarrow{GB})+(\overrightarrow{AG}+\overrightarrow{GC})+(\overrightarrow{AG}+\overrightarrow{GD})=3\overrightarrow{AG}.\]}
+\end{ex}

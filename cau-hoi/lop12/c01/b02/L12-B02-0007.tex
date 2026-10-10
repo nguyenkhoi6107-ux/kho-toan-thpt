@@ -1,0 +1,24 @@
+%% ma: L12-B02-0007
+%% lop: 12
+%% chuong: 1
+%% bai: 2
+%% dang: 12.2.4
+%% loai: TN4
+%% muc: NB
+%% dap_an: "B"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần I Câu 1"
+%% kien_thuc: "Bài 2 (giá trị lớn nhất của hàm số trên một đoạn, đọc từ bảng biến thiên)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc B đúng. Bảng biến thiên vẽ lại bằng tkz-tab theo hình gốc (gốc chỉ có dòng y). Cùng ý tưởng với các câu dạng 12.2.4."
+\begin{ex}
+Cho hàm số $y=f(x)$ có bảng biến thiên trên đoạn $[-1;5]$ như sau:
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=1.4,espcl=3.2]{$x$/.8,$y$/2}{$-1$,$2$,$5$}
+  \tkzTabVar{-/$0$,+/$1$,-/$-2$}
+\end{tikzpicture}
+\end{center}
+Giá trị lớn nhất của hàm số $y=f(x)$ trên đoạn $[-1;5]$ là
+\choice{$0$}{\True $1$}{$-2$}{$5$}
+\loigiai{Từ bảng biến thiên, hàm số tăng từ $0$ lên $1$ trên $[-1;2]$ rồi giảm từ $1$ xuống $-2$ trên $[2;5]$ nên $\max_{[-1;5]}f(x)=f(2)=1$.}
+\end{ex}

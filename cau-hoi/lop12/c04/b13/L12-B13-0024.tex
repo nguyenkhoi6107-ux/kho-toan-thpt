@@ -1,0 +1,33 @@
+%% ma: L12-B13-0024
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.12
+%% loai: TLN
+%% muc: VD
+%% dap_an: "127"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần III Câu 5"
+%% kien_thuc: "Bài 13 (thể tích khối tròn xoay khi quay hình phẳng quanh trục Oy), Bài 12 (tích phân), phương trình parabol"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.12 (thể tích chi tiết máy có đường sinh là parabol, quay quanh trục tung) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 127 đúng (sympy: V = 202π/5 = 126,92). Hiểu 'đỉnh nằm trên đường tròn đáy nhỏ' là parabol có trục nằm ngang (tiếp tuyến thẳng đứng tại đỉnh) như hình gốc; nếu hiểu parabol y = (x-3)^2/8 thì được 207, không khớp đáp án gốc. Hình vẽ lại theo hình gốc."
+\begin{ex}
+Một chi tiết máy có dạng khối tròn xoay như hình bên. Biết đường kính đường tròn đáy nhỏ là $6$ cm, đường kính đường tròn đáy lớn là $14$ cm, chiều cao chi tiết máy là $2$ cm, đường sinh là một đường parabol có đỉnh nằm trên đường tròn đáy nhỏ. Tính thể tích của chi tiết máy này (kết quả tính theo đơn vị centimét khối và làm tròn đến hàng đơn vị).
+\begin{center}
+\begin{tikzpicture}[x=.42cm,y=1.1cm]
+  \draw (0,2) ellipse (7 and .32);
+  \draw[domain=0:2,samples=30,smooth,variable=\t] plot ({3+\t*\t},\t);
+  \draw[domain=0:2,samples=30,smooth,variable=\t] plot ({-3-\t*\t},\t);
+  \draw[domain=180:360] plot ({3*cos(\x)},{.18*sin(\x)});
+  \draw[khuat,domain=0:180] plot ({3*cos(\x)},{.18*sin(\x)});
+  \draw[<->] (-9,0)--(-9,2) node[midway,left,font=\footnotesize]{$2$ cm};
+  \draw[<->] (-7,2.75)--(7,2.75) node[midway,above,font=\footnotesize]{$14$ cm};
+  \draw[<->] (-3,-.45)--(3,-.45) node[midway,below,font=\footnotesize]{$6$ cm};
+  \fill (3,0) circle (1.5pt);
+  \draw[->,font=\footnotesize] (6,.35)--(3.15,.04) node[pos=0,right]{Đỉnh parabol};
+\end{tikzpicture}
+\end{center}
+\shortans{127}
+\loigiai{Đặt hệ trục sao cho trục quay là $Oy$, đáy nhỏ nằm trên $Ox$. Đường sinh là parabol có đỉnh $(3;0)$, trục đối xứng là đường thẳng $y=0$ nên có dạng $x=3+ky^2$; qua điểm $(7;2)$ nên $7=3+4k$, $k=1$. Vậy $x=3+y^2$ với $0\le y\le2$.
+Thể tích $V=\pi\displaystyle\int_0^2(3+y^2)^2\,\mathrm dy=\pi\int_0^2(9+6y^2+y^4)\,\mathrm dy=\pi\Big(9y+2y^3+\dfrac{y^5}5\Big)\Big|_0^2=\dfrac{202\pi}5\approx127\ \text{cm}^3$.}
+\end{ex}

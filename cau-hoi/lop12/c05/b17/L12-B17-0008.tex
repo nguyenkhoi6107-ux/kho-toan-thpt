@@ -1,0 +1,43 @@
+%% ma: L12-B17-0008
+%% lop: 12
+%% chuong: 5
+%% bai: 17
+%% dang: 12.17.1
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần II Câu 1 (Chuyên Thái Bình 2025)"
+%% kien_thuc: "Bài 17 (mặt cầu, phạm vi theo dõi là hình cầu), Bài 15 (phương trình tham số của đường thẳng), Bài 8 (tọa độ, độ dài vectơ); chuyển động thẳng đều"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc Đ Đ S S sai ở ý c): chính lời giải gốc tính ra A(940;420;12) (k = 180) đúng như đề, nên ý c) đúng; dùng Đ Đ Đ S (sympy: A = (940;420;12); thời gian trong phạm vi 22,1 phút). Ý d) khớp đáp án gốc (22,11 phút). Cùng ý tưởng với L12-B17-0001 (vật thể bay và vùng theo dõi hình cầu) nên nhập vào dạng 12.17.1 đã duyệt. Hình gốc là ảnh tháp kiểm soát cùng trục tọa độ; hình TikZ là sơ đồ minh họa, không theo tỉ lệ."
+\begin{ex}
+Một tháp trung tâm kiểm soát không lưu ở sân bay cao $100$ m sử dụng ra đa có phạm vi theo dõi $600$ km được đặt trên đỉnh tháp. Chọn hệ trục tọa độ $Oxyz$ có gốc $O$ trùng với vị trí chân tháp, mặt phẳng $(Oxy)$ trùng với mặt đất sao cho trục $Ox$ hướng về phía tây, trục $Oy$ hướng về phía nam, trục $Oz$ hướng thẳng đứng lên phía trên (hình bên) (đơn vị độ dài trên mỗi trục là kilômét). Một máy bay tại vị trí $F$ cách mặt đất $12$ km, cách $400$ km về phía tây và $300$ km về phía bắc so với tháp trung tâm kiểm soát không lưu. Từ vị trí $F$, máy bay bay với tốc độ $900$ km/h, theo hướng của vectơ $\vec a=(3;4;0)$ sau một giờ đến vị trí $A$.
+\begin{center}
+\begin{tikzpicture}[x={(-.55cm,-.35cm)},y={(1cm,0cm)},z={(0cm,1cm)},scale=.8]
+  \fill[green!10] (-.5,-3.5,0)--(5,-3.5,0)--(5,4.5,0)--(-.5,4.5,0)--cycle;
+  \draw[truc] (0,0,0)--(5.4,0,0) node[below left]{$x$};
+  \draw[truc] (0,0,0)--(0,5,0) node[below]{$y$};
+  \draw[truc] (0,0,0)--(0,0,4) node[left]{$z$};
+  \draw[line width=1.8pt] (0,0,0)--(0,0,1.6);
+  \fill[red] (0,0,1.6) circle (1.6pt);
+  \node[right,font=\footnotesize] at (0,.1,1.6) {ra đa};
+  \fill (3,-1.6,2.8) circle (1.3pt) node[above left]{$F$};
+  \draw[phu] (3,-1.6,2.8)--(3,-1.6,0);
+  \fill (4.8,1.4,2.8) circle (1.3pt) node[below right]{$A$};
+  \draw[->,thick] (3,-1.6,2.8)--(4.8,1.4,2.8);
+  \node[below right,font=\footnotesize] at (0,0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tọa độ của ra đa đặt trên tháp là $(0;0;0{,}1)$.}
+{\True Vị trí $F$ nằm trong phạm vi kiểm soát của ra đa.}
+{\True Vị trí $A$ có tọa độ $A(940;420;12)$.}
+{Trong khoảng thời gian một giờ máy bay bay từ vị trí $F$ đến vị trí $A$, máy bay có không quá $21$ phút bay trong phạm vi theo dõi của ra đa.}
+\loigiai{a) Ra đa nằm trên trục $Oz$, cao $100$ m $=0{,}1$ km nên có tọa độ $I(0;0;0{,}1)$. Đúng.
+
+b) $F(400;-300;12)$ (phía bắc ứng với $y<0$). $IF=\sqrt{400^2+300^2+11{,}9^2}\approx500{,}14<600$. Đúng.
+
+c) $\overrightarrow{FA}=k\vec a$ với $k>0$, $|\overrightarrow{FA}|=5k=900\Rightarrow k=180$, $\overrightarrow{FA}=(540;720;0)$ nên $A(940;420;12)$. Đúng.
+
+d) Sau $t$ giờ máy bay ở $P(400+540t;-300+720t;12)$, $0\le t\le1$. $IP^2=(400+540t)^2+(-300+720t)^2+11{,}9^2=810\,000t^2+250\,141{,}61\le600^2\Leftrightarrow t\le\dfrac{\sqrt{109\,858{,}39}}{900}\approx0{,}3683$ giờ $\approx22{,}1$ phút $>21$ phút. Sai.}
+\end{ex}

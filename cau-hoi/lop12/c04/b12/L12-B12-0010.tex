@@ -1,0 +1,43 @@
+%% ma: L12-B12-0010
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.2
+%% loai: DS
+%% muc: [TH, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần II Câu 3"
+%% kien_thuc: "Bài 12 (tích phân, quãng đường đi được từ hàm vận tốc), Bài 11 (nguyên hàm); hàm bậc hai đi qua ba điểm"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc Đ Đ S Đ đúng (sympy: s_A(3) = 180, s_B(3) = 90). Cùng ý tưởng với L12-B12-0002, 0003, 0005 (dạng 12.12.2 đã duyệt; dạng hiện có 3 câu, dưới giới hạn). Hình vẽ lại: parabol v_A = -20t^2 + 80t (đỉnh (2;80), cắt trục hoành tại t = 4), đường thẳng v_B = 20t đi qua (3;60). Đề gốc ý d) hiểu là t = 3."
+\begin{ex}
+Cho hai chất điểm $A$ và $B$ xuất phát cùng lúc, bên cạnh nhau và cùng trên một con đường thẳng. Biết đồ thị biểu diễn vận tốc của chất điểm $A$ là một parabol, đồ thị biểu diễn vận tốc của chất điểm $B$ là một đường thẳng như hình bên.
+\begin{center}
+\begin{tikzpicture}[x=1.15cm,y=.045cm]
+  \draw[truc] (0,0)--(5.2,0) node[below]{$t$ (s)};
+  \draw[truc] (0,0)--(0,95) node[left]{$v$ (m/s)};
+  \draw[green!50!black,thick,domain=0:4,samples=50,smooth] plot (\x,{-20*\x*\x+80*\x});
+  \draw[green!50!black,thick] (0,0)--(4.6,92);
+  \draw[phu] (0,60)--(3,60)--(3,0);
+  \fill (3,60) circle (1.4pt);
+  \node[below left] at (0,0) {$O$};
+  \node[left] at (0,60) {$60$};
+  \node[below] at (3,0) {$3$};
+  \node[below] at (4,0) {$4$};
+  \node[green!50!black,above] at (1.8,86) {$v_A$};
+  \node[green!50!black,right] at (4.6,92) {$v_B$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Gọi $v_B$ là vận tốc của chất điểm $B$ thì $v_B(t)=20t$ $(t\ge0)$.}
+{\True Gọi $v_A$ là vận tốc của chất điểm $A$ thì $v_A(t)=-20t^2+80t$ $(t\ge0)$.}
+{Quãng đường chất điểm $A$ đi được trong $3$ giây đầu tiên là $90$ (m).}
+{\True Sau khi xuất phát, tại thời điểm hai chất điểm đạt vận tốc bằng nhau thì hai chất điểm cách nhau $90$ (m).}
+\loigiai{a) Đường thẳng đi qua $O(0;0)$ và $(3;60)$ có hệ số góc $20$ nên $v_B(t)=20t$. Đúng.
+
+b) Parabol đi qua $O(0;0)$, $(4;0)$ nên $v_A(t)=at(t-4)$; qua $(3;60)$ nên $-3a=60$, $a=-20$: $v_A(t)=-20t^2+80t$. Đúng.
+
+c) $s_A=\displaystyle\int_0^3(-20t^2+80t)\,\mathrm dt=\Big(-\dfrac{20t^3}3+40t^2\Big)\Big|_0^3=-180+360=180$ m $\ne90$ m. Sai.
+
+d) $v_A(t)=v_B(t)\Leftrightarrow-20t^2+60t=0\Leftrightarrow t=3$ (hai chất điểm xuất phát cùng lúc). $s_B=\displaystyle\int_0^320t\,\mathrm dt=90$ m, $s_A=180$ m nên hai chất điểm cách nhau $180-90=90$ m. Đúng.}
+\end{ex}

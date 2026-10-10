@@ -1,0 +1,22 @@
+%% ma: L11-B22-0002
+%% lop: 11
+%% chuong: 7
+%% bai: 22
+%% dang: 11.22.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,04"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần III Câu 2 (Chuyên Thái Bình 2025)"
+%% kien_thuc: "Bài 22 (góc giữa hai đường thẳng trong không gian, đường trung bình), định lí Pythagore, định lí côsin (Toán 10)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 0,04 đúng (sympy: vectơ MN = (1,5;3;2,5), A'C = (3;3;-5), cos = 1/(sqrt(17,5).sqrt(43)) = 0,0365). Cùng dạng 11.22.1 (đã duyệt) nhưng khó hơn, mức VD. Đề gốc không có hình."
+\begin{ex}
+Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=AD=3$, $AA'=5$. Gọi $M,N$ lần lượt là trung điểm của $AB,CC'$. Tính $\cos(MN,A'C)$ (làm tròn đến hàng phần trăm).
+\shortans{0,04}
+\loigiai{Gọi $P$ là trung điểm của $A'C'$. Trong tam giác $A'CC'$, $NP$ là đường trung bình nên $NP\parallel A'C$ và $NP=\dfrac12A'C$. Do đó góc giữa $MN$ và $A'C$ bằng góc giữa $MN$ và $NP$.
+$A'C^2=AA'^2+AC^2=25+18=43$ nên $NP^2=\dfrac{43}4=10{,}75$.
+$MN^2=MB^2+BC^2+CN^2=\dfrac94+9+\dfrac{25}4=17{,}5$.
+Gọi $Q$ là trung điểm của $AC$ thì $PQ\perp(ABCD)$, $PQ=5$, $MQ=\dfrac12BC=\dfrac32$ và $MQ\perp PQ$ nên $MP^2=\dfrac94+25=27{,}25$.
+Định lí côsin trong tam giác $MNP$: $\cos\widehat{MNP}=\dfrac{MN^2+NP^2-MP^2}{2\,MN\cdot NP}=\dfrac{17{,}5+10{,}75-27{,}25}{2\sqrt{17{,}5\cdot10{,}75}}=\dfrac1{2\sqrt{188{,}125}}\approx0{,}0365$.
+Vậy $\cos(MN,A'C)\approx0{,}04$.}
+\end{ex}

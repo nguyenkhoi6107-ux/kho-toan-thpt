@@ -1,0 +1,40 @@
+%% ma: L12-B08-0016
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.11
+%% loai: TLN
+%% muc: VD
+%% dap_an: "43,7"
+%% nguon: "(NBV)-ĐỀ SỐ 9-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D09, MỖI NGÀY 1 ĐỀ - Đề số 9), Phần III Câu 4"
+%% kien_thuc: "Bài 8 (biểu thức tọa độ, góc giữa hai vectơ), Bài 7 (tọa độ hóa mô hình)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.11 (tọa độ hóa mái nhà, góc giữa hai vectơ) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 43,7 đúng (sympy: D = (4;4;5), góc = 43,70 độ). Đề gốc nêu 'song song và cách mặt đáy 5 m' (cạnh DE song song với đáy, hiểu là DE song song OA). Hình vẽ lại theo hình gốc (mái nhà, ba vectơ đơn vị i, j, k tại O), không theo tỉ lệ chính xác."
+\begin{ex}
+Hình bên minh họa một chiếc mái nhà có đáy là hình chữ nhật $OABC$ với $OA=14$ m và $AB=8$ m. Cạnh $DE$ của mái nhà có độ dài $6$ m, song song và cách mặt đáy $5$ m. Biết rằng các cạnh bên $DC,DO,EA,EB$ có cùng độ dài, khi đó góc $\widehat{BOD}$ bằng bao nhiêu độ (kết quả viết dưới dạng số thập phân và làm tròn đến hàng phần mười)?
+\begin{center}
+\begin{tikzpicture}[x={(.38cm,-.07cm)},y={(-.3cm,.2cm)},z={(0cm,.4cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (A) at (14,0,0); \coordinate (B) at (14,8,0); \coordinate (C) at (0,8,0);
+  \coordinate (D) at (4,4,5); \coordinate (E) at (10,4,5);
+  \fill[green!10] (O)--(A)--(B)--(C)--cycle;
+  \draw (O)--(A)--(B)--(C)--cycle;
+  \draw (D)--(E) (D)--(O) (D)--(C) (E)--(A) (E)--(B);
+  \draw[->,thick] (O)--(3,0,0) node[below]{$\vec i$};
+  \draw[->,thick] (O)--(0,3,0) node[left]{$\vec j$};
+  \draw[->,thick] (O)--(0,0,3) node[left]{$\vec k$};
+  \fill (O) circle (1pt) (A) circle (1pt) (B) circle (1pt) (C) circle (1pt) (D) circle (1pt) (E) circle (1pt);
+  \node[below left] at (O) {$O$}; \node[below right] at (A) {$A$}; \node[right] at (B) {$B$}; \node[left] at (C) {$C$};
+  \node[above left] at (D) {$D$}; \node[above right] at (E) {$E$};
+  \node[above,font=\footnotesize] at ($(D)!.5!(E)$) {$6$ m};
+  \node[below,font=\footnotesize] at ($(O)!.5!(A)$) {$14$ m};
+  \node[left=2pt,font=\footnotesize] at ($(A)!.5!(B)$) {$8$ m};
+\end{tikzpicture}
+\end{center}
+\shortans{43,7}
+\loigiai{Chọn hệ trục $Oxyz$ với $O$ là gốc, $\vec i,\vec j,\vec k$ cùng hướng với $\overrightarrow{OA},\overrightarrow{OC}$ và trục đứng (đơn vị mét): $A(14;0;0)$, $B(14;8;0)$, $C(0;8;0)$.
+$DE\parallel OA$, $DE=6$, cao $5$ m nên $D(a;b;5)$, $E(a+6;b;5)$.
+$DO=DC\Rightarrow b=4$; $DO=EA\Rightarrow a^2+16+25=(8-a)^2+16+25\Rightarrow a=4$. Vậy $D(4;4;5)$.
+$\overrightarrow{OD}=(4;4;5)$, $\overrightarrow{OB}=(14;8;0)$ nên
+$\cos\widehat{BOD}=\dfrac{4\cdot14+4\cdot8}{\sqrt{57}\cdot\sqrt{260}}=\dfrac{88}{\sqrt{14\,820}}\approx0{,}7229$, suy ra $\widehat{BOD}\approx43{,}7^\circ$.}
+\end{ex}
