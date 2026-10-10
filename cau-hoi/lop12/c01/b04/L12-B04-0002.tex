@@ -1,0 +1,42 @@
+%% ma: L12-B04-0002
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.2
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "1,92"
+%% nguon: "(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần III Câu 2 (Chuyên Hạ Long 2025)"
+%% kien_thuc: "Bài 4 (đồ thị hàm phân thức bậc nhất trên bậc nhất, giao điểm với đường thẳng); Bài 20 lớp 10 (khoảng cách giữa hai đường thẳng song song)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 12.4.2: hình vuông có hai đỉnh trên đồ thị hàm phân thức (một nhánh) và hai đỉnh trên đường thẳng"
+%% ghi_chu: "Hình dựng lại từ số liệu thật (đồ thị y=(2x+1)/(x-1), đường y=-x+4 và hình vuông ABCD tính chính xác). Đáp án gốc 1,92 đúng (kiểm bằng sympy: 1,9246)"
+\begin{ex}
+Trong một công viên có một hồ nước và một đường đi lát gạch hoa. Thiết lập hệ trục $Oxy$ như hình vẽ dưới đây, kiến trúc sư thấy rằng bờ hồ có thể coi như một nhánh của đồ thị hàm số $y=\dfrac{2x+1}{x-1}$ và đường đi khi đó ứng với đường thẳng $(d)\colon y=-x+4$. Để đảm bảo ánh sáng, kiến trúc sư muốn đặt $2$ cột đèn trên bờ hồ và $2$ cột đèn trên đường đi sao cho $4$ cột đèn này tạo thành một hình vuông. Tính khoảng cách giữa hai cột đèn trên bờ hồ (làm tròn đến hàng phần trăm).
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.9cm]
+  \draw[gray!45,very thin] (0,0) grid[xstep=1,ystep=1] (6.5,6);
+  \begin{scope}
+    \clip (-.2,-1.2) rectangle (6.6,6.4);
+    \draw[thick,domain=1.7:6.5,samples=80,smooth,green!50!black] plot (\x,{(2*\x+1)/(\x-1)});
+    \draw[thick,domain=-.2:6.6] plot (\x,{-\x+4});
+  \end{scope}
+  \draw[truc] (-.3,0)--(6.9,0) node[below]{$x$};
+  \draw[truc] (0,-1.3)--(0,6.7) node[left]{$y$};
+  \coordinate (A) at (2.1805,1.8195); \coordinate (B) at (3.5414,3.1805);
+  \coordinate (C) at (2.1805,4.5414); \coordinate (D) at (.8195,3.1805);
+  \draw[thick,red!70!black] (A)--(B)--(C)--(D)--cycle;
+  \foreach \P in {A,B,C,D} \fill (\P) circle (1.5pt);
+  \path (A) node[below right]{$A$} (B) node[right]{$B$} (C) node[above right]{$C$} (D) node[left]{$D$}
+        (0,0) node[below left]{\footnotesize$O$};
+  \foreach \i in {1,...,6} \path (\i,0) node[below]{\footnotesize$\i$};
+  \foreach \i in {1,...,5} \path (0,\i) node[left]{\footnotesize$\i$};
+\end{tikzpicture}
+\end{center}
+\shortans{1,92}
+\loigiai{Hai cột đèn trên đường đi và hai cột đèn trên bờ hồ là bốn đỉnh của hình vuông nên cạnh nối hai cột trên bờ hồ song song với $(d)$, nằm trên đường thẳng $(d')\colon y=-x+m$ và độ dài cạnh bằng khoảng cách giữa $(d)$ và $(d')$.
+Hoành độ giao điểm của $(d')$ với đồ thị: $\dfrac{2x+1}{x-1}=-x+m\Leftrightarrow x^2+(1-m)x+1+m=0$ $(x\ne1)$. Hai nghiệm $x_1,x_2$ có $x_1+x_2=m-1$, $x_1x_2=m+1$, nên độ dài hai cột trên bờ hồ là $\ell=\sqrt2\,|x_1-x_2|=\sqrt2\cdot\sqrt{m^2-6m-3}$.
+Khoảng cách giữa $(d)$ và $(d')$ là $\dfrac{|m-4|}{\sqrt2}$. Điều kiện hình vuông: $\sqrt2\sqrt{m^2-6m-3}=\dfrac{|m-4|}{\sqrt2}\Leftrightarrow3m^2-16m-28=0\Leftrightarrow m=\dfrac{8\pm2\sqrt{37}}{3}$.
+Hai giao điểm phải cùng nằm trên nhánh $x>1$ như hình (nhánh bờ hồ): $m=\dfrac{8+2\sqrt{37}}{3}\approx6{,}72$ cho hai nghiệm $\approx2{,}18$ và $\approx3{,}54$ đều lớn hơn $1$ (nhận); $m=\dfrac{8-2\sqrt{37}}{3}\approx-1{,}39$ cho nghiệm $\approx0{,}15$ và $\approx-2{,}54$ (loại).
+Vậy khoảng cách cần tìm là $\ell=\dfrac{m-4}{\sqrt2}\approx1{,}92$.}
+\end{ex}

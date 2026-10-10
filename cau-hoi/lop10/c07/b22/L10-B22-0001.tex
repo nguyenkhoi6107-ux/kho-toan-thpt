@@ -1,0 +1,34 @@
+%% ma: L10-B22-0001
+%% lop: 10
+%% chuong: 7
+%% bai: 22
+%% dang: 10.22.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "6,2"
+%% nguon: "(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần III Câu 1"
+%% kien_thuc: "Bài 22 (elip: phương trình chính tắc, tâm sai e = c/a, b² = a² − c²)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất 10.22.1: đường hầm nửa elip, tính độ cao từ tâm sai"
+%% ghi_chu: "Hình dựng lại theo hình gốc (khối núi, nửa elip, kích thước 20 m và 3 m); đường gióng nét đứt tại x=7 do bổ sung để chỉ rõ điểm cần tính"
+\begin{ex}
+Một đường hầm xuyên qua núi có chiều rộng là $20$ m, mặt cắt đứng của đường hầm có dạng nửa elip và được mô tả trong hệ trục tọa độ với đơn vị trục là mét như ở hình vẽ. Giả sử tâm sai của đường elip là $e=0{,}5$. Tìm độ cao của đường hầm tại điểm mặt đường cách chân hầm bên phải là $3$ m. Làm tròn các kết quả đến hàng phần mười theo đơn vị mét.
+\begin{center}
+\begin{tikzpicture}[scale=.3]
+  \fill[brown!35] (-12.5,0) rectangle (12.5,10.5);
+  \fill[white] (10,0) arc[start angle=0,end angle=180,x radius=10,y radius=8.66];
+  \draw[thick] (10,0) arc[start angle=0,end angle=180,x radius=10,y radius=8.66];
+  \draw (-12.5,0)--(12.5,0);
+  \draw[truc] (0,0)--(0,11.8) node[left]{$y$};
+  \draw[truc] (12.5,0)--(14,0) node[below]{$x$};
+  \draw[phu] (7,0)--(7,6.185);
+  \draw[<->] (-10,-2.6)--(10,-2.6) node[midway,fill=white,inner sep=1pt]{$20$ m};
+  \draw[<->] (7,-4.6)--(10,-4.6) node[midway,below]{$3$ m};
+  \draw[phu] (-10,0)--(-10,-2.9) (10,0)--(10,-4.9) (7,0)--(7,-4.9);
+  \path (0,0) node[below left]{\footnotesize$O$};
+\end{tikzpicture}
+\end{center}
+\shortans{6,2}
+\loigiai{Chiều rộng $20$ m nên trục lớn dài $2a=20$, $a=10$. Tâm sai $e=\dfrac ca=0{,}5$ nên $c=5$ và $b^2=a^2-c^2=75$. Nửa elip phía trên có phương trình $\dfrac{x^2}{100}+\dfrac{y^2}{75}=1$, $y\ge0$.
+Điểm cách chân hầm bên phải $3$ m có hoành độ $x=10-3=7$. Khi đó $y=\sqrt{75\left(1-\dfrac{49}{100}\right)}=\sqrt{38{,}25}\approx6{,}2$ (m).}
+\end{ex}

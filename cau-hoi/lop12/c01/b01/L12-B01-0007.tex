@@ -1,0 +1,31 @@
+%% ma: L12-B01-0007
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần I Câu 2"
+%% kien_thuc: "Bài 1 (dấu của đạo hàm và tính đơn điệu, đọc từ đồ thị)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình dựng lại từ đồ thị gốc (hàm bậc ba có cực đại tại x=-2, cực tiểu tại x=1); không theo tỉ lệ. Trùng ý tưởng với dạng 12.1.2 nên nhập cùng dạng"
+\begin{ex}
+Cho hàm số $y=f(x)$ có đồ thị như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.42cm]
+  \begin{scope}
+    \clip (-3.9,-1.2) rectangle (2.4,6.6);
+    \draw[thick,domain=-3.8:2.3,samples=80,smooth] plot (\x,{(\x*\x*\x+1.5*\x*\x-6*\x)/2.5+1.8});
+  \end{scope}
+  \draw[truc] (-4,0)--(2.7,0) node[below]{$x$};
+  \draw[truc] (0,-1.3)--(0,6.9) node[left]{$y$};
+  \draw[phu] (-2,0)--(-2,5.8) (1,0)--(1,.4);
+  \path (0,0) node[below left]{\footnotesize$O$} (-2,0) node[below]{\footnotesize$-2$} (1,0) node[below]{\footnotesize$1$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây đúng?
+\choice{$f'(0)>0$}{$f'(3)<0$}{\True $f'(-1)<0$}{$f'(-20)<0$}
+\loigiai{Từ đồ thị: hàm số đồng biến trên $(-\infty;-2)$ và $(1;+\infty)$, nghịch biến trên $(-2;1)$. Do đó $f'(x)>0$ khi $x<-2$ hoặc $x>1$; $f'(x)<0$ khi $-2<x<1$.
+Vì $-1\in(-2;1)$ nên $f'(-1)<0$. Các khẳng định còn lại sai ($0\in(-2;1)$ nên $f'(0)<0$; $f'(3)>0$; $f'(-20)>0$).}
+\end{ex}

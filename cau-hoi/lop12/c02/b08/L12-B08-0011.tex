@@ -1,0 +1,45 @@
+%% ma: L12-B08-0011
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.1
+%% loai: DS
+%% muc: [TH, TH, TH, TH]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần II Câu 1 (THPT Gia Bình - Bắc Ninh 2025)"
+%% kien_thuc: "Bài 7 (hệ trục tọa độ trong không gian); Bài 8 (tọa độ vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình dựng lại theo hình gốc từ các tọa độ cho trên hình (O, E, B, G, P, Q); tọa độ A, C, F, H suy ra từ nền nhà hình chữ nhật. Trùng ý tưởng với dạng 12.8.1 nên nhập cùng dạng"
+\begin{ex}
+Hình minh họa sơ đồ một ngôi nhà trong hệ trục tọa độ $Oxyz$, trong đó nền nhà, bốn bức tường và hai mái nhà đều là hình chữ nhật.
+\begin{center}
+\begin{tikzpicture}[x={(1.1cm,0cm)},y={(.6cm,.3cm)},z={(0cm,.8cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (A) at (4,0,0); \coordinate (B) at (4,5,0); \coordinate (C) at (0,5,0);
+  \coordinate (E) at (0,0,3); \coordinate (F) at (4,0,3); \coordinate (G) at (4,5,3); \coordinate (H) at (0,5,3);
+  \coordinate (P) at (2,0,4); \coordinate (Q) at (2,5,4);
+  \fill[blue!8] (E)--(P)--(Q)--(H)--cycle;
+  \fill[blue!14] (P)--(F)--(G)--(Q)--cycle;
+  \draw[khuat] (O)--(C)--(B) (C)--(H);
+  \draw (O)--(A)--(B) (A)--(F) (B)--(G) (O)--(E) (E)--(F)--(G)--(H)--(E) (E)--(P)--(F) (H)--(Q)--(G) (P)--(Q);
+  \draw[truc] (A)--(5.1,0,0) node[below]{$x$};
+  \draw[truc] (C)--(0,6.4,0) node[right]{$y$};
+  \draw[truc] (E)--(0,0,4.6) node[left]{$z$};
+  \foreach \P in {O,A,B,C,E,F,G,H,P,Q} \fill (\P) circle (1.1pt);
+  \node[font=\scriptsize] at ($(P)+(0cm,-.42cm)$) {$P(2;0;4)$};
+  \path (O) node[below left]{\footnotesize$O(0;0;0)$} (A) node[below]{\footnotesize$A$} (B) node[right]{\footnotesize$B(4;5;0)$}
+        (C) node[below left]{\footnotesize$C$} (E) node[left]{\footnotesize$E(0;0;3)$} (F) node[right,xshift=-1pt]{\footnotesize$F$}
+        (G) node[right]{\footnotesize$G(4;5;3)$} (H) node[above left]{\footnotesize$H$}
+        (Q) node[above right]{\footnotesize$Q(2;5;4)$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Tọa độ điểm $A$ là $(4;0;0)$.}
+{\True $\overrightarrow{OQ}=(2;5;4)$.}
+{Tọa độ $\overrightarrow{AH}=(4;5;3)$.}
+{\True $C(0;5;0)$.}
+\loigiai{Nền nhà $OABC$ là hình chữ nhật với $O$ là gốc, $A$ trên $Ox$, $C$ trên $Oy$, $B(4;5;0)$ nên $A(4;0;0)$, $C(0;5;0)$; $H$ nằm trên đường thẳng qua $C$ song song $Oz$ với $E(0;0;3)$ nên $H(0;5;3)$.
+a) $A(4;0;0)$. Đúng.
+b) $Q(2;5;4)$ nên $\overrightarrow{OQ}=(2;5;4)$. Đúng.
+c) $\overrightarrow{AH}=(0-4;5-0;3-0)=(-4;5;3)\ne(4;5;3)$. Sai.
+d) $C(0;5;0)$. Đúng.}
+\end{ex}

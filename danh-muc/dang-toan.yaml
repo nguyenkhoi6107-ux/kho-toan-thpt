@@ -86,3 +86,19 @@
 12.13.7: {ten: "Hàm bậc ba đọc từ đồ thị: giá trị nhỏ nhất, hệ số, tiếp tuyến, so sánh hai diện tích (Đúng/Sai)", trang_thai: da-duyet}
 12.14.4: {ten: "Mảnh đất tứ giác trong Oxyz: hình bình hành, độ nghiêng, diện tích (Đúng/Sai)", trang_thai: da-duyet}
 12.17.4: {ten: "Tìm bán kính mặt cầu từ phương trình tổng quát", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị D05 (Đề số 5 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
+10.22.1: {ten: "Đường hầm nửa elip: tính độ cao từ tâm sai", trang_thai: de-xuat}
+11.9.3: {ten: "So sánh tứ phân vị thứ nhất của hai mẫu số liệu ghép nhóm", trang_thai: de-xuat}
+11.27.5: {ten: "Thể tích khối lăng trụ tam giác đều", trang_thai: de-xuat}
+11.27.6: {ten: "Thể tích khối ghép lăng trụ tứ giác đều và chóp tứ giác đều (tính tiền kim loại)", trang_thai: de-xuat}
+11.32.2: {ten: "Đạo hàm của f(x) = sin 2x - x và giải phương trình f'(x) = 0 (Đúng/Sai)", trang_thai: de-xuat}
+12.1.5: {ten: "Nhận biết hàm số nghịch biến trên R trong bốn hàm cho trước", trang_thai: de-xuat}
+12.2.4: {ten: "Giá trị lớn nhất, nhỏ nhất trên đoạn đọc từ bảng biến thiên (tính M + m)", trang_thai: de-xuat}
+12.4.2: {ten: "Hình vuông có hai đỉnh trên đồ thị hàm phân thức (một nhánh) và hai đỉnh trên đường thẳng", trang_thai: de-xuat}
+12.8.8: {ten: "Tọa độ điểm M thỏa hệ thức vectơ MA + kMB = 0 trong Oxyz", trang_thai: de-xuat}
+12.11.3: {ten: "Nguyên hàm của hàm lượng giác bằng công thức hạ bậc", trang_thai: de-xuat}
+12.11.4: {ten: "Tìm S(t) từ tốc độ tăng dân số S'(t) = k.e^(rt) (nguyên hàm, Đúng/Sai)", trang_thai: de-xuat}
+12.13.8: {ten: "Chia cổng parabol thành các phần diện tích bằng nhau, tìm tỉ số hai dây", trang_thai: de-xuat}
+12.15.3: {ten: "Điểm trên đường thẳng gần gốc tọa độ nhất (hình chiếu của O)", trang_thai: de-xuat}
+12.18.2: {ten: "Xác suất có điều kiện khi lấy không hoàn lại (Đúng/Sai)", trang_thai: de-xuat}
+12.19.4: {ten: "Xác suất ở lần rút thứ hai khi rút không hoàn lại (công thức xác suất toàn phần)", trang_thai: de-xuat}

@@ -1,0 +1,27 @@
+%% ma: L12-B06-0005
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 5-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D05, MỖI NGÀY 1 ĐỀ - Đề số 5), Phần I Câu 4"
+%% kien_thuc: "Bài 6 (quy tắc hình bình hành, quy tắc hình hộp)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.6.1 (quy tắc hình hộp) nên nhập cùng dạng. Hình dựng lại, thêm nét BA' cho rõ đề"
+\begin{ex}
+Cho hình hộp $ABCD.A'B'C'D'$ như hình vẽ. Khi đó, $\overrightarrow{BA'}+\overrightarrow{BC}$ bằng
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \path (0,0) coordinate (B) (3,0) coordinate (C) (4,1.1) coordinate (D) (1,1.1) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(.4,2.2) coordinate (\P');
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A') (B)--(A');
+  \path (A) node[below right]{$A$} (B) node[below left]{$B$} (C) node[below]{$C$} (D) node[right]{$D$}
+        (A') node[above left]{$A'$} (B') node[left]{$B'$} (C') node[right]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $\overrightarrow{BD'}$}{$\overrightarrow{BD}$}{$\overrightarrow{BC'}$}{$\overrightarrow{BB'}$}
+\loigiai{$\overrightarrow{BA'}=\overrightarrow{BA}+\overrightarrow{BB'}$ nên $\overrightarrow{BA'}+\overrightarrow{BC}=\overrightarrow{BA}+\overrightarrow{BC}+\overrightarrow{BB'}$. Theo quy tắc hình hộp (đỉnh $B$ có ba cạnh $BA,BC,BB'$), tổng này bằng $\overrightarrow{BD'}$.}
+\end{ex}
