@@ -60,23 +60,18 @@
 12.12.3: {ten: Tính tích phân bằng tính chất cộng theo cận, trang_thai: da-duyet}
 12.19.3: {ten: Xác suất qua nhiều vòng thi (công thức nhân và công thức Bayes), trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D03 (Đề số 3 MỖI NGÀY 1 ĐỀ), ngày 10/10/2026 ---
-11.4.1: {ten: "Mô hình thủy triều h = a + b sin(ct): giá trị lớn nhất, nhỏ nhất, giải phương trình và bất phương trình lượng giác", trang_thai: de-xuat}
-11.6.3: {ten: "Lãi đơn (ứng dụng cấp số cộng)", trang_thai: de-xuat}
-11.22.1: {ten: "Góc giữa hai đường thẳng trong hình hộp chữ nhật (qua đường thẳng song song)", trang_thai: de-xuat}
-11.27.4: {ten: "Hình chóp có mặt bên vuông góc với đáy: chiều cao từ thể tích, góc giữa cạnh bên và mặt đáy", trang_thai: de-xuat}
-11.32.1: {ten: "Đạo hàm của hàm số lôgarit", trang_thai: de-xuat}
-12.1.5: {ten: "Đếm số điểm cực trị từ bảng biến thiên", trang_thai: de-xuat}
-12.2.3: {ten: "Giá trị nhỏ nhất của hàm số bậc ba trên một đoạn", trang_thai: de-xuat}
-12.4.1: {ten: "Tâm đối xứng của đồ thị hàm phân thức bậc nhất trên bậc nhất", trang_thai: de-xuat}
-12.5.4: {ten: "Tối ưu hình học thực tế: ôtô rẽ qua góc ngõ chữ L (đạo hàm)", trang_thai: de-xuat}
-12.6.3: {ten: "Khẳng định sai về vectơ trong tứ diện có các trung điểm", trang_thai: de-xuat}
-12.8.6: {ten: "Hai vật chuyển động thẳng đều trong Oxyz: khoảng cách theo thời gian, va chạm", trang_thai: de-xuat}
-12.8.7: {ten: "Tích có hướng của hai vectơ (vượt chương trình KNTT, dạng dùng cho câu cách ly)", trang_thai: de-xuat}
-12.9.1: {ten: "So sánh khoảng tứ phân vị của hai mẫu số liệu ghép nhóm", trang_thai: de-xuat}
-12.12.4: {ten: "Tính tích phân từ hiệu hai giá trị của nguyên hàm (Newton–Leibniz)", trang_thai: de-xuat}
-12.13.5: {ten: "Diện tích hình phẳng giới hạn bởi đồ thị hàm mũ, trục tung và các đường thẳng", trang_thai: de-xuat}
-12.13.6: {ten: "Hàm số cho bởi hai công thức: nguyên hàm, tích phân, diện tích, thể tích khối tròn xoay (dạng Đúng/Sai)", trang_thai: de-xuat}
-12.14.2: {ten: "Mặt phẳng căng qua bốn đầu cột: viết phương trình mặt phẳng, tìm độ cao tại một điểm", trang_thai: de-xuat}
-12.15.3: {ten: "Tìm vectơ chỉ phương từ phương trình tham số của đường thẳng", trang_thai: de-xuat}
-12.18.1: {ten: "Xác suất có điều kiện từ bảng số liệu hai chiều", trang_thai: de-xuat}
-12.19.4: {ten: "Xác suất toàn phần trong y tế (tỉ lệ bệnh và yếu tố nguy cơ)", trang_thai: de-xuat}
+11.4.1: {ten: "Mô hình thủy triều h = a + b sin(ct): giá trị lớn nhất, nhỏ nhất, giải phương trình và bất phương trình lượng giác", trang_thai: da-duyet}
+11.6.3: {ten: "Lãi đơn (ứng dụng cấp số cộng)", trang_thai: da-duyet}
+11.22.1: {ten: "Góc giữa hai đường thẳng trong hình hộp chữ nhật (qua đường thẳng song song)", trang_thai: da-duyet}
+11.27.4: {ten: "Hình chóp có mặt bên vuông góc với đáy: chiều cao từ thể tích, góc giữa cạnh bên và mặt đáy", trang_thai: da-duyet}
+11.32.1: {ten: "Đạo hàm của hàm số lôgarit", trang_thai: da-duyet}
+12.2.3: {ten: "Giá trị nhỏ nhất của hàm số bậc ba trên một đoạn", trang_thai: da-duyet}
+12.4.1: {ten: "Tâm đối xứng của đồ thị hàm phân thức bậc nhất trên bậc nhất", trang_thai: da-duyet}
+12.5.4: {ten: "Tối ưu hình học thực tế: ôtô rẽ qua góc ngõ chữ L (đạo hàm)", trang_thai: da-duyet}
+12.6.3: {ten: "Khẳng định sai về vectơ trong tứ diện có các trung điểm", trang_thai: da-duyet}
+12.9.1: {ten: "So sánh khoảng tứ phân vị của hai mẫu số liệu ghép nhóm", trang_thai: da-duyet}
+12.13.5: {ten: "Diện tích hình phẳng giới hạn bởi đồ thị hàm mũ, trục tung và các đường thẳng", trang_thai: da-duyet}
+12.13.6: {ten: "Hàm số cho bởi hai công thức: nguyên hàm, tích phân, diện tích, thể tích khối tròn xoay (dạng Đúng/Sai)", trang_thai: da-duyet}
+12.14.3: {ten: "Tích có hướng của hai vectơ, tìm vectơ pháp tuyến của mặt phẳng", trang_thai: da-duyet}
+12.14.2: {ten: "Mặt phẳng căng qua bốn đầu cột: viết phương trình mặt phẳng, tìm độ cao tại một điểm", trang_thai: da-duyet}
+12.18.1: {ten: "Xác suất có điều kiện từ bảng số liệu hai chiều", trang_thai: da-duyet}
