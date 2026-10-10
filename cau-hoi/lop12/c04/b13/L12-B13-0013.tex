@@ -9,9 +9,21 @@
 %% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần III Câu 4"
 %% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi đồ thị hàm số và đường thẳng); tiếp tuyến của đồ thị (Lớp 11 Bài 31)"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Cùng dạng 12.13.4 (diện tích giữa đồ thị bậc ba và đường thẳng) nhưng không cho hình, cần tự tìm tiếp tuyến. Hình gốc chỉ minh họa nên không vẽ. Lời giải gốc ghi nhầm đơn vị m2 (đúng là cm2). Đáp án gốc 108 đúng (sympy)."
+%% ghi_chu: "Cùng dạng 12.13.4 (diện tích giữa đồ thị bậc ba và đường thẳng); đề không cho phương trình tiếp tuyến, cần tự tìm. Lời giải gốc ghi nhầm đơn vị m2 (đúng là cm2). Đáp án gốc 108 đúng (sympy). Hình dựng lại từ y=4x-x^3 và tiếp tuyến tại A (hình gốc chỉ có hình minh họa)."
 \begin{ex}
-Phần lưỡi của một con dao được cho bởi một phần của đồ thị hàm số $y=4x-x^3$ ($x,y$ đo bằng centimét), phần sống dao $AB$ nằm trên tiếp tuyến của đồ thị nói trên tại điểm $A(2;0)$ và $B$ là giao điểm của tiếp tuyến với đồ thị. Tính diện tích của bề mặt dao theo centimét vuông. Kết quả làm tròn đến hàng đơn vị.
+Phần lưỡi của một con dao được cho bởi một phần của đồ thị hàm số $y=4x-x^3$ ($x,y$ đo bằng centimét), phần sống dao $AB$ nằm trên tiếp tuyến của đồ thị nói trên tại điểm $A(2;0)$ và $B$ là giao điểm của tiếp tuyến với đồ thị (hình vẽ). Tính diện tích của bề mặt dao theo centimét vuông. Kết quả làm tròn đến hàng đơn vị.
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.085cm]
+  \fill[gray!30] (-4,48)--(2,0)--plot[domain=2:-4,samples=80] (\x,{4*\x-\x*\x*\x})--cycle;
+  \draw[thick,domain=-4:2.45,samples=100,smooth] plot (\x,{4*\x-\x*\x*\x});
+  \draw[thick] (-4,48)--(2,0);
+  \draw[truc] (-4.8,0)--(3.2,0) node[below]{$x$};
+  \draw[truc] (0,-10)--(0,56) node[right]{$y$};
+  \fill (-4,48) circle (1.4pt) (2,0) circle (1.4pt);
+  \draw (2,3)--(2,-3) node[below]{\footnotesize$2$};
+  \path (0,0) node[below right,inner sep=1pt]{\footnotesize$O$} (-4,48) node[left]{$B$} (2,0) node[above right,inner sep=2pt]{$A$};
+\end{tikzpicture}
+\end{center}
 \shortans{108}
 \loigiai{$y'=4-3x^2$ nên $y'(2)=-8$, tiếp tuyến tại $A$: $y=-8(x-2)=-8x+16$.
 Hoành độ $B$ là nghiệm khác $2$ của $4x-x^3=-8x+16\Leftrightarrow(x-2)^2(x+4)=0$, nên $B(-4;48)$.

@@ -8,10 +8,22 @@
 %% dap_an: "2,31"
 %% nguon: "(NBV)-ĐỀ SỐ 1-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D01, MỖI NGÀY 1 ĐỀ - Đề số 1), Phần III Câu 4 (THCS THPT Lê Thánh Tông - HCM 2025)"
 %% kien_thuc: "Bài 13 (thể tích vật thể tính qua diện tích thiết diện), Bài 12 (tích phân hàm đa thức); tam giác đều"
-%% ghi_chu: "Đề gốc có ảnh minh họa vật thể; bản này mô tả đáy bằng lời (đĩa tròn nằm trong mặt phẳng Oxy, tâm O) nên không vẽ hình. Đáp án gốc 2,31 đúng (4√3/3≈2,3094)"
+%% ghi_chu: "Đề gốc có ảnh minh họa vật thể; bản này mô tả đáy bằng lời và đã bổ sung hình dựng lại (đĩa tròn tâm O, một thiết diện tam giác đều tại x=0,4) ngày 10/10/2026 theo quy tắc hình minh họa. Đáp án gốc 2,31 đúng (4√3/3≈2,3094)"
 %% trang_thai: chinh-thuc
 \begin{ex}
 Cho vật thể có đáy là hình tròn tâm $O$ bán kính bằng $1$ nằm trong mặt phẳng $Oxy$. Khi cắt vật thể bằng mặt phẳng vuông góc với trục $Ox$ tại điểm có hoành độ $x$ ($-1\le x\le1$) thì được thiết diện là một tam giác đều có một cạnh nằm trên mặt phẳng đáy. Thể tích $V$ của vật thể đó là bao nhiêu? (Làm tròn kết quả đến hàng phần trăm.)
+\begin{center}
+\begin{tikzpicture}[x={(-.75cm,-.5cm)},y={(1.6cm,0cm)},z={(0cm,1.5cm)}]
+  \fill[gray!18] plot[domain=0:360,samples=90,smooth cycle] ({cos(\x)},{sin(\x)},0);
+  \draw plot[domain=0:360,samples=90,smooth cycle] ({cos(\x)},{sin(\x)},0);
+  \draw[truc] (0,0,0)--(1.5,0,0) node[below left]{$x$};
+  \draw[truc] (0,0,0)--(0,1.4,0) node[right]{$y$};
+  \draw[truc] (0,0,0)--(0,0,1.9) node[above]{$z$};
+  \path (0,0,0) node[below left,inner sep=1pt]{$O$};
+  \fill[blue!15,opacity=.8] (.4,-.9165,0)--(.4,.9165,0)--(.4,0,1.5875)--cycle;
+  \draw (.4,-.9165,0)--(.4,.9165,0)--(.4,0,1.5875)--cycle;
+\end{tikzpicture}
+\end{center}
 \shortans{2,31}
 \loigiai{Mặt phẳng vuông góc với $Ox$ tại hoành độ $x$ cắt đĩa theo dây cung dài $2\sqrt{1-x^2}$, đó là cạnh của tam giác đều nên diện tích thiết diện là $S(x)=\dfrac{\sqrt3}{4}\left(2\sqrt{1-x^2}\right)^2=\sqrt3\left(1-x^2\right)$.
 $V=\displaystyle\int_{-1}^{1}\sqrt3\left(1-x^2\right)\mathrm dx=\sqrt3\left(x-\dfrac{x^3}{3}\right)\Big|_{-1}^{1}=\dfrac{4\sqrt3}{3}\approx2{,}31$.}

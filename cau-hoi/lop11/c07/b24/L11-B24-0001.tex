@@ -8,10 +8,22 @@
 %% dap_an: "C"
 %% nguon: "(NBV)-ĐỀ SỐ 2-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D02, MỖI NGÀY 1 ĐỀ - Đề số 2), Phần I Câu 9"
 %% kien_thuc: "Bài 24 (góc giữa đường thẳng và mặt phẳng, phép chiếu vuông góc), Bài 22 (hình lập phương)"
-%% ghi_chu: "Hình lập phương chuẩn nên không vẽ lại hình gốc; đáp án gốc C đúng"
+%% ghi_chu: "Đáp án gốc C đúng; hình lập phương dựng lại (bổ sung 10/10/2026 theo quy tắc hình minh họa)"
 %% trang_thai: chinh-thuc
 \begin{ex}
-Cho hình lập phương $ABCD.A_1B_1C_1D_1$. Gọi $\varphi$ là góc giữa đường thẳng $AC_1$ và mặt phẳng $(A_1B_1C_1D_1)$. Giá trị $\tan\varphi$ bằng
+Cho hình lập phương $ABCD.A_1B_1C_1D_1$. Gọi $\varphi$ là góc giữa đường thẳng $AC_1$ và mặt phẳng $(A_1B_1C_1D_1)$.
+\begin{center}
+\begin{tikzpicture}[x={(2cm,0cm)},y={(.9cm,.6cm)},z={(0cm,2cm)}]
+  \path (0,0,0) coordinate (A) (1,0,0) coordinate (B) (1,1,0) coordinate (C) (0,1,0) coordinate (D);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,0,1) coordinate (\P1);
+  \draw (A)--(B)--(C)--(C1)--(B1)--(A1)--cycle (A1)--(D1)--(C1) (B)--(B1);
+  \draw (A)--(B) (B)--(C);
+  \draw[khuat] (A)--(D)--(C) (D)--(D1) (A)--(C1);
+  \path (A) node[below left]{$A$} (B) node[below right]{$B$} (C) node[right]{$C$} (D) node[below right,inner sep=1pt]{$D$}
+        (A1) node[above left]{$A_1$} (B1) node[above left,inner sep=1pt]{$B_1$} (C1) node[above right]{$C_1$} (D1) node[above left]{$D_1$};
+\end{tikzpicture}
+\end{center}
+Giá trị $\tan\varphi$ bằng
 \choice{$-\sqrt2$}{$2$}{\True $\dfrac{\sqrt2}{2}$}{$\sqrt2$}
 \loigiai{Gọi cạnh hình lập phương là $a$. Vì $AA_1\perp(A_1B_1C_1D_1)$ nên $A_1$ là hình chiếu của $A$ và $A_1C_1$ là hình chiếu của $AC_1$ trên mặt phẳng này. Suy ra $\varphi=\widehat{AC_1A_1}$ và
 \[\tan\varphi=\frac{AA_1}{A_1C_1}=\frac{a}{a\sqrt2}=\frac{\sqrt2}{2}.\]}

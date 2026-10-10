@@ -1,6 +1,7 @@
 # Quy ước hình vẽ (TikZ)
 
 ## Chung
+- **Bắt buộc có hình** khi tài liệu gốc có hình toán học hoặc đề nhắc "như hình vẽ/hình bên" (xem bước 6 trong SKILL.md). Chỉ bỏ ảnh trang trí không chứa dữ kiện toán, và phải ghi lý do vào `ghi_chu`. Khi soát cuối lô, lập danh sách các câu gốc có hình và đánh dấu từng câu đã có hình TikZ; câu còn thiếu thì vẽ ngay.
 - Hình đặt trong `\begin{center}\begin{tikzpicture}...\end{tikzpicture}\end{center}`, ngay sau đoạn văn mô tả.
 - Dùng các kiểu có sẵn trong `dethi.sty`: `khuat` (nét đứt), `truc` (trục có mũi tên), `phu` (đường gióng xám), `diem`.
 - Dựng hình **từ số liệu của đề**: hàm số vẽ bằng `plot` với công thức thật; hình học đặt tọa độ đúng tỉ lệ. Hình gốc sai thì vẽ lại đúng và ghi vào `ghi_chu`.
@@ -26,3 +27,7 @@
 5. Tia, đường song song phải song song thật; góc ghi trên hình nằm đúng mặt phẳng.
 6. Ký hiệu đặc biệt (góc vuông, bằng nhau) chỉ có khi đúng.
 7. Hình vừa khổ, không tràn lề, cỡ chữ nhãn đọc được.
+
+## Hình mô hình thực tế (tường, mặt đất, vật thể)
+- Vẽ bằng phép chiếu song song như hình học không gian; mặt đất tô nhạt, các mặt tường tô xám nhạt, nét khuất đứt. Số đo ghi trên hình lấy từ đề; kích thước không đề cập (ví dụ độ cao một điểm cần tìm) vẽ minh họa và ghi chú "không theo tỉ lệ" trong `ghi_chu`.
+- Trong TikZ 3D, đặt trục đứng là `z={(0cm,1cm)}` (không viết `z=1cm`, vì sẽ thành trục ngang).

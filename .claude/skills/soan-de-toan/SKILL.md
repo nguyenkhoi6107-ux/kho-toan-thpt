@@ -35,8 +35,9 @@ Lập task list, mỗi câu là một mục. Chạy hết lô, **không dừng g
    - Đáp án: **tự giải độc lập trước**, rồi mới so với đáp án gốc. Kiểm bằng Python/sympy mọi phép tính và số liệu. TN4 phải có đúng 1 phương án đúng. DS phải xác định được từng ý. TLN phải ≤ 4 ký tự và đúng cách làm tròn.
 5. **Code LaTeX nội dung** theo `tham-chieu/quy-uoc-latex.md`. Một câu một file, kèm phần nhãn `%%` ở đầu.
 6. **Vẽ hình** theo `tham-chieu/quy-uoc-hinh.md`. Hình được dựng từ số liệu thật của đề, không chép lại hình gốc nếu hình gốc sai.
+   - **Quy tắc hình minh họa (giáo viên bổ sung 10/10/2026):** câu nào trong tài liệu gốc có hình vẽ toán học (đồ thị, hình không gian, hình phẳng, sơ đồ có số liệu, mô hình tọa độ hóa...) hoặc đề ghi "như hình vẽ", "hình bên", "(hình vẽ)" thì bản trong kho **bắt buộc có hình TikZ tương ứng**, kể cả khi lời giải làm được mà không cần hình. Chỉ được bỏ hình khi gốc không có hình toán học, hoặc hình gốc chỉ là ảnh trang trí/minh họa đời sống (ảnh chụp, tranh vẽ người, đồ vật) không chứa dữ kiện toán. Ghi rõ trong `ghi_chu` câu nào bỏ hình và lý do.
 7. **Kết nối và tối ưu.** Ghép nội dung với hình, bỏ lệnh thừa. Chạy `kho.py bien-dich <file> --loi-giai --anh`: phải ra `OK`, không có lỗi và không có cảnh báo tràn lề.
-8. **Kiểm tra hình.** Mở ảnh PNG (phóng to vùng hình) và soát theo danh sách trong `quy-uoc-hinh.md`. Có lỗi thì quay về bước 6, tối đa 3 vòng. Hết 3 vòng vẫn lỗi thì đưa câu vào `cho-duyet`, ghi lý do.
+8. **Kiểm tra hình.** Mở ảnh PNG (phóng to vùng hình) và soát theo danh sách trong `quy-uoc-hinh.md`. Có lỗi thì quay về bước 6, tối đa 3 vòng. Trước khi lưu, đối chiếu lại từng câu với trang gốc: câu có hình toán học ở gốc mà bản vẽ chưa có hoặc thiếu thì **trả lại bước 6 để vẽ**, không được lưu ở trạng thái thiếu hình. Hết 3 vòng vẫn lỗi thì đưa câu vào `cho-duyet`, ghi lý do.
 9. **Lưu trữ.**
    - Đường dẫn: `cau-hoi/lop{L}/c{CC}/b{BB}/L{L}-B{BB}-{NNNN}.tex`, trong đó NNNN là số tiếp theo trong bài đó.
    - Chạy `kho.py kiem-tra` (phải 0 lỗi nhãn) để dựng lại `danh-muc/chi-muc.csv`.

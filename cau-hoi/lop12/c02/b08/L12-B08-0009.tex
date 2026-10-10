@@ -9,9 +9,29 @@
 %% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần III Câu 6"
 %% kien_thuc: "Bài 7-8 (hệ trục tọa độ, độ dài vectơ), Bài 16 (góc giữa đường thẳng và mặt phẳng); tỉ số lượng giác (Lớp 9)"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Hình gốc chỉ minh họa bố trí hai bức tường nên không vẽ lại (đề đã mô tả đủ). Đáp án gốc 3 đúng (sympy: 3,026)."
+%% ghi_chu: "Đáp án gốc 3 đúng (sympy: 3,026). Hình dựng lại: hai bức tường là hai mặt phẳng (Oxz) và (Oyz), mặt đất là (Oxy); độ cao đầu B trên hình chỉ minh họa, không theo tỉ lệ."
 \begin{ex}
 Một sợi dây được căng giữa hai bức tường (vuông góc với nhau và cùng vuông góc với mặt đất). Đầu $A$ của sợi dây nằm trên bức tường thứ nhất, cách bức tường thứ hai $3\ \mathrm m$ và cách mặt đất $1{,}2\ \mathrm m$. Đầu $B$ cao hơn đầu $A$ và nằm trên bức tường thứ hai, cách bức tường thứ nhất $1\ \mathrm m$. Biết rằng góc giữa dây căng và mặt đất không vượt quá $30^\circ$, hỏi khoảng cách từ $B$ đến mặt đất tối đa bao nhiêu mét? Kết quả làm tròn đến hàng đơn vị.
+\begin{center}
+\begin{tikzpicture}[x={(-.62cm,-.4cm)},y={(.9cm,-.2cm)},z={(0cm,.85cm)}]
+  \fill[gray!12] (0,0,0)--(5,0,0)--(5,0,4.4)--(0,0,4.4)--cycle;
+  \fill[gray!22] (0,0,0)--(0,3.4,0)--(0,3.4,4.4)--(0,0,4.4)--cycle;
+  \fill[green!30] (0,0,0)--(5,0,0)--(5,3.4,0)--(0,3.4,0)--cycle;
+  \draw (0,0,0)--(5,0,0)--(5,0,4.4)--(0,0,4.4)--cycle;
+  \draw (0,0,0)--(0,3.4,0)--(0,3.4,4.4)--(0,0,4.4);
+  \draw (0,0,0)--(5,0,0) (0,0,0)--(0,3.4,0);
+  \draw[truc] (0,0,4.4)--(0,0,5.2) node[right]{$z$};
+  \draw[truc] (0,3.4,0)--(0,4.3,0) node[below]{$y$};
+  \draw[truc] (5,0,0)--(5.8,0,0) node[left]{$x$};
+  \coordinate (A) at (3,0,1.2);
+  \coordinate (B) at (0,1,2.8);
+  \draw[khuat] (A)--(3,0,0) (A)--(0,0,1.2) (B)--(0,0,2.8) (B)--(0,1,0);
+  \draw[thick,green!50!black] (A)--(B);
+  \fill (A) circle (1.2pt) (B) circle (1.2pt);
+  \path (A) node[left]{$A$} (B) node[above right]{$B$} (0,0,0) node[below right,inner sep=1pt]{$O$};
+  \path (3,0,.6) node[left,inner sep=2pt]{\footnotesize$1{,}2$ m} (1.5,0,1.2) node[below,inner sep=2pt]{\footnotesize$3$ m} (0,.5,2.8) node[above,inner sep=2pt]{\footnotesize$1$ m};
+\end{tikzpicture}
+\end{center}
 \shortans{3}
 \loigiai{Chọn hệ trục $Oxyz$ có $O$ là chân giao tuyến của hai bức tường, $Ox$ dọc theo tường thứ nhất, $Oy$ dọc theo tường thứ hai, $Oz$ thẳng đứng; mặt đất là $(Oxy)$. Khi đó $A(3;0;1{,}2)$ và $B(0;1;z_B)$ với $z_B>1{,}2$.
 Gọi $h=z_B-1{,}2>0$. Hình chiếu của $AB$ lên mặt đất có độ dài $\sqrt{3^2+1^2}=\sqrt{10}$, nên góc $\alpha$ giữa dây và mặt đất thoả $\tan\alpha=\dfrac h{\sqrt{10}}\le\tan30^\circ=\dfrac1{\sqrt3}$, suy ra $h\le\sqrt{\frac{10}3}\approx1{,}83$.

@@ -9,9 +9,22 @@
 %% nguon: "(NBV)-ĐỀ SỐ 4-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D04, MỖI NGÀY 1 ĐỀ - Đề số 4), Phần I Câu 10"
 %% kien_thuc: "Bài 27 (thể tích khối chóp); diện tích tam giác đều (Lớp 9)"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Cùng dạng 11.27.1 với L11-B27-0001 (chỉ đổi đáy từ hình vuông sang tam giác đều, nên coi là trùng ý tưởng, không trùng hoàn toàn). Hình gốc chỉ minh họa nên không vẽ lại. Đáp án gốc C đúng."
+%% ghi_chu: "Cùng dạng 11.27.1 với L11-B27-0001 (chỉ đổi đáy từ hình vuông sang tam giác đều, nên coi là trùng ý tưởng, không trùng hoàn toàn). Đáp án gốc C đúng. Hình dựng lại: đáy tam giác đều cạnh 4 trong phép chiếu song song, AB là nét khuất."
 \begin{ex}
-Cho khối chóp $S.ABC$ có đáy $ABC$ là tam giác đều cạnh bằng $4$; $SA$ vuông góc với mặt phẳng đáy và $SA=3$. Thể tích của khối chóp đã cho bằng
+Cho khối chóp $S.ABC$ có đáy $ABC$ là tam giác đều cạnh bằng $4$; $SA$ vuông góc với mặt phẳng đáy và $SA=3$.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y={(.4cm,.3cm)},z={(0cm,.9cm)}]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (4,0,0);
+  \coordinate (C) at (2,-3.4641,0);
+  \coordinate (S) at (0,0,3);
+  \draw (S)--(A)--(C)--(B)--(S)--(C);
+  \draw[khuat] (A)--(B);
+  \draw (0,0,.3)--(.3,0,.3)--(.3,0,0);
+  \path (S) node[above]{$S$} (A) node[left]{$A$} (B) node[right]{$B$} (C) node[below]{$C$};
+\end{tikzpicture}
+\end{center}
+Thể tích của khối chóp đã cho bằng
 \choice{$8$}{$12\sqrt3$}{\True $4\sqrt3$}{$8\sqrt3$}
 \loigiai{$S_{ABC}=\dfrac{4^2\sqrt3}{4}=4\sqrt3$. Thể tích $V=\dfrac13\cdot S_{ABC}\cdot SA=\dfrac13\cdot4\sqrt3\cdot3=4\sqrt3$.}
 \end{ex}
