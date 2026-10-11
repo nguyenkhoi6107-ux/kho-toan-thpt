@@ -175,14 +175,14 @@
 12.15.4: {ten: "Phương trình tham số của đường thẳng qua một điểm và song song với đường thẳng cho trước", trang_thai: da-duyet}
 12.19.6: {ten: "Xác suất toàn phần và Bayes từ xác suất có điều kiện hai bước (đi học bằng xe đạp, ăn sáng; Đúng/Sai)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D10 (Đề số 10 MỖI NGÀY 1 ĐỀ), ngày 11/10/2026 ---
-11.6.5: {ten: "Tìm số hạng của cấp số cộng khi biết hai số hạng bất kì (qua công sai)", trang_thai: de-xuat}
-11.21.8: {ten: "Bất phương trình mũ cơ bản với cơ số nhỏ hơn 1", trang_thai: de-xuat}
-11.23.2: {ten: "Góc giữa hai đường thẳng trong hình chóp có cạnh bên vuông góc với đáy hình chữ nhật (qua đường thẳng song song)", trang_thai: de-xuat}
-12.3.6: {ten: "Đọc bảng biến thiên: xét khẳng định sai về đơn điệu, giá trị lớn nhất, nhỏ nhất, tiệm cận", trang_thai: de-xuat}
-12.4.3: {ten: "Số nghiệm của phương trình f(x) = m đọc từ đồ thị hàm bậc ba", trang_thai: de-xuat}
-12.5.9: {ten: "Tối ưu thể tích lăng trụ khuyết hai đáy gấp từ tấm kẽm hình vuông, tính khoảng cách từ điểm đến mặt phẳng", trang_thai: de-xuat}
-12.8.12: {ten: "Tọa độ đỉnh còn lại của hình bình hành trong không gian Oxyz", trang_thai: de-xuat}
-12.11.6: {ten: "Nhận biết nguyên hàm của hàm số sin x", trang_thai: de-xuat}
-12.12.7: {ten: "Ô tô tăng tốc rồi phanh: vận tốc, quãng đường bằng tích phân (Đúng/Sai)", trang_thai: de-xuat}
-12.14.7: {ten: "Khoảng cách từ một điểm đến mặt phẳng trong không gian Oxyz", trang_thai: de-xuat}
-12.16.1: {ten: "Cabin chuyển động đều theo đường cáp: phương trình tham số, tọa độ, quãng đường, góc với mặt phẳng Oxy (Đúng/Sai)", trang_thai: de-xuat}
+11.6.5: {ten: "Tìm số hạng của cấp số cộng khi biết hai số hạng bất kì (qua công sai)", trang_thai: da-duyet}
+11.21.8: {ten: "Bất phương trình mũ cơ bản với cơ số nhỏ hơn 1", trang_thai: da-duyet}
+11.23.2: {ten: "Góc giữa hai đường thẳng trong hình chóp có cạnh bên vuông góc với đáy hình chữ nhật (qua đường thẳng song song)", trang_thai: da-duyet}
+12.3.6: {ten: "Đọc bảng biến thiên: xét khẳng định sai về đơn điệu, giá trị lớn nhất, nhỏ nhất, tiệm cận", trang_thai: da-duyet}
+12.4.3: {ten: "Số nghiệm của phương trình f(x) = m đọc từ đồ thị hàm bậc ba", trang_thai: da-duyet}
+12.5.9: {ten: "Tối ưu thể tích lăng trụ khuyết hai đáy gấp từ tấm kẽm hình vuông, tính khoảng cách từ điểm đến mặt phẳng", trang_thai: da-duyet}
+12.8.12: {ten: "Tọa độ đỉnh còn lại của hình bình hành trong không gian Oxyz", trang_thai: da-duyet}
+12.11.6: {ten: "Nhận biết nguyên hàm của hàm số sin x", trang_thai: da-duyet}
+12.12.7: {ten: "Ô tô tăng tốc rồi phanh: vận tốc, quãng đường bằng tích phân (Đúng/Sai)", trang_thai: da-duyet}
+12.14.7: {ten: "Khoảng cách từ một điểm đến mặt phẳng trong không gian Oxyz", trang_thai: da-duyet}
+12.16.1: {ten: "Cabin chuyển động đều theo đường cáp: phương trình tham số, tọa độ, quãng đường, góc với mặt phẳng Oxy (Đúng/Sai)", trang_thai: da-duyet}
