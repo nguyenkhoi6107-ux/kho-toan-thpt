@@ -1,0 +1,29 @@
+%% ma: L12-B18-0005
+%% lop: 12
+%% chuong: 6
+%% bai: 18
+%% dang: 12.18.3
+%% loai: DS
+%% muc: [TH, TH, TH, VD]
+%% dap_an: "SSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 10-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D10, MỖI NGÀY 1 ĐỀ - Đề số 10), Phần II Câu 3"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện), Bài 28 lớp 11 (biến cố độc lập), Bài 29 lớp 11 (công thức cộng xác suất)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng ý tưởng với L12-B18-0003 (xác suất có điều kiện từ P(A), P(B) và xác suất giao hoặc hợp), nhập vào dạng 12.18.3 đã duyệt. Hình gốc là ảnh trang trí nên không vẽ hình."
+\begin{ex}
+Một công ty đấu thầu $2$ dự án. Khả năng thắng thầu của dự án $1$ là $0{,}4$ và khả năng thắng thầu của dự án $2$ là $0{,}5$. Khả năng thắng thầu cả $2$ dự án là $0{,}3$. Gọi $A$ là biến cố ``Thắng thầu dự án $1$'', $B$ là biến cố ``Thắng thầu dự án $2$''. Khi đó:
+\choiceTF
+{$A$ và $B$ là hai biến cố độc lập.}
+{Xác suất để công ty thắng thầu đúng $1$ dự án bằng $0{,}7$.}
+{\True Xác suất để công ty thắng thầu dự án $2$ biết công ty thắng thầu dự án $1$ là $0{,}75$.}
+{Xác suất để công ty thắng thầu dự án $2$ biết công ty không thắng thầu dự án $1$ là $0{,}25$.}
+\loigiai{Ta có $P(A)=0{,}4$, $P(B)=0{,}5$, $P(A\cap B)=0{,}3$.
+
+a) $P(A)P(B)=0{,}2\ne0{,}3=P(A\cap B)$ nên $A$, $B$ không độc lập. Sai.
+
+b) $P(\text{đúng một dự án})=P(A)+P(B)-2P(A\cap B)=0{,}4+0{,}5-0{,}6=0{,}3$. Sai.
+
+c) $P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}=\dfrac{0{,}3}{0{,}4}=0{,}75$. Đúng.
+
+d) $P(B\mid\overline A)=\dfrac{P(B)-P(A\cap B)}{1-P(A)}=\dfrac{0{,}2}{0{,}6}=\dfrac13\ne0{,}25$. Sai.}
+\end{ex}

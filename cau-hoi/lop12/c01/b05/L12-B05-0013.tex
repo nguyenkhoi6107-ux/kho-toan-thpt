@@ -1,0 +1,52 @@
+%% ma: L12-B05-0013
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.9
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "6080"
+%% nguon: "(NBV)-ĐỀ SỐ 10-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D10, MỖI NGÀY 1 ĐỀ - Đề số 10), Phần III Câu 5"
+%% kien_thuc: "Bài 5 (bài toán tối ưu bằng đạo hàm), Bài 2 (giá trị lớn nhất), thể tích lăng trụ, khoảng cách từ điểm đến mặt phẳng (lớp 11)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Hình gốc đặt nhãn đáy lăng trụ bị đảo (D, F, H, C); hình TikZ vẽ lại với nhãn đúng theo các cạnh bên AD (trùng BC), EF, GH, hình tấm kẽm không theo tỉ lệ. Đáp án gốc 6080 đúng."
+\begin{ex}
+Một tấm kẽm hình vuông $ABCD$ có cạnh bằng $30$ cm. Người ta gập tấm kẽm theo hai cạnh $EF$ và $GH$ cho đến khi $AD$ và $BC$ trùng nhau như hình vẽ bên để được một hình lăng trụ khuyết hai đáy. Khi thể tích khối lăng trụ lớn nhất thì khoảng cách từ $A$ đến mặt phẳng $(EFGH)$ bằng $a\sqrt b$ (cm) với $a,b$ là các số nguyên dương. Tính $T=a+2025b$.
+\begin{center}
+\begin{tikzpicture}[scale=.95]
+  % tấm kẽm
+  \draw (0,0) rectangle (4,4);
+  \draw (1,0)--(1,4) (3,0)--(3,4);
+  \node[above left,font=\footnotesize] at (0,4) {$A$};
+  \node[above,font=\footnotesize] at (1,4) {$E$};
+  \node[above,font=\footnotesize] at (3,4) {$G$};
+  \node[above right,font=\footnotesize] at (4,4) {$B$};
+  \node[below left,font=\footnotesize] at (0,0) {$D$};
+  \node[below,font=\footnotesize] at (1,0) {$F$};
+  \node[below,font=\footnotesize] at (3,0) {$H$};
+  \node[below right,font=\footnotesize] at (4,0) {$C$};
+  \draw[<->] (0,-.7)--(1,-.7) node[midway,below,font=\footnotesize]{$x$};
+  \draw[<->] (3,-.7)--(4,-.7) node[midway,below,font=\footnotesize]{$x$};
+  % lăng trụ
+  \begin{scope}[xshift=6.5cm,yshift=.5cm]
+    \coordinate (E) at (0,3.2); \coordinate (G) at (3,3.2); \coordinate (A) at (1.5,4.2);
+    \coordinate (F) at (0,0); \coordinate (H) at (3,0); \coordinate (D) at (1.5,1);
+    \draw (E)--(G) (E)--(A)--(G) (E)--(F) (G)--(H) (F)--(H);
+    \draw[khuat] (A)--(D) (F)--(D)--(H);
+    \node[left,font=\footnotesize] at (E) {$E$};
+    \node[right,font=\footnotesize] at (G) {$G$};
+    \node[above,font=\footnotesize] at (A) {$A\equiv B$};
+    \node[below left,font=\footnotesize] at (F) {$F$};
+    \node[below right,font=\footnotesize] at (H) {$H$};
+    \node[left,font=\footnotesize,inner sep=3pt] at (1.25,1.05) {$D\equiv C$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\shortans{6080}
+\loigiai{Đặt $AE=DF=BG=CH=x$ với $7{,}5<x<15$. Lăng trụ có đáy là tam giác cân với hai cạnh bên $x$, đáy $EG=30-2x$ và chiều cao lăng trụ bằng $AD=30$. Đường cao ứng với đáy $EG$ của tam giác đó là $h=\sqrt{x^2-(15-x)^2}=\sqrt{30x-225}$, nên diện tích đáy là $S(x)=\dfrac12(30-2x)h=(15-x)\sqrt{30x-225}$ và thể tích $V=30S(x)$.
+
+Xét $g(x)=S(x)^2=(15-x)^2(30x-225)$. Ta có $g'(x)=(15-x)\left[-2(30x-225)+30(15-x)\right]=(15-x)(900-90x)$, nên $g'(x)=0\Leftrightarrow x=10$ trên khoảng $(7{,}5;15)$. $g'$ đổi dấu từ dương sang âm tại $x=10$ nên $V$ lớn nhất khi $x=10$.
+
+Khi đó tam giác đáy có ba cạnh bằng $10$, tức tam giác đều. Khoảng cách từ $A$ đến mặt phẳng $(EFGH)$ chính là đường cao hạ từ $A$ của tam giác đều $AEG$ cạnh $10$, bằng $5\sqrt3$ cm. Vậy $a=5$, $b=3$ và $T=5+2025\cdot3=6080$.}
+\end{ex}

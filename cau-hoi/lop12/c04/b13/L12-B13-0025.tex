@@ -1,0 +1,35 @@
+%% ma: L12-B13-0025
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.3
+%% loai: TLN
+%% muc: VD
+%% dap_an: "7,5"
+%% nguon: "(NBV)-ĐỀ SỐ 10-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D10, MỖI NGÀY 1 ĐỀ - Đề số 10), Phần III Câu 4"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi parabol, tích phân), Bài 11-12 (nguyên hàm, tích phân)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng ý tưởng với các câu parabol thực tế của dạng 12.13.3 (diện tích hình phẳng giới hạn bởi parabol), nhập vào dạng đã duyệt."
+\begin{ex}
+Một gia đình thiết kế chiếc cổng có dạng là một parabol $(P)$ có kích thước như hình vẽ, biết chiều cao cổng bằng chiều rộng của cổng và bằng $4$ m. Người ta thiết kế cửa đi là một hình chữ nhật $CDEF$ sao cho chiều cao cửa đi là $CD=2$ m, phần còn lại dùng để trang trí. Biết chi phí phần tô đậm là $1{,}5$ triệu đồng$/\mathrm m^2$. Tính số tiền (triệu đồng) gia đình đó phải trả để trang trí phần tô đậm (làm tròn kết quả đến hàng phần chục).
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \fill[orange!30] (-2,0) -- plot[domain=-2:2,samples=60] (\x,{4-\x*\x}) -- cycle;
+  \fill[white] (-1.4142,0) rectangle (1.4142,2);
+  \draw[orange!70!black,thick,domain=-2:2,samples=60] plot (\x,{4-\x*\x});
+  \draw (-2,0)--(2,0) (-1.4142,0)--(-1.4142,2)--(1.4142,2)--(1.4142,0);
+  \node[above left,font=\footnotesize] at (-1.4142,2) {$E$};
+  \node[above right,font=\footnotesize] at (1.4142,2) {$D$};
+  \node[below,font=\footnotesize] at (-1.4142,0) {$F$};
+  \node[below,font=\footnotesize] at (1.4142,0) {$C$};
+  \node[above right,font=\footnotesize] at (1.1,3.35) {$(P)$};
+  \draw[<->] (-2,-.8)--(2,-.8) node[midway,below,font=\footnotesize]{$4$ m};
+  \draw[<->] (2.6,0)--(2.6,4) node[midway,right,font=\footnotesize]{$4$ m};
+  \draw[phu] (2,0)--(2.6,0) (0,4)--(2.6,4);
+\end{tikzpicture}
+\end{center}
+\shortans{7,5}
+\loigiai{Chọn hệ trục $Oxy$ với $O$ là trung điểm của đáy cổng. Parabol có dạng $y=ax^2+4$ và đi qua $(2;0)$ nên $a=-1$, tức $y=4-x^2$. Diện tích cổng là
+\[S_1=\int_{-2}^{2}(4-x^2)\,\mathrm dx=\dfrac{32}3\ (\mathrm m^2).\]
+Hai điểm $E$, $D$ có tung độ $2$ nên $4-x^2=2$, $x=\pm\sqrt2$, do đó $ED=2\sqrt2$ và diện tích cửa đi là $S_2=2\sqrt2\cdot2=4\sqrt2$. Diện tích phần tô đậm là $\dfrac{32}3-4\sqrt2\approx5{,}01\ \mathrm m^2$. Số tiền phải trả là $1{,}5\cdot5{,}01\approx7{,}5$ (triệu đồng).}
+\end{ex}

@@ -1,0 +1,30 @@
+%% ma: L12-B04-0003
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.3
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 10-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D10, MỖI NGÀY 1 ĐỀ - Đề số 10), Phần I Câu 6"
+%% kien_thuc: "Bài 4 (đồ thị hàm số bậc ba, số nghiệm của phương trình f(x) = m bằng số giao điểm), Bài 1 (cực trị)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Hình TikZ vẽ đồ thị y = x^3 - 3x^2 + 1 (cực đại 1, cực tiểu -3 như hình gốc); điểm cực đại gốc nằm hơi lệch trái trục tung, không ảnh hưởng đáp án."
+\begin{ex}
+Cho hàm số $y=f(x)=ax^3+bx^2+cx+d$ $(a\ne0)$ có đồ thị như hình vẽ. Số nghiệm của phương trình $f(x)=-2$ là
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=.7cm]
+  \draw[truc] (-1.6,0)--(3.6,0) node[below]{$x$};
+  \draw[truc] (0,-3.7)--(0,2.4) node[right]{$y$};
+  \draw[green!50!black,thick,domain=-.85:3.1,samples=80] plot (\x,{\x*\x*\x-3*\x*\x+1});
+  \draw[phu] (0,1)--(0,0) (2,-3)--(2,0) (0,-3)--(2,-3);
+  \fill (0,1) circle (1.3pt) (2,-3) circle (1.3pt);
+  \node[left,font=\footnotesize] at (0,1.15) {$1$};
+  \node[left,font=\footnotesize] at (0,-3) {$-3$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choice{$2$}{$0$}{$1$}{\True $3$}
+\loigiai{Số nghiệm của phương trình $f(x)=-2$ bằng số giao điểm của đồ thị hàm số $y=f(x)$ với đường thẳng $y=-2$. Từ đồ thị, hàm số có giá trị cực đại bằng $1$ và giá trị cực tiểu bằng $-3$; vì $-3<-2<1$ nên đường thẳng $y=-2$ cắt đồ thị tại $3$ điểm. Vậy phương trình có $3$ nghiệm.}
+\end{ex}
