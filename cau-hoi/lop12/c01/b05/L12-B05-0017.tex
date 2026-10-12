@@ -1,0 +1,34 @@
+%% ma: L12-B05-0017
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.7
+%% loai: TLN
+%% muc: VD
+%% dap_an: "3,9"
+%% nguon: "Ảnh giáo viên gửi 11/10/2026 (Đề kiểm tra giữa HK1 Toán 12, THPT Việt Đức 2026-2027, mã đề 0103), Phần III Câu 3"
+%% kien_thuc: "Bài 5 (bài toán tối ưu bằng đạo hàm), thể tích khối hộp chữ nhật"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng ý tưởng với L12-B05-0010 (hộp không nắp cắt bốn góc, tấm bìa vuông), nhập vào dạng 12.5.7 đã duyệt. Hình gốc có chú thích đường gấp, vẽ lại theo đúng kích thước 30 x 20 (không theo tỉ lệ ở cạnh x)."
+\begin{ex}
+Từ một tấm bìa hình chữ nhật kích thước $30$ cm $\times$ $20$ cm, người ta cắt ở bốn góc bốn hình vuông bằng nhau có cạnh $x$ (cm) rồi gấp thành một chiếc hộp không nắp. Tìm $x$ để thể tích hộp đạt giá trị lớn nhất. (Làm tròn kết quả đến hàng phần mười.)
+\begin{center}
+\begin{tikzpicture}[scale=.22]
+  \draw (0,0) rectangle (30,20);
+  \foreach \a/\b in {0/0,25/0,0/15,25/15}{
+    \fill[pattern=north east lines] (\a,\b) rectangle (\a+5,\b+5);
+    \draw (\a,\b) rectangle (\a+5,\b+5);
+    \node[font=\scriptsize] at (\a+2.5,\b+2.5) {$x$};
+  }
+  \draw[dashed] (5,5) rectangle (25,15);
+  \draw[dashed] (5,0)--(5,5) (25,0)--(25,5) (5,15)--(5,20) (25,15)--(25,20) (0,5)--(5,5) (25,5)--(30,5) (0,15)--(5,15) (25,15)--(30,15);
+  \draw[<->] (0,21.5)--(30,21.5) node[midway,above,font=\footnotesize]{$30$ cm};
+  \draw[<->] (-1.8,0)--(-1.8,20) node[midway,left,font=\footnotesize]{$20$ cm};
+  \draw[dashed] (3,-3.2)--(8,-3.2) node[right,font=\footnotesize]{đường gấp};
+\end{tikzpicture}
+\end{center}
+\shortans{3,9}
+\loigiai{Hộp có đáy là hình chữ nhật $(30-2x)\times(20-2x)$, chiều cao $x$, với $0<x<10$. Thể tích
+\[V(x)=x(30-2x)(20-2x)=4x^3-100x^2+600x.\]
+$V'(x)=12x^2-200x+600=0\Leftrightarrow3x^2-50x+150=0\Leftrightarrow x=\dfrac{25\pm5\sqrt7}3$. Chỉ có $x=\dfrac{25-5\sqrt7}3\approx3{,}92$ thuộc $(0;10)$. $V'>0$ trên $(0;3{,}92)$ và $V'<0$ trên $(3{,}92;10)$ nên $V$ lớn nhất khi $x\approx3{,}9$ cm.}
+\end{ex}

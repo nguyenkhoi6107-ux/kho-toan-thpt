@@ -1,0 +1,41 @@
+%% ma: L12-B04-0005
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.5
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 11/10/2026 (Đề kiểm tra giữa HK1 Toán 12, THPT Việt Đức 2026-2027, mã đề 0103), Phần I Câu 6"
+%% kien_thuc: "Bài 4 (đồ thị hàm phân thức bậc nhất trên bậc nhất: tiệm cận, giao điểm với các trục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Bốn hình TikZ dựng lại từ hình gốc: A là y = 2x/(x - 4), B là y = (x + 2)/(x - 4), C là y = (2x - 4)/(x + 4), D là y = (2x + 1)/(x + 4); A, B, C là các hàm minh họa khớp tiệm cận và giao điểm đọc từ hình gốc."
+\begin{ex}
+Hình vẽ nào dưới đây là đồ thị của hàm số $y=\dfrac{2x+1}{x+4}$?
+\begin{center}
+\begin{tikzpicture}[x=.2cm,y=.17cm]
+  \foreach \nh/\px/\py/\pa/\pb/\pc/\pd/\vx/\hy in {A/0/0/2/0/1/-4/4/2, B/32/0/1/2/1/-4/4/1, C/0/-27/2/-4/1/4/-4/2, D/32/-27/2/1/1/4/-4/2}{
+    \begin{scope}[shift={(\px,\py)}]
+      \begin{scope}
+        \clip (-14.5,-9.5) rectangle (14.5,11.5);
+        \draw[dashed,gray] (\vx,-9.5)--(\vx,11.5);
+        \draw[dashed,gray] (-14.5,\hy)--(14.5,\hy);
+        \draw[thick,domain=-14:{\vx-0.15},samples=100] plot (\x,{((\pa)*\x+(\pb))/((\pc)*\x+(\pd))});
+        \draw[thick,domain={\vx+0.15}:14,samples=100] plot (\x,{((\pa)*\x+(\pb))/((\pc)*\x+(\pd))});
+      \end{scope}
+      \draw[truc] (-14.5,0)--(14.5,0) node[below]{$x$};
+      \draw[truc] (0,-9.5)--(0,11.5) node[right]{$y$};
+      \foreach \t in {-12,-8,8,12} \draw (\t,.5)--(\t,-.5) node[below,font=\scriptsize]{$\t$};
+      \foreach \t in {-8,8} \draw (.6,\t)--(-.6,\t) node[left,font=\scriptsize,xshift=1pt]{$\t$};
+      \node[above,font=\scriptsize] at (\vx,11.6) {$x=\vx$};
+      \node[right,font=\scriptsize] at (14.5,\hy) {$y=\hy$};
+      \node[below left,font=\scriptsize] at (0,0) {$O$};
+      \node[below,font=\small] at (0,-10.5) {Hình \nh};
+    \end{scope}
+  }
+\end{tikzpicture}
+\end{center}
+\choice{Hình A}{Hình B}{Hình C}{\True Hình D}
+\loigiai{Đồ thị hàm số $y=\dfrac{2x+1}{x+4}$ có tiệm cận đứng $x=-4$ và tiệm cận ngang $y=2$ nên loại Hình A, Hình B (tiệm cận đứng $x=4$). Đồ thị cắt trục tung tại $\left(0;\dfrac14\right)$ (tung độ dương) và cắt trục hoành tại $\left(-\dfrac12;0\right)$ (hoành độ âm). Hình C cắt trục hoành tại điểm có hoành độ dương và cắt trục tung tại điểm có tung độ âm nên loại. Vậy chọn Hình D.}
+\end{ex}

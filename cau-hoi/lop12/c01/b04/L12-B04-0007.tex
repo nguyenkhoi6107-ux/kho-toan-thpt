@@ -1,0 +1,35 @@
+%% ma: L12-B04-0007
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.7
+%% loai: TLN
+%% muc: VD
+%% dap_an: "19"
+%% nguon: "Ảnh giáo viên gửi 11/10/2026 (Đề kiểm tra giữa HK1 Toán 12, THPT Việt Đức 2026-2027, mã đề 0103), Phần III Câu 5"
+%% kien_thuc: "Bài 4 (đồ thị hàm phân thức bậc nhất trên bậc nhất: tiệm cận, giao điểm với các trục), Bài 3 (tiệm cận)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+\begin{ex}
+Cho hàm số $y=\dfrac{3x+b}{cx+d}$ với $b,c,d$ là hằng số, có đồ thị như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[x=.7cm,y=.55cm]
+  \clip (-6.6,-1.8) rectangle (7.6,9.2);
+  \draw[dashed,gray] (-2,-1.8)--(-2,9.2);
+  \draw[dashed,gray] (-6.6,3)--(7.6,3);
+  \draw[thick,domain=-6.3:-2.2,samples=80] plot (\x,{(3*\x+12)/(\x+2)});
+  \draw[thick,domain=-1.7:7.4,samples=80] plot (\x,{(3*\x+12)/(\x+2)});
+  \draw[truc] (-6.6,0)--(7.6,0) node[below]{$x$};
+  \draw[truc] (0,-1.8)--(0,9.2) node[right]{$y$};
+  \node[below,font=\footnotesize] at (-4,0) {$-4$};
+  \node[below,font=\footnotesize] at (-1.55,0) {$-2$};
+  \node[left,font=\footnotesize] at (0,3.3) {$3$};
+  \node[left,font=\footnotesize] at (0,6.3) {$6$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[font=\footnotesize] at (4.2,4.7) {$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+Biểu thức $T=2b+3c-4d$ có giá trị bằng bao nhiêu?
+\shortans{19}
+\loigiai{Đồ thị có tiệm cận ngang $y=3$ nên $\dfrac3c=3$, suy ra $c=1$. Tiệm cận đứng $x=-2$ nên $-2c+d=0$, suy ra $d=2$. Đồ thị cắt trục hoành tại $(-4;0)$ nên $3\cdot(-4)+b=0$, suy ra $b=12$ (kiểm tra: giao điểm với $Oy$ là $\left(0;\dfrac bd\right)=(0;6)$ khớp hình). Vậy $T=2\cdot12+3\cdot1-4\cdot2=19$.}
+\end{ex}

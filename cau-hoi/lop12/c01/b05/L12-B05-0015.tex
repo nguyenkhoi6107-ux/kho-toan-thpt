@@ -1,0 +1,32 @@
+%% ma: L12-B05-0015
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.10
+%% loai: DS
+%% muc: [VD, TH, NB, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "Ảnh giáo viên gửi 11/10/2026 (Đề kiểm tra giữa HK1 Toán 12, THPT Việt Đức 2026-2027, mã đề 0103), Phần II Câu 2"
+%% kien_thuc: "Bài 5 (mô hình thực tiễn, tốc độ thay đổi là đạo hàm), đạo hàm hàm mũ (lớp 11), giới hạn hàm số (lớp 11)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đề gốc không ghi M(t) liên tục tại t = 3; đã bổ sung câu «Số lượng vi khuẩn là liên tục tại thời điểm t = 3» để xác định A (nếu không có điều kiện này thì ý a không xác định được). Đáp án tính được Đ S Đ Đ."
+\begin{ex}
+Một nhóm nghiên cứu quan sát sự phát triển của một quần thể vi khuẩn trong môi trường nuôi cấy hạn chế.
+
+Giai đoạn $1$ (từ $t=0$ đến $t=3$ giờ): số lượng vi khuẩn tăng trưởng theo hàm mũ $N(t)=40e^{0{,}8t}$ (với $t$ tính bằng giờ, $N$ tính bằng triệu cá thể).
+
+Giai đoạn $2$ (sau $3$ giờ): số lượng vi khuẩn được biểu thị bởi hàm số $M(t)=A-\dfrac{160}{3}e^{4{,}2-0{,}6t}$ (với $A$ là hằng số, $t$ tính bằng giờ, $M$ tính bằng triệu cá thể). Số lượng vi khuẩn là liên tục tại thời điểm $t=3$.
+\choiceTF
+{\True Giá trị của $A$ lớn hơn $1000$.}
+{Tốc độ tăng trưởng của vi khuẩn tại thời điểm $t=3$ lớn hơn $500$ triệu cá thể/giờ.}
+{\True Số lượng vi khuẩn tại thời điểm bắt đầu là $40$ triệu cá thể.}
+{\True Số lượng vi khuẩn không vượt quá $1320$ triệu cá thể.}
+\loigiai{a) Liên tục tại $t=3$: $N(3)=M(3)\Leftrightarrow40e^{2{,}4}=A-\dfrac{160}3e^{2{,}4}$, suy ra $A=\dfrac{280}3e^{2{,}4}\approx1028{,}8>1000$. Đúng.
+
+b) $N'(t)=32e^{0{,}8t}$ nên $N'(3)=32e^{2{,}4}\approx352{,}7<500$ (và $M'(t)=32e^{4{,}2-0{,}6t}$, $M'(3)=32e^{2{,}4}$ cũng cho cùng giá trị). Sai.
+
+c) $N(0)=40e^0=40$. Đúng.
+
+d) Giai đoạn $1$: $N$ tăng, $N(t)\le N(3)\approx440{,}9$. Giai đoạn $2$: $M'(t)=32e^{4{,}2-0{,}6t}>0$ nên $M$ tăng và $M(t)<A\approx1028{,}8$ (vì $e^{4{,}2-0{,}6t}>0$). Do đó số lượng vi khuẩn luôn nhỏ hơn $1029<1320$. Đúng.}
+\end{ex}

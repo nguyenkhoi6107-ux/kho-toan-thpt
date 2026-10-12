@@ -1,0 +1,32 @@
+%% ma: L12-B04-0004
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 11/10/2026 (Đề kiểm tra giữa HK1 Toán 12, THPT Việt Đức 2026-2027, mã đề 0103), Phần I Câu 5"
+%% kien_thuc: "Bài 4 (đồ thị hàm số bậc ba: cực trị, giao điểm với trục Oy, nhận dạng đồ thị)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Hình TikZ vẽ y = x^3 - 3x + 3 theo các số liệu đọc từ hình gốc (cực đại (-1;5), cực tiểu (1;1), cắt Oy tại (0;3))."
+\begin{ex}
+Cho hàm số $y=f(x)$ liên tục trên $\mathbb R$ và có đồ thị như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.55cm]
+  \draw[truc] (-3.4,0)--(5.4,0) node[below]{$x$};
+  \draw[truc] (0,-.8)--(0,7.4) node[right]{$y$};
+  \draw[thick,domain=-2.2:2.2,samples=80] plot (\x,{\x*\x*\x-3*\x+3});
+  \draw[phu] (-1,0)--(-1,5)--(0,5) (1,0)--(1,1)--(0,1);
+  \fill (0,3) circle (1.3pt) (-1,5) circle (1.3pt) (1,1) circle (1.3pt);
+  \foreach \t in {-3,-2,-1,1,2,3,4,5} \draw (\t,.08)--(\t,-.08) node[below,font=\footnotesize]{$\t$};
+  \foreach \t in {1,2,3,5,6} \draw (.05,\t)--(-.05,\t) node[left,font=\footnotesize]{$\t$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[right,font=\footnotesize] at (1.9,6.1) {$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+Hỏi $f(x)$ là hàm số nào trong các hàm số dưới đây?
+\choice{$y=\dfrac{3x^2-2x+1}{x-1}$}{$y=\dfrac{x-1}{x+2}$}{\True $y=x^3-3x+3$}{$y=x^3-3x^2+3$}
+\loigiai{Đồ thị có hai điểm cực trị $(-1;5)$ (cực đại), $(1;1)$ (cực tiểu) và cắt trục tung tại $(0;3)$, là đồ thị hàm bậc ba có $a>0$; do đó loại hai hàm phân thức ở A và B. Với $y=x^3-3x^2+3$: $y(-1)=-1\ne5$ nên loại D. Với $y=x^3-3x+3$: $y(-1)=5$, $y(1)=1$, $y(0)=3$ khớp đồ thị. Vậy chọn C.}
+\end{ex}
