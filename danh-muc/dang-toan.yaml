@@ -187,20 +187,20 @@
 12.14.7: {ten: "Khoảng cách từ một điểm đến mặt phẳng trong không gian Oxyz", trang_thai: da-duyet}
 12.16.1: {ten: "Cabin chuyển động đều theo đường cáp: phương trình tham số, tọa độ, quãng đường, góc với mặt phẳng Oxy (Đúng/Sai)", trang_thai: da-duyet}
 # --- Đề xuất từ đề kiểm tra giữa HK1 Toán 12 (THPT Việt Đức, mã đề 0103), ngày 11/10/2026 ---
-12.1.9: {ten: "Số điểm cực trị khi biết đạo hàm dạng tích (có nghiệm bội chẵn)", trang_thai: de-xuat}
-12.1.10: {ten: "Giá trị cực tiểu của hàm số chứa lôgarit và phân thức f(x) = ln x + a/x", trang_thai: de-xuat}
-12.1.11: {ten: "Đọc điểm cực đại của đồ thị hàm số từ bảng biến thiên", trang_thai: de-xuat}
-12.1.12: {ten: "Khoảng đồng biến của hàm số lôgarit của tam thức bậc hai", trang_thai: de-xuat}
-12.1.13: {ten: "Hàm số x + 2cos x trên đoạn [0; 2π]: đạo hàm, nghiệm, cực trị, đơn điệu (Đúng/Sai)", trang_thai: de-xuat}
-12.1.14: {ten: "Khoảng đồng biến của hàm hợp g(x) = f(x^2 - 2x) với f bậc ba", trang_thai: de-xuat}
-12.2.6: {ten: "Tổng giá trị lớn nhất và nhỏ nhất trên một đoạn đọc từ đồ thị có điểm gấp", trang_thai: de-xuat}
-12.2.7: {ten: "Hàm bậc ba: đường thẳng qua hai điểm cực trị, điểm cực tiểu, giá trị nhỏ nhất trên đoạn (Đúng/Sai)", trang_thai: de-xuat}
-12.3.7: {ten: "Chọn hàm số có đúng hai đường tiệm cận trong bốn hàm cho trước", trang_thai: de-xuat}
-12.3.8: {ten: "Tổng số đường tiệm cận đứng và ngang từ các giới hạn cho trước", trang_thai: de-xuat}
-12.3.9: {ten: "Tiệm cận xiên của đồ thị hàm số chứa căn bậc ba", trang_thai: de-xuat}
-12.4.4: {ten: "Nhận dạng hàm bậc ba từ đồ thị qua cực trị và giao điểm với trục tung", trang_thai: de-xuat}
-12.4.5: {ten: "Chọn đồ thị của hàm phân thức bậc nhất trên bậc nhất (tiệm cận và giao điểm với các trục)", trang_thai: de-xuat}
-12.4.6: {ten: "Hàm phân thức bậc hai trên bậc nhất: tâm đối xứng, tiệm cận xiên, diện tích tam giác, hình bình hành nội tiếp (Đúng/Sai)", trang_thai: de-xuat}
-12.4.7: {ten: "Xác định hệ số hàm phân thức bậc nhất trên bậc nhất từ đồ thị", trang_thai: de-xuat}
-12.5.10: {ten: "Quần thể vi khuẩn hai giai đoạn (hàm mũ): hằng số, tốc độ tăng trưởng, giá trị lớn nhất (Đúng/Sai)", trang_thai: de-xuat}
-12.5.11: {ten: "Tối ưu điện năng tiêu thụ của xe điện theo vận tốc", trang_thai: de-xuat}
+12.1.9: {ten: "Số điểm cực trị khi biết đạo hàm dạng tích (có nghiệm bội chẵn)", trang_thai: da-duyet}
+12.1.10: {ten: "Giá trị cực tiểu của hàm số chứa lôgarit và phân thức f(x) = ln x + a/x", trang_thai: da-duyet}
+12.1.11: {ten: "Đọc điểm cực đại của đồ thị hàm số từ bảng biến thiên", trang_thai: da-duyet}
+12.1.12: {ten: "Khoảng đồng biến của hàm số lôgarit của tam thức bậc hai", trang_thai: da-duyet}
+12.1.13: {ten: "Hàm số x + 2cos x trên đoạn [0; 2π]: đạo hàm, nghiệm, cực trị, đơn điệu (Đúng/Sai)", trang_thai: da-duyet}
+12.1.14: {ten: "Khoảng đồng biến của hàm hợp g(x) = f(x^2 - 2x) với f bậc ba", trang_thai: da-duyet}
+12.2.6: {ten: "Tổng giá trị lớn nhất và nhỏ nhất trên một đoạn đọc từ đồ thị có điểm gấp", trang_thai: da-duyet}
+12.2.7: {ten: "Hàm bậc ba: đường thẳng qua hai điểm cực trị, điểm cực tiểu, giá trị nhỏ nhất trên đoạn (Đúng/Sai)", trang_thai: da-duyet}
+12.3.7: {ten: "Chọn hàm số có đúng hai đường tiệm cận trong bốn hàm cho trước", trang_thai: da-duyet}
+12.3.8: {ten: "Tổng số đường tiệm cận đứng và ngang từ các giới hạn cho trước", trang_thai: da-duyet}
+12.3.9: {ten: "Tiệm cận xiên của đồ thị hàm số chứa căn bậc ba", trang_thai: da-duyet}
+12.4.4: {ten: "Nhận dạng hàm bậc ba từ đồ thị qua cực trị và giao điểm với trục tung", trang_thai: da-duyet}
+12.4.5: {ten: "Chọn đồ thị của hàm phân thức bậc nhất trên bậc nhất (tiệm cận và giao điểm với các trục)", trang_thai: da-duyet}
+12.4.6: {ten: "Hàm phân thức bậc hai trên bậc nhất: tâm đối xứng, tiệm cận xiên, diện tích tam giác, hình bình hành nội tiếp (Đúng/Sai)", trang_thai: da-duyet}
+12.4.7: {ten: "Xác định hệ số hàm phân thức bậc nhất trên bậc nhất từ đồ thị", trang_thai: da-duyet}
+12.5.10: {ten: "Quần thể vi khuẩn hai giai đoạn (hàm mũ): hằng số, tốc độ tăng trưởng, giá trị lớn nhất (Đúng/Sai)", trang_thai: da-duyet}
+12.5.11: {ten: "Tối ưu điện năng tiêu thụ của xe điện theo vận tốc", trang_thai: da-duyet}
