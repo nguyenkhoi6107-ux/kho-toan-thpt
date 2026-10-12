@@ -1,0 +1,37 @@
+%% ma: L12-B05-0019
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.12
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "1,49"
+%% nguon: "Ảnh giáo viên gửi 12/10/2026 (câu tối ưu tổng thể tích 9 hình cầu trong hình lập phương cạnh 1), Câu 1"
+%% kien_thuc: "Bài 5 (bài toán tối ưu bằng đạo hàm), Lớp 11 (đường chéo hình lập phương, thể tích khối cầu)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Hình gốc gồm ảnh minh họa màu và sơ đồ các đường chéo; vẽ lại sơ đồ bằng TikZ (hình lập phương, 8 đỉnh, tâm, 4 đường chéo), bán kính các hình cầu không vẽ theo tỉ lệ. Đáp án giải độc lập: 4pi/3*(8r^3+R^3) nhỏ nhất bằng (36*sqrt3-16*sqrt6)*pi/49 ~ 1,485 nên làm tròn 1,49. Điều kiện r <= 1/2 (các hình cầu ở đỉnh không chồng nhau) được thỏa vì r ~ 0,226."
+\begin{ex}
+Minh họa hình vẽ bên, ở bên trong hình lập phương cạnh $1$, có $8$ phần hình cầu $O_i$ $(i=1,2,3,\dots,8)$ có tâm là các đỉnh của hình lập phương và có bán kính bằng nhau. Có thêm một hình cầu $O_0$ có tâm là tâm của hình lập phương. Biết $O_0$ tiếp xúc với mỗi $O_i$ $(i=1,2,3,\dots,8)$. Khi đó giá trị nhỏ nhất của tổng thể tích $9$ phần nói trên bằng bao nhiêu? (Không làm tròn các kết quả trung gian, chỉ làm tròn kết quả đến hàng phần trăm).
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)}, y={(.55cm,.4cm)}, z={(0cm,1cm)}, scale=3.6]
+  \coordinate (A) at (0,0,0); \coordinate (B) at (1,0,0); \coordinate (C) at (1,1,0); \coordinate (D) at (0,1,0);
+  \coordinate (A1) at (0,0,1); \coordinate (B1) at (1,0,1); \coordinate (C1) at (1,1,1); \coordinate (D1) at (0,1,1);
+  \coordinate (O) at (.5,.5,.5);
+  \draw (A)--(B)--(B1)--(A1)--cycle (A1)--(D1)--(C1)--(B1) (B)--(C)--(C1);
+  \draw[khuat] (A)--(D)--(C) (D)--(D1);
+  \draw[khuat] (A)--(C1) (B)--(D1) (C)--(A1) (D)--(B1);
+  \foreach \p in {A,B,C,D,A1,B1,C1,D1}{\node[circle,draw,fill=white,inner sep=1.3pt] at (\p) {};}
+  \node[circle,draw,fill=white,inner sep=2pt] at (O) {};\node[font=\small,fill=white,inner sep=1pt] at (.62,.5,.5) {$O_0$};
+\end{tikzpicture}
+\end{center}
+\shortans{1,49}
+\loigiai{Gọi $r$ là bán kính chung của $8$ hình cầu $O_i$, $R$ là bán kính hình cầu $O_0$. Nửa đường chéo hình lập phương bằng $\dfrac{\sqrt3}{2}$. Vì $O_0$ tiếp xúc với mỗi $O_i$ nên $R+r=\dfrac{\sqrt3}{2}$, tức $R=\dfrac{\sqrt3}{2}-r$ với $0<r<\dfrac{\sqrt3}{2}$.
+
+Tổng thể tích là
+\[V(r)=\dfrac{4\pi}{3}\left[8r^3+\left(\dfrac{\sqrt3}{2}-r\right)^3\right].\]
+$V'(r)=\dfrac{4\pi}{3}\left[24r^2-3\left(\dfrac{\sqrt3}{2}-r\right)^2\right]=0\Leftrightarrow 8r^2=\left(\dfrac{\sqrt3}{2}-r\right)^2\Leftrightarrow \dfrac{\sqrt3}{2}-r=2\sqrt2\,r\Leftrightarrow r=\dfrac{\sqrt3}{2(1+2\sqrt2)}\approx0{,}226$.
+
+$V'(r)<0$ khi $r$ nhỏ hơn giá trị này và $V'(r)>0$ khi lớn hơn, nên $V$ nhỏ nhất tại $r=\dfrac{\sqrt3}{2(1+2\sqrt2)}$ (giá trị này nhỏ hơn $\dfrac12$ nên các hình cầu ở đỉnh không chồng nhau). Khi đó
+\[V_{\min}=\dfrac{(36\sqrt3-16\sqrt6)\pi}{49}\approx1{,}485\approx1{,}49.\]}
+\end{ex}

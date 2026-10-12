@@ -204,3 +204,5 @@
 12.4.7: {ten: "Xác định hệ số hàm phân thức bậc nhất trên bậc nhất từ đồ thị", trang_thai: da-duyet}
 12.5.10: {ten: "Quần thể vi khuẩn hai giai đoạn (hàm mũ): hằng số, tốc độ tăng trưởng, giá trị lớn nhất (Đúng/Sai)", trang_thai: da-duyet}
 12.5.11: {ten: "Tối ưu điện năng tiêu thụ của xe điện theo vận tốc", trang_thai: da-duyet}
+# --- Đề xuất từ ảnh giáo viên gửi 12/10/2026 ---
+12.5.12: {ten: "Tối ưu tổng thể tích tám hình cầu ở đỉnh và một hình cầu ở tâm hình lập phương (tiếp xúc nhau)", trang_thai: de-xuat}
