@@ -223,13 +223,13 @@
 12.15.6: {ten: "Chiều dài tay vịn cầu thang: giao điểm của đường thẳng với trục Oz", trang_thai: da-duyet}
 12.19.7: {ten: "Xác suất Bayes từ tỉ lệ phế phẩm của hai nhà máy", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D12 (Đề số 12 MỖI NGÀY 1 ĐỀ), ngày 13/10/2026 ---
-11.5.2: {ten: "Tìm vị trí của một số hạng trong dãy số cho bởi công thức (giải phương trình bậc hai)", trang_thai: de-xuat}
-11.25.3: {ten: "Nhận biết góc phẳng của góc nhị diện trong hình chóp có cạnh bên vuông góc với đáy", trang_thai: de-xuat}
-12.1.15: {ten: "Hàm số 2x - log_5(x+1): đạo hàm, điểm cực tiểu, giá trị, khoảng đồng biến (Đúng/Sai)", trang_thai: de-xuat}
-12.3.10: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số)", trang_thai: de-xuat}
-12.5.14: {ten: "Tối ưu lợi nhuận dịch vụ nghỉ dưỡng: giá tăng thì số khách và số ngày lưu trú cùng giảm (hàm bậc ba)", trang_thai: de-xuat}
-12.8.13: {ten: "Khoảng cách giữa hai đường thẳng chéo nhau trong hình chóp tứ giác đều bằng tọa độ hóa (EF song song BG)", trang_thai: de-xuat}
-12.9.3: {ten: "Khoảng tứ phân vị của một mẫu số liệu ghép nhóm, chọn nửa khoảng chứa giá trị", trang_thai: de-xuat}
-12.13.14: {ten: "Đọc đồ thị đạo hàm y = f'(x) cắt trục tại ba điểm: tích phân, f(1), công thức f(x), diện tích hai đồ thị (Đúng/Sai)", trang_thai: de-xuat}
-12.14.9: {ten: "Khoảng cách từ đỉnh của hình bình hành đến mặt phẳng khi biết tâm và đỉnh đối diện thuộc mặt phẳng", trang_thai: de-xuat}
-12.16.2: {ten: "Góc nghiêng của mái nhà đặt trên ba cột có chiều cao khác nhau (góc giữa hai mặt phẳng)", trang_thai: de-xuat}
+11.5.2: {ten: "Tìm vị trí của một số hạng trong dãy số cho bởi công thức (giải phương trình bậc hai)", trang_thai: da-duyet}
+11.25.3: {ten: "Nhận biết góc phẳng của góc nhị diện trong hình chóp có cạnh bên vuông góc với đáy", trang_thai: da-duyet}
+12.1.15: {ten: "Hàm số 2x - log_5(x+1): đạo hàm, điểm cực tiểu, giá trị, khoảng đồng biến (Đúng/Sai)", trang_thai: da-duyet}
+12.3.10: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc nhất trên bậc nhất (tính bằng đại số)", trang_thai: da-duyet}
+12.5.14: {ten: "Tối ưu lợi nhuận dịch vụ nghỉ dưỡng: giá tăng thì số khách và số ngày lưu trú cùng giảm (hàm bậc ba)", trang_thai: da-duyet}
+12.8.13: {ten: "Khoảng cách giữa hai đường thẳng chéo nhau trong hình chóp tứ giác đều bằng tọa độ hóa (EF song song BG)", trang_thai: da-duyet}
+12.9.3: {ten: "Khoảng tứ phân vị của một mẫu số liệu ghép nhóm, chọn nửa khoảng chứa giá trị", trang_thai: da-duyet}
+12.13.14: {ten: "Đọc đồ thị đạo hàm y = f'(x) cắt trục tại ba điểm: tích phân, f(1), công thức f(x), diện tích hai đồ thị (Đúng/Sai)", trang_thai: da-duyet}
+12.14.9: {ten: "Khoảng cách từ đỉnh của hình bình hành đến mặt phẳng khi biết tâm và đỉnh đối diện thuộc mặt phẳng", trang_thai: da-duyet}
+12.16.2: {ten: "Góc nghiêng của mái nhà đặt trên ba cột có chiều cao khác nhau (góc giữa hai mặt phẳng)", trang_thai: da-duyet}
