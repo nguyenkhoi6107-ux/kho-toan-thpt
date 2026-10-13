@@ -1,0 +1,33 @@
+%% ma: L11-B25-0004
+%% lop: 11
+%% chuong: 7
+%% bai: 25
+%% dang: 11.25.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần I Câu 5"
+%% kien_thuc: "Bài 25 (hai mặt phẳng vuông góc), Bài 23 (đường thẳng vuông góc với mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 11.25.4 (nhận biết hai mặt bên vuông góc trong hình chóp đáy hình chữ nhật có SA vuông góc đáy) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc C đúng. Hình dựng lại từ dữ kiện đề (đáy hình chữ nhật, SA vuông góc đáy)."
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình chữ nhật và $SA$ vuông góc với $(ABCD)$. Khi đó, mặt phẳng $(SCD)$ vuông góc với mặt phẳng
+\begin{center}
+\begin{tikzpicture}[scale=1,x={(-.55cm,-.4cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (2.2,0,0);
+  \coordinate (C) at (2.2,3.6,0);
+  \coordinate (D) at (0,3.6,0);
+  \coordinate (S) at (0,0,3.4);
+  \draw[khuat] (S)--(A) (A)--(B) (A)--(D);
+  \draw (S)--(B) (S)--(C) (S)--(D) (B)--(C)--(D);
+  \foreach \p/\d in {S/above,A/above left,B/below left,C/below right,D/right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+\choice{$(SBC)$}{$(SAC)$}{\True $(SAD)$}{$(ABCD)$}
+\loigiai{Vì $SA\perp(ABCD)$ nên $SA\perp CD$. Mặt khác $CD\perp AD$ (đáy là hình chữ nhật). Do đó $CD\perp(SAD)$.
+
+Mặt phẳng $(SCD)$ chứa $CD$ mà $CD\perp(SAD)$ nên $(SCD)\perp(SAD)$. Chọn C.}
+\end{ex}

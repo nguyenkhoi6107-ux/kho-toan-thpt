@@ -1,0 +1,27 @@
+%% ma: L12-B19-0021
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.2
+%% loai: DS
+%% muc: [TH, NB, VD, VD]
+%% dap_an: "SSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần II Câu 4"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần và công thức Bayes), Bài 18 (xác suất có điều kiện)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc SSĐS đúng (P(A) = 4/7, P(B) = 31/49, P(A|B) = 16/31). Ý a) đề cho công thức toàn phần viết sai (P(B)P(A|B-gạch) thay vì P(A-gạch)P(B|A-gạch)) nên mệnh đề sai. Đã bỏ ảnh hộp bi minh họa."
+\begin{ex}
+Hộp thứ nhất có $4$ bi xanh và $3$ bi vàng. Hộp thứ hai có $2$ bi xanh và $4$ bi vàng. Các viên bi có cùng kích thước và khối lượng. Lấy một viên bi từ hộp thứ nhất và chuyển vào hộp thứ hai. Sau đó lại lấy ngẫu nhiên một viên bi từ hộp thứ hai. Quy ước, lần lấy một viên bi từ hộp thứ nhất là lần thứ nhất và lần lấy một viên bi từ hộp thứ hai là lần thứ hai. Gọi $A$ là biến cố lần thứ nhất lấy được viên bi xanh và $B$ là biến cố lần thứ hai lấy được viên bi vàng.
+\choiceTF
+{$P(B)=P(A)\cdot P(B\mid A)+P(\overline B)\cdot P(A\mid\overline B)$.}
+{$P(A)=\dfrac6{13}$.}
+{\True $P(B)=\dfrac{31}{49}$.}
+{$P(A\mid B)=\dfrac{12}{31}$.}
+\loigiai{a) Công thức xác suất toàn phần đúng là $P(B)=P(A)\cdot P(B\mid A)+P(\overline A)\cdot P(B\mid\overline A)$. Công thức đã cho sai.
+
+b) Hộp thứ nhất có $7$ viên, trong đó $4$ viên xanh nên $P(A)=\dfrac47\ne\dfrac6{13}$. Sai.
+
+c) Nếu lần đầu lấy được bi xanh (chuyển sang hộp hai) thì hộp hai có $7$ viên gồm $3$ xanh, $4$ vàng, nên $P(B\mid A)=\dfrac47$. Nếu lần đầu lấy được bi vàng thì hộp hai có $2$ xanh, $5$ vàng, nên $P(B\mid\overline A)=\dfrac57$. Vậy $P(B)=\dfrac47\cdot\dfrac47+\dfrac37\cdot\dfrac57=\dfrac{31}{49}$. Đúng.
+
+d) $P(A\mid B)=\dfrac{P(A)\cdot P(B\mid A)}{P(B)}=\dfrac{\frac47\cdot\frac47}{\frac{31}{49}}=\dfrac{16}{31}\ne\dfrac{12}{31}$. Sai.}
+\end{ex}

@@ -1,0 +1,39 @@
+%% ma: L12-B04-0010
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.10
+%% loai: DS
+%% muc: [NB, TH, NB, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần II Câu 1"
+%% kien_thuc: "Bài 4 (đọc đồ thị hàm bậc ba: cực trị, khoảng đồng biến, hệ số), Bài 1 (cực trị), Bài 21 lớp 11 (phương trình lôgarit)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.4.10 (hàm bậc ba đọc từ đồ thị: cực tiểu, nghiệm phương trình lôgarit, đồng biến, tổng hệ số; Đúng/Sai) chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc ghi Chuyên Phan Bội Châu - Nghệ An 2025. Đáp án gốc ĐĐSĐ đúng (sympy: f(x) = -x^3 + 3x^2 - 1, a = -1, b = 3, c = 0, d = -1; f(x) = 3 có hai nghiệm x = -1 và x = 2 (nghiệm kép)). Hình TikZ vẽ đúng f(x) = -x^3 + 3x^2 - 1."
+\begin{ex}
+(Chuyên Phan Bội Châu -- Nghệ An 2025) Cho hàm số $f(x)=ax^3+bx^2+cx+d$ có đồ thị như hình sau đây.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.55cm]
+  \draw[dashed] (0,3)--(2,3)--(2,0);
+  \draw[truc] (-1.7,0)--(4.8,0) node[below]{$x$};
+  \draw[truc] (0,-2.4)--(0,5) node[left]{$y$};
+  \draw[thick,blue!70!black,domain=-1.1:3.1,samples=80] plot (\x,{-(\x)^3+3*(\x)^2-1});
+  \foreach \t in {-1,1,2,3,4} \draw (\t,.1)--(\t,-.1) node[below,font=\footnotesize]{$\t$};
+  \foreach \t in {-2,-1,1,2,3,4} \draw (.07,\t)--(-.07,\t) node[left,font=\footnotesize]{$\t$};
+  \node[above right,font=\footnotesize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Giá trị cực tiểu của hàm số $f(x)$ bằng $-1$.}
+{\True Phương trình $\log_3\left(f(x)+6\right)=2$ có $2$ nghiệm.}
+{Hàm số $y=f(x)$ đồng biến trên khoảng $(1;3)$.}
+{\True Tổng $2025a+b+c+d=-2023$.}
+\loigiai{a) Từ đồ thị, hàm số đạt cực tiểu tại $x=0$ với $f(0)=-1$. Đúng.
+
+b) $\log_3\left(f(x)+6\right)=2\Leftrightarrow f(x)+6=9\Leftrightarrow f(x)=3$ (khi đó $f(x)+6=9>0$). Đường thẳng $y=3$ cắt đồ thị tại $2$ điểm (một điểm là cực đại $(2;3)$ và một điểm có hoành độ âm). Vậy phương trình có $2$ nghiệm. Đúng.
+
+c) Hàm số đồng biến trên $(0;2)$ và nghịch biến trên $(2;3)$, nên không đồng biến trên $(1;3)$. Sai.
+
+d) $f'(x)=3ax^2+2bx+c$. Đồ thị có cực trị tại $(0;-1)$ và $(2;3)$ nên $f'(0)=0$, $f'(2)=0$, $f(0)=-1$, $f(2)=3$, tức là $c=0$, $12a+4b=0$, $d=-1$, $8a+4b+2c+d=3$. Giải ra $a=-1$, $b=3$, $c=0$, $d=-1$. Do đó $2025a+b+c+d=-2025+3+0-1=-2023$. Đúng.}
+\end{ex}

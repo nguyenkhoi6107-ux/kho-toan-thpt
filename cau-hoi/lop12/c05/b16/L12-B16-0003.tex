@@ -1,0 +1,54 @@
+%% ma: L12-B16-0003
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "5,1"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần III Câu 5"
+%% kien_thuc: "Bài 16 (góc giữa hai mặt phẳng), Bài 14 (vectơ pháp tuyến, tích có hướng), Bài 8 (tọa độ vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 5,1 đúng (sympy: n = (-100; -200; -2500) cùng phương (1; 2; 25), cos = 25/căn 630, góc 5,11 độ). Cùng ý tưởng với L12-B16-0002 (mặt phẳng qua ba điểm có độ cao khác nhau, góc với mặt phẳng nằm). Hình dựng lại từ dữ kiện đề: các điểm A, B, C, D ở độ cao 22, 20, 24, 26 cm trên các đỉnh của đáy; hệ trục Oxyz đặt ở đáy bể, trục x và y dọc hai cạnh đáy. Đã bỏ ảnh minh họa không chứa dữ kiện toán. Lưu ý đề gốc nói đáy bể nghiêng so với mặt đất, tương đương góc giữa (ABCD) (mặt nước, nằm ngang) và đáy bể."
+\begin{ex}
+Trong một bể cá hình lập phương cạnh bằng $50$ cm có chứa một ít nước. Người ta đặt đáy bể nghiêng so với mặt phẳng nằm ngang. Biết rằng lúc đó mặt nước có dạng hình bình hành $ABCD$ và khoảng cách từ các điểm $A$, $B$, $C$ đến đáy bể tương ứng $22$ cm, $20$ cm, $24$ cm. Ghép một hệ trục tọa độ $Oxyz$ như hình vẽ, mỗi đơn vị trên trục tương ứng với $1$ cm. Hỏi đáy bể nghiêng bao nhiêu độ so với mặt đất? (Kết quả làm tròn tới hàng phần chục.)
+\begin{center}
+\begin{tikzpicture}[x={(.034cm,.021cm)},y={(-.045cm,.012cm)},z={(0cm,.045cm)}]
+  \coordinate (O) at (0,0,0);
+  \coordinate (E) at (50,0,0);
+  \coordinate (F) at (50,50,0);
+  \coordinate (G) at (0,50,0);
+  \coordinate (O1) at (0,0,50);
+  \coordinate (E1) at (50,0,50);
+  \coordinate (F1) at (50,50,50);
+  \coordinate (G1) at (0,50,50);
+  \coordinate (D) at (0,0,26);
+  \coordinate (C) at (50,0,24);
+  \coordinate (B) at (50,50,20);
+  \coordinate (A) at (0,50,22);
+  \fill[gray!30] (O)--(E)--(C)--(D)--cycle;
+  \fill[gray!30] (O)--(G)--(A)--(D)--cycle;
+  \fill[gray!55,opacity=.7] (A)--(B)--(C)--(D)--cycle;
+  \draw[khuat] (F)--(E) (F)--(G) (F)--(F1) (F)--(B);
+  \draw (O)--(E)--(E1)--(O1)--cycle (O)--(G)--(G1)--(O1) (E1)--(F1)--(G1);
+  \draw (A)--(B)--(C)--(D)--cycle;
+  \draw[truc] (E)--(72,0,0) node[right,font=\footnotesize] {$x$};
+  \draw[truc] (G)--(0,72,0) node[left,font=\footnotesize] {$y$};
+  \draw[truc] (O1)--(0,0,72) node[above,font=\footnotesize] {$z$};
+  \foreach \p/\d in {A/left,B/above left,C/right,D/below right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+  \fill (O) circle (1pt) node[below,font=\footnotesize] {$O$};
+\end{tikzpicture}
+\end{center}
+\shortans{5,1}
+\loigiai{Mặt nước nằm ngang, nên góc nghiêng của đáy bể so với mặt đất bằng góc giữa mặt phẳng $(ABCD)$ và đáy bể $(Oxy)$.
+
+Từ hình vẽ: $A(0;50;22)$, $B(50;50;20)$, $C(50;0;24)$. Khi đó
+\[\overrightarrow{AB}=(50;0;-2),\quad\overrightarrow{AC}=(50;-50;2),\]
+và
+\[\left[\overrightarrow{AB},\overrightarrow{AC}\right]=(-100;-200;-2500),\]
+nên $(ABCD)$ có một vectơ pháp tuyến $\vec n=(1;2;25)$. Mặt phẳng $(Oxy)$ có vectơ pháp tuyến $\vec k=(0;0;1)$.
+
+\[\cos\varphi=\dfrac{|\vec n\cdot\vec k|}{|\vec n|\cdot|\vec k|}=\dfrac{25}{\sqrt{630}}=\dfrac{25}{3\sqrt{70}}.\]
+Suy ra $\varphi\approx5{,}1^\circ$.}
+\end{ex}

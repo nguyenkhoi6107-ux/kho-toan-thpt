@@ -1,0 +1,30 @@
+%% ma: L12-B12-0016
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.9
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần II Câu 2"
+%% kien_thuc: "Bài 12 (tích phân, quãng đường và vị trí từ vận tốc), Bài 11 (nguyên hàm), Bài 2 (giá trị lớn nhất trên đoạn)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.12.9 (chất điểm trên trục số với vận tốc bậc hai: quãng đường, vị trí, tốc độ lớn nhất, hai chất điểm gặp nhau; Đúng/Sai) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ĐĐSS đúng (sympy: v(t) = 6(t-2)(t-5); quãng đường 2 giây đầu 52 m; s(4) = 32 m; max |v| trên [3; 5,2] bằng 13,5 m/s tại t = 3,5; s_A(t) = s_B(t) có nghiệm t = 0, 5, 5,5 nên lần gặp thứ hai ở t = 5 giây). Đã bỏ hình trục số O, A (không chứa dữ kiện toán học) và ảnh minh họa."
+\begin{ex}
+Một chất điểm $A$ chuyển động trên một trục số, gốc $O$, với vận tốc $v(t)=6t^2-42t+60$ ($\mathrm{m/s}$), trong đó thời điểm $t=0$ tính từ lúc chất điểm bắt đầu chuyển động và khi đó chất điểm ở tại gốc tọa độ.
+\choiceTF
+{\True Quãng đường chất điểm đi được trong $2$ giây đầu tiên là $52$ m.}
+{\True Khoảng cách giữa vị trí của chất điểm tại thời điểm $4$ giây và vị trí của chất điểm tại thời điểm ban đầu là $32$ m.}
+{Trong khoảng thời gian từ $3$ giây tới $5{,}2$ giây, tốc độ chất điểm lớn nhất là $3{,}84$ $\mathrm{m/s}$.}
+{Tại thời điểm $t=0$, tại gốc tọa độ một chất điểm $B$ khác $A$ chuyển động trên trục $Ox$ với vận tốc $v_1(t)=5$ $\mathrm{m/s}$. Hai chất điểm $A$ và $B$ gặp nhau lần thứ hai cách thời điểm ban đầu là $5{,}5$ giây (thời điểm $t=0$ được xem là thời điểm hai chất điểm gặp nhau lần thứ nhất).}
+\loigiai{Ta có $v(t)=6(t-2)(t-5)$, nên $v(t)\ge0$ trên $[0;2]$ và $v(t)\le0$ trên $[2;5]$.
+
+a) $s=\displaystyle\int_0^2v(t)\,\mathrm dt=\left(2t^3-21t^2+60t\right)\Big|_0^2=52$ (m). Đúng.
+
+b) Vị trí tại thời điểm $t$ là $s_A(t)=\displaystyle\int_0^tv=2t^3-21t^2+60t$. Khi đó $s_A(4)=128-336+240=32$, nên khoảng cách đến vị trí ban đầu $s_A(0)=0$ là $32$ m. Đúng.
+
+c) Tốc độ $|v(t)|=-v(t)=-6t^2+42t-60$ khi $t\in[3;5]$ và $|v(t)|=v(t)$ khi $t\in[5;5{,}2]$. Trên $[3;5]$, $|v|$ đạt lớn nhất tại $t=3{,}5$ với $|v(3{,}5)|=13{,}5$; còn $|v(3)|=12$, $|v(5{,}2)|=3{,}84$. Vậy tốc độ lớn nhất là $13{,}5$ $\mathrm{m/s}$, không phải $3{,}84$. Sai.
+
+d) Vị trí của $B$ là $s_B(t)=5t$. Hai chất điểm gặp nhau khi $2t^3-21t^2+60t=5t\Leftrightarrow t(t-5)(2t-11)=0$, tức $t=0$, $t=5$ hoặc $t=5{,}5$. Lần gặp thứ hai ứng với $t=5$ giây (không phải $5{,}5$ giây). Sai.}
+\end{ex}

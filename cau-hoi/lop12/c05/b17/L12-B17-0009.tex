@@ -1,0 +1,30 @@
+%% ma: L12-B17-0009
+%% lop: 12
+%% chuong: 5
+%% bai: 17
+%% dang: 12.17.6
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần II Câu 3"
+%% kien_thuc: "Bài 17 (phương trình mặt cầu), Bài 14 (phương trình mặt phẳng, khoảng cách từ điểm đến mặt phẳng), Bài 8 (tích có hướng, tọa độ vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.17.6 (vùng phủ sóng hình cầu: phương trình mặt cầu, vị trí điểm, khoảng cách đến mặt phẳng, đường đi; Đúng/Sai) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ĐSĐS đúng (sympy: IM^2 = 78 > 36; mặt phẳng (ABC): 37x - 58y + 117z - 13 = 0, khoảng cách 5,887 làm tròn 5,89; sau nửa giờ vị trí (3; 5/2; 55/49) cách I khoảng 5,94 nhỏ hơn 6). Dữ liệu gốc không chặt chẽ: điểm N(2; 1; 55/49) không thuộc mặt phẳng (ABC) nên không nằm trên hòn đảo như đề viết; không ảnh hưởng đáp án ý d. Đã bỏ ảnh minh họa trạm thu phát sóng."
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$ (đơn vị trên mỗi trục là kilômét), một trạm thu phát sóng điện thoại di động được đặt ở vị trí $I(3;-2;5)$ trên một ngôi làng ven biển và được thiết kế với bán kính phủ sóng là $6$ km.
+\choiceTF
+{\True Nếu sử dụng phương trình mặt cầu để mô tả ranh giới bên ngoài của vùng phủ sóng trong không gian thì phương trình mặt cầu là $(x-3)^2+(y+2)^2+(z-5)^2=36$.}
+{Một người đi tàu đến vị trí có tọa độ $M(-2;5;3)$ thì tại vị trí này vẫn có thể sử dụng dịch vụ của trạm thu phát sóng này.}
+{\True Một hòn đảo nhỏ có dạng hình tam giác với các đỉnh có tọa độ là $A(5;7;2)$, $B(-6;2;3)$, $C(2;-5;-3)$. Hòn đảo đó nằm trên mặt phẳng cách trạm thu phát sóng một khoảng $5{,}89$ km (kết quả làm tròn đến hàng phần trăm).}
+{Từ vị trí $N\left(2;1;\dfrac{55}{49}\right)$ trên hòn đảo, một người chèo thuyền di chuyển với vectơ vận tốc $\vec v=(2;3;0)$. Sau nửa giờ, người đó chưa thể sử dụng được dịch vụ của trạm thu phát sóng này.}
+\loigiai{a) Mặt cầu tâm $I(3;-2;5)$, bán kính $6$ có phương trình $(x-3)^2+(y+2)^2+(z-5)^2=36$. Đúng.
+
+b) $IM=\sqrt{(-2-3)^2+(5+2)^2+(3-5)^2}=\sqrt{78}>6$ nên $M$ nằm ngoài vùng phủ sóng, người đó không sử dụng được dịch vụ. Sai.
+
+c) $\overrightarrow{AB}=(-11;-5;1)$, $\overrightarrow{AC}=(-3;-12;-5)$, $\left[\overrightarrow{AB},\overrightarrow{AC}\right]=(37;-58;117)$. Mặt phẳng $(ABC)$ có phương trình $37x-58y+117z-13=0$. Khoảng cách từ $I$ đến $(ABC)$ là
+\[d(I,(ABC))=\dfrac{|37\cdot3-58\cdot(-2)+117\cdot5-13|}{\sqrt{37^2+58^2+117^2}}=\dfrac{799}{\sqrt{18422}}\approx5{,}89\ (\text{km}).\]
+Đúng.
+
+d) Sau nửa giờ ($t=\tfrac12$), người đó đến $N'\left(2+2\cdot\tfrac12;\,1+3\cdot\tfrac12;\,\tfrac{55}{49}\right)=\left(3;\tfrac52;\tfrac{55}{49}\right)$. Khi đó $IN'=\sqrt{0^2+\left(\tfrac92\right)^2+\left(\tfrac{55}{49}-5\right)^2}\approx5{,}94<6$, nên người đó vẫn sử dụng được dịch vụ. Sai.}
+\end{ex}

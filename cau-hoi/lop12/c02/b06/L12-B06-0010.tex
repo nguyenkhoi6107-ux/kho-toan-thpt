@@ -1,0 +1,39 @@
+%% ma: L12-B06-0010
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.6
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần I Câu 10"
+%% kien_thuc: "Bài 6 (tích vô hướng của hai vectơ trong không gian, vectơ vuông góc)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.6.6 (khẳng định sai về tích vô hướng trong hình chóp đều) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc C đúng (SC.AB khác 0; các khẳng định A, B, D đúng). Hình dựng lại từ dữ kiện đề (đáy là hình vuông, O là tâm đáy, SO vuông góc đáy)."
+\begin{ex}
+Cho hình chóp đều $S.ABCD$. Gọi $O$ là giao điểm của $AC$ và $BD$. Khẳng định nào sau đây sai?
+\begin{center}
+\begin{tikzpicture}[scale=1,x={(-.55cm,-.4cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (2.6,0,0);
+  \coordinate (C) at (2.6,3.0,0);
+  \coordinate (D) at (0,3.0,0);
+  \coordinate (O) at (1.3,1.5,0);
+  \coordinate (S) at (1.3,1.5,3.2);
+  \draw[khuat] (S)--(A) (A)--(B) (A)--(D) (A)--(C) (B)--(D) (S)--(O);
+  \draw (S)--(B) (S)--(C) (S)--(D) (B)--(C)--(D);
+  \foreach \p/\d in {S/above,A/above left,B/below left,C/below right,D/right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+  \fill (O) circle (1pt) node[below,font=\footnotesize] {$O$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{SO}\cdot\overrightarrow{BC}=0$}{$\overrightarrow{SO}\cdot\overrightarrow{AC}=0$}{\True $\overrightarrow{SC}\cdot\overrightarrow{AB}=0$}{$\overrightarrow{SA}\cdot\overrightarrow{BD}=0$}
+\loigiai{Vì $S.ABCD$ là hình chóp đều nên $SO\perp(ABCD)$ và $ABCD$ là hình vuông.
+
+A, B: $SO\perp(ABCD)$ nên $SO\perp BC$ và $SO\perp AC$, suy ra $\overrightarrow{SO}\cdot\overrightarrow{BC}=0$ và $\overrightarrow{SO}\cdot\overrightarrow{AC}=0$.
+
+D: $BD\perp AC$ và $BD\perp SO$ nên $BD\perp(SAC)$, suy ra $BD\perp SA$, tức $\overrightarrow{SA}\cdot\overrightarrow{BD}=0$.
+
+C: $\overrightarrow{SC}\cdot\overrightarrow{AB}=\overrightarrow{SC}\cdot\overrightarrow{DC}=CS\cdot CD\cdot\cos\widehat{SCD}\ne0$ (vì $\widehat{SCD}$ là góc nhọn). Vậy C sai. Chọn C.}
+\end{ex}

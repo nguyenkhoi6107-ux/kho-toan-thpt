@@ -1,0 +1,20 @@
+%% ma: L12-B05-0023
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.15
+%% loai: TLN
+%% muc: VD
+%% dap_an: "38"
+%% nguon: "(NBV)-ĐỀ SỐ 13-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D13, MỖI NGÀY 1 ĐỀ - Đề số 13), Phần III Câu 3"
+%% kien_thuc: "Bài 5 (bài toán tối ưu bằng đạo hàm, hàm bậc ba trên một đoạn)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.5.15 (tối ưu lợi nhuận khi biết doanh thu và chi phí bình quân, hàm bậc ba) chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 38 đúng (sympy: h(x) = -x^3 + 75x^2 + 312x - 40000, x = 52 là điểm cực đại, h(52) = 38416 nghìn đồng, khoảng 38,4 triệu; h(1) và h(300) đều âm). Đã bỏ ảnh minh họa doanh nghiệp."
+\begin{ex}
+(THPT Tiên Du -- Bắc Ninh 2025) Một doanh nghiệp dự định sản xuất không quá $300$ sản phẩm. Nếu doanh nghiệp sản xuất $x$ sản phẩm ($1\le x\le300$) thì doanh thu nhận được khi bán hết số sản phẩm đó là $F(x)=-2x^2+1312x$ (nghìn đồng), trong khi chi phí sản xuất bình quân cho một sản phẩm là $G(x)=x^2-77x+1000+\dfrac{40000}x$ (nghìn đồng). Lợi nhuận thu được của doanh nghiệp (tính theo đơn vị triệu đồng) đạt giá trị lớn nhất bằng bao nhiêu (làm tròn kết quả đến hàng đơn vị)?
+\shortans{38}
+\loigiai{Chi phí sản xuất $x$ sản phẩm là $xG(x)=x^3-77x^2+1000x+40000$ (nghìn đồng). Lợi nhuận
+\[h(x)=F(x)-xG(x)=-x^3+75x^2+312x-40000.\]
+$h'(x)=-3x^2+150x+312=0\Leftrightarrow x=52$ (loại $x=-2$). Trên $[1;300]$: $h'(x)>0$ khi $1\le x<52$ và $h'(x)<0$ khi $52<x\le300$, nên $h$ đạt giá trị lớn nhất tại $x=52$: $h(52)=38\,416$ (nghìn đồng) $\approx38{,}4$ triệu đồng. Làm tròn: $38$.}
+\end{ex}
