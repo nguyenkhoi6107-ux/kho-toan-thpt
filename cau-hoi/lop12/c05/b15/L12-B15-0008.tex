@@ -1,0 +1,36 @@
+%% ma: L12-B15-0008
+%% lop: 12
+%% chuong: 5
+%% bai: 15
+%% dang: 12.15.6
+%% loai: TLN
+%% muc: VD
+%% dap_an: "6,18"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần III Câu 5"
+%% kien_thuc: "Bài 15 (phương trình tham số của đường thẳng, giao điểm của đường thẳng và trục tọa độ), Bài 8 (độ dài đoạn thẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 6,18 đúng (sympy: 3 căn 17 / 2). Dữ kiện đề hơi mâu thuẫn với hình thực tế: điểm B có cao độ -1,5 m (dưới mặt đất z = 0). Giữ nguyên kết quả theo dữ kiện toán của đề. Hình dựng lại trong mặt phẳng chứa Oz và A (x = y): A, B đúng tỉ lệ; C, D vẽ minh họa (không theo tỉ lệ)."
+\begin{ex}
+Một kĩ sư đang thiết kế cầu thang (như hình dưới) bao gồm phần cầu thang, phần tay vịn, trụ trên và trụ dưới tạo thành một hình bình hành $ABCD$. Giả sử trong không gian $Oxyz$ (đơn vị trên các trục tương ứng với $1$ m), mặt đất là mặt phẳng có phương trình $z=0$, trụ dưới $BC$ nằm trên trục $Oz$ và điểm nối giữa tay vịn và trụ trên là điểm $A(3;3;3)$. Biết đường thẳng chứa tay vịn $AB$ có vectơ chỉ phương là $\left(1;1;\dfrac32\right)$. Hỏi chiều dài tay vịn là bao nhiêu mét? (Kết quả làm tròn đến hàng phần trăm.)
+\begin{center}
+\begin{tikzpicture}[scale=.6]
+  \coordinate (B) at (0,0);
+  \coordinate (A) at (4.243,4.5);
+  \coordinate (C) at (0,-3);
+  \coordinate (D) at (4.243,1.5);
+  \fill[orange!15] (A)--(B)--(C)--(D)--cycle;
+  \draw[truc] (0,-4)--(0,6.2) node[left]{$Oz$};
+  \draw[very thick] (A)--(B);
+  \draw (B)--(C) (C)--(D) (D)--(A);
+  \foreach \p/\l/\d in {A/A(3;3;3)/above right,B/B/left,C/C/left,D/D/right}
+    {\fill (\p) circle (2pt); \node[\d,font=\footnotesize] at (\p) {$\l$};}
+\end{tikzpicture}
+\end{center}
+\shortans{6,18}
+\loigiai{Đường thẳng $AB$ đi qua $A(3;3;3)$ có vectơ chỉ phương $\left(1;1;\dfrac32\right)$ nên có phương trình $x=3+t$, $y=3+t$, $z=3+\dfrac32t$.
+
+$B$ là giao điểm của $AB$ với trục $Oz$ (tức $x=y=0$): $3+t=0\Rightarrow t=-3$, nên $B\left(0;0;-\dfrac32\right)$.
+
+Chiều dài tay vịn $AB=\sqrt{3^2+3^2+\left(3+\dfrac32\right)^2}=\sqrt{18+\dfrac{81}4}=\dfrac{3\sqrt{17}}2\approx6{,}18$ (m).}
+\end{ex}

@@ -1,0 +1,29 @@
+%% ma: L12-B19-0017
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.3
+%% loai: DS
+%% muc: [TH, VD, VD, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần II Câu 3"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, công thức nhân), Bài 19 (công thức xác suất toàn phần và công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc Đ S S Đ đúng (sympy). Đề gốc có ảnh minh họa sinh viên căng thẳng (ảnh trang trí, không chứa dữ kiện toán) nên bỏ hình. Đã sửa lỗi chính tả “triét” thành “triết”. Cùng ý tưởng với L12-B19-0015 (hai bước, xác suất có điều kiện và công thức Bayes), nhập vào dạng đã duyệt."
+\begin{ex}
+Một sinh viên phải trải qua liên tiếp hai kì thi: Triết học và Toán. Môn Triết thi trước với xác suất thi đỗ là $0{,}6$. Nếu qua được môn Triết thì sinh viên sẽ qua kì thi Toán với xác suất $0{,}8$; còn nếu không qua kì thi Triết thì xác suất để qua được môn Toán chỉ còn $0{,}3$. Xét tính đúng, sai của các mệnh đề sau:
+\choiceTF
+{\True Sinh viên qua cả hai kì thi với xác suất là $0{,}48$.}
+{Sinh viên qua đúng một kì thi với xác suất là $0{,}25$.}
+{Sinh viên qua ít nhất một kì thi với xác suất là $0{,}73$.}
+{\True Biết rằng sinh viên qua đúng một kì thi, xác suất để sinh viên qua môn Toán là $0{,}5$.}
+\loigiai{Gọi $A$: "qua kì thi Triết", $B$: "qua kì thi Toán". $P(A)=0{,}6$, $P(B\mid A)=0{,}8$, $P(B\mid\overline A)=0{,}3$.
+
+a) $P(AB)=P(A)P(B\mid A)=0{,}6\cdot0{,}8=0{,}48$. Đúng.
+
+b) $P(A\overline B)=0{,}6\cdot0{,}2=0{,}12$; $P(\overline AB)=0{,}4\cdot0{,}3=0{,}12$. Gọi $D$ là biến cố qua đúng một kì thi: $P(D)=0{,}12+0{,}12=0{,}24\ne0{,}25$. Sai.
+
+c) $P(\overline A\,\overline B)=0{,}4\cdot0{,}7=0{,}28$ nên $P(A\cup B)=1-0{,}28=0{,}72\ne0{,}73$. Sai.
+
+d) $P(B\mid D)=\dfrac{P(\overline AB)}{P(D)}=\dfrac{0{,}12}{0{,}24}=0{,}5$. Đúng.}
+\end{ex}

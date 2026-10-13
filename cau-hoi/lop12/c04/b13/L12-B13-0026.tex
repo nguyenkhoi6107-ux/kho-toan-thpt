@@ -1,0 +1,49 @@
+%% ma: L12-B13-0026
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.13
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần II Câu 2"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng), Bài 12 (tích phân, ý nghĩa hình học của tích phân), Bài 1 lớp 12 và Bài 31 lớp 11 (đạo hàm tại điểm gấp)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc S Đ S Đ đúng (sympy: tích phân = 2 pi + 10). Hình dựng lại từ số liệu: A(-6;-1), B(-2;1), nửa đường tròn tâm (0;1) bán kính 2 đi qua B, C(0;3), D(2;1), E(5;3)."
+\begin{ex}
+Cho hàm số $f(x)$ liên tục trên đoạn $[-6;5]$ và có đồ thị gồm hai đoạn thẳng và một nửa đường tròn như hình vẽ sau.
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \draw[truc] (-6.7,0)--(5.9,0) node[below]{$x$};
+  \draw[truc] (0,-1.6)--(0,3.9) node[left]{$y$};
+  \draw[phu] (0,3)--(5,3)--(5,0);
+  \draw[phu] (-6,-1)--(0,-1);
+  \draw[thick,blue!70!black] (-6,-1)--(-2,1);
+  \draw[thick,blue!70!black,domain=-2:2,samples=80] plot (\x,{1+sqrt(max(0,4-\x*\x))});
+  \draw[thick,blue!70!black] (2,1)--(5,3);
+  \foreach \p/\l/\d in {(-6,-1)/A/below left,(-2,1)/B/above left,(0,3)/C/above right,(2,1)/D/below right,(5,3)/E/above right}
+    \fill \p circle (1.6pt) node[\d,font=\footnotesize] {$\l$};
+  \foreach \x in {-6,-4,-2,2,4,5} \draw (\x,.08)--(\x,-.08) node[below,font=\footnotesize] {$\x$};
+  \foreach \y in {1,3} \draw (.08,\y)--(-.08,\y) node[left,font=\footnotesize] {$\y$};
+  \node[right,font=\footnotesize] at (0,-1) {$-1$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+Biết $\displaystyle\int_{-6}^{5}f(x)\,\mathrm dx=a\pi+b$, với $a$, $b$ là các số nguyên dương. Xét tính đúng, sai của các mệnh đề sau:
+\choiceTF
+{Hàm số $y=f(x)$ có đạo hàm trên khoảng $(-6;5)$.}
+{\True Đại lượng $P=\dfrac{a+b}{16}=0{,}75$.}
+{Gọi $S$ là diện tích hình phẳng giới hạn bởi đường cong $y=f(x)$, trục hoành $Ox$ và các đường thẳng $x=-6$, $x=5$. Khi đó $S=10+2\pi$.}
+{\True Các điểm của đồ thị $y=f(x)$ biểu diễn giá trị lớn nhất, nhỏ nhất của hàm số $f(x)$ trên đoạn $[-6;5]$ tạo thành một tam giác có diện tích là $10$.}
+\loigiai{Từ đồ thị:
+\[f(x)=\begin{cases}\dfrac x2+2&\text{khi }-6\le x\le-2,\\[1mm]1+\sqrt{4-x^2}&\text{khi }-2<x\le2,\\[1mm]\dfrac{2x-1}{3}&\text{khi }2<x\le5.\end{cases}\]
+
+a) Tại $x=-2$ đạo hàm bên trái bằng $\dfrac12$, còn nửa đường tròn có tiếp tuyến thẳng đứng tại $B(-2;1)$ nên đạo hàm bên phải không hữu hạn; hàm số không có đạo hàm tại $x=-2$ (cũng không có đạo hàm tại $x=2$). Sai.
+
+b) $\displaystyle\int_{-6}^{-2}\left(\dfrac x2+2\right)\mathrm dx=0$; $\displaystyle\int_{-2}^{2}\left(1+\sqrt{4-x^2}\right)\mathrm dx=4+2\pi$ ($\int\sqrt{4-x^2}$ là diện tích nửa hình tròn bán kính $2$); $\displaystyle\int_2^5\dfrac{2x-1}{3}\,\mathrm dx=6$. Vậy tích phân bằng $2\pi+10$, $a=2$, $b=10$, $P=\dfrac{12}{16}=0{,}75$. Đúng.
+
+c) Trên $[-6;-4]$ hàm số âm nên $S=\displaystyle\int_{-6}^{5}|f(x)|\,\mathrm dx=1+1+(4+2\pi)+6=12+2\pi\ne10+2\pi$. Sai.
+
+d) Giá trị nhỏ nhất $-1$ đạt tại $A(-6;-1)$; giá trị lớn nhất $3$ đạt tại $C(0;3)$ và $E(5;3)$. Tam giác $ACE$ có $CE=5$ và đường cao từ $A$ bằng $3-(-1)=4$ nên $S_{ACE}=\dfrac12\cdot5\cdot4=10$. Đúng.}
+\end{ex}

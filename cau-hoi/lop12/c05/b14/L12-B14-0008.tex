@@ -1,0 +1,58 @@
+%% ma: L12-B14-0008
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.8
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SSĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần II Câu 4"
+%% kien_thuc: "Bài 7 (tọa độ hóa hình không gian), Bài 8 (tích có hướng), Bài 14 (phương trình mặt phẳng, khoảng cách từ điểm đến mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc S S Đ Đ đúng (sympy). Hình dựng lại: O là trung điểm AD, Ox qua trung điểm M của BC, N là trung điểm DC; nền ảnh gốc (đồng cỏ, bầu trời) bỏ. Ý d: bổ sung từ “ở chính giữa lều” thành “ở chính giữa lều (tâm hình vuông đáy)” cho rõ nghĩa theo lời giải gốc."
+\begin{ex}
+Để chuẩn bị đi cắm trại, lớp 10A dự định dựng chiếc lều $S.ABCD$ được gắn với hệ trục tọa độ $Oxyz$ như hình bên dưới, với $O$ là gốc tọa độ. Trong đó đáy $ABCD$ là hình vuông cạnh $4$ m, $SAD$ là tam giác đều cạnh $4$ m và nằm trong mặt phẳng vuông góc với đáy. Các mặt $(SAB)$, $(SBC)$, $(SCD)$ đều phủ bạt kín. Cây cột $SO$ vuông góc với mặt đất, $M$ là trung điểm $BC$.
+\begin{center}
+\begin{tikzpicture}[x={(0.95cm,0cm)},y={(-0.5cm,-0.36cm)},z={(0cm,0.95cm)}]
+  \coordinate (O) at (0,0,0);
+  \coordinate (A) at (0,-2,0);
+  \coordinate (D) at (0,2,0);
+  \coordinate (B) at (4,-2,0);
+  \coordinate (C) at (4,2,0);
+  \coordinate (S) at (0,0,3.4641);
+  \coordinate (M) at (4,0,0);
+  \coordinate (N) at (2,2,0);
+  \fill[orange!25] (S)--(D)--(C)--cycle;
+  \fill[orange!35] (S)--(C)--(B)--cycle;
+  \draw[khuat] (S)--(A) (A)--(B) (A)--(D) (S)--(O) (O)--(M);
+  \draw[thick] (S)--(D) (S)--(C) (S)--(B) (D)--(C) (C)--(B);
+  \draw[->] (S)--(0,0,4.6) node[right]{$z$};
+  \draw[->] (M)--(5.4,0,0) node[below]{$x$};
+  \draw[->] (D)--(0,3.4,0) node[below left]{$y$};
+  \fill (O) circle (1.3pt); \fill (M) circle (1.3pt); \fill (N) circle (1.3pt);
+  \node[above left,font=\footnotesize] at (S) {$S$};
+  \node[above right,font=\footnotesize] at (A) {$A$};
+  \node[above right,font=\footnotesize] at (B) {$B$};
+  \node[below right,font=\footnotesize] at (C) {$C$};
+  \node[below right,font=\footnotesize,xshift=-1pt] at (D) {$D$};
+  \node[below right,font=\footnotesize] at (O) {$O$};
+  \node[below right,font=\footnotesize] at (M) {$M$};
+  \node[below,font=\footnotesize] at (N) {$N$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Chiếc lều cao không quá $3$ m.}
+{Phương trình mặt phẳng $(SOM)$ là $x+z=0$.}
+{\True Khoảng cách từ điểm $A$ đến mặt phẳng $(SBC)$ là $2{,}6$ m (kết quả làm tròn đến hàng phần chục của mét).}
+{\True Để lều chắc chắn hơn, người ta cần dựng một chiếc cột thẳng đứng ở chính giữa lều (tâm hình vuông đáy). Cần chuẩn bị một chiếc cột có chiều cao $\sqrt3$ m thì phần bạt phủ mặt $(SBC)$ sẽ phẳng.}
+\loigiai{Do $O$ là trung điểm $AD$ và tam giác $SAD$ đều cạnh $4$ nên $SO=\dfrac{4\sqrt3}2=2\sqrt3$. Tọa độ: $A(0;-2;0)$, $D(0;2;0)$, $B(4;-2;0)$, $C(4;2;0)$, $S(0;0;2\sqrt3)$, $M(4;0;0)$.
+
+a) Chiều cao lều $SO=2\sqrt3\approx3{,}46>3$. Sai.
+
+b) Mặt phẳng $(SOM)$ chứa trục $Oz$ và $Ox$ nên là mặt phẳng $(Oxz)$: $y=0$. Sai.
+
+c) $\overrightarrow{SB}=(4;-2;-2\sqrt3)$, $\overrightarrow{SC}=(4;2;-2\sqrt3)$, $[\overrightarrow{SB},\overrightarrow{SC}]=(8\sqrt3;0;16)$ nên $(SBC)$ có vectơ pháp tuyến $\vec n=(\sqrt3;0;2)$ và phương trình $\sqrt3x+2z-4\sqrt3=0$. Khi đó $d(A,(SBC))=\dfrac{|-4\sqrt3|}{\sqrt{3+4}}=\dfrac{4\sqrt{21}}{7}\approx2{,}6$ (m). Đúng.
+
+d) Cột đặt tại tâm đáy $(2;0;0)$, cao $\sqrt3$ nên đỉnh cột là $(2;0;\sqrt3)$. Thay vào phương trình $(SBC)$: $2\sqrt3+2\sqrt3-4\sqrt3=0$, nên đỉnh cột thuộc mặt phẳng $(SBC)$ (đỉnh cột chạm tấm bạt, bạt phẳng). Đúng.}
+\end{ex}

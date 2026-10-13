@@ -1,0 +1,33 @@
+%% ma: L11-B27-0014
+%% lop: 11
+%% chuong: 7
+%% bai: 27
+%% dang: 11.27.2
+%% loai: DS
+%% muc: [NB, VD, TH, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần II Câu 1 (THPT Lê Xoay - Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 27 (thể tích khối chóp), Bài 26 (khoảng cách từ điểm đến mặt phẳng), Bài 23 (đường thẳng vuông góc với mặt phẳng), Bài 22 (góc giữa hai đường thẳng), định lí côsin (Toán 10, Bài 6)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc Đ S S Đ đúng (kiểm bằng sympy/numpy). Đề gốc ghi góc giữa SB và AC khoảng 77,4 độ; giá trị đúng khoảng 77,1 độ (không ảnh hưởng kết luận lớn hơn 75 độ). Lời giải dùng hình học thuần túy (không dùng vectơ) để khớp chương trình lớp 11. Cùng ý tưởng với L11-B27-0002 (hình chóp có cạnh bên vuông góc với đáy hình chữ nhật, dạng Đúng/Sai), nhập vào dạng đã duyệt. Đề gốc không có hình."
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình chữ nhật, $AB=a$, $AD=a\sqrt3$. Cạnh bên $SA$ vuông góc với mặt phẳng đáy và $SA=2a$.
+\choiceTF
+{\True $SA$ là đường cao của hình chóp.}
+{Khoảng cách từ điểm $A$ đến mặt phẳng $(SCD)$ bằng $a\sqrt3$.}
+{Thể tích khối chóp $S.ABCD$ là $\dfrac{a^3\sqrt3}{3}$.}
+{\True Góc giữa hai đường thẳng $SB$ và $AC$ lớn hơn $75^\circ$.}
+\loigiai{a) $SA\perp(ABCD)$ nên $SA$ là đường cao của hình chóp. Đúng.
+
+b) $CD\perp AD$ và $CD\perp SA$ nên $CD\perp(SAD)$, suy ra $CD\perp AH$ với $AH$ là đường cao kẻ từ $A$ của tam giác $SAD$ ($AH\perp SD$). Vậy $AH\perp(SCD)$ và
+\[d(A,(SCD))=AH=\dfrac{SA\cdot AD}{\sqrt{SA^2+AD^2}}=\dfrac{2a\cdot a\sqrt3}{\sqrt{4a^2+3a^2}}=\dfrac{2a\sqrt{21}}{7}\ne a\sqrt3.\]
+Sai.
+
+c) $V=\dfrac13\cdot SA\cdot AB\cdot AD=\dfrac13\cdot2a\cdot a\cdot a\sqrt3=\dfrac{2a^3\sqrt3}{3}\ne\dfrac{a^3\sqrt3}{3}$. Sai.
+
+d) Lấy điểm $E$ thuộc tia $DC$ sao cho $CE=a$. Khi đó $ABEC$ là hình bình hành nên $BE\parallel AC$, $BE=AC=2a$, và góc giữa $SB$, $AC$ bằng góc giữa $SB$, $BE$ (hoặc bù với nó).
+
+$SB=a\sqrt5$. Trong tam giác $ADE$ vuông tại $D$: $AE^2=AD^2+DE^2=3a^2+4a^2=7a^2$; $SA\perp AE$ nên $SE^2=SA^2+AE^2=11a^2$.
+
+Theo định lí côsin: $\cos\widehat{SBE}=\dfrac{SB^2+BE^2-SE^2}{2\cdot SB\cdot BE}=\dfrac{5+4-11}{2\cdot\sqrt5\cdot2}=-\dfrac1{2\sqrt5}$. Vậy côsin của góc giữa $SB$ và $AC$ bằng $\dfrac1{2\sqrt5}\approx0{,}2236<\cos75^\circ\approx0{,}2588$, nên góc đó lớn hơn $75^\circ$ (khoảng $77{,}1^\circ$). Đúng.}
+\end{ex}

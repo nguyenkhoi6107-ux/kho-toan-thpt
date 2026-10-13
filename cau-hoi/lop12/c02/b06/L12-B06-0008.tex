@@ -1,0 +1,28 @@
+%% ma: L12-B06-0008
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.5
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "860"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần III Câu 2 (THPT Lê Xoay - Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 6 (trọng tâm tứ diện, ba vectơ đồng phẳng), Toán 10 Bài 20 (khoảng cách từ điểm đến đường thẳng), tam thức bậc hai"
+%% trang_thai: cho-duyet
+%% ly_do: "Đáp án khác đáp án gốc (860 thay vì 58): giáo viên cần xác nhận cách hiểu “cắt các cạnh SA, SB, SC” là cắt trên đoạn thẳng. Ngoài ra dạng toán mới đề xuất chờ duyệt."
+%% ghi_chu: "Đáp án gốc 58 SAI do bỏ ràng buộc A1 thuộc cạnh SA: gốc dùng bất đẳng thức Bunyakovsky với dấu bằng tại SA1 = 25/6 > SA = 3 (A1 nằm ngoài cạnh SA). Với A1, B1, C1 thuộc các cạnh (SA1 <= 3, SB1 <= 4, SC1 <= 5) thì giá trị nhỏ nhất là 122/369 tại A1 trùng A (kiểm bằng quét số): a = 122, b = 369, a + 2b = 860. Nếu coi A1, B1, C1 thuộc các tia SA, SB, SC (không ràng buộc) thì đáp án là 58."
+\begin{ex}
+Cho hình chóp $S.ABC$ với $SA=3$, $SB=4$, $SC=5$. Một mặt phẳng $(\alpha)$ thay đổi luôn đi qua trọng tâm của tứ diện $S.ABC$ và cắt các cạnh $SA$, $SB$, $SC$ lần lượt tại các điểm $A_1$, $B_1$, $C_1$. Giá trị nhỏ nhất của biểu thức $P=\dfrac1{SA_1^2}+\dfrac1{SB_1^2}+\dfrac1{SC_1^2}$ có dạng $P=\dfrac ab$, với $a,b\in\mathbb Z$, $b\ne0$, $a,b$ nguyên tố cùng nhau. Tính $a+2b$.
+\shortans{860}
+\loigiai{Gọi $G$ là trọng tâm tứ diện: $\overrightarrow{SG}=\dfrac14\left(\overrightarrow{SA}+\overrightarrow{SB}+\overrightarrow{SC}\right)$. Đặt $x=SA_1\in(0;3]$, $y=SB_1\in(0;4]$, $z=SC_1\in(0;5]$; khi đó $\overrightarrow{SA}=\dfrac3x\overrightarrow{SA_1}$, $\overrightarrow{SB}=\dfrac4y\overrightarrow{SB_1}$, $\overrightarrow{SC}=\dfrac5z\overrightarrow{SC_1}$ nên
+\[\overrightarrow{SG}=\dfrac14\left(\dfrac3x\overrightarrow{SA_1}+\dfrac4y\overrightarrow{SB_1}+\dfrac5z\overrightarrow{SC_1}\right).\]
+Vì $G,A_1,B_1,C_1$ đồng phẳng nên tổng các hệ số bằng $1$: $\dfrac3x+\dfrac4y+\dfrac5z=4$.
+
+Đặt $u=\dfrac1x\ge\dfrac13$, $v=\dfrac1y\ge\dfrac14$, $w=\dfrac1z\ge\dfrac15$. Bài toán: tìm giá trị nhỏ nhất của $P=u^2+v^2+w^2$ với $3u+4v+5w=4$.
+
+Với $u$ cố định, $4v+5w=4-3u$ nên $v^2+w^2\ge\dfrac{(4-3u)^2}{41}$ (bình phương khoảng cách từ gốc tọa độ đến đường thẳng $4v+5w=4-3u$). Do đó
+\[P\ge g(u)=u^2+\dfrac{(4-3u)^2}{41}=\dfrac{50u^2-24u+16}{41}.\]
+Tam thức $g(u)$ đạt cực tiểu tại $u=\dfrac{12}{50}=0{,}24<\dfrac13$ nên $g$ đồng biến trên $\left[\dfrac13;+\infty\right)$, suy ra $P\ge g\left(\dfrac13\right)=\dfrac{122}{369}$.
+
+Dấu bằng xảy ra khi $u=\dfrac13$, $v=\dfrac{12}{41}$, $w=\dfrac{15}{41}$ (thỏa $v\ge\dfrac14$, $w\ge\dfrac15$), tức $A_1\equiv A$, $SB_1=\dfrac{41}{12}\le4$, $SC_1=\dfrac{41}{15}\le5$. Vậy $P_{\min}=\dfrac{122}{369}$ ($122$ và $369=3^2\cdot41$ nguyên tố cùng nhau), $a=122$, $b=369$ và $a+2b=860$.}
+\end{ex}

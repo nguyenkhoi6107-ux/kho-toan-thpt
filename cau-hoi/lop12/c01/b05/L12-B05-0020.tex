@@ -1,0 +1,40 @@
+%% ma: L12-B05-0020
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.13
+%% loai: TLN
+%% muc: VD
+%% dap_an: "4,58"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần III Câu 1"
+%% kien_thuc: "Bài 5 (tối ưu bằng đạo hàm), Bài 2 (giá trị lớn nhất của hàm số), công thức cộng lượng giác (Toán 11, Bài 2)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 4,58 đúng (sympy: x = căn 21). Đề gốc không ghi yêu cầu làm tròn; đã bổ sung “làm tròn đến hàng phần trăm” để khớp đáp số 4,58. Hình dựng lại từ số liệu của đề, khoảng cách người đứng vẽ minh họa."
+\begin{ex}
+Một bức tranh cao $4$ m được treo trên tường có mép dưới cao hơn tầm mắt người quan sát $3$ m (như hình vẽ). Người quan sát phải đứng cách tường bao nhiêu mét để có được tầm nhìn thuận lợi nhất (tức là có góc nhìn $\theta$ lớn nhất)? (Kết quả làm tròn đến hàng phần trăm.)
+\begin{center}
+\begin{tikzpicture}[scale=.55]
+  \fill[gray!15] (-.35,-.3) rectangle (0,8);
+  \draw[thick] (0,-.3)--(0,8);
+  \draw[very thick,brown!70!black] (0,3)--(0,7);
+  \coordinate (T) at (0,7);
+  \coordinate (B) at (0,3);
+  \coordinate (E) at (6,0);
+  \coordinate (H) at (0,0);
+  \draw[phu] (H)--(E);
+  \draw (E)--(T) (E)--(B);
+  \fill (E) circle (2pt);
+  \node[right,font=\footnotesize] at (E) {$E$};
+  \draw[<->] (-1.1,3)--(-1.1,7) node[midway,left,font=\footnotesize] {$4$ m};
+  \draw[<->] (-1.1,0)--(-1.1,3) node[midway,left,font=\footnotesize] {$3$ m};
+  \draw[phu] (-1.1,3)--(0,3) (-1.1,7)--(0,7) (-1.1,0)--(0,0);
+  \draw[<->] (0,-1)--(6,-1) node[midway,below,font=\footnotesize] {$x$};
+  \pic[draw,"$\theta$",angle radius=1.5cm,angle eccentricity=1.45,font=\footnotesize] {angle=T--E--B};
+\end{tikzpicture}
+\end{center}
+\shortans{4,58}
+\loigiai{Gọi $x$ $(x>0)$ là khoảng cách từ người quan sát đến tường. Gọi $\alpha$, $\beta$ là góc giữa tia nhìn ngang và các tia nhìn tới mép trên, mép dưới của bức tranh: $\tan\alpha=\dfrac7x$, $\tan\beta=\dfrac3x$, $\theta=\alpha-\beta$ (nhọn). Khi đó
+\[\tan\theta=\dfrac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}=\dfrac{\frac4x}{1+\frac{21}{x^2}}=\dfrac{4x}{x^2+21}.\]
+Xét $f(x)=\dfrac{4x}{x^2+21}$, $f'(x)=\dfrac{4(21-x^2)}{(x^2+21)^2}$, $f'(x)=0\Leftrightarrow x=\sqrt{21}$; $f$ đồng biến trên $(0;\sqrt{21})$ và nghịch biến trên $(\sqrt{21};+\infty)$ nên $f$ đạt giá trị lớn nhất tại $x=\sqrt{21}$. Vì $\theta$ nhọn nên $\theta$ lớn nhất khi $\tan\theta$ lớn nhất. Vậy $x=\sqrt{21}\approx4{,}58$ m.}
+\end{ex}

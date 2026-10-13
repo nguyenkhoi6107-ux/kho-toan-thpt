@@ -1,0 +1,35 @@
+%% ma: L12-B10-0005
+%% lop: 12
+%% chuong: 3
+%% bai: 10
+%% dang: 12.10.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "(NBV)-ĐỀ SỐ 11-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D11, MỖI NGÀY 1 ĐỀ - Đề số 11), Phần I Câu 9"
+%% kien_thuc: "Bài 10 (phương sai của mẫu số liệu ghép nhóm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc B đúng (sympy: phương sai 0,3322). Đề gốc ghi đơn vị mol/l, đã sửa thành mmol/l. Cùng ý tưởng với L12-B10-0004 (tính độ lệch chuẩn của mẫu ghép nhóm, ở đây hỏi phương sai), nhập vào dạng đã duyệt."
+\begin{ex}
+Bảng sau ghi lại chỉ số đường huyết khi đói (đơn vị: mmol/l) của một số người cao tuổi ở một khu vực.
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Chỉ số & $[4{,}0;4{,}5)$ & $[4{,}5;5{,}0)$ & $[5{,}0;5{,}5)$ & $[5{,}5;6{,}0)$ & $[6{,}0;6{,}5)$ \\
+\hline
+Số người & $12$ & $23$ & $54$ & $35$ & $26$ \\
+\hline
+\end{tabular}
+\end{center}
+Phương sai của mẫu số liệu ghép nhóm trên thuộc nửa khoảng nào sau đây?
+\choice{$[0{,}2;0{,}3)$}{\True $[0{,}3;0{,}4)$}{$[0{,}4;0{,}5)$}{$[0{,}5;0{,}6)$}
+\loigiai{Cỡ mẫu $n=12+23+54+35+26=150$. Giá trị đại diện các nhóm: $4{,}25$; $4{,}75$; $5{,}25$; $5{,}75$; $6{,}25$ (tần số $n_i$ như bảng).
+
+Số trung bình
+\[\bar x=\dfrac{\sum n_ix_i}{150}=\dfrac{807{,}5}{150}=\dfrac{323}{60}\approx5{,}383.\]
+Phương sai
+\[s^2=\dfrac{\sum n_ix_i^2}{150}-\bar x^2,\quad\sum n_ix_i^2=4396{,}875.\]
+\[s^2=\dfrac{4396{,}875}{150}-\left(\dfrac{323}{60}\right)^2\approx0{,}332\in[0{,}3;0{,}4).\]
+Chọn B.}
+\end{ex}
