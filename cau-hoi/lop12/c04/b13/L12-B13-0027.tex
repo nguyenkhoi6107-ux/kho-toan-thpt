@@ -1,0 +1,51 @@
+%% ma: L12-B13-0027
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.14
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần II Câu 4"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng), Bài 12 (tích phân, công thức Newton-Leibniz), Bài 11 (nguyên hàm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 12.13.14"
+%% ghi_chu: "Đáp án gốc SĐSĐ đúng (sympy: f(x) = x^4 - 16/3 x^3 - 2x^2 + 16x, diện tích ý d là 215,76). Hình dựng lại từ số liệu: f'(x) = 4(x+1)(x-1)(x-4), đồ thị không ghi thang đo trên trục tung (không theo tỉ lệ)."
+\begin{ex}
+Cho hàm số $y=f(x)$, đồ thị của hàm số đạo hàm $y=f'(x)$ như hình dưới đây. Biết $f(-1)=-\dfrac{35}3$, diện tích hình phẳng $(A)$, $(B)$ lần lượt bằng $\dfrac{64}3$ và $63$.
+\begin{center}
+\begin{tikzpicture}[scale=1,x=1.1cm,y=1cm]
+  \fill[blue!15] (-1,0)--plot[domain=-1:1,samples=40] (\x,{4*(\x*\x-1)*(\x-4)/9})--cycle;
+  \fill[red!15] (1,0)--plot[domain=1:4,samples=60] (\x,{4*(\x*\x-1)*(\x-4)/9})--cycle;
+  \draw[truc] (-1.8,0)--(4.8,0) node[below]{$x$};
+  \draw[truc] (0,-3.9)--(0,2.4) node[left]{$y$};
+  \draw[thick,blue!70!black,domain=-1.25:4.2,samples=80] plot (\x,{4*(\x*\x-1)*(\x-4)/9});
+  \foreach \x in {-1,1,4} \draw (\x,.08)--(\x,-.08) node[below,font=\footnotesize] {$\x$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[font=\footnotesize] at (-.25,.45) {$(A)$};
+  \node[font=\footnotesize] at (2.5,-1.2) {$(B)$};
+  \node[right,font=\footnotesize] at (4.1,1.7) {$y=f'(x)$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Giá trị của $\displaystyle\int_{-1}^{4}f'(x)\,\mathrm dx$ bằng $\dfrac{253}3$.}
+{\True Giá trị $f(1)$ bằng $\dfrac{29}3$.}
+{Hàm số đã cho có công thức là $y=f(x)=x^4-\dfrac{16}3x^3-2x^2+16x+2$.}
+{\True Diện tích hình phẳng giới hạn bởi hai đồ thị hàm số $y=f(x)$ và $y=g(x)=-2x^2+16x$ làm tròn đến hàng đơn vị là $216$.}
+\loigiai{Trên $[-1;1]$ ta có $f'(x)\ge0$, trên $[1;4]$ ta có $f'(x)\le0$.
+
+a) $\displaystyle\int_{-1}^{4}f'(x)\,\mathrm dx=\int_{-1}^{1}f'(x)\,\mathrm dx+\int_1^4f'(x)\,\mathrm dx=\dfrac{64}3-63=-\dfrac{125}3\ne\dfrac{253}3$. Sai.
+
+b) $\displaystyle\int_{-1}^1f'(x)\,\mathrm dx=f(1)-f(-1)=\dfrac{64}3$, nên $f(1)=\dfrac{64}3-\dfrac{35}3=\dfrac{29}3$. Đúng.
+
+c) Đồ thị $f'(x)$ cắt trục hoành tại $-1$, $1$, $4$ nên
+\[f'(x)=a(x+1)(x-1)(x-4)=a\left(x^3-4x^2-x+4\right),\quad a>0.\]
+Từ $\displaystyle\int_{-1}^1f'(x)\,\mathrm dx=a\cdot\dfrac{16}3=\dfrac{64}3$ suy ra $a=4$.
+
+Khi đó $f(x)=x^4-\dfrac{16}3x^3-2x^2+16x+C$. Từ $f(-1)=-\dfrac{35}3$: $1+\dfrac{16}3-2-16+C=-\dfrac{35}3$, suy ra $C=0$. Vậy $f(x)=x^4-\dfrac{16}3x^3-2x^2+16x\ne$ hàm đã cho (có $+2$). Sai.
+
+d) $f(x)-g(x)=x^4-\dfrac{16}3x^3=0\Leftrightarrow x=0$ hoặc $x=\dfrac{16}3$. Diện tích
+\[S=\int_0^{16/3}\left(\dfrac{16}3x^3-x^4\right)\mathrm dx=\dfrac{(16/3)^5}{20}\approx215{,}76\approx216.\]
+(Trên $\left[0;\frac{16}3\right]$ ta có $f(x)\le g(x)$.)
+Đúng.}
+\end{ex}

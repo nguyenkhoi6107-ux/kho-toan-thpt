@@ -1,0 +1,31 @@
+%% ma: L12-B09-0003
+%% lop: 12
+%% chuong: 3
+%% bai: 9
+%% dang: 12.9.3
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần I Câu 5"
+%% kien_thuc: "Bài 9 (khoảng tứ phân vị của mẫu số liệu ghép nhóm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 12.9.3"
+%% ghi_chu: "Đáp án gốc C đúng (sympy: Q1 = 1085/216, Q3 = 817/140, khoảng tứ phân vị khoảng 0,8126)."
+\begin{ex}
+Bảng sau đây thống kê lượng xăng tiêu thụ khi đi $100$ km đường trường của một số chiếc xe hãng $T$ (đơn vị: lít).
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+Lượng xăng & $[4{,}0;4{,}5)$ & $[4{,}5;5{,}0)$ & $[5{,}0;5{,}5)$ & $[5{,}5;6{,}0)$ & $[6{,}0;6{,}5)$\\\hline
+Số xe & $12$ & $23$ & $54$ & $35$ & $26$\\\hline
+\end{tabular}
+\end{center}
+Khoảng tứ phân vị của mẫu số liệu trên thuộc nửa khoảng nào sau đây?
+\choice{$[0{,}6;0{,}7)$}{$[0{,}7;0{,}8)$}{\True $[0{,}8;0{,}9)$}{$[0{,}9;1{,}0)$}
+\loigiai{Cỡ mẫu $n=12+23+54+35+26=150$.
+
+Tứ phân vị thứ nhất: $\dfrac{150}{4}=37{,}5$ thuộc nhóm $[5{,}0;5{,}5)$ (số xe ở các nhóm trước là $12+23=35$), nên $Q_1=5+\dfrac{37{,}5-35}{54}\cdot0{,}5=\dfrac{1085}{216}\approx5{,}023$.
+
+Tứ phân vị thứ ba: $\dfrac{3\cdot150}{4}=112{,}5$ thuộc nhóm $[5{,}5;6{,}0)$ (số xe ở các nhóm trước là $12+23+54=89$), nên $Q_3=5{,}5+\dfrac{112{,}5-89}{35}\cdot0{,}5=\dfrac{817}{140}\approx5{,}836$.
+
+Khoảng tứ phân vị $\Delta_Q=Q_3-Q_1\approx0{,}813\in[0{,}8;0{,}9)$. Chọn C.}
+\end{ex}

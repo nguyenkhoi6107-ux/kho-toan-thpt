@@ -1,0 +1,30 @@
+%% ma: L12-B01-0023
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.15
+%% loai: DS
+%% muc: [TH, TH, NB, VD]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần II Câu 1 (Sở Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 1 (đạo hàm, cực trị, tính đơn điệu), Bài 32 lớp 11 (đạo hàm của hàm lôgarit), Bài 20 lớp 11 (hàm lôgarit)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 12.1.15"
+%% ghi_chu: "Đáp án gốc SĐSĐ đúng (sympy: nghiệm của f'(x) = 0 là x = 1/(2 ln 5) - 1, khoảng -0,689). Cách ghi đạo hàm ở ý a) của đề sai, đã giữ nguyên làm mệnh đề sai."
+\begin{ex}
+Cho hàm số $f(x)=2x-\log_5(x+1)$. Xét tính đúng, sai của các mệnh đề sau:
+\choiceTF
+{Đạo hàm của hàm số $f(x)$ là $f'(x)=1-\dfrac1{x+1}$, $\forall x\in(-1;+\infty)$.}
+{\True Hàm số $f(x)$ có một điểm cực tiểu.}
+{Giá trị của hàm số $f(x)$ tại điểm $x=4$ là $f(4)=8$.}
+{\True Hàm số đồng biến trên khoảng $(0;+\infty)$.}
+\loigiai{Tập xác định $(-1;+\infty)$.
+
+a) $f'(x)=2-\dfrac{1}{(x+1)\ln5}$, khác biểu thức ở đề. Sai.
+
+b) $f'(x)=0\Leftrightarrow x+1=\dfrac1{2\ln5}\Leftrightarrow x_0=\dfrac1{2\ln5}-1\approx-0{,}689\in(-1;+\infty)$. Với $-1<x<x_0$ thì $f'(x)<0$, với $x>x_0$ thì $f'(x)>0$ ($f'$ tăng vì $\frac1{(x+1)\ln5}$ giảm). Hàm số có đúng một điểm cực tiểu $x_0$. Đúng.
+
+c) $f(4)=8-\log_55=7\ne8$. Sai.
+
+d) Hàm số đồng biến trên $(x_0;+\infty)\supset(0;+\infty)$. Đúng.}
+\end{ex}

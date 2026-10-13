@@ -1,0 +1,31 @@
+%% ma: L12-B09-0004
+%% lop: 12
+%% chuong: 3
+%% bai: 9
+%% dang: 12.9.1
+%% loai: TLN
+%% muc: VD
+%% dap_an: "4,7"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần III Câu 5"
+%% kien_thuc: "Bài 9 (khoảng tứ phân vị của mẫu số liệu ghép nhóm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 4,7 đúng (sympy: khoảng tứ phân vị của bạn Việt khoảng 7,926 và của bạn Khang khoảng 3,261, hiệu 4,665). Cùng ý tưởng với dạng 12.9.1 (so sánh khoảng tứ phân vị của hai mẫu ghép nhóm), nhập vào dạng đã duyệt."
+\begin{ex}
+Bảng dưới đây thống kê thời gian tập thể dục buổi sáng mỗi ngày (đơn vị: phút) trong một tháng của bạn Việt và bạn Khang.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}\hline
+Thời gian & $[15;20)$ & $[20;25)$ & $[25;30)$ & $[30;35)$ & $[35;40)$ & \\\hline
+Bạn Việt & $5$ & $11$ & $8$ & $4$ & $2$ & $n=30$\\\hline
+Bạn Khang & $1$ & $23$ & $4$ & $2$ & $0$ & $n=30$\\\hline
+\end{tabular}
+\end{center}
+Khoảng tứ phân vị của mẫu số liệu ghép nhóm về thời gian tập thể dục buổi sáng mỗi ngày của bạn Việt lớn hơn bạn Khang là bao nhiêu? (Kết quả làm tròn đến hàng phần chục.)
+\shortans{4,7}
+\loigiai{Với mỗi bạn $n=30$: $\dfrac n4=7{,}5$ và $\dfrac{3n}4=22{,}5$.
+
+Bạn Việt: $Q_1$ thuộc nhóm $[20;25)$ (số ngày ở nhóm trước là $5$): $Q_1=20+\dfrac{7{,}5-5}{11}\cdot5\approx21{,}136$. $Q_3$ thuộc nhóm $[25;30)$ (số ngày ở các nhóm trước là $5+11=16$): $Q_3=25+\dfrac{22{,}5-16}{8}\cdot5\approx29{,}063$. Khoảng tứ phân vị $\Delta_V\approx7{,}926$.
+
+Bạn Khang: $Q_1$ thuộc nhóm $[20;25)$ (nhóm trước có $1$ ngày): $Q_1=20+\dfrac{7{,}5-1}{23}\cdot5\approx21{,}413$; $Q_3$ cũng thuộc nhóm $[20;25)$ (vì $1+23=24\ge22{,}5$): $Q_3=20+\dfrac{22{,}5-1}{23}\cdot5\approx24{,}674$. Khoảng tứ phân vị $\Delta_K\approx3{,}261$.
+
+Hiệu $\Delta_V-\Delta_K\approx4{,}665\approx4{,}7$.}
+\end{ex}

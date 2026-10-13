@@ -1,0 +1,21 @@
+%% ma: L12-B19-0020
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.7
+%% loai: TLN
+%% muc: VD
+%% dap_an: "15"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần III Câu 6"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 15 đúng (sympy: 4/11). Đề gốc ghi sai chính tả (thị tốt nghiệp), đã sửa thành thi tốt nghiệp. Đã bỏ ảnh minh họa học sinh chơi thể thao (không chứa dữ kiện toán). Cùng ý tưởng với dạng 12.19.7 (Bayes từ tỉ lệ của hai nhóm), nhập vào dạng đã duyệt."
+\begin{ex}
+Trong một trường học, tỉ lệ học sinh hai lớp $10$ và lớp $11$ tham gia câu lạc bộ thể thao là $40\%$, còn tỉ lệ học sinh lớp $12$ tham gia câu lạc bộ thể thao chỉ là $20\%$ do phải chuẩn bị thi tốt nghiệp. Biết rằng học sinh khối lớp $12$ chiếm $30\%$ tổng số học sinh của nhà trường. Phỏng vấn ngẫu nhiên một học sinh và thấy bạn đó không tham gia câu lạc bộ thể thao, xác suất để bạn đó là học sinh khối lớp $12$ bằng $\dfrac ab$ (với $\dfrac ab$ là phân số tối giản). Tính $a+b$.
+\shortans{15}
+\loigiai{Gọi $A$: ``học sinh khối lớp $12$'', $B$: ``tham gia câu lạc bộ thể thao''. Ta có $P(A)=0{,}3$, $P(\overline A)=0{,}7$, $P(B\mid A)=0{,}2$, $P(B\mid\overline A)=0{,}4$ nên $P(\overline B\mid A)=0{,}8$, $P(\overline B\mid\overline A)=0{,}6$.
+
+$P(\overline B)=0{,}3\cdot0{,}8+0{,}7\cdot0{,}6=0{,}66$. Theo công thức Bayes,
+\[P(A\mid\overline B)=\dfrac{0{,}3\cdot0{,}8}{0{,}66}=\dfrac4{11}.\]
+Vậy $a=4$, $b=11$ và $a+b=15$.}
+\end{ex}

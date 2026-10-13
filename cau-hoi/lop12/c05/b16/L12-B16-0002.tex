@@ -1,0 +1,48 @@
+%% ma: L12-B16-0002
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "16"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần III Câu 4"
+%% kien_thuc: "Bài 16 (góc giữa hai mặt phẳng), Bài 14 (vectơ pháp tuyến của mặt phẳng), Bài 8 (tọa độ hóa, tích vô hướng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 12.16.2"
+%% ghi_chu: "Đáp án gốc 16 đúng (sympy: cos của góc bằng 2 căn 3 / căn 13, góc khoảng 16,10 độ). Hình dựng lại từ dữ kiện đề (chân ba cột tạo tam giác đều cạnh 4 m, cột cao 5 m, 4 m, 4 m), không theo tỉ lệ; không vẽ hệ trục vì đề không đưa hệ trục."
+\begin{ex}
+Một mái nhà hình tròn được đặt trên ba cây cột trụ. Các cây cột trụ vuông góc với mặt đất phẳng và có chiều cao lần lượt là $4$ m, $4$ m và $5$ m. Mỗi chân cột đều cách hai chân cột còn lại $4$ m. Tính góc nghiêng của mái nhà với mặt đất (kết quả làm tròn đến hàng đơn vị của độ).
+\begin{center}
+\begin{tikzpicture}[scale=.8,x={(-.2cm,-.55cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \coordinate (A) at (0,-2,0);
+  \coordinate (B) at (3.46,0,0);
+  \coordinate (C) at (0,2,0);
+  \coordinate (A1) at (0,-2,5);
+  \coordinate (B1) at (3.46,0,4);
+  \coordinate (C1) at (0,2,4);
+  \fill[green!10] (A)--(B)--(C)--cycle;
+  \draw (A)--(B)--(C)--cycle;
+  \draw[very thick,gray] (A)--(A1) (B)--(B1) (C)--(C1);
+  \fill[blue!10,opacity=.8] (A1)--(B1)--(C1)--cycle;
+  \draw[blue!70!black] (A1)--(B1)--(C1)--cycle;
+  \fill (A) circle (1pt) node[below left,font=\footnotesize] {$A$};
+  \fill (B) circle (1pt) node[below,font=\footnotesize] {$B$};
+  \fill (C) circle (1pt) node[below right,font=\footnotesize] {$C$};
+  \fill (A1) circle (1pt) node[above left,font=\footnotesize] {$A'$};
+  \fill (B1) circle (1pt) node[right,font=\footnotesize] {$B'$};
+  \fill (C1) circle (1pt) node[above right,font=\footnotesize] {$C'$};
+  \node[left,font=\footnotesize] at ($(A)!.5!(A1)$) {$5$ m};
+  \node[left,font=\footnotesize] at ($(B)!.78!(B1)$) {$4$ m};
+  \node[right,font=\footnotesize] at ($(C)!.5!(C1)$) {$4$ m};
+\end{tikzpicture}
+\end{center}
+\shortans{16}
+\loigiai{Gọi $O$ là trung điểm của $AC$ (chân các cột $A$, $B$, $C$ tạo tam giác đều cạnh $4$ m). Chọn hệ tọa độ $Oxyz$ với mặt đất là $(Oxy)$, $A(0;-2;0)$, $C(0;2;0)$, $B(2\sqrt3;0;0)$; mái nhà đi qua ba đỉnh cột $A'(0;-2;5)$, $B'(2\sqrt3;0;4)$, $C'(0;2;4)$.
+
+$\overrightarrow{A'B'}=(2\sqrt3;2;-1)$, $\overrightarrow{A'C'}=(0;4;-1)$. Vectơ pháp tuyến của mặt phẳng mái là $\vec n=(2;2\sqrt3;8\sqrt3)$ (kiểm tra: $\vec n\cdot\overrightarrow{A'B'}=4\sqrt3+4\sqrt3-8\sqrt3=0$ và $\vec n\cdot\overrightarrow{A'C'}=8\sqrt3-8\sqrt3=0$), $|\vec n|=\sqrt{4+12+192}=\sqrt{208}$.
+
+Mặt đất có vectơ pháp tuyến $\vec k=(0;0;1)$. Gọi $\varphi$ là góc nghiêng của mái thì
+\[\cos\varphi=\dfrac{|\vec n\cdot\vec k|}{|\vec n|\cdot|\vec k|}=\dfrac{8\sqrt3}{\sqrt{208}}=\dfrac{2\sqrt3}{\sqrt{13}}\Rightarrow\varphi\approx16{,}1^\circ.\]
+Vậy góc nghiêng khoảng $16^\circ$.}
+\end{ex}

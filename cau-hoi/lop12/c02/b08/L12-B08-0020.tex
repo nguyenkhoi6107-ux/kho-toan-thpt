@@ -1,0 +1,29 @@
+%% ma: L12-B08-0020
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.4
+%% loai: DS
+%% muc: [NB, NB, TH, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần II Câu 2 (Sở Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 8 (độ dài vectơ, tọa độ trung điểm, hai vectơ cùng phương), Bài 7 (hệ trục tọa độ); chuyển động thẳng đều; hàm bậc hai trên một đoạn"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc ĐSĐS đúng. Ý b): trung điểm là (448; 1012,5; 94,5), gốc ghi 94 nên sai. Ý d): giá trị đúng là 2332,5 (gốc 2332,6 do làm tròn sớm), vẫn khác 2330,5 nên sai. Đã bỏ ảnh minh họa cáp treo (không chứa dữ kiện toán). Cùng ý tưởng với L12-B08-0007 và L12-B16-0001 (cabin chuyển động đều theo đường cáp), nhập vào dạng đã duyệt."
+\begin{ex}
+Hệ thống cáp treo gồm hai trụ lớn và một đường cáp nối giữa hai trụ đó (coi như độ cong không đáng kể), được đặt trong không gian với hệ tọa độ $Oxyz$. Một cabin cáp treo xuất phát từ điểm $O(0;0;0)$ thuộc trụ thứ nhất và chuyển động thẳng đều theo đường cáp treo đến điểm $A(896;2025;189)$ thuộc trụ thứ hai với tốc độ $7{,}4$ (m/s) (đơn vị trên mỗi trục là mét).
+\choiceTF
+{\True Độ dài đường cáp xấp xỉ bằng $2222$ mét (kết quả làm tròn đến hàng đơn vị).}
+{Điểm chính giữa của đường cáp có tọa độ là $(448;1012{,}5;94)$.}
+{\True Trên đường cáp có điểm $B$ với hoành độ $x_B=672$, khi đó thời gian để cabin đi từ điểm $B$ đến điểm $A$ xấp xỉ bằng $75$ giây (kết quả làm tròn đến hàng đơn vị).}
+{Có một khu vui chơi phía dưới cáp treo nằm trong mặt phẳng $(Oxy)$ với điểm trung tâm có tọa độ $(750{,}5;1497{,}25;0)$. Biết rằng từ trong cabin cáp treo có thể ngắm nhìn toàn cảnh khu vui chơi rõ nhất tại vị trí điểm $M(x_0;y_0;z_0)$ cách trung tâm khu vui chơi một khoảng ngắn nhất. Khi đó, ta có $x_0+y_0+z_0=2330{,}5$ (kết quả làm tròn đến hàng phần mười).}
+\loigiai{a) $OA=\sqrt{896^2+2025^2+189^2}=\sqrt{4939162}\approx2222$ m. Đúng.
+
+b) Trung điểm của $OA$ là $\left(448;\,1012{,}5;\,94{,}5\right)$, khác điểm đã cho. Sai.
+
+c) $B\in OA$ nên $\overrightarrow{OB}=k\,\overrightarrow{OA}$ với $x_B=896k=672$, suy ra $k=0{,}75$ và $B(672;1518{,}75;141{,}75)$. Khi đó $BA=(1-k)\,OA=0{,}25\cdot2222{,}4\approx555{,}6$ m, thời gian $\dfrac{555{,}6}{7{,}4}\approx75$ giây. Đúng.
+
+d) Gọi $C(750{,}5;1497{,}25;0)$ là trung tâm khu vui chơi, $M(896k;2025k;189k)$ với $0\le k\le1$. Khi đó
+\[MC^2=4939162k^2-7408758{,}5k+\text{hằng số}\]
+đạt nhỏ nhất tại $k=\dfrac{7408758{,}5}{2\cdot4939162}\approx0{,}75$. Suy ra $M(672;1518{,}75;141{,}75)$ và $x_0+y_0+z_0=2332{,}5\ne2330{,}5$. Sai.}
+\end{ex}

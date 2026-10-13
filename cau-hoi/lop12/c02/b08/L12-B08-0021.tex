@@ -1,0 +1,38 @@
+%% ma: L12-B08-0021
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.13
+%% loai: TLN
+%% muc: VD
+%% dap_an: "-1"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần III Câu 2 (Sở Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 8 (tọa độ vectơ, tích vô hướng, độ dài), Bài 7 (hệ trục tọa độ); khoảng cách giữa hai đường thẳng chéo nhau"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 12.8.13"
+%% ghi_chu: "Đáp án gốc -1 đúng (sympy: E, F xác định duy nhất, EF = BG, khoảng cách bằng 4/9, m = 4, n = 9). Đề gốc thuộc hình học không gian lớp 11; lời giải trong kho dùng tọa độ hóa (Bài 8 lớp 12) nên xếp ở lớp 12. Mức VD (phân vân giữa VD và VDC, chọn mức thấp hơn)."
+\begin{ex}
+Cho khối chóp tứ giác đều $S.ABCD$ có thể tích bằng $\dfrac{16}3$ với $AB=2$. Gọi $G$ là trọng tâm của tam giác $SCD$, trên các cạnh $AB$, $SD$ lần lượt lấy các điểm $E$, $F$ sao cho $EF$ song song với $BG$. Khoảng cách giữa hai đường thẳng $DG$ và $EF$ bằng $\dfrac mn$ với $m,n$ nguyên dương và $\dfrac mn$ là phân số tối giản. Tính giá trị của biểu thức $2m-n$.
+\shortans{-1}
+\loigiai{Gọi $H$ là tâm hình vuông $ABCD$; $V=\dfrac13\cdot2^2\cdot SH=\dfrac{16}3$ nên $SH=4$.
+
+Chọn hệ tọa độ $Hxyz$ với $H$ là gốc, $Hz$ trùng $HS$: 
+\[A(1;-1;0),\ B(1;1;0),\ C(-1;1;0),\ D(-1;-1;0),\ S(0;0;4).\]
+Khi đó
+\[G\left(-\dfrac23;0;\dfrac43\right),\qquad\overrightarrow{BG}=\left(-\dfrac53;-1;\dfrac43\right).\]
+
+Đặt $\overrightarrow{AE}=e\,\overrightarrow{AB}$, $\overrightarrow{SF}=f\,\overrightarrow{SD}$ thì
+\[E(1;-1+2e;0),\quad F(-f;-f;4-4f),\quad\overrightarrow{EF}=(-f-1;\,-f+1-2e;\,4-4f).\]
+Điều kiện $\overrightarrow{EF}=\lambda\overrightarrow{BG}$ cho hệ ba phương trình, giải ra $f=\dfrac23$, $e=\dfrac23$, $\lambda=1$. Vậy
+\[E\left(1;\dfrac13;0\right),\qquad F\left(-\dfrac23;-\dfrac23;\dfrac43\right)\]
+(thuộc các cạnh $AB$, $SD$).
+
+Các vectơ chỉ phương: $\overrightarrow{DG}=\left(\dfrac13;1;\dfrac43\right)\parallel\vec u=(1;3;4)$ và $\overrightarrow{EF}\parallel\vec v=(5;3;-4)$.
+
+Vectơ $\vec n=(a;b;c)$ vuông góc với cả hai khi $a+3b+4c=0$ và $5a+3b-4c=0$; chọn $\vec n=(2;-2;1)$, $|\vec n|=3$.
+
+Với $\overrightarrow{DE}=\left(2;\dfrac43;0\right)$:
+\[d(DG,EF)=\dfrac{\left|\overrightarrow{DE}\cdot\vec n\right|}{|\vec n|}=\dfrac{\left|4-\frac83\right|}{3}=\dfrac49.\]
+
+Vậy $m=4$, $n=9$ và $2m-n=-1$.}
+\end{ex}

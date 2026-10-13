@@ -1,0 +1,34 @@
+%% ma: L11-B25-0003
+%% lop: 11
+%% chuong: 7
+%% bai: 25
+%% dang: 11.25.3
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần I Câu 9"
+%% kien_thuc: "Bài 25 (góc nhị diện, góc phẳng nhị diện), Bài 23 (đường thẳng vuông góc với mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt: 11.25.3"
+%% ghi_chu: "Đáp án gốc A đúng. Hình dựng lại từ dữ kiện đề (SA vuông góc đáy, AB vuông góc BC, I là trung điểm BC)."
+\begin{ex}
+Cho hình chóp $S.ABC$ có $SA\perp(ABC)$ và $AB\perp BC$. Gọi $I$ là trung điểm $BC$. Góc nào dưới đây là một góc phẳng của góc nhị diện $[A,BC,S]$?
+\begin{center}
+\begin{tikzpicture}[scale=1,x={(-.55cm,-.4cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (2.2,0,0);
+  \coordinate (C) at (2.2,3.4,0);
+  \coordinate (S) at (0,0,3.4);
+  \coordinate (I) at (2.2,1.7,0);
+  \draw[khuat] (A)--(C);
+  \draw[khuat] (A)--(I);
+  \draw (S)--(A) (A)--(B) (B)--(C) (S)--(B) (S)--(C) (S)--(I);
+  \foreach \p/\d in {S/above,A/left,B/below,C/right,I/below right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $\widehat{SBA}$}{$\widehat{SCA}$}{$\widehat{SCB}$}{$\widehat{SIA}$}
+\loigiai{Ta có $BC\perp SA$ (vì $SA\perp(ABC)$) và $BC\perp AB$, suy ra $BC\perp(SAB)$, do đó $BC\perp SB$.
+
+Hai mặt phẳng $(SBC)$ và $(ABC)$ cắt nhau theo giao tuyến $BC$; trong $(ABC)$ có $AB\perp BC$, trong $(SBC)$ có $SB\perp BC$. Vậy $\widehat{SBA}$ là một góc phẳng của góc nhị diện $[A,BC,S]$. Chọn A.}
+\end{ex}

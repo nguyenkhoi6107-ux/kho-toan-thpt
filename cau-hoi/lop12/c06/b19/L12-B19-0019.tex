@@ -1,0 +1,29 @@
+%% ma: L12-B19-0019
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.1
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 12-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D12, MỖI NGÀY 1 ĐỀ - Đề số 12), Phần II Câu 3"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes), Bài 18 (xác suất có điều kiện, công thức nhân)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc ĐĐSĐ đúng (sympy: P(B) = 0,244; P(A | B) = 0,044/0,244 khoảng 0,18). Đã bỏ ảnh minh họa nghe nhạc (không chứa dữ kiện toán). Cùng ý tưởng với dạng 12.19.1 (xác suất toàn phần và Bayes trong khảo sát), nhập vào dạng đã duyệt."
+\begin{ex}
+Dựa theo kết quả của một nghiên cứu về tác động của việc nghe nhạc trực tuyến lên việc mua sản phẩm nhạc vật lí (như đĩa CD, băng cassette, đĩa than,\dots), $11\%$ số người sử dụng ứng dụng trực tuyến không tiêu thụ sản phẩm nhạc vật lí. Người ta cũng ước tính rằng ở thời điểm nghiên cứu diễn ra, khoảng $40\%$ số người đang sử dụng ứng dụng nghe nhạc trực tuyến, đồng thời $\dfrac13$ số người không sử dụng ứng dụng nghe nhạc trực tuyến cũng không tiêu thụ sản phẩm nhạc vật lí. Chọn ngẫu nhiên một người được khảo sát.
+\choiceTF
+{\True Xác suất để một người nghe nhạc không sử dụng các ứng dụng nghe nhạc trực tuyến là $0{,}6$.}
+{\True Xác suất để người đó không tiêu thụ sản phẩm nhạc vật lí và sử dụng ứng dụng nghe nhạc trực tuyến là $0{,}044$.}
+{Xác suất để người đó không tiêu thụ sản phẩm nhạc vật lí là $0{,}844$.}
+{\True Xác suất để người đó không tiêu thụ sản phẩm nhạc vật lí mà sử dụng ứng dụng nghe nhạc trực tuyến xấp xỉ $0{,}18$ (kết quả làm tròn đến hàng phần trăm).}
+\loigiai{Gọi $A$: ``người được chọn sử dụng ứng dụng nghe nhạc trực tuyến'', $B$: ``người được chọn tiêu thụ sản phẩm nhạc vật lí''. Ta có $P(A)=0{,}4$, $P(\overline B\mid A)=0{,}11$, $P(\overline B\mid\overline A)=\dfrac13$.
+
+a) $P(\overline A)=1-0{,}4=0{,}6$. Đúng.
+
+b) $P(\overline B\cap A)=P(\overline B\mid A)\cdot P(A)=0{,}11\cdot0{,}4=0{,}044$. Đúng.
+
+c) $P(\overline B)=P(\overline B\mid A)P(A)+P(\overline B\mid\overline A)P(\overline A)=0{,}044+\dfrac13\cdot0{,}6=0{,}244\ne0{,}844$. Sai.
+
+d) Theo công thức Bayes, $P(A\mid\overline B)=\dfrac{0{,}044}{0{,}244}\approx0{,}18$. Đúng.}
+\end{ex}
