@@ -207,18 +207,18 @@
 # --- Đề xuất từ ảnh giáo viên gửi 12/10/2026 ---
 12.5.12: {ten: "Tối ưu tổng thể tích tám hình cầu ở đỉnh và một hình cầu ở tâm hình lập phương (tiếp xúc nhau)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D11 (Đề số 11 MỖI NGÀY 1 ĐỀ), ngày 13/10/2026 ---
-10.11.2: {ten: "Tích vô hướng của hai vectơ khi biết độ dài và sin của góc giữa chúng", trang_thai: de-xuat}
-11.3.2: {ten: "Tập xác định của hàm số y = tan(x + a)", trang_thai: de-xuat}
-11.24.3: {ten: "Góc giữa đường chéo của lăng trụ tứ giác đều và mặt đáy", trang_thai: de-xuat}
-12.4.8: {ten: "Nhận dạng hàm phân thức bậc nhất trên bậc nhất từ bảng biến thiên", trang_thai: de-xuat}
-12.4.9: {ten: "Tâm đối xứng của đồ thị hàm phân thức bậc hai trên bậc nhất", trang_thai: de-xuat}
-12.5.13: {ten: "Tối ưu góc nhìn lớn nhất khi ngắm một bức tranh treo tường (đạo hàm)", trang_thai: de-xuat}
-12.6.5: {ten: "Giá trị nhỏ nhất của tổng nghịch đảo bình phương khi mặt phẳng đi qua trọng tâm tứ diện cắt các cạnh bên", trang_thai: de-xuat}
-12.7.2: {ten: "Khoảng cách từ một điểm đến mặt phẳng tọa độ", trang_thai: de-xuat}
-12.11.7: {ten: "Tìm nguyên hàm của hàm số mũ thỏa điều kiện F(0) và giải phương trình F(x) = c", trang_thai: de-xuat}
-12.12.8: {ten: "Tìm giá trị của hàm số tại một điểm từ f(b) và tích phân của đạo hàm (công thức Newton-Leibniz)", trang_thai: de-xuat}
-12.13.13: {ten: "Hàm số cho bởi đồ thị gồm đoạn thẳng và nửa đường tròn: đạo hàm, tích phân, diện tích, giá trị lớn nhất nhỏ nhất (Đúng/Sai)", trang_thai: de-xuat}
-12.14.8: {ten: "Lều trại hình chóp tứ giác: tọa độ hóa, phương trình mặt phẳng, khoảng cách, cột chống (Đúng/Sai)", trang_thai: de-xuat}
-12.15.5: {ten: "Vị trí tương đối của hai đường thẳng trong không gian (phương trình chính tắc và tham số)", trang_thai: de-xuat}
-12.15.6: {ten: "Chiều dài tay vịn cầu thang: giao điểm của đường thẳng với trục Oz", trang_thai: de-xuat}
-12.19.7: {ten: "Xác suất Bayes từ tỉ lệ phế phẩm của hai nhà máy", trang_thai: de-xuat}
+10.11.2: {ten: "Tích vô hướng của hai vectơ khi biết độ dài và sin của góc giữa chúng", trang_thai: da-duyet}
+11.3.2: {ten: "Tập xác định của hàm số y = tan(x + a)", trang_thai: da-duyet}
+11.24.3: {ten: "Góc giữa đường chéo của lăng trụ tứ giác đều và mặt đáy", trang_thai: da-duyet}
+12.4.8: {ten: "Nhận dạng hàm phân thức bậc nhất trên bậc nhất từ bảng biến thiên", trang_thai: da-duyet}
+12.4.9: {ten: "Tâm đối xứng của đồ thị hàm phân thức bậc hai trên bậc nhất", trang_thai: da-duyet}
+12.5.13: {ten: "Tối ưu góc nhìn lớn nhất khi ngắm một bức tranh treo tường (đạo hàm)", trang_thai: da-duyet}
+12.6.5: {ten: "Giá trị nhỏ nhất của tổng nghịch đảo bình phương khi mặt phẳng đi qua trọng tâm tứ diện cắt các cạnh bên", trang_thai: da-duyet}
+12.7.2: {ten: "Khoảng cách từ một điểm đến mặt phẳng tọa độ", trang_thai: da-duyet}
+12.11.7: {ten: "Tìm nguyên hàm của hàm số mũ thỏa điều kiện F(0) và giải phương trình F(x) = c", trang_thai: da-duyet}
+12.12.8: {ten: "Tìm giá trị của hàm số tại một điểm từ f(b) và tích phân của đạo hàm (công thức Newton-Leibniz)", trang_thai: da-duyet}
+12.13.13: {ten: "Hàm số cho bởi đồ thị gồm đoạn thẳng và nửa đường tròn: đạo hàm, tích phân, diện tích, giá trị lớn nhất nhỏ nhất (Đúng/Sai)", trang_thai: da-duyet}
+12.14.8: {ten: "Lều trại hình chóp tứ giác: tọa độ hóa, phương trình mặt phẳng, khoảng cách, cột chống (Đúng/Sai)", trang_thai: da-duyet}
+12.15.5: {ten: "Vị trí tương đối của hai đường thẳng trong không gian (phương trình chính tắc và tham số)", trang_thai: da-duyet}
+12.15.6: {ten: "Chiều dài tay vịn cầu thang: giao điểm của đường thẳng với trục Oz", trang_thai: da-duyet}
+12.19.7: {ten: "Xác suất Bayes từ tỉ lệ phế phẩm của hai nhà máy", trang_thai: da-duyet}
