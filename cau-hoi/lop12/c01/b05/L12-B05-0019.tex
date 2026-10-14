@@ -9,19 +9,30 @@
 %% nguon: "Ảnh giáo viên gửi 12/10/2026 (câu tối ưu tổng thể tích 9 hình cầu trong hình lập phương cạnh 1), Câu 1"
 %% kien_thuc: "Bài 5 (bài toán tối ưu bằng đạo hàm), Lớp 11 (đường chéo hình lập phương, thể tích khối cầu)"
 %% trang_thai: chinh-thuc
-%% ghi_chu: "Đã duyệt 12/10/2026. Hình gốc gồm ảnh minh họa màu và sơ đồ các đường chéo; vẽ lại sơ đồ bằng TikZ (hình lập phương, 8 đỉnh, tâm, 4 đường chéo), bán kính các hình cầu không vẽ theo tỉ lệ. Đáp án giải độc lập: 4pi/3*(8r^3+R^3) nhỏ nhất bằng (36*sqrt3-16*sqrt6)*pi/49 ~ 1,485 nên làm tròn 1,49. Điều kiện r <= 1/2 (các hình cầu ở đỉnh không chồng nhau) được thỏa vì r ~ 0,226."
+%% ghi_chu: "Đã duyệt 12/10/2026. Hình gốc gồm ảnh minh họa màu và sơ đồ các đường chéo; vẽ lại bằng TikZ cả hai hình: hình trái (8 phần hình cầu xanh ở đỉnh, hình cầu đỏ O_0 ở tâm) và hình phải (hình lập phương, 8 đỉnh, tâm, 4 đường chéo); hình trái vẽ minh họa, không theo tỉ lệ chính xác. Đáp án giải độc lập: 4pi/3*(8r^3+R^3) nhỏ nhất bằng (36*sqrt3-16*sqrt6)*pi/49 ~ 1,485 nên làm tròn 1,49. Điều kiện r <= 1/2 (các hình cầu ở đỉnh không chồng nhau) được thỏa vì r ~ 0,226."
 \begin{ex}
 Minh họa hình vẽ bên, ở bên trong hình lập phương cạnh $1$, có $8$ phần hình cầu $O_i$ $(i=1,2,3,\dots,8)$ có tâm là các đỉnh của hình lập phương và có bán kính bằng nhau. Có thêm một hình cầu $O_0$ có tâm là tâm của hình lập phương. Biết $O_0$ tiếp xúc với mỗi $O_i$ $(i=1,2,3,\dots,8)$. Khi đó giá trị nhỏ nhất của tổng thể tích $9$ phần nói trên bằng bao nhiêu? (Không làm tròn các kết quả trung gian, chỉ làm tròn kết quả đến hàng phần trăm).
 \begin{center}
-\begin{tikzpicture}[x={(1cm,0cm)}, y={(.55cm,.4cm)}, z={(0cm,1cm)}, scale=3.6]
-  \coordinate (A) at (0,0,0); \coordinate (B) at (1,0,0); \coordinate (C) at (1,1,0); \coordinate (D) at (0,1,0);
-  \coordinate (A1) at (0,0,1); \coordinate (B1) at (1,0,1); \coordinate (C1) at (1,1,1); \coordinate (D1) at (0,1,1);
-  \coordinate (O) at (.5,.5,.5);
-  \draw (A)--(B)--(B1)--(A1)--cycle (A1)--(D1)--(C1)--(B1) (B)--(C)--(C1);
-  \draw[khuat] (A)--(D)--(C) (D)--(D1);
-  \draw[khuat] (A)--(C1) (B)--(D1) (C)--(A1) (D)--(B1);
-  \foreach \p in {A,B,C,D,A1,B1,C1,D1}{\node[circle,draw,fill=white,inner sep=1.3pt] at (\p) {};}
-  \node[circle,draw,fill=white,inner sep=2pt] at (O) {};\node[font=\small,fill=white,inner sep=1pt] at (.62,.5,.5) {$O_0$};
+\begin{tikzpicture}[x={(1cm,0cm)}, y={(.55cm,.4cm)}, z={(0cm,1cm)}, scale=3.2]
+  % hình bên trái: minh họa 8 phần hình cầu (xanh) và hình cầu O_0 (đỏ)
+  \begin{scope}
+    \clip (0,0,0)--(1,0,0)--(1,1,0)--(1,1,1)--(0,1,1)--(0,0,1)--cycle;
+    \foreach \p in {(0,1,0),(1,1,0),(0,1,1),(1,1,1)}{\node[circle,fill=blue!85!black,minimum size=1.45cm,inner sep=0pt] at \p {};}
+    \node[circle,shading=ball,ball color=red!60,minimum size=4.1cm,inner sep=0pt] at (.5,.5,.5) {};
+    \foreach \p in {(0,0,0),(1,0,0),(0,0,1),(1,0,1)}{\node[circle,fill=blue!85!black,minimum size=1.45cm,inner sep=0pt] at \p {};}
+  \end{scope}
+  \draw (0,0,0)--(1,0,0)--(1,0,1)--(0,0,1)--cycle (0,0,1)--(0,1,1)--(1,1,1)--(1,0,1) (1,0,0)--(1,1,0)--(1,1,1);
+  % hình bên phải: sơ đồ các đường chéo
+  \begin{scope}[shift={(2.2,0,0)}]
+    \coordinate (A) at (0,0,0); \coordinate (B) at (1,0,0); \coordinate (C) at (1,1,0); \coordinate (D) at (0,1,0);
+    \coordinate (A1) at (0,0,1); \coordinate (B1) at (1,0,1); \coordinate (C1) at (1,1,1); \coordinate (D1) at (0,1,1);
+    \coordinate (O) at (.5,.5,.5);
+    \draw (A)--(B)--(B1)--(A1)--cycle (A1)--(D1)--(C1)--(B1) (B)--(C)--(C1);
+    \draw[khuat] (A)--(D)--(C) (D)--(D1);
+    \draw[khuat] (A)--(C1) (B)--(D1) (C)--(A1) (D)--(B1);
+    \foreach \p in {A,B,C,D,A1,B1,C1,D1}{\node[circle,draw,fill=white,inner sep=1.3pt] at (\p) {};}
+    \node[circle,draw,fill=white,inner sep=2pt] at (O) {};\node[font=\small,fill=white,inner sep=1pt] at (.62,.5,.5) {$O_0$};
+  \end{scope}
 \end{tikzpicture}
 \end{center}
 \shortans{1,49}
