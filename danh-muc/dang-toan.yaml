@@ -234,16 +234,16 @@
 12.14.9: {ten: "Khoảng cách từ đỉnh của hình bình hành đến mặt phẳng khi biết tâm và đỉnh đối diện thuộc mặt phẳng", trang_thai: da-duyet}
 12.16.2: {ten: "Góc nghiêng của mái nhà đặt trên ba cột có chiều cao khác nhau (góc giữa hai mặt phẳng)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D13 (Đề số 13, MỖI NGÀY 1 ĐỀ), ngày 13/10/2026 ---
-11.5.3: {ten: "Tính số hạng của dãy số cho bởi công thức truy hồi u_{n+1} - u_n = f(n)", trang_thai: de-xuat}
-11.25.4: {ten: "Nhận biết hai mặt phẳng bên vuông góc trong hình chóp đáy hình chữ nhật có cạnh bên vuông góc với đáy", trang_thai: de-xuat}
-11.27.11: {ten: "Côsin góc giữa đường chéo và cạnh đáy của khối chóp cụt đều (khay đá)", trang_thai: de-xuat}
+11.5.3: {ten: "Tính số hạng của dãy số cho bởi công thức truy hồi u_{n+1} - u_n = f(n)", trang_thai: da-duyet}
+11.25.4: {ten: "Nhận biết hai mặt phẳng bên vuông góc trong hình chóp đáy hình chữ nhật có cạnh bên vuông góc với đáy", trang_thai: da-duyet}
+11.27.11: {ten: "Côsin góc giữa đường chéo và cạnh đáy của khối chóp cụt đều (khay đá)", trang_thai: da-duyet}
 11.29.1: {ten: "Xác suất của biến cố đối từ bảng phân bố xác suất (cuộc gọi đến trung tâm cứu hộ)", trang_thai: de-xuat}
-12.1.16: {ten: "Khoảng đồng biến của hàm phân thức bậc nhất trên bậc nhất (chọn đáp án đúng)", trang_thai: de-xuat}
-12.4.10: {ten: "Hàm bậc ba đọc từ đồ thị: giá trị cực tiểu, nghiệm phương trình lôgarit, khoảng đồng biến, tổng hệ số (Đúng/Sai)", trang_thai: de-xuat}
-12.5.15: {ten: "Tối ưu lợi nhuận khi biết doanh thu và chi phí bình quân (hàm bậc ba trên một đoạn)", trang_thai: de-xuat}
-12.6.6: {ten: "Khẳng định sai về tích vô hướng của các vectơ trong hình chóp đều", trang_thai: de-xuat}
-12.7.4: {ten: "Thể tích tứ diện OABC khi A, B, C nằm trên ba trục tọa độ", trang_thai: de-xuat}
-12.11.8: {ten: "Nguyên hàm của đa thức (bình phương nhị thức) thỏa F(0) cho trước, tính F(a)", trang_thai: de-xuat}
-12.12.9: {ten: "Chất điểm trên trục số với vận tốc bậc hai: quãng đường, vị trí, tốc độ lớn nhất, hai chất điểm gặp nhau (Đúng/Sai)", trang_thai: de-xuat}
-12.17.6: {ten: "Vùng phủ sóng hình cầu của trạm phát sóng: phương trình mặt cầu, vị trí điểm, khoảng cách đến mặt phẳng, đường đi (Đúng/Sai)", trang_thai: de-xuat}
-12.18.5: {ten: "Xác suất một xạ thủ bắn trúng khi biết có ít nhất một viên trúng đích (hai xạ thủ độc lập)", trang_thai: de-xuat}
+12.1.16: {ten: "Khoảng đồng biến của hàm phân thức bậc nhất trên bậc nhất (chọn đáp án đúng)", trang_thai: da-duyet}
+12.4.10: {ten: "Hàm bậc ba đọc từ đồ thị: giá trị cực tiểu, nghiệm phương trình lôgarit, khoảng đồng biến, tổng hệ số (Đúng/Sai)", trang_thai: da-duyet}
+12.5.15: {ten: "Tối ưu lợi nhuận khi biết doanh thu và chi phí bình quân (hàm bậc ba trên một đoạn)", trang_thai: da-duyet}
+12.6.6: {ten: "Khẳng định sai về tích vô hướng của các vectơ trong hình chóp đều", trang_thai: da-duyet}
+12.7.4: {ten: "Thể tích tứ diện OABC khi A, B, C nằm trên ba trục tọa độ", trang_thai: da-duyet}
+12.11.8: {ten: "Nguyên hàm của đa thức (bình phương nhị thức) thỏa F(0) cho trước, tính F(a)", trang_thai: da-duyet}
+12.12.9: {ten: "Chất điểm trên trục số với vận tốc bậc hai: quãng đường, vị trí, tốc độ lớn nhất, hai chất điểm gặp nhau (Đúng/Sai)", trang_thai: da-duyet}
+12.17.6: {ten: "Vùng phủ sóng hình cầu của trạm phát sóng: phương trình mặt cầu, vị trí điểm, khoảng cách đến mặt phẳng, đường đi (Đúng/Sai)", trang_thai: da-duyet}
+12.18.5: {ten: "Xác suất một xạ thủ bắn trúng khi biết có ít nhất một viên trúng đích (hai xạ thủ độc lập)", trang_thai: da-duyet}
