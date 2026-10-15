@@ -1,0 +1,20 @@
+%% ma: L12-B05-0024
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.16
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2400"
+%% nguon: "(NBV)-ĐỀ SỐ 14-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D14, MỖI NGÀY 1 ĐỀ - Đề số 14), Phần III Câu 3"
+%% kien_thuc: "Bài 5 (tối ưu chi phí bằng đạo hàm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.5.16 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc đúng (kiểm bằng sympy). Hình gốc là ảnh trang trí không chứa dữ kiện toán nên bỏ hình."
+\begin{ex}
+Giả sử chi phí đặt hàng và vận chuyển $C$ (đơn vị: triệu đồng) của một linh kiện được sử dụng trong sản xuất một sản phẩm được xác định theo công thức $C=\dfrac{19\,200\,000}{x^2}+\dfrac{27x}{x+3000}$, $x\ge1$. Trong đó $x$ là số linh kiện được đặt hàng và vận chuyển. Tìm $x$ để chi phí đặt hàng và vận chuyển cho mỗi linh kiện trên là nhỏ nhất.
+\shortans{2400}
+\loigiai{$C'(x)=-\dfrac{38\,400\,000}{x^3}+\dfrac{81\,000}{(x+3000)^2}$.
+$C'(x)=0\Leftrightarrow\dfrac{27x^3}{(x+3000)^2}=12\,800$. Vế trái đồng biến trên $[1;+\infty)$ và bằng $12\,800$ tại $x=2400$ (vì $27\cdot2400^3=12\,800\cdot5400^2$), nên $x=2400$ là nghiệm duy nhất; $C'<0$ khi $x<2400$ và $C'>0$ khi $x>2400$.
+Vậy $C$ nhỏ nhất khi $x=2400$ (khi đó $C\approx15{,}33$).}
+\end{ex}

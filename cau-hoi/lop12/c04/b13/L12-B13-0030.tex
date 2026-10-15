@@ -1,0 +1,44 @@
+%% ma: L12-B13-0030
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.3
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐSS"
+%% nguon: "(NBV)-ĐỀ SỐ 14-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D14, MỖI NGÀY 1 ĐỀ - Đề số 14), Phần II Câu 3"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi hai parabol), lập phương trình parabol đỉnh O từ tọa độ một điểm"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình dựng lại từ số liệu của đề (hình vuông cạnh 4, A(-2;1), hai parabol y = x^2/4 và y = -3x^2/4), phần tô đậm là phần nằm giữa hai parabol. Đáp án gốc đều đúng."
+\begin{ex}
+Một công ty thiết kế mẫu huy hiệu để tặng cho khách hàng thân thiết của mình (xem hình vẽ). Trong đó $ABCD$ là hình vuông có cạnh bằng $4$ cm, các đường cong $AOD$ và $BOC$ là một phần của các parabol đỉnh $O$. Với hệ trục tọa độ $Oxy$ (đơn vị trên mỗi trục tọa độ là xăng-ti-mét) thì điểm $A$ có tung độ bằng $1$. Biết phần tô đậm trong hình vẽ được phủ vàng với chi phí $1$ triệu đồng/$\mathrm{cm}^2$, phần còn lại được phủ bạc với chi phí $300$ nghìn đồng/$\mathrm{cm}^2$, các chi phí còn lại là $500$ nghìn đồng.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \fill[orange!45,domain=-2:2,samples=60] plot (\x,{\x*\x/4}) -- (2,-3) -- plot[domain=2:-2,samples=60] (\x,{-3*\x*\x/4}) -- cycle;
+  \draw (-2,1) rectangle (2,-3);
+  \draw[truc] (-2.8,0)--(2.9,0) node[below]{$x$};
+  \draw[truc] (0,-3.5)--(0,1.7) node[left]{$y$};
+  \draw[thick,domain=-2:2,samples=60] plot (\x,{\x*\x/4});
+  \draw[thick,domain=-2:2,samples=60] plot (\x,{-3*\x*\x/4});
+  \node[above left,font=\small] at (-2,1) {$A$};
+  \node[above right,font=\small] at (2,1) {$D$};
+  \node[below left,font=\small] at (-2,-3) {$B$};
+  \node[below right,font=\small] at (2,-3) {$C$};
+  \node[below left,font=\small] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Parabol chứa đường cong $AOD$ có phương trình là $y=\dfrac1{16}x^2$.}
+{\True Parabol chứa đường cong $BOC$ có phương trình là $y=-\dfrac34x^2$.}
+{Diện tích phần tô đậm trong hình vẽ lớn hơn $5{,}5\ \mathrm{cm}^2$.}
+{Chi phí sản xuất $1$ chiếc huy hiệu nhỏ hơn $9$ triệu đồng.}
+\loigiai{Vì $ABCD$ là hình vuông cạnh $4$ có trục $Oy$ đi qua trung điểm $AD$ và $BC$, $A$ có tung độ $1$ nên $A(-2;1)$, $D(2;1)$, $B(-2;-3)$, $C(2;-3)$.
+
+a) Parabol $y=ax^2$ đi qua $A(-2;1)$ nên $a=\dfrac14$, phương trình $y=\dfrac14x^2$. Sai.
+
+b) Parabol $y=a'x^2$ đi qua $B(-2;-3)$ nên $a'=-\dfrac34$. Đúng.
+
+c) $S_{\text{tô}}=\displaystyle\int_{-2}^{2}\Big(\dfrac{x^2}{4}+\dfrac{3x^2}{4}\Big)\mathrm dx=\int_{-2}^{2}x^2\,\mathrm dx=\dfrac{16}{3}\approx5{,}33<5{,}5$. Sai.
+
+d) Phần còn lại có diện tích $16-\dfrac{16}{3}=\dfrac{32}{3}\ \mathrm{cm}^2$. Chi phí $=\dfrac{16}{3}\cdot1+\dfrac{32}{3}\cdot0{,}3+0{,}5\approx9{,}03$ triệu đồng, lớn hơn $9$. Sai.}
+\end{ex}

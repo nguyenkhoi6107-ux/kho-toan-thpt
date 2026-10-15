@@ -1,0 +1,30 @@
+%% ma: L12-B19-0022
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.8
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 14-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D14, MỖI NGÀY 1 ĐỀ - Đề số 14), Phần II Câu 1"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes), Bài 18 (xác suất có điều kiện), Bài 28 lớp 11 (biến cố độc lập)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.19.8 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ý d) ghi Sai là sai: đề cho độc lập trong từng phác đồ (không phải độc lập trên toàn bộ), nên P = 0,5.0,57 + 0,5.0,63 = 0,6, ý d) Đúng; lời giải gốc đã nhân 0,65 với 0,925 là hiểu sai điều kiện. Hình gốc là ảnh trang trí không chứa dữ kiện toán nên bỏ hình."
+\begin{ex}
+Có hai phác đồ điều trị $A$ và $B$ cho một loại bệnh. Phác đồ $A$ có xác suất chữa khỏi bệnh là $60\%$ và xác suất gây tác dụng phụ nghiêm trọng là $5\%$. Phác đồ $B$ có xác suất chữa khỏi bệnh là $70\%$ và xác suất gây tác dụng phụ nghiêm trọng là $10\%$. Một bệnh nhân được điều trị ngẫu nhiên bằng một trong hai phác đồ (xác suất chọn mỗi phác đồ là $50\%$).
+\choiceTF
+{Xác suất bệnh nhân điều trị bằng phác đồ $A$ và được chữa khỏi bệnh là $0{,}6$.}
+{\True Xác suất để bệnh nhân bị tác dụng phụ nghiêm trọng là $0{,}075$.}
+{\True Nếu biết bệnh nhân này gặp tác dụng phụ nghiêm trọng thì xác suất bệnh nhân đã được điều trị bằng phác đồ $B$ lớn hơn $0{,}65$.}
+{\True Biết rằng trong mỗi phác đồ điều trị thì biến cố ``bệnh nhân được chữa khỏi bệnh'' và biến cố ``bệnh nhân không bị tác dụng phụ nghiêm trọng'' là độc lập với nhau. Xác suất bệnh nhân khỏi bệnh và không bị tác dụng phụ nghiêm trọng là $0{,}6$.}
+\loigiai{Gọi $A$, $B$ là biến cố bệnh nhân điều trị bằng phác đồ $A$, $B$: $P(A)=P(B)=0{,}5$; $K$: ``khỏi bệnh''; $T$: ``bị tác dụng phụ nghiêm trọng''.
+
+a) $P(A\cap K)=0{,}5\cdot0{,}6=0{,}3\ne0{,}6$. Sai.
+
+b) $P(T)=0{,}5\cdot0{,}05+0{,}5\cdot0{,}1=0{,}075$. Đúng.
+
+c) $P(B\mid T)=\dfrac{0{,}5\cdot0{,}1}{0{,}075}=\dfrac23\approx0{,}667>0{,}65$. Đúng.
+
+d) Trong phác đồ $A$: $P(K\cap\overline T\mid A)=0{,}6\cdot0{,}95=0{,}57$; trong phác đồ $B$: $0{,}7\cdot0{,}9=0{,}63$. Theo công thức xác suất toàn phần, $P(K\cap\overline T)=0{,}5\cdot0{,}57+0{,}5\cdot0{,}63=0{,}6$. Đúng.}
+\end{ex}

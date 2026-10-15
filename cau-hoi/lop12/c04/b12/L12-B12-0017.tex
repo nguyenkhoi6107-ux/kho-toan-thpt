@@ -1,0 +1,35 @@
+%% ma: L12-B12-0017
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 14-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D14, MỖI NGÀY 1 ĐỀ - Đề số 14), Phần I Câu 5"
+%% kien_thuc: "Bài 12 (ý nghĩa hình học của tích phân, tính chất cộng theo cận)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.12.10 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Hình vẽ dựng lại minh họa (đồ thị bậc ba cắt trục hoành tại -1, 2, 4), không theo đúng tỉ lệ diện tích 7 và 2 của đề."
+\begin{ex}
+Cho hàm số $y=f(x)$. Biết rằng các phần hình phẳng $S_1$ và $S_2$ giới hạn bởi đồ thị hàm số $y=f(x)$ và trục hoành (xem hình vẽ) có diện tích lần lượt bằng $7$ và $2$. Tích phân $\displaystyle\int_{-1}^{4} f(x)\,\mathrm dx$ bằng
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \fill[blue!15,domain=-1:2,samples=60] (-1,0) -- plot (\x,{(\x+1)*(\x-2)*(\x-4)/6}) -- (2,0) -- cycle;
+  \fill[blue!15,domain=2:4,samples=60] (2,0) -- plot (\x,{(\x+1)*(\x-2)*(\x-4)/6}) -- (4,0) -- cycle;
+  \draw[truc] (-2,0)--(5,0) node[below]{$x$};
+  \draw[truc] (0,-1.2)--(0,2.4) node[left]{$y$};
+  \draw[thick,blue!70!black,domain=-1.25:4.35,samples=80] plot (\x,{(\x+1)*(\x-2)*(\x-4)/6});
+  \node[below right,font=\small,inner sep=1pt] at (0,0) {$O$};
+  \node[below left,font=\small,inner sep=1pt] at (-1,0) {$-1$};
+  \node[above,font=\small] at (2.05,0.02) {$2$};
+  \node[below,font=\small] at (4,0) {$4$};
+  \node[font=\small] at (0.8,0.7) {$S_1$};
+  \node[font=\small] at (3.1,-0.35) {$S_2$};
+  \node[right,font=\small] at (4.35,1.0) {$y=f(x)$};
+\end{tikzpicture}
+\end{center}
+\choice{$9$}{$-5$}{$-9$}{\True $5$}
+\loigiai{Trên $[-1;2]$ ta có $f(x)\ge0$ nên $\displaystyle\int_{-1}^{2}f(x)\,\mathrm dx=S_1=7$; trên $[2;4]$ ta có $f(x)\le0$ nên $\displaystyle\int_{2}^{4}f(x)\,\mathrm dx=-S_2=-2$.
+Vậy $\displaystyle\int_{-1}^{4}f(x)\,\mathrm dx=7-2=5$.}
+\end{ex}
