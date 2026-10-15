@@ -248,14 +248,14 @@
 12.17.6: {ten: "Vùng phủ sóng hình cầu của trạm phát sóng: phương trình mặt cầu, vị trí điểm, khoảng cách đến mặt phẳng, đường đi (Đúng/Sai)", trang_thai: da-duyet}
 12.18.5: {ten: "Xác suất một xạ thủ bắn trúng khi biết có ít nhất một viên trúng đích (hai xạ thủ độc lập)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D14 ((NBV) Đề số 14), ngày 15/10/2026 ---
-12.12.10: {ten: "Tích phân trên đoạn từ hai diện tích S1, S2 đọc từ hình vẽ (S1 - S2)", trang_thai: de-xuat}
-12.6.7: {ten: "Tổng bốn vectơ từ đỉnh chóp đến các đỉnh của đáy hình bình hành (qua tâm O)", trang_thai: de-xuat}
-12.15.7: {ten: "Phương trình chính tắc của đường thẳng đi qua hai điểm", trang_thai: de-xuat}
-11.21.9: {ten: "Mô hình nhiệt độ đồ uống T = 22 + 50e^(-t/8): giải phương trình mũ, làm tròn thời gian", trang_thai: de-xuat}
-12.19.8: {ten: "Hai phác đồ điều trị: xác suất toàn phần, Bayes, độc lập trong từng phác đồ (Đúng/Sai)", trang_thai: de-xuat}
-12.4.11: {ten: "Bảng biến thiên: cực đại, giá trị nhỏ nhất hàm hợp căn thức, số nghiệm phương trình, số giá trị nguyên của tham số (Đúng/Sai)", trang_thai: de-xuat}
-12.15.8: {ten: "Điểm M mà tam giác ABM có diện tích không đổi: độ dài AB, đường thẳng AB, khoảng cách từ C đến AB, MC nhỏ nhất (Đúng/Sai)", trang_thai: de-xuat}
-11.27.12: {ten: "Thể tích khối chóp có cạnh bên vuông góc với đáy hình vuông khi biết góc nhị diện [B, SC, D]", trang_thai: de-xuat}
-12.5.16: {ten: "Tối ưu chi phí đặt hàng và vận chuyển C(x) = a/x^2 + bx/(x + c)", trang_thai: de-xuat}
-12.15.9: {ten: "Đường thẳng cắt d và mặt phẳng (P) nhận một điểm làm trung điểm: tìm vectơ chỉ phương", trang_thai: de-xuat}
-12.5.17: {ten: "Thang trượt dọc tường: tốc độ đầu trên khi chân thang di chuyển đều (đạo hàm hàm hợp)", trang_thai: de-xuat}
+12.12.10: {ten: "Tích phân trên đoạn từ hai diện tích S1, S2 đọc từ hình vẽ (S1 - S2)", trang_thai: da-duyet}
+12.6.7: {ten: "Tổng bốn vectơ từ đỉnh chóp đến các đỉnh của đáy hình bình hành (qua tâm O)", trang_thai: da-duyet}
+12.15.7: {ten: "Phương trình chính tắc của đường thẳng đi qua hai điểm", trang_thai: da-duyet}
+11.21.9: {ten: "Mô hình nhiệt độ đồ uống T = 22 + 50e^(-t/8): giải phương trình mũ, làm tròn thời gian", trang_thai: da-duyet}
+12.19.8: {ten: "Hai phác đồ điều trị: xác suất toàn phần, Bayes, độc lập trong từng phác đồ (Đúng/Sai)", trang_thai: da-duyet}
+12.4.11: {ten: "Bảng biến thiên: cực đại, giá trị nhỏ nhất hàm hợp căn thức, số nghiệm phương trình, số giá trị nguyên của tham số (Đúng/Sai)", trang_thai: da-duyet}
+12.15.8: {ten: "Điểm M mà tam giác ABM có diện tích không đổi: độ dài AB, đường thẳng AB, khoảng cách từ C đến AB, MC nhỏ nhất (Đúng/Sai)", trang_thai: da-duyet}
+11.27.12: {ten: "Thể tích khối chóp có cạnh bên vuông góc với đáy hình vuông khi biết góc nhị diện [B, SC, D]", trang_thai: da-duyet}
+12.5.16: {ten: "Tối ưu chi phí đặt hàng và vận chuyển C(x) = a/x^2 + bx/(x + c)", trang_thai: da-duyet}
+12.15.9: {ten: "Đường thẳng cắt d và mặt phẳng (P) nhận một điểm làm trung điểm: tìm vectơ chỉ phương", trang_thai: da-duyet}
+12.5.17: {ten: "Thang trượt dọc tường: tốc độ đầu trên khi chân thang di chuyển đều (đạo hàm hàm hợp)", trang_thai: da-duyet}
