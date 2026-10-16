@@ -260,14 +260,14 @@
 12.15.9: {ten: "Đường thẳng cắt d và mặt phẳng (P) nhận một điểm làm trung điểm: tìm vectơ chỉ phương", trang_thai: da-duyet}
 12.5.17: {ten: "Thang trượt dọc tường: tốc độ đầu trên khi chân thang di chuyển đều (đạo hàm hàm hợp)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị D15 ((NBV) Đề số 15 MỖI NGÀY 1 ĐỀ) ---
-11.20.2: {ten: "Tính chất của hàm số lôgarit cơ số nhỏ hơn 1 (tìm mệnh đề sai)", trang_thai: de-xuat}
-11.26.4: {ten: "Khoảng cách từ đỉnh đáy đến mặt bên chứa cạnh vuông góc với đáy (hình chóp đáy hình chữ nhật)", trang_thai: de-xuat}
-12.1.17: {ten: "Tính đơn điệu của hàm trùng phương y = x^4 + c (xét khẳng định đúng)", trang_thai: de-xuat}
-12.12.11: {ten: "Tích phân với cận đảo ngược (đổi dấu khi đổi cận)", trang_thai: de-xuat}
-12.15.10: {ten: "Điểm thuộc đường thẳng cho bởi phương trình chính tắc", trang_thai: de-xuat}
-12.6.8: {ten: "Hình chóp có cạnh bên vuông góc với đáy hình vuông: thể tích, khoảng cách, tổng vectơ, góc nhị diện (Đúng/Sai)", trang_thai: de-xuat}
-12.16.3: {ten: "Gương phẳng treo tường: tọa độ hóa căn phòng, mặt phẳng, tia phản xạ qua phép đối xứng, góc đường thẳng - mặt phẳng (Đúng/Sai)", trang_thai: de-xuat}
-12.19.9: {ten: "Kiểm tra sản phẩm qua hai trạm độc lập: xác suất toàn phần và Bayes (Đúng/Sai)", trang_thai: de-xuat}
-11.21.10: {ten: "Lãi kép theo kì hạn: tìm thời gian gửi để đạt số tiền mong muốn (bất phương trình mũ)", trang_thai: de-xuat}
-12.19.10: {ten: "Hai tên lửa độc lập bắn mục tiêu: xác suất toàn phần theo số quả trúng", trang_thai: de-xuat}
-12.8.14: {ten: "San nền sân trường: bốn điểm đồng phẳng với độ cao các điểm (tọa độ hóa trong không gian)", trang_thai: de-xuat}
+11.20.2: {ten: "Tính chất của hàm số lôgarit cơ số nhỏ hơn 1 (tìm mệnh đề sai)", trang_thai: da-duyet}
+11.26.4: {ten: "Khoảng cách từ đỉnh đáy đến mặt bên chứa cạnh vuông góc với đáy (hình chóp đáy hình chữ nhật)", trang_thai: da-duyet}
+12.1.17: {ten: "Tính đơn điệu của hàm trùng phương y = x^4 + c (xét khẳng định đúng)", trang_thai: da-duyet}
+12.12.11: {ten: "Tích phân với cận đảo ngược (đổi dấu khi đổi cận)", trang_thai: da-duyet}
+12.15.10: {ten: "Điểm thuộc đường thẳng cho bởi phương trình chính tắc", trang_thai: da-duyet}
+12.6.8: {ten: "Hình chóp có cạnh bên vuông góc với đáy hình vuông: thể tích, khoảng cách, tổng vectơ, góc nhị diện (Đúng/Sai)", trang_thai: da-duyet}
+12.16.3: {ten: "Gương phẳng treo tường: tọa độ hóa căn phòng, mặt phẳng, tia phản xạ qua phép đối xứng, góc đường thẳng - mặt phẳng (Đúng/Sai)", trang_thai: da-duyet}
+12.19.9: {ten: "Kiểm tra sản phẩm qua hai trạm độc lập: xác suất toàn phần và Bayes (Đúng/Sai)", trang_thai: da-duyet}
+11.21.10: {ten: "Lãi kép theo kì hạn: tìm thời gian gửi để đạt số tiền mong muốn (bất phương trình mũ)", trang_thai: da-duyet}
+12.19.10: {ten: "Hai tên lửa độc lập bắn mục tiêu: xác suất toàn phần theo số quả trúng", trang_thai: da-duyet}
+12.8.14: {ten: "San nền sân trường: bốn điểm đồng phẳng với độ cao các điểm (tọa độ hóa trong không gian)", trang_thai: da-duyet}
