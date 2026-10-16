@@ -285,16 +285,16 @@
 11.27.13: {ten: "Thể tích khối chóp cụt đều khi biết góc nhị diện giữa mặt bên và đáy nhỏ", trang_thai: de-xuat}
 12.5.18: {ten: "Tối ưu sản lượng nhà máy theo thời gian làm việc (số tổ, năng suất, phế phẩm)", trang_thai: de-xuat}
 # --- Đề xuất từ đơn vị D17 (Đề số 17 MỖI NGÀY 1 ĐỀ), ngày 16/10/2026 ---
-10.22.2: {ten: "Khoảng cách ngắn nhất từ tiêu điểm đến điểm trên elip (quỹ đạo Mặt Trăng): a - c", trang_thai: de-xuat}
-11.26.6: {ten: "Khoảng cách từ một đỉnh đến mặt bên của lăng trụ đứng có đáy là tam giác vuông cân", trang_thai: de-xuat}
-11.27.14: {ten: "Hình chóp tam giác có cạnh bên vuông góc với đáy, đáy vuông tại B có góc 30 độ: khoảng cách, thể tích (Đúng/Sai)", trang_thai: de-xuat}
-11.27.15: {ten: "Bể bơi có đáy dốc: dung tích, thể tích nước hiện có và thời gian bơm đến 75% dung tích", trang_thai: de-xuat}
-12.1.19: {ten: "Đọc đồ thị đạo hàm y = f'(x) cắt trục tại ba điểm: xét khẳng định sai về đơn điệu và cực trị của f", trang_thai: de-xuat}
-12.5.19: {ten: "Trạm cung cấp nước bên bờ sông cho hai xã: tổng khoảng cách nhỏ nhất AM + MB", trang_thai: de-xuat}
-12.6.9: {ten: "Khẳng định sai về tổng vectơ trong hình chóp đều (O là giao điểm hai đường chéo đáy)", trang_thai: de-xuat}
-12.8.17: {ten: "Diện tích tam giác OAB khi A, B thuộc hai trục tọa độ", trang_thai: de-xuat}
-12.8.18: {ten: "Khối pha lê hình bát diện đều: tọa độ đỉnh, khoảng cách, khối lượng, góc nhị diện (Đúng/Sai)", trang_thai: de-xuat}
-12.11.9: {ten: "Nguyên hàm của hàm số cho bởi hai công thức (liên tục tại điểm nối), tính F(3)", trang_thai: de-xuat}
-12.12.12: {ten: "Vận tốc cho bởi parabol rồi đường thẳng: công thức, tốc độ, quãng đường, độ dời (Đúng/Sai)", trang_thai: de-xuat}
-12.13.18: {ten: "Thể tích bình hoa tròn xoay có đường sinh là đồ thị hàm bậc ba (nội suy từ cực đại và các bán kính)", trang_thai: de-xuat}
-12.14.10: {ten: "Kiểm tra điểm thuộc mặt phẳng cho bởi phương trình tổng quát", trang_thai: de-xuat}
+10.22.2: {ten: "Khoảng cách ngắn nhất từ tiêu điểm đến điểm trên elip (quỹ đạo Mặt Trăng): a - c", trang_thai: da-duyet}
+11.26.6: {ten: "Khoảng cách từ một đỉnh đến mặt bên của lăng trụ đứng có đáy là tam giác vuông cân", trang_thai: da-duyet}
+11.27.14: {ten: "Hình chóp tam giác có cạnh bên vuông góc với đáy, đáy vuông tại B có góc 30 độ: khoảng cách, thể tích (Đúng/Sai)", trang_thai: da-duyet}
+11.27.15: {ten: "Bể bơi có đáy dốc: dung tích, thể tích nước hiện có và thời gian bơm đến 75% dung tích", trang_thai: da-duyet}
+12.1.19: {ten: "Đọc đồ thị đạo hàm y = f'(x) cắt trục tại ba điểm: xét khẳng định sai về đơn điệu và cực trị của f", trang_thai: da-duyet}
+12.5.19: {ten: "Trạm cung cấp nước bên bờ sông cho hai xã: tổng khoảng cách nhỏ nhất AM + MB", trang_thai: da-duyet}
+12.6.9: {ten: "Khẳng định sai về tổng vectơ trong hình chóp đều (O là giao điểm hai đường chéo đáy)", trang_thai: da-duyet}
+12.8.17: {ten: "Diện tích tam giác OAB khi A, B thuộc hai trục tọa độ", trang_thai: da-duyet}
+12.8.18: {ten: "Khối pha lê hình bát diện đều: tọa độ đỉnh, khoảng cách, khối lượng, góc nhị diện (Đúng/Sai)", trang_thai: da-duyet}
+12.11.9: {ten: "Nguyên hàm của hàm số cho bởi hai công thức (liên tục tại điểm nối), tính F(3)", trang_thai: da-duyet}
+12.12.12: {ten: "Vận tốc cho bởi parabol rồi đường thẳng: công thức, tốc độ, quãng đường, độ dời (Đúng/Sai)", trang_thai: da-duyet}
+12.13.18: {ten: "Thể tích bình hoa tròn xoay có đường sinh là đồ thị hàm bậc ba (nội suy từ cực đại và các bán kính)", trang_thai: da-duyet}
+12.14.10: {ten: "Kiểm tra điểm thuộc mặt phẳng cho bởi phương trình tổng quát", trang_thai: da-duyet}
