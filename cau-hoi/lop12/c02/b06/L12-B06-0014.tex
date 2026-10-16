@@ -1,0 +1,35 @@
+%% ma: L12-B06-0014
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần I Câu 10"
+%% kien_thuc: "Bài 6 (vectơ trong không gian, quy tắc hình hộp, tâm của hình hộp)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc B đúng. Hình hộp dựng lại theo phép chiếu song song, các đường chéo đi qua tâm O. Trùng ý tưởng với dạng đã duyệt 12.6.1, nhập chính thức."
+\begin{ex}
+Cho hình hộp $ABCD.A'B'C'D'$, gọi $O$ là tâm của hình hộp.
+\begin{center}
+\begin{tikzpicture}[scale=.95]
+  \path (0,0) coordinate (B) (3,0) coordinate (C) (4,1.1) coordinate (D) (1,1.1) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(.4,2.2) coordinate (\P');
+  \coordinate (O) at (2.2,1.65);
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A') (A)--(C') (B)--(D') (A')--(C) (B')--(D);
+  \fill (O) circle (1pt);
+  \node[font=\footnotesize] at ($(O)+(76:.32)$) {$O$};
+  \path (A) node[above left]{$A$} (B) node[below left]{$B$} (C) node[below right]{$C$} (D) node[right]{$D$}
+        (A') node[above left]{$A'$} (B') node[left]{$B'$} (C') node[right]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây \textbf{sai}?
+\choice{$\overrightarrow{BD'}=2\overrightarrow{BO}$}{\True $\overrightarrow{A'C}+\overrightarrow{DB'}=\vec0$}{$\overrightarrow{OB'}+\overrightarrow{OD}=\vec0$}{$\overrightarrow{AA'}+\overrightarrow{AC}=\overrightarrow{AC'}$}
+\loigiai{$O$ là trung điểm của các đường chéo $BD'$, $B'D$, $A'C$, $AC'$.
+
+A đúng vì $O$ là trung điểm $BD'$. C đúng vì $O$ là trung điểm $B'D$. D đúng vì $\overrightarrow{AA'}=\overrightarrow{CC'}$ nên $\overrightarrow{AA'}+\overrightarrow{AC}=\overrightarrow{AC}+\overrightarrow{CC'}=\overrightarrow{AC'}$.
+
+B sai: $\overrightarrow{A'C}=2\overrightarrow{OC}$ và $\overrightarrow{DB'}=2\overrightarrow{OB'}$, nên tổng bằng $\vec0$ khi và chỉ khi $O$ là trung điểm $B'C$, điều này không xảy ra vì $B'C$ là đường chéo của một mặt bên. Chọn B.}
+\end{ex}

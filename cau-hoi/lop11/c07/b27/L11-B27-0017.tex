@@ -1,0 +1,33 @@
+%% ma: L11-B27-0017
+%% lop: 11
+%% chuong: 7
+%% bai: 27
+%% dang: 11.27.13
+%% loai: TLN
+%% muc: VD
+%% dap_an: "63"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần III Câu 2 (Sở Hải Phòng 2025)"
+%% kien_thuc: "Lớp 11 Bài 25 (góc nhị diện), Bài 27 (thể tích khối chóp cụt đều)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.27.13 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 63 đúng (V = 109√3/3 ≈ 62,93). Đáy là hình vuông; hình chóp cụt đều dựng lại theo phép chiếu song song."
+\begin{ex}
+Người ta dự định làm một hầm rượu có dạng hình chóp cụt đều có hai cạnh đáy là $7\,\mathrm m$ và $5\,\mathrm m$; mặt bên và đáy nhỏ tạo thành góc nhị diện có số đo bằng $120^\circ$ (tham khảo hình vẽ bên). Thể tích của hầm rượu trên bằng bao nhiêu mét khối (làm tròn kết quả đến hàng đơn vị)?
+\begin{center}
+\begin{tikzpicture}[x={(-.4cm,-.3cm)},y={(.78cm,0cm)},z={(0cm,.78cm)}]
+  \def\h{1.732}
+  \coordinate (P1) at (7,0,0);\coordinate (P2) at (7,7,0);\coordinate (P3) at (0,7,0);\coordinate (P4) at (0,0,0);
+  \coordinate (Q1) at (6,1,\h);\coordinate (Q2) at (6,6,\h);\coordinate (Q3) at (1,6,\h);\coordinate (Q4) at (1,1,\h);
+  \draw (P1)--(P2)--(P3) (P1)--(Q1) (P2)--(Q2) (P3)--(Q3) (Q1)--(Q2)--(Q3)--(Q4)--cycle;
+  \draw[khuat] (P1)--(P4)--(P3) (P4)--(Q4);
+  \node[font=\footnotesize,below] at ($(P1)!.5!(P2)$) {$7\,\mathrm m$};
+  \node[font=\footnotesize,above] at ($(Q4)!.5!(Q3)$) {$5\,\mathrm m$};
+\end{tikzpicture}
+\end{center}
+\shortans{63}
+\loigiai{Gọi $O,O'$ là tâm đáy lớn, đáy nhỏ; $H,H'$ là trung điểm hai cạnh đáy lớn, đáy nhỏ nằm trong cùng một mặt bên. Khi đó $O'H'$ và $HH'$ cùng vuông góc với cạnh đáy nhỏ nằm trong mặt bên, nên góc nhị diện giữa mặt bên và đáy nhỏ là $\widehat{O'H'H}=120^\circ$. Vì $O'H'\parallel OH$ nên $\widehat{H'HO}=180^\circ-120^\circ=60^\circ$.
+
+Kẻ $H'K\perp OH$ ($K\in OH$): $HK=OH-O'H'=\dfrac72-\dfrac52=1$, chiều cao $h=OO'=H'K=HK\cdot\tan60^\circ=\sqrt3$.
+
+$V=\dfrac h3\left(S_1+S_2+\sqrt{S_1S_2}\right)=\dfrac{\sqrt3}3\left(49+25+35\right)=\dfrac{109\sqrt3}3\approx62{,}93\approx63\ (\mathrm m^3)$.}
+\end{ex}

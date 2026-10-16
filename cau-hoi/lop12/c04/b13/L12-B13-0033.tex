@@ -1,0 +1,45 @@
+%% ma: L12-B13-0033
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.16
+%% loai: DS
+%% muc: [TH, VD, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần II Câu 3"
+%% kien_thuc: "Bài 12 (tích phân), Bài 13 (diện tích hình phẳng, thể tích khối tròn xoay)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.16 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ĐĐSĐ đúng (giải độc lập, kiểm bằng sympy: aa′ = 2/25, V = 55808π/2625 ≈ 66,79). Ý c) in ra là f(x) = (1/5)(x-1)(x^2-4) là đa thức bậc ba nên sai ngay; giữ nguyên như đề gốc. Hình dựng lại bằng công thức thật f = (1/5)(x-1)^2(4-x^2), g = (2/5)(x-1)^2(4-x^2) (hai đồ thị cùng đi qua (-2;0), (1;0), (2;0) như hình gốc; tên f, g không ghi trên hình vì hai hàm có vai trò như nhau)."
+\begin{ex}
+Cho hai hàm đa thức bậc bốn $y=f(x)=ax^4+bx^3+cx^2+dx+e$ và $y=g(x)=a'x^4+b'x^3+c'x^2+d'x+e'$, có $a+a'=-\dfrac35$. Biết rằng đồ thị của hai hàm số này cắt nhau tại đúng ba điểm có hoành độ lần lượt là $-2;1;2$ và diện tích hình phẳng $(H)$ giới hạn bởi đồ thị của hai hàm số (phần gạch sọc trên hình sau đây) là $\dfrac{96}{25}$.
+\begin{center}
+\begin{tikzpicture}[x=1.1cm,y=.58cm]
+  \fill[pattern=north east lines,pattern color=gray] plot[domain=-2:2,samples=80] (\x,{.4*(\x-1)^2*(4-\x*\x)}) -- plot[domain=2:-2,samples=80] (\x,{.2*(\x-1)^2*(4-\x*\x)}) -- cycle;
+  \draw[truc] (-3.1,0)--(3.5,0) node[below,font=\small]{$x$};
+  \draw[truc] (0,-1.7)--(0,5.7) node[right,font=\small]{$y$};
+  \draw[thick] plot[domain=-2.12:2.4,samples=100] (\x,{.4*(\x-1)^2*(4-\x*\x)});
+  \draw[thick] plot[domain=-2.12:2.45,samples=100] (\x,{.2*(\x-1)^2*(4-\x*\x)});
+  \foreach \t in {-1,1,2} \draw (\t,.12)--(\t,-.12) node[below,font=\footnotesize]{$\t$};
+  \draw (-2,.12)--(-2,-.12) node[below right,font=\footnotesize,inner sep=1pt]{$-2$};
+  \foreach \t in {2,3,4,5} \draw (.07,\t)--(-.07,\t) node[right,font=\footnotesize,xshift=2pt]{$\t$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Phương trình $f(x)-g(x)=0$ có ba nghiệm phân biệt.}
+{\True $aa'=\dfrac2{25}$.}
+{$f(x)=\dfrac15(x-1)(x^2-4)$.}
+{\True Khi quay hình $(H)$ xung quanh trục hoành, khối tròn xoay tạo thành có thể tích nhỏ hơn $67$.}
+\loigiai{Từ hình vẽ, hai đồ thị đều đi qua ba điểm $(-2;0)$, $(1;0)$, $(2;0)$ và tiếp xúc với trục $Ox$ tại $x=1$; do đó $x=1$ là nghiệm kép của $f(x)-g(x)=0$ và $f(x)-g(x)=(a-a')(x-1)^2(x^2-4)$.
+
+a) Phương trình $f(x)-g(x)=0$ có các nghiệm phân biệt $-2;1;2$. Đúng.
+
+b) $\displaystyle\int_{-2}^{2}(x-1)^2(4-x^2)\,\mathrm dx=\dfrac{96}5$, nên $S=|a-a'|\cdot\dfrac{96}5=\dfrac{96}{25}$, suy ra $|a-a'|=\dfrac15$. Kết hợp $a+a'=-\dfrac35$ ta được $\{a;a'\}=\left\{-\dfrac15;-\dfrac25\right\}$, vậy $aa'=\dfrac2{25}$. Đúng.
+
+c) $f$ là đa thức bậc bốn nên không thể bằng $\dfrac15(x-1)(x^2-4)$ (đa thức bậc ba). Thật vậy $f(x)=a(x-1)^2(x^2-4)$ với $a\in\left\{-\dfrac15;-\dfrac25\right\}$. Sai.
+
+d) Trên $[-2;2]$ đồ thị của hàm có hệ số $-\dfrac25$ nằm trên đồ thị của hàm có hệ số $-\dfrac15$, cả hai đều không âm: $\dfrac25(x-1)^2(4-x^2)$ và $\dfrac15(x-1)^2(4-x^2)$. Thể tích
+\[V=\pi\int_{-2}^{2}\left(\dfrac4{25}-\dfrac1{25}\right)(x-1)^4(4-x^2)^2\,\mathrm dx=\dfrac{3\pi}{25}\cdot\dfrac{55808}{315}=\dfrac{55808\pi}{2625}\approx66{,}79<67.\]
+Đúng.}
+\end{ex}

@@ -271,3 +271,16 @@
 11.21.10: {ten: "Lãi kép theo kì hạn: tìm thời gian gửi để đạt số tiền mong muốn (bất phương trình mũ)", trang_thai: da-duyet}
 12.19.10: {ten: "Hai tên lửa độc lập bắn mục tiêu: xác suất toàn phần theo số quả trúng", trang_thai: da-duyet}
 12.8.14: {ten: "San nền sân trường: bốn điểm đồng phẳng với độ cao các điểm (tọa độ hóa trong không gian)", trang_thai: da-duyet}
+12.1.18: {ten: "Hàm số không có cực trị trong bốn hàm cho trước", trang_thai: de-xuat}
+12.3.11: {ten: "Hàm f(x) = x - 1/x + 2ln x: đơn điệu, tiệm cận đứng, f(1/x) = -f(x), phương trình f(sin x + 2) + f(1/(cos x + 2)) = 0 (Đúng/Sai)", trang_thai: de-xuat}
+12.13.15: {ten: "Tích phân của hàm không dương trên đoạn bằng trừ diện tích hình phẳng", trang_thai: de-xuat}
+12.13.16: {ten: "Hai hàm bậc bốn cắt nhau tại ba điểm: hiệu hai hàm, hệ số, công thức hàm, thể tích khối tròn xoay (Đúng/Sai)", trang_thai: de-xuat}
+12.13.17: {ten: "Thể tích micro: khối cầu ghép khối nón cụt (đường sinh gồm cung tròn và đoạn thẳng)", trang_thai: de-xuat}
+12.8.15: {ten: "Phân tích vectơ c = xa + yb trong không gian Oxyz", trang_thai: de-xuat}
+12.8.16: {ten: "Tọa độ đỉnh mái chóp của ngôi nhà khi cạnh bên tạo với đáy góc cho trước", trang_thai: de-xuat}
+12.15.11: {ten: "Vectơ pháp tuyến của mặt phẳng vuông góc với đường thẳng cho bởi phương trình chính tắc", trang_thai: de-xuat}
+12.17.7: {ten: "Đèn pha lê hình cầu treo trong căn phòng hình hộp: tọa độ tâm, phương trình mặt cầu, khoảng cách (Đúng/Sai)", trang_thai: de-xuat}
+11.26.5: {ten: "Khoảng cách giữa hai đường thẳng song song trong hình lập phương", trang_thai: de-xuat}
+10.25.1: {ten: "Tổng k.C(2n,k) bằng lũy thừa của 2: đồng nhất thức k.C(n,k) = n.C(n-1,k-1)", trang_thai: de-xuat}
+11.27.13: {ten: "Thể tích khối chóp cụt đều khi biết góc nhị diện giữa mặt bên và đáy nhỏ", trang_thai: de-xuat}
+12.5.18: {ten: "Tối ưu sản lượng nhà máy theo thời gian làm việc (số tổ, năng suất, phế phẩm)", trang_thai: de-xuat}

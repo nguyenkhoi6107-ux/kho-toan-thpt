@@ -1,0 +1,22 @@
+%% ma: L12-B05-0027
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.18
+%% loai: TLN
+%% muc: VD
+%% dap_an: "36"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần III Câu 6 (THPT Yên Lạc – Vĩnh Phúc 2025)"
+%% kien_thuc: "Bài 5 (ứng dụng đạo hàm để tối ưu trong thực tiễn), Bài 1 (đơn điệu)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.5.18 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 36 đúng nhưng lời giải gốc nhầm dấu (viết t = 4 rồi 40 - 4 = 36): thực chất t = -4, tức là giảm 4 giờ. Nếu chỉ xét tăng giờ làm (x >= 40) thì sản phẩm thu được lớn nhất tại x = 40 (440800), nên đề cần giả thiết quy luật cũng đúng khi giảm giờ: bản kho đã bổ sung câu giả thiết này vào đề (chờ giáo viên xác nhận). Bỏ ảnh minh họa công nhân nhà máy (ảnh trang trí)."
+\begin{ex}
+Theo thống kê tại một nhà máy $Z$, nếu áp dụng tuần làm việc $40$ giờ thì mỗi tuần có $100$ tổ công nhân đi làm và mỗi tổ công nhân làm được $120$ sản phẩm trong một giờ. Nếu tăng thời gian làm việc thêm $2$ giờ mỗi tuần thì sẽ có $1$ tổ công nhân nghỉ việc và năng suất lao động giảm $5$ sản phẩm/$1$ tổ/$1$ giờ (quy luật này cũng đúng khi giảm thời gian làm việc: cứ giảm $2$ giờ thì có thêm $1$ tổ đi làm và năng suất tăng $5$ sản phẩm/$1$ tổ/$1$ giờ). Ngoài ra, số phế phẩm mỗi tuần ước tính là $P(x)=\dfrac{95x^2+120x}{4}$, với $x$ là thời gian làm việc trong một tuần. Nhà máy cần áp dụng thời gian làm việc mỗi tuần mấy giờ để số lượng sản phẩm thu được mỗi tuần là lớn nhất?
+\shortans{36}
+\loigiai{Gọi $x$ là số giờ làm việc mỗi tuần, $t=x-40$. Số tổ đi làm: $100-\dfrac t2=120-\dfrac x2$; năng suất mỗi tổ: $120-\dfrac{5t}2=220-\dfrac{5x}2$ (sản phẩm/giờ). Điều kiện: $0<x<88$.
+
+Số sản phẩm thu được mỗi tuần (đã trừ phế phẩm):
+\[S(x)=x\left(120-\dfrac x2\right)\left(220-\dfrac{5x}2\right)-\dfrac{95x^2+120x}4=\dfrac54\left(x^3-347x^2+21096x\right).\]
+$S'(x)=\dfrac54\left(3x^2-694x+21096\right)=\dfrac54(x-36)(3x-586)$. Trên $(0;88)$: $S'>0$ khi $x<36$ và $S'<0$ khi $36<x<88$, nên $S$ lớn nhất tại $x=36$ (khi đó $S=445\,500$). Vậy cần làm việc $36$ giờ mỗi tuần.}
+\end{ex}

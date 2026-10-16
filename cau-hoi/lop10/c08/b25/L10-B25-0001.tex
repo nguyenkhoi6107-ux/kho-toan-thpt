@@ -1,0 +1,22 @@
+%% ma: L10-B25-0001
+%% lop: 10
+%% chuong: 8
+%% bai: 25
+%% dang: 10.25.1
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "32"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần III Câu 1 (Chuyên ĐH Vinh 2025)"
+%% kien_thuc: "Lớp 10 Bài 24 (tổ hợp, công thức k.C(n,k) = n.C(n-1,k-1)), Bài 25 (nhị thức Newton, tổng các hệ số tổ hợp)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 10.25.1 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 32 đúng (kiểm bằng sympy với n = 31, 32, 33)."
+\begin{ex}
+Tìm số nguyên dương $n$ sao cho $1C_{2n}^1+2C_{2n}^2+3C_{2n}^3+\cdots+nC_{2n}^n=2^{68}$.
+\shortans{32}
+\loigiai{Với $k\ge1$: $kC_{2n}^k=k\dfrac{(2n)!}{k!\,(2n-k)!}=2n\dfrac{(2n-1)!}{(k-1)!\,(2n-k)!}=2nC_{2n-1}^{k-1}$.
+
+Do đó tổng bằng $2n\left(C_{2n-1}^0+C_{2n-1}^1+\cdots+C_{2n-1}^{n-1}\right)$. Vì $C_{2n-1}^j=C_{2n-1}^{2n-1-j}$ nên tổng trong ngoặc bằng một nửa của $\sum_{j=0}^{2n-1}C_{2n-1}^j=2^{2n-1}$, tức là $2^{2n-2}$.
+
+Vậy tổng bằng $n\cdot2^{2n-1}$. Phương trình $n\cdot2^{2n-1}=2^{68}$: vế trái tăng theo $n$ và $n=32$ cho $2^5\cdot2^{63}=2^{68}$. Vậy $n=32$.}
+\end{ex}

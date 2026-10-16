@@ -1,0 +1,56 @@
+%% ma: L12-B17-0010
+%% lop: 12
+%% chuong: 5
+%% bai: 17
+%% dang: 12.17.7
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần II Câu 2"
+%% kien_thuc: "Bài 7 (tọa độ trong không gian), Bài 17 (phương trình mặt cầu)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.17.7 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc SSSĐ đúng. Đề gốc ghi hình hộp chữ nhật qua hình vẽ; bản kho ghi tường minh kích thước OA = 4, OC = 10, OM = 4 đọc từ hình (AB = 10, BC = 4, NA = 4). Ý c) đề gốc viết \"cách đèn ít nhất là 60 cm\", được diễn đạt lại thành \"khoảng cách nhỏ nhất từ đỉnh đầu đến đèn là 60 cm\" cho rõ nghĩa; khoảng cách đúng là 90 cm nên vẫn Sai. Bỏ ảnh cánh cửa trên tường trong hình gốc (không có dữ kiện toán)."
+\begin{ex}
+Một căn phòng khách có hình dạng là hình hộp chữ nhật $OABC.MNPQ$ được gắn trong hệ trục tọa độ $Oxyz$ với $A\in Ox$, $C\in Oy$, $M\in Oz$ và $OA=4\,\mathrm m$, $OC=10\,\mathrm m$, $OM=4\,\mathrm m$ (đơn vị trên mỗi trục là mét, hình bên). Coi mặt sàn nằm trên mặt phẳng $(Oxy)$. Theo thiết kế, chủ nhà muốn trang trí một đèn pha lê hình cầu có bán kính $15$ cm được nối với trần nhà ở vị trí điểm $H$ bởi một dây dài $1$ m ($H$ là trung điểm của $EF$, với $E\in NP$, $F\in MQ$, $EF\parallel PQ$ và $QF=4\,\mathrm m$).
+\begin{center}
+\begin{tikzpicture}[x={(-.5cm,-.25cm)},y={(.68cm,0cm)},z={(0cm,.68cm)}]
+  \coordinate (O) at (0,0,0);\coordinate (A) at (4,0,0);\coordinate (B) at (4,10,0);\coordinate (C) at (0,10,0);
+  \coordinate (M) at (0,0,4);\coordinate (N) at (4,0,4);\coordinate (P) at (4,10,4);\coordinate (Q) at (0,10,4);
+  \coordinate (E) at (4,6,4);\coordinate (F) at (0,6,4);\coordinate (H) at (2,6,4);\coordinate (I) at (2,6,2.85);
+  \fill[gray!12] (O)--(A)--(B)--(C)--cycle;
+  \draw (A)--(B)--(C) (N)--(P)--(Q)--(M)--cycle (A)--(N) (B)--(P) (C)--(Q);
+  \draw[khuat] (O)--(A) (O)--(C) (O)--(M);
+  \draw (E)--(F);
+  \draw (H)--(I);
+  \fill[gray!55] (I) circle (.1cm);
+  \draw (I) circle (.1cm);
+  \foreach \p/\d in {O/below right,A/below right,B/below right,C/below right,M/above left,N/left,P/above right,Q/above right,E/below left,F/above,H/above right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+  \node[below right,font=\footnotesize,inner sep=1pt] at (I) {$I$};
+  \draw[truc] (M)--(0,0,5) node[above,font=\small]{$z$};
+  \draw[truc] (C)--(0,11.5,0) node[right,font=\small]{$y$};
+  \draw[truc] (A)--(5,0,0) node[left,font=\small]{$x$};
+  \node[font=\footnotesize,below] at ($(A)!.5!(B)$) {$10\,\mathrm m$};
+  \node[font=\footnotesize,left] at ($(A)!.5!(N)$) {$4\,\mathrm m$};
+  \node[font=\footnotesize,right] at ($(B)!.5!(C)+(0,.2,0)$) {$4\,\mathrm m$};
+  \node[font=\footnotesize,above] at ($(F)!.5!(Q)$) {$4\,\mathrm m$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Cao độ tâm $I$ của đèn pha lê hình cầu là $3$.}
+{Phương trình mặt cầu của đèn pha lê là $(x-2)^2+(y-6)^2+(z-3)^2=0{,}0225$.}
+{Một người cao $1{,}8$ m đi ngang qua phía dưới thì khoảng cách nhỏ nhất từ đỉnh đầu người đó đến đèn là $60$ cm.}
+{\True Tia sáng từ tâm đèn chiếu ra cắt sàn nhà tại $K$. Khoảng cách xa nhất từ $K$ tới $B$ là khoảng $10{,}77$ m (kết quả làm tròn đến hàng phần trăm).}
+\loigiai{Từ hình vẽ: $O(0;0;0)$, $A(4;0;0)$, $C(0;10;0)$, $B(4;10;0)$, $M(0;0;4)$, $Q(0;10;4)$. Vì $QF=4$ và $F\in MQ$ nên $F(0;6;4)$; $E\in NP$ với $EF\parallel PQ$ nên $E(4;6;4)$; trung điểm $H(2;6;4)$.
+
+Dây dài $1$ m, bán kính đèn $0{,}15$ m, nên tâm $I$ cách trần $1+0{,}15=1{,}15$ m: $I(2;6;2{,}85)$.
+
+a) Cao độ của $I$ là $2{,}85\ne3$. Sai.
+
+b) Phương trình mặt cầu: $(x-2)^2+(y-6)^2+(z-2{,}85)^2=0{,}0225$, khác phương trình đã cho. Sai.
+
+c) Điểm thấp nhất của đèn có cao độ $2{,}85-0{,}15=2{,}7$ m; khoảng cách nhỏ nhất đến đỉnh đầu người cao $1{,}8$ m là $2{,}7-1{,}8=0{,}9$ m $=90$ cm $\ne60$ cm. Sai.
+
+d) Điểm $K$ nằm trong hình chữ nhật sàn $OABC$, nên $BK$ lớn nhất khi $K\equiv O$: $BO=\sqrt{4^2+10^2}=2\sqrt{29}\approx10{,}77$ m. Đúng.}
+\end{ex}

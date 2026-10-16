@@ -1,0 +1,30 @@
+%% ma: L12-B03-0014
+%% lop: 12
+%% chuong: 1
+%% bai: 3
+%% dang: 12.3.11
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 16-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D16, MỖI NGÀY 1 ĐỀ - Đề số 16), Phần II Câu 1"
+%% kien_thuc: "Bài 1 (đơn điệu), Bài 3 (tiệm cận đứng), đạo hàm hàm lôgarit (Lớp 11 Bài 32), phương trình lượng giác (Lớp 11 Bài 4)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.3.11 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ĐSĐS đúng. Xếp ở Bài 3 vì ý b) dùng tiệm cận. Ý d) mức VD (phân vân VD/VDC chọn mức thấp)."
+\begin{ex}
+Xét hàm số $f(x)=x-\dfrac1x+2\ln x$. Khi đó:
+\choiceTF
+{\True Hàm số $y=f(x)$ đồng biến trên tập xác định của nó.}
+{Đồ thị hàm số $y=x-\dfrac1x+2\ln x$ không có đường tiệm cận.}
+{\True Hàm số $f(x)$ thỏa mãn hệ thức $f\left(\dfrac1x\right)=-f(x)$, $\forall x\in(0;+\infty)$.}
+{Phương trình $f(\sin x+2)+f\left(\dfrac1{\cos x+2}\right)=0$ có ba nghiệm phân biệt thuộc đoạn $[0;2\pi]$.}
+\loigiai{Tập xác định $D=(0;+\infty)$.
+
+a) $f'(x)=1+\dfrac1{x^2}+\dfrac2x=\left(1+\dfrac1x\right)^2>0$ với mọi $x>0$ nên hàm số đồng biến trên $(0;+\infty)$. Đúng.
+
+b) $\lim_{x\to0^+}f(x)=-\infty$ (vì $-\dfrac1x\to-\infty$ và $2\ln x\to-\infty$) nên đồ thị có tiệm cận đứng $x=0$. Sai.
+
+c) $f\left(\dfrac1x\right)=\dfrac1x-x+2\ln\dfrac1x=-\left(x-\dfrac1x+2\ln x\right)=-f(x)$. Đúng.
+
+d) Vì $\sin x+2\in[1;3]$ và $\cos x+2\in[1;3]$ nên các biểu thức đều xác định. Theo c), $f\left(\dfrac1{\cos x+2}\right)=-f(\cos x+2)$, nên phương trình trở thành $f(\sin x+2)=f(\cos x+2)$. Do $f$ đồng biến nên $\sin x+2=\cos x+2\Leftrightarrow\tan x=1\Leftrightarrow x=\dfrac\pi4+k\pi$. Trên $[0;2\pi]$ có hai nghiệm $x=\dfrac\pi4$, $x=\dfrac{5\pi}4$. Sai.}
+\end{ex}
