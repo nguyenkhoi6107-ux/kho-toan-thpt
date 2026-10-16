@@ -1,0 +1,30 @@
+%% ma: L12-B19-0023
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.9
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần II Câu 4"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần, công thức Bayes); Bài 30 lớp 11 (nhân xác suất độc lập)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.19.9 đề xuất (kiểm tra sản phẩm qua hai trạm độc lập: xác suất toàn phần và Bayes, dạng Đúng/Sai)."
+%% ghi_chu: "Đáp án gốc SĐĐĐ đúng (kiểm bằng sympy). Ý a) nói về xác suất có điều kiện của một phế phẩm (0,0006), không phải xác suất xuất hiện phế phẩm ngoài thị trường (3.10^-5), nên khẳng định 0,006 sai. Bỏ ảnh dây chuyền kiểm tra (ảnh trang trí)."
+\begin{ex}
+Một xí nghiệp sản xuất sản phẩm có tỉ lệ phế phẩm là $5\%$. Mỗi sản phẩm sau khi sản xuất đều phải trải qua hai trạm kiểm tra độc lập. Cho biết ở trạm thứ nhất, xác suất nhận biết đúng chính phẩm là $0{,}9$; xác suất không nhận biết được phế phẩm là $0{,}03$. Còn ở trạm thứ hai, xác suất nhận biết đúng chính phẩm là $0{,}95$; xác suất không nhận biết được phế phẩm là $0{,}02$. Nếu cả hai trạm kiểm tra đều coi là chính phẩm thì sản phẩm được đưa ra thị trường.
+\choiceTF
+{Xác suất một phế phẩm được đưa ra thị trường bằng $0{,}006$.}
+{\True Xác suất một chính phẩm bị loại trong quá trình kiểm tra bằng $0{,}145$.}
+{\True Xác suất một sản phẩm được đưa ra thị trường là $0{,}81228$.}
+{\True Xác suất một sản phẩm của xí nghiệp đã đưa ra thị trường là phế phẩm xấp xỉ $3{,}7\cdot10^{-5}$.}
+\loigiai{Gọi $A$: ``sản phẩm là phế phẩm'', $\overline A$: ``sản phẩm là chính phẩm'', $T$: ``sản phẩm được đưa ra thị trường''. $P(A)=0{,}05$.
+
+a) $P(T\mid A)=0{,}03\cdot0{,}02=0{,}0006$ (xác suất một phế phẩm được đưa ra thị trường). Sai.
+
+b) $P(T\mid\overline A)=0{,}9\cdot0{,}95=0{,}855$, nên xác suất một chính phẩm bị loại là $1-0{,}855=0{,}145$. Đúng.
+
+c) $P(T)=P(A)P(T\mid A)+P(\overline A)P(T\mid\overline A)=0{,}05\cdot0{,}0006+0{,}95\cdot0{,}855=0{,}81228$. Đúng.
+
+d) $P(A\mid T)=\dfrac{0{,}05\cdot0{,}0006}{0{,}81228}\approx3{,}7\cdot10^{-5}$. Đúng.}
+\end{ex}

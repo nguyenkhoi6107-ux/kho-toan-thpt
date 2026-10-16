@@ -1,0 +1,42 @@
+%% ma: L12-B10-0007
+%% lop: 12
+%% chuong: 3
+%% bai: 10
+%% dang: 12.10.1
+%% loai: DS
+%% muc: [TH, VD, VD, VD]
+%% dap_an: "SSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần II Câu 3"
+%% kien_thuc: "Lớp 11 Bài 9 (số trung bình của mẫu ghép nhóm), Lớp 12 Bài 10 (phương sai, độ lệch chuẩn của mẫu ghép nhóm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Cùng ý tưởng dạng 12.10.1 (so sánh độ lệch chuẩn của hai mẫu ghép nhóm), có thêm trung bình và phương sai. Đáp án gốc SSSĐ đúng (sympy: trung bình 6,922 và 6,952; phương sai 0,0746 và 0,0632). Bỏ ảnh vận động viên nhảy xa (ảnh trang trí)."
+\begin{ex}
+Kết quả $40$ lần nhảy xa của hai vận động viên (VĐV) Hùng và Đạt được lần lượt thống kê trong bảng $1$ và bảng $2$ dưới đây (đơn vị: mét).
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+\multicolumn{6}{|c|}{Bảng 1 (VĐV Hùng)}\\\hline
+Nhóm & $[6{,}22;6{,}46)$ & $[6{,}46;6{,}70)$ & $[6{,}70;6{,}94)$ & $[6{,}94;7{,}18)$ & $[7{,}18;7{,}42)$\\\hline
+Tần số & $3$ & $7$ & $5$ & $20$ & $5$\\\hline
+\end{tabular}
+\vskip 4pt
+\begin{tabular}{|c|c|c|c|c|c|}\hline
+\multicolumn{6}{|c|}{Bảng 2 (VĐV Đạt)}\\\hline
+Nhóm & $[6{,}22;6{,}46)$ & $[6{,}46;6{,}70)$ & $[6{,}70;6{,}94)$ & $[6{,}94;7{,}18)$ & $[7{,}18;7{,}42)$\\\hline
+Tần số & $2$ & $5$ & $8$ & $19$ & $6$\\\hline
+\end{tabular}
+\end{center}
+\choiceTF
+{Trung bình kết quả $40$ lần nhảy xa của vận động viên Hùng tốt hơn vận động viên Đạt.}
+{Phương sai của mẫu số liệu biểu thị kết quả nhảy xa của vận động viên Hùng khoảng $0{,}08$ (kết quả làm tròn đến hàng phần trăm).}
+{Độ lệch chuẩn của mẫu số liệu biểu thị kết quả nhảy xa của vận động viên Đạt khoảng $0{,}06$ (kết quả làm tròn đến hàng phần trăm).}
+{\True Nếu so sánh theo độ lệch chuẩn thì vận động viên Đạt có kết quả nhảy xa ổn định hơn vận động viên Hùng.}
+\loigiai{Giá trị đại diện các nhóm: $6{,}34;\ 6{,}58;\ 6{,}82;\ 7{,}06;\ 7{,}30$.
+
+a) $\bar x_H=\dfrac{3\cdot6{,}34+7\cdot6{,}58+5\cdot6{,}82+20\cdot7{,}06+5\cdot7{,}30}{40}=6{,}922$; $\bar x_Đ=6{,}952$. Trung bình của Hùng nhỏ hơn nên không tốt hơn. Sai.
+
+b) $s_H^2=\dfrac1{40}\sum n_ix_i^2-\bar x_H^2\approx0{,}0746\approx0{,}07\ne0{,}08$. Sai.
+
+c) $s_Đ^2\approx0{,}0632$, $s_Đ\approx0{,}25\ne0{,}06$ ($0{,}06$ là phương sai, không phải độ lệch chuẩn). Sai.
+
+d) $s_H\approx0{,}273>s_Đ\approx0{,}251$ nên kết quả của Đạt ổn định hơn. Đúng.}
+\end{ex}

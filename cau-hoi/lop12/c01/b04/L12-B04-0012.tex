@@ -1,0 +1,29 @@
+%% ma: L12-B04-0012
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.5
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần I Câu 4"
+%% kien_thuc: "Bài 3 (tiệm cận), Bài 4 (nhận dạng đồ thị hàm phân thức bậc nhất trên bậc nhất)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng (không trùng hoàn toàn) với L12-B04-0005, nhập vào cùng dạng 12.4.5. Đáp án gốc D đúng. Hình vẽ lại bằng y = (x+2)/(x+1) theo tiệm cận x = -1, y = 1 và giao điểm với hai trục."
+\begin{ex}
+Đường cong ở hình vẽ là đồ thị của hàm số nào trong các hàm số sau?
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+  \draw[phu] (-1,-3.4)--(-1,3.6);
+  \draw[phu] (-4.3,1)--(4.3,1);
+  \draw[truc] (-4.4,0)--(4.5,0) node[below]{$x$};
+  \draw[truc] (0,-3.5)--(0,3.8) node[left]{$y$};
+  \draw[thick,domain=-.62:4.2,samples=60,smooth] plot (\x,{(\x+2)/(\x+1)});
+  \draw[thick,domain=-4.2:-1.45,samples=60,smooth] plot (\x,{(\x+2)/(\x+1)});
+  \node[below right,font=\small] at (0,0) {$O$};
+  \node[above left,font=\small] at (0,1) {$1$};
+  \node[below,font=\small] at (-1,0) {$-1$};\end{tikzpicture}
+\end{center}
+\choice{$y=\dfrac{x-2}{x+1}$}{$y=\dfrac{x+2}{x-1}$}{$y=\dfrac{x-2}{x-1}$}{\True $y=\dfrac{x+2}{x+1}$}
+\loigiai{Đồ thị có tiệm cận đứng $x=-1$, tiệm cận ngang $y=1$ nên loại B, C. Đồ thị cắt trục tung tại điểm có tung độ lớn hơn $1$ (cụ thể $y(0)=2$) nên loại A, chọn D.}
+\end{ex}

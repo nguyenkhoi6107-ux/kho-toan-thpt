@@ -1,0 +1,31 @@
+%% ma: L12-B06-0012
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.6
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần I Câu 10"
+%% kien_thuc: "Bài 6 (tích vô hướng của hai vectơ, vuông góc trong không gian)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với L12-B06-0010 (cùng dạng 12.6.6: xét khẳng định sai về tích vô hướng trong hình chóp). Đáp án gốc C đúng (AC.SB = AB^2 khác 0). Hình dựng lại: đáy tam giác vuông tại B, SA vuông góc đáy."
+\begin{ex}
+Cho hình chóp $S.ABC$ có đáy là tam giác vuông tại $B$, cạnh bên $SA$ vuông góc với mặt phẳng đáy. Khẳng định nào sau đây sai?
+\begin{center}
+\begin{tikzpicture}[x={(.8cm,0cm)},y={(.64cm,.4cm)},z={(0cm,.6cm)}]
+  \coordinate (A) at (0,2,0);
+  \coordinate (B) at (0,0,0);
+  \coordinate (C) at (3,0,0);
+  \coordinate (S) at (0,2,3.2);
+  \draw[khuat] (A)--(B) (A)--(C) (A)--(S);
+  \draw (B)--(C) (B)--(S) (C)--(S);
+  \fill (S) circle (1pt) node[above,font=\footnotesize] {$S$};
+  \fill (A) circle (1pt) node[above left,font=\footnotesize] {$A$};
+  \fill (B) circle (1pt) node[below left,font=\footnotesize] {$B$};
+  \fill (C) circle (1pt) node[below right,font=\footnotesize] {$C$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{SA}\cdot\overrightarrow{BC}=0$}{$\overrightarrow{SA}\cdot\overrightarrow{AB}=0$}{\True $\overrightarrow{AC}\cdot\overrightarrow{SB}=0$}{$\overrightarrow{SB}\cdot\overrightarrow{BC}=0$}
+\loigiai{$SA\perp(ABC)$ nên $SA\perp BC$, $SA\perp AB$. $BC\perp AB$, $BC\perp SA$ nên $BC\perp(SAB)$, suy ra $BC\perp SB$. Còn $\overrightarrow{AC}\cdot\overrightarrow{SB}=\overrightarrow{AC}\cdot(\overrightarrow{SA}+\overrightarrow{AB})=\overrightarrow{AC}\cdot\overrightarrow{AB}=AB^2\ne0$ nên C sai.}
+\end{ex}

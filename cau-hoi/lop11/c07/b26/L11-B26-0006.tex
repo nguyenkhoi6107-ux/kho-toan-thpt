@@ -1,0 +1,34 @@
+%% ma: L11-B26-0006
+%% lop: 11
+%% chuong: 7
+%% bai: 26
+%% dang: 11.26.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần I Câu 3"
+%% kien_thuc: "Bài 23 (đường thẳng vuông góc với mặt phẳng), Bài 26 (khoảng cách từ điểm đến mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 11.26.4 đề xuất (khoảng cách từ đỉnh đáy đến mặt bên chứa cạnh vuông góc đáy, hình chóp đáy chữ nhật)."
+%% ghi_chu: "Đáp án gốc A đúng. Hình dựng lại từ dữ kiện đề (đáy hình chữ nhật AB = 2a, AD = 3a, SA = 5a vuông góc đáy)."
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình chữ nhật với $AB=2a,\ AD=3a$. Biết $SA$ vuông góc với mặt phẳng đáy và $SA=5a$. Khoảng cách từ điểm $C$ đến mặt phẳng $(SAB)$ bằng
+\begin{center}
+\begin{tikzpicture}[x={(.8cm,0cm)},y={(.64cm,.4cm)},z={(0cm,.6cm)}]
+  \coordinate (A) at (0,2,0);
+  \coordinate (B) at (0,0,0);
+  \coordinate (C) at (3,0,0);
+  \coordinate (D) at (3,2,0);
+  \coordinate (S) at (0,2,5);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(S);
+  \draw (B)--(C) (C)--(D) (B)--(S) (C)--(S) (D)--(S);
+  \fill (S) circle (1pt) node[above,font=\footnotesize] {$S$};
+  \fill (A) circle (1pt) node[above left,font=\footnotesize] {$A$};
+  \fill (B) circle (1pt) node[below left,font=\footnotesize] {$B$};
+  \fill (C) circle (1pt) node[below right,font=\footnotesize] {$C$};
+  \fill (D) circle (1pt) node[right,font=\footnotesize] {$D$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $3a$}{$2a$}{$a\sqrt{13}$}{$5a$}
+\loigiai{$BC\perp AB$, $BC\perp SA$ nên $BC\perp(SAB)$. Do đó $d(C,(SAB))=BC=AD=3a$.}
+\end{ex}

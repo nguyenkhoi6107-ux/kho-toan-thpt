@@ -1,0 +1,44 @@
+%% ma: L12-B06-0013
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.8
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần II Câu 1"
+%% kien_thuc: "Bài 6 (quy tắc hình bình hành, tổng vectơ trong không gian); Lớp 11 Bài 25 (góc nhị diện), Bài 26 (khoảng cách giữa hai đường thẳng chéo nhau), Bài 27 (thể tích khối chóp)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.6.8 đề xuất (hình chóp có SA vuông góc đáy hình vuông: thể tích, khoảng cách, tổng vectơ, góc nhị diện, dạng Đúng/Sai)."
+%% ghi_chu: "Đáp án gốc ĐSĐS đúng; ý d) gốc ghi 103,5 độ, giá trị đúng là 101,5 độ (cos = -1/5, kiểm bằng numpy) nên ý d) vẫn Sai. Hình dựng lại từ dữ kiện đề (đáy hình vuông, SA vuông góc đáy), chỉ vẽ minh họa, không ghi thêm số đo."
+\begin{ex}
+Cho hình chóp $SABCD$ có đáy $ABCD$ là hình vuông và $SA$ vuông góc với đáy, $SA=2a$, $AB=a$.
+\begin{center}
+\begin{tikzpicture}[x={(.8cm,0cm)},y={(.64cm,.4cm)},z={(0cm,.6cm)}]
+  \coordinate (A) at (0,2,0);
+  \coordinate (B) at (0,0,0);
+  \coordinate (C) at (2,0,0);
+  \coordinate (D) at (2,2,0);
+  \coordinate (S) at (0,2,4);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(S);
+  \draw (B)--(C) (C)--(D) (B)--(S) (C)--(S) (D)--(S);
+  \fill (S) circle (1pt) node[above,font=\footnotesize] {$S$};
+  \fill (A) circle (1pt) node[above left,font=\footnotesize] {$A$};
+  \fill (B) circle (1pt) node[below left,font=\footnotesize] {$B$};
+  \fill (C) circle (1pt) node[below right,font=\footnotesize] {$C$};
+  \fill (D) circle (1pt) node[right,font=\footnotesize] {$D$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Thể tích khối chóp $SABCD$ bằng $\dfrac{2a^3}{3}$.}
+{Khoảng cách giữa hai đường thẳng $SA$ và $BC$ bằng $\dfrac{2a}{\sqrt5}$.}
+{\True $\overrightarrow{SA}+\overrightarrow{SC}=\overrightarrow{SB}+\overrightarrow{SD}$.}
+{Số đo góc nhị diện $[B,SC,D]$ bằng $103{,}5^\circ$ (làm tròn đến hàng phần chục).}
+\loigiai{a) $V=\dfrac13\cdot a^2\cdot2a=\dfrac{2a^3}3$. Đúng.
+
+b) $AB\perp SA$, $AB\perp BC$ nên $AB$ là đoạn vuông góc chung của $SA$ và $BC$, suy ra $d(SA,BC)=AB=a\ne\dfrac{2a}{\sqrt5}$. Sai.
+
+c) Gọi $O$ là tâm hình vuông $ABCD$ thì $\overrightarrow{SA}+\overrightarrow{SC}=2\overrightarrow{SO}=\overrightarrow{SB}+\overrightarrow{SD}$. Đúng.
+
+d) $BD\perp(SAC)$ nên $BD\perp SC$. Kẻ $BH\perp SC$ tại $H$ thì $SC\perp(BHD)$, do đó $\widehat{BHD}$ là góc phẳng nhị diện $[B,SC,D]$. Tam giác $SBC$ vuông tại $B$ ($BC\perp(SAB)$) có $SB=a\sqrt5$, $SC=a\sqrt6$ nên $BH=\dfrac{SB\cdot BC}{SC}=\dfrac{a\sqrt5}{\sqrt6}=DH$. Ta có $\cos\widehat{BHD}=\dfrac{BH^2+DH^2-BD^2}{2BH\cdot DH}=\dfrac{\frac56+\frac56-2}{2\cdot\frac56}a^2\!\!\Big/a^2=-\dfrac15$, suy ra $\widehat{BHD}\approx101{,}5^\circ$. Khẳng định ($103{,}5^\circ$) sai.}
+\end{ex}

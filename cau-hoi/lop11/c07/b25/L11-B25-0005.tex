@@ -1,0 +1,43 @@
+%% ma: L11-B25-0005
+%% lop: 11
+%% chuong: 7
+%% bai: 25
+%% dang: 11.25.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "146"
+%% nguon: "(NBV)-ĐỀ SỐ 15-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D15, MỖI NGÀY 1 ĐỀ - Đề số 15), Phần III Câu 2"
+%% kien_thuc: "Bài 25 (góc giữa mặt bên và mặt đáy của hình chóp tứ giác đều), Bài 11 (diện tích hình chóp ở lớp dưới)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với L11-B25-0002 (cùng dạng 11.25.2: kim tự tháp Memphis, góc giữa mặt bên và mặt đáy); câu này tính chiều cao từ diện tích toàn phần và độ dốc. Đáp án gốc 146 đúng (sympy: a = 162,02 m, h = 145,81 m). Hình dựng lại: chóp tứ giác đều, M là trung điểm BC, O là tâm đáy, vẽ minh họa không theo tỉ lệ. Bỏ ảnh chụp kim tự tháp (ảnh đời sống)."
+\begin{ex}
+Độ dốc của mái nhà là tang của góc tạo bởi mái nhà đó với mặt phẳng nằm ngang. Cho biết kim tự tháp Memphis tại bang Tennessee (Mỹ) có dạng hình chóp tứ giác đều. Biết rằng diện tích để lát tất cả các mặt của kim tự tháp bằng $80300\ \mathrm m^2$ (gồm mặt bên và đáy) và độ dốc mặt bên kim tự tháp bằng $\dfrac95$. Tính chiều cao của kim tự tháp (làm tròn đến hàng đơn vị, đơn vị mét).
+\begin{center}
+\begin{tikzpicture}[x={(.8cm,0cm)},y={(.64cm,.4cm)},z={(0cm,.6cm)}]
+  \coordinate (A) at (0,3,0);
+  \coordinate (B) at (0,0,0);
+  \coordinate (C) at (3,0,0);
+  \coordinate (D) at (3,3,0);
+  \coordinate (S) at (1.5,1.5,3.6);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(S);
+  \draw (B)--(C) (C)--(D) (B)--(S) (C)--(S) (D)--(S);
+  \coordinate (O) at (1.5,1.5,0);
+  \coordinate (M) at (1.5,0,0);
+  \draw[khuat] (S)--(O) (O)--(M);
+  \draw (S)--(M);
+  \fill (O) circle (1pt) node[above right,font=\footnotesize] {$O$};
+  \fill (M) circle (1pt) node[below,font=\footnotesize] {$M$};
+  \fill (S) circle (1pt) node[above,font=\footnotesize] {$S$};
+  \fill (A) circle (1pt) node[below,font=\footnotesize] {$A$};
+  \fill (B) circle (1pt) node[below left,font=\footnotesize] {$B$};
+  \fill (C) circle (1pt) node[below right,font=\footnotesize] {$C$};
+  \fill (D) circle (1pt) node[right,font=\footnotesize] {$D$};
+\end{tikzpicture}
+\end{center}
+\shortans{146}
+\loigiai{Gọi cạnh đáy là $a$, $O$ là tâm đáy, $M$ là trung điểm $BC$. Góc giữa mặt bên $(SBC)$ và đáy là $\widehat{SMO}$, nên $\tan\widehat{SMO}=\dfrac{SO}{OM}=\dfrac95$, suy ra $SO=h=\dfrac95\cdot\dfrac a2=0{,}9a$.
+
+$SM=\sqrt{h^2+\dfrac{a^2}4}=a\sqrt{1{,}06}$. Diện tích toàn phần: $a^2+4\cdot\dfrac12\cdot a\cdot SM=a^2\left(1+2\sqrt{1{,}06}\right)=80300$, suy ra $a\approx162{,}02$ m.
+
+Chiều cao $h=0{,}9a\approx145{,}8\approx146$ m.}
+\end{ex}
