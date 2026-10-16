@@ -1,0 +1,50 @@
+%% ma: L12-B12-0020
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.12
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần II Câu 2"
+%% kien_thuc: "Bài 12 (tích phân, quãng đường từ hàm vận tốc), Bài 11 (nguyên hàm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.12.12 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc ĐĐSĐ đúng (giải độc lập: v = -t^2+6t trên [0;2], v = -8t+24 trên [2;6]; quãng đường 148/3, độ dời -68/3). Hiểu tốc độ là |v|. Hình dựng lại theo công thức; phần parabol kéo dài sau t = 2 vẽ nét đứt như hình gốc."
+\begin{ex}
+Một chất điểm chuyển động trên trục số trong $6$ giây với vận tốc $v$ ($\mathrm{m/s}$) phụ thuộc vào thời gian $t$ (giây) có đồ thị như hình bên. Trong khoảng thời gian $2$ giây từ khi bắt đầu chuyển động, đồ thị là một phần đường parabol có đỉnh $I(3;9)$ và có trục đối xứng song song với trục tung. Trong khoảng thời gian còn lại, chất điểm chuyển động trên một đường thẳng có hệ số góc $-8$ và đi qua điểm $M(3;0)$.
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.13cm]
+  \draw[truc] (-.4,0)--(7,0) node[below,font=\small]{$t$};
+  \draw[truc] (0,-26)--(0,12) node[left,font=\small]{$v$};
+  \draw[dashed,gray] plot[domain=2:6,samples=40] (\x,{-\x*\x+6*\x});
+  \draw[thick] plot[domain=0:2,samples=30] (\x,{-\x*\x+6*\x});
+  \draw[thick] (2,8)--(6,-24);
+  \draw[phu] (0,9)--(3,9) (3,9)--(3,0) (6,0)--(6,-24);
+  \fill (3,9) circle (1pt) node[above right,font=\footnotesize] {$I$};
+  \fill (2,8) circle (1pt);
+  \fill (3,0) circle (1pt) node[above right,font=\footnotesize,xshift=1pt] {$M$};
+  \draw (2,1.3)--(2,-1.3) node[below,font=\footnotesize] {$2$};
+  \draw (6,1.3)--(6,-1.3) node[above right,font=\footnotesize,inner sep=1pt] {$6$};
+  \node[below left,font=\footnotesize] at (3,-1.3) {$3$};
+  \node[left,font=\footnotesize] at (0,9) {$9$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Phương trình $(P)\colon y=v(t)=-t^2+6t$, $t\in[0;2]$.}
+{\True Tốc độ của chất điểm tại thời điểm $t=5$ giây là $16\ \mathrm{m/s}$.}
+{Quãng đường mà chất điểm di chuyển được trong $6$ giây là $36$ m.}
+{\True Khoảng cách của chất điểm so với gốc tọa độ sau $6$ giây là $\dfrac{68}{3}\ \mathrm m$.}
+\loigiai{Parabola có đỉnh $I(3;9)$ nên $v=-(t-3)^2+9=-t^2+6t$ với $t\in[0;2]$. Đường thẳng có hệ số góc $-8$ qua $M(3;0)$: $v=-8(t-3)=-8t+24$ với $t\in[2;6]$ (tại $t=2$ cả hai công thức cùng cho $v=8$).
+
+a) Đúng.
+
+b) $v(5)=-16$, tốc độ là $|v(5)|=16\ \mathrm{m/s}$. Đúng.
+
+c) $v\ge0$ trên $[0;3]$ và $v\le0$ trên $[3;6]$ nên quãng đường
+\[s=\int_0^2(-t^2+6t)\,\mathrm dt+\int_2^3(-8t+24)\,\mathrm dt+\int_3^6(8t-24)\,\mathrm dt=\dfrac{28}3+4+36=\dfrac{148}3\ne36.\]
+Sai.
+
+d) Độ dời $\displaystyle\int_0^6v\,\mathrm dt=\dfrac{28}3+4-36=-\dfrac{68}3$, nên khoảng cách đến gốc tọa độ là $\dfrac{68}3$ m. Đúng.}
+\end{ex}

@@ -1,0 +1,29 @@
+%% ma: L12-B19-0026
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.2
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần II Câu 4"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện), Bài 19 (công thức xác suất toàn phần và công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc ĐSĐĐ đúng (giải độc lập: P(đỏ ở hộp hai) = 41/99). Trùng ý tưởng với dạng đã duyệt 12.19.2 (chuyển một vật giữa hai hộp rồi lấy ra), nhập chính thức. Bỏ ảnh trang trí hộp bút."
+\begin{ex}
+Có hai hộp bút, hộp thứ nhất đựng $5$ chiếc bút đỏ và $4$ chiếc bút xanh, hộp thứ hai đựng $4$ chiếc bút đỏ và $6$ chiếc bút xanh, tất cả những chiếc bút đều có cùng hình dạng, kích thước và khối lượng. Lấy ngẫu nhiên một chiếc bút từ hộp thứ nhất chuyển sang hộp thứ hai, sau đó lấy ngẫu nhiên một chiếc bút từ hộp thứ hai.
+\choiceTF
+{\True Xác suất để chiếc bút lấy từ hộp thứ nhất có màu đỏ là $\dfrac59$.}
+{Xác suất để chiếc bút được lấy ra từ hộp thứ hai là chiếc bút chuyển từ hộp thứ nhất sang là $\dfrac1{10}$.}
+{\True Xác suất để chiếc bút được lấy ra từ hộp thứ hai có màu đỏ và là chiếc bút được chuyển từ hộp thứ nhất sang là $\dfrac5{99}$.}
+{\True Xác suất để chiếc bút được lấy ra từ hộp thứ hai là chiếc bút được chuyển từ hộp thứ nhất sang, biết rằng chiếc bút đó có màu đỏ là $\dfrac5{41}$.}
+\loigiai{Gọi $A$ là biến cố chiếc bút chuyển sang có màu đỏ, $T$ là biến cố chiếc bút lấy ở hộp thứ hai là chiếc bút được chuyển sang, $R$ là biến cố chiếc bút lấy ở hộp thứ hai có màu đỏ.
+
+a) $P(A)=\dfrac59$. Đúng.
+
+b) Sau khi chuyển, hộp thứ hai có $11$ chiếc bút nên $P(T)=\dfrac1{11}\ne\dfrac1{10}$. Sai.
+
+c) $P(T\cap R)=P(A)\cdot\dfrac1{11}=\dfrac59\cdot\dfrac1{11}=\dfrac5{99}$. Đúng.
+
+d) Nếu chiếc bút chuyển sang màu đỏ thì hộp hai có $5$ bút đỏ trong $11$ bút; nếu màu xanh thì có $4$ bút đỏ. Do đó $P(R)=\dfrac59\cdot\dfrac5{11}+\dfrac49\cdot\dfrac4{11}=\dfrac{41}{99}$ và $P(T\mid R)=\dfrac{P(T\cap R)}{P(R)}=\dfrac{5/99}{41/99}=\dfrac5{41}$. Đúng.}
+\end{ex}

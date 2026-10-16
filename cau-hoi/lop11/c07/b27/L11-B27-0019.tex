@@ -1,0 +1,41 @@
+%% ma: L11-B27-0019
+%% lop: 11
+%% chuong: 7
+%% bai: 27
+%% dang: 11.27.15
+%% loai: TLN
+%% muc: VD
+%% dap_an: "360"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần III Câu 2"
+%% kien_thuc: "Bài 27 (thể tích khối lăng trụ), thể tích khối nước có mặt cắt là hình tam giác"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.27.15 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 360 đúng (dung tích 144 m3, 75% là 108 m3; đang có 18 m3; cần bơm thêm 90 m3 với tốc độ 0,25 m3/phút). Hiểu 'có 1 mét nước ở đầu sâu' là mực nước sâu 1 m tại đầu sâu. Hình dựng lại theo số đo của đề; nét khuất vẽ đứt. Đề gốc ghi 'Sở Hà Tĩnh 2025'."
+\begin{ex}
+Một hồ bơi được chế tạo từ một khối hộp chữ nhật có chiều dài $12$ mét, rộng $6$ mét, sâu $1$ mét ở đầu nông và sâu $3$ mét ở đầu sâu (như hình vẽ). Nước được bơm vào hồ bơi với tốc độ $0{,}25$ mét khối mỗi phút. Biết rằng trong bể có $1$ mét nước ở đầu sâu. Để lượng nước đạt $75\%$ dung tích bể bơi thì cần bơm trong thời gian bao lâu? (đơn vị tính bằng phút).
+\begin{center}
+\begin{tikzpicture}[x={(.42cm,0cm)},y={(.13cm,.09cm)},z={(0cm,.5cm)}]
+  \fill[blue!25] (0,0,-3)--(0,0,-2)--(6,0,-2)--cycle;
+  \fill[blue!10] (0,0,-2)--(6,0,-2)--(6,6,-2)--(0,6,-2)--cycle;
+  \draw (0,0,0)--(12,0,0)--(12,0,-1)--(0,0,-3)--cycle;
+  \draw (0,0,0)--(0,6,0)--(12,6,0)--(12,0,0);
+  \draw (12,6,0)--(12,6,-1)--(12,0,-1);
+  \draw[khuat] (0,6,0)--(0,6,-3)--(12,6,-1) (0,0,-3)--(0,6,-3);
+  \draw[thin] (0,0,-2)--(6,0,-2);
+  \draw[<->] (-.9,0,0)--(-.9,0,-3) node[midway,left,font=\small]{$3$ m};
+  \draw[phu] (12,0,0)--(14,0,0) (12,0,-1)--(14,0,-1);
+  \draw[<->] (14,0,0)--(14,0,-1) node[midway,right,font=\small]{$1$ m};
+  \draw[<->] (0,0,-3.9)--(12,0,-3.9) node[midway,below,font=\small]{$12$ m};
+  \draw[phu] (12,0,0)--(12,0,.9) (12,6,0)--(12,6,.9);
+  \draw[<->] (12,0,.9)--(12,6,.9) node[midway,above left,font=\small]{$6$ m};
+  \draw[->] (1.4,3,1.5)--(1.4,3,.15);
+  \node[above,font=\small] at (1.4,3,1.5) {$\dfrac14\ \mathrm{m^3/phút}$};
+\end{tikzpicture}
+\end{center}
+\shortans{360}
+\loigiai{Mặt cắt dọc của hồ là hình thang vuông có đáy $3$ m và $1$ m, đường cao $12$ m; hồ là hình lăng trụ có chiều cao $6$ m. Dung tích $V=\dfrac{3+1}2\cdot12\cdot6=144\ \mathrm{m^3}$; $75\%$ dung tích là $108\ \mathrm{m^3}$.
+
+Đáy hồ dốc lên $2$ m trên chiều dài $12$ m, tức dốc lên $1$ m trên mỗi $6$ m. Nước sâu $1$ m ở đầu sâu thì mặt nước gặp đáy hồ cách đầu sâu $6$ m; phần nước hiện có là lăng trụ có đáy là tam giác vuông cạnh $1$ m và $6$ m, chiều cao $6$ m, thể tích $\dfrac12\cdot1\cdot6\cdot6=18\ \mathrm{m^3}$.
+
+Lượng nước cần bơm thêm là $108-18=90\ \mathrm{m^3}$, thời gian $\dfrac{90}{0{,}25}=360$ phút.}
+\end{ex}

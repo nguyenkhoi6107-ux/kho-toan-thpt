@@ -1,0 +1,34 @@
+%% ma: L12-B01-0028
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.19
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần I Câu 4"
+%% kien_thuc: "Bài 1 (quan hệ giữa dấu của f'(x) với tính đơn điệu và cực trị của f(x))"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.1.19 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc D đúng. Hình gốc có các vạch x=-3 và x=1 (hoành độ gần đúng của điểm cực trị của đồ thị f') nhưng đề không dùng; bản kho vẽ f'(x)=-(x+5)(x+1)(x-3)/20 và chỉ ghi các giao điểm -5, -1, 3 với trục hoành."
+\begin{ex}
+Cho hàm số $y=f(x)$ có đạo hàm trên $\mathbb R$ và hàm số $y=f'(x)$ có đồ thị như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.9cm]
+  \draw[truc] (-6.3,0)--(4.6,0) node[below,font=\small]{$x$};
+  \draw[truc] (0,-1.6)--(0,2.1) node[right,font=\small]{$y$};
+  \draw[thick] plot[domain=-5.85:4.0,samples=80] (\x,{-(\x+5)*(\x+1)*(\x-3)/20});
+  \foreach \t in {-5,-1,3} \draw (\t,.1)--(\t,-.1);
+  \node[below left,font=\footnotesize,inner sep=1pt] at (-5,-.05) {$-5$};
+  \node[above left,font=\footnotesize,inner sep=1pt] at (-1,.05) {$-1$};
+  \node[below left,font=\footnotesize,inner sep=1pt] at (3,-.05) {$3$};
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[font=\small] at (-4.6,1.55) {$y=f'(x)$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây sai?
+\choice{Hàm số $y=f(x)$ nghịch biến trên $(-5;-1)$.}{Hàm số $y=f(x)$ đồng biến trên $(-1;3)$.}{Hàm số $y=f(x)$ đạt cực đại tại $x=-5$.}{\True Hàm số $y=f(x)$ đạt cực tiểu tại $x=3$.}
+\loigiai{Từ đồ thị: $f'(x)>0$ trên $(-\infty;-5)$ và $(-1;3)$; $f'(x)<0$ trên $(-5;-1)$ và $(3;+\infty)$.
+
+Hàm số nghịch biến trên $(-5;-1)$, đồng biến trên $(-1;3)$; $f'$ đổi dấu từ $+$ sang $-$ tại $x=-5$ và $x=3$ nên $f$ đạt cực đại tại hai điểm đó, đạt cực tiểu tại $x=-1$. Khẳng định D sai. Chọn D.}
+\end{ex}

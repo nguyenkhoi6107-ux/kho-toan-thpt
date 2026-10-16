@@ -1,0 +1,31 @@
+%% ma: L12-B16-0005
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "20"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần III Câu 6"
+%% kien_thuc: "Bài 14 (vectơ pháp tuyến của mặt phẳng, tích có hướng), Bài 16 (góc giữa hai mặt phẳng); tọa độ hóa (Bài 7, Bài 8)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc 20 đúng (giải độc lập: pháp tuyến (1;2;6), cos = 6/√41, góc ≈ 20,44°). Trùng ý tưởng với dạng đã duyệt 12.16.2 (góc giữa mặt phẳng nghiêng đặt trên ba cột và mặt phẳng nằm ngang), nhập chính thức. Hình dựng lại theo phép chiếu song song với đúng số đo."
+\begin{ex}
+Một phần thiết kế của một công trình đang xây dựng có dạng như hình bên, trong đó $ABCD$ là hình vuông cạnh $6$ m, $AM$, $BN$, $DP$ cùng vuông góc với $(ABCD)$, $AM=4$ m, $BN=3$ m, $DP=2$ m. Góc giữa hai mặt phẳng $(ABCD)$ và $(MNP)$ (làm tròn kết quả đến hàng đơn vị của độ) là $n^\circ$ với $n$ là số nguyên dương. Giá trị của $n$ là bao nhiêu?
+\begin{center}
+\begin{tikzpicture}[x={(.5cm,0cm)},y={(.22cm,.16cm)},z={(0cm,.5cm)}]
+  \coordinate (B) at (0,0,0);\coordinate (C) at (6,0,0);\coordinate (D) at (6,6,0);\coordinate (A) at (0,6,0);
+  \coordinate (M) at (0,6,4);\coordinate (N) at (0,0,3);\coordinate (P) at (6,6,2);
+  \draw (B)--(C)--(D) (B)--(N) (D)--(P) (M)--(N)--(P)--cycle;
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(M);
+  \foreach \p/\d in {M/above,N/left,P/right,A/above left,B/below left,C/below right,D/right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+\shortans{20}
+\loigiai{Chọn hệ trục $Oxyz$ với $A$ là gốc, $B(6;0;0)$, $D(0;6;0)$, $AM$ cùng hướng $Oz$: $M(0;0;4)$, $N(6;0;3)$, $P(0;6;2)$.
+
+$\overrightarrow{MN}=(6;0;-1)$, $\overrightarrow{MP}=(0;6;-2)$, $[\overrightarrow{MN},\overrightarrow{MP}]=(6;12;36)$ nên $(MNP)$ có vectơ pháp tuyến $\vec n=(1;2;6)$. Mặt phẳng $(ABCD)$ có vectơ pháp tuyến $\vec k=(0;0;1)$.
+
+$\cos\varphi=\dfrac{|\vec n\cdot\vec k|}{|\vec n|\cdot|\vec k|}=\dfrac6{\sqrt{41}}\approx0{,}937$, suy ra $\varphi\approx20{,}4^\circ$. Vậy $n=20$.}
+\end{ex}

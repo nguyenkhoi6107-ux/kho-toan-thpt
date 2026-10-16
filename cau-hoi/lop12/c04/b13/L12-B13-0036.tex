@@ -1,0 +1,42 @@
+%% ma: L12-B13-0036
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.18
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "49,1"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần III Câu 4"
+%% kien_thuc: "Bài 13 (thể tích khối tròn xoay), hàm số bậc ba (Bài 4)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.18 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 49,1 đúng (giải độc lập: r(h) = h^3/200 - 3h^2/10 + 9h/2 + 10, V = 39977.pi/2560 lít ≈ 49,06). Hình dựng lại đúng tỉ lệ theo hàm tìm được (1 cm trên giấy ứng với 10 cm); các đường kích thước theo số liệu đề. Bỏ nét trang trí (hoa văn, mặt phẳng minh họa) của hình gốc."
+\begin{ex}
+Xét phần đựng nước bên trong một lục bình có dạng mặt tròn xoay trong đó đường sinh là đường cong $(C)$ quay quanh trục $(d)$ như hình bên. Biết rằng $(C)$ là đường cong bậc ba; chiều cao phần đựng nước là $35$ cm; bán kính đáy phần đựng nước là $10$ cm; bán kính miệng phần đựng nước là $14{,}375$ cm; chỗ rộng nhất của phần đựng nước có bán kính $30$ cm; độ cao của phần đựng nước tính từ đáy đến chỗ rộng nhất là $10$ cm. Thể tích tối đa mà chiếc bình này đựng được là bao nhiêu lít? (kết quả làm tròn đến hàng phần chục)
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \def\r#1{((((#1)/200-0.3)*(#1)+4.5)*(#1)+10)/10}
+  \draw[truc] (0,-.7)--(0,4.5) node[above,font=\small]{$(d)$};
+  \draw[thick] plot[domain=0:35,samples=60] ({\r{\x}},{\x/10});
+  \draw[thick] plot[domain=0:35,samples=60] ({-\r{\x}},{\x/10});
+  \draw[thick] (0,3.5) ellipse (1.4375 and .3);
+  \draw[thick] (-1,0) arc[start angle=180,end angle=360,x radius=1,y radius=.2];
+  \draw[khuat] (1,0) arc[start angle=0,end angle=180,x radius=1,y radius=.2];
+  \draw[phu] (0,1)--(3,1);
+  \draw (0,0)--(1,0) (0,3.5)--(1.4375,3.5);
+  \fill (0,0) circle (1pt) (0,1) circle (1pt) (0,3.5) circle (1pt);
+  \node[below,font=\footnotesize] at (.75,-.15) {$10$ cm};
+  \node[above,font=\footnotesize] at (1.5,1) {$30$ cm};
+  \node[right,font=\footnotesize] at (1.5,3.5) {$14{,}375$ cm};
+  \node[right,font=\small] at (2.6,2.3) {$(C)$};
+  \draw[<->] (-3.5,0)--(-3.5,1) node[midway,left,font=\footnotesize]{$10$ cm};
+  \draw[<->] (-4.9,0)--(-4.9,3.5) node[midway,left,font=\footnotesize]{$35$ cm};
+  \draw[phu] (-4.9,0)--(-.9,0) (-4.9,3.5)--(-1.4,3.5) (-3.5,1)--(-3,1);
+\end{tikzpicture}
+\end{center}
+\shortans{49,1}
+\loigiai{Đặt trục $Oh$ trùng $(d)$, gốc tại tâm đáy; bán kính $r=f(h)=ah^3+bh^2+ch+d$ với $0\le h\le35$. Ta có $f(0)=10$ nên $d=10$; $f(10)=30$ và $f'(10)=0$ (chỗ rộng nhất); $f(35)=14{,}375$. Giải hệ ta được $a=\dfrac1{200}$, $b=-\dfrac3{10}$, $c=\dfrac92$:
+\[f(h)=\dfrac{h^3}{200}-\dfrac{3h^2}{10}+\dfrac{9h}2+10.\]
+Thể tích
+\[V=\pi\int_0^{35}f^2(h)\,\mathrm dh=\dfrac{39977\,000\pi}{2560}\ \mathrm{cm^3}\approx49059\ \mathrm{cm^3}\approx49{,}1\ \text{lít}.\]}
+\end{ex}

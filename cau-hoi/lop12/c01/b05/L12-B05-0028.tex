@@ -1,0 +1,41 @@
+%% ma: L12-B05-0028
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.19
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2460"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần III Câu 5"
+%% kien_thuc: "Bài 5 (ứng dụng đạo hàm: bài toán tối ưu trong thực tiễn)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.5.19 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc 2460 đúng (giải độc lập: min = 1100√5 ≈ 2459,67 tại A'M = 1000 m, kiểm bằng sympy). Hình dựng lại đúng tỉ lệ; vị trí M vẽ minh họa (không phải vị trí tối ưu). Giả thiết AA' và BB' vuông góc với bờ sông A'B' (đề gốc thể hiện bằng hình)."
+\begin{ex}
+Có hai xã cùng ở một bên bờ sông. Người ta đo được khoảng cách từ trung tâm $A$, $B$ của hai xã đó đến bờ sông lần lượt là $AA'=500\ \mathrm m$, $BB'=600\ \mathrm m$ và $A'B'=2200\ \mathrm m$. Các kĩ sư muốn xây một trạm cung cấp nước sạch nằm bên bờ sông cho người dân hai xã. Để tiết kiệm chi phí, kĩ sư cần phải chọn vị trí $M$ của trạm cung cấp nước sạch đó trên đoạn $A'B'$ sao cho tổng khoảng cách từ hai vị trí $A$, $B$ đến vị trí $M$ là nhỏ nhất. Hãy tìm giá trị nhỏ nhất của tổng khoảng cách đó (đơn vị: mét, kết quả làm tròn đến hàng đơn vị).
+\begin{center}
+\begin{tikzpicture}[x=.003cm,y=.003cm]
+  \fill[blue!12] (-250,0) rectangle (2450,-260);
+  \draw (-250,0)--(2450,0);
+  \draw (0,0)--(0,500) (2200,0)--(2200,600);
+  \draw (0,500)--(900,0)--(2200,600);
+  \draw[phu] (0,-120)--(2200,-120);
+  \draw[<->] (0,-120)--(2200,-120) node[midway,fill=blue!12,inner sep=1pt,font=\footnotesize]{$2200$ m};
+  \fill (0,500) circle (12) (2200,600) circle (12);
+  \node[left,font=\small] at (0,500) {$A$};
+  \node[right,font=\small] at (2200,600) {$B$};
+  \node[above left,font=\small] at (0,0) {$A'$};
+  \node[above right,font=\small] at (2200,0) {$B'$};
+  \node[above,font=\small] at (900,0) {$M$};
+  \fill (0,0) circle (12) (2200,0) circle (12) (900,0) circle (12);
+  \node[right,font=\footnotesize] at (0,250) {$500$ m};
+  \node[left,font=\footnotesize] at (2200,300) {$600$ m};
+\end{tikzpicture}
+\end{center}
+\shortans{2460}
+\loigiai{Đặt $A'M=x$ ($0\le x\le2200$). Tổng khoảng cách $f(x)=AM+MB=\sqrt{x^2+500^2}+\sqrt{(2200-x)^2+600^2}$.
+
+Lấy $B''$ đối xứng với $B$ qua bờ sông $A'B'$; khi đó $MB=MB''$ và $AM+MB=AM+MB''\ge AB''=\sqrt{2200^2+(500+600)^2}=1100\sqrt5$, dấu bằng khi $M$ thuộc $AB''$, tức $x=\dfrac{2200\cdot500}{1100}=1000$ (cũng là nghiệm của $f'(x)=0$).
+
+Vậy giá trị nhỏ nhất là $1100\sqrt5\approx2460$ (m).}
+\end{ex}

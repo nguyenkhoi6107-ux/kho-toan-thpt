@@ -1,0 +1,29 @@
+%% ma: L11-B26-0008
+%% lop: 11
+%% chuong: 7
+%% bai: 26
+%% dang: 11.26.6
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần I Câu 3"
+%% kien_thuc: "Bài 23 (đường thẳng vuông góc với mặt phẳng), Bài 26 (khoảng cách từ một điểm đến mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.26.6 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc C đúng. Hình dựng lại theo phép chiếu song song, nhìn từ phía trên: đỉnh B ở phía trước, cạnh AC khuất (nét đứt); không ghi ký hiệu góc vuông vì góc trên hình chiếu không còn vuông."
+\begin{ex}
+Cho hình lăng trụ đứng $ABC.A'B'C'$ có đáy $ABC$ là tam giác vuông cân tại $B$ và $AB=4a$.
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \coordinate (A) at (0,0);\coordinate (C) at (4,0);\coordinate (B) at (2,-1.1);
+  \coordinate (A') at (0,3);\coordinate (C') at (4,3);\coordinate (B') at (2,1.9);
+  \draw (A')--(C')--(C)--(B)--(A)--cycle (A')--(B')--(C') (B)--(B');
+  \draw[khuat] (A)--(C);
+  \foreach \p/\d in {A/left,C/right,B/below,A'/above left,C'/above right,B'/above}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+Khoảng cách từ $C$ đến mặt phẳng $(ABB'A')$ bằng
+\choice{$2a$}{$2\sqrt2\,a$}{\True $4a$}{$4\sqrt2\,a$}
+\loigiai{$CB\perp AB$ (tam giác $ABC$ vuông tại $B$) và $CB\perp BB'$ (lăng trụ đứng) nên $CB\perp(ABB'A')$. Do đó $d\bigl(C,(ABB'A')\bigr)=CB=AB=4a$. Chọn C.}
+\end{ex}

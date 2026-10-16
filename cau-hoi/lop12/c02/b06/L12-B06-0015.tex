@@ -1,0 +1,31 @@
+%% ma: L12-B06-0015
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.9
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 17-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D17, MỖI NGÀY 1 ĐỀ - Đề số 17), Phần I Câu 10"
+%% kien_thuc: "Bài 6 (tổng, hiệu hai vectơ; quy tắc hình bình hành; vectơ đối)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.9 chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án gốc D đúng (SB + SD = 2.SO). Hình dựng lại theo phép chiếu song song: SA, AB, AD khuất (nét đứt); hai đường chéo đáy và SO vẽ nét đứt. Không ghi ký hiệu góc vuông tại O."
+\begin{ex}
+Cho hình chóp đều $S.ABCD$, gọi $O$ là giao điểm của $AC$ và $BD$.
+\begin{center}
+\begin{tikzpicture}[y={(.5cm,.45cm)},z={(0cm,1cm)},scale=.9]
+  \coordinate (B) at (0,0,0);\coordinate (C) at (3,0,0);\coordinate (D) at (3,3,0);\coordinate (A) at (0,3,0);
+  \coordinate (O) at (1.5,1.5,0);\coordinate (S) at (1.5,1.5,3.2);
+  \draw (B)--(C)--(D)--(S)--cycle (S)--(C);
+  \draw[khuat] (A)--(B) (A)--(D) (S)--(A) (A)--(C) (B)--(D) (S)--(O);
+  \foreach \p/\d in {S/above,A/above left,B/below left,C/below right,D/right,O/below}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây sai?
+\choice{$\overrightarrow{AB}+\overrightarrow{CD}=\vec0$}{$\overrightarrow{OA}+\overrightarrow{OC}=\vec0$}{$\overrightarrow{AB}+\overrightarrow{AD}=\overrightarrow{AC}$}{\True $\overrightarrow{SB}+\overrightarrow{SD}=\overrightarrow{SO}$}
+\loigiai{$ABCD$ là hình vuông tâm $O$ nên $\overrightarrow{AB}=\overrightarrow{DC}$, suy ra $\overrightarrow{AB}+\overrightarrow{CD}=\vec0$ (A đúng); $O$ là trung điểm $AC$ nên $\overrightarrow{OA}+\overrightarrow{OC}=\vec0$ (B đúng); quy tắc hình bình hành cho $\overrightarrow{AB}+\overrightarrow{AD}=\overrightarrow{AC}$ (C đúng).
+
+$O$ là trung điểm $BD$ nên $\overrightarrow{SB}+\overrightarrow{SD}=2\overrightarrow{SO}\neq\overrightarrow{SO}$. Khẳng định D sai. Chọn D.}
+\end{ex}
