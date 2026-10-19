@@ -1,0 +1,27 @@
+%% ma: L12-B06-0016
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần I Câu 4"
+%% kien_thuc: "Bài 6 (vectơ trong không gian, quy tắc hình bình hành, độ dài vectơ trong hình lập phương)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc D đúng (A'C' - A'A = A'C' + AA' = AC', |AC'| = 2 căn 3). Trùng ý tưởng với dạng đã duyệt 12.6.2 (độ dài vectơ trong hình lập phương), nhập chính thức."
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $2$ (tham khảo hình bên dưới). Độ dài của vectơ $\vec u=\overrightarrow{A'C'}-\overrightarrow{A'A}$ bằng
+\begin{center}
+\begin{tikzpicture}[y={(.5cm,.45cm)},z={(0cm,1cm)},scale=.9]
+  \coordinate (A) at (0,2,0);\coordinate (B) at (2,2,0);\coordinate (C) at (2,0,0);\coordinate (D) at (0,0,0);
+  \coordinate (A') at (0,2,2);\coordinate (B') at (2,2,2);\coordinate (C') at (2,0,2);\coordinate (D') at (0,0,2);
+  \draw (D)--(C)--(C')--(D')--cycle (B)--(C) (B)--(B') (B')--(C') (A')--(B') (A')--(D');
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(A');
+  \foreach \p/\d in {A/above left,B/right,C/below right,D/below left,A'/above left,B'/above right,C'/below right,D'/above left}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+\end{tikzpicture}
+\end{center}
+\choice{$2\sqrt2$}{$\sqrt3$}{$2\sqrt6$}{\True $2\sqrt3$}
+\loigiai{Ta có $\vec u=\overrightarrow{A'C'}-\overrightarrow{A'A}=\overrightarrow{A'C'}+\overrightarrow{AA'}=\overrightarrow{AA'}+\overrightarrow{A'C'}=\overrightarrow{AC'}$. Do đó $|\vec u|=AC'=2\sqrt3$ (đường chéo của hình lập phương cạnh $2$). Chọn D.}
+\end{ex}

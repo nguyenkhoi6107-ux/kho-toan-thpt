@@ -1,0 +1,45 @@
+%% ma: L12-B13-0038
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.19
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "1,15"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần III Câu 5"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng bằng tích phân), Lớp 11 Bài 20 (hàm số mũ, hàm số lôgarit, đồ thị đối xứng qua y = x)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.19 (bức tường chia ba phần bởi đồ thị hàm mũ và hàm lôgarit đối xứng nhau: diện tích từng phần, số hộp sơn, chi phí), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 1,15 đúng (giải độc lập bằng tích phân số: b = căn 3, S1 ≈ 5,2331, S3 ≈ 7,1454, S2 = 24 - S1 - S3 ≈ 11,6215; số hộp 2, 4, 3; tiền 200 + 560 + 390 = 1150 nghìn đồng). Hình dựng lại với a = b = căn 3 trong hệ trục có tâm O, tường ABCD hình chữ nhật 6 x 4; tô màu H1, H2, H3 theo đề."
+\begin{ex}
+Một bức tường hình chữ nhật $ABCD$ có kích thước $6$ (m), $4$ (m) được bạn Hà trang trí bằng cách vẽ hai đồ thị $f(x)=a^x$, $g(x)=\log_bx$ đối xứng nhau qua đường thẳng $d\colon y=x$ và chia thành ba phần (tham khảo hình vẽ bên). Phần $H_1$ được sơn màu xanh da trời, phần $H_2$ được sơn màu vàng, phần $H_3$ được sơn màu xanh lá cây. Biết rằng mỗi hộp sơn các màu chỉ sơn được $3$ $(\mathrm{m^2})$ tường, đồng thời giá của hộp sơn màu xanh da trời là $100\,000$ đồng/hộp, hộp sơn vàng là $140\,000$ đồng/hộp, hộp sơn xanh lá cây là $130\,000$ đồng/hộp. Tính giá tiền bạn Hà mua để sơn bức tường này? (đơn vị là triệu đồng và cửa hàng sơn chỉ bán số nguyên của hộp).
+\begin{center}
+\begin{tikzpicture}[scale=.95]
+  \def\b{1.7320508}
+  \pgfmathsetmacro\xo{2*ln(2)/ln(3)}
+  \fill[yellow!45] (-3,-2) rectangle (3,2);
+  \fill[blue!25] (-3,2)--(\xo,2)--plot[domain=\xo:-3,samples=60,variable=\t]({\t},{\b^\t})--cycle;
+  \fill[green!30] (3,-2)--(3,2)--plot[domain=3:{1/3},samples=60,variable=\t]({\t},{ln(\t)/ln(\b)})--(1/3,-2)--cycle;
+  \draw[thick] (-3,-2) rectangle (3,2);
+  \draw[thick,domain=-3:\xo,samples=60] plot (\x,{\b^\x});
+  \draw[thick,domain={1/3}:3,samples=60] plot (\x,{ln(\x)/ln(\b)});
+  \draw[phu] (-2,-2)--(2,2);
+  \draw[truc] (-3.5,0)--(3.6,0) node[below]{$x$};
+  \draw[truc] (0,-2.4)--(0,2.6) node[left]{$y$};
+  \path (0,0) node[above left,font=\footnotesize]{$O$}
+        (-3,2) node[above left,font=\footnotesize]{$D$} (3,2) node[above right,font=\footnotesize]{$C$}
+        (-3,-2) node[below left,font=\footnotesize]{$A$} (3,-2) node[below right,font=\footnotesize]{$B$}
+        (-3,0) node[below left,font=\footnotesize]{$-3$} (3,0) node[above right,font=\footnotesize]{$3$}
+        (0,2) node[above right,font=\footnotesize]{$2$} (0,-2) node[below right,font=\footnotesize]{$-2$}
+        (-1.9,1.1) node{$H_1$} (-1,-1) node{$H_2$} (2.1,-.8) node{$H_3$};
+\end{tikzpicture}
+\end{center}
+\shortans{1,15}
+\loigiai{Hai đồ thị $y=a^x$ và $y=\log_bx$ đối xứng nhau qua $y=x$ nên $a=b$. Đồ thị $g$ đi qua $C(3;2)$ nên $\log_b3=2$, suy ra $b=\sqrt3$. Vậy $f(x)=(\sqrt3)^x$, $g(x)=\log_{\sqrt3}x$.
+
+Đồ thị $f$ cắt đường $y=2$ tại $x_0=\log_{\sqrt3}2$; đồ thị $g$ đi qua $\left(\dfrac13;-2\right)$ và $C(3;2)$.
+
+$S_1=\displaystyle\int_{-3}^{\log_{\sqrt3}2}\left(2-(\sqrt3)^x\right)\mathrm dx\approx5{,}233$ (m$^2$), $S_3=\displaystyle\int_{1/3}^3\left(\log_{\sqrt3}x+2\right)\mathrm dx\approx7{,}145$ (m$^2$), $S_2=6\cdot4-S_1-S_3\approx11{,}622$ (m$^2$).
+
+Số hộp sơn cần mua: xanh da trời $\lceil5{,}233:3\rceil=2$, xanh lá cây $\lceil7{,}145:3\rceil=3$, vàng $\lceil11{,}622:3\rceil=4$. Số tiền là $2\cdot100\,000+3\cdot130\,000+4\cdot140\,000=1\,150\,000$ đồng $=1{,}15$ triệu đồng.}
+\end{ex}

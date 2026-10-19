@@ -1,0 +1,37 @@
+%% ma: L12-B08-0027
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.19
+%% loai: TLN
+%% muc: VD
+%% dap_an: "20"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần III Câu 2"
+%% kien_thuc: "Bài 7 (hệ trục tọa độ Oxyz), Bài 8 (tọa độ vectơ, điểm đối xứng qua mặt phẳng tọa độ, ba điểm thẳng hàng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.19 (đường đi ngắn nhất từ một điểm xuống mặt đáy rồi đến điểm khác: dùng điểm đối xứng qua mặt phẳng tọa độ), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 20 đúng (giải độc lập: B(0;0;0), C(8;0;0), A(0;6;0), G(8;0;10), M(0;3;5), đối xứng N(0;3;-5), I = GN ∩ (Oxy) = (8/3; 2; 0), a = 8/3, b = 2, D = 8 + 12 = 20). Hình dựng lại hình hộp theo phép chiếu song song, đáy ABCD tô màu, nét khuất AB, BC, BF, AF; hình minh họa không theo tỉ lệ."
+\begin{ex}
+Một bể cá đầy nước có dạng hình hộp chữ nhật $ABCD.EFGH$ với $AB=6$ (dm), $AD=8$ (dm) và cạnh bên bằng $10$ (dm). Một chú cá con bơi theo những đoạn thẳng từ điểm $G$ đến chạm mặt đáy của hồ, rồi từ điểm đó bơi đến vị trí điểm $M$ là trung điểm của $AF$, được mô hình hóa như hình vẽ sau:
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \coordinate (A) at (0,0);\coordinate (B) at (3,0);\coordinate (D) at (4,-2.1);\coordinate (C) at (7,-2.1);
+  \coordinate (E) at (0,5);\coordinate (F) at (3,5);\coordinate (H) at (4,2.9);\coordinate (G) at (7,2.9);
+  \coordinate (M) at (1.5,2.5);
+  \fill[orange!35] (A)--(B)--(C)--(D)--cycle;
+  \draw (E)--(F)--(G)--(H)--cycle (E)--(A)--(D)--(C)--(G) (D)--(H);
+  \draw[khuat] (A)--(B)--(C) (B)--(F) (A)--(F);
+  \fill (M) circle (1pt);
+  \foreach \p/\d in {A/left,B/above right,C/below right,D/below,E/above left,F/above right,G/above right,H/above right}
+    \fill (\p) circle (1pt) node[\d,font=\footnotesize] {$\p$};
+  \path (M) node[above left,font=\footnotesize]{$M$};
+\end{tikzpicture}
+\end{center}
+Để đường đi ngắn nhất thì chú cá bơi đến điểm dưới đáy hồ cách $BA$ và $BC$ những đoạn bằng $a$ và $b$. Khi đó tổng $D=3a+6b$ bằng bao nhiêu?
+\shortans{20}
+\loigiai{Dựng hệ trục $Oxyz$ có gốc $B$, tia $Bx$ trùng $BC$, tia $By$ trùng $BA$, tia $Bz$ trùng $BF$. Khi đó $B(0;0;0)$, $C(8;0;0)$, $A(0;6;0)$, $G(8;0;10)$, $F(0;0;10)$ và $M(0;3;5)$.
+
+Gọi $I(x;y;0)$ là điểm chú cá chạm đáy. Gọi $N(0;3;-5)$ là điểm đối xứng của $M$ qua $(Oxy)$, khi đó $IM=IN$ và $IG+IM=IG+IN\ge GN$, dấu ``='' xảy ra khi $I$ nằm trên đoạn $GN$, tức $\overrightarrow{GI}$ cùng phương $\overrightarrow{GN}$.
+
+Ta có $\overrightarrow{GI}=(x-8;y;-10)$, $\overrightarrow{GN}=(-8;3;-15)$ nên $\dfrac{x-8}{-8}=\dfrac y3=\dfrac{-10}{-15}$, suy ra $x=\dfrac83$, $y=2$. Vậy $I\left(\dfrac83;2;0\right)$, từ đó $a=d(I,BA)=\dfrac83$, $b=d(I,BC)=2$ và $D=3\cdot\dfrac83+6\cdot2=20$.}
+\end{ex}

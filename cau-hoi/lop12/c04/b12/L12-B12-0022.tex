@@ -1,0 +1,22 @@
+%% ma: L12-B12-0022
+%% lop: 12
+%% chuong: 4
+%% bai: 12
+%% dang: 12.12.14
+%% loai: TLN
+%% muc: VD
+%% dap_an: "700"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần III Câu 4"
+%% kien_thuc: "Bài 11 (nguyên hàm), Bài 12 (tích phân, ý nghĩa của tốc độ thay đổi)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.12.14 (lượng nước trong bể từ tốc độ thay đổi cho bởi hàm số ba khúc), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 700 đúng (giải độc lập: tích phân ba đoạn lần lượt 450, 0, 0; F(12) = 250 + 450). Dữ kiện 1 gallon = 3,785 lít và dung tích bể là thừa (lượng nước luôn nằm trong [0; 1000] gallon). Bỏ ảnh trang trí (sơ đồ bể bơi)."
+\begin{ex}
+Hệ thống lọc nước bể bơi vô cùng quan trọng khi tiến hành xây dựng công trình bơi lội để nguồn nước được làm sạch thường xuyên và giữ vệ sinh cho người bơi. Trong quá trình vận hành lọc nước thì lượng nước trong bể sẽ thay đổi theo thời gian. Lượng nước trong bể giảm nếu hệ thống đang xả nước bẩn ra khỏi bể và tăng nếu hệ thống đang cấp thêm nước sạch cho bể. Biết rằng $1$ gallon gần bằng $3{,}785$ lít, dung tích của bể là $1000$ gallon và thời điểm $6$ giờ sáng bể chứa $250$ gallon nước. Hàm số $f(t)$ biểu thị cho tốc độ thay đổi lượng nước trong bể theo thời gian $t$ giờ, từ thời điểm $6$ giờ sáng đến $6$ giờ chiều được cho bởi
+\[f(t)=\begin{cases}100t&\text{khi }0\le t\le3\\900-200t&\text{khi }3\le t\le6\\100t-900&\text{khi }6\le t\le12\end{cases}\]
+với mốc thời gian $t=0$ tại thời điểm $6$ giờ sáng. Hỏi ở thời điểm $6$ giờ chiều thì trong bể chứa bao nhiêu gallon nước?
+\shortans{700}
+\loigiai{Gọi $F(t)$ là lượng nước trong bể tại thời điểm $t$, khi đó $F'(t)=f(t)$ và $F(0)=250$. Lúc $6$ giờ chiều ứng với $t=12$ nên
+\begin{align*}F(12)&=F(0)+\int_0^{12}f(t)\,\mathrm dt\\&=250+\int_0^3100t\,\mathrm dt+\int_3^6(900-200t)\,\mathrm dt+\int_6^{12}(100t-900)\,\mathrm dt\\&=250+450+0+0=700.\end{align*}
+Vậy lúc $6$ giờ chiều trong bể có $700$ gallon nước.}
+\end{ex}

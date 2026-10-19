@@ -1,0 +1,29 @@
+%% ma: L12-B19-0027
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.6
+%% loai: DS
+%% muc: [TH, VD, VD, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần II Câu 4"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện), Bài 19 (công thức xác suất toàn phần và công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc ĐSSĐ đúng (giải độc lập: P(N) = 0,038; P(A|N) = 10/19 ≈ 0,5263; P(B|N) = 9/19 ≈ 0,4737; P(A|không N) = 0,38/0,962 ≈ 0,395). Trùng ý tưởng với dạng đã duyệt 12.19.6 (toàn phần và Bayes từ xác suất có điều kiện hai bước, dạng Đúng/Sai), nhập chính thức. Bỏ ảnh trang trí (vệ tinh)."
+\begin{ex}
+Xác suất để công ty $X$ thuê một trong hai công ty vệ tinh $A$ và $B$ tư vấn lần lượt là $0{,}4$ và $0{,}6$. Theo kinh nghiệm, khả năng $X$ phát sinh thêm chi phí khi sử dụng dịch vụ tư vấn của công ty $A$ và $B$ lần lượt là $0{,}05$ và $0{,}03$.
+\choiceTF
+{\True Xác suất để $X$ có phát sinh thêm chi phí khi sử dụng dịch vụ tư vấn là $0{,}038$.}
+{Biết $X$ có phát sinh thêm chi phí khi sử dụng dịch vụ tư vấn. Xác suất để $X$ thuê công ty $A$ tư vấn là $0{,}4737$.}
+{Biết $X$ có phát sinh thêm chi phí khi sử dụng dịch vụ tư vấn. Xác suất để $X$ thuê công ty $B$ tư vấn là $0{,}5263$.}
+{\True Biết $X$ không phát sinh thêm chi phí khi sử dụng dịch vụ tư vấn. Xác suất để $X$ thuê công ty $A$ tư vấn là $0{,}395$.}
+\loigiai{Gọi $M$: ``$X$ thuê công ty $A$'' (khi đó $\overline M$: ``$X$ thuê công ty $B$''), $N$: ``$X$ phát sinh thêm chi phí''. Ta có $P(M)=0{,}4$, $P(\overline M)=0{,}6$, $P(N\mid M)=0{,}05$, $P(N\mid\overline M)=0{,}03$.
+
+a) $P(N)=0{,}4\cdot0{,}05+0{,}6\cdot0{,}03=0{,}038$. Đúng.
+
+b) $P(M\mid N)=\dfrac{0{,}4\cdot0{,}05}{0{,}038}=\dfrac{10}{19}\approx0{,}5263\ne0{,}4737$. Sai.
+
+c) $P(\overline M\mid N)=1-\dfrac{10}{19}=\dfrac9{19}\approx0{,}4737\ne0{,}5263$. Sai.
+
+d) $P(M\mid\overline N)=\dfrac{0{,}4\cdot0{,}95}{1-0{,}038}=\dfrac{0{,}38}{0{,}962}\approx0{,}395$. Đúng.}
+\end{ex}

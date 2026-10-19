@@ -298,3 +298,17 @@
 12.12.12: {ten: "Vận tốc cho bởi parabol rồi đường thẳng: công thức, tốc độ, quãng đường, độ dời (Đúng/Sai)", trang_thai: da-duyet}
 12.13.18: {ten: "Thể tích bình hoa tròn xoay có đường sinh là đồ thị hàm bậc ba (nội suy từ cực đại và các bán kính)", trang_thai: da-duyet}
 12.14.10: {ten: "Kiểm tra điểm thuộc mặt phẳng cho bởi phương trình tổng quát", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị D18 ((NBV) Đề số 18), ngày 19/10/2026 ---
+10.4.2: {ten: "Quy hoạch tuyến tính: tối thiểu chi phí khẩu phần ăn đảm bảo dinh dưỡng (hệ bất phương trình bậc nhất hai ẩn)", trang_thai: de-xuat}
+11.7.3: {ten: "Tiền lãi sau n năm theo lãi kép (quy về cấp số nhân)", trang_thai: de-xuat}
+11.27.16: {ten: "Thể tích lăng trụ tam giác khi biết diện tích một mặt bên và khoảng cách từ đỉnh đối diện đến mặt bên đó", trang_thai: de-xuat}
+12.3.12: {ten: "Đếm số đường tiệm cận từ bảng biến thiên của hàm số xác định trên (-∞; 0) trừ một điểm (x tiến tới 0 từ bên trái không cho tiệm cận ngang)", trang_thai: de-xuat}
+12.4.13: {ten: "Xác định hàm phân thức bậc hai trên bậc nhất từ giao điểm với trục hoành và điểm cực đại, giải phương trình theo độ cao (đường đi khinh khí cầu)", trang_thai: de-xuat}
+12.8.19: {ten: "Đường đi ngắn nhất từ một điểm xuống mặt đáy rồi đến điểm khác (điểm đối xứng qua mặt phẳng tọa độ, ba điểm thẳng hàng)", trang_thai: de-xuat}
+12.11.10: {ten: "Nguyên hàm của f'(x) khi biết nguyên hàm của f(x)", trang_thai: de-xuat}
+12.12.13: {ten: "Đoàn tàu qua cây và qua cầu: vận tốc từ gia tốc, chiều dài tàu, tốc độ, thời gian qua cầu (Đúng/Sai)", trang_thai: de-xuat}
+12.12.14: {ten: "Lượng nước trong bể từ tốc độ thay đổi cho bởi hàm số ba khúc (tích phân)", trang_thai: de-xuat}
+12.13.19: {ten: "Bức tường chia ba phần bởi đồ thị hàm mũ và hàm lôgarit đối xứng nhau: diện tích từng phần, số hộp sơn, chi phí", trang_thai: de-xuat}
+12.14.11: {ten: "Viết phương trình mặt phẳng đi qua một điểm và song song với mặt phẳng cho trước", trang_thai: de-xuat}
+12.16.4: {ten: "Côsin góc giữa đường thẳng đi qua hai điểm và mặt phẳng tọa độ Oxy", trang_thai: de-xuat}
+12.19.11: {ten: "Xác suất Bayes khi hai người lấy bi nối tiếp, điều kiện tất cả bi chọn ra có đủ cả hai màu", trang_thai: de-xuat}

@@ -1,0 +1,45 @@
+%% ma: L12-B04-0013
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.6
+%% loai: DS
+%% muc: [TH, NB, VD, VDC]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần II Câu 1"
+%% kien_thuc: "Bài 1 (đơn điệu, cực trị), Bài 3 (tiệm cận xiên), Bài 4 (hàm phân thức bậc hai trên bậc nhất, tính đối xứng của đồ thị), Lớp 10: diện tích tam giác theo tọa độ, góc giữa hai đường thẳng"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc là SĐSS; giải độc lập (sympy) cho ý d) ĐÚNG, nên đáp án đúng là SĐSĐ (đáp án gốc ý d) sai). Từ đồ thị: y = x + 1 + 1/(x+1) = (x^2+2x+2)/(x+1), tiệm cận đứng x = -1, tiệm cận xiên y = x+1, cực đại B(-2;-2), cực tiểu A(0;2), diện tích OAB = 2. Trục đối xứng của hypebol là các đường phân giác của góc giữa hai tiệm cận: góc nghiêng 22,5 độ và 67,5 độ so với trục Ox sau tịnh tiến, nên y = (x+1)tan(3π/8) là một trục đối xứng (lời giải gốc loại nhầm trường hợp này). Ý a) sai vì x = -1 không thuộc tập xác định nên hàm số không nghịch biến trên cả khoảng (-2;0). Trùng ý tưởng với dạng đã duyệt 12.4.6 (hàm phân thức bậc hai trên bậc nhất: tiệm cận xiên, diện tích tam giác OAB), nhập chính thức; ý d) có thể cần giáo viên cân nhắc mức VDC."
+\begin{ex}
+Cho hàm số $y=\dfrac{ax^2+bx+c}{mx+n}$ có đồ thị như hình vẽ sau.
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \begin{scope}
+    \clip (-4.2,-4.3) rectangle (3.2,4.8);
+    \draw[thick,domain=-4.1:-1.22,samples=80,smooth] plot (\x,{(\x*\x+2*\x+2)/(\x+1)});
+    \draw[thick,domain=-.78:3.1,samples=80,smooth] plot (\x,{(\x*\x+2*\x+2)/(\x+1)});
+    \draw[phu,domain=-4.2:3.2] plot (\x,{\x+1});
+  \end{scope}
+  \draw[phu] (-1,-4.2)--(-1,4.7);
+  \draw[truc] (-4.2,0)--(3.2,0) node[below]{$x$};
+  \draw[truc] (0,-4.3)--(0,4.8) node[right]{$y$};
+  \draw[phu] (-2,0)--(-2,-2)--(0,-2) (0,2)--(0,2);
+  \path (0,0) node[below right]{\footnotesize$O$} (-2,0) node[above left]{\footnotesize$-2$} (-1,0) node[above right]{\footnotesize$-1$}
+        (0,2) node[above right]{\footnotesize$2$} (0,1) node[right]{\footnotesize$1$} (0,-2) node[below right]{\footnotesize$-2$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Hàm số đã cho nghịch biến trên khoảng $(-2;0)$.}
+{\True Đồ thị của hàm số đã cho có tiệm cận xiên $y=x+1$.}
+{Gọi $A$, $B$ là hai điểm cực trị của đồ thị hàm số đã cho, diện tích của tam giác $OAB$ bằng $8$ (với $O$ là gốc tọa độ).}
+{\True Một trục đối xứng của đồ thị đã cho là $d\colon y=(x+1)\tan\dfrac{3\pi}8$.}
+\loigiai{Từ đồ thị: tiệm cận đứng $x=-1$, tiệm cận xiên $y=x+1$, điểm cực tiểu $A(0;2)$ và điểm cực đại $B(-2;-2)$. Do đó $y=x+1+\dfrac1{x+1}=\dfrac{x^2+2x+2}{x+1}$.
+
+a) Hàm số nghịch biến trên mỗi khoảng $(-2;-1)$ và $(-1;0)$, nhưng $x=-1$ không thuộc tập xác định nên không nghịch biến trên cả khoảng $(-2;0)$. Sai.
+
+b) Tiệm cận xiên là đường thẳng đi qua $(-1;0)$ và $(0;1)$, tức $y=x+1$. Đúng.
+
+c) $S_{OAB}=\dfrac12\left|x_Ay_B-x_By_A\right|=\dfrac12|0\cdot(-2)-(-2)\cdot2|=2\ne8$. Sai.
+
+d) Đồ thị nhận giao điểm $I(-1;0)$ của hai tiệm cận làm tâm đối xứng, và các trục đối xứng là hai đường phân giác của góc tạo bởi hai tiệm cận $x=-1$ (góc nghiêng $90^\circ$) và $y=x+1$ (góc nghiêng $45^\circ$). Hai phân giác này có góc nghiêng $67{,}5^\circ=\dfrac{3\pi}8$ và $157{,}5^\circ$, đi qua $I$. Phân giác góc nghiêng $\dfrac{3\pi}8$ có phương trình $y=(x+1)\tan\dfrac{3\pi}8$, đó là một trục đối xứng (cắt đồ thị tại hai đỉnh). Đúng.}
+\end{ex}

@@ -1,0 +1,22 @@
+%% ma: L12-B04-0014
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.13
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "7,2"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần III Câu 3"
+%% kien_thuc: "Bài 1 (cực trị), Bài 4 (hàm phân thức bậc hai trên bậc nhất), phương trình bậc hai"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.4.13 (xác định hàm phân thức bậc hai trên bậc nhất từ giao điểm với trục hoành và điểm cực đại, rồi giải phương trình theo độ cao), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 7,2 đúng (giải độc lập bằng sympy: y = 5(x^2-9x+8)/(3x-28), y'(6) = 0, y''(6) = -1 < 0; y = 3,875 có nghiệm 7,2 và 4,125, chọn nghiệm lớn hơn 6). Bỏ hình gốc vì chỉ là tranh minh họa khinh khí cầu và cầu vồng, không có số liệu toán."
+\begin{ex}
+Đường đi của một khinh khí cầu được gắn trong hệ trục tọa độ là một đường cong bậc hai trên bậc nhất có đồ thị cắt trục hoành tại hai điểm có tọa độ là $(1;0)$ và $(8;0)$ với đơn vị trên hệ trục tọa độ là $1$ (km). Biết rằng điểm cực đại của đồ thị hàm số là điểm $(6;5)$. Hỏi khi khí cầu đi qua điểm cực đại và cách mặt đất $3875$ (m) thì khí cầu cách gốc tọa độ theo phương ngang bao nhiêu? (đơn vị: km)
+\shortans{7,2}
+\loigiai{Đồ thị cắt trục hoành tại $x=1$ và $x=8$ nên $y=\dfrac{(x-1)(x-8)}{dx+e}=\dfrac{x^2-9x+8}{dx+e}$. Ta có $y'=\dfrac{(2x-9)(dx+e)-d(x^2-9x+8)}{(dx+e)^2}$.
+
+Điểm cực đại $(6;5)$ cho $y'(6)=0$, tức $28d+3e=0$, và $y(6)=5$, tức $6d+e=-2$. Giải hệ ta được $d=\dfrac35$, $e=-\dfrac{28}5$. Vậy $y=\dfrac{5(x^2-9x+8)}{3x-28}$ (kiểm tra lại $(6;5)$ là điểm cực đại).
+
+Độ cao $3875$ m $=3{,}875$ km: $\dfrac{5(x^2-9x+8)}{3x-28}=3{,}875\Leftrightarrow5x^2-56{,}625x+148{,}5=0\Leftrightarrow x=7{,}2$ hoặc $x=4{,}125$. Khí cầu đã đi qua điểm cực đại nên $x>6$, ta chọn $x=7{,}2$ km.}
+\end{ex}

@@ -1,0 +1,24 @@
+%% ma: L12-B19-0028
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.11
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,55"
+%% nguon: "(NBV)-ĐỀ SỐ 18-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D18, MỖI NGÀY 1 ĐỀ - Đề số 18), Phần III Câu 6"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện), Bài 19 (công thức Bayes), tổ hợp (Lớp 10 Bài 24)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.19.11 (Bayes khi hai người lấy bi nối tiếp, điều kiện tất cả bi chọn ra có đủ cả hai màu), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 0,55 đúng (giải độc lập: P(B|A) = 55/91, P(B|không A) = 90/91, kết quả 11/20). Bỏ ảnh trang trí (hộp bi)."
+\begin{ex}
+Một hộp chứa $10$ viên bi xanh và $5$ viên bi đỏ. Bạn An lấy ra ngẫu nhiên $1$ viên bi từ hộp, xem màu, rồi bỏ ra ngoài. Nếu viên bi An lấy ra có màu xanh, bạn Bình sẽ lấy ra ngẫu nhiên $2$ viên bi từ hộp; còn nếu viên bi An lấy ra có màu đỏ, bạn Bình sẽ lấy ra ngẫu nhiên $3$ viên bi từ hộp. Tính xác suất để An lấy được viên bi màu xanh, biết rằng tất cả các viên bi được hai bạn chọn ra đều có đủ cả hai màu.
+\shortans{0,55}
+\loigiai{Gọi $A$: ``An lấy được viên bi xanh'', $B$: ``tất cả các viên bi được hai bạn chọn ra đều có đủ cả hai màu''. Ta có $P(A)=\dfrac23$, $P(\overline A)=\dfrac13$.
+
+Nếu An lấy bi xanh thì hộp còn $9$ bi xanh, $5$ bi đỏ; Bình lấy $2$ viên và cần có ít nhất một bi đỏ: $P(B\mid A)=1-\dfrac{C_9^2}{C_{14}^2}=\dfrac{55}{91}$.
+
+Nếu An lấy bi đỏ thì hộp còn $10$ bi xanh, $4$ bi đỏ; Bình lấy $3$ viên và cần có ít nhất một bi xanh: $P(B\mid\overline A)=1-\dfrac{C_4^3}{C_{14}^3}=\dfrac{90}{91}$.
+
+Theo công thức Bayes: $P(A\mid B)=\dfrac{\frac23\cdot\frac{55}{91}}{\frac23\cdot\frac{55}{91}+\frac13\cdot\frac{90}{91}}=\dfrac{110}{200}=0{,}55$.}
+\end{ex}
