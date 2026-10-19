@@ -312,15 +312,15 @@
 12.14.11: {ten: "Viết phương trình mặt phẳng đi qua một điểm và song song với mặt phẳng cho trước", trang_thai: da-duyet}
 12.16.4: {ten: "Côsin góc giữa đường thẳng đi qua hai điểm và mặt phẳng tọa độ Oxy", trang_thai: da-duyet}
 12.19.11: {ten: "Xác suất Bayes khi hai người lấy bi nối tiếp, điều kiện tất cả bi chọn ra có đủ cả hai màu", trang_thai: da-duyet}
-11.25.5: {ten: "Côsin góc giữa hai mặt phẳng (SCD) và (SAB) trong hình chóp có mặt bên là tam giác đều vuông góc với đáy hình vuông", trang_thai: de-xuat}
-11.27.17: {ten: "Chiều cao khối chóp tứ giác đều từ thể tích và cạnh đáy (số liệu thực tế)", trang_thai: de-xuat}
-12.2.8: {ten: "Hàm e^{u(x)} với u chứa căn thức: nghiệm của f'(x) = 0, giá trị lớn nhất, nhỏ nhất trên đoạn (Đúng/Sai)", trang_thai: de-xuat}
-12.5.20: {ten: "Tối ưu chi phí nhiên liệu của tàu: một phần cố định, một phần tỉ lệ với bình phương vận tốc", trang_thai: de-xuat}
-12.6.10: {ten: "Phân tích một vectơ theo ba vectơ cơ sở của hình hộp khi có tâm của mặt", trang_thai: de-xuat}
-12.8.20: {ten: "Tìm mệnh đề sai về hai vectơ cho bằng tọa độ (vuông góc, cùng phương, độ dài, tổng)", trang_thai: de-xuat}
-12.12.15: {ten: "Hai hàm có cùng đạo hàm: nhận biết khẳng định đúng về nguyên hàm và tích phân", trang_thai: de-xuat}
-12.12.16: {ten: "Giá trị trung bình của hàm số trên một đoạn bằng tích phân (hàm lượng giác)", trang_thai: de-xuat}
-12.12.17: {ten: "Doanh thu và chi phí của máy công nghiệp theo tốc độ biên: tích phân, tuổi thọ hữu ích, lợi nhuận (Đúng/Sai)", trang_thai: de-xuat}
-12.13.20: {ten: "Khối lượng rào chắn bê tông có mặt cắt giới hạn bởi hai đoạn thẳng và một cung cos (diện tích mặt cắt nhân chiều dài)", trang_thai: de-xuat}
-12.14.12: {ten: "Mặt phẳng đi qua hai điểm và vuông góc với mặt phẳng cho trước", trang_thai: de-xuat}
-12.16.5: {ten: "Mô hình phòng không: UAV bay thẳng đều, góc với mặt đất, khoảng cách ngắn nhất, thời điểm tên lửa đánh chặn (Đúng/Sai)", trang_thai: de-xuat}
+11.25.5: {ten: "Côsin góc giữa hai mặt phẳng (SCD) và (SAB) trong hình chóp có mặt bên là tam giác đều vuông góc với đáy hình vuông", trang_thai: da-duyet}
+11.27.17: {ten: "Chiều cao khối chóp tứ giác đều từ thể tích và cạnh đáy (số liệu thực tế)", trang_thai: da-duyet}
+12.2.8: {ten: "Hàm e^{u(x)} với u chứa căn thức: nghiệm của f'(x) = 0, giá trị lớn nhất, nhỏ nhất trên đoạn (Đúng/Sai)", trang_thai: da-duyet}
+12.5.20: {ten: "Tối ưu chi phí nhiên liệu của tàu: một phần cố định, một phần tỉ lệ với bình phương vận tốc", trang_thai: da-duyet}
+12.6.10: {ten: "Phân tích một vectơ theo ba vectơ cơ sở của hình hộp khi có tâm của mặt", trang_thai: da-duyet}
+12.8.20: {ten: "Tìm mệnh đề sai về hai vectơ cho bằng tọa độ (vuông góc, cùng phương, độ dài, tổng)", trang_thai: da-duyet}
+12.12.15: {ten: "Hai hàm có cùng đạo hàm: nhận biết khẳng định đúng về nguyên hàm và tích phân", trang_thai: da-duyet}
+12.12.16: {ten: "Giá trị trung bình của hàm số trên một đoạn bằng tích phân (hàm lượng giác)", trang_thai: da-duyet}
+12.12.17: {ten: "Doanh thu và chi phí của máy công nghiệp theo tốc độ biên: tích phân, tuổi thọ hữu ích, lợi nhuận (Đúng/Sai)", trang_thai: da-duyet}
+12.13.20: {ten: "Khối lượng rào chắn bê tông có mặt cắt giới hạn bởi hai đoạn thẳng và một cung cos (diện tích mặt cắt nhân chiều dài)", trang_thai: da-duyet}
+12.14.12: {ten: "Mặt phẳng đi qua hai điểm và vuông góc với mặt phẳng cho trước", trang_thai: da-duyet}
+12.16.5: {ten: "Mô hình phòng không: UAV bay thẳng đều, góc với mặt đất, khoảng cách ngắn nhất, thời điểm tên lửa đánh chặn (Đúng/Sai)", trang_thai: da-duyet}
