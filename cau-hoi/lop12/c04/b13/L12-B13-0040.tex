@@ -1,0 +1,33 @@
+%% ma: L12-B13-0040
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.21
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H01, Đề số 1), Phần 1 Câu 3"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi trục hoành và hai đồ thị cắt nhau)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.21 (chọn biểu thức tính diện tích phần tô màu nằm dưới hai đồ thị cắt nhau tại hoành độ m), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc C đúng. Hình dựng lại bằng hàm minh họa f(x) = 0,25 + 0,12x², g(x) = 1,5 + 0,35x - 0,02x² (cắt nhau tại m ≈ 4,49)."
+\begin{ex}
+Cho $S$ là diện tích phần hình phẳng được tô màu như hình bên.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \def\a{2.4}\def\m{4.4939}\def\b{6.2}
+  \fill[gray!45] (\a,0)--(\a,{.25+.12*\a*\a}) -- plot[domain=\a:\m,samples=40] (\x,{.25+.12*\x*\x}) -- plot[domain=\m:\b,samples=40] (\x,{1.5+.35*\x-.02*\x*\x}) -- (\b,0) -- cycle;
+  \draw[phu] (0,2.6706)--(\m,2.6706) (\m,0)--(\m,2.6706);
+  \draw[thick,domain=0:5.6,samples=60] plot (\x,{.25+.12*\x*\x});
+  \draw[thick,domain=0:6.6,samples=60] plot (\x,{1.5+.35*\x-.02*\x*\x});
+  \draw[truc] (-.3,0)--(7.2,0) node[below]{$x$};
+  \draw[truc] (0,-.3)--(0,4.6) node[left]{$y$};
+  \draw[phu] (\a,0)--(\a,{.25+.12*\a*\a}) (\b,0)--(\b,{1.5+.35*\b-.02*\b*\b});
+  \path (0,0) node[below left]{\footnotesize$O$} (\a,0) node[below]{\footnotesize$a$} (\m,0) node[below]{\footnotesize$m$} (\b,0) node[below]{\footnotesize$b$} (0,2.6706) node[left]{\footnotesize$n$};
+  \path (5.7,4.2) node[right]{\footnotesize$y=f(x)$} (6.6,2.9) node[right]{\footnotesize$y=g(x)$};
+\end{tikzpicture}
+\end{center}
+Khi đó biểu thức tính diện tích $S$ là
+\choice{$S=\displaystyle\int_a^b\left|f(x)-g(x)\right|\mathrm dx$}{$S=\displaystyle\int_a^m\left|f(x)-g(x)\right|\mathrm dx+\int_m^b\left|g(x)-f(x)\right|\mathrm dx$}{\True $S=\displaystyle\int_a^m\left|f(x)\right|\mathrm dx+\int_m^b\left|g(x)\right|\mathrm dx$}{$S=\displaystyle\int_a^m\left|g(x)\right|\mathrm dx+\int_m^b\left|f(x)\right|\mathrm dx$}
+\loigiai{Phần tô màu giới hạn bởi trục hoành, hai đường thẳng $x=a$, $x=b$ và phía trên là đồ thị thấp hơn: trên $[a;m]$ là đồ thị $y=f(x)$, trên $[m;b]$ là đồ thị $y=g(x)$. Do đó $S=\displaystyle\int_a^m\left|f(x)\right|\mathrm dx+\int_m^b\left|g(x)\right|\mathrm dx$. Chọn C.}
+\end{ex}

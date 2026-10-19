@@ -1,0 +1,27 @@
+%% ma: L12-B17-0015
+%% lop: 12
+%% chuong: 5
+%% bai: 17
+%% dang: 12.17.10
+%% loai: TL
+%% muc: VDC
+%% dap_an: "-"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H01, Đề số 1), Phần 4 Câu 2 (tự luận)"
+%% kien_thuc: "Bài 17 (mặt cầu), Bài 14 (phương trình mặt phẳng), định lí sin trong tam giác, khoảng cách từ tâm mặt cầu đến mặt phẳng"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.17.10 (mặt phẳng cắt mặt cầu theo đường tròn ngoại tiếp tam giác ABC với góc ACB cho trước: bán kính đường tròn, khoảng cách từ tâm, phương trình mặt phẳng), chờ giáo viên duyệt."
+%% ghi_chu: "Câu tự luận. Đáp án gốc có hai mặt phẳng x + y + z - 3 = 0 và 7x + y - 5z - 9 = 0 đúng (giải độc lập, cả hai đều qua A, B và có khoảng cách √3 đến tâm I). Lời giải gốc làm mất dấu căn ở một vài chỗ (R1 = √6, d = √3); bản kho đã khôi phục."
+\begin{ex}
+Trong không gian $Oxyz$, cho mặt cầu $(S)\colon(x-1)^2+(y-2)^2+(z-3)^2=9$ và các điểm $A(1;2;0)$, $B(2;0;1)$, $C$ thuộc $(S)$ sao cho $\widehat{ACB}=30^\circ$. Viết phương trình mặt phẳng $(ABC)$.
+\loigiai{Mặt cầu $(S)$ có tâm $I(1;2;3)$, bán kính $R=3$. Kiểm tra $IA^2=9$, $IB^2=1+4+4=9$ nên $A$, $B$ thuộc $(S)$, và $AB=\sqrt6$.
+
+Gọi $R_1$ là bán kính đường tròn ngoại tiếp $\triangle ABC$ (là giao của $(S)$ với $(ABC)$). Theo định lí sin, $\dfrac{AB}{\sin C}=2R_1$ nên $R_1=\dfrac{\sqrt6}{2\cdot\frac12}=\sqrt6$. Do đó $d(I,(ABC))=\sqrt{R^2-R_1^2}=\sqrt3$. \hfill(1)
+
+Gọi $\vec n=(a;b;c)$ là vectơ pháp tuyến của $(ABC)$. Mặt phẳng đi qua $A(1;2;0)$: $a(x-1)+b(y-2)+cz=0$. Đi qua $B(2;0;1)$: $a-2b+c=0\Rightarrow c=2b-a$.
+
+Từ (1): $d(I,(ABC))=\dfrac{|3c|}{\sqrt{a^2+b^2+c^2}}=\sqrt3\Leftrightarrow9c^2=3\left(a^2+b^2+c^2\right)\Leftrightarrow2c^2=a^2+b^2$. Thay $c=2b-a$: $2(2b-a)^2=a^2+b^2\Leftrightarrow a^2-8ab+7b^2=0\Leftrightarrow(a-b)(a-7b)=0$.
+
+Với $a=b=1$: $c=1$, $(ABC)\colon x+y+z-3=0$. Với $a=7$, $b=1$: $c=-5$, $(ABC)\colon7x+y-5z-9=0$.
+
+Vậy $(ABC)\colon x+y+z-3=0$ hoặc $(ABC)\colon7x+y-5z-9=0$.}
+\end{ex}
