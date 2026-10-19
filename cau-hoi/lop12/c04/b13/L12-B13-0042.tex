@@ -1,0 +1,37 @@
+%% ma: L12-B13-0042
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.22
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H02, Đề số 2), Phần 4 Câu 1 (tự luận)"
+%% kien_thuc: "Bài 13 (thể tích khối tròn xoay quanh Ox), Bài 12 (tích phân)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.13.22 chờ duyệt."
+%% ghi_chu: "Câu tự luận, đáp án gốc k = căn 33 khớp (sympy). Hình dựng lại bằng TikZ, vị trí đường x = k vẽ minh họa (không theo tỉ lệ, tránh gợi ý đáp số)."
+\begin{ex}
+Cho hình thang cong $(H)$ giới hạn bởi các đường $y=\sqrt x$, $y=0$, $x=1$, $x=7$. Đường thẳng $x=k$ với $1<k<7$ chia $(H)$ thành hai phần là $(S_1)$ và $(S_2)$ (hình vẽ). Quay $(S_1)$ và $(S_2)$ quanh trục $Ox$ ta thu được hai khối tròn xoay có thể tích lần lượt là $V_1$ và $V_2$. Xác định $k$ để $V_1=2V_2$.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=1.6cm]
+  \fill[pattern=north east lines,pattern color=blue!50] (1,0)--(1,1)--plot[domain=1:4.4,samples=40] (\x,{sqrt(\x)})--(4.4,0)--cycle;
+  \fill[pattern=north west lines,pattern color=red!50] (4.4,0)--plot[domain=4.4:7,samples=40] (\x,{sqrt(\x)})--(7,0)--cycle;
+  \draw[truc] (-.3,0)--(8.2,0) node[right]{$x$};
+  \draw[truc] (0,-.15)--(0,2.2) node[above]{$y$};
+  \draw[smooth,samples=60,domain=0:7.6,thick] plot(\x,{sqrt(\x)});
+  \draw[thick] (1,0)--(1,1);
+  \draw[thick] (4.4,0)--(4.4,{sqrt(4.4)});
+  \draw[thick] (7,0)--(7,{sqrt(7)});
+  \node[below left,font=\footnotesize] at (0,0) {$O$};
+  \node[below,font=\footnotesize] at (1,0) {$1$};
+  \node[below,font=\footnotesize] at (4.4,0) {$k$};
+  \node[below,font=\footnotesize] at (7,0) {$7$};
+  \node[font=\footnotesize] at (2.7,.45) {$S_1$};
+  \node[font=\footnotesize] at (5.8,.5) {$S_2$};
+\end{tikzpicture}
+\end{center}
+\loigiai{Thể tích khối tròn xoay sinh bởi phần có hoành độ từ $u$ đến $v$ là $\pi\displaystyle\int_u^v x\,\mathrm dx=\dfrac{\pi}2\left(v^2-u^2\right)$. Do đó $V_1=\dfrac\pi2\left(k^2-1\right)$, $V_2=\dfrac\pi2\left(49-k^2\right)$.
+
+$V_1=2V_2\Leftrightarrow k^2-1=2\left(49-k^2\right)\Leftrightarrow3k^2=99\Leftrightarrow k^2=33$. Vì $1<k<7$ nên $k=\sqrt{33}$.}
+\end{ex}

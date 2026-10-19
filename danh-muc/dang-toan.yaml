@@ -334,3 +334,12 @@
 12.17.10: {ten: "Mặt phẳng cắt mặt cầu theo đường tròn ngoại tiếp tam giác ABC có góc ACB cho trước: bán kính, khoảng cách từ tâm, phương trình mặt phẳng", trang_thai: da-duyet}
 12.18.6: {ten: "Nhận biết kí hiệu xác suất có điều kiện P(B | A)", trang_thai: da-duyet}
 12.18.7: {ten: "Khẳng định luôn đúng về phân tích một biến cố theo B và biến cố đối của B", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị H02 (Đề HK2 số 2), ngày 19/10/2026 ---
+12.14.13: {ten: "Vectơ pháp tuyến của mặt phẳng tọa độ (Oxy)", trang_thai: de-xuat}
+12.15.14: {ten: "Hình chiếu vuông góc của đường thẳng lên mặt phẳng song song với mặt phẳng tọa độ", trang_thai: de-xuat}
+12.17.11: {ten: "Tâm và bán kính của mặt cầu cho bởi phương trình chính tắc", trang_thai: de-xuat}
+12.12.18: {ten: "Tích phân bằng hiệu giá trị nguyên hàm tại hai cận (Newton-Leibniz)", trang_thai: de-xuat}
+12.17.12: {ten: "Vị trí của điểm so với mặt cầu và diện tích mặt cầu (Đúng/Sai)", trang_thai: de-xuat}
+12.17.13: {ten: "Giá trị lớn nhất của độ dài tổng vectơ MA - MB - MC khi M thuộc mặt cầu (điểm phụ N, M đối xứng N qua tâm)", trang_thai: de-xuat}
+12.13.22: {ten: "Đường thẳng x = k chia hình thang cong, hai khối tròn xoay có thể tích gấp đôi nhau", trang_thai: de-xuat}
+12.15.15: {ten: "Đường thẳng đi qua một điểm và cắt hai đường thẳng chéo nhau cho trước", trang_thai: de-xuat}

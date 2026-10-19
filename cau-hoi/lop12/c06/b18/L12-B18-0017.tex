@@ -1,0 +1,29 @@
+%% ma: L12-B18-0017
+%% lop: 12
+%% chuong: 6
+%% bai: 18
+%% dang: 12.18.2
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "SĐSĐ"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H02, Đề số 2), Phần 2 Câu 2"
+%% kien_thuc: "Bài 18 (xác suất có điều kiện, lấy không hoàn lại)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc S Đ S Đ khớp. Bỏ ảnh hộp bóng (ảnh trang trí)."
+\begin{ex}
+Trong một hộp có $18$ quả bóng bàn loại I và $2$ quả bóng bàn loại II, các quả bóng bàn có hình dạng và kích thước như nhau. Một học sinh lấy ngẫu nhiên lần lượt $2$ quả bóng bàn (lấy không hoàn lại) trong hộp.
+\choiceTF
+{Xác suất để lần thứ nhất lấy được quả bóng bàn loại II là $\dfrac9{10}$.}
+{\True Xác suất để lần thứ hai lấy được quả bóng bàn loại II, biết lần thứ nhất lấy được quả bóng bàn loại II, là $\dfrac1{19}$.}
+{Xác suất để cả hai lần đều lấy được quả bóng bàn loại II là $\dfrac9{190}$.}
+{\True Xác suất để ít nhất $1$ lần lấy được quả bóng bàn loại I là $\dfrac{189}{190}$.}
+\loigiai{Gọi $A$: ``lần thứ nhất lấy được bóng loại II'', $B$: ``lần thứ hai lấy được bóng loại II''.
+
+a) Sai: $P(A)=\dfrac2{20}=\dfrac1{10}$.
+
+b) Đúng: sau khi lấy $1$ quả loại II còn $19$ quả, trong đó có $1$ quả loại II nên $P(B\mid A)=\dfrac1{19}$.
+
+c) Sai: $P(AB)=P(A)\,P(B\mid A)=\dfrac1{10}\cdot\dfrac1{19}=\dfrac1{190}$.
+
+d) Đúng: biến cố ``ít nhất một lần lấy được loại I'' là biến cố đối của $AB$ nên có xác suất $1-\dfrac1{190}=\dfrac{189}{190}$.}
+\end{ex}
