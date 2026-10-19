@@ -1,0 +1,31 @@
+%% ma: L12-B13-0043
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.21
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H03, Đề số 3), Phần 1 Câu 8"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng giới hạn bởi hai đồ thị cắt nhau tại nhiều điểm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc B đúng. Hình dựng lại bằng hàm minh họa f(x) = -2/3(x²-1) (parabol) và g(x) = 8/9(x²-1)(x-11/4) (bậc ba), cắt nhau tại x = -1, 1, 2 (không theo đúng tỉ lệ ảnh gốc)."
+\begin{ex}
+Cho các hàm số $y=f(x)$, $y=g(x)$ có đồ thị lần lượt là $(P)$, $(C)$ và hình phẳng được tô màu như hình.
+\begin{center}
+\begin{tikzpicture}[scale=.95]
+  \fill[gray!45] plot[domain=-1:1,samples=40] (\x,{-2/3*(\x*\x-1)}) -- plot[domain=1:-1,samples=40] (\x,{8/9*(\x*\x-1)*(\x-2.75)}) -- cycle;
+  \fill[gray!45] plot[domain=1:2,samples=40] (\x,{-2/3*(\x*\x-1)}) -- plot[domain=2:1,samples=40] (\x,{8/9*(\x*\x-1)*(\x-2.75)}) -- cycle;
+  \draw[phu] (-1,0)--(-1,-2.3) (2,0)--(2,-2) (0,-2)--(2,-2);
+  \draw[thick,domain=-1.25:2.35,samples=60] plot (\x,{-2/3*(\x*\x-1)});
+  \draw[thick,domain=-1.25:3.0,samples=60] plot (\x,{8/9*(\x*\x-1)*(\x-2.75)});
+  \draw[truc] (-2,0)--(3.5,0) node[below]{$x$};
+  \draw[truc] (0,-2.8)--(0,3.1) node[left]{$y$};
+  \path (0,0) node[below left]{\footnotesize$O$} (-1,0) node[above left]{\footnotesize$-1$} (1,0) node[above right]{\footnotesize$1$} (2,0) node[above right]{\footnotesize$2$} (0,-2) node[left]{\footnotesize$-2$};
+  \path (3.0,1.9) node[right]{\footnotesize$(C)$} (2.35,-2.65) node[right]{\footnotesize$(P)$};
+\end{tikzpicture}
+\end{center}
+Công thức tính diện tích hình phẳng được tô màu là
+\choice{$S=\displaystyle\int_{-1}^{1}\left[g(x)-f(x)\right]\mathrm dx+\int_{1}^{2}\left[g(x)-f(x)\right]\mathrm dx$}{\True $S=\displaystyle\int_{-1}^{1}\left[g(x)-f(x)\right]\mathrm dx-\int_{1}^{2}\left[g(x)-f(x)\right]\mathrm dx$}{$S=\displaystyle\int_{-1}^{2}\left[g(x)-f(x)\right]\mathrm dx$}{$S=\displaystyle\int_{-1}^{2}\left[f(x)-g(x)\right]\mathrm dx$}
+\loigiai{Trên $[-1;1]$ đồ thị $(C)$ nằm trên $(P)$ nên $|g(x)-f(x)|=g(x)-f(x)$. Trên $[1;2]$ đồ thị $(C)$ nằm dưới $(P)$ nên $|g(x)-f(x)|=-[g(x)-f(x)]$. Do đó $S=\displaystyle\int_{-1}^{1}[g(x)-f(x)]\mathrm dx-\int_{1}^{2}[g(x)-f(x)]\mathrm dx$. Chọn B.}
+\end{ex}

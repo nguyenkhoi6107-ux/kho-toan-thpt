@@ -342,3 +342,12 @@
 12.17.13: {ten: "Giá trị lớn nhất của độ dài tổng vectơ MA - MB - MC khi M thuộc mặt cầu (điểm phụ N, M đối xứng N qua tâm)", trang_thai: da-duyet}
 12.13.22: {ten: "Đường thẳng x = k chia hình thang cong, hai khối tròn xoay có thể tích gấp đôi nhau", trang_thai: da-duyet}
 12.15.15: {ten: "Đường thẳng đi qua một điểm và cắt hai đường thẳng chéo nhau cho trước", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị H03 (Đề HK2 số 3), ngày 19/10/2026 ---
+12.13.23: {ten: "Diện tích hình phẳng giới hạn bởi đồ thị hàm bậc ba và parabol cắt nhau tại ba điểm cho trước (lập hiệu hai hàm)", trang_thai: de-xuat}
+12.15.16: {ten: "Vectơ chỉ phương của đường thẳng đi qua hình chiếu của một điểm lên hai trục tọa độ", trang_thai: de-xuat}
+12.15.17: {ten: "Đường thẳng đi qua một điểm và song song với hai mặt phẳng cắt nhau (tích có hướng hai vectơ pháp tuyến)", trang_thai: de-xuat}
+12.15.18: {ten: "Độ dài ngắn nhất của đoạn MN với M, N chạy trên hai đường thẳng chéo nhau (đưa về tổng bình phương)", trang_thai: de-xuat}
+12.16.6: {ten: "Góc giữa hai đường thẳng, giữa đường thẳng với trục tọa độ và đường thẳng song song mặt phẳng (Đúng/Sai)", trang_thai: de-xuat}
+12.18.8: {ten: "Xác suất có điều kiện của biến cố đối: P(X̄ | Y) = 1 - P(X | Y)", trang_thai: de-xuat}
+12.19.12: {ten: "Nhận biết công thức xác suất toàn phần", trang_thai: de-xuat}
+12.19.13: {ten: "Xác suất chọn sản phẩm tốt từ kho gồm hai lô hàng", trang_thai: de-xuat}
