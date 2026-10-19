@@ -237,7 +237,6 @@
 11.5.3: {ten: "Tính số hạng của dãy số cho bởi công thức truy hồi u_{n+1} - u_n = f(n)", trang_thai: da-duyet}
 11.25.4: {ten: "Nhận biết hai mặt phẳng bên vuông góc trong hình chóp đáy hình chữ nhật có cạnh bên vuông góc với đáy", trang_thai: da-duyet}
 11.27.11: {ten: "Côsin góc giữa đường chéo và cạnh đáy của khối chóp cụt đều (khay đá)", trang_thai: da-duyet}
-11.29.1: {ten: "Xác suất của biến cố đối từ bảng phân bố xác suất (cuộc gọi đến trung tâm cứu hộ)", trang_thai: de-xuat}
 12.1.16: {ten: "Khoảng đồng biến của hàm phân thức bậc nhất trên bậc nhất (chọn đáp án đúng)", trang_thai: da-duyet}
 12.4.10: {ten: "Hàm bậc ba đọc từ đồ thị: giá trị cực tiểu, nghiệm phương trình lôgarit, khoảng đồng biến, tổng hệ số (Đúng/Sai)", trang_thai: da-duyet}
 12.5.15: {ten: "Tối ưu lợi nhuận khi biết doanh thu và chi phí bình quân (hàm bậc ba trên một đoạn)", trang_thai: da-duyet}
@@ -335,11 +334,11 @@
 12.18.6: {ten: "Nhận biết kí hiệu xác suất có điều kiện P(B | A)", trang_thai: da-duyet}
 12.18.7: {ten: "Khẳng định luôn đúng về phân tích một biến cố theo B và biến cố đối của B", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị H02 (Đề HK2 số 2), ngày 19/10/2026 ---
-12.14.13: {ten: "Vectơ pháp tuyến của mặt phẳng tọa độ (Oxy)", trang_thai: de-xuat}
-12.15.14: {ten: "Hình chiếu vuông góc của đường thẳng lên mặt phẳng song song với mặt phẳng tọa độ", trang_thai: de-xuat}
-12.17.11: {ten: "Tâm và bán kính của mặt cầu cho bởi phương trình chính tắc", trang_thai: de-xuat}
-12.12.18: {ten: "Tích phân bằng hiệu giá trị nguyên hàm tại hai cận (Newton-Leibniz)", trang_thai: de-xuat}
-12.17.12: {ten: "Vị trí của điểm so với mặt cầu và diện tích mặt cầu (Đúng/Sai)", trang_thai: de-xuat}
-12.17.13: {ten: "Giá trị lớn nhất của độ dài tổng vectơ MA - MB - MC khi M thuộc mặt cầu (điểm phụ N, M đối xứng N qua tâm)", trang_thai: de-xuat}
-12.13.22: {ten: "Đường thẳng x = k chia hình thang cong, hai khối tròn xoay có thể tích gấp đôi nhau", trang_thai: de-xuat}
-12.15.15: {ten: "Đường thẳng đi qua một điểm và cắt hai đường thẳng chéo nhau cho trước", trang_thai: de-xuat}
+12.14.13: {ten: "Vectơ pháp tuyến của mặt phẳng tọa độ (Oxy)", trang_thai: da-duyet}
+12.15.14: {ten: "Hình chiếu vuông góc của đường thẳng lên mặt phẳng song song với mặt phẳng tọa độ", trang_thai: da-duyet}
+12.17.11: {ten: "Tâm và bán kính của mặt cầu cho bởi phương trình chính tắc", trang_thai: da-duyet}
+12.12.18: {ten: "Tích phân bằng hiệu giá trị nguyên hàm tại hai cận (Newton-Leibniz)", trang_thai: da-duyet}
+12.17.12: {ten: "Vị trí của điểm so với mặt cầu và diện tích mặt cầu (Đúng/Sai)", trang_thai: da-duyet}
+12.17.13: {ten: "Giá trị lớn nhất của độ dài tổng vectơ MA - MB - MC khi M thuộc mặt cầu (điểm phụ N, M đối xứng N qua tâm)", trang_thai: da-duyet}
+12.13.22: {ten: "Đường thẳng x = k chia hình thang cong, hai khối tròn xoay có thể tích gấp đôi nhau", trang_thai: da-duyet}
+12.15.15: {ten: "Đường thẳng đi qua một điểm và cắt hai đường thẳng chéo nhau cho trước", trang_thai: da-duyet}
