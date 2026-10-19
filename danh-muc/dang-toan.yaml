@@ -324,13 +324,13 @@
 12.13.20: {ten: "Khối lượng rào chắn bê tông có mặt cắt giới hạn bởi hai đoạn thẳng và một cung cos (diện tích mặt cắt nhân chiều dài)", trang_thai: da-duyet}
 12.14.12: {ten: "Mặt phẳng đi qua hai điểm và vuông góc với mặt phẳng cho trước", trang_thai: da-duyet}
 12.16.5: {ten: "Mô hình phòng không: UAV bay thẳng đều, góc với mặt đất, khoảng cách ngắn nhất, thời điểm tên lửa đánh chặn (Đúng/Sai)", trang_thai: da-duyet}
-12.11.11: {ten: "Nhận biết nguyên hàm của hàm số lũy thừa x^n", trang_thai: de-xuat}
-12.11.12: {ten: "Chuyển động thẳng đứng chỉ chịu trọng lực: vận tốc, độ cao bằng nguyên hàm, độ cao lớn nhất", trang_thai: de-xuat}
-12.13.21: {ten: "Chọn biểu thức tính diện tích phần tô màu nằm dưới hai đồ thị cắt nhau (giá trị tuyệt đối, tách tại hoành độ giao điểm)", trang_thai: de-xuat}
-12.15.12: {ten: "Đường phân giác của góc nhọn tạo bởi hai đường thẳng cắt nhau trong không gian", trang_thai: de-xuat}
-12.15.13: {ten: "Đường thẳng trong không gian: vectơ chỉ phương, vuông góc với mặt phẳng, vuông góc với đường khác và song song Oxy, cắt và vuông góc với trục (Đúng/Sai)", trang_thai: de-xuat}
-12.17.8: {ten: "Điều kiện của tham số m để phương trình bậc hai ba ẩn là phương trình mặt cầu", trang_thai: de-xuat}
-12.17.9: {ten: "Giá trị nhỏ nhất của MA + kMB với M thuộc mặt cầu (điểm phụ theo tỉ số đồng dạng)", trang_thai: de-xuat}
-12.17.10: {ten: "Mặt phẳng cắt mặt cầu theo đường tròn ngoại tiếp tam giác ABC có góc ACB cho trước: bán kính, khoảng cách từ tâm, phương trình mặt phẳng", trang_thai: de-xuat}
-12.18.6: {ten: "Nhận biết kí hiệu xác suất có điều kiện P(B | A)", trang_thai: de-xuat}
-12.18.7: {ten: "Khẳng định luôn đúng về phân tích một biến cố theo B và biến cố đối của B", trang_thai: de-xuat}
+12.11.11: {ten: "Nhận biết nguyên hàm của hàm số lũy thừa x^n", trang_thai: da-duyet}
+12.11.12: {ten: "Chuyển động thẳng đứng chỉ chịu trọng lực: vận tốc, độ cao bằng nguyên hàm, độ cao lớn nhất", trang_thai: da-duyet}
+12.13.21: {ten: "Chọn biểu thức tính diện tích phần tô màu nằm dưới hai đồ thị cắt nhau (giá trị tuyệt đối, tách tại hoành độ giao điểm)", trang_thai: da-duyet}
+12.15.12: {ten: "Đường phân giác của góc nhọn tạo bởi hai đường thẳng cắt nhau trong không gian", trang_thai: da-duyet}
+12.15.13: {ten: "Đường thẳng trong không gian: vectơ chỉ phương, vuông góc với mặt phẳng, vuông góc với đường khác và song song Oxy, cắt và vuông góc với trục (Đúng/Sai)", trang_thai: da-duyet}
+12.17.8: {ten: "Điều kiện của tham số m để phương trình bậc hai ba ẩn là phương trình mặt cầu", trang_thai: da-duyet}
+12.17.9: {ten: "Giá trị nhỏ nhất của MA + kMB với M thuộc mặt cầu (điểm phụ theo tỉ số đồng dạng)", trang_thai: da-duyet}
+12.17.10: {ten: "Mặt phẳng cắt mặt cầu theo đường tròn ngoại tiếp tam giác ABC có góc ACB cho trước: bán kính, khoảng cách từ tâm, phương trình mặt phẳng", trang_thai: da-duyet}
+12.18.6: {ten: "Nhận biết kí hiệu xác suất có điều kiện P(B | A)", trang_thai: da-duyet}
+12.18.7: {ten: "Khẳng định luôn đúng về phân tích một biến cố theo B và biến cố đối của B", trang_thai: da-duyet}
