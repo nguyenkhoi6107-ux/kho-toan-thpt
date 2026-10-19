@@ -1,0 +1,30 @@
+%% ma: L12-B01-0030
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần I Câu 1"
+%% kien_thuc: "Bài 1 (đọc khoảng đồng biến, nghịch biến từ đồ thị hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc B đúng. Trùng ý tưởng với dạng đã duyệt 12.1.2 (đọc tính đơn điệu từ đồ thị), nhập chính thức. Hình dựng lại bằng hàm minh họa y = -(x+1)^2(x-2) có cực tiểu (-1;0), cực đại (1;4), cắt trục tại x = 2 và y(0) = 2, khớp các số ghi trên hình gốc."
+\begin{ex}
+Cho hàm số $y=f(x)$ có đồ thị như hình bên. Khẳng định nào sau đây là đúng?
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \begin{scope}
+    \clip (-2.4,-1) rectangle (3,5.3);
+    \draw[thick,domain=-1.8:2.4,samples=80,smooth] plot (\x,{-(\x+1)^2*(\x-2)});
+  \end{scope}
+  \draw[phu] (1,0)--(1,4)--(0,4) (0,2)--(-.0,2);
+  \draw[truc] (-2.4,0)--(3,0) node[below]{$x$};
+  \draw[truc] (0,-1)--(0,5.3) node[left]{$y$};
+  \path (0,0) node[below right]{\footnotesize$O$} (-1,0) node[below left]{\footnotesize$-1$} (1,0) node[below right]{\footnotesize$1$}
+        (2,0) node[below right]{\footnotesize$2$} (0,2) node[above left]{\footnotesize$2$} (0,4) node[above left]{\footnotesize$4$};
+\end{tikzpicture}
+\end{center}
+\choice{Hàm số nghịch biến trên khoảng $(-\infty;0)$}{\True Hàm số nghịch biến trên khoảng $(1;+\infty)$}{Hàm số đồng biến trên khoảng $(2;4)$}{Hàm số đồng biến trên khoảng $(-1;+\infty)$}
+\loigiai{Từ đồ thị, hàm số có cực tiểu tại $x=-1$ và cực đại tại $x=1$. Hàm số đồng biến trên $(-1;1)$ và nghịch biến trên $(-\infty;-1)$, $(1;+\infty)$. Do đó A sai (có đoạn $(-1;0)$ đồ thị đi lên), C sai, D sai và B đúng. Chọn B.}
+\end{ex}

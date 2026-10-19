@@ -1,0 +1,40 @@
+%% ma: L12-B13-0039
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.20
+%% loai: TLN
+%% muc: VD
+%% dap_an: "209"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần III Câu 3 (Chuyên Lương Thế Vinh – Đồng Nai 2025)"
+%% kien_thuc: "Bài 13 (diện tích hình phẳng, thể tích khối lăng trụ có đáy là hình phẳng giới hạn bởi đồ thị hàm lượng giác), tìm tham số từ điều kiện nghiệm"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.13.20 (khối lượng rào chắn bê tông có mặt cắt giới hạn bởi hai đoạn thẳng và một cung cos, tính từ diện tích mặt cắt và chiều dài), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 21 SAI: lời giải gốc tính S = 4 + 16/π ≈ 9,09 m² nhưng quên nhân với chiều dài 10 m. Đúng: V = 10S ≈ 90,9 m³, khối lượng ≈ 90,9 · 2,3 ≈ 209 tấn (giải độc lập bằng sympy: 209,14). Hình dựng lại mặt cắt từ hình gốc; chiều dài 10 m và bề dày vật thể được đưa vào đề bài bằng chữ."
+\begin{ex}
+Một rào chắn bê tông có dạng khối lăng trụ dài $10$ m, mỗi đơn vị trên hệ trục tương ứng với $1$ mét. Mặt cắt vuông góc với chiều dài của rào chắn (như hình vẽ) gồm các đoạn thẳng nối $(-4;2)$ với $(-2;0)$, nối $(2;0)$ với $(4;2)$, và cung đồ thị hàm số $y=2\cos(ax)$ nối $(-2;0)$ với $(2;0)$ qua điểm $(0;2)$. Khối lượng của rào chắn là bao nhiêu tấn bê tông, nếu khối lượng riêng của bê tông là $\rho=2{,}3\ \mathrm{g/cm^3}$? (làm tròn đến hàng đơn vị)
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \fill[yellow!25] (-4,0)--(-4,2)--(-2,0)--cycle;
+  \fill[yellow!25] (2,0)--(4,2)--(4,0)--cycle;
+  \fill[yellow!25] (-2,0) -- plot[domain=-2:2,samples=60] (\x,{2*cos(deg(pi*\x/4))}) -- (2,0) -- cycle;
+  \draw[thick,green!50!black] (-4,2)--(-2,0);
+  \draw[thick,blue] plot[domain=-2:2,samples=60] (\x,{2*cos(deg(pi*\x/4))});
+  \draw[thick,red] (2,0)--(4,2);
+  \draw[phu] (4,0)--(4,2) (-4,0)--(-4,2);
+  \draw[truc] (-4.6,0)--(5,0) node[below]{$x$};
+  \draw[truc] (0,-.2)--(0,3) node[left]{$y$};
+  \foreach \x in {-4,-2,2,4} \draw (\x,.08)--(\x,-.08) node[below]{\footnotesize$\x$};
+  \draw (.08,1)--(-.08,1) node[left]{\footnotesize$1$};
+  \draw (.08,2)--(-.08,2) node[left,xshift=-2pt]{\footnotesize$2$};
+  \path (1.4,1.75) node[blue,right]{\footnotesize$y=2\cos(ax)$};
+  \draw[<->] (4.35,0)--(4.35,2) node[midway,right]{\footnotesize$2$ m};
+\end{tikzpicture}
+\end{center}
+\shortans{209}
+\loigiai{Cung $y=2\cos(ax)$ nằm trên mặt cắt, cắt trục hoành tại $x=\pm2$ (hai nghiệm gần gốc nhất) nên $\cos(2a)=0$ với $2a=\dfrac\pi2$, suy ra $a=\dfrac\pi4$ và $f(x)=2\cos\dfrac{\pi x}4$.
+
+Diện tích mặt cắt gồm hai tam giác vuông có hai cạnh góc vuông bằng $2$ và phần dưới cung cos:
+$$S=2\cdot\dfrac12\cdot2\cdot2+\int_{-2}^{2}2\cos\dfrac{\pi x}4\,\mathrm dx=4+\dfrac{16}\pi\approx9{,}09\ (\mathrm{m^2}).$$
+Thể tích rào chắn là $V=10S\approx90{,}9\ \mathrm{m^3}$. Vì $\rho=2{,}3\ \mathrm{g/cm^3}=2{,}3$ tấn$/\mathrm{m^3}$ nên khối lượng là $90{,}9\cdot2{,}3\approx209$ tấn.}
+\end{ex}

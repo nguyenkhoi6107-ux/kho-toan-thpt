@@ -1,0 +1,22 @@
+%% ma: L12-B05-0029
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.20
+%% loai: TLN
+%% muc: VD
+%% dap_an: "30"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần III Câu 4"
+%% kien_thuc: "Bài 5 (ứng dụng đạo hàm: bài toán tối ưu, chi phí nhiên liệu theo vận tốc)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.5.20 (tối ưu chi phí nhiên liệu của tàu: một phần cố định, một phần tỉ lệ với bình phương vận tốc), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 9,49 SAI: lời giải gốc lấy hệ số k = 7 trong khi từ 70 = k·10² phải có k = 0,7. Đúng: f(v) = 630/v + 0,7v nhỏ nhất tại v = 30 km/h (giải độc lập bằng sympy; f(30) = 42). Bỏ ảnh minh họa chiếc tàu (ảnh trang trí)."
+\begin{ex}
+Trên một khúc sông có dòng nước lặng, một chiếc tàu chạy với tốc độ không đổi, chi phí nhiên liệu được tính bởi hai phần: phần thứ nhất không phụ thuộc vào tốc độ và mất chi phí $630$ nghìn đồng/giờ; phần thứ hai tỉ lệ thuận với bình phương của tốc độ, khi $v=10$ (km/h) thì chi phí phần thứ hai là $70$ nghìn đồng/giờ. Tìm tốc độ của tàu (km/h) để tổng chi phí nhiên liệu khi tàu chạy $1$ km trên sông là ít nhất (kết quả làm tròn đến hàng phần trăm).
+\shortans{30}
+\loigiai{Gọi $v$ (km/h) là tốc độ của tàu ($v>0$). Phần thứ hai có chi phí $kv^2$ (nghìn đồng/giờ); từ $70=k\cdot10^2$ ta có $k=0{,}7$.
+
+Thời gian chạy $1$ km là $\dfrac1v$ giờ nên tổng chi phí cho $1$ km là
+$$f(v)=\dfrac1v\left(630+0{,}7v^2\right)=\dfrac{630}v+0{,}7v\quad(\text{nghìn đồng}).$$
+$f'(v)=-\dfrac{630}{v^2}+0{,}7=0\Leftrightarrow v^2=900\Leftrightarrow v=30$ (vì $v>0$). Lập bảng biến thiên: $f'$ đổi dấu từ âm sang dương tại $v=30$ nên $f$ đạt nhỏ nhất tại $v=30$, $f(30)=42$. Vậy tốc độ cần tìm là $30$ km/h.}
+\end{ex}

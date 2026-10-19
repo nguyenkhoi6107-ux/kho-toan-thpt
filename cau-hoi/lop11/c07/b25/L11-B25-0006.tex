@@ -1,0 +1,31 @@
+%% ma: L11-B25-0006
+%% lop: 11
+%% chuong: 7
+%% bai: 25
+%% dang: 11.25.5
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,65"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần III Câu 2 (Chuyên Lương Thế Vinh – Đồng Nai 2025)"
+%% kien_thuc: "Bài 25 (góc giữa hai mặt phẳng, góc nhị diện), hình chóp có mặt bên vuông góc với đáy"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.25.5 (côsin góc giữa hai mặt phẳng (SCD) và (SAB) trong hình chóp có mặt bên là tam giác đều vuông góc với đáy hình vuông), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc 0,65 đúng (giải độc lập: cos = √21/7 ≈ 0,6547). Hình dựng lại theo hình gốc."
+\begin{ex}
+Một công ty chế tạo tháp đang lên kế hoạch thiết kế một đài quan sát hình chóp $S.ABCD$. Đài quan sát có đáy là một sàn kính hình vuông với cạnh $a$, được đặt song song với mặt đất. Đỉnh $S$ của hình chóp là một cột ăng-ten phát sóng, được gắn cố định sao cho tam giác $SAB$ là tam giác đều và nằm trong một mặt phẳng vuông góc với đáy. Một camera giám sát được đặt trên cạnh $SC$ để ghi lại toàn cảnh đài quan sát, đồng thời một bảng điều khiển được đặt trong mặt phẳng $(SAB)$ để điều khiển camera. Hãy tính côsin của góc giữa hai mặt phẳng $(SCD)$ và $(SAB)$, giúp kỹ sư tính toán vị trí và góc quay tối ưu của camera (kết quả làm tròn đến hai chữ số phần thập phân).
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \path (0,0) coordinate (B) (3.5,0) coordinate (C) (4.7,1.3) coordinate (D) (1.2,1.3) coordinate (A);
+  \coordinate (S) at (.6,3.9);
+  \draw (S)--(B)--(C)--(D)--cycle (S)--(C);
+  \draw[khuat] (S)--(A)--(B) (A)--(D);
+  \path (S) node[above]{$S$} (A) node[left]{$A$} (B) node[below left]{$B$} (C) node[below right]{$C$} (D) node[right]{$D$};
+\end{tikzpicture}
+\end{center}
+\shortans{0,65}
+\loigiai{Gọi $H$, $K$ lần lượt là trung điểm của $AB$, $CD$. Vì $(SAB)\perp(ABCD)$ và $SAB$ đều nên $SH\perp(ABCD)$ và $SH=\dfrac{a\sqrt3}2$. Ta có $HK\perp AB$, $HK\perp SH$ nên $HK\perp(SAB)$, $HK=a$.
+
+Trong tam giác $SHK$ kẻ $HI\perp SK$; vì $CD\perp(SHK)$ nên $HI\perp(SCD)$. Hai mặt phẳng $(SAB)$, $(SCD)$ có các đường vuông góc là $HK$ và $HI$ nên góc giữa chúng bằng góc $\widehat{IHK}$.
+
+Trong tam giác vuông $SHK$: $\dfrac1{HI^2}=\dfrac1{SH^2}+\dfrac1{HK^2}=\dfrac4{3a^2}+\dfrac1{a^2}=\dfrac7{3a^2}$ nên $HI=\dfrac{a\sqrt3}{\sqrt7}$. Do đó $\cos\widehat{IHK}=\dfrac{HI}{HK}=\sqrt{\dfrac37}=\dfrac{\sqrt{21}}7\approx0{,}65$.}
+\end{ex}

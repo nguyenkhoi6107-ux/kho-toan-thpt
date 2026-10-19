@@ -1,0 +1,46 @@
+%% ma: L12-B16-0007
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.5
+%% loai: DS
+%% muc: [TH, TH, VD, VDC]
+%% dap_an: "SSĐĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần II Câu 4"
+%% kien_thuc: "Bài 15 (phương trình tham số của đường thẳng), Bài 16 (góc, khoảng cách trong không gian), Bài 8 (độ dài vectơ); chuyển động thẳng đều"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.16.5 (mô hình phòng không: UAV bay thẳng đều, góc với mặt đất, khoảng cách ngắn nhất, thời điểm tên lửa đánh chặn), chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc S S Đ Đ khớp (giải độc lập bằng sympy: sin = 0,5/√26,25 → 0,098 rad; M6 = (19970;6;17) nên OM6 = 199 700 m; khoảng cách ngắn nhất ≈ 4268,43 đơn vị = 42 684 m; thời gian đánh chặn ≈ 57,88 s). Hình dựng lại dạng sơ đồ (không theo tỉ lệ) theo hình gốc; bỏ ảnh minh họa tên lửa."
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$, xét mô hình phòng không như sau: Rađa đặt tại gốc tọa độ $O(0;0;0)$, tên lửa phòng không đặt tại điểm $A(0;100;0)$; mỗi đơn vị tương ứng với $10$ m; mặt phẳng $(Oxy)$ trùng với mặt đất; giả sử mọi UAV (phương tiện bay không người lái) và tên lửa đều chuyển động thẳng đều. Tại thời điểm $t=0$, rađa phát hiện ra UAV $M$ ở tọa độ $M_0(20000;0;20)$; tại thời điểm $t=1$ rađa theo dõi thấy UAV $M$ ở tọa độ $M_1(19995;1;19{,}5)$ trên đường thẳng $d$ (đơn vị thời gian là giây).
+\begin{center}
+\begin{tikzpicture}
+  \draw[truc] (0,0)--(-2.9,-1.85) node[below left]{\footnotesize$x$};
+  \draw[truc] (0,0)--(4.6,0) node[right]{\footnotesize$y$};
+  \draw[truc] (0,0)--(0,2.8) node[above]{\footnotesize$z$};
+  \coordinate (O) at (0,0); \coordinate (A) at (3.2,0);
+  \coordinate (F) at (-2.1,-1.34); \coordinate (M) at (-2.1,-.8); \coordinate (B) at (1.7,-1.0);
+  \draw[phu] (M)--(F);
+  \draw[thick] (M)--(B)--(3.6,-1.1) node[right]{\footnotesize$d$};
+  \draw[dashed] (O)--(M);
+  \fill (O) circle (1.3pt) (A) circle (1.3pt) (M) circle (1.3pt) (B) circle (1.3pt);
+  \path (O) node[above right]{\footnotesize$O$} (A) node[above]{\footnotesize$A$} (M) node[above]{\footnotesize$M_0$} (B) node[above]{\footnotesize$B$};
+  \path (-2.1,-1.0) node[left]{\footnotesize$20$};
+  \path (-1.2,-1.35) node[below]{\footnotesize$20\,000$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{Góc nghiêng của đường thẳng $d$ và mặt đất là $0{,}02$ rad.}
+{Khoảng cách giữa UAV $M$ và gốc $O$ tại thời điểm $6$ giây là $19\,970$ m.}
+{\True Khoảng cách ngắn nhất từ điểm $A$ tới đường thẳng $d$ xấp xỉ $42\,684$ m (kết quả làm tròn đến hàng đơn vị của mét).}
+{\True Tại thời điểm $t=6$ s, một tên lửa được phóng lên và chuyển động thẳng đều với vận tốc $3400$ m/s, va chạm và phá hủy UAV $M$ tại điểm $B$ trên $d$. Khi đó, sau $57{,}88$ giây kể từ lúc phóng thì tên lửa va chạm với UAV (kết quả làm tròn đến hàng phần trăm của giây).}
+\loigiai{Vectơ $\overrightarrow{M_0M_1}=(-5;1;-0{,}5)$ là vectơ chỉ phương của $d$ và $\vec k=(0;0;1)$ là vectơ pháp tuyến của $(Oxy)$. Phương trình tham số của $d$ là $\begin{cases}x=20000-5t\\ y=t\\ z=20-0{,}5t\end{cases}$ ($t$ là số giây kể từ lúc rađa phát hiện).
+
+a) $\sin\left(d,(Oxy)\right)=\dfrac{0{,}5}{\sqrt{25+1+0{,}25}}\approx0{,}0976$ nên góc nghiêng khoảng $0{,}098$ rad, không phải $0{,}02$ rad: a) sai.
+
+b) Tại $t=6$: $M_6(19970;6;17)$, $OM_6\approx19970{,}0$ đơn vị, tức khoảng $199\,700$ m, không phải $19\,970$ m: b) sai.
+
+c) $AM^2=(20000-5t)^2+(t-100)^2+(20-0{,}5t)^2=26{,}25t^2-200\,220t+\dots$ đạt nhỏ nhất tại $t=\dfrac{26696}7\approx3813{,}7$, khi đó $AM\approx4268{,}43$ đơn vị, tức khoảng $42\,684$ m: c) đúng.
+
+d) Tốc độ UAV là $\sqrt{26{,}25}\approx5{,}12$ (đơn vị/giây), tốc độ tên lửa là $340$ đơn vị/giây. Sau $a$ giây kể từ lúc phóng, UAV ở $B(19970-5a;\,6+a;\,17-0{,}5a)$ và tên lửa đi được $340a$, nên $AB=340a$, tức $(19970-5a)^2+(a-94)^2+(17-0{,}5a)^2=340^2a^2$. Giải ra $a\approx57{,}88$ s: d) đúng.}
+\end{ex}

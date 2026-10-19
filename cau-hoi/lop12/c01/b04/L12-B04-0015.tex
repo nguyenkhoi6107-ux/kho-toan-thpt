@@ -1,0 +1,29 @@
+%% ma: L12-B04-0015
+%% lop: 12
+%% chuong: 1
+%% bai: 4
+%% dang: 12.4.6
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "(NBV)-ĐỀ SỐ 19-MỖI NGÀY 1 ĐỀ THI 2025.pdf (D19, MỖI NGÀY 1 ĐỀ - Đề số 19), Phần II Câu 2"
+%% kien_thuc: "Bài 4 (khảo sát hàm phân thức bậc hai trên bậc nhất: tiệm cận xiên, cực trị, tâm đối xứng, tiếp tuyến), Bài 5 (ứng dụng đạo hàm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc Đ Đ S Đ khớp (giải độc lập: tâm I(1;0), hai cực trị (3;-4) và (-1;4), tiếp tuyến tại (0;5) là y = 3x + 5, M có tung độ -(t + 4/t) ≈ -4,06 < -4 với t = 2^(3/4)). Trùng ý tưởng với dạng đã duyệt 12.4.6 (hàm phân thức bậc hai trên bậc nhất, bộ bốn ý Đúng/Sai), nhập chính thức."
+\begin{ex}
+Cho hàm số $y=\dfrac{-x^2+2x-5}{x-1}$ có đồ thị $(C)$.
+\choiceTF
+{\True Tọa độ giao điểm hai tiệm cận của đồ thị $(C)$ là $I(1;0)$.}
+{\True Khoảng cách giữa hai điểm cực trị của đồ thị hàm số là $4\sqrt5$.}
+{Tiếp tuyến của đồ thị hàm số tại giao điểm của đồ thị hàm số với trục tung là $y=x+5$.}
+{\True Điểm $M(x_M;y_M)$ thuộc đồ thị $(C)$ sao cho $x_M>1$ và độ dài $IM$ ngắn nhất ($I$ là tâm đối xứng của $(C)$) có tung độ $y_M<-4$.}
+\loigiai{Viết $y=-x+1-\dfrac4{x-1}$. Tiệm cận đứng $x=1$, tiệm cận xiên $y=-x+1$.
+
+a) Hai tiệm cận cắt nhau tại $I(1;0)$ nên a) đúng.
+
+b) $y'=-1+\dfrac4{(x-1)^2}=0\Leftrightarrow x=3$ hoặc $x=-1$. Hai điểm cực trị là $(3;-4)$ và $(-1;4)$, khoảng cách bằng $\sqrt{4^2+8^2}=4\sqrt5$: b) đúng.
+
+c) Giao với trục tung là $(0;5)$, $y'(0)=-1+4=3$ nên tiếp tuyến là $y=3x+5$, không phải $y=x+5$: c) sai.
+
+d) Với $x_M>1$ đặt $t=x_M-1>0$ thì $M\left(1+t;\,-t-\dfrac4t\right)$ và $IM^2=t^2+\left(t+\dfrac4t\right)^2=2t^2+\dfrac{16}{t^2}+8\ge2\sqrt{32}+8$, dấu bằng khi $2t^2=\dfrac{16}{t^2}\Leftrightarrow t^2=2\sqrt2$. Khi đó $y_M=-\left(t+\dfrac4t\right)=-\dfrac{t^2+4}{t}=-\dfrac{2\sqrt2+4}{\sqrt{2\sqrt2}}\approx-4{,}06<-4$: d) đúng.}
+\end{ex}
