@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Phòng kiểm tra trực tuyến</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23ffd75e'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h8' stroke='%232a2a2a' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  /* Phòng thi độc lập: Học sinh chỉ ở trong phòng thi, tuyệt đối không có nút hay đường dẫn sang Kho câu hỏi */
+  .kt-Banner {
+    border: 1.5px solid #c28a00;
+    background: #fff3d6;
+    color: #5c3c00;
+    border-radius: 16px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .kt-Banner.err {
+    border-color: #b3261e;
+    background: #ffe3e0;
+    color: #7c1d18;
+  }
+  .kt-Banner.ok {
+    border-color: #2f7d32;
+    background: #f4f9f0;
+    color: #1b5e20;
+  }
+
+  /* Trang đầu (Start Screen) 2 cột */
+  .kt-start-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+    align-items: start;
+  }
+  .kt-hero-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 6px 0 10px;
+  }
+  .kt-info-list {
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .kt-info-list li {
+    margin-bottom: 6px;
+  }
+
+  /* Bố cục làm bài 2 cột: Cột trái là Đề thi theo Phần I, II, III, IV; Cột phải là Bảng điều hướng cuộn theo */
+  .kt-exam-cols {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 336px;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Tiêu đề từng Phần I, II, III, IV */
+  .kt-part-sec {
+    margin-bottom: 24px;
+  }
+  .kt-part-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    border: 1.5px solid var(--line);
+    border-radius: 18px;
+    background: var(--c, #fff);
+    margin-bottom: 14px;
+  }
+  .kt-part-badge {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 4px 11px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .kt-part-title {
+    font-weight: 600;
+    font-size: 16.5px;
+    line-height: 1.3;
+  }
+  .kt-part-sub {
+    font-size: 13px;
+    color: #3f3f3a;
+    margin-top: 2px;
+  }
+
+  /* Thẻ câu hỏi khi làm bài */
+  .q.kt-q {
+    scroll-margin-top: 20px;
+    transition: box-shadow .2s, border-color .2s, transform .15s;
+  }
+  .q.kt-q.active-focus {
+    box-shadow: 0 0 0 3px var(--accent), 0 10px 24px rgba(0,0,0,.08);
+  }
+  .q.kt-q.done-card {
+    border-color: #2f7d32;
+  }
+  .q.kt-q.flagged-card {
+    border-color: var(--accent);
+  }
+  .kt-flag-btn {
+    border: 1.2px solid #d0cec4;
+    background: #fff;
+    border-radius: 9px;
+    padding: 2px 10px;
+    font-size: 12.5px;
+    cursor: pointer;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .kt-flag-btn:hover { background: #f6f4ec; }
+  .kt-flag-btn.on {
+    background: #ffe3d6;
+    border-color: var(--accent);
+    color: #9a2c0f;
+    font-weight: 600;
+  }
+
+  /* Lựa chọn TN4 */
+  .kt-choices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .kt-choices-grid.c1 {
+    grid-template-columns: 1fr;
+  }
+  .kt-choices-grid.c4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .kt-choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    padding: 11px 14px;
+    border: 1.5px solid #dcd9cd;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    transition: background .12s, border-color .12s, transform .08s;
+  }
+  .kt-choice:hover {
+    background: #f6f4ec;
+    border-color: var(--line);
+  }
+  .kt-choice.selected {
+    border-color: var(--ink);
+    background: var(--y);
+    box-shadow: 0 2px 0 var(--ink);
+  }
+  .kt-choice-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    border: 1.5px solid var(--line);
+    background: #fff;
+    font-weight: 600;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 13.5px;
+  }
+  .kt-choice.selected .kt-choice-badge {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  /* Câu Đúng / Sai 4 ý */
+  .kt-ds-table {
+    margin-top: 12px;
+    border: 1.5px solid #e3e0d6;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .kt-ds-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    border-top: 1px solid #e3e0d6;
+    background: #fff;
+  }
+  .kt-ds-row:first-of-type { border-top: 0; }
+  .kt-ds-row:nth-child(even) { background: #fbfaf6; }
+  .kt-ds-btns { display: flex; gap: 6px; flex-shrink: 0; }
+  .kt-ds-btn {
+    min-width: 54px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1.5px solid var(--line);
+    background: #fff;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all .12s;
+  }
+  .kt-ds-btn:hover { background: #f1efe8; }
+  .kt-ds-btn.on-d {
+    background: var(--g);
+    border-color: #2f7d32;
+    color: #14532d;
+    box-shadow: 0 2px 0 #2f7d32;
+  }
+  .kt-ds-btn.on-s {
+    background: #ffe3e0;
+    border-color: #b3261e;
+    color: #7c1d18;
+    box-shadow: 0 2px 0 #b3261e;
+  }
+
+  /* Câu Trả lời ngắn (TLN) */
+  .kt-tln-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: #fbfaf6;
+    border: 1.5px dashed #c7c4b8;
+    border-radius: 14px;
+  }
+  .kt-tln-input {
+    width: 150px;
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .kt-tln-input:focus {
+    outline: 3px solid var(--b);
+    border-color: var(--ink);
+  }
+  .kt-tln-slots {
+    display: inline-flex;
+    gap: 5px;
+  }
+  .kt-tln-slot {
+    width: 30px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1.2px solid #c7c4b8;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 600;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 15px;
+  }
+  .kt-tln-slot.filled {
+    border-color: var(--ink);
+    background: var(--b);
+  }
+
+  /* Bảng điều hướng câu hỏi & Thời gian cố định bên phải (Sticky Right Sidebar) */
+  .kt-side {
+    position: sticky;
+    top: 14px;
+    max-height: calc(100vh - 28px);
+    overflow-y: auto;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .kt-student-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #444;
+  }
+  .kt-timer-box {
+    background: #1f1f1f;
+    border: 1.5px solid #444;
+    border-radius: 16px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .kt-timer-val {
+    font-size: 28px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--y);
+    letter-spacing: .5px;
+  }
+  .kt-timer-val.urgent {
+    color: #ff6b4a;
+  }
+  .kt-progress-bar {
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255,255,255,.15);
+    overflow: hidden;
+    margin: 8px 0 4px;
+  }
+  .kt-progress-bar > i {
+    display: block;
+    height: 100%;
+    background: var(--g);
+    border-radius: 5px;
+    transition: width .2s;
+  }
+  .kt-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    color: #d4d4ce;
+  }
+  .kt-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .kt-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  /* Nút chuyển chế độ xem trong nền tối */
+  .kt-mode-btn {
+    border: 1.2px solid #666;
+    background: #383838;
+    color: #e5e5e0;
+    border-radius: 10px;
+    padding: 4px 11px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all .12s;
+  }
+  .kt-mode-btn:hover {
+    background: #4a4a4a;
+  }
+  .kt-mode-btn.on {
+    background: var(--y);
+    color: var(--ink);
+    border-color: var(--y);
+    font-weight: 600;
+  }
+
+  .kt-nav-part {
+    margin-top: 8px;
+  }
+  .kt-nav-part-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #c9c9c2;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .kt-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .kt-nav-btn {
+    border: 1.2px solid #555;
+    background: #383838;
+    color: #eee;
+    border-radius: 10px;
+    padding: 5px 2px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    transition: transform .1s, background .12s, border-color .12s;
+    position: relative;
+  }
+  .kt-nav-btn:hover {
+    background: #4a4a4a;
+    transform: translateY(-1px);
+  }
+  .kt-nav-btn .n {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.1;
+  }
+  .kt-nav-btn .a {
+    font-size: 10.5px;
+    opacity: .85;
+    margin-top: 2px;
+    max-width: 92%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .kt-nav-btn.done {
+    background: var(--g);
+    color: var(--ink);
+    border-color: #2f7d32;
+  }
+  .kt-nav-btn.partial {
+    background: var(--y);
+    color: var(--ink);
+    border-color: #b45309;
+  }
+  .kt-nav-btn.current {
+    box-shadow: 0 0 0 2.5px #fff;
+  }
+  .kt-nav-btn.flagged::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  /* Nút nổi mở bảng câu hỏi trên màn hình điện thoại nhỏ */
+  .kt-mobile-bar {
+    display: none;
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 45;
+    background: var(--dark);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 18px;
+    box-shadow: 0 8px 26px rgba(0,0,0,.35);
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  /* Màn hình Kết quả */
+  .kt-result-hero {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 18px;
+  }
+  .kt-score-card {
+    background: var(--dark);
+    color: #fff;
+    border-radius: 22px;
+    padding: 22px 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .kt-score-big {
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--y);
+    line-height: 1.05;
+    margin: 8px 0;
+  }
+
+  @media (max-width: 980px) {
+    .kt-start-grid, .kt-exam-cols, .kt-result-hero {
+      grid-template-columns: 1fr;
+    }
+    .kt-side {
+      position: static;
+      max-height: none;
+    }
+    .kt-mobile-bar {
+      display: flex;
+    }
+    body.in-exam {
+      padding-bottom: 76px;
+    }
+  }
+  @media (max-width: 640px) {
+    .kt-choices-grid, .kt-choices-grid.c4 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <!-- Tuyệt đối không đặt thanh điều hướng sang Thư viện câu hỏi để học sinh chỉ ở trong phòng thi -->
+  <main class="paper">
+    <header class="top">
+      <div class="brand">Phòng kiểm tra trực tuyến <b id="ktBrand">Toán THPT</b></div>
+      <div class="row" id="ktTopMeta">
+        <span class="tag y" id="ktTopStatus">Sẵn sàng</span>
+      </div>
+    </header>
+
+    <div id="ktBanner" class="kt-Banner" hidden></div>
+
+    <!-- MÀN HÌNH 1: TRANG ĐẦU VÀO PHÒNG THI (Có đầy đủ Tên bài, Thời gian, Số lượng câu từng phần) -->
+    <section id="ktStartBox">
+      <div class="kt-start-grid">
+        <!-- Cột trái: Thông tin chi tiết về Đề kiểm tra -->
+        <div class="panel">
+          <div class="row" style="justify-content:space-between">
+            <span class="tag k mono" id="ktPreviewCode">MÃ ĐỀ: ---</span>
+            <span class="tag g" id="ktPreviewState">Đang mở nhận bài</span>
+          </div>
+          <h1 class="kt-hero-title" id="ktPreviewTitle">Bài kiểm tra Toán THPT</h1>
+          <p class="muted small" id="ktPreviewSub" style="margin-top:0">Nhập mã bài kiểm tra ở khung bên phải (hoặc mở từ đường dẫn giáo viên gửi) để xem cấu trúc đề và bắt đầu làm bài.</p>
+
+          <!-- 4 thẻ thông tin: Thời gian + Số lượng câu từng phần -->
+          <div class="num-grid" style="margin-top:16px">
+            <div class="num" style="--c:#fff">
+              <label>Thời gian làm bài</label>
+              <div style="font-size:26px;font-weight:600;margin:2px 0" id="ktPreviewTime">-- phút</div>
+              <small id="ktPreviewCloseNote">Tính giờ theo máy chủ</small>
+            </div>
+            <div class="num" style="--c:var(--y)">
+              <label>Phần I · Trắc nghiệm</label>
+              <div style="font-size:26px;font-weight:600;margin:2px 0" id="ktPreviewTN4">-- câu</div>
+              <small>4 lựa chọn · 0,25đ/câu</small>
+            </div>
+            <div class="num" style="--c:var(--p)">
+              <label>Phần II · Đúng – Sai</label>
+              <div style="font-size:26px;font-weight:600;margin:2px 0" id="ktPreviewDS">-- câu</div>
+              <small>4 ý a,b,c,d · tối đa 1,0đ/câu</small>
+            </div>
+            <div class="num" style="--c:var(--b)">
+              <label>Phần III · Trả lời ngắn</label>
+              <div style="font-size:26px;font-weight:600;margin:2px 0" id="ktPreviewTLN">-- câu</div>
+              <small>Điền đáp số · 0,5đ/câu</small>
+            </div>
+          </div>
+
+          <div class="panel" style="margin-top:16px;background:#fbfaf6;padding:14px 18px">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+              <b>Tổng số câu hỏi: <span id="ktPreviewTotal">-- câu</span></b>
+              <span class="tag">Thang điểm 10 (làm tròn 0,01)</span>
+            </div>
+            <ul class="kt-info-list">
+              <li><b>Không mất bài:</b> Câu trả lời được lưu nháp tức thì trên thiết bị. Nếu lỡ tắt trình duyệt, mở lại link sẽ tiếp tục làm.</li>
+              <li><b>Bảng theo dõi câu hỏi (góc phải):</b> Hiển thị rõ các câu đã làm, đang làm dở và chưa làm; bấm vào số câu bất kỳ để nhảy ngay tới câu đó.</li>
+              <li><b>Sau giờ đóng đề:</b> Mở lại trang này để xem đáp án đúng và lời giải chi tiết từng câu.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cột phải: Thông tin thí sinh & nút Bắt đầu -->
+        <aside class="panel dark sum" style="position:static">
+          <h3 style="font-size:20px;margin-bottom:4px">Thông tin học sinh</h3>
+          <p class="note" style="margin-top:0;margin-bottom:14px">Điền đúng Họ tên và Lớp để hệ thống ghi điểm vào sổ của giáo viên.</p>
+
+          <div class="field" style="margin-bottom:12px">
+            <label for="ktCode" style="color:#d4d4ce">Mã bài kiểm tra</label>
+            <input id="ktCode" type="text" placeholder="Ví dụ: TFR8" autocomplete="off" style="color:var(--ink);font-weight:600;text-transform:uppercase">
+          </div>
+          <div class="field" style="margin-bottom:12px">
+            <label for="ktName" style="color:#d4d4ce">Họ và tên học sinh</label>
+            <input id="ktName" type="text" placeholder="Ví dụ: Nguyễn Văn An" autocomplete="name" style="color:var(--ink)">
+          </div>
+          <div class="field" style="margin-bottom:16px">
+            <label for="ktClass" style="color:#d4d4ce">Lớp</label>
+            <input id="ktClass" type="text" placeholder="Ví dụ: 12A1" autocomplete="off" style="color:var(--ink)">
+          </div>
+
+          <button id="ktStartBtn" type="button" class="btn" style="background:var(--y);color:var(--ink);font-weight:600;padding:12px 18px;font-size:16px">
+            Bắt đầu làm bài →
+          </button>
+          <button id="ktDirectReviewBtn" type="button" class="btn ghost" hidden style="margin-top:10px">
+            Xem đáp án & lời giải (đề đã đóng)
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 2: LÀM BÀI KIỂM TRA (2 CỘT: ĐỀ THI THEO PHẦN I, II, III + BẢNG ĐIỀU HƯỚNG GÓC PHẢI) -->
+    <section id="ktExamBox" hidden>
+      <div class="kt-exam-cols">
+        <!-- Cột trái: Đề thi chia theo Phần I, II, III, IV -->
+        <div id="ktQuestionSections"></div>
+
+        <!-- Cột phải: Bảng điều hướng cuộn theo (Sticky Right Sidebar) -->
+        <aside class="panel dark kt-side" id="ktSidePanel" aria-label="Bảng theo dõi câu hỏi và thời gian">
+          <div class="kt-student-box">
+            <div style="min-width:0">
+              <div style="font-weight:600;font-size:15.5px;color:#fff;word-break:break-word" id="ktSideStudent">Học sinh</div>
+              <div class="small" style="color:#c9c9c2;margin-top:2px" id="ktSideMeta">Lớp ---</div>
+            </div>
+            <span class="tag k mono" id="ktSideCode" style="background:#383838;border-color:#666;flex-shrink:0">---</span>
+          </div>
+
+          <div>
+            <div class="kt-timer-box">
+              <div>
+                <div class="small" style="color:#c9c9c2">Thời gian còn lại</div>
+                <div class="kt-timer-val" id="ktTimer">--:--</div>
+              </div>
+              <div style="text-align:right">
+                <div class="small" style="color:#c9c9c2">Tiến độ</div>
+                <div style="font-weight:700;font-size:16px;color:#fff" id="ktProgressText">0 / 0</div>
+              </div>
+            </div>
+
+            <div class="kt-progress-bar"><i id="ktProgressBar" style="width:0%"></i></div>
+
+            <div class="kt-legend" style="margin-top:8px">
+              <span><i class="kt-dot" style="background:var(--g)"></i>Đã làm</span>
+              <span><i class="kt-dot" style="background:var(--y)"></i>Làm dở</span>
+              <span><i class="kt-dot" style="background:#383838;border:1px solid #777"></i>Chưa làm</span>
+              <span><i class="kt-dot" style="background:var(--accent);border-radius:50%"></i>Xem lại</span>
+            </div>
+          </div>
+
+          <!-- Chế độ hiển thị: Cả đề hoặc Từng câu -->
+          <div class="row" style="gap:6px;justify-content:space-between;border-top:1px solid #444;padding-top:10px">
+            <span class="small" style="color:#c9c9c2">Chế độ xem:</span>
+            <div class="row" style="gap:6px">
+              <button type="button" id="ktModeAllBtn" class="kt-mode-btn on">Cả đề</button>
+              <button type="button" id="ktModeSingleBtn" class="kt-mode-btn">Từng câu</button>
+            </div>
+          </div>
+
+          <!-- Danh sách nút câu hỏi theo từng Phần I, II, III -->
+          <div id="ktNavContainer" style="border-top:1px solid #444;padding-top:6px"></div>
+
+          <!-- Nút nộp bài -->
+          <div style="border-top:1px solid #444;padding-top:12px;margin-top:auto">
+            <button id="ktSubmitBtn" type="button" class="btn" style="width:100%;justify-content:center;background:var(--y);color:var(--ink);font-weight:700;padding:11px 16px;font-size:15.5px">
+              Nộp bài kiểm tra
+            </button>
+            <div class="small" style="color:#b8b8b0;text-align:center;margin-top:6px">Nhấn vào số câu ở trên để chuyển nhanh đến câu đó</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MÀN HÌNH 3: KẾT QUẢ & XEM ĐÁP ÁN SAU GIỜ ĐÓNG -->
+    <section id="ktResultBox" hidden>
+      <div class="kt-result-hero">
+        <div class="kt-score-card">
+          <div class="small" style="color:#c9c9c2">ĐIỂM BÀI LÀM (THANG 10)</div>
+          <div class="kt-score-big" id="ktScore10">--</div>
+          <div style="font-weight:600;color:#fff;font-size:15px" id="ktRawScore">Điểm thô: -- / --</div>
+          <div id="ktFlags" class="small" style="color:var(--y);margin-top:8px"></div>
+        </div>
+
+        <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between">
+          <div>
+            <div class="row" style="justify-content:space-between;margin-bottom:8px">
+              <h2 id="ktResTitle">Kết quả nộp bài</h2>
+              <span class="tag g">Đã ghi nhận trên hệ thống</span>
+            </div>
+            <p class="muted small" id="ktResStudentInfo" style="margin-top:0"></p>
+            <div class="num-grid" id="ktResBreakdown" style="margin-top:12px"></div>
+          </div>
+
+          <div class="row" style="margin-top:16px;justify-content:space-between">
+            <span class="muted small" id="ktReviewHint">Đáp án và lời giải chi tiết sẽ được mở sau giờ đóng đề.</span>
+            <button id="ktReviewBtn" type="button" class="btn">
+              Xem đáp án & lời giải chi tiết
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="ktReviewList"></div>
+    </section>
+
+    <footer class="foot" id="ktFootNote">Phòng kiểm tra trực tuyến — Hệ thống tự động lưu bài và chấm điểm trên máy chủ</footer>
+  </main>
+</div>
+
+<!-- Thanh nổi cho màn hình điện thoại nhỏ (<980px) để nhảy nhanh tới bảng câu hỏi hoặc nộp bài -->
+<div id="ktMobileBar" class="kt-mobile-bar" hidden>
+  <div>
+    <div style="font-weight:700;color:var(--y);font-variant-numeric:tabular-nums" id="ktMobileTimer">--:--</div>
+    <div style="font-size:12px;color:#d4d4ce" id="ktMobileProgress">Đã làm 0/0</div>
+  </div>
+  <div class="row" style="gap:8px">
+    <button type="button" id="ktMobileJumpBtn" class="btn ghost sm" style="color:#fff;border-color:#777">Bảng câu hỏi</button>
+    <button type="button" id="ktMobileSubmitBtn" class="btn sm" style="background:var(--y);color:var(--ink);font-weight:600">Nộp bài</button>
+  </div>
+</div>
+
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../hien-thi.js"></script>
+<script src="kiem-tra.js"></script>
+</body>
+</html>

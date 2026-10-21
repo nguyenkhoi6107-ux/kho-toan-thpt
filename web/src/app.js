@@ -1,5 +1,6 @@
 'use strict';
-/* ToánKho — giao diện tĩnh, đọc data/cauhoi.json do tools/build.mjs sinh ra từ kho GitHub. */
+/* ToánKho — giao diện tĩnh, đọc data/cauhoi.json do tools/build.mjs sinh ra từ kho GitHub.
+   Phần hiển thị công thức, bảng và hình được tách ra trong hien-thi.js để dùng chung với kiem-tra/. */
 
 const LOAI = {
   TN4: { ten: 'Trắc nghiệm', ngan: 'TN', max: 40, c: 'y', part: 'PHẦN I. Câu trắc nghiệm nhiều phương án lựa chọn.', hd: 'Mỗi câu hỏi thí sinh chỉ chọn một phương án.' },
@@ -16,21 +17,7 @@ let D = null;            // dữ liệu
 let byMa = new Map();
 const $ = (s, r = document) => r.querySelector(s);
 
-/* ---------- tiện ích DOM ---------- */
-function h(tag, attrs, ...kids) {
-  const e = document.createElement(tag);
-  if (attrs) for (const [k, v] of Object.entries(attrs)) {
-    if (v == null || v === false) continue;
-    if (k === 'class') e.className = v;
-    else if (k === 'html') e.innerHTML = v;
-    else if (k.startsWith('on')) e.addEventListener(k.slice(2), v);
-    else if (v === true) e.setAttribute(k, '');
-    else e.setAttribute(k, v);
-  }
-  for (const k of kids.flat()) if (k != null && k !== false) e.append(k.nodeType ? k : document.createTextNode(k));
-  return e;
-}
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+/* ---------- tiện ích giao diện ---------- */
 function toast(msg) {
   const t = $('#toast'); t.textContent = msg; t.hidden = false;
   clearTimeout(toast.t); toast.t = setTimeout(() => (t.hidden = true), 2200);
@@ -59,135 +46,6 @@ function openModal(title, body, footer) {
 }
 function closeModal() { $('#modal').hidden = true; $('#modal').replaceChildren(); }
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-/* ---------- LaTeX → HTML ---------- */
-const MACROS = {
-  '\\heva': '\\left\\{\\begin{array}{l}#1\\end{array}\\right.',
-  '\\hoac': '\\left[\\begin{array}{l}#1\\end{array}\\right.',
-  '\\vec': '\\overrightarrow{#1}',
-  '\\dpi': '\\displaystyle',
-  '\\Oxyz': 'Oxyz',
-};
-function katexHtml(src, display) {
-  try { return katex.renderToString(src, { displayMode: display, throwOnError: false, macros: { ...MACROS }, strict: 'ignore', trust: false }); }
-  catch { return `<code>${esc(src)}</code>`; }
-}
-function braceArg(s, i) { // s[i]==='{'
-  let d = 0;
-  for (let k = i; k < s.length; k++) {
-    if (s[k] === '\\') { k++; continue; }
-    if (s[k] === '{') d++; else if (s[k] === '}' && --d === 0) return [s.slice(i + 1, k), k + 1];
-  }
-  return [s.slice(i + 1), s.length];
-}
-// Thay \cmd{x} bằng open+x+close (x đệ quy), trước khi tách công thức.
-function wrapCmds(s, map) {
-  const re = new RegExp('\\\\(' + Object.keys(map).join('|') + ')\\s*\\{', 'g');
-  let out = '', last = 0, m;
-  while ((m = re.exec(s))) {
-    const [arg, end] = braceArg(s, m.index + m[0].length - 1);
-    out += s.slice(last, m.index) + map[m[1]][0] + wrapCmds(arg, map) + map[m[1]][1];
-    last = end; re.lastIndex = end;
-  }
-  return out + s.slice(last);
-}
-const PU = { b: '\uE001', B: '\uE002', i: '\uE003', I: '\uE004', u: '\uE005', U: '\uE006', br: '\uE007', ul: '\uE008', UL: '\uE009', ol: '\uE00A', OL: '\uE00B', li: '\uE00C', p: '\uE00D', c: '\uE00E', C: '\uE00F' };
-const PU_HTML = { [PU.c]: '<div class="tex-center">', [PU.C]: '</div>', [PU.b]: '<b>', [PU.B]: '</b>', [PU.i]: '<i>', [PU.I]: '</i>', [PU.u]: '<u>', [PU.U]: '</u>', [PU.br]: '<br>', [PU.ul]: '<ul>', [PU.UL]: '</ul>', [PU.ol]: '<ol>', [PU.OL]: '</ol>', [PU.li]: '<li>', [PU.p]: '</p><p>' };
-function textPart(t) {
-  t = esc(t)
-    .replace(/\\\\(\[[^\]]*\])?/g, PU.br)
-    .replace(/\\(?:noindent|medskip|bigskip|smallskip|centering|indent)\b\s*/g, '')
-    .replace(/\\(?:vspace|hspace)\*?\{[^}]*\}/g, '')
-    .replace(/\\begin\{center\}/g, PU.c).replace(/\\end\{center\}/g, PU.C)
-    .replace(/\\(?:renewcommand|setlength)\s*\{?\\[a-zA-Z]+\}?\s*\{[^}]*\}/g, '')
-    .replace(/\\(?:small|footnotesize|normalsize|large|Large|par)\b\s*/g, '')
-    .replace(/\\begin\{itemize\}(\[[^\]]*\])?/g, PU.ul).replace(/\\end\{itemize\}/g, PU.UL)
-    .replace(/\\begin\{enumerate\}(\[[^\]]*\])?/g, PU.ol).replace(/\\end\{enumerate\}/g, PU.OL)
-    .replace(/\\item\b\s*(\[[^\]]*\])?/g, PU.li)
-    .replace(/\\(?:ldots|dots)\b/g, '…').replace(/\\textdegree/g, '°')
-    .replace(/\\([%&#_$])/g, '$1').replace(/\\ /g, ' ').replace(/\\,/g, '\u202f')
-    .replace(/``/g, '“').replace(/''/g, '”').replace(/---/g, '—').replace(/--/g, '–').replace(/~/g, '\u00a0')
-    .replace(/\n{2,}/g, PU.p);
-  return t.replace(/[\uE001-\uE00F]/g, (c) => PU_HTML[c]);
-}
-function splitTop(s, sep) { // t\u00E1ch theo sep \u1EDF m\u1EE9c ngo\u00E0i c\u00F9ng (kh\u00F4ng trong {} hay $\u2026$)
-  const out = []; let d = 0, m = false, cur = '';
-  for (let i = 0; i < s.length; i++) {
-    const c = s[i];
-    if (c === '\\') { cur += c + (s[i + 1] || ''); i++; continue; }
-    if (c === '{') d++; else if (c === '}') d--; else if (c === '$') m = !m;
-    if (c === sep && !d && !m) { out.push(cur); cur = ''; } else cur += c;
-  }
-  out.push(cur); return out;
-}
-// B\u1EA3ng tabular \u2192 b\u1EA3ng HTML (h\u1ED7 tr\u1EE3 \hline, \cline, \multicolumn)
-function tabularHtml(spec, body) {
-  const aligns = spec.replace(/\*\{(\d+)\}\{([^}]*)\}/g, (_, n, x) => x.repeat(+n))
-    .replace(/[p>@]\{[^}]*\}/g, (m) => (m[0] === 'p' ? 'l' : '')).replace(/[^lcr]/g, '').split('');
-  const ruled = /\|/.test(spec) || /\\hline/.test(body);
-  const rows = body.split(/\\\\(?:\[[^\]]*\])?/)
-    .map((r) => r.replace(/\\(?:hline|cline\{[^}]*\}|toprule|midrule|bottomrule)/g, '').trim()).filter(Boolean);
-  const tr = rows.map((r) => {
-    let col = 0;
-    return '<tr>' + splitTop(r, '&').map((cell) => {
-      let span = 1, al = aligns[col] || 'c';
-      const mc = cell.trim().match(/^\\multicolumn\{(\d+)\}\{([^}]*)\}\{([\s\S]*)\}$/);
-      if (mc) { span = +mc[1]; al = (mc[2].match(/[lcr]/) || ['c'])[0]; cell = mc[3]; }
-      col += span;
-      const html = renderRich(cell.trim()).replace(/^<p>|<\/p>$/g, '');
-      return '<td' + (span > 1 ? ' colspan="' + span + '"' : '') + ' class="a-' + al + '">' + html + '</td>';
-    }).join('') + '</tr>';
-  }).join('');
-  return '<div class="tex-table-wrap"><table class="tex-table' + (ruled ? ' ruled' : '') + '">' + tr + '</table></div>';
-}
-const skipWsIdx = (s, i) => { while (i < s.length && /\s/.test(s[i])) i++; return i; };
-const ENV = /^\\begin\{(align\*?|equation\*?|gather\*?|multline\*?|cases|array|matrix|pmatrix|vmatrix)\}/;
-const RICH = new Map();
-function renderRich(src) {
-  if (!src) return '';
-  let hit = RICH.get(src);
-  if (hit === undefined) { hit = renderRichRaw(src); RICH.set(src, hit); }
-  return hit;
-}
-function renderRichRaw(src) {
-  let s = src.replace(/(^|[^\\])%[^\n]*/g, '$1');
-  s = wrapCmds(s, {
-    textbf: [PU.b, PU.B], textit: [PU.i, PU.I], emph: [PU.i, PU.I], underline: [PU.u, PU.U],
-    textrm: ['', ''], textsf: ['', ''], mbox: ['', ''],
-  });
-  const out = []; let i = 0, buf = '';
-  const flush = () => { if (buf) { out.push(textPart(buf)); buf = ''; } };
-  while (i < s.length) {
-    const c = s[i];
-    if (c === '\\' && s[i + 1] === '$') { buf += '\\$'; i += 2; continue; }
-    if (c === '$') {
-      const dbl = s[i + 1] === '$'; const q = dbl ? '$$' : '$';
-      let j = i + q.length;
-      for (; j < s.length; j++) { if (s[j] === '\\') { j++; continue; } if (s.startsWith(q, j)) break; }
-      if (j < s.length) { flush(); out.push(katexHtml(s.slice(i + q.length, j), dbl)); i = j + q.length; continue; }
-    }
-    if (c === '\\' && (s[i + 1] === '[' || s[i + 1] === '(')) {
-      const close = s[i + 1] === '[' ? '\\]' : '\\)'; const j = s.indexOf(close, i + 2);
-      if (j > 0) { flush(); out.push(katexHtml(s.slice(i + 2, j), s[i + 1] === '[')); i = j + 2; continue; }
-    }
-    if (s.startsWith('\\begin{tabular}', i)) {
-      const j = s.indexOf('\\end{tabular}', i);
-      const k = skipWsIdx(s, i + 15);
-      if (j > 0 && s[k] === '{') {
-        const [spec, e] = braceArg(s, k);
-        flush(); out.push(tabularHtml(spec, s.slice(e, j))); i = j + 13; continue;
-      }
-    }
-    if (c === '\\') {
-      const m = s.slice(i, i + 40).match(ENV);
-      if (m) { const end = '\\end{' + m[1] + '}'; const j = s.indexOf(end, i); if (j > 0) { flush(); out.push(katexHtml(s.slice(i, j + end.length), true)); i = j + end.length; continue; } }
-    }
-    buf += c; i++;
-  }
-  flush();
-  return '<p>' + out.join('') + '</p>';
-}
-const plain = (s) => String(s || '').replace(/\\[a-zA-Z]+/g, ' ').replace(/[{}$\\^_]/g, ' ').replace(/\s+/g, ' ').toLowerCase();
 
 /* ---------- dữ liệu ---------- */
 const state = {
@@ -227,10 +85,6 @@ async function load() {
 }
 
 /* ---------- thẻ câu hỏi ---------- */
-function figEl(f) {
-  if (f.svg) return h('div', { class: 'fig' }, h('img', { src: f.svg, alt: 'Hình minh họa của câu hỏi', loading: 'lazy' }));
-  return h('div', { class: 'fig fig-miss' }, 'Hình đang được dựng (kho chưa có bản SVG của hình này). Mã TikZ vẫn có trong LaTeX.');
-}
 function bodyEl(q) {
   const b = h('div', { class: 'q-body' });
   b.append(h('div', { html: renderRich(q.de) }));
@@ -438,7 +292,7 @@ function fillRandom() {
 }
 function renderExam(root) {
   const e = state.exam;
-  root.append(h('div', { class: 'row', style: 'margin-bottom:16px' }, h('h1', { class: 'grow' }, 'Tạo đề thi'), h('span', { class: 'muted small' }, 'Chọn cấu trúc → chọn phạm vi → chọn câu → xuất LaTeX')));
+  root.append(h('div', { class: 'row', style: 'margin-bottom:16px' }, h('h1', { class: 'grow' }, 'Tạo đề thi'), h('span', { class: 'muted small' }, 'Chọn cấu trúc → chọn phạm vi → chọn câu → xuất LaTeX / giao bài online')));
   const cols = h('div', { class: 'cols', style: 'grid-template-columns:1fr 320px' });
   const steps = h('div', { class: 'steps' });
 
@@ -538,6 +392,7 @@ function summary() {
   const missing = LOAI_KEYS.some((k) => e.picks[k].length < e.target[k] && examPool(k).length);
   box.append(h('button', { class: 'btn', disabled: !missing, onclick: fillRandom }, 'Bốc ngẫu nhiên phần còn thiếu'),
     h('button', { class: 'btn ghost', disabled: !total, onclick: previewExam }, 'Xem trước đề'),
+    h('button', { class: 'btn', style: 'background:var(--g);color:var(--ink);font-weight:600', disabled: !total, onclick: openAssignOnlineModal }, 'Giao bài online (Link & QR)'),
     h('button', { class: 'btn', style: 'background:var(--y);color:var(--ink)', disabled: !total, onclick: exportExam }, 'Xuất LaTeX cho Overleaf'),
     h('button', { class: 'btn ghost', disabled: !total, onclick: () => { if (confirm('Xóa toàn bộ câu đã chọn trong đề?')) { LOAI_KEYS.forEach((k) => (e.picks[k] = [])); saveExam(); render(); } } }, 'Làm lại từ đầu'),
     h('p', { class: 'note' }, 'Chỉ dùng câu đã duyệt (chính thức). Câu thêm từ Thư viện cũng nằm trong đề này.'));
@@ -624,6 +479,154 @@ function exportExam() {
     h('button', { class: 'btn ghost', onclick: () => download(name(), buildTex(giaoVien)) }, 'Tải file .tex')]);
 }
 
+/* ---------- GIAO BÀI ONLINE (BƯỚC 1) ---------- */
+function openAssignOnlineModal() {
+  const ch = Object.fromEntries(chosen());
+  const onlineQs = [...(ch.TN4 || []), ...(ch.DS || []), ...(ch.TLN || [])];
+  if (!onlineQs.length) {
+    toast('Cần chọn ít nhất 1 câu Trắc nghiệm (TN4), Đúng/Sai (ĐS) hoặc Trả lời ngắn (TLN) để giao bài online.');
+    return;
+  }
+
+  const now = new Date();
+  const closeDefault = new Date(now.getTime() + 24 * 3600 * 1000);
+  const toLocalIso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+
+  const configuredUrl = D?.apps_script_url || localStorage.getItem('toankho.apps_script_url') || '';
+  const savedTeacherCode = sessionStorage.getItem('toankho.teacher_code') || '';
+
+  const titleInp = h('input', { type: 'text', value: state.exam.title || 'ĐỀ KIỂM TRA' });
+  const modeSel = h('select', { style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' },
+    h('option', { value: 'tu_lam' }, 'Tự làm theo hạn'),
+    h('option', { value: 'thi_cung_luc' }, 'Thi cùng lúc (Đấu Trường)'));
+  const timeInp = h('input', { type: 'number', min: 1, max: 300, value: state.exam.time || 15 });
+  const openInp = h('input', { type: 'datetime-local', value: toLocalIso(now), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
+  const closeInp = h('input', { type: 'datetime-local', value: toLocalIso(closeDefault), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
+  const shufQ = h('input', { type: 'checkbox', checked: true });
+  const shufC = h('input', { type: 'checkbox', checked: true });
+  const codeInp = h('input', { type: 'password', placeholder: 'Mã giáo viên đã cài trong Script Properties', value: savedTeacherCode, style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
+  const urlInp = h('input', { type: 'text', placeholder: 'https://script.google.com/macros/s/.../exec', value: configuredUrl });
+
+  const errBox = h('div', { class: 'note-warn', hidden: true, style: 'border-color:#b3261e;background:#ffe3e0;color:#7c1d18' });
+  const resultBox = h('div', { class: 'panel', hidden: true, style: 'margin-top:14px;text-align:center;background:#f4f9f0;border-color:#2f7d32' });
+
+  const formBox = h('div', null,
+    ch.TL?.length ? h('div', { class: 'note-warn', style: 'margin-bottom:12px' }, `Lưu ý: ${ch.TL.length} câu Tự luận sẽ được bỏ qua khi chấm tự động (chỉ gửi ${onlineQs.length} câu TN4/ĐS/TLN).`) : null,
+    h('div', { class: 'row', style: 'margin-bottom:12px' },
+      h('div', { class: 'field grow' }, h('label', null, 'Tên bài kiểm tra'), titleInp),
+      h('div', { class: 'field' }, h('label', null, 'Chế độ làm bài'), modeSel),
+      h('div', { class: 'field', style: 'width:130px' }, h('label', null, 'Thời gian (phút)'), timeInp)),
+    h('div', { class: 'row', style: 'margin-bottom:12px' },
+      h('div', { class: 'field grow' }, h('label', null, 'Giờ mở đề'), openInp),
+      h('div', { class: 'field grow' }, h('label', null, 'Giờ đóng đề (mở đáp án)'), closeInp)),
+    h('div', { class: 'row', style: 'margin-bottom:14px;gap:20px' },
+      h('label', { class: 'cb' }, shufQ, 'Đảo thứ tự câu hỏi'),
+      h('label', { class: 'cb' }, shufC, 'Đảo phương án A/B/C/D')),
+    h('div', { class: 'row', style: 'margin-bottom:12px' },
+      h('div', { class: 'field grow' }, h('label', null, 'Mã giáo viên'), codeInp),
+      D?.apps_script_url ? null : h('div', { class: 'field grow' }, h('label', null, 'Địa chỉ Apps Script (hoặc điền vào web/config.json)'), urlInp)),
+    errBox,
+    resultBox);
+
+  const submitBtn = h('button', { class: 'btn' }, `Giao bài (${onlineQs.length} câu) & tạo mã QR`);
+  submitBtn.onclick = async () => {
+    errBox.hidden = true;
+    const teacherCode = codeInp.value.trim();
+    const apiUrl = (D?.apps_script_url || urlInp.value || '').trim();
+    if (!teacherCode) {
+      errBox.textContent = 'Vui lòng nhập mã giáo viên.';
+      errBox.hidden = false;
+      return;
+    }
+    if (!apiUrl) {
+      errBox.textContent = 'Chưa có địa chỉ Apps Script. Hãy điền vào ô Địa chỉ Apps Script hoặc trong file web/config.json.';
+      errBox.hidden = false;
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Đang gửi đề lên Google Sheet…';
+
+    try {
+      const payload = {
+        action: 'createExam',
+        teacherCode,
+        title: titleInp.value.trim() || 'ĐỀ KIỂM TRA',
+        mode: modeSel.value,
+        durationMinutes: +timeInp.value || 15,
+        openTime: openInp.value ? new Date(openInp.value).toISOString() : '',
+        closeTime: closeInp.value ? new Date(closeInp.value).toISOString() : '',
+        shuffleQuestions: shufQ.checked,
+        shuffleChoices: shufC.checked,
+        questions: onlineQs.map((q) => ({
+          ma: q.ma,
+          loai: q.loai,
+          dang: q.dang || '',
+          de: q.de,
+          choices: q.choices,
+          tf: q.tf,
+          hinh: (q.hinh || []).map((f) => ({ id: f.id, svg: f.svg })),
+          dap_an: q.dap_an,
+          loigiai: q.loigiai,
+          hinh_lg: (q.hinh_lg || []).map((f) => ({ id: f.id, svg: f.svg })),
+        })),
+      };
+
+      const res = await fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!data || !data.ok) {
+        throw new Error((data && data.message) || 'Không tạo được bài kiểm tra.');
+      }
+
+      sessionStorage.setItem('toankho.teacher_code', teacherCode);
+      if (!D?.apps_script_url && apiUrl) localStorage.setItem('toankho.apps_script_url', apiUrl);
+
+      const examTitle = titleInp.value.trim() || 'ĐỀ KIỂM TRA';
+      const examDur = +timeInp.value || 15;
+      const cTN4 = (ch.TN4 || []).length;
+      const cDS = (ch.DS || []).length;
+      const cTLN = (ch.TLN || []).length;
+      try {
+        localStorage.setItem('toankho.exam_meta.v1.' + data.examCode, JSON.stringify({
+          examCode: data.examCode,
+          title: examTitle,
+          durationMinutes: examDur,
+          counts: { TN4: cTN4, DS: cDS, TLN: cTLN, total: onlineQs.length },
+        }));
+      } catch {}
+
+      const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
+      const extraParam =
+        `&t=${encodeURIComponent(examTitle)}&d=${examDur}&c=${cTN4}-${cDS}-${cTLN}` +
+        ((!D?.apps_script_url && apiUrl) ? `&s=${encodeURIComponent(apiUrl)}` : '');
+      const studentLink = `${baseUrl}/kiem-tra/?b=${encodeURIComponent(data.examCode)}${extraParam}`;
+      const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(studentLink)}`;
+
+      resultBox.replaceChildren(
+        h('div', { style: 'font-size:18px;font-weight:600;color:#1b5e20' }, `Đã giao bài thành công! Mã bài: ${data.examCode}`),
+        h('div', { class: 'small muted', style: 'margin-top:4px' }, `Tổng điểm thô tối đa: ${data.maxRawScore} điểm (tự động quy về thang 10)`),
+        h('div', { style: 'margin:12px auto' }, h('img', { src: qrSrc, alt: 'Mã QR bài kiểm tra', style: 'width:200px;height:200px;border-radius:14px;border:1.5px solid var(--line);padding:6px;background:#fff' })),
+        h('div', { class: 'row', style: 'justify-content:center;margin-top:8px' },
+          h('input', { type: 'text', readonly: true, value: studentLink, style: 'width:min(420px,100%);border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;background:#fff;font-size:13.5px' }),
+          h('button', { class: 'btn sm', onclick: async () => toast((await copyText(studentLink)) ? 'Đã chép link học sinh' : 'Không chép được') }, 'Chép link'),
+          h('a', { class: 'btn ghost sm', href: studentLink, target: '_blank', rel: 'noopener' }, 'Mở trang kiểm tra')));
+      resultBox.hidden = false;
+      submitBtn.textContent = 'Đã tạo bài kiểm tra';
+    } catch (err) {
+      errBox.textContent = err.message || 'Lỗi kết nối máy chủ Apps Script.';
+      errBox.hidden = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = `Giao bài (${onlineQs.length} câu) & tạo mã QR`;
+    }
+  };
+
+  openModal('Giao bài online', formBox, [submitBtn]);
+}
+
 /* ---------- HƯỚNG DẪN ---------- */
 async function renderHelp(root) {
   root.append(h('div', { class: 'help' },
@@ -632,7 +635,7 @@ async function renderHelp(root) {
       h('li', null, h('b', null, 'Tìm bài tập: '), 'vào ', h('i', null, 'Thư viện'), ' → chọn lớp → chọn chương (thẻ màu) → chọn bài/dạng ở cột trái. Lọc thêm theo loại câu và mức độ. Gõ vào ô tìm kiếm để tìm theo mã, nội dung, nguồn.'),
       h('li', null, h('b', null, 'Xem trực tiếp: '), 'công thức và hình được hiển thị sẵn; bấm ', h('i', null, 'Xem đáp án'), ' khi cần (đáp án và lời giải mặc định ẩn).'),
       h('li', null, h('b', null, 'Lấy LaTeX: '), 'bấm ', h('i', null, 'Lấy LaTeX'), ' để chép mã một câu, hoặc ', h('i', null, 'Lấy LaTeX cả danh sách'), ' để chép nhiều câu đang lọc.'),
-      h('li', null, h('b', null, 'Tạo đề: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → ', h('i', null, 'Xuất LaTeX'), '.')),
+      h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.')),
     h('h2', { style: 'margin-top:22px' }, 'Cập nhật dữ liệu'),
     h('p', null, 'Trang này tự dựng lại từ kho GitHub mỗi khi có thay đổi mới (khoảng 1–3 phút sau khi push). Nếu câu hỏi mới chưa hiện, hãy tải lại trang.'),
     h('p', { class: 'muted small' }, 'Câu ở trạng thái “chờ duyệt” chỉ hiện khi tick “Cả câu chờ duyệt”, và không được đưa vào đề.')));
@@ -641,15 +644,13 @@ async function renderHelp(root) {
 }
 
 /* ---------- định tuyến ---------- */
-// Mặc định giữ nguyên vị trí cuộn; chỉ về đầu trang khi đổi mục (toTop).
-// focusList: sau khi đổi bộ lọc, nếu đầu danh sách câu đã trôi lên trên màn hình thì cuộn nhẹ tới đó.
 function render(opt = {}) {
   const y = window.scrollY;
   const view = $('#view');
   const root = document.createElement('div');
   document.querySelectorAll('.rail-btn').forEach((b) => b.classList.toggle('on', b.dataset.view === state.view));
   if (state.view === 'exam') renderExam(root); else if (state.view === 'help') renderHelp(root); else renderLib(root);
-  view.style.minHeight = view.offsetHeight + 'px';          // tránh trang co lại rồi giãn ra
+  view.style.minHeight = view.offsetHeight + 'px';
   view.replaceChildren(...root.childNodes);
   window.scrollTo(0, opt.toTop ? 0 : y);
   requestAnimationFrame(() => {

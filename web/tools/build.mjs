@@ -262,6 +262,7 @@ for (const f of walk(path.join(WEB, 'src'))) {
   const dest = path.join(OUT, path.relative(path.join(WEB, 'src'), f));
   fs.mkdirSync(path.dirname(dest), { recursive: true }); fs.copyFileSync(f, dest);
 }
+fs.copyFileSync(path.join(WEB, 'config.json'), path.join(OUT, 'config.json'));
 const kdist = path.join(WEB, 'node_modules', 'katex', 'dist');
 const kout = path.join(OUT, 'vendor', 'katex');
 fs.mkdirSync(path.join(kout, 'fonts'), { recursive: true });
@@ -323,13 +324,18 @@ if (todo.length) {
     } catch (e) { f.svg = null; warn(`Hình ${f.id}: biên dịch lỗi ${logErr(f.id)}`.trim()); }
   }
 }
-for (const q of questions) for (const f of [...q.hinh, ...q.hinh_lg]) if (f.svg === undefined) f.svg = null;
+// Gắn mã nội dung vào đường dẫn hình: hình đổi thì đường dẫn đổi, trình duyệt không dùng lại bản cũ trong bộ nhớ đệm.
+for (const q of questions) for (const f of [...q.hinh, ...q.hinh_lg]) {
+  if (f.svg === undefined || f.svg === null) { f.svg = null; continue; }
+  const v = crypto.createHash('sha1').update(fs.readFileSync(path.join(OUT, f.svg))).digest('hex').slice(0, 10);
+  f.svg += '?v=' + v;
+}
 
 let commit = process.env.GITHUB_SHA ? process.env.GITHUB_SHA.slice(0, 7) : '';
 if (!commit) { try { commit = execSync('git rev-parse --short HEAD', { cwd: SRC, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); } catch { } }
 const data = {
   tao_luc: new Date().toISOString(), commit,
-  ten_kho: config.ten_kho, preamble: config.preamble,
+  ten_kho: config.ten_kho, apps_script_url: config.apps_script_url || '', preamble: config.preamble,
   mau_tex: exists(path.join(SRC, 'preamble', 'mau.tex')) ? read(path.join(SRC, 'preamble', 'mau.tex')) : '',
   dethi_sty: exists(path.join(SRC, 'preamble', 'dethi.sty')) ? read(path.join(SRC, 'preamble', 'dethi.sty')) : '',
   muc_luc: toc, dang, cau_hoi: questions,

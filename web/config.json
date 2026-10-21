@@ -1,5 +1,6 @@
 {
   "ten_kho": "ToánKho",
+  "apps_script_url": "https://script.google.com/macros/s/AKfycbyKO67Zv9DDMs3NR1Cnbi8SVqvuP_pU-5Kn9_MduA40-uNiQxaVMsgd36cQmCNhoUdQAw/exec",
   "preamble": [
     "\\documentclass[12pt,a4paper]{article}",
     "\\usepackage{preamble/dethi}",
