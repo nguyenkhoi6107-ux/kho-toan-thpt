@@ -1,0 +1,52 @@
+%% ma: L12-B14-0015
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.14
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 16"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (tọa độ vectơ, độ dài), Bài 14 (cặp vectơ chỉ phương của mặt phẳng), lớp 11 (hình chóp đều)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.14.14"
+%% ghi_chu: "Đề gốc gọi 'một bề mặt trượt hình chữ nhật', điểm K chỉ có trên hình; đã đặt tên mặt trượt là FGKL (L là đỉnh còn lại, nằm trên mặt đất) để ý c), d) rõ. Hình dựng lại theo hình gốc, mặt trượt và vị trí K đúng theo tọa độ"
+\begin{ex}
+Trong không gian $Oxyz$ (mỗi đơn vị tương ứng $1$ mét, mặt đất là mặt phẳng $(Oxy)$) cho một tháp chơi dành cho leo trèo và trượt. Tháp có hai tầng: tầng $1$ là hình lập phương cạnh $2$ m; tầng $2$ là hình hộp chữ nhật cao $1$ m với một mái hình chóp tứ giác đều cao $1$ m. Từ đỉnh mái $S$, một sợi dây được cố định tại điểm $P(1;7;0)$ để hỗ trợ leo trèo. Một bề mặt trượt hình chữ nhật $FGKL$ được gắn vào tháp sao cho mặt trượt song song với dây hỗ trợ leo (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(-.5cm,-.4cm)},y={(.85cm,0cm)},z={(0cm,.85cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (A) at (2,0,0); \coordinate (B) at (2,2,0); \coordinate (C) at (0,2,0);
+  \coordinate (H) at (0,0,2); \coordinate (E) at (2,0,2); \coordinate (F) at (2,2,2); \coordinate (G) at (0,2,2);
+  \coordinate (H2) at (0,0,3); \coordinate (E2) at (2,0,3); \coordinate (F2) at (2,2,3); \coordinate (G2) at (0,2,3);
+  \coordinate (S) at (1,1,4); \coordinate (P) at (1,7,0); \coordinate (L) at (2,5,0); \coordinate (K) at (0,5,0);
+  \draw[khuat] (O)--(A) (O)--(C) (O)--(H)--(E) (H)--(G) (H)--(H2)--(E2) (H2)--(G2) (H2)--(S) (C)--(K);
+  \draw[truc] (A)--(3.6,0,0) node[below]{$x$};
+  \draw[truc] (K)--(0,8,0) node[above]{$y$};
+  \draw[truc] (H2)--(0,0,5.3) node[left]{$z$};
+  \draw (A)--(B)--(C) (A)--(E)--(F)--(G)--(C) (B)--(F);
+  \draw (E)--(E2)--(F2)--(G2)--(G) (F)--(F2) (E2)--(S)--(F2) (S)--(G2);
+  \fill[gray!45,opacity=.85] (F)--(G)--(K)--(L)--cycle;
+  \draw (F)--(G)--(K)--(L)--cycle;
+  \draw (S)--(P);
+  \fill (P) circle (1.3pt) node[below right]{$P$};
+  \path (O) node[left]{$O$} (A) node[below]{$A$} (B) node[below]{$B$} (C) node[above right,inner sep=1pt]{$C$}
+        (E) node[left]{$E$} (F) node[below right,inner sep=1pt]{$F$} (G) node[above right]{$G$} (H) node[left]{$H$}
+        (S) node[above]{$S$} (K) node[above right]{$K$} (L) node[below]{$L$};
+  \node[left,font=\footnotesize] at (2,0,1) {$2$ m};
+  \node[left,font=\footnotesize] at (2,0,2.5) {$1$ m};
+  \node[below,font=\footnotesize] at (2,1,0) {$2$ m};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Điểm $S$ có tọa độ $(1;1;4)$.}
+{\True Mặt phẳng trượt có cặp vectơ chỉ phương là $\overrightarrow{FG}$ và $\overrightarrow{SP}$.}
+{Điểm $K$ có tọa độ là $(7;0;0)$.}
+{\True Diện tích bề mặt trượt bằng $7{,}2\ \text{m}^2$ (làm tròn đến hàng phần mười).}
+\loigiai{a) Đáy mái là hình vuông cạnh $2$ ở độ cao $3$, tâm $(1;1;3)$; mái cao $1$ m nên $S(1;1;4)$. Đúng.
+
+b) Mặt trượt chứa $FG$ và song song với $SP$; $\overrightarrow{FG}=(-2;0;0)$, $\overrightarrow{SP}=(0;6;-4)$ không cùng phương. Đúng.
+
+c) $G(0;2;2)$, $K$ thuộc mặt đất và $\overrightarrow{GK}$ cùng phương $\overrightarrow{SP}$: $K=G+t(0;6;-4)$, $z_K=0\Rightarrow t=\dfrac12$, $K(0;5;0)$. Sai.
+
+d) $FGKL$ là hình chữ nhật với $FG=2$, $GK=\sqrt{9+4}=\sqrt{13}$, diện tích $2\sqrt{13}\approx7{,}2\ (\text{m}^2)$. Đúng.}
+\end{ex}

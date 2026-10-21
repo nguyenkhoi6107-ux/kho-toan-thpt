@@ -1,0 +1,28 @@
+%% ma: L12-B06-0027
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.16
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần I Câu 51"
+%% kien_thuc: "Bài 6 (vectơ bằng nhau, góc giữa hai vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.16"
+%% ghi_chu: "Hình dựng lại theo hình gốc (nét khuất tại đỉnh A)"
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ (tham khảo hình bên dưới). Góc giữa hai vectơ $\overrightarrow{AC}$ và $\overrightarrow{B'A'}$ bằng
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,0); \coordinate (B) at (-1,-.8); \coordinate (C) at (1.5,-.8); \coordinate (D) at (2.5,0);
+  \coordinate (A') at (0,1.8); \coordinate (B') at (-1,1); \coordinate (C') at (1.5,1); \coordinate (D') at (2.5,1.8);
+  \draw[khuat] (B)--(A)--(D) (A)--(A');
+  \draw (B)--(C)--(D)--(D')--(C')--(B')--cycle (A')--(B') (A')--(D') (C)--(C');
+  \path (A) node[above right,font=\footnotesize]{$A$} (B) node[below left]{$B$} (C) node[below right]{$C$} (D) node[right]{$D$}
+        (A') node[above]{$A'$} (B') node[left]{$B'$} (C') node[below right]{$C'$} (D') node[right]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{$90^\circ$}{\True $135^\circ$}{$45^\circ$}{$30^\circ$}
+\loigiai{$\overrightarrow{B'A'}=\overrightarrow{BA}$, nên $(\overrightarrow{AC},\overrightarrow{B'A'})=(\overrightarrow{AC},\overrightarrow{BA})=180^\circ-(\overrightarrow{AC},\overrightarrow{AB})=180^\circ-45^\circ=135^\circ$.}
+\end{ex}

@@ -1,0 +1,29 @@
+%% ma: L12-B06-0028
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần I Câu 52"
+%% kien_thuc: "Bài 6 (quy tắc hình bình hành, tích vectơ với một số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với L12-B06-0017 (phân tích vectơ theo ba vectơ cạnh của hình hộp) nên nhập cùng dạng 12.6.10. Hình dựng lại theo hình gốc. Phần I Câu 15 (A'O với O tâm đáy) chỉ đổi điểm so với L12-B06-0017 nên đã bỏ"
+\begin{ex}
+Cho $ABCD.A_1B_1C_1D_1$ là hình hộp, với $K$ là trung điểm của $CC_1$ (tham khảo hình bên dưới). Mệnh đề nào sau đây đúng?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,0); \coordinate (B) at (2,-.4); \coordinate (D) at (.8,.7); \coordinate (C) at (2.8,.3);
+  \coordinate (A1) at (0,1.8); \coordinate (B1) at (2,1.4); \coordinate (D1) at (.8,2.5); \coordinate (C1) at (2.8,2.1);
+  \coordinate (K) at ($(C)!.5!(C1)$);
+  \draw[khuat] (A)--(D)--(C) (D)--(D1) (A)--(K);
+  \draw (A)--(B)--(C)--(C1)--(B1)--(A1)--cycle (B)--(B1) (C1)--(D1)--(A1);
+  \fill (K) circle (1.2pt) node[right]{$K$};
+  \path (A) node[left]{$A$} (B) node[below]{$B$} (C) node[right]{$C$} (D) node[above left,xshift=1pt,yshift=-1pt]{$D$}
+        (A1) node[left]{$A_1$} (B1) node[below left,xshift=1pt]{$B_1$} (C1) node[above right]{$C_1$} (D1) node[above]{$D_1$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $\overrightarrow{AK}=\overrightarrow{AB}+\overrightarrow{AD}+\dfrac12\overrightarrow{AA_1}$}{$\overrightarrow{AK}=\overrightarrow{AB}+\overrightarrow{BC}+\overrightarrow{AA_1}$}{$\overrightarrow{AK}=\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA_1}$}{$\overrightarrow{AK}=\overrightarrow{AB}+\dfrac12\overrightarrow{AD}+\dfrac12\overrightarrow{AA_1}$}
+\loigiai{$\overrightarrow{AK}=\overrightarrow{AC}+\overrightarrow{CK}=\overrightarrow{AB}+\overrightarrow{AD}+\dfrac12\overrightarrow{CC_1}=\overrightarrow{AB}+\overrightarrow{AD}+\dfrac12\overrightarrow{AA_1}$.}
+\end{ex}

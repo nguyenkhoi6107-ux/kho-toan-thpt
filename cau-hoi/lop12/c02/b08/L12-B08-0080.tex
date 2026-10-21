@@ -1,0 +1,42 @@
+%% ma: L12-B08-0080
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.5
+%% loai: TLN
+%% muc: VD
+%% dap_an: "22"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần III Câu 25"
+%% kien_thuc: "Bài 7 (tọa độ hóa, khoảng cách đến mặt phẳng tọa độ), Bài 8 (ba điểm thẳng hàng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.8.5 (giao điểm của tia đi qua hai điểm với một mặt phẳng tọa độ) nên nhập cùng dạng. Hình dựng lại theo hình gốc (vị trí X, P, Q theo đúng tỉ lệ thu nhỏ)"
+\begin{ex}
+Một màn hình lớn được gắn thẳng đứng trên một bức tường vuông góc với mặt đất, và một màn hình trong suốt được lắp đặt vuông góc với cả bức tường và mặt đất. Gọi giao tuyến của bức tường và màn hình trong suốt là $l$. Một thiết bị phát tia laser được đặt tại điểm $X$ trên mặt đất, cách bức tường $5$ m và cách màn hình trong suốt $3$ m. Thiết bị chiếu một tia laser về phía điểm $P$ nằm trên màn hình trong suốt, cách giao tuyến $l$ một khoảng $4$ m và cách mặt đất $2$ m. Tia laser đi qua $P$ và chạm vào điểm $Q$ trên màn hình lớn (tham khảo hình bên dưới). Biết $Q$ cách mặt đất $a$ m và cách giao tuyến $l$ một khoảng $b$ m. Tính $a+b$ (bỏ qua sự khúc xạ của tia laser khi đi qua màn hình trong suốt).
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(0cm,1cm)},z={(.5cm,-.6cm)},font=\footnotesize]
+  \fill[black!12] (-3.5,0,0)--(4.5,0,0)--(4.5,0,5)--(-3.5,0,5)--cycle;
+  \draw (-3.5,0,0)--(-3.5,5.5,0)--(4.5,5.5,0)--(4.5,0,0);
+  \draw[thick] (-3.5,0,0)--(4.5,0,0) (0,0,0)--(0,5.5,0);
+  \coordinate (X) at (-2,0,3); \coordinate (P) at (0,1.5,1.8); \coordinate (Q) at (3,3.75,0);
+  \draw[phu] (Q)--(0,3.75,0) node[midway,above]{$b$} (Q)--(3,0,0) node[midway,right]{$a$};
+  \draw[->,thick] (P)--(Q);
+  \fill[cyan!8,opacity=.75] (0,0,0)--(0,5.2,0)--(0,3.5,5)--(0,0,5)--cycle;
+  \draw[gray] (0,0,0)--(0,5.2,0)--(0,3.5,5)--(0,0,5)--cycle;
+  \draw[phu] (P)--(0,1.5,0) node[midway,right]{$4$ m} (P)--(0,0,1.8) node[midway,right]{$2$ m};
+  \draw[phu] (X)--(0,0,3) node[midway,below]{$3$ m} (X)--(-2,0,0) node[midway,left]{$5$ m};
+  \draw[thick] (X)--(P);
+  \fill (X) circle (1.4pt) node[below]{$X$} (P) circle (1.4pt) node[left]{$P$} (Q) circle (1.4pt) node[above right]{$Q$};
+  \node[below right] at (-3.5,5.5,0) {Bức tường};
+  \node[below left] at (4.5,5.5,0) {Màn hình lớn};
+  \node[above left] at (4.5,0,4.6) {Mặt đất};
+  \node[align=center] at (0,4.1,2.6) {Màn hình\\trong suốt};
+  \node[left] at (0,5,0) {$l$};
+\end{tikzpicture}
+\end{center}
+\shortans{22}
+\loigiai{Chọn hệ trục với gốc là giao điểm của $l$ và mặt đất, $Oz$ chứa $l$, mặt phẳng $(Oyz)$ là màn hình trong suốt, mặt phẳng $(Oxz)$ là bức tường. Khi đó $X(-3;5;0)$, $P(0;4;2)$.
+
+Điểm trên tia $XP$: $X+t\overrightarrow{XP}=(-3+3t;5-t;2t)$. Điểm $Q$ thuộc bức tường ($y=0$) nên $t=5$, $Q(12;0;10)$.
+
+$a=10$, $b=12$, $a+b=22$.}
+\end{ex}

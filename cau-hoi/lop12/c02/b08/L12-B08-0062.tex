@@ -1,0 +1,43 @@
+%% ma: L12-B08-0062
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.35
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 19"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (biểu thức tọa độ các phép toán vectơ, trọng tâm, tích vô hướng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.35"
+%% ghi_chu: "Nguồn ghi trong tài liệu: SGD Ninh Bình 2025-2026. Hình gốc không đúng tỉ lệ cạnh; đã vẽ lại theo AB = 5, AD = 6, AA' = 10"
+\begin{ex}
+Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có đáy $ABCD$ là hình chữ nhật với $AB=5$, $AD=6$, $AA'=10$; $G$ là trọng tâm của tam giác $BDA'$. Gắn hệ tọa độ $Oxyz$ có gốc $O$ trùng với điểm $A$, các tia $Ox$, $Oy$, $Oz$ lần lượt trùng với các tia $AB$, $AD$, $AA'$ (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(-.42cm,-.38cm)},y={(.5cm,0cm)},z={(0cm,.36cm)},scale=.85]
+  \coordinate (A) at (0,0,0); \coordinate (B) at (5,0,0); \coordinate (C) at (5,6,0); \coordinate (D) at (0,6,0);
+  \coordinate (A') at (0,0,10); \coordinate (B') at (5,0,10); \coordinate (C') at (5,6,10); \coordinate (D') at (0,6,10);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(A');
+  \draw (B)--(C)--(D)--(D')--(A')--(B')--cycle (B')--(C')--(D') (C)--(C');
+  \draw[truc] (B)--(7.5,0,0) node[below]{$x$};
+  \draw[truc] (D)--(0,8,0) node[right]{$y$};
+  \draw[truc] (A')--(0,0,12.5) node[left]{$z$};
+  \path (A) node[above right,inner sep=1pt]{$A$} (B) node[left]{$B$} (C) node[below right]{$C$} (D) node[below]{$D$}
+        (A') node[left]{$A'$} (B') node[left]{$B'$} (C') node[below right]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tọa độ của điểm $C$ là $(5;6;0)$.}
+{\True $\left|\overrightarrow{AC}+2\overrightarrow{A'B}\right|=\sqrt{661}$.}
+{Tọa độ điểm $G$ là $\left(2;\dfrac53;\dfrac{10}3\right)$.}
+{\True $\overrightarrow{AG}\cdot\overrightarrow{B'C}=-\dfrac{64}3$.}
+\loigiai{$A(0;0;0)$, $B(5;0;0)$, $D(0;6;0)$, $A'(0;0;10)$, $B'(5;0;10)$.
+
+a) $C(5;6;0)$. Đúng.
+
+b) $\overrightarrow{AC}=(5;6;0)$, $\overrightarrow{A'B}=(5;0;-10)$, $\overrightarrow{AC}+2\overrightarrow{A'B}=(15;6;-20)$ có độ dài $\sqrt{225+36+400}=\sqrt{661}$. Đúng.
+
+c) $G\left(\dfrac53;2;\dfrac{10}3\right)$. Sai.
+
+d) $\overrightarrow{AG}=\left(\dfrac53;2;\dfrac{10}3\right)$, $\overrightarrow{B'C}=(0;6;-10)$, $\overrightarrow{AG}\cdot\overrightarrow{B'C}=12-\dfrac{100}3=-\dfrac{64}3$. Đúng.}
+\end{ex}

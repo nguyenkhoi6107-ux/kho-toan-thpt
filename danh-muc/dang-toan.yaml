@@ -351,3 +351,37 @@
 12.18.8: {ten: "Xác suất có điều kiện của biến cố đối: P(X̄ | Y) = 1 - P(X | Y)", trang_thai: da-duyet}
 12.19.12: {ten: "Nhận biết công thức xác suất toàn phần", trang_thai: da-duyet}
 12.19.13: {ten: "Xác suất chọn sản phẩm tốt từ kho gồm hai lô hàng", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị M05 (LaTeX giáo viên gửi 21/10/2026: Vectơ và hệ trục tọa độ trong không gian), ngày 21/10/2026 ---
+12.6.11: {ten: "Biểu diễn vectơ theo ba vectơ cho trước trong hình chóp có điểm chia cạnh theo tỉ số", trang_thai: de-xuat}
+12.6.12: {ten: "Tích vô hướng khi biết độ dài và góc, hoặc góc khi biết tích vô hướng", trang_thai: de-xuat}
+12.6.13: {ten: "Độ dài vectơ tổ hợp và góc giữa hai vectơ bằng bình phương vô hướng", trang_thai: de-xuat}
+12.6.14: {ten: "Hợp lực của ba lực đôi một vuông góc (lực cân bằng)", trang_thai: de-xuat}
+12.6.15: {ten: "Công của lực kéo hợp với phương dịch chuyển một góc cho trước", trang_thai: de-xuat}
+12.6.16: {ten: "Tích vô hướng và góc giữa hai vectơ trong hình lập phương, tứ diện, hình chóp", trang_thai: de-xuat}
+12.6.17: {ten: "Giới hạn của tổng tích vô hướng với các điểm chia đều một đoạn thẳng trong tứ diện đều", trang_thai: de-xuat}
+12.7.5: {ten: "Tọa độ vectơ biểu diễn theo i, j, k; vectơ đơn vị trên trục tọa độ", trang_thai: de-xuat}
+12.7.6: {ten: "Tọa độ điểm đối xứng qua mặt phẳng tọa độ", trang_thai: de-xuat}
+12.7.7: {ten: "Tọa độ vật thể khi trục tọa độ gắn với các hướng Đông, Tây, Nam, Bắc và độ cao", trang_thai: de-xuat}
+12.7.8: {ten: "Tọa độ vị trí máy bay từ khoảng cách và các góc đo bởi ra đa", trang_thai: de-xuat}
+12.8.21: {ten: "Tọa độ vectơ khi biết tọa độ điểm đầu và điểm cuối", trang_thai: de-xuat}
+12.8.22: {ten: "Tích vô hướng của hai vectơ bằng tọa độ", trang_thai: de-xuat}
+12.8.23: {ten: "Góc giữa hai vectơ bằng tọa độ", trang_thai: de-xuat}
+12.8.24: {ten: "Tìm tham số để hai vectơ vuông góc", trang_thai: de-xuat}
+12.8.25: {ten: "Tìm tham số để hai vectơ cùng phương", trang_thai: de-xuat}
+12.8.26: {ten: "Điểm trên trục tọa độ cách đều hai điểm cho trước", trang_thai: de-xuat}
+12.8.27: {ten: "Tọa độ trọng tâm tam giác, tứ diện", trang_thai: de-xuat}
+12.8.28: {ten: "Tìm tham số để tam giác vuông tại một đỉnh", trang_thai: de-xuat}
+12.8.29: {ten: "Tọa độ vectơ tổ hợp khi các vectơ cho theo i, j, k hoặc theo tọa độ", trang_thai: de-xuat}
+12.8.30: {ten: "Giá trị nhỏ nhất của tổng bình phương khoảng cách hoặc độ dài vectơ tổng (điểm trên mặt phẳng tọa độ hoặc tùy ý)", trang_thai: de-xuat}
+12.8.31: {ten: "Tìm tham số khi biết độ dài đoạn thẳng", trang_thai: de-xuat}
+12.8.32: {ten: "Công của lực khi biết tọa độ vectơ lực và vectơ độ dời", trang_thai: de-xuat}
+12.8.33: {ten: "Tam giác, tứ diện cho bằng tọa độ: tọa độ vectơ, tích vô hướng, tam giác vuông, trọng tâm, chân đường cao (Đúng/Sai)", trang_thai: de-xuat}
+12.8.34: {ten: "Chân đường phân giác trong của tam giác cho bằng tọa độ (Đúng/Sai)", trang_thai: de-xuat}
+12.8.35: {ten: "Tọa độ hóa hình chóp, hình hộp chữ nhật: tọa độ đỉnh, trung điểm, trọng tâm, độ dài, tích vô hướng, góc (Đúng/Sai)", trang_thai: de-xuat}
+12.8.36: {ten: "Hình chiếu của điểm, điểm trên trục và mặt phẳng tọa độ nhận điểm cho trước làm trung điểm, trực tâm tam giác (Đúng/Sai)", trang_thai: de-xuat}
+12.8.37: {ten: "Lực tác dụng dọc theo ba chân giá đỡ máy quay: tọa độ vectơ lực (Đúng/Sai)", trang_thai: de-xuat}
+12.8.38: {ten: "Hình thang cân và hình chữ nhật vuông góc: tọa độ hóa, tích vô hướng, diện tích nhỏ nhất, góc giữa hai vectơ (Đúng/Sai)", trang_thai: de-xuat}
+12.8.39: {ten: "Vị trí hai khinh khí cầu: tọa độ theo hướng, trung điểm, khoảng cách (Đúng/Sai)", trang_thai: de-xuat}
+12.8.40: {ten: "Tọa độ tâm các khối lập phương con và trọng tâm tam giác tạo bởi các tâm", trang_thai: de-xuat}
+12.14.14: {ten: "Tháp leo trượt: tọa độ đỉnh mái chóp, cặp vectơ chỉ phương của mặt trượt, giao với mặt đất, diện tích mặt trượt (Đúng/Sai)", trang_thai: de-xuat}
+12.6.18: {ten: "Điều kiện ba vectơ đồng phẳng (ngoài chương trình KNTT, chỉ dùng cho câu cách ly)", trang_thai: de-xuat}

@@ -1,0 +1,35 @@
+%% ma: L12-B06-0039
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.17
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "22,5"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần III Câu 26"
+%% kien_thuc: "Bài 6 (tích vô hướng, tích vectơ với một số), lớp 11 (cấp số cộng, giới hạn dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.17"
+\begin{ex}
+Cho tứ diện đều $OABC$ có độ dài cạnh bằng $6$. Gọi $H$ là hình chiếu vuông góc của điểm $C$ trên cạnh $AB$. Chia đoạn thẳng $HC$ thành $n$ phần bằng nhau ($n$ là số tự nhiên, $n\ge2$), các điểm chia lần lượt là $P_0(\equiv H)$, $P_1$, $P_2$, $\dots$, $P_{n-1}$, $P_n(\equiv C)$ (tham khảo hình bên dưới). Đặt $S_n=\displaystyle\sum_{k=1}^n\overrightarrow{OH}\cdot\overrightarrow{OP_k}$. Tính $\displaystyle\lim_{n\to+\infty}\dfrac{S_n}n$.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (A) at (-2,0); \coordinate (B) at (1.5,-2); \coordinate (C) at (4.5,.5); \coordinate (O) at (1,4.5);
+  \coordinate (H) at ($(A)!.5!(B)$);
+  \draw (A)--(B)--(C)--(O)--cycle (O)--(B);
+  \draw[khuat] (A)--(C) (H)--(C);
+  \draw[->] (O)--(H);
+  \coordinate (P1) at ($(H)!.15!(C)$); \coordinate (P2) at ($(H)!.3!(C)$); \coordinate (Pk) at ($(H)!.55!(C)$); \coordinate (Pn) at ($(H)!.85!(C)$);
+  \draw[khuat,->] (O)--(Pk);
+  \foreach \X in {H,P1,P2,Pk,Pn,C} \fill (\X) circle (1.3pt);
+  \path (H) node[below left]{$P_0(\equiv H)$} (P1) node[below]{$P_1$} (P2) node[below]{$P_2$} (Pk) node[below]{$P_k$}
+        (Pn) node[below right]{$P_{n-1}$} (C) node[right]{$P_n(\equiv C)$} (A) node[left]{$A$} (B) node[below]{$B$} (O) node[above]{$O$};
+\end{tikzpicture}
+\end{center}
+\shortans{22,5}
+\loigiai{$H$ là trung điểm $AB$, $\overrightarrow{OP_k}=\overrightarrow{OH}+\dfrac kn\overrightarrow{HC}$ nên $\overrightarrow{OH}\cdot\overrightarrow{OP_k}=OH^2+\dfrac kn\,\overrightarrow{OH}\cdot\overrightarrow{HC}$.
+
+$OH^2=27$; $\overrightarrow{OH}\cdot\overrightarrow{OC}=\dfrac12\left(\overrightarrow{OA}+\overrightarrow{OB}\right)\cdot\overrightarrow{OC}=18$ nên $\overrightarrow{OH}\cdot\overrightarrow{HC}=\overrightarrow{OH}\cdot\overrightarrow{OC}-OH^2=-9$.
+
+$S_n=27n-9\cdot\dfrac{n+1}2$, $\dfrac{S_n}n=27-\dfrac92\cdot\dfrac{n+1}n\to27-4{,}5=22{,}5$.}
+\end{ex}

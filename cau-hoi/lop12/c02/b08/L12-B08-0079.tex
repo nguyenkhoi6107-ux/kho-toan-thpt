@@ -1,0 +1,40 @@
+%% ma: L12-B08-0079
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.5
+%% loai: TLN
+%% muc: VD
+%% dap_an: "7,5"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần III Câu 24"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (hai vectơ cùng phương, ba điểm thẳng hàng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với dạng 12.8.5 (điểm thẳng hàng với hai điểm cho trước, biết một tọa độ) nên nhập cùng dạng. Hình gốc có thêm các đường gióng từ C đến G (gợi ý vị trí), đã bỏ"
+\begin{ex}
+Trong một buổi cắm trại, một nhóm hướng đạo sinh dựng một cấu trúc bằng các cọc gỗ. Cấu trúc có đáy là hình chữ nhật $ABCD$ nằm trên mặt đất nằm ngang, với $AB=6$ m và $AD=4$ m. Đỉnh $T$ của cấu trúc nằm thẳng đứng phía trên $O$ (tâm của đáy $ABCD$) và cách $O$ $2$ m. Gọi $P$, $Q$, $R$, $S$ lần lượt là trung điểm của $AB$, $BC$, $CD$, $DA$. Chọn hệ trục tọa độ $Oxyz$ với gốc tại $O$, các tia $Ox$, $Oy$, $Oz$ lần lượt cùng hướng với các vectơ $\overrightarrow{OQ}$, $\overrightarrow{OR}$, $\overrightarrow{OT}$ (đơn vị: mét). Một cột cờ cao $5$ m được dựng thẳng đứng tại điểm $G(\alpha;\beta;0)$. Biết đỉnh của cột cờ thẳng hàng với $A$ và $T$ (tham khảo hình bên dưới). Tính $\alpha+\beta$.
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(.75cm,.55cm)},z={(0cm,.8cm)},scale=.85]
+  \coordinate (O) at (0,0,0); \coordinate (Q) at (3,0,0); \coordinate (R) at (0,2,0); \coordinate (P) at (0,-2,0); \coordinate (S) at (-3,0,0);
+  \coordinate (A) at (-3,-2,0); \coordinate (B) at (3,-2,0); \coordinate (C) at (3,2,0); \coordinate (D) at (-3,2,0);
+  \coordinate (T) at (0,0,2); \coordinate (G) at (4.5,3,0); \coordinate (H) at (4.5,3,5);
+  \draw (A)--(B)--(C)--(D)--cycle;
+  \draw[khuat] (S)--(Q) (P)--(R) (T)--(R);
+  \draw (T)--(P) (T)--(Q) (T)--(S) (O)--(T);
+  \draw[->,thick] (O)--(1,0,0) node[below]{$\vec{i}$};
+  \draw[->,thick] (O)--(0,1,0) node[right,inner sep=1pt]{$\vec{j}$};
+  \draw[->,thick] (O)--(0,0,1) node[right,inner sep=1pt]{$\vec{k}$};
+  \draw[phu] (A)--(H);
+  \draw[very thick] (G)--(H) node[midway,right]{$5$ m};
+  \foreach \X in {A,T,G,H,O} \fill (\X) circle (1.2pt);
+  \path (A) node[below left]{$A$} (B) node[below right]{$B$} (C) node[right]{$C$} (D) node[above left]{$D$} (T) node[above left]{$T$}
+        (O) node[below right]{$O$} (P) node[below]{$P$} (Q) node[below right]{$Q$} (R) node[above right]{$R$} (S) node[left]{$S$}
+        (G) node[below right]{$G(\alpha;\beta;0)$} (H) node[above]{$H$};
+  \path (A)--(P) node[midway,below]{$3$ m} (P)--(B) node[midway,below]{$3$ m};
+  \path (A)--(S) node[midway,left]{$2$ m} (S)--(D) node[midway,left]{$2$ m};
+\end{tikzpicture}
+\end{center}
+\shortans{7,5}
+\loigiai{$OQ=\dfrac{AB}2=3$, $OR=\dfrac{AD}2=2$ nên $A(-3;-2;0)$, $T(0;0;2)$. Đỉnh cột cờ $H(\alpha;\beta;5)$.
+
+$A$, $T$, $H$ thẳng hàng: $\overrightarrow{AH}=k\overrightarrow{AT}=k(3;2;2)$, $z$: $5=2k\Rightarrow k=2{,}5$. Vậy $\alpha=-3+7{,}5=4{,}5$, $\beta=-2+5=3$, $\alpha+\beta=7{,}5$.}
+\end{ex}

@@ -1,0 +1,44 @@
+%% ma: L12-B08-0057
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.1
+%% loai: DS
+%% muc: [NB, TH, TH, NB]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 12"
+%% kien_thuc: "Bài 7 (tọa độ điểm, khoảng cách đến mặt phẳng tọa độ), Bài 8 (tích vô hướng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Đã sửa mặt phẳng chứa tam giác OAB từ (Oxy) thành (Oxz) cho khớp tọa độ, cần giáo viên xác nhận"
+%% ghi_chu: "Đề gốc ghi 'tam giác OAB nằm trong mặt phẳng (Oxy)', mâu thuẫn với B'(120;450;300) (khi đó B có cao độ 300); đã sửa thành (Oxz) và bổ sung '(Oxy) là mặt đất'. Đề gốc nhắc 'như hình vẽ' nhưng không kèm hình; đã vẽ hình từ tọa độ đề cho. Trùng ý tưởng với dạng 12.8.1 (tọa độ hóa mô hình lăng trụ đứng)"
+\begin{ex}
+Những căn lều gỗ được phác thảo dưới dạng một hình lăng trụ đứng tam giác $OAB.O'A'B'$ như hình vẽ. Chọn hệ trục tọa độ $Oxyz$ (đơn vị: cm) sao cho gốc tọa độ trùng với $O$, tam giác $OAB$ nằm trong mặt phẳng $(Oxz)$, mặt phẳng $(Oxy)$ là mặt đất. Biết hai điểm $A'$ và $B'$ có tọa độ lần lượt là $A'(240;450;0)$ và $B'(120;450;300)$.
+\begin{center}
+\begin{tikzpicture}[x={(.55cm,-.45cm)},y={(.9cm,0cm)},z={(0cm,.8cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (A) at (2.4,0,0); \coordinate (B) at (1.2,0,3);
+  \coordinate (O') at (0,4.5,0); \coordinate (A') at (2.4,4.5,0); \coordinate (B') at (1.2,4.5,3);
+  \fill[gray!15] (A)--(A')--(B')--(B)--cycle;
+  \draw[khuat] (O)--(O')--(A') (O')--(B');
+  \draw (O)--(A)--(B)--cycle (A)--(A') (B)--(B') (A')--(B');
+  \draw[truc] (A)--(3.6,0,0) node[right]{$x$};
+  \draw[truc] (O')--(0,5.8,0) node[right]{$y$};
+  \draw[truc] (O)--(0,0,3.9) node[left]{$z$};
+  \path (O) node[left]{$O$} (A) node[below]{$A$} (B) node[above left]{$B$}
+        (O') node[above right,inner sep=1pt]{$O'$} (A') node[below]{$A'$} (B') node[above]{$B'$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Chiều dài của căn lều gỗ (đoạn $OO'$) bằng $450$ cm.}
+{\True Tọa độ điểm $A$ là $(240;0;0)$ và tọa độ điểm $B$ là $(120;0;300)$.}
+{Tam giác $OAB$ là tam giác vuông tại $B$.}
+{\True Chiều cao từ đỉnh mái (đỉnh $B$) xuống mặt đất bằng $300$ cm.}
+\loigiai{Lăng trụ đứng nên $\overrightarrow{OO'}=\overrightarrow{AA'}=\overrightarrow{BB'}$ vuông góc với $(Oxz)$, tức cùng phương với $Oy$.
+
+a) $O'(0;450;0)$ nên $OO'=450$ cm. Đúng.
+
+b) $A=A'-(0;450;0)=(240;0;0)$, $B=(120;0;300)$. Đúng.
+
+c) $\overrightarrow{BO}=(-120;0;-300)$, $\overrightarrow{BA}=(120;0;-300)$, $\overrightarrow{BO}\cdot\overrightarrow{BA}=-14400+90000\ne0$. Sai.
+
+d) Mặt đất là $(Oxy)$, chiều cao bằng $|z_B|=300$ cm. Đúng.}
+\end{ex}

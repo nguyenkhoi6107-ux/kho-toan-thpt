@@ -1,0 +1,47 @@
+%% ma: L12-B08-0060
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.37
+%% loai: DS
+%% muc: [NB, NB, TH, VD]
+%% dap_an: "ĐĐĐS"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 15"
+%% kien_thuc: "Bài 6 (tổng vectơ, vectơ cùng phương), Bài 8 (tọa độ vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.37"
+%% ghi_chu: "Ý c) đề gốc viết 'hợp lực dọc theo trục Oz của mỗi chân máy phải gánh chịu lực bằng nhau', đã diễn đạt lại thành 'thành phần theo phương Oz của mỗi lực' (không đổi ý). Ý d) Sai với cả hai cách hiểu chiều của lực. Bỏ tiêu đề '(Bài toán Giá đỡ máy ảnh)'. Hình gốc đặt A3 sai vị trí; đã vẽ lại theo tọa độ đề"
+\begin{ex}
+Một chiếc máy quay được đặt trên một giá đỡ ba chân. Điểm đặt máy là $E(0;0;6)$, các điểm tiếp xúc với mặt đất của ba chân lần lượt là
+\[A_1(0;1;0),\quad A_2\left(-\dfrac{\sqrt3}2;-\dfrac12;0\right),\quad A_3\left(\dfrac{\sqrt3}2;-\dfrac12;0\right)\]
+(đơn vị: mét). Trọng lượng của máy quay là $\overrightarrow{P}$ có độ lớn $300$ N, hướng thẳng đứng xuống mặt đất $(Oxy)$. Gọi $\overrightarrow{F_1}$, $\overrightarrow{F_2}$, $\overrightarrow{F_3}$ là các lực tác dụng dọc theo ba chân giá đỡ để giữ hệ thống cân bằng (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(-.9cm,-.6cm)},y={(1.8cm,0cm)},z={(0cm,.6cm)}]
+  \coordinate (O) at (0,0,0); \coordinate (E) at (0,0,6);
+  \coordinate (A1) at (0,1,0); \coordinate (A2) at (-.866,-.5,0); \coordinate (A3) at (.866,-.5,0);
+  \draw[phu] plot[domain=0:360,samples=73] ({cos(\x)},{sin(\x)},0);
+  \draw[truc] (O)--(1.9,0,0) node[below left]{$x$};
+  \draw[truc] (O)--(0,1.8,0) node[right]{$y$};
+  \draw[phu] (O)--(E);
+  \draw[truc] (E)--(0,0,7.4) node[left]{$z$};
+  \draw[thick] (E)--(A1) (E)--(A2) (E)--(A3);
+  \draw[->,thick] (E)--($(E)!.25!(A1)$) node[right]{$\overrightarrow{F_1}$};
+  \draw[->,thick] (E)--($(E)!.5!(A2)$) node[right,inner sep=2pt]{$\overrightarrow{F_2}$};
+  \draw[->,thick] (E)--($(E)!.4!(A3)$) node[left]{$\overrightarrow{F_3}$};
+  \fill (E) circle (1.3pt) node[above right]{$E$} (O) circle (1.1pt);
+  \path (O) node[below right]{$O$} (A1) node[below right]{$A_1$} (A2) node[above right,inner sep=1pt]{$A_2$} (A3) node[below left]{$A_3$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tọa độ vectơ trọng lực là $\overrightarrow{P}=(0;0;-300)$.}
+{\True Vectơ chỉ phương của chân $EA_1$ là $\overrightarrow{EA_1}=(0;1;-6)$.}
+{\True Do tính đối xứng, thành phần theo phương $Oz$ của mỗi lực $\overrightarrow{F_1}$, $\overrightarrow{F_2}$, $\overrightarrow{F_3}$ có độ lớn bằng nhau và bằng $100$ N.}
+{Tọa độ của lực $\overrightarrow{F_1}$ tác dụng lên chân $EA_1$ là $\overrightarrow{F_1}=\left(0;-\dfrac{50}3;-100\right)$.}
+\loigiai{a) $\overrightarrow{P}$ hướng theo chiều âm của $Oz$, $|\overrightarrow{P}|=300$. Đúng.
+
+b) $\overrightarrow{EA_1}=(0;1;-6)$. Đúng.
+
+c) Ba chân đối xứng qua $Oz$ nên ba lực có độ lớn bằng nhau; tổng thành phần theo $Oz$ có độ lớn $300$ N nên mỗi lực có thành phần theo $Oz$ độ lớn $100$ N. Đúng.
+
+d) $\overrightarrow{F_1}$ cùng phương với $\overrightarrow{EA_1}=(0;1;-6)$ nên $\overrightarrow{F_1}=k(0;1;-6)$; thành phần theo $Oz$ có độ lớn $100$ nên $|k|=\dfrac{50}3$, $\overrightarrow{F_1}=\left(0;\dfrac{50}3;-100\right)$ hoặc $\left(0;-\dfrac{50}3;100\right)$. Không có trường hợp nào bằng $\left(0;-\dfrac{50}3;-100\right)$. Sai.}
+\end{ex}

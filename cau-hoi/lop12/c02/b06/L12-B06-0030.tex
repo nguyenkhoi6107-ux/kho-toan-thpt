@@ -1,0 +1,27 @@
+%% ma: L12-B06-0030
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần I Câu 57"
+%% kien_thuc: "Bài 6 (vectơ bằng nhau, hiệu hai vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với các câu dạng 12.6.1 (phép toán vectơ trong hình hộp) nên nhập cùng dạng. Hình dựng lại theo hình gốc"
+\begin{ex}
+Cho hình hộp $ABCD.EFGH$ (tham khảo hình bên dưới). Kết quả của phép toán $\overrightarrow{AB}-\overrightarrow{EH}$ là
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (B) at (0,0); \coordinate (C) at (2.8,0); \coordinate (A) at (1.2,.8); \coordinate (D) at (4,.8);
+  \coordinate (F) at (0,2.2); \coordinate (G) at (2.8,2.2); \coordinate (E) at (1.2,3); \coordinate (H) at (4,3);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(E);
+  \draw (B)--(C)--(D)--(H)--(G)--(F)--cycle (C)--(G) (F)--(E)--(H);
+  \path (A) node[below right,xshift=-2pt,yshift=2pt]{$A$} (B) node[below left]{$B$} (C) node[below]{$C$} (D) node[right]{$D$}
+        (E) node[above]{$E$} (F) node[left]{$F$} (G) node[below right,xshift=-2pt]{$G$} (H) node[above right]{$H$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $\overrightarrow{DB}$}{$\overrightarrow{BD}$}{$\overrightarrow{AE}$}{$\overrightarrow{BH}$}
+\loigiai{$\overrightarrow{EH}=\overrightarrow{AD}$ nên $\overrightarrow{AB}-\overrightarrow{EH}=\overrightarrow{AB}-\overrightarrow{AD}=\overrightarrow{DB}$.}
+\end{ex}

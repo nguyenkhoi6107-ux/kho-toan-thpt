@@ -1,0 +1,40 @@
+%% ma: L12-B08-0061
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.36
+%% loai: DS
+%% muc: [NB, NB, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 17"
+%% kien_thuc: "Bài 7 (hình chiếu lên trục, mặt phẳng tọa độ), Bài 8 (trung điểm, độ dài, tích vô hướng), lớp 10 (trực tâm tam giác vuông)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.36"
+%% ghi_chu: "Hình gốc vẽ sẵn E, F và các đường hình chiếu (gợi ý lời giải ý a), b), c)); bản kho chỉ vẽ hệ trục và tam giác ABC"
+\begin{ex}
+Trong không gian $Oxyz$, cho ba điểm $A(3;-2;5)$, $B(2;1;-3)$ và $C(-1;2;1)$ (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(-.7cm,-.45cm)},y={(.8cm,0cm)},z={(0cm,.8cm)},scale=.75]
+  \draw[truc] (-3,0,0)--(4.5,0,0) node[below left]{$x$};
+  \draw[truc] (0,-3,0)--(0,4,0) node[right]{$y$};
+  \draw[truc] (0,0,-4)--(0,0,6.2) node[left]{$z$};
+  \node[below right,font=\footnotesize] at (0,0,0) {$O$};
+  \coordinate (A) at (3,-2,5); \coordinate (B) at (2,1,-3); \coordinate (C) at (-1,2,1);
+  \draw (A)--(B)--(C)--cycle;
+  \foreach \P in {A,B,C} \fill (\P) circle (1.4pt);
+  \path (A) node[left]{$A$} (B) node[right]{$B$} (C) node[above right]{$C$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Hình chiếu vuông góc của điểm $A$ trên trục $Oz$ là $A'(0;0;5)$.}
+{\True Hình chiếu vuông góc của điểm $B$ trên mặt phẳng $(Oxz)$ là $B'(2;0;-3)$.}
+{Biết $E$ là điểm nằm trên trục $Ox$ và $F$ là điểm nằm trên mặt phẳng $(Oyz)$ sao cho $C$ là trung điểm của đoạn thẳng $EF$. Khi đó $EF>5$.}
+{\True Gọi $I(a;b;c)$ là trực tâm của tam giác $ABC$. Khi đó $a+b+c=2$.}
+\loigiai{a) $A'(0;0;5)$. Đúng.
+
+b) $B'(2;0;-3)$. Đúng.
+
+c) $E(e;0;0)$, $F(0;f;g)$, $C$ là trung điểm $EF$ nên $e=-2$, $f=4$, $g=2$. $EF=\sqrt{4+16+4}=\sqrt{24}\approx4{,}9<5$. Sai.
+
+d) $\overrightarrow{CA}=(4;-4;4)$, $\overrightarrow{CB}=(3;-1;-4)$, $\overrightarrow{CA}\cdot\overrightarrow{CB}=12+4-16=0$ nên tam giác $ABC$ vuông tại $C$, trực tâm là $C$. $a+b+c=-1+2+1=2$. Đúng.}
+\end{ex}

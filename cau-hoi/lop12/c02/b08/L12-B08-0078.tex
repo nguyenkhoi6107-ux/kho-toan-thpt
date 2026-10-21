@@ -1,0 +1,34 @@
+%% ma: L12-B08-0078
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.16
+%% loai: TLN
+%% muc: VD
+%% dap_an: "1,98"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần III Câu 22"
+%% kien_thuc: "Bài 7 (tọa độ điểm), lớp 11 (hình chóp đều, định lí Pythagore)"
+%% trang_thai: cho-duyet
+%% ly_do: "Đề gốc thiếu dữ kiện xác định vị trí D (hai đáp số 1,98 hoặc 1,48); đã bổ sung D(0,5;0;1), cần giáo viên xác nhận"
+%% ghi_chu: "Đề gốc chỉ cho A'(0;0;0), A(0;0;1), B(0;0,5;1), chưa xác định D (D có thể là (0,5;0;1) hoặc (-0,5;0;1), cho đáp số 1,98 hoặc 1,48). Đã bổ sung D(0,5;0;1) theo đáp số thường gặp 1,98. Trùng ý tưởng với dạng 12.8.16 (tọa độ đỉnh chóp đặt trên hình hộp)"
+\begin{ex}
+Để chuẩn bị cho một buổi triển lãm quốc tế, các trang sức có giá trị lớn được đặt bảo mật trong các khối chóp tứ giác đều $S.ABCD$, đặt phía trên một trụ hình hộp chữ nhật $ABCD.A'B'C'D'$ có đáy là hình vuông (tham khảo hình bên dưới). Chọn hệ trục tọa độ $Oxyz$ (đơn vị trên mỗi trục là mét) sao cho $A'(0;0;0)$, $A(0;0;1)$, $B(0;0{,}5;1)$ và $D(0{,}5;0;1)$. Biết rằng ban tổ chức dùng các tấm kính cường lực hình tam giác cân có cạnh bên là $60$ cm để lắp ráp thành khối chóp nói trên. Khi đó tọa độ điểm $S$ là $(a;b;c)$. Tính $a+b+c$ (làm tròn kết quả đến hàng phần trăm).
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,0); \coordinate (B) at (2,-.5); \coordinate (C) at (.8,-1.2); \coordinate (D) at (-1.2,-.7);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,-3) coordinate (\P');
+  \coordinate (I) at ($(A)!.5!(C)$); \coordinate (S) at ($(I)+(0,2.2)$);
+  \draw[khuat] (A')--(A) (A')--(B') (A')--(D') (A)--(B) (A)--(D) (A)--(C) (B)--(D) (S)--(A) (S)--(I);
+  \draw (B)--(C)--(D) (B')--(C')--(D') (B)--(B') (C)--(C') (D)--(D') (S)--(B) (S)--(C) (S)--(D);
+  \path (S) node[above]{$S$} (A) node[above left,xshift=2pt]{$A$} (B) node[right]{$B$} (C) node[below right,xshift=-2pt,yshift=2pt]{$C$}
+        (D) node[left]{$D$} (I) node[below right,xshift=-2pt,yshift=2pt]{$I$}
+        (A') node[above right,xshift=-2pt]{$A'$} (B') node[right]{$B'$} (C') node[below]{$C'$} (D') node[left]{$D'$};
+\end{tikzpicture}
+\end{center}
+\shortans{1,98}
+\loigiai{Đáy $ABCD$ là hình vuông cạnh $0{,}5$ m, tâm $I(0{,}25;0{,}25;1)$, $IA=\dfrac{0{,}5}{\sqrt2}$.
+
+$SA=0{,}6$ m nên $SI=\sqrt{0{,}36-0{,}125}=\sqrt{0{,}235}\approx0{,}4848$.
+
+$S(0{,}25;0{,}25;1+\sqrt{0{,}235})$, $a+b+c=1{,}5+\sqrt{0{,}235}\approx1{,}98$.}
+\end{ex}

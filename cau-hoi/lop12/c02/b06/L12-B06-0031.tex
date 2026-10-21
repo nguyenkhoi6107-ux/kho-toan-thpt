@@ -1,0 +1,31 @@
+%% ma: L12-B06-0031
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.11
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần I Câu 58"
+%% kien_thuc: "Bài 6 (quy tắc ba điểm, tích vectơ với một số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.11"
+%% ghi_chu: "Đề gốc ghi BN = (1/3)CB (độ dài), đã viết thành BN = (1/3)BC. Hình dựng lại theo hình gốc"
+\begin{ex}
+Cho hình chóp $S.ABC$. Trên cạnh $SA$ lấy điểm $M$ sao cho $AM=\dfrac12MS$, trên cạnh $BC$ lấy điểm $N$ sao cho $BN=\dfrac13BC$ (tham khảo hình bên dưới). Đặt $\overrightarrow{SA}=\vec{a}$, $\overrightarrow{BC}=\vec{b}$, $\overrightarrow{AB}=\vec{c}$. Biểu diễn vectơ $\overrightarrow{MN}$ theo $\vec{a}$, $\vec{b}$, $\vec{c}$ ta được
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,0); \coordinate (B) at (1.5,-2.2); \coordinate (C) at (4.5,0); \coordinate (S) at (2.2,2.5);
+  \coordinate (M) at ($(A)!1/3!(S)$); \coordinate (N) at ($(B)!1/3!(C)$);
+  \draw[khuat] (A)--(C);
+  \draw (S)--(A)--(B)--(C)--cycle (S)--(B);
+  \foreach \P in {A,B,C,S,M,N} \fill (\P) circle (1.2pt);
+  \path (A) node[left]{$A$} (B) node[below]{$B$} (C) node[right]{$C$} (S) node[above]{$S$}
+        (M) node[left]{$M$} (N) node[below right]{$N$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{MN}=\vec{a}+\dfrac13\vec{b}+\dfrac13\vec{c}$}{$\overrightarrow{MN}=\dfrac13\vec{a}+\vec{b}+\dfrac13\vec{c}$}{$\overrightarrow{MN}=\dfrac13\vec{a}+\dfrac13\vec{b}+\dfrac13\vec{c}$}{\True $\overrightarrow{MN}=\dfrac13\vec{a}+\dfrac13\vec{b}+\vec{c}$}
+\loigiai{$AM=\dfrac13AS$ nên $\overrightarrow{MA}=\dfrac13\overrightarrow{SA}=\dfrac13\vec{a}$; $\overrightarrow{BN}=\dfrac13\overrightarrow{BC}=\dfrac13\vec{b}$.
+
+$\overrightarrow{MN}=\overrightarrow{MA}+\overrightarrow{AB}+\overrightarrow{BN}=\dfrac13\vec{a}+\vec{c}+\dfrac13\vec{b}$.}
+\end{ex}

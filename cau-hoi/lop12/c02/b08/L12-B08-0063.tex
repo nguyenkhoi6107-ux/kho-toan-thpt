@@ -1,0 +1,44 @@
+%% ma: L12-B08-0063
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.38
+%% loai: DS
+%% muc: [TH, VD, VD, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 20"
+%% kien_thuc: "Lớp 10 (định lí côsin), lớp 11 (hai mặt phẳng vuông góc, khoảng cách), Bài 7, Bài 8 (tọa độ hóa, tích vô hướng, góc giữa hai vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.38"
+%% ghi_chu: "Đề gốc viết 'đường thằng BC' (đã sửa) và (MN;AB) (đã viết thành góc giữa hai vectơ). Ý d): theo đề, CN không bị chặn (nếu N chỉ chạy trên đoạn BC thì CN lớn nhất bằng 1); cả hai cách hiểu ý d) đều Sai. Hình gốc vẽ AB = 3DC; đã vẽ lại đúng AB = 2DC"
+\begin{ex}
+Cho hình thang $ABCD$ có $AB\parallel CD$, $AD=DC=CB=1$, $\widehat{ABC}=60^\circ$. Tứ giác $ACFE$ là hình chữ nhật, mặt phẳng $(ACFE)$ vuông góc với mặt phẳng $(ABCD)$, $CF=1$. Gọi $M$ là điểm di động trên đoạn thẳng $EF$ (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(1.9cm,0cm)},y={(.35cm,1.2cm)},z={(0cm,1.7cm)}]
+  \coordinate (A) at (0,0,0); \coordinate (B) at (2,0,0); \coordinate (C) at (1.5,.866,0); \coordinate (D) at (.5,.866,0);
+  \coordinate (E) at (0,0,1); \coordinate (F) at (1.5,.866,1); \coordinate (M) at ($(E)!.4!(F)$);
+  \draw[khuat] (A)--(D)--(C)--(B) (A)--(C)--(F);
+  \draw (A)--(B)--(F)--(E)--cycle (A)--(M)--(B);
+  \path (A) node[below left]{$A$} (B) node[below right]{$B$} (C) node[right,xshift=1pt]{$C$} (D) node[left]{$D$}
+        (E) node[left]{$E$} (F) node[above right]{$F$} (M) node[above]{$M$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tam giác $ABC$ vuông tại $C$.}
+{$\overrightarrow{DE}\cdot\overrightarrow{FB}=\dfrac12$.}
+{\True Khi $M$ di động trên $EF$, giá trị nhỏ nhất của diện tích tam giác $MAB$ bằng $1$.}
+{Gọi $N$ là điểm di động trên đường thẳng $BC$ sao cho $(\overrightarrow{MN},\overrightarrow{AB})=60^\circ$. Giá trị lớn nhất của độ dài đoạn $CN$ bằng $\dfrac56$.}
+\loigiai{$ABCD$ là hình thang cân, $\widehat{ABC}=60^\circ$ nên $AB=2$. $AC^2=4+1-2\cdot2\cdot1\cdot\cos60^\circ=3$.
+
+a) $AC^2+BC^2=4=AB^2$ nên tam giác $ABC$ vuông tại $C$. Đúng.
+
+Chọn hệ trục với $C(0;0;0)$, $A(\sqrt3;0;0)$, $B(0;1;0)$, $F(0;0;1)$; khi đó
+\[E(\sqrt3;0;1),\quad D\left(\dfrac{\sqrt3}2;-\dfrac12;0\right).\]
+
+b) $\overrightarrow{DE}=\left(\dfrac{\sqrt3}2;\dfrac12;1\right)$, $\overrightarrow{FB}=(0;1;-1)$, $\overrightarrow{DE}\cdot\overrightarrow{FB}=\dfrac12-1=-\dfrac12$. Sai.
+
+c) $M$ cách $(ABCD)$ một khoảng $1$ nên $d(M,AB)\ge1$, dấu bằng khi $M\equiv E$ (hình chiếu của $M$ là $A\in AB$). $S_{MAB}=\dfrac12AB\cdot d(M,AB)\ge1$. Đúng.
+
+d) $M(t;0;1)$ với $0\le t\le\sqrt3$, $N(0;s;0)$. \[\cos(\overrightarrow{MN},\overrightarrow{AB})=\dfrac12\Leftrightarrow\sqrt3t+s=\sqrt{t^2+s^2+1},\]
+giải ra $s=\dfrac{\sqrt3(1-2t^2)}{6t}$ với $t>0$. Khi $t\to0^+$ thì $s\to+\infty$ nên $CN=|s|$ không có giá trị lớn nhất (tại $t=\sqrt3$ thì $CN=\dfrac56$). Sai.}
+\end{ex}

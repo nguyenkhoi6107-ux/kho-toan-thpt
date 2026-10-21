@@ -1,0 +1,36 @@
+%% ma: L12-B07-0010
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.8
+%% loai: TLN
+%% muc: VD
+%% dap_an: "23,4"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần III Câu 18"
+%% kien_thuc: "Bài 7 (tọa độ của điểm, hình chiếu lên mặt phẳng tọa độ), lớp 10 (hệ thức lượng trong tam giác vuông)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.7.8"
+%% ghi_chu: "Đề gốc gọi các góc là MOC và NOB với C, B là các điểm trên tia Oz, Oy (chỉ có trên hình); đã viết thẳng 'góc giữa tia OM và tia Oz', 'góc giữa tia ON và tia Oy' và bổ sung a, b, c > 0 (theo hình), đơn vị km. Bỏ câu 'cất cánh theo đường thẳng tạo với mặt đất một góc nâng' (không dùng). Hình vẽ lại theo tọa độ thật"
+\begin{ex}
+Một máy bay đang cất cánh từ phi trường. Hệ tọa độ $Oxyz$ (đơn vị: km) được thiết lập với mặt phẳng $(Oxy)$ là mặt đất. Ở một thời điểm, máy bay ở vị trí $M(a;b;c)$ với $a,b,c>0$. Trạm ra đa tại gốc $O$ đo được khoảng cách $OM=14$ km. Gọi $N$ là hình chiếu vuông góc của $M$ lên mặt đất. Ra đa ghi nhận góc giữa tia $OM$ và tia $Oz$ bằng $65^\circ$, góc giữa tia $ON$ và tia $Oy$ bằng $32^\circ$ (tham khảo hình bên dưới). Tính $S=a+b+c$ (làm tròn kết quả đến hàng phần mười).
+\begin{center}
+\begin{tikzpicture}[x={(-.75cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)},scale=.38]
+  \coordinate (O) at (0,0,0); \coordinate (M) at (6.72,10.76,5.92); \coordinate (N) at (6.72,10.76,0); \coordinate (Cz) at (0,0,5.92); \coordinate (Y) at (0,4,0);
+  \draw[truc] (O)--(10,0,0) node[below left]{$x$};
+  \draw[truc] (O)--(0,15,0) node[right]{$y$};
+  \draw[truc] (O)--(0,0,9.5) node[left]{$z$};
+  \draw[khuat] (O)--(N)--(M)--(Cz);
+  \draw[->,thick] (O)--(M) node[pos=.5,below,sloped,font=\footnotesize]{$14$ km};
+  \pic[draw,angle radius=.8cm,"$65^\circ$",angle eccentricity=1.4] {angle=M--O--Cz};
+  \pic[draw,angle radius=1cm,"$32^\circ$",angle eccentricity=1.4] {angle=N--O--Y};
+  \fill (M) circle (5pt) (N) circle (5pt);
+  \path (O) node[left]{$O$} (M) node[right]{$M$} (N) node[below]{$N$};
+\end{tikzpicture}
+\end{center}
+\shortans{23,4}
+\loigiai{$c=OM\cos65^\circ\approx5{,}917$; $ON=OM\sin65^\circ\approx12{,}688$.
+
+$b=ON\cos32^\circ\approx10{,}760$; $a=ON\sin32^\circ\approx6{,}724$.
+
+$S=a+b+c\approx23{,}4$.}
+\end{ex}

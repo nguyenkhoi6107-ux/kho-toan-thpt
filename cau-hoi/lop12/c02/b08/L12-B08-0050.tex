@@ -1,0 +1,39 @@
+%% ma: L12-B08-0050
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.35
+%% loai: DS
+%% muc: [NB, NB, TH, VD]
+%% dap_an: "ĐĐĐĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 2"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (trung điểm, góc giữa hai vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.8.35"
+%% ghi_chu: "Hình gốc vẽ lệch trục (nhãn y đặt ở trục sâu, nét khuất sai); đã vẽ lại theo đúng tỉ lệ AB = 1, AD = 2, SA = 3"
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình chữ nhật, $AB=1$, $AD=2$, cạnh bên $SA$ vuông góc với mặt đáy và $SA=3$. Thiết lập hệ trục tọa độ $Oxyz$ sao cho gốc $O$ trùng với $A$, các tia $Ox$, $Oy$, $Oz$ lần lượt chứa các tia $AB$, $AD$, $AS$ (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[x={(-1.1cm,-.8cm)},y={(1.3cm,0cm)},z={(0cm,1cm)}]
+  \coordinate (A) at (0,0,0); \coordinate (B) at (1,0,0); \coordinate (C) at (1,2,0); \coordinate (D) at (0,2,0); \coordinate (S) at (0,0,3);
+  \draw[khuat] (S)--(A)--(B) (A)--(D);
+  \draw (S)--(B)--(C)--(D)--cycle (S)--(C);
+  \draw[truc] (B)--(1.8,0,0) node[below left]{$x$};
+  \draw[truc] (D)--(0,2.8,0) node[right]{$y$};
+  \draw[truc] (S)--(0,0,3.7) node[left]{$z$};
+  \path (A) node[above left]{$A\equiv O$} (B) node[left]{$B$} (C) node[below right]{$C$} (D) node[above right]{$D$} (S) node[left]{$S$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tọa độ đỉnh $B$ là $(1;0;0)$ và đỉnh $S$ là $(0;0;3)$.}
+{\True Tọa độ đỉnh $C$ là $(1;2;0)$.}
+{\True Gọi $M$ là trung điểm của $SC$. Tọa độ điểm $M$ là $\left(\dfrac12;1;\dfrac32\right)$.}
+{\True Côsin của góc tạo bởi hai vectơ $\overrightarrow{SB}$ và $\overrightarrow{SD}$ bằng $\dfrac9{\sqrt{130}}$.}
+\loigiai{a) $B(1;0;0)$, $S(0;0;3)$. Đúng.
+
+b) $\overrightarrow{AC}=\overrightarrow{AB}+\overrightarrow{AD}$ nên $C(1;2;0)$. Đúng.
+
+c) $M\left(\dfrac{1+0}2;\dfrac{2+0}2;\dfrac{0+3}2\right)=\left(\dfrac12;1;\dfrac32\right)$. Đúng.
+
+d) $\overrightarrow{SB}=(1;0;-3)$, $\overrightarrow{SD}=(0;2;-3)$. $\cos(\overrightarrow{SB},\overrightarrow{SD})=\dfrac{9}{\sqrt{10}\cdot\sqrt{13}}=\dfrac9{\sqrt{130}}$. Đúng.}
+\end{ex}

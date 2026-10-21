@@ -1,0 +1,38 @@
+%% ma: L12-B06-0033
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.2
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐĐSĐ"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần II Câu 6"
+%% kien_thuc: "Bài 6 (quy tắc hình hộp, góc giữa hai vectơ, tích vô hướng), lớp 11 (đường chéo hình hộp chữ nhật)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Trùng ý tưởng với các câu dạng 12.6.2 (khẳng định về vectơ, độ dài vectơ trong hình lập phương) nên nhập cùng dạng. Hình dựng lại theo hình gốc"
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ có cạnh bằng $a$ (tham khảo hình bên dưới).
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \coordinate (A) at (0,0); \coordinate (B) at (2.5,0); \coordinate (D) at (1,1); \coordinate (C) at ($(B)+(D)-(A)$);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,2.5) coordinate (\P');
+  \draw[khuat] (A)--(D)--(C) (D)--(D');
+  \draw (A)--(B)--(C) (A')--(B')--(C')--(D')--cycle (A)--(A') (B)--(B') (C)--(C');
+  \draw[khuat,->] (A)--(C');
+  \path (A) node[below left]{$A$} (B) node[below right]{$B$} (C) node[right]{$C$} (D) node[above left]{$D$}
+        (A') node[left]{$A'$} (B') node[below right]{$B'$} (C') node[above right]{$C'$} (D') node[above left]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Vectơ $\overrightarrow{AC'}$ được phân tích thành $\overrightarrow{AC'}=\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}$.}
+{\True Độ dài đường chéo $AC'$ của hình lập phương là $a\sqrt3$.}
+{Góc giữa hai vectơ $\overrightarrow{AB}$ và $\overrightarrow{A'C'}$ bằng $90^\circ$.}
+{\True Tích vô hướng $\overrightarrow{AC'}\cdot\overrightarrow{AD}=a^2$.}
+\loigiai{a) Quy tắc hình hộp. Đúng.
+
+b) $AC'^2=AB^2+AD^2+AA'^2=3a^2$ nên $AC'=a\sqrt3$. Đúng.
+
+c) $\overrightarrow{A'C'}=\overrightarrow{AC}$ nên $(\overrightarrow{AB},\overrightarrow{A'C'})=(\overrightarrow{AB},\overrightarrow{AC})=45^\circ$. Sai.
+
+d) $\overrightarrow{AC'}\cdot\overrightarrow{AD}=(\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'})\cdot\overrightarrow{AD}=0+a^2+0=a^2$. Đúng.}
+\end{ex}

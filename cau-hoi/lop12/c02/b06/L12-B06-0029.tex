@@ -1,0 +1,30 @@
+%% ma: L12-B06-0029
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.16
+%% loai: TN4
+%% muc: VD
+%% dap_an: "D"
+%% nguon: "LaTeX giáo viên gửi 21/10/2026 (M05, Vectơ và hệ trục tọa độ trong không gian, 107 câu), Phần I Câu 55"
+%% kien_thuc: "Bài 6 (tích vô hướng, góc giữa hai vectơ), lớp 10 (giá trị lượng giác của góc tù)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.6.16"
+%% ghi_chu: "Hình dựng lại theo hình gốc"
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ (tham khảo hình bên dưới). Gọi $\alpha$ là góc giữa hai vectơ $\overrightarrow{BB'}$ và $\overrightarrow{A'C}$. Giá trị $\tan\alpha$ bằng
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \coordinate (A) at (0,.9); \coordinate (B) at (1.2,0); \coordinate (C) at (3.4,.6); \coordinate (D) at (2.2,1.5);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,2.4) coordinate (\P');
+  \draw[khuat] (A)--(D)--(C) (D)--(D') (A')--(C);
+  \draw (A)--(B)--(C)--(C')--(D')--(A')--cycle (B)--(B') (B')--(A') (B')--(C');
+  \path (A) node[left]{$A$} (B) node[below]{$B$} (C) node[right]{$C$} (D) node[below,yshift=-1pt]{$D$}
+        (A') node[left]{$A'$} (B') node[below left,xshift=2pt]{$B'$} (C') node[right]{$C'$} (D') node[above]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{$\sqrt3$}{$\sqrt2$}{$-\sqrt3$}{\True $-\sqrt2$}
+\loigiai{Gọi cạnh hình lập phương là $1$. $\overrightarrow{BB'}=\overrightarrow{AA'}$, $\overrightarrow{A'C}=\overrightarrow{A'A}+\overrightarrow{AC}$, $\overrightarrow{AA'}\cdot\overrightarrow{AC}=0$ nên $\overrightarrow{BB'}\cdot\overrightarrow{A'C}=-1$.
+
+$\cos\alpha=\dfrac{-1}{1\cdot\sqrt3}=-\dfrac1{\sqrt3}$, $\alpha$ tù nên $\sin\alpha=\sqrt{\dfrac23}$ và $\tan\alpha=-\sqrt2$.}
+\end{ex}
