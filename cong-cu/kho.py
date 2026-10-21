@@ -128,19 +128,33 @@ def chuan_hoa(s):
     return re.sub(r"[\s{}$\\\[\]()]+", " ", s).lower().strip()
 
 
+def so_trong_de(s):
+    """Các con số trong phần dẫn của đề (bỏ hình, lời giải, phương án) — để biết câu có 'giống cả số' không."""
+    s = re.sub(r"\\begin\{tikzpicture\}.*?\\end\{tikzpicture\}", " ", s, flags=re.S)
+    s = re.split(r"\\loigiai\{|\\choice|\\shortans", s)[0]
+    return [x.replace(",", ".") for x in re.findall(r"\d+(?:[.,]\d+)?", s)]
+
+
 def cmd_trung(a):
+    # "bỏ số": so nội dung sau khi mọi số thành # → cùng khung câu hỏi hay không.
+    # Cùng khung (≥ 0.80) + cùng các con số trong đề → TRÙNG HOÀN TOÀN, bỏ.
+    # Cùng khung nhưng số khác → biến thể thay số, GIỮ để ôn tập.
     p0 = Path(a.file).resolve()
-    n0, t0 = doc_nhan(p0), chuan_hoa(noi_dung(p0))
+    nd0 = noi_dung(p0); n0 = doc_nhan(p0)
+    t0, so0 = chuan_hoa(nd0), so_trong_de(nd0)
     kq = []
     for p in tat_ca():
         if p.resolve() == p0: continue
         n = doc_nhan(p)
         if (n.get("lop"), n.get("bai")) != (n0.get("lop"), n0.get("bai")): continue
-        kq.append((difflib.SequenceMatcher(None, t0, chuan_hoa(noi_dung(p))).ratio(), p))
-    kq.sort(reverse=True)
-    for r, p in kq[:5]:
-        print(f"{r:.2f}\t{p.relative_to(GOC)}")
-    print("-- Tỉ lệ ≥ 0.80: gần như chắc trùng (đổi số). 0.50–0.80: Claude đọc kỹ để xét trùng ý tưởng.")
+        nd = noi_dung(p)
+        kq.append((difflib.SequenceMatcher(None, t0, chuan_hoa(nd)).ratio(), so_trong_de(nd) == so0, p))
+    kq.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    print("khung\tcùng số\tkết luận gợi ý\tcâu")
+    for r, cung_so, p in kq[:5]:
+        kl = ("TRÙNG HOÀN TOÀN (bỏ)" if cung_so else "thay số (giữ)") if r >= 0.80 else "đọc kỹ" if r >= 0.50 else "khác"
+        print(f"{r:.2f}\t{'có' if cung_so else 'không'}\t{kl}\t{p.relative_to(GOC)}")
+    print("-- Chỉ bỏ câu trùng hoàn toàn (giống cả số). Câu thay số giữ lại làm ôn tập. Luôn đọc lại ứng viên trước khi kết luận.")
 
 
 def bien_dich(noidung, ra, loi_giai=True, tieu_de="", anh=False):

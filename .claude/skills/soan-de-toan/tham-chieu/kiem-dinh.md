@@ -1,12 +1,16 @@
 # Kiểm định câu hỏi
 
 ## 1. Trùng lặp
-Tính cả hai trường hợp: (b) giống nội dung nhưng đổi số, (c) cùng ý tưởng nhưng đổi cách hỏi.
-1. Chạy `python3 cong-cu/kho.py trung <file>`. Lệnh này so với các câu cùng lớp và cùng bài, sau khi đã thay mọi số bằng `#`.
-2. Tỉ lệ ≥ 0,80: gần như chắc chắn là cùng câu đổi số.
-3. Tỉ lệ 0,50–0,80: đọc kỹ cả hai câu. Nếu có cùng mô hình bài toán và cùng chuỗi bước giải chính thì coi là trùng ý tưởng.
-**Quy tắc mới (giáo viên quyết định 09/10/2026):** câu trùng hoàn toàn (chỉ thay số hoặc đổi phương án nhiễu) thì bỏ hẳn, không lưu, không đưa vào cách ly, chỉ nêu trong báo cáo. Câu trùng ý tưởng thì vẫn nhập vào cùng một dạng với câu đã có (chính thức nếu dạng đã duyệt), với số câu tối đa mỗi dạng theo mức độ: NB 20, TH 15, VD 10, VDC 5. Nếu vượt quá giới hạn thì không nhập câu đó, ghi vào báo cáo để giáo viên quyết định.
-4. (Quy tắc cũ, không còn áp dụng cho câu trùng) Nếu trùng thì giữ câu có lời giải; nếu cả hai đều có thì giữ câu trình bày đẹp hơn. Câu còn lại chuyển vào `cach-ly/` với `ly_do: "Trùng với <mã câu>"`.
+**Quy tắc hiện hành (giáo viên quyết định 21/10/2026, thay quy tắc 09/10/2026):** chỉ bỏ câu **trùng hoàn toàn**: cùng khung câu hỏi **và giống cả số** trong phần đề (chỉ khác cách trình bày, thứ tự hoặc phương án nhiễu). Câu **thay số** (cùng khung nhưng số liệu khác) thì **giữ lại** làm câu ôn tập.
+
+1. Chạy `python3 cong-cu/kho.py trung <file>`. Lệnh so với các câu cùng lớp, cùng bài và in hai cột:
+   - `khung`: tỉ lệ giống nhau sau khi mọi số thành `#`;
+   - `cùng số`: các con số trong phần đề (không tính lời giải, hình, phương án) có y hệt nhau không.
+2. Khung ≥ 0,80 và cùng số → **trùng hoàn toàn**: bỏ hẳn, không lưu, không đưa vào cách ly, chỉ nêu trong báo cáo (mục "Câu trùng hoàn toàn đã bỏ").
+3. Khung ≥ 0,80 nhưng khác số → **biến thể thay số**: nhập bình thường vào **cùng dạng** với câu đã có (chính thức nếu dạng đã duyệt), ghi `ghi_chu: "Biến thể thay số của <mã câu>"`, liệt kê trong báo cáo (mục "Biến thể thay số đã giữ").
+4. Khung 0,50–0,80: đọc kỹ cả hai câu. Cùng mô hình bài toán và cùng chuỗi bước giải chính → **trùng ý tưởng**: nhập vào cùng dạng với câu đã có (chính thức nếu dạng đã duyệt).
+5. Kết luận của lệnh chỉ là gợi ý; luôn đọc lại ứng viên (ví dụ đề viết số bằng chữ, hay số nằm trong hình).
+6. Số câu tối đa mỗi dạng theo mức độ: NB 20, TH 15, VD 10, VDC 5 (tính cả biến thể thay số). Vượt giới hạn thì không nhập câu đó, ghi vào báo cáo để giáo viên quyết định.
 
 ## 2. Phạm vi kiến thức (logic chương trình)
 - Trường `kien_thuc` liệt kê **mọi** kiến thức mà lời giải dùng, ghi theo bài SGK.

@@ -30,7 +30,7 @@ Lập task list, mỗi câu là một mục. Chạy hết lô, **không dừng g
    - Mức độ: theo `tham-chieu/tieu-chi-muc-do.md`. Câu DS gắn mức cho **từng ý**.
    - Dạng toán: chọn từ `dang-toan.yaml`. Nếu không có dạng phù hợp thì tạo mã mới `lớp.bài.số` với `trang_thai: de-xuat`, và để câu hỏi ở `cho-duyet`.
 4. **Kiểm định** (chi tiết: `tham-chieu/kiem-dinh.md`):
-   - Trùng lặp: chạy `kho.py trung`, rồi đọc kỹ các ứng viên. Trùng thì giữ bản có lời giải hoặc bản đẹp hơn; bản kia vào `cach-ly/`.
+   - Trùng lặp (quy tắc 21/10/2026): chạy `kho.py trung`, rồi đọc kỹ các ứng viên. **Chỉ bỏ câu trùng hoàn toàn** (cùng khung và giống cả số trong đề; chỉ khác trình bày hoặc phương án nhiễu): không lưu, chỉ nêu trong báo cáo. **Câu thay số thì giữ lại** làm ôn tập: nhập vào cùng dạng với câu đã có, `ghi_chu: "Biến thể thay số của <mã câu>"`. Câu trùng ý tưởng cũng nhập vào cùng dạng.
    - Vượt chương trình: liệt kê mọi kiến thức lời giải cần dùng, ghi vào `kien_thuc`. Nếu dùng kiến thức của bài hoặc lớp **sau** thì đưa vào `cach-ly/`.
    - Đáp án: **tự giải độc lập trước**, rồi mới so với đáp án gốc. Kiểm bằng Python/sympy mọi phép tính và số liệu. TN4 phải có đúng 1 phương án đúng. DS phải xác định được từng ý. TLN phải ≤ 4 ký tự và đúng cách làm tròn.
 5. **Code LaTeX nội dung** theo `tham-chieu/quy-uoc-latex.md`. Một câu một file, kèm phần nhãn `%%` ở đầu.
@@ -48,6 +48,7 @@ Ngắn gọn, gồm:
 - Số câu đã nhập chính thức.
 - Câu chờ duyệt kèm lý do.
 - Câu cách ly kèm lý do và gợi ý sửa.
+- Câu trùng hoàn toàn đã bỏ (mã câu bị trùng) và biến thể thay số đã giữ (mã câu gốc).
 - Dạng toán mới đề xuất (mã, tên).
 - Sai sót phát hiện trong tài liệu gốc (đáp án sai, hình sai).
 - Đính kèm 1 PDF tổng của lô (bản có lời giải).
