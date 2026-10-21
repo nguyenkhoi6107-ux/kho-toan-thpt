@@ -671,7 +671,8 @@ async function gvDetail(box, codeX) {
   const act = h('div', { class: 'row', style: 'gap:8px' },
     h('button', { class: 'btn ghost sm', onclick: () => openModal('Gửi bài cho học sinh', shareBox(x)) }, 'Link & QR'),
     x.status !== 'CLOSED' ? h('button', { class: 'btn ghost sm', onclick: () => gvUpdate(codeX, { closeTime: new Date().toISOString() }, 'Đóng bài ngay? Học sinh sẽ không nộp được nữa và xem được đáp án.') }, 'Đóng ngay') : null,
-    h('button', { class: 'btn ghost sm', onclick: () => gvExtend(x) }, x.status === 'CLOSED' ? 'Mở lại / gia hạn' : 'Gia hạn'));
+    h('button', { class: 'btn ghost sm', onclick: () => gvExtend(x) }, x.status === 'CLOSED' ? 'Mở lại / gia hạn' : 'Gia hạn'),
+    h('button', { class: 'btn ghost sm danger', onclick: () => gvDelete(x, S.length) }, 'Xoá bài'));
   kids.push(h('div', { class: 'panel', style: 'margin-bottom:16px' },
     h('div', { class: 'row', style: 'gap:8px' }, h('span', { class: 'tag ' + c }, st), h('span', { class: 'muted small' }, `${x.questionCount} câu · ${x.durationMinutes} phút · mở ${fmtTime(x.openTimeMs)} · đóng ${fmtTime(x.closeTimeMs)}`)),
     h('h2', { style: 'margin:8px 0 10px' }, x.title), act));
@@ -768,6 +769,17 @@ async function gvUpdate(codeX, patch, ask) {
   try { await gvApi('updateExam', { examCode: codeX, ...patch }); state.gvList = null; delete state.gvRes[codeX]; toast('Đã cập nhật'); render(); }
   catch (err) { toast(err.message); }
 }
+// Xoá hẳn bài: có bài nộp thì phải gõ lại mã bài để tránh bấm nhầm
+async function gvDelete(x, n) {
+  const warn = `Xoá hẳn bài ${x.examCode} “${x.title}”?\n` + (n ? `${n} bài nộp của học sinh sẽ mất, không khôi phục được.` : 'Bài chưa có ai nộp.');
+  if (n) { const typed = prompt(`${warn}\n\nGõ mã bài ${x.examCode} để xác nhận:`); if ((typed || '').trim().toUpperCase() !== x.examCode) return typed == null ? null : toast('Mã không khớp — chưa xoá'); }
+  else if (!confirm(warn)) return;
+  try {
+    await gvApi('deleteExam', { examCode: x.examCode });
+    state.gvList = null; delete state.gvRes[x.examCode];
+    toast(`Đã xoá bài ${x.examCode}`); location.hash = '#/bai-da-giao';
+  } catch (err) { toast(err.message); }
+}
 function gvExtend(x) {
   const base = new Date(Math.max(Date.now(), x.closeTimeMs || 0));
   const inp = h('input', { type: 'datetime-local', value: toLocalInput(new Date(base.getTime() + 24 * 3600e3)), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px' });
@@ -786,7 +798,7 @@ async function renderHelp(root) {
       h('li', null, h('b', null, 'Xem trực tiếp: '), 'công thức và hình được hiển thị sẵn; bấm ', h('i', null, 'Xem đáp án'), ' khi cần (đáp án và lời giải mặc định ẩn).'),
       h('li', null, h('b', null, 'Lấy LaTeX: '), 'bấm ', h('i', null, 'Lấy LaTeX'), ' để chép mã một câu, hoặc ', h('i', null, 'Lấy LaTeX cả danh sách'), ' để chép nhiều câu đang lọc.'),
       h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.'),
-      h('li', null, h('b', null, 'Theo dõi kết quả: '), 'vào ', h('i', null, 'Bài đã giao'), ' (biểu tượng cột) → chọn bài để xem bảng điểm, phổ điểm, tỉ lệ đúng từng câu; đóng sớm hoặc gia hạn; bấm ', h('i', null, 'Tạo đề ôn'), ' để máy lấy câu mới thuộc các dạng học sinh làm chưa tốt.')),
+      h('li', null, h('b', null, 'Theo dõi kết quả: '), 'vào ', h('i', null, 'Bài đã giao'), ' (biểu tượng cột) → chọn bài để xem bảng điểm, phổ điểm, tỉ lệ đúng từng câu; đóng sớm, gia hạn hoặc xoá bài; bấm ', h('i', null, 'Tạo đề ôn'), ' để máy lấy câu mới thuộc các dạng học sinh làm chưa tốt.')),
     h('h2', { style: 'margin-top:22px' }, 'Cập nhật dữ liệu'),
     h('p', null, 'Trang này tự dựng lại từ kho GitHub mỗi khi có thay đổi mới (khoảng 1–3 phút sau khi push). Nếu câu hỏi mới chưa hiện, hãy tải lại trang.'),
     h('p', { class: 'muted small' }, 'Câu ở trạng thái “chờ duyệt” chỉ hiện khi tick “Cả câu chờ duyệt”, và không được đưa vào đề.')));

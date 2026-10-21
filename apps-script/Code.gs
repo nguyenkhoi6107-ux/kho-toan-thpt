@@ -3,7 +3,7 @@
  * Lưu trong repo: apps-script/Code.gs (Không chứa mã giáo viên; mã giáo viên cất trong Script Properties: TEACHER_CODE)
  *
  * Hành động: getExamInfo, startExam, submitExam, getReview (học sinh)
- *            createExam, listExams, getExamResults, updateExam (giáo viên, cần mã)
+ *            createExam, listExams, getExamResults, updateExam, deleteExam (giáo viên, cần mã)
  *
  * Cấu trúc Google Sheet (3 tab):
  * 1. "Bài kiểm tra": Mã bài | Tên bài | Chế độ | Thời gian làm (phút) | Giờ mở | Giờ đóng | Đảo câu | Đảo phương án | Tổng điểm thô tối đa | Nội dung đề (JSON) | Ngày tạo
@@ -57,6 +57,8 @@ function handleRequest(req) {
         return jsonResponse(getExamResults(req));
       case 'updateExam':
         return jsonResponse(updateExam(req));
+      case 'deleteExam':
+        return jsonResponse(deleteExam(req));
       default:
         return jsonResponse({ ok: false, error: 'UNKNOWN_ACTION', message: 'Hành động không hợp lệ: ' + action });
     }
@@ -812,6 +814,46 @@ function updateExam(req) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/**
+ * 8. Giáo viên: xoá hẳn một bài — dòng đề, đáp án và mọi bài nộp của bài đó
+ */
+function deleteExam(req) {
+  var denied = checkTeacher(req);
+  if (denied) return denied;
+  var examCode = String(req.examCode || '').trim().toUpperCase();
+  if (!examCode) return { ok: false, error: 'MISSING_CODE', message: 'Thiếu mã bài.' };
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(10000)) return { ok: false, error: 'SERVER_BUSY', message: 'Máy chủ đang bận, thử lại sau.' };
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var removed = {
+      exam: deleteRowsWhere(ss.getSheetByName(SHEET_NAMES.EXAMS), 1, examCode),
+      answers: deleteRowsWhere(ss.getSheetByName(SHEET_NAMES.ANSWERS), 1, examCode),
+      results: deleteRowsWhere(ss.getSheetByName(SHEET_NAMES.RESULTS), 2, examCode)
+    };
+    var cache = CacheService.getScriptCache();
+    cache.remove('EXAM_' + examCode); cache.remove('ANS_' + examCode);
+    if (!removed.exam) return { ok: false, error: 'EXAM_NOT_FOUND', message: 'Không tìm thấy bài ' + examCode };
+    return { ok: true, examCode: examCode, removed: removed };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/** Xoá các dòng có cột col (1 = cột A) bằng code; xoá từ dưới lên, gộp các dòng liền nhau. Trả về số dòng đã xoá. */
+function deleteRowsWhere(sheet, col, code) {
+  var last = sheet.getLastRow();
+  if (last < 2) return 0;
+  var vals = sheet.getRange(2, col, last - 1, 1).getValues();
+  var n = 0, end = -1;
+  for (var i = vals.length - 1; i >= -1; i--) {
+    var hit = i >= 0 && String(vals[i][0] || '').trim().toUpperCase() === code;
+    if (hit && end < 0) end = i;
+    if (!hit && end >= 0) { sheet.deleteRows(i + 3, end - i); n += end - i; end = -1; }
+  }
+  return n;
 }
 
 function getExamDataCached(examCode) {

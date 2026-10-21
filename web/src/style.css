@@ -54,6 +54,7 @@ h3{font-size:17px}
 .btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
 .btn.ghost:hover{background:#f1efe8}
 .btn.dark{background:var(--ink)}
+.btn.ghost.danger{color:#b3261e;border-color:#b3261e} .btn.ghost.danger:hover{background:#ffe3e0}
 .btn.sm{padding:5px 13px;font-size:13.5px;border-radius:10px}
 .btn[disabled]{opacity:.45;cursor:not-allowed}
 .btn svg{width:17px;height:17px}

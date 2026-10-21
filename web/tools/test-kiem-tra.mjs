@@ -67,6 +67,7 @@ function makeSheet(name) {
   return {
     getName: () => name,
     getLastRow: () => sheets[name].length,
+    deleteRows: (r, n) => sheets[name].splice(r - 1, n),
     appendRow: (row) => sheets[name].push(row.map((x) => x)),
     getRange: (r, c, numR, numC) => ({
       getValues: () => {
@@ -214,3 +215,17 @@ assert.ok(callGas({ action: 'updateExam', teacherCode: T, examCode: createRes.ex
 assert.strictEqual(callGas({ action: 'getExamInfo', examCode: createRes.examCode }).status, 'CLOSED');
 assert.ok(callGas({ action: 'getReview', examCode: createRes.examCode }).ok, 'Đóng sớm thì mở đáp án');
 console.log(`listExams, getExamResults (${det.students.length} HS, tỉ lệ đúng mỗi câu ${expRate}%), đóng sớm → mở đáp án: OK!`);
+
+// 5. Xoá bài: hết dòng ở cả 3 tab, bài khác không bị ảnh hưởng
+const keep = callGas({ action: 'createExam', teacherCode: T, title: 'Bài giữ lại', durationMinutes: 10, openTime: new Date(Date.now() - 1000).toISOString(), closeTime: new Date(Date.now() + 3600e3).toISOString(), questions: officialQs.slice(0, 3) });
+const sk = callGas({ action: 'startExam', examCode: keep.examCode, studentName: 'HS Giữ', className: '12A9' });
+callGas({ action: 'submitExam', sessionId: sk.sessionId, examCode: keep.examCode, answers: {} });
+assert.strictEqual(callGas({ action: 'deleteExam', teacherCode: 'sai', examCode: createRes.examCode }).ok, false, 'Sai mã không được xoá');
+const del = callGas({ action: 'deleteExam', teacherCode: T, examCode: createRes.examCode });
+assert.ok(del.ok && del.removed.exam === 1 && del.removed.answers === officialQs.length && del.removed.results === 42);
+const rest = (tab, col) => sheets[tab].slice(1).map((r) => r[col]);
+assert.ok(!rest('Bài kiểm tra', 0).includes(createRes.examCode) && !rest('Đáp án', 0).includes(createRes.examCode) && !rest('Kết quả', 1).includes(createRes.examCode));
+assert.deepStrictEqual([rest('Bài kiểm tra', 0).length, rest('Đáp án', 0).length, rest('Kết quả', 1).length], [1, 3, 1], 'Bài khác còn nguyên');
+assert.strictEqual(callGas({ action: 'getExamInfo', examCode: createRes.examCode }).ok, false);
+assert.strictEqual(callGas({ action: 'listExams', teacherCode: T }).exams.length, 1);
+console.log(`=== 5. XOÁ BÀI === đã xoá 1 đề, ${del.removed.answers} dòng đáp án, ${del.removed.results} bài nộp; bài khác còn nguyên: OK!`);
