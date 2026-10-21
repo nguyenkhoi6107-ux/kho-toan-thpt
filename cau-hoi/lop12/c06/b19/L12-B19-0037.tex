@@ -1,0 +1,21 @@
+%% ma: L12-B19-0037
+%% lop: 12
+%% chuong: 6
+%% bai: 19
+%% dang: 12.19.2
+%% loai: TN4
+%% muc: VD
+%% dap_an: "D"
+%% nguon: "(NBV)-10 ĐỀ KIỂM TRA HK2-TOÁN 12-DUNG CHUNG 3 SÁCH.pdf (H04, Đề số 4), Phần 1 Câu 12"
+%% kien_thuc: "Bài 19 (công thức xác suất toàn phần và công thức Bayes)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đáp án gốc D đúng. Bỏ ảnh minh họa hai hộp bi (ảnh trang trí)."
+\begin{ex}
+Có hai hộp đựng các viên bi. Hộp thứ nhất đựng $6$ bi xanh và $4$ bi trắng, hộp thứ hai đựng $5$ bi xanh và $4$ bi trắng. Lấy ngẫu nhiên một bi từ hộp thứ nhất bỏ sang hộp thứ hai, sau đó lấy ngẫu nhiên hai bi từ hộp thứ hai. Biết rằng hai bi lấy được từ hộp thứ hai đều là bi trắng, tính xác suất để lần đầu lấy được bi xanh từ hộp thứ nhất bỏ sang hộp thứ hai.
+\choice{$\dfrac{10}{19}$}{$\dfrac{8}{19}$}{$\dfrac{7}{19}$}{\True $\dfrac{9}{19}$}
+\loigiai{Gọi $A$: ``bi bỏ sang là bi xanh'', $B$: ``hai bi lấy từ hộp thứ hai đều trắng''. $P(A)=\dfrac6{10}$, $P\left(\overline A\right)=\dfrac4{10}$.
+
+Hộp thứ hai có $10$ bi. Nếu bỏ sang bi xanh thì có $4$ bi trắng: $P(B\mid A)=\dfrac{C_4^2}{C_{10}^2}=\dfrac6{45}$. Nếu bỏ sang bi trắng thì có $5$ bi trắng: $P\left(B\mid\overline A\right)=\dfrac{C_5^2}{C_{10}^2}=\dfrac{10}{45}$.
+
+Công thức Bayes: $P(A\mid B)=\dfrac{0{,}6\cdot\frac6{45}}{0{,}6\cdot\frac6{45}+0{,}4\cdot\frac{10}{45}}=\dfrac{3{,}6}{7{,}6}=\dfrac9{19}$. Chọn D.}
+\end{ex}
