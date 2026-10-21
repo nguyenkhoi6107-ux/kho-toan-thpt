@@ -2,6 +2,9 @@
  * ToánKho – Máy chủ chấm bài kiểm tra học sinh trên Google Apps Script
  * Lưu trong repo: apps-script/Code.gs (Không chứa mã giáo viên; mã giáo viên cất trong Script Properties: TEACHER_CODE)
  *
+ * Hành động: getExamInfo, startExam, submitExam, getReview (học sinh)
+ *            createExam, listExams, getExamResults, updateExam (giáo viên, cần mã)
+ *
  * Cấu trúc Google Sheet (3 tab):
  * 1. "Bài kiểm tra": Mã bài | Tên bài | Chế độ | Thời gian làm (phút) | Giờ mở | Giờ đóng | Đảo câu | Đảo phương án | Tổng điểm thô tối đa | Nội dung đề (JSON) | Ngày tạo
  * 2. "Đáp án": Mã bài | Mã câu | Thứ tự gốc | Loại câu | Đáp án đúng | Lời giải chi tiết | Câu gốc (biến thể) | Dạng toán
@@ -48,10 +51,12 @@ function handleRequest(req) {
         return jsonResponse(submitExam(req));
       case 'getReview':
         return jsonResponse(getReview(req));
-      case 'joinLiveRoom':
-        return jsonResponse(joinLiveRoom(req));
-      case 'saveLiveResults':
-        return jsonResponse(saveLiveResults(req));
+      case 'listExams':
+        return jsonResponse(listExams(req));
+      case 'getExamResults':
+        return jsonResponse(getExamResults(req));
+      case 'updateExam':
+        return jsonResponse(updateExam(req));
       default:
         return jsonResponse({ ok: false, error: 'UNKNOWN_ACTION', message: 'Hành động không hợp lệ: ' + action });
     }
@@ -93,9 +98,7 @@ function getExamInfo(req) {
     counts.total++;
   }
 
-  var status = 'OPEN';
-  if (exam.openTimeMs && nowMs < exam.openTimeMs) status = 'NOT_OPEN';
-  else if (exam.closeTimeMs && nowMs > exam.closeTimeMs) status = 'CLOSED';
+  var status = examStatus(exam, nowMs);
 
   return {
     ok: true,
@@ -223,14 +226,21 @@ function normalizeDSValue(v) {
   return '';
 }
 
+/** Trả về lỗi nếu sai mã giáo viên, null nếu đúng. */
+function checkTeacher(req) {
+  var prop = PropertiesService.getScriptProperties().getProperty('TEACHER_CODE');
+  if (!prop || String(req.teacherCode || '').trim() !== String(prop).trim()) {
+    return { ok: false, error: 'UNAUTHORIZED', message: 'Sai mã giáo viên.' };
+  }
+  return null;
+}
+
 /**
  * 1. Giáo viên giao bài từ ToánKho
  */
 function createExam(req) {
-  var teacherCodeProp = PropertiesService.getScriptProperties().getProperty('TEACHER_CODE');
-  if (!teacherCodeProp || String(req.teacherCode || '').trim() !== String(teacherCodeProp).trim()) {
-    return { ok: false, error: 'UNAUTHORIZED', message: 'Sai mã giáo viên.' };
-  }
+  var denied = checkTeacher(req);
+  if (denied) return denied;
 
   var questions = Array.isArray(req.questions) ? req.questions : [];
   if (questions.length === 0) {
@@ -331,9 +341,10 @@ function createExam(req) {
       nowIso
     ]);
 
-    for (var r = 0; r < answerRows.length; r++) {
-      ansSheet.appendRow(answerRows[r]);
-    }
+    // Ghi một lần cho nhanh; cột Đáp án để dạng chữ để "0,17" hay "08" không bị Sheet đổi thành số
+    var startRow = ansSheet.getLastRow() + 1;
+    ansSheet.getRange(startRow, 5, answerRows.length, 1).setNumberFormat('@');
+    ansSheet.getRange(startRow, 1, answerRows.length, answerRows[0].length).setValues(answerRows);
 
     CacheService.getScriptCache().remove('EXAM_' + examCode);
     CacheService.getScriptCache().remove('ANS_' + examCode);
@@ -500,47 +511,11 @@ function submitExam(req) {
   var isLate = submitMs > (effectiveDeadlineMs + GRACE_PERIOD_MS);
   var lateFlag = isLate ? 'quá giờ' : '';
 
-  var totalRawScore = 0;
-  var maxRawScore = 0;
-  var perQuestionSummary = [];
-
-  for (var i = 0; i < exam.questions.length; i++) {
-    var q = exam.questions[i];
-    var qId = q.ma || q.id;
-    var qType = String(q.loai || q.type || 'TN4').toUpperCase();
-    var keyInfo = answerKeyMap[qId] || {};
-    var studentAns = answers[qId];
-    var qRaw = 0;
-    var qMax = getMaxRawScoreForQuestion(qType);
-    maxRawScore += qMax;
-
-    if (qType === 'TN4') {
-      var sChoice = String(studentAns || '').trim().toUpperCase();
-      var cChoice = String(keyInfo.answer || '').trim().toUpperCase();
-      var isCorrectTN = (sChoice !== '' && sChoice === cChoice);
-      qRaw = isCorrectTN ? 0.25 : 0;
-      perQuestionSummary.push(qId + ': ' + (isCorrectTN ? 'Đúng (0.25)' : 'Sai (0)'));
-    } else if (qType === 'DS') {
-      var dsResult = scoreTrueFalseQuestion(studentAns, keyInfo.parsedAnswer || keyInfo.answer);
-      qRaw = dsResult.rawScore;
-      perQuestionSummary.push(qId + ': ' + dsResult.correctCount + '/4 ý (' + qRaw + ')');
-    } else if (qType === 'TLN') {
-      var sNorm = normalizeShortAnswer(studentAns);
-      var cNorm = normalizeShortAnswer(keyInfo.answer);
-      var isCorrectTLN = (sNorm !== '' && sNorm === cNorm);
-      qRaw = isCorrectTLN ? 0.5 : 0;
-      perQuestionSummary.push(qId + ': ' + (isCorrectTLN ? 'Đúng (0.5)' : 'Sai (0)'));
-    }
-
-    totalRawScore += qRaw;
-  }
-
-  totalRawScore = Math.round(totalRawScore * 100) / 100;
-  maxRawScore = Math.round((exam.maxRawScore || maxRawScore) * 100) / 100;
-
-  var scaledScore10 = maxRawScore > 0
-    ? Math.round((10 * totalRawScore / maxRawScore) * 100) / 100
-    : 0;
+  var g = gradeAnswers(exam, answerKeyMap, answers);
+  var totalRawScore = g.total;
+  var maxRawScore = g.max;
+  var scaledScore10 = g.score10;
+  var perQuestionSummary = g.summary;
   var rawScoreDisplay = totalRawScore + ' / ' + maxRawScore;
 
   var lock = LockService.getScriptLock();
@@ -647,64 +622,193 @@ function getReview(req) {
 }
 
 /**
- * 5. Chế độ thi cùng lúc (Cách b): Cấp sessionToken riêng cho từng học sinh khi vào phòng
+ * Chấm toàn bộ bài làm theo đáp án — dùng chung cho nộp bài và thống kê.
  */
-function joinLiveRoom(req) {
-  var examCode = String(req.examCode || '').trim().toUpperCase();
-  var studentName = String(req.studentName || '').trim();
-  var className = String(req.className || '').trim();
-  if (!examCode || !studentName || !className) {
-    return { ok: false, error: 'MISSING_INFO', message: 'Vui lòng nhập Họ tên, Lớp và Mã phòng.' };
+function gradeAnswers(exam, answerKeyMap, answers) {
+  var total = 0, max = 0, summary = [], perQ = [];
+  answers = answers || {};
+  for (var i = 0; i < exam.questions.length; i++) {
+    var q = exam.questions[i];
+    var qId = q.ma || q.id;
+    var qType = String(q.loai || q.type || 'TN4').toUpperCase();
+    var keyInfo = answerKeyMap[qId] || {};
+    var studentAns = answers[qId];
+    var qRaw = 0;
+    var qMax = getMaxRawScoreForQuestion(qType);
+    var text = '';
+    max += qMax;
+    if (qType === 'TN4') {
+      var ok = String(studentAns || '').trim() !== '' &&
+        String(studentAns).trim().toUpperCase() === String(keyInfo.answer || '').trim().toUpperCase();
+      qRaw = ok ? 0.25 : 0;
+      text = ok ? 'Đúng (0.25)' : 'Sai (0)';
+    } else if (qType === 'DS') {
+      var ds = scoreTrueFalseQuestion(studentAns, keyInfo.parsedAnswer || keyInfo.answer);
+      qRaw = ds.rawScore;
+      text = ds.correctCount + '/4 ý (' + qRaw + ')';
+    } else if (qType === 'TLN') {
+      var s = normalizeShortAnswer(studentAns);
+      var okT = s !== '' && s === normalizeShortAnswer(keyInfo.answer);
+      qRaw = okT ? 0.5 : 0;
+      text = okT ? 'Đúng (0.5)' : 'Sai (0)';
+    }
+    total += qRaw;
+    summary.push(qId + ': ' + text);
+    perQ.push({ ma: qId, loai: qType, raw: qRaw, max: qMax, blank: studentAns === undefined || studentAns === '' });
   }
-  var sessionToken = 'LIVE_' + Utilities.getUuid().replace(/-/g, '').substring(0, 12).toUpperCase();
+  total = Math.round(total * 100) / 100;
+  max = Math.round((exam.maxRawScore || max) * 100) / 100;
+  return {
+    total: total,
+    max: max,
+    score10: max > 0 ? Math.round((10 * total / max) * 100) / 100 : 0,
+    summary: summary,
+    perQ: perQ
+  };
+}
+
+function examStatus(exam, nowMs) {
+  if (exam.openTimeMs && nowMs < exam.openTimeMs) return 'NOT_OPEN';
+  if (exam.closeTimeMs && nowMs > exam.closeTimeMs) return 'CLOSED';
+  return 'OPEN';
+}
+
+function readResultRows() {
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAMES.RESULTS);
+  var last = sh.getLastRow();
+  return last < 2 ? [] : sh.getRange(2, 1, last - 1, 12).getValues();
+}
+
+/**
+ * 5. Giáo viên: danh sách bài đã giao (mới nhất trước) kèm số bài nộp và điểm trung bình
+ */
+function listExams(req) {
+  var denied = checkTeacher(req);
+  if (denied) return denied;
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var examSheet = ss.getSheetByName(SHEET_NAMES.EXAMS);
+  var last = examSheet.getLastRow();
+  var rows = last < 2 ? [] : examSheet.getRange(2, 1, last - 1, 11).getValues();
+
+  var agg = {};
+  readResultRows().forEach(function (r) {
+    var code = String(r[1] || '').trim().toUpperCase();
+    if (!code) return;
+    var a = agg[code] || (agg[code] = { n: 0, sum: 0 });
+    a.n++;
+    a.sum += Number(String(r[6]).replace(',', '.')) || 0;
+  });
+
+  var nowMs = Date.now();
+  var exams = rows.map(function (row) {
+    var code = String(row[0] || '').trim().toUpperCase();
+    var openMs = row[4] ? new Date(row[4]).getTime() : null;
+    var closeMs = row[5] ? new Date(row[5]).getTime() : null;
+    var qs = [];
+    try { qs = JSON.parse(String(row[9] || '[]')); } catch (e) {}
+    var a = agg[code] || { n: 0, sum: 0 };
+    var ex = { openTimeMs: isNaN(openMs) ? null : openMs, closeTimeMs: isNaN(closeMs) ? null : closeMs };
+    return {
+      examCode: code,
+      title: String(row[1] || ''),
+      durationMinutes: Number(row[3] || 0),
+      openTimeMs: ex.openTimeMs,
+      closeTimeMs: ex.closeTimeMs,
+      createdAt: String(row[10] || ''),
+      questionCount: qs.length,
+      status: examStatus(ex, nowMs),
+      submissions: a.n,
+      avgScore: a.n ? Math.round((a.sum / a.n) * 100) / 100 : null
+    };
+  }).filter(function (e) { return e.examCode; }).reverse();
+
+  return { ok: true, serverNowMs: nowMs, sheetUrl: ss.getUrl(), exams: exams };
+}
+
+/**
+ * 6. Giáo viên: kết quả chi tiết một bài — danh sách học sinh và tỉ lệ đúng từng câu
+ */
+function getExamResults(req) {
+  var denied = checkTeacher(req);
+  if (denied) return denied;
+  var examCode = String(req.examCode || '').trim().toUpperCase();
+  var exam = getExamDataCached(examCode);
+  if (!exam) return { ok: false, error: 'EXAM_NOT_FOUND', message: 'Không tìm thấy bài ' + examCode };
+  var key = getAnswerKeyCached(examCode) || {};
+
+  var perQ = {};
+  exam.questions.forEach(function (q) {
+    var id = q.ma || q.id;
+    perQ[id] = { ma: id, loai: String(q.loai || q.type).toUpperCase(), dang: (key[id] || {}).topic || '', raw: 0, max: 0, blank: 0, n: 0 };
+  });
+
+  var students = [];
+  readResultRows().forEach(function (r) {
+    if (String(r[1] || '').trim().toUpperCase() !== examCode) return;
+    var answers = {};
+    try { answers = JSON.parse(String(r[11] || '{}')); } catch (e) {}
+    var g = gradeAnswers(exam, key, answers);
+    g.perQ.forEach(function (p) {
+      var s = perQ[p.ma];
+      if (!s) return;
+      s.raw += p.raw; s.max += p.max; s.n++;
+      if (p.blank) s.blank++;
+    });
+    var startMs = new Date(r[2]).getTime(), endMs = new Date(r[3]).getTime();
+    students.push({
+      name: String(r[4] || ''),
+      className: String(r[5] || ''),
+      score10: g.score10,
+      raw: g.total + ' / ' + g.max,
+      submittedAt: endMs || null,
+      minutes: (startMs && endMs) ? Math.round((endMs - startMs) / 600) / 100 : null,
+      duplicate: String(r[8] || ''),
+      late: String(r[9] || '')
+    });
+  });
+
+  var questions = Object.keys(perQ).map(function (id) {
+    var s = perQ[id];
+    return { ma: s.ma, loai: s.loai, dang: s.dang, n: s.n, blank: s.blank, rate: s.max ? Math.round((s.raw / s.max) * 1000) / 10 : null };
+  });
+
   return {
     ok: true,
-    examCode: examCode,
-    studentName: studentName,
-    className: className,
-    sessionToken: sessionToken,
-    issuedAtMs: Date.now()
+    serverNowMs: Date.now(),
+    exam: {
+      examCode: examCode, title: exam.title, durationMinutes: exam.durationMinutes,
+      openTimeMs: exam.openTimeMs, closeTimeMs: exam.closeTimeMs, status: examStatus(exam, Date.now()),
+      maxRawScore: exam.maxRawScore, questionCount: exam.questions.length
+    },
+    students: students,
+    questions: questions
   };
 }
 
 /**
- * 6. Chế độ thi cùng lúc (Cách b): Cuối buổi màn hình giáo viên ghi kết quả 1 lần vào Sheet
+ * 7. Giáo viên: đổi giờ mở/đóng (đóng ngay, gia hạn) và đổi tên bài
  */
-function saveLiveResults(req) {
-  var teacherCodeProp = PropertiesService.getScriptProperties().getProperty('TEACHER_CODE');
-  if (!teacherCodeProp || String(req.teacherCode || '').trim() !== String(teacherCodeProp).trim()) {
-    return { ok: false, error: 'UNAUTHORIZED', message: 'Sai mã giáo viên.' };
-  }
-  var records = Array.isArray(req.records) ? req.records : [];
-  if (records.length === 0) {
-    return { ok: true, savedCount: 0 };
-  }
-
+function updateExam(req) {
+  var denied = checkTeacher(req);
+  if (denied) return denied;
+  var examCode = String(req.examCode || '').trim().toUpperCase();
   var lock = LockService.getScriptLock();
-  if (!lock.tryLock(10000)) {
-    return { ok: false, error: 'SERVER_BUSY', message: 'Máy chủ đang bận.' };
-  }
+  if (!lock.tryLock(10000)) return { ok: false, error: 'SERVER_BUSY', message: 'Máy chủ đang bận, thử lại sau.' };
   try {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var resultSheet = ss.getSheetByName(SHEET_NAMES.RESULTS);
-    for (var i = 0; i < records.length; i++) {
-      var rec = records[i];
-      resultSheet.appendRow([
-        rec.sessionToken || ('LIVE_' + (i + 1)),
-        rec.examCode || '',
-        rec.startTimeIso || '',
-        rec.submitIso || new Date().toISOString(),
-        rec.studentName || '',
-        rec.className || '',
-        rec.score10 || 0,
-        rec.rawScoreDisplay || '',
-        rec.duplicateFlag || '',
-        rec.lateFlag || '',
-        rec.summary || 'Thi cùng lúc',
-        JSON.stringify(rec.answers || {})
-      ]);
+    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAMES.EXAMS);
+    var last = sh.getLastRow();
+    if (last < 2) return { ok: false, error: 'EXAM_NOT_FOUND', message: 'Không tìm thấy bài ' + examCode };
+    var codes = sh.getRange(2, 1, last - 1, 1).getValues();
+    for (var i = codes.length - 1; i >= 0; i--) {
+      if (String(codes[i][0] || '').trim().toUpperCase() !== examCode) continue;
+      var row = i + 2;
+      if (req.title !== undefined) sh.getRange(row, 2).setValue(String(req.title));
+      if (req.openTime !== undefined) sh.getRange(row, 5).setValue(String(req.openTime));
+      if (req.closeTime !== undefined) sh.getRange(row, 6).setValue(String(req.closeTime));
+      CacheService.getScriptCache().remove('EXAM_' + examCode);
+      return { ok: true, examCode: examCode };
     }
-    return { ok: true, savedCount: records.length };
+    return { ok: false, error: 'EXAM_NOT_FOUND', message: 'Không tìm thấy bài ' + examCode };
   } finally {
     lock.releaseLock();
   }

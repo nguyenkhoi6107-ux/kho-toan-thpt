@@ -133,7 +133,7 @@ function parseQuestion(file, rel) {
   const derived = q.loai === 'TN4' ? 'ABCD'[ch.findIndex(x => x[1])] || ''
     : q.loai === 'DS' ? tfs.map(x => x[1] ? 'Đ' : 'S').join('') : q.loai === 'TLN' ? tln : '';
   if (!q.dap_an) q.dap_an = derived || '-';
-  else if (derived && q.loai !== 'TL' && q.dap_an.replace(/\s/g, '') !== derived) warn(`${q.ma}: dap_an "${q.dap_an}" khác đáp án suy ra từ \\True/\\shortans ("${derived}")`);
+  else if (derived && q.loai !== 'TL' && q.dap_an.replace(/\s/g, '') !== derived) { q.loi_dap_an = `dap_an "${q.dap_an}" khác \\True/\\shortans ("${derived}")`; warn(`${q.ma}: dap_an "${q.dap_an}" khác đáp án suy ra từ \\True/\\shortans ("${derived}")`); }
   q.tln = tln;
 
   inner = flattenImmini(inner);
@@ -149,6 +149,8 @@ function parseQuestion(file, rel) {
   if (!q.lop || !q.chuong || !q.bai) warn(`${q.ma}: thiếu lop/chuong/bai`);
   if (q.loai === 'TN4' && ch.length !== 4) warn(`${q.ma}: TN4 nhưng có ${ch.length} lựa chọn`);
   if (q.loai === 'DS' && tfs.length !== 4) warn(`${q.ma}: DS nhưng có ${tfs.length} ý`);
+  // câu thiếu/mâu thuẫn đáp án không được đưa vào đề (máy sẽ chấm sai)
+  if (!q.loi_dap_an && q.loai !== 'TL' && (q.dap_an === '-' || (q.loai === 'TN4' && !/^[ABCD]$/.test(q.dap_an)) || (q.loai === 'DS' && !/^[ĐS]{4}$/.test(q.dap_an)))) q.loi_dap_an = `đáp án "${q.dap_an}" không hợp lệ`;
   return q;
 }
 

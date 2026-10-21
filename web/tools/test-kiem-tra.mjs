@@ -53,7 +53,7 @@ for (const q of cauhoiData.cau_hoi) {
 console.log(`Đã kiểm tra hiển thị công thức KaTeX, bảng tabular và hình SVG cho ${cauhoiData.cau_hoi.length}/${cauhoiData.cau_hoi.length} câu: OK!`);
 
 // 2. Kiểm thử apps-script/Code.gs bằng bộ câu hỏi thật từ site/data/cauhoi.json
-console.log('=== 2. KIỂM THỬ APPS SCRIPT (CODE.GS) VỚI ĐỀ TẠO TỪ KHO MẪU ===');
+console.log('=== 2. KIỂM THỬ APPS SCRIPT (CODE.GS) VỚI ĐỀ TẠO TỪ KHO ===');
 const sheets = {
   'Bài kiểm tra': [['Mã bài', 'Tên bài', 'Chế độ', 'Thời gian làm (phút)', 'Giờ mở', 'Giờ đóng', 'Đảo câu', 'Đảo phương án', 'Tổng điểm thô tối đa', 'Nội dung đề (JSON)', 'Ngày tạo']],
   'Đáp án': [['Mã bài', 'Mã câu', 'Thứ tự gốc', 'Loại câu', 'Đáp án đúng', 'Lời giải chi tiết', 'Câu gốc (biến thể)', 'Dạng toán']],
@@ -79,13 +79,16 @@ function makeSheet(name) {
         }
         return out;
       },
+      setValues: (vals) => { vals.forEach((row, i) => { const R = r - 1 + i; sheets[name][R] = sheets[name][R] || []; row.forEach((v, j) => (sheets[name][R][c - 1 + j] = v)); }); },
+      setValue: (v) => { const R = r - 1; sheets[name][R] = sheets[name][R] || []; sheets[name][R][c - 1] = v; },
+      setNumberFormat: () => {},
     }),
   };
 }
 
 const gasSandbox = {
   Date, Math, JSON, String, Number, Boolean, Array, Object, RegExp, Error, parseInt, parseFloat, isNaN,
-  SpreadsheetApp: { getActiveSpreadsheet: () => ({ getSheetByName: makeSheet }) },
+  SpreadsheetApp: { getActiveSpreadsheet: () => ({ getSheetByName: makeSheet, getUrl: () => 'https://docs.google.com/spreadsheets/d/TEST' }) },
   PropertiesService: { getScriptProperties: () => ({ getProperty: (k) => scriptProps.get(k) || null }) },
   CacheService: {
     getScriptCache: () => ({
@@ -187,3 +190,27 @@ async function submitSimulated(sid) {
 }
 await Promise.all(sessions.map(submitSimulated));
 console.log(`40/40 học sinh nộp thành công! Số lượt vượt ngưỡng 30 luồng và tự động gửi lại thành công: ${retried}`);
+
+// 4. Kiểm thử các chức năng giáo viên
+console.log('=== 4. KIỂM THỬ TRANG BÀI ĐÃ GIAO (GIÁO VIÊN) ===');
+const T = 'TOANKHO_SECRET_2026';
+assert.strictEqual(callGas({ action: 'listExams', teacherCode: 'sai' }).ok, false, 'Sai mã giáo viên phải bị từ chối');
+// một học sinh để trống hết → tỉ lệ từng câu phải là (41 đúng hết + 1 bỏ trống) / 42
+const sBlank = callGas({ action: 'startExam', examCode: createRes.examCode, studentName: 'HS Trống', className: '12A2' });
+assert.ok(callGas({ action: 'submitExam', sessionId: sBlank.sessionId, examCode: createRes.examCode, answers: {} }).ok);
+const list = callGas({ action: 'listExams', teacherCode: T });
+assert.ok(list.ok && list.exams.length === 1);
+assert.strictEqual(list.exams[0].submissions, 42);
+assert.strictEqual(list.exams[0].status, 'OPEN');
+const det = callGas({ action: 'getExamResults', teacherCode: T, examCode: createRes.examCode });
+assert.ok(det.ok);
+assert.strictEqual(det.students.length, 42);
+assert.strictEqual(det.questions.length, officialQs.length);
+const expRate = Math.round((41 / 42) * 1000) / 10;
+assert.ok(det.questions.every((q) => q.rate === expRate && q.blank === 1), 'Tỉ lệ đúng từng câu phải khớp');
+assert.ok(det.questions.some((q) => q.dang), 'Có dạng toán để gợi ý ôn tập');
+assert.strictEqual(callGas({ action: 'getReview', examCode: createRes.examCode }).ok, false, 'Chưa đóng thì chưa xem đáp án');
+assert.ok(callGas({ action: 'updateExam', teacherCode: T, examCode: createRes.examCode, closeTime: new Date(Date.now() - 1000).toISOString() }).ok);
+assert.strictEqual(callGas({ action: 'getExamInfo', examCode: createRes.examCode }).status, 'CLOSED');
+assert.ok(callGas({ action: 'getReview', examCode: createRes.examCode }).ok, 'Đóng sớm thì mở đáp án');
+console.log(`listExams, getExamResults (${det.students.length} HS, tỉ lệ đúng mỗi câu ${expRate}%), đóng sớm → mở đáp án: OK!`);

@@ -695,7 +695,7 @@ function renderStartPreview(info) {
     $kt('#ktPreviewDS').textContent = `${ds} câu`;
     $kt('#ktPreviewTLN').textContent = `${tln} câu`;
     $kt('#ktPreviewTotal').textContent = `${total} câu`;
-    $kt('#ktPreviewSub').textContent = `Đề gồm ${total} câu hỏi được chia theo cấu trúc chuẩn THPT 2025. Điền Họ tên và Lớp ở khung bên phải rồi bấm "Bắt đầu làm bài".`;
+    $kt('#ktPreviewSub').textContent = `Đề gồm ${total} câu hỏi được chia theo cấu trúc chuẩn THPT 2025. Điền Họ tên và Lớp rồi bấm "Bắt đầu làm bài".`;
   }
 
   const stateBadge = $kt('#ktPreviewState');
@@ -708,10 +708,16 @@ function renderStartPreview(info) {
     stateBadge.className = 'tag y';
     stateBadge.textContent = 'Chưa đến giờ mở đề';
     directRevBtn.hidden = true;
-  } else {
+  } else if (info.status === 'OPEN') {
     stateBadge.className = 'tag g';
     stateBadge.textContent = 'Đang mở nhận bài';
     directRevBtn.hidden = true;
+  } else {
+    stateBadge.className = 'tag';
+    stateBadge.textContent = 'Đang kiểm tra…';
+  }
+  if (info.status === 'NOT_OPEN' && info.openTimeMs) {
+    $kt('#ktPreviewCloseNote').textContent = 'Mở đề: ' + new Date(info.openTimeMs).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
   }
 }
 
@@ -884,7 +890,7 @@ function renderResultScreen(res) {
     bd.append(h('div', { class: 'num', style: `--c:${sec.meta.colorVar}` },
       h('label', null, sec.meta.shortTitle),
       h('div', { style: 'font-size:22px;font-weight:600;margin:2px 0' }, `${doneInSec} / ${sec.items.length} câu`),
-      h('small', null, 'Đã hoàn thành')));
+      h('small', null, 'đã trả lời')));
   }
 }
 

@@ -58,6 +58,7 @@ const state = {
 };
 const saveExam = () => { store.set('toankho.exam.v1', state.exam); updateBadge(); };
 const official = (q) => q.trang_thai === 'chinh-thuc';
+const usable = (q) => official(q) && !q.loi_dap_an;   // câu đáp án mâu thuẫn không vào đề (máy sẽ chấm sai)
 const baiKey = (q) => `${q.lop}-${q.bai}`;
 const examCount = () => LOAI_KEYS.reduce((n, k) => n + state.exam.picks[k].length, 0);
 function updateBadge() { const n = examCount(), b = $('#railBadge'); b.textContent = n; b.hidden = !n; }
@@ -78,7 +79,7 @@ async function load() {
   const when = new Date(D.tao_luc).toLocaleString('vi-VN');
   $('#foot').textContent = `Dữ liệu dựng lúc ${when}${D.commit ? ' · commit ' + D.commit : ''} · tự cập nhật mỗi khi kho GitHub có thay đổi`;
   // dọn các mã đã biến mất khỏi kho
-  for (const k of LOAI_KEYS) state.exam.picks[k] = state.exam.picks[k].filter((m) => byMa.has(m));
+  for (const k of LOAI_KEYS) state.exam.picks[k] = state.exam.picks[k].filter((m) => byMa.has(m) && !byMa.get(m).loi_dap_an);
   const first = D.muc_luc.find((L) => D.cau_hoi.some((q) => q.lop === L.lop));
   state.lib.lop = (first || D.muc_luc[0] || { lop: 12 }).lop;
   updateBadge();
@@ -131,6 +132,7 @@ function showLatex(qs, title) {
 function addToExam(q, quiet) {
   const p = state.exam.picks[q.loai];
   if (!official(q)) { toast('Câu này chưa được duyệt nên chưa dùng được cho đề'); return false; }
+  if (q.loi_dap_an) { toast(`Câu ${q.ma} có đáp án cần kiểm tra lại trong kho, chưa dùng được cho đề`); return false; }
   if (p.includes(q.ma)) { if (!quiet) toast('Câu này đã có trong đề'); return false; }
   if (p.length >= LOAI[q.loai].max) { toast(`Tối đa ${LOAI[q.loai].max} câu ${LOAI[q.loai].ten.toLowerCase()}`); return false; }
   p.push(q.ma);
@@ -146,7 +148,8 @@ function qCard(q, opts = {}) {
       h('span', { class: 'tag ' + LOAI[q.loai]?.c }, LOAI[q.loai]?.ten || q.loai),
       mucTags(q),
       q.dang ? h('span', { class: 'tag', title: dangName(q.dang) }, 'Dạng ' + q.dang) : null,
-      official(q) ? null : h('span', { class: 'tag warn', title: q.ly_do }, 'Chờ duyệt')),
+      official(q) ? null : h('span', { class: 'tag warn', title: q.ly_do }, 'Chờ duyệt'),
+      q.loi_dap_an ? h('span', { class: 'tag warn', title: q.loi_dap_an }, 'Đáp án cần kiểm tra') : null),
     h('div', { class: 'q-path' }, path + (q.dang && dangName(q.dang) ? ' › ' + dangName(q.dang) : '')),
     bodyEl(q));
   let ansEl = null;
@@ -269,7 +272,7 @@ function treePanel(scope) {
 /* ---------- TẠO ĐỀ ---------- */
 function examPool(k, exclude = true) {
   const e = state.exam; const set = new Set(e.bai);
-  return D.cau_hoi.filter((q) => q.loai === k && official(q) && (!set.size || set.has(baiKey(q))) && (!exclude || !e.picks[k].includes(q.ma)));
+  return D.cau_hoi.filter((q) => q.loai === k && usable(q) && (!set.size || set.has(baiKey(q))) && (!exclude || !e.picks[k].includes(q.ma)));
 }
 function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function sample(pool, n) { // luân phiên giữa các bài để đề phủ đều nội dung
@@ -479,152 +482,299 @@ function exportExam() {
     h('button', { class: 'btn ghost', onclick: () => download(name(), buildTex(giaoVien)) }, 'Tải file .tex')]);
 }
 
-/* ---------- GIAO BÀI ONLINE (BƯỚC 1) ---------- */
+/* ---------- MÁY CHỦ CHẤM BÀI (Apps Script) ---------- */
+const apiUrl = () => D?.apps_script_url || localStorage.getItem('toankho.apps_script_url') || '';
+const teacher = {   // mã giáo viên nhớ trên máy này; có nút “Quên mã” khi dùng máy chung
+  get: () => store.get('toankho.teacher_code', '') || sessionStorage.getItem('toankho.teacher_code') || '',
+  set: (v) => store.set('toankho.teacher_code', v),
+  clear: () => { try { localStorage.removeItem('toankho.teacher_code'); sessionStorage.removeItem('toankho.teacher_code'); } catch { } },
+};
+async function api(payload) {
+  const url = apiUrl();
+  if (!url) throw new Error('Chưa có địa chỉ Apps Script trong web/config.json.');
+  const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+  const data = await res.json();
+  if (!data?.ok) {
+    if (data?.error === 'UNAUTHORIZED') teacher.clear();
+    const err = new Error(data?.message || 'Máy chủ không trả lời đúng.'); err.code = data?.error; throw err;
+  }
+  return data;
+}
+const gvApi = (action, extra = {}) => api({ action, teacherCode: teacher.get(), ...extra });
+const fmtTime = (ms) => ms ? new Date(ms).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' }) : '—';
+const toLocalInput = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+const fmtScore = (x) => x == null ? '—' : String(x).replace('.', ',');
+const STATUS = { NOT_OPEN: ['Chưa mở', 'b'], OPEN: ['Đang mở', 'g'], CLOSED: ['Đã đóng', ''] };
+const studentLinkOf = (code) => `${location.origin}${location.pathname.replace(/\/[^/]*$/, '')}/kiem-tra/?b=${encodeURIComponent(code)}`;
+const qrOf = (link) => `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(link)}`;
+
+// Tên bài tự gợi ý từ nội dung đề: “Kiểm tra 15 phút · Bài 1. Tính đơn điệu… · 21/10”
+function autoTitle(minutes) {
+  const qs = chosen().flatMap(([, x]) => x);
+  const bais = [...new Set(qs.map(baiKey))], chs = [...new Set(qs.map((q) => `${q.lop}-${q.chuong}`))];
+  let topic = 'Tổng hợp';
+  if (bais.length === 1) topic = `Bài ${qs[0].bai}. ${baiName(qs[0].lop, qs[0].bai)}`;
+  else if (chs.length === 1) topic = `Chương ${ROMAN[qs[0].chuong] || qs[0].chuong}. ${chuongOf(qs[0].lop, qs[0].chuong)?.ten || ''}`;
+  else if (new Set(qs.map((q) => q.lop)).size === 1) topic = `Toán ${qs[0].lop}`;
+  const d = new Date();
+  return `Kiểm tra ${minutes} phút · ${topic} · ${d.getDate()}/${d.getMonth() + 1}`;
+}
+
+function teacherCodeField() {
+  const inp = h('input', { type: 'password', placeholder: 'Mã bí mật đã cài trong Apps Script', value: teacher.get(), autocomplete: 'current-password' });
+  const forget = h('button', { class: 'chip sm', type: 'button', hidden: !teacher.get(), onclick: () => { teacher.clear(); inp.value = ''; forget.hidden = true; toast('Đã quên mã giáo viên trên máy này'); } }, 'Quên mã trên máy này');
+  return { inp, el: h('div', { class: 'field grow' }, h('label', null, 'Mã giáo viên (nhớ trên máy này)'), inp, h('div', { style: 'margin-top:4px' }, forget)) };
+}
+
+/* ---------- GIAO BÀI ONLINE ---------- */
 function openAssignOnlineModal() {
   const ch = Object.fromEntries(chosen());
   const onlineQs = [...(ch.TN4 || []), ...(ch.DS || []), ...(ch.TLN || [])];
-  if (!onlineQs.length) {
-    toast('Cần chọn ít nhất 1 câu Trắc nghiệm (TN4), Đúng/Sai (ĐS) hoặc Trả lời ngắn (TLN) để giao bài online.');
-    return;
-  }
+  if (!onlineQs.length) return toast('Cần ít nhất 1 câu Trắc nghiệm, Đúng/Sai hoặc Trả lời ngắn để giao bài online.');
+  const bad = onlineQs.filter((q) => q.loi_dap_an);
+  if (bad.length) return toast(`Bỏ hoặc đổi các câu có đáp án cần kiểm tra: ${bad.map((q) => q.ma).join(', ')}`);
 
+  const e = state.exam;
+  const dur = +e.time || 15;
+  const isDefault = !e.title || /^ĐỀ KIỂM TRA$/i.test(e.title.trim());
+  const titleInp = h('input', { type: 'text', value: isDefault ? autoTitle(dur) : e.title });
+  const timeInp = h('input', { type: 'number', min: 1, max: 300, value: dur, oninput: () => { if (isDefault) titleInp.value = autoTitle(+timeInp.value || dur); } });
   const now = new Date();
-  const closeDefault = new Date(now.getTime() + 24 * 3600 * 1000);
-  const toLocalIso = (d) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
-
-  const configuredUrl = D?.apps_script_url || localStorage.getItem('toankho.apps_script_url') || '';
-  const savedTeacherCode = sessionStorage.getItem('toankho.teacher_code') || '';
-
-  const titleInp = h('input', { type: 'text', value: state.exam.title || 'ĐỀ KIỂM TRA' });
-  const modeSel = h('select', { style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' },
-    h('option', { value: 'tu_lam' }, 'Tự làm theo hạn'),
-    h('option', { value: 'thi_cung_luc' }, 'Thi cùng lúc (Đấu Trường)'));
-  const timeInp = h('input', { type: 'number', min: 1, max: 300, value: state.exam.time || 15 });
-  const openInp = h('input', { type: 'datetime-local', value: toLocalIso(now), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
-  const closeInp = h('input', { type: 'datetime-local', value: toLocalIso(closeDefault), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
+  const dt = 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff';
+  const openInp = h('input', { type: 'datetime-local', value: toLocalInput(now), style: dt });
+  const closeInp = h('input', { type: 'datetime-local', value: toLocalInput(new Date(now.getTime() + 24 * 3600e3)), style: dt });
+  const setClose = (fn) => { const o = new Date(openInp.value || Date.now()); closeInp.value = toLocalInput(fn(o)); };
+  const presets = h('div', { class: 'row', style: 'gap:6px;margin-top:6px' },
+    [['Hết tiết', (o) => new Date(o.getTime() + Math.max(45, (+timeInp.value || dur) + 5) * 60e3)],
+      ['Cuối ngày', (o) => { const d = new Date(o); d.setHours(23, 59, 0, 0); return d; }],
+      ['+1 ngày', (o) => new Date(o.getTime() + 24 * 3600e3)],
+      ['+1 tuần', (o) => new Date(o.getTime() + 7 * 24 * 3600e3)]]
+      .map(([t, fn]) => h('button', { class: 'chip sm', type: 'button', onclick: () => setClose(fn) }, t)));
   const shufQ = h('input', { type: 'checkbox', checked: true });
   const shufC = h('input', { type: 'checkbox', checked: true });
-  const codeInp = h('input', { type: 'password', placeholder: 'Mã giáo viên đã cài trong Script Properties', value: savedTeacherCode, style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;background:#fff' });
-  const urlInp = h('input', { type: 'text', placeholder: 'https://script.google.com/macros/s/.../exec', value: configuredUrl });
-
+  const code = teacherCodeField();
   const errBox = h('div', { class: 'note-warn', hidden: true, style: 'border-color:#b3261e;background:#ffe3e0;color:#7c1d18' });
-  const resultBox = h('div', { class: 'panel', hidden: true, style: 'margin-top:14px;text-align:center;background:#f4f9f0;border-color:#2f7d32' });
 
+  const counts = `${(ch.TN4 || []).length} trắc nghiệm · ${(ch.DS || []).length} đúng–sai · ${(ch.TLN || []).length} trả lời ngắn`;
   const formBox = h('div', null,
-    ch.TL?.length ? h('div', { class: 'note-warn', style: 'margin-bottom:12px' }, `Lưu ý: ${ch.TL.length} câu Tự luận sẽ được bỏ qua khi chấm tự động (chỉ gửi ${onlineQs.length} câu TN4/ĐS/TLN).`) : null,
+    h('p', { class: 'muted small', style: 'margin-top:0' }, `${onlineQs.length} câu: ${counts}. Học sinh không cần tài khoản; máy chấm tự động theo thang 2025, quy về thang 10.`),
+    ch.TL?.length ? h('div', { class: 'note-warn', style: 'margin:0 0 12px' }, `${ch.TL.length} câu tự luận không giao online (không chấm tự động được).`) : null,
     h('div', { class: 'row', style: 'margin-bottom:12px' },
-      h('div', { class: 'field grow' }, h('label', null, 'Tên bài kiểm tra'), titleInp),
-      h('div', { class: 'field' }, h('label', null, 'Chế độ làm bài'), modeSel),
-      h('div', { class: 'field', style: 'width:130px' }, h('label', null, 'Thời gian (phút)'), timeInp)),
-    h('div', { class: 'row', style: 'margin-bottom:12px' },
-      h('div', { class: 'field grow' }, h('label', null, 'Giờ mở đề'), openInp),
-      h('div', { class: 'field grow' }, h('label', null, 'Giờ đóng đề (mở đáp án)'), closeInp)),
-    h('div', { class: 'row', style: 'margin-bottom:14px;gap:20px' },
-      h('label', { class: 'cb' }, shufQ, 'Đảo thứ tự câu hỏi'),
-      h('label', { class: 'cb' }, shufC, 'Đảo phương án A/B/C/D')),
-    h('div', { class: 'row', style: 'margin-bottom:12px' },
-      h('div', { class: 'field grow' }, h('label', null, 'Mã giáo viên'), codeInp),
-      D?.apps_script_url ? null : h('div', { class: 'field grow' }, h('label', null, 'Địa chỉ Apps Script (hoặc điền vào web/config.json)'), urlInp)),
-    errBox,
-    resultBox);
+      h('div', { class: 'field grow' }, h('label', null, 'Tên bài (học sinh thấy tên này)'), titleInp),
+      h('div', { class: 'field', style: 'width:120px' }, h('label', null, 'Thời gian (phút)'), timeInp)),
+    h('div', { class: 'row', style: 'margin-bottom:12px;align-items:flex-start' },
+      h('div', { class: 'field grow' }, h('label', null, 'Mở đề lúc'), openInp),
+      h('div', { class: 'field grow' }, h('label', null, 'Đóng đề lúc (sau đó học sinh xem được đáp án)'), closeInp, presets)),
+    h('div', { class: 'row', style: 'margin-bottom:12px;gap:20px' },
+      h('label', { class: 'cb' }, shufQ, 'Đảo thứ tự câu'), h('label', { class: 'cb' }, shufC, 'Đảo phương án A/B/C/D')),
+    h('div', { class: 'row' }, code.el),
+    errBox);
 
-  const submitBtn = h('button', { class: 'btn' }, `Giao bài (${onlineQs.length} câu) & tạo mã QR`);
+  const submitBtn = h('button', { class: 'btn' }, `Giao bài & tạo link`);
+  const fail = (m) => { errBox.textContent = m; errBox.hidden = false; };
   submitBtn.onclick = async () => {
     errBox.hidden = true;
-    const teacherCode = codeInp.value.trim();
-    const apiUrl = (D?.apps_script_url || urlInp.value || '').trim();
-    if (!teacherCode) {
-      errBox.textContent = 'Vui lòng nhập mã giáo viên.';
-      errBox.hidden = false;
-      return;
-    }
-    if (!apiUrl) {
-      errBox.textContent = 'Chưa có địa chỉ Apps Script. Hãy điền vào ô Địa chỉ Apps Script hoặc trong file web/config.json.';
-      errBox.hidden = false;
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Đang gửi đề lên Google Sheet…';
-
+    const minutes = +timeInp.value || dur;
+    const openMs = new Date(openInp.value).getTime(), closeMs = new Date(closeInp.value).getTime();
+    if (!code.inp.value.trim()) return fail('Nhập mã giáo viên.');
+    if (!(closeMs > openMs)) return fail('Giờ đóng phải sau giờ mở.');
+    if (closeMs - openMs < minutes * 60e3) return fail(`Từ giờ mở đến giờ đóng ngắn hơn ${minutes} phút làm bài.`);
+    teacher.set(code.inp.value.trim());
+    submitBtn.disabled = true; submitBtn.textContent = 'Đang gửi đề lên Google Sheet…';
     try {
-      const payload = {
-        action: 'createExam',
-        teacherCode,
-        title: titleInp.value.trim() || 'ĐỀ KIỂM TRA',
-        mode: modeSel.value,
-        durationMinutes: +timeInp.value || 15,
-        openTime: openInp.value ? new Date(openInp.value).toISOString() : '',
-        closeTime: closeInp.value ? new Date(closeInp.value).toISOString() : '',
-        shuffleQuestions: shufQ.checked,
-        shuffleChoices: shufC.checked,
+      const title = titleInp.value.trim() || autoTitle(minutes);
+      const data = await gvApi('createExam', {
+        title, mode: 'tu_lam', durationMinutes: minutes,
+        openTime: new Date(openMs).toISOString(), closeTime: new Date(closeMs).toISOString(),
+        shuffleQuestions: shufQ.checked, shuffleChoices: shufC.checked,
         questions: onlineQs.map((q) => ({
-          ma: q.ma,
-          loai: q.loai,
-          dang: q.dang || '',
-          de: q.de,
-          choices: q.choices,
-          tf: q.tf,
-          hinh: (q.hinh || []).map((f) => ({ id: f.id, svg: f.svg })),
-          dap_an: q.dap_an,
-          loigiai: q.loigiai,
+          ma: q.ma, loai: q.loai, dang: q.dang || '', de: q.de, choices: q.choices, tf: q.tf,
+          hinh: (q.hinh || []).map((f) => ({ id: f.id, svg: f.svg })), dap_an: q.dap_an, loigiai: q.loigiai,
           hinh_lg: (q.hinh_lg || []).map((f) => ({ id: f.id, svg: f.svg })),
         })),
-      };
-
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
       });
-      const data = await res.json();
-      if (!data || !data.ok) {
-        throw new Error((data && data.message) || 'Không tạo được bài kiểm tra.');
-      }
-
-      sessionStorage.setItem('toankho.teacher_code', teacherCode);
-      if (!D?.apps_script_url && apiUrl) localStorage.setItem('toankho.apps_script_url', apiUrl);
-
-      const examTitle = titleInp.value.trim() || 'ĐỀ KIỂM TRA';
-      const examDur = +timeInp.value || 15;
-      const cTN4 = (ch.TN4 || []).length;
-      const cDS = (ch.DS || []).length;
-      const cTLN = (ch.TLN || []).length;
-      try {
-        localStorage.setItem('toankho.exam_meta.v1.' + data.examCode, JSON.stringify({
-          examCode: data.examCode,
-          title: examTitle,
-          durationMinutes: examDur,
-          counts: { TN4: cTN4, DS: cDS, TLN: cTLN, total: onlineQs.length },
-        }));
-      } catch {}
-
-      const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '');
-      const extraParam =
-        `&t=${encodeURIComponent(examTitle)}&d=${examDur}&c=${cTN4}-${cDS}-${cTLN}` +
-        ((!D?.apps_script_url && apiUrl) ? `&s=${encodeURIComponent(apiUrl)}` : '');
-      const studentLink = `${baseUrl}/kiem-tra/?b=${encodeURIComponent(data.examCode)}${extraParam}`;
-      const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(studentLink)}`;
-
-      resultBox.replaceChildren(
-        h('div', { style: 'font-size:18px;font-weight:600;color:#1b5e20' }, `Đã giao bài thành công! Mã bài: ${data.examCode}`),
-        h('div', { class: 'small muted', style: 'margin-top:4px' }, `Tổng điểm thô tối đa: ${data.maxRawScore} điểm (tự động quy về thang 10)`),
-        h('div', { style: 'margin:12px auto' }, h('img', { src: qrSrc, alt: 'Mã QR bài kiểm tra', style: 'width:200px;height:200px;border-radius:14px;border:1.5px solid var(--line);padding:6px;background:#fff' })),
-        h('div', { class: 'row', style: 'justify-content:center;margin-top:8px' },
-          h('input', { type: 'text', readonly: true, value: studentLink, style: 'width:min(420px,100%);border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;background:#fff;font-size:13.5px' }),
-          h('button', { class: 'btn sm', onclick: async () => toast((await copyText(studentLink)) ? 'Đã chép link học sinh' : 'Không chép được') }, 'Chép link'),
-          h('a', { class: 'btn ghost sm', href: studentLink, target: '_blank', rel: 'noopener' }, 'Mở trang kiểm tra')));
-      resultBox.hidden = false;
-      submitBtn.textContent = 'Đã tạo bài kiểm tra';
+      state.gvList = null;   // để trang Bài đã giao tải lại
+      openModal('Đã giao bài', shareBox({ examCode: data.examCode, title, durationMinutes: minutes, closeTimeMs: closeMs }), [
+        h('a', { class: 'btn', href: '#/bai-da-giao/' + data.examCode, onclick: closeModal }, 'Theo dõi kết quả')]);
     } catch (err) {
-      errBox.textContent = err.message || 'Lỗi kết nối máy chủ Apps Script.';
-      errBox.hidden = false;
-      submitBtn.disabled = false;
-      submitBtn.textContent = `Giao bài (${onlineQs.length} câu) & tạo mã QR`;
+      fail(err.code === 'UNAUTHORIZED' ? 'Sai mã giáo viên.' : (err.message || 'Lỗi kết nối máy chủ Apps Script.'));
+      submitBtn.disabled = false; submitBtn.textContent = 'Giao bài & tạo link';
     }
   };
-
   openModal('Giao bài online', formBox, [submitBtn]);
+}
+
+// Khối chia sẻ: mã to, QR, link, tin nhắn soạn sẵn để dán vào nhóm lớp
+function shareBox(x) {
+  const link = studentLinkOf(x.examCode);
+  const msg = [x.title, `Mã bài: ${x.examCode}`, `Thời gian làm: ${x.durationMinutes} phút`, x.closeTimeMs ? `Hạn nộp: ${fmtTime(x.closeTimeMs)}` : null, `Làm bài tại: ${link}`].filter(Boolean).join('\n');
+  return h('div', { class: 'share' },
+    h('div', { class: 'share-code' }, h('small', null, 'Mã bài'), h('b', { class: 'mono' }, x.examCode)),
+    h('img', { src: qrOf(link), alt: 'Mã QR vào bài', class: 'share-qr' }),
+    h('div', { class: 'share-act' },
+      h('input', { type: 'text', readonly: true, value: link, onclick: (ev) => ev.target.select() }),
+      h('div', { class: 'row', style: 'gap:8px;justify-content:center' },
+        h('button', { class: 'btn sm', onclick: async () => toast((await copyText(link)) ? 'Đã chép link' : 'Không chép được') }, 'Chép link'),
+        h('button', { class: 'btn ghost sm', onclick: async () => toast((await copyText(msg)) ? 'Đã chép tin nhắn — dán vào nhóm lớp' : 'Không chép được') }, 'Chép tin nhắn gửi lớp'),
+        h('a', { class: 'btn ghost sm', href: link, target: '_blank', rel: 'noopener' }, 'Mở thử'))));
+}
+
+/* ---------- BÀI ĐÃ GIAO (GIÁO VIÊN) ---------- */
+function renderGV(root) {
+  const box = h('div');
+  root.append(h('div', { class: 'row', style: 'margin-bottom:16px' },
+    state.gvCode ? h('a', { class: 'btn ghost sm', href: '#/bai-da-giao' }, '← Tất cả bài') : null,
+    h('h1', { class: 'grow' }, state.gvCode ? 'Kết quả bài ' + state.gvCode : 'Bài đã giao'),
+    h('button', { class: 'btn ghost sm', onclick: () => { state.gvList = null; delete (state.gvRes || {})[state.gvCode]; render(); } }, 'Làm mới')), box);
+  if (!teacher.get()) return box.append(gvLogin());
+  box.append(h('p', { class: 'muted' }, 'Đang tải…'));
+  (state.gvCode ? gvDetail(box, state.gvCode) : gvList(box)).catch((err) => {
+    box.replaceChildren(err.code === 'UNAUTHORIZED' ? gvLogin('Sai mã giáo viên, nhập lại.') : h('div', { class: 'panel empty-state' }, h('h3', null, 'Chưa tải được'), h('p', null, err.message)));
+  });
+}
+function gvLogin(msg) {
+  const code = teacherCodeField();
+  const go = () => { if (!code.inp.value.trim()) return; teacher.set(code.inp.value.trim()); render(); };
+  code.inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+  return h('div', { class: 'panel', style: 'max-width:460px' },
+    h('h3', null, 'Nhập mã giáo viên'), h('p', { class: 'muted small' }, 'Chỉ giáo viên có mã mới xem được điểm của học sinh.'),
+    msg ? h('div', { class: 'note-warn' }, msg) : null, h('div', { class: 'row', style: 'margin-top:10px' }, code.el), h('button', { class: 'btn', style: 'margin-top:12px', onclick: go }, 'Xem bài đã giao'));
+}
+async function gvList(box) {
+  const data = state.gvList || (state.gvList = await gvApi('listExams'));
+  const ex = data.exams;
+  const kids = [];
+  if (!ex.length) kids.push(h('div', { class: 'panel empty-state' }, h('h3', null, 'Chưa giao bài nào'), h('p', null, 'Vào Tạo đề → chọn câu → Giao bài online.'), h('a', { class: 'btn', href: '#/tao-de' }, 'Tạo đề')));
+  const list = h('div', { class: 'gv-list' }, ex.map((x) => {
+    const [st, c] = STATUS[x.status] || ['', ''];
+    return h('a', { class: 'panel gv-item', href: '#/bai-da-giao/' + x.examCode },
+      h('div', { class: 'row', style: 'gap:8px' }, h('span', { class: 'tag k mono' }, x.examCode), h('span', { class: 'tag ' + c }, st), h('span', { class: 'muted small' }, `${x.questionCount} câu · ${x.durationMinutes} phút`)),
+      h('h3', null, x.title || 'Bài ' + x.examCode),
+      h('div', { class: 'gv-nums' },
+        h('div', null, h('b', null, x.submissions), h('small', null, 'bài nộp')),
+        h('div', null, h('b', null, fmtScore(x.avgScore)), h('small', null, 'điểm TB')),
+        h('div', null, h('b', { style: 'font-size:15px' }, fmtTime(x.closeTimeMs)), h('small', null, x.status === 'CLOSED' ? 'đã đóng' : 'hạn nộp'))));
+  }));
+  kids.push(list);
+  if (data.sheetUrl) kids.push(h('p', { class: 'small muted' }, 'Dữ liệu gốc nằm trong ', h('a', { href: data.sheetUrl, target: '_blank', rel: 'noopener' }, 'Google Sheet'), '.'));
+  box.replaceChildren(...kids);
+}
+async function gvDetail(box, codeX) {
+  state.gvRes = state.gvRes || {};
+  const data = state.gvRes[codeX] || (state.gvRes[codeX] = await gvApi('getExamResults', { examCode: codeX }));
+  const x = data.exam; const S = data.students; const [st, c] = STATUS[x.status] || ['', ''];
+  const scores = S.map((s) => s.score10);
+  const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : null;
+  const kids = [];
+
+  // đầu trang: thông tin + thao tác
+  const act = h('div', { class: 'row', style: 'gap:8px' },
+    h('button', { class: 'btn ghost sm', onclick: () => openModal('Gửi bài cho học sinh', shareBox(x)) }, 'Link & QR'),
+    x.status !== 'CLOSED' ? h('button', { class: 'btn ghost sm', onclick: () => gvUpdate(codeX, { closeTime: new Date().toISOString() }, 'Đóng bài ngay? Học sinh sẽ không nộp được nữa và xem được đáp án.') }, 'Đóng ngay') : null,
+    h('button', { class: 'btn ghost sm', onclick: () => gvExtend(x) }, x.status === 'CLOSED' ? 'Mở lại / gia hạn' : 'Gia hạn'));
+  kids.push(h('div', { class: 'panel', style: 'margin-bottom:16px' },
+    h('div', { class: 'row', style: 'gap:8px' }, h('span', { class: 'tag ' + c }, st), h('span', { class: 'muted small' }, `${x.questionCount} câu · ${x.durationMinutes} phút · mở ${fmtTime(x.openTimeMs)} · đóng ${fmtTime(x.closeTimeMs)}`)),
+    h('h2', { style: 'margin:8px 0 10px' }, x.title), act));
+
+  if (!S.length) {
+    kids.push(h('div', { class: 'panel empty-state' }, h('h3', null, 'Chưa có học sinh nộp bài'), h('p', null, x.status === 'OPEN' ? 'Trang tự làm mới mỗi 30 giây.' : '')));
+  } else {
+    // số liệu tổng
+    const pass = scores.filter((v) => v >= 5).length;
+    kids.push(h('div', { class: 'gv-tiles' },
+      [['Bài nộp', S.length], ['Điểm TB', fmtScore(Math.round(avg * 100) / 100)], ['Cao nhất', fmtScore(Math.max(...scores))], ['Thấp nhất', fmtScore(Math.min(...scores))], ['Từ 5 điểm', Math.round((pass / S.length) * 100) + '%']]
+        .map(([k, v]) => h('div', { class: 'panel gv-tile' }, h('small', null, k), h('b', null, v)))));
+    // phổ điểm
+    const bins = Array(10).fill(0); scores.forEach((v) => bins[Math.min(9, Math.floor(v))]++);
+    const mx = Math.max(...bins);
+    kids.push(h('section', { class: 'panel', style: 'margin:16px 0' }, h('h3', null, 'Phổ điểm'),
+      h('div', { class: 'hist' }, bins.map((n, i) => h('div', { class: 'hist-col', title: `${i}–${i + 1} điểm: ${n} học sinh` },
+        h('span', { class: 'hist-n' }, n || ''), h('i', { style: `height:${mx ? Math.round((n / mx) * 100) : 0}%` + (i < 5 ? ';background:var(--y)' : '') }), h('small', null, i + (i === 9 ? '–10' : '')))))));
+    // câu & dạng yếu
+    kids.push(gvWeak(data));
+    // bảng điểm
+    kids.push(gvTable(x, S));
+  }
+  box.replaceChildren(...kids);
+  if (x.status === 'OPEN') { clearInterval(route.timer); route.timer = setInterval(() => { if (state.gvCode === codeX && !document.hidden) { delete state.gvRes[codeX]; gvDetail(box, codeX).catch(() => { }); } }, 30000); }
+}
+function gvWeak(data) {
+  const Q = data.questions.filter((q) => q.rate != null).sort((a, b) => a.rate - b.rate);
+  const byDang = new Map();
+  Q.forEach((q) => { if (!q.dang) return; const d = byDang.get(q.dang) || { dang: q.dang, sum: 0, n: 0, mas: [] }; d.sum += q.rate; d.n++; d.mas.push(q.ma); byDang.set(q.dang, d); });
+  const weakDang = [...byDang.values()].map((d) => ({ ...d, rate: d.sum / d.n })).filter((d) => d.rate < 60).sort((a, b) => a.rate - b.rate);
+  const bar = (rate) => h('div', { class: 'rate' }, h('i', { style: `width:${rate}%;background:${rate < 40 ? 'var(--accent)' : rate < 70 ? 'var(--y)' : '#7cc47a'}` }), h('span', null, Math.round(rate) + '%'));
+  const sec = h('section', { class: 'panel', style: 'margin-bottom:16px' }, h('h3', null, 'Câu học sinh làm tốt / chưa tốt'),
+    h('p', { class: 'muted small', style: 'margin-top:2px' }, 'Tỉ lệ điểm đạt được trên mỗi câu (câu Đúng–Sai tính theo thang điểm từng ý). Bấm mã câu để xem đề.'));
+  const tbl = h('div', { class: 'qrate' });
+  Q.forEach((q) => {
+    const src = byMa.get(q.ma);
+    tbl.append(h('button', { class: 'mono link', onclick: () => src ? openModal('Câu ' + q.ma, qCard(src, { noAdd: true })) : toast('Câu này không còn trong kho') }, q.ma),
+      h('span', { class: 'tag ' + (LOAI[q.loai]?.c || '') }, LOAI[q.loai]?.ngan || q.loai),
+      h('span', { class: 'small muted ell', title: dangName(q.dang) }, q.dang ? `${q.dang} ${dangName(q.dang)}` : ''),
+      bar(q.rate), h('span', { class: 'small muted' }, q.blank ? `${q.blank} bỏ trống` : ''));
+  });
+  sec.append(tbl);
+  if (weakDang.length) {
+    sec.append(h('div', { class: 'note-warn', style: 'margin-top:14px' },
+      h('b', null, `Dạng cần ôn (dưới 60%): `), weakDang.slice(0, 6).map((d) => `${d.dang} ${dangName(d.dang)} (${Math.round(d.rate)}%)`).join(' · '),
+      h('div', { style: 'margin-top:8px' }, h('button', { class: 'btn sm', onclick: () => makeReview(data, weakDang.slice(0, 6)) }, 'Tạo đề ôn từ các dạng này'))));
+  }
+  return sec;
+}
+// Đề ôn: mỗi dạng yếu lấy tối đa 2 câu mới (khác câu đã kiểm tra), cùng loại câu học sinh đã làm sai
+function makeReview(data, weak) {
+  const done = new Set(data.questions.map((q) => q.ma));
+  const picks = { TN4: [], DS: [], TLN: [], TL: [] };
+  for (const d of weak) {
+    const loais = new Set(data.questions.filter((q) => q.dang === d.dang).map((q) => q.loai));
+    const pool = shuffle(D.cau_hoi.filter((q) => q.dang === d.dang && usable(q) && !done.has(q.ma)));
+    const got = [...pool.filter((q) => loais.has(q.loai)), ...pool.filter((q) => !loais.has(q.loai))].slice(0, 2);
+    got.forEach((q) => { if (picks[q.loai].length < LOAI[q.loai].max) picks[q.loai].push(q.ma); });
+  }
+  const n = LOAI_KEYS.reduce((s, k) => s + picks[k].length, 0);
+  if (!n) return toast('Kho chưa có câu mới nào cho các dạng này');
+  if (examCount() && !confirm(`Đề đang soạn có ${examCount()} câu sẽ được thay bằng đề ôn ${n} câu. Tiếp tục?`)) return;
+  Object.assign(state.exam, { title: 'Ôn tập: ' + data.exam.title, time: Math.max(10, n * 3), bai: [], picks, target: { TN4: picks.TN4.length, DS: picks.DS.length, TLN: picks.TLN.length, TL: 0 } });
+  saveExam(); location.hash = '#/tao-de'; toast(`Đã tạo đề ôn ${n} câu — xem lại rồi giao bài`);
+}
+function gvTable(x, S) {
+  let sortBy = 'className', asc = true, cls = '';
+  const classes = [...new Set(S.map((s) => s.className))].sort((a, b) => a.localeCompare(b, 'vi', { numeric: true }));
+  const wrap = h('section', { class: 'panel' });
+  const rowsOf = () => S.filter((s) => !cls || s.className === cls).sort((a, b) => {
+    const va = a[sortBy], vb = b[sortBy]; const r = typeof va === 'number' ? va - vb : String(va).localeCompare(String(vb), 'vi', { numeric: true });
+    return (asc ? r : -r) || a.name.localeCompare(b.name, 'vi');
+  });
+  const tsv = () => [['Họ tên', 'Lớp', 'Điểm', 'Điểm thô', 'Số phút', 'Ghi chú'], ...rowsOf().map((s) => [s.name, s.className, fmtScore(s.score10), s.raw, s.minutes ?? '', [s.duplicate, s.late].filter(Boolean).join(', ')])].map((r) => r.join('\t')).join('\n');
+  const draw = () => {
+    const th = (k, t) => h('th', { class: 'sort' + (sortBy === k ? ' on' : ''), onclick: () => { asc = sortBy === k ? !asc : k !== 'score10'; sortBy = k; draw(); } }, t + (sortBy === k ? (asc ? ' ↑' : ' ↓') : ''));
+    wrap.replaceChildren(
+      h('div', { class: 'row', style: 'margin-bottom:10px' }, h('h3', { class: 'grow' }, 'Bảng điểm'),
+        classes.length > 1 ? [h('button', { class: 'chip sm' + (!cls ? ' on' : ''), onclick: () => { cls = ''; draw(); } }, 'Tất cả'), ...classes.map((c) => h('button', { class: 'chip sm' + (cls === c ? ' on' : ''), onclick: () => { cls = c; draw(); } }, c))] : null,
+        h('button', { class: 'btn ghost sm', onclick: async () => toast((await copyText(tsv())) ? 'Đã chép — dán thẳng vào Excel/Sheets' : 'Không chép được') }, 'Chép bảng điểm'),
+        h('button', { class: 'btn ghost sm', onclick: () => download(`diem-${x.examCode}.csv`, '﻿' + tsv().replace(/\t/g, ',')) }, 'Tải CSV')),
+      h('div', { class: 'tbl-wrap' }, h('table', { class: 'tbl' },
+        h('thead', null, h('tr', null, h('th', null, '#'), th('name', 'Họ tên'), th('className', 'Lớp'), th('score10', 'Điểm'), h('th', null, 'Điểm thô'), th('minutes', 'Số phút'), h('th', null, 'Ghi chú'))),
+        h('tbody', null, rowsOf().map((s, i) => h('tr', null, h('td', null, i + 1), h('td', null, s.name), h('td', null, s.className),
+          h('td', null, h('b', { style: s.score10 < 5 ? 'color:var(--accent-d)' : '' }, fmtScore(s.score10))), h('td', { class: 'small muted' }, s.raw), h('td', null, s.minutes ?? '—'),
+          h('td', null, s.duplicate ? h('span', { class: 'tag warn' }, s.duplicate) : null, ' ', s.late ? h('span', { class: 'tag warn' }, s.late) : null)))))));
+  };
+  draw();
+  return wrap;
+}
+async function gvUpdate(codeX, patch, ask) {
+  if (ask && !confirm(ask)) return;
+  try { await gvApi('updateExam', { examCode: codeX, ...patch }); state.gvList = null; delete state.gvRes[codeX]; toast('Đã cập nhật'); render(); }
+  catch (err) { toast(err.message); }
+}
+function gvExtend(x) {
+  const base = new Date(Math.max(Date.now(), x.closeTimeMs || 0));
+  const inp = h('input', { type: 'datetime-local', value: toLocalInput(new Date(base.getTime() + 24 * 3600e3)), style: 'border:1.5px solid var(--line);border-radius:12px;padding:8px 12px' });
+  openModal('Đổi giờ đóng bài ' + x.examCode, h('div', null,
+    h('p', { class: 'muted small', style: 'margin-top:0' }, 'Học sinh làm được đến giờ này; sau đó mới xem được đáp án.'),
+    h('div', { class: 'row', style: 'gap:6px;margin-bottom:10px' }, [['+1 giờ', 3600e3], ['+1 ngày', 864e5], ['+1 tuần', 6048e5]].map(([t, d]) => h('button', { class: 'chip sm', onclick: () => (inp.value = toLocalInput(new Date(base.getTime() + d))) }, t))), inp),
+    [h('button', { class: 'btn', onclick: () => { closeModal(); gvUpdate(x.examCode, { closeTime: new Date(inp.value).toISOString() }); } }, 'Lưu giờ đóng')]);
 }
 
 /* ---------- HƯỚNG DẪN ---------- */
@@ -635,7 +785,8 @@ async function renderHelp(root) {
       h('li', null, h('b', null, 'Tìm bài tập: '), 'vào ', h('i', null, 'Thư viện'), ' → chọn lớp → chọn chương (thẻ màu) → chọn bài/dạng ở cột trái. Lọc thêm theo loại câu và mức độ. Gõ vào ô tìm kiếm để tìm theo mã, nội dung, nguồn.'),
       h('li', null, h('b', null, 'Xem trực tiếp: '), 'công thức và hình được hiển thị sẵn; bấm ', h('i', null, 'Xem đáp án'), ' khi cần (đáp án và lời giải mặc định ẩn).'),
       h('li', null, h('b', null, 'Lấy LaTeX: '), 'bấm ', h('i', null, 'Lấy LaTeX'), ' để chép mã một câu, hoặc ', h('i', null, 'Lấy LaTeX cả danh sách'), ' để chép nhiều câu đang lọc.'),
-      h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.')),
+      h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.'),
+      h('li', null, h('b', null, 'Theo dõi kết quả: '), 'vào ', h('i', null, 'Bài đã giao'), ' (biểu tượng cột) → chọn bài để xem bảng điểm, phổ điểm, tỉ lệ đúng từng câu; đóng sớm hoặc gia hạn; bấm ', h('i', null, 'Tạo đề ôn'), ' để máy lấy câu mới thuộc các dạng học sinh làm chưa tốt.')),
     h('h2', { style: 'margin-top:22px' }, 'Cập nhật dữ liệu'),
     h('p', null, 'Trang này tự dựng lại từ kho GitHub mỗi khi có thay đổi mới (khoảng 1–3 phút sau khi push). Nếu câu hỏi mới chưa hiện, hãy tải lại trang.'),
     h('p', { class: 'muted small' }, 'Câu ở trạng thái “chờ duyệt” chỉ hiện khi tick “Cả câu chờ duyệt”, và không được đưa vào đề.')));
@@ -649,7 +800,7 @@ function render(opt = {}) {
   const view = $('#view');
   const root = document.createElement('div');
   document.querySelectorAll('.rail-btn').forEach((b) => b.classList.toggle('on', b.dataset.view === state.view));
-  if (state.view === 'exam') renderExam(root); else if (state.view === 'help') renderHelp(root); else renderLib(root);
+  if (state.view === 'exam') renderExam(root); else if (state.view === 'help') renderHelp(root); else if (state.view === 'gv') renderGV(root); else renderLib(root);
   view.style.minHeight = view.offsetHeight + 'px';
   view.replaceChildren(...root.childNodes);
   window.scrollTo(0, opt.toTop ? 0 : y);
@@ -661,7 +812,14 @@ function render(opt = {}) {
     }
   });
 }
-function route() { const r = location.hash.replace(/^#\//, ''); state.view = r === 'tao-de' ? 'exam' : r === 'huong-dan' ? 'help' : 'lib'; render({ toTop: true }); }
+function route() {
+  clearInterval(route.timer); closeModal();
+  const r = location.hash.replace(/^#\//, '');
+  state.gvCode = null;
+  if (r.startsWith('bai-da-giao')) { state.view = 'gv'; state.gvCode = r.split('/')[1] || null; }
+  else state.view = r === 'tao-de' ? 'exam' : r === 'huong-dan' ? 'help' : 'lib';
+  render({ toTop: true });
+}
 window.addEventListener('hashchange', route);
 function doSearch() { state.lib.q = $('#q').value; state.lib.limit = PAGE; if (state.view !== 'lib') location.hash = '#/thu-vien'; else render(); }
 $('#q').addEventListener('input', (() => { let t; return () => { clearTimeout(t); t = setTimeout(doSearch, 250); }; })());
