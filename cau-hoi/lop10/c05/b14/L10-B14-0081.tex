@@ -1,0 +1,31 @@
+%% ma: L10-B14-0081
+%% lop: 10
+%% chuong: 5
+%% bai: 14
+%% dang: 10.14.13
+%% loai: TN4
+%% muc: VD
+%% dap_an: "C"
+%% nguon: "chuyen-de-cac-so-dac-trung-cua-mau-so-lieu-khong-ghep-nhom-toan-10-chuong-trinh-moi.pdf (GV. Phan Nhật Linh) (P05), Bài 03 Dạng 2 Phần I Câu 28"
+%% kien_thuc: "Lớp 10 Bài 13 (số trung bình), Bài 14 (phương sai, độ lệch chuẩn)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Biểu đồ đường vẽ lại bằng TikZ theo số liệu ghi trên hình gốc. Tự duyệt theo yêu cầu giáo viên 22/10/2026."
+\begin{ex}
+Biểu đồ đường sau cho biết tốc độ tăng trưởng GDP (\%) của Việt Nam trong $9$ năm từ 2012 đến 2020:
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=.9cm]
+  \draw[truc] (0,4.5)--(9.6,4.5);
+  \foreach \v/\n/\p [count=\i] in {5.3/2012/above,5.4/2013/above,6/2014/above left,6.7/2015/above,6.2/2016/below,6.8/2017/above left,7.1/2018/above,7/2019/above right,5.3/2020/right}{
+    \node[below,font=\scriptsize] at (\i,4.5) {$\n$};
+    \fill (\i,\v) circle (1.8pt);
+    \node[\p,font=\scriptsize] at (\i,\v) {\pgfmathprintnumber[use comma,fixed,precision=1]{\v}\%};
+  }
+  \draw[thick,blue] (1,5.3)--(2,5.4)--(3,6)--(4,6.7)--(5,6.2)--(6,6.8)--(7,7.1)--(8,7)--(9,5.3);
+\end{tikzpicture}
+\end{center}
+Độ lệch chuẩn của mẫu số liệu nhận được từ biểu đồ gần đúng nhất với kết quả nào?
+\choice{$0{,}5$}{$0{,}6$}{\True $0{,}7$}{$0{,}8$}
+\loigiai{Mẫu số liệu: $5{,}3$; $5{,}4$; $6$; $6{,}7$; $6{,}2$; $6{,}8$; $7{,}1$; $7$; $5{,}3$. $\overline x=\dfrac{55{,}8}9=6{,}2$.
+
+$s^2=\dfrac19\sum\left(x_i-6{,}2\right)^2=\dfrac{109}{225}\approx0{,}484$; $s\approx0{,}696\approx0{,}7$. Chọn C.}
+\end{ex}

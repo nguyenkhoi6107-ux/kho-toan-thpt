@@ -433,3 +433,11 @@
 10.14.4: {ten: So sánh độ phân tán (độ ổn định) của hai mẫu số liệu qua khoảng biến thiên và khoảng tứ phân vị, trang_thai: da-duyet}
 10.14.5: {ten: Tổng hợp khoảng biến thiên, khoảng tứ phân vị, giá trị bất thường của một mẫu số liệu, trang_thai: da-duyet}
 10.14.6: {ten: Ảnh hưởng của việc cộng (trừ) cùng một số vào mọi giá trị đến các số đặc trưng đo độ phân tán, trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị P05 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 03 Dạng 2), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
+10.14.7: {ten: Tính phương sai và độ lệch chuẩn của mẫu số liệu cho dạng dãy số liệu, trang_thai: da-duyet}
+10.14.8: {ten: Tính phương sai và độ lệch chuẩn từ bảng tần số, trang_thai: da-duyet}
+10.14.9: {ten: So sánh độ ổn định (độ đồng đều) của các mẫu số liệu bằng phương sai và độ lệch chuẩn, trang_thai: da-duyet}
+10.14.10: {ten: Khái niệm và tính chất của phương sai, độ lệch chuẩn và các số đo độ phân tán, trang_thai: da-duyet}
+10.14.11: {ten: Tìm giá trị chưa biết của mẫu khi biết số trung bình và độ lệch chuẩn, trang_thai: da-duyet}
+10.14.12: {ten: Tổng hợp các số đặc trưng đo xu thế trung tâm và đo độ phân tán của một mẫu số liệu, trang_thai: da-duyet}
+10.14.13: {ten: Phương sai và độ lệch chuẩn của mẫu số liệu đọc từ biểu đồ, trang_thai: da-duyet}

@@ -1,0 +1,33 @@
+%% ma: L10-B14-0080
+%% lop: 10
+%% chuong: 5
+%% bai: 14
+%% dang: 10.14.13
+%% loai: TN4
+%% muc: VD
+%% dap_an: "C"
+%% nguon: "chuyen-de-cac-so-dac-trung-cua-mau-so-lieu-khong-ghep-nhom-toan-10-chuong-trinh-moi.pdf (GV. Phan Nhật Linh) (P05), Bài 03 Dạng 2 Phần I Câu 27"
+%% kien_thuc: "Lớp 10 Bài 13 (số trung bình), Bài 14 (phương sai, độ lệch chuẩn)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ họa bản đồ gốc (TTXVN) thay bằng biểu đồ cột TikZ cùng số liệu. Tự duyệt theo yêu cầu giáo viên 22/10/2026."
+\begin{ex}
+Lượng khách quốc tế đến Việt Nam trong $6$ tháng đầu năm 2022 theo châu lục (đơn vị: nghìn lượt khách, nguồn: Tổng cục Thống kê) được cho trong biểu đồ sau:
+\begin{center}
+\begin{tikzpicture}[x=1.6cm,y=.0085cm]
+  \foreach \v/\t [count=\i] in {392.1/Châu Á,96.4/Châu Âu,81.0/Châu Mỹ,30.0/Châu Đại Dương,2.4/Châu Phi}{
+    \fill[teal!45] (\i-.3,0) rectangle (\i+.3,\v);
+    \draw (\i-.3,0) rectangle (\i+.3,\v);
+    \node[above,font=\scriptsize] at (\i,\v) {\pgfmathprintnumber[use comma,fixed,precision=1,fixed zerofill]{\v}};
+    \node[below,font=\scriptsize,align=center,text width=1.4cm] at (\i,0) {\t};
+  }
+  \draw[truc] (0.4,0)--(5.7,0);
+  \draw[truc] (0.4,0)--(0.4,450);
+  \foreach \y in {100,200,300,400}{\draw (0.35,\y)--(0.45,\y); \node[left,font=\scriptsize] at (0.35,\y) {$\y$};}
+\end{tikzpicture}
+\end{center}
+Phương sai của mẫu số liệu nhận được là
+\choice{$1609{,}016$}{$29\,609{,}0816$}{\True $19\,609{,}0816$}{$19\,600{,}0816$}
+\loigiai{Mẫu số liệu: $392{,}1$; $96{,}4$; $81{,}0$; $2{,}4$; $30{,}0$. $\overline x=\dfrac{601{,}9}5=120{,}38$.
+
+$s^2=\dfrac15\sum\left(x_i-120{,}38\right)^2=19\,609{,}0816$. Chọn C.}
+\end{ex}
