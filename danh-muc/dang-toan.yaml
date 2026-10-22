@@ -398,3 +398,13 @@
 12.19.15: {ten: "Xác suất toàn phần từ tỉ lệ phần trăm bi xanh, bi đen được đánh số", trang_thai: de-xuat}
 12.19.16: {ten: "Xác suất toàn phần: máy tính hoạt động tốt và khả năng đậu bài kiểm tra", trang_thai: de-xuat}
 12.8.41: {ten: "Giá trị nhỏ nhất của biểu thức MA^2 + kMB^2 với M thuộc trục tọa độ", trang_thai: de-xuat}
+# --- Đề xuất từ đơn vị P01 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 01), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
+10.12.1: {ten: Phân biệt số đúng và số gần đúng; đọc số gần đúng và độ chính xác từ kết quả a ± d, trang_thai: da-duyet}
+10.12.2: {ten: Đánh giá sai số tuyệt đối khi biết giá trị đúng hoặc khoảng chứa giá trị đúng, trang_thai: da-duyet}
+10.12.3: {ten: Tính sai số tương đối; tính sai số tuyệt đối từ sai số tương đối, trang_thai: da-duyet}
+10.12.4: {ten: So sánh độ chính xác của các phép đo qua sai số tương đối, trang_thai: da-duyet}
+10.12.5: {ten: Làm tròn số đến một hàng cho trước, trang_thai: da-duyet}
+10.12.6: {ten: Số quy tròn của số gần đúng với độ chính xác cho trước, trang_thai: da-duyet}
+10.12.7: {ten: Sai số của chu vi, diện tích tính từ các số đo gần đúng, trang_thai: da-duyet}
+10.12.8: {ten: Sai số khi dùng giá trị gần đúng của số vô tỉ (π, √2) trong công thức tính, trang_thai: da-duyet}
+10.12.9: {ten: Tìm số gần đúng của một số với độ chính xác cho trước, trang_thai: da-duyet}

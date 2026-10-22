@@ -1,0 +1,31 @@
+%% ma: L10-B12-0017
+%% lop: 10
+%% chuong: 5
+%% bai: 12
+%% dang: 10.12.5
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "chuyen-de-cac-so-dac-trung-cua-mau-so-lieu-khong-ghep-nhom-toan-10-chuong-trinh-moi.pdf (GV. Phan Nhật Linh) (P01), Bài 01 Bài tập tự luận 17"
+%% kien_thuc: "Lớp 10 Bài 6 (định lí côsin), Bài 12 (làm tròn số); dùng máy tính cầm tay"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình vẽ lại bằng TikZ theo số liệu đề (góc C = 52°16', CA = 200, CB = 180), đầm lầy vẽ minh họa. Tự duyệt theo yêu cầu giáo viên 22/10/2026."
+\begin{ex}
+Khoảng cách từ điểm $A$ đến điểm $B$ không thể đo trực tiếp vì phải đi qua một đầm lầy. Người ta xác định được một điểm $C$ mà từ đó nhìn được $A$ và $B$ dưới góc $52^\circ16'$. Biết $CA=200$ m, $CB=180$ m. Tính khoảng cách $AB$ (làm tròn đến hàng phần mười).
+\begin{center}
+\begin{tikzpicture}[scale=.022]
+  \coordinate (C) at (0,0); \coordinate (A) at (153.2,128.6); \coordinate (B) at (175.9,-38.3);
+  \fill[pattern=north east lines,pattern color=gray] (150,62)--(166,78)--(182,66)--(184,28)--(168,14)--(152,30)--cycle;
+  \draw (150,62)--(166,78)--(182,66)--(184,28)--(168,14)--(152,30)--cycle;
+  \draw[thick] (A)--(C)--(B);
+  \draw[khuat] (A)--(B);
+  \draw (C)+(-12.27:24) arc (-12.27:40:24);
+  \path (C) node[left]{$C$} (A) node[above]{$A$} (B) node[below right]{$B$};
+  \path (26,6) node[right,font=\footnotesize]{$52^\circ16'$};
+  \path (76.6,64.3) node[above left,font=\footnotesize]{$200$ m} (88,-19) node[below left,font=\footnotesize]{$180$ m};
+\end{tikzpicture}
+\end{center}
+\loigiai{Theo định lí côsin trong tam giác $ABC$:
+\[AB=\sqrt{200^2+180^2-2\cdot200\cdot180\cdot\cos52^\circ16'}\approx168{,}3357.\]
+Làm tròn đến hàng phần mười: $AB\approx168{,}3$ m.}
+\end{ex}
