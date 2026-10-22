@@ -408,3 +408,14 @@
 10.12.7: {ten: Sai số của chu vi, diện tích tính từ các số đo gần đúng, trang_thai: da-duyet}
 10.12.8: {ten: Sai số khi dùng giá trị gần đúng của số vô tỉ (π, √2) trong công thức tính, trang_thai: da-duyet}
 10.12.9: {ten: Tìm số gần đúng của một số với độ chính xác cho trước, trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị P02 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 02 Dạng 1), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
+10.13.1: {ten: Tính số trung bình của mẫu số liệu cho dạng dãy số liệu, trang_thai: da-duyet}
+10.13.2: {ten: Tính số trung bình từ bảng tần số hoặc tần số tương đối, trang_thai: da-duyet}
+10.13.3: {ten: Tìm trung vị của mẫu số liệu cho dạng dãy số liệu, trang_thai: da-duyet}
+10.13.4: {ten: Tìm trung vị từ bảng tần số, trang_thai: da-duyet}
+10.13.5: {ten: Tìm giá trị chưa biết trong mẫu khi biết số trung bình hoặc trung vị, trang_thai: da-duyet}
+10.13.6: {ten: Số trung bình gộp của nhiều nhóm (trung bình có trọng số) trong bài toán thực tế, trang_thai: da-duyet}
+10.13.7: {ten: Phát hiện số liệu bị ghi sai dựa vào quy luật của dữ liệu, trang_thai: da-duyet}
+10.13.8: {ten: Tổng hợp giá trị lớn nhất, nhỏ nhất, số trung bình, trung vị và chọn số đại diện, trang_thai: da-duyet}
+10.13.9: {ten: Bài toán thực tế về điều kiện của số trung bình (điểm cần đạt, giá trị lớn nhất), trang_thai: da-duyet}
+11.9.4: {ten: Số trung bình của mẫu số liệu ghép nhóm (bảng tần số hoặc tần số tương đối ghép nhóm), trang_thai: da-duyet}
