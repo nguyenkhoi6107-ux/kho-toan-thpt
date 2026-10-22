@@ -426,3 +426,10 @@
 10.13.13: {ten: Tổng hợp số trung bình, trung vị, tứ phân vị và mốt của một mẫu số liệu, trang_thai: da-duyet}
 10.13.14: {ten: So sánh hai mẫu số liệu qua các số đặc trưng đo xu thế trung tâm, trang_thai: da-duyet}
 10.13.15: {ten: Chọn số đặc trưng đại diện; ảnh hưởng của giá trị bất thường đến số trung bình, trung vị, mốt, trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị P04 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 03 Dạng 1), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
+10.14.1: {ten: Tìm khoảng biến thiên của mẫu số liệu, trang_thai: da-duyet}
+10.14.2: {ten: Tìm khoảng tứ phân vị của mẫu số liệu, trang_thai: da-duyet}
+10.14.3: {ten: Phát hiện giá trị bất thường bằng khoảng tứ phân vị, trang_thai: da-duyet}
+10.14.4: {ten: So sánh độ phân tán (độ ổn định) của hai mẫu số liệu qua khoảng biến thiên và khoảng tứ phân vị, trang_thai: da-duyet}
+10.14.5: {ten: Tổng hợp khoảng biến thiên, khoảng tứ phân vị, giá trị bất thường của một mẫu số liệu, trang_thai: da-duyet}
+10.14.6: {ten: Ảnh hưởng của việc cộng (trừ) cùng một số vào mọi giá trị đến các số đặc trưng đo độ phân tán, trang_thai: da-duyet}
