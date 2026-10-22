@@ -419,3 +419,10 @@
 10.13.8: {ten: Tổng hợp giá trị lớn nhất, nhỏ nhất, số trung bình, trung vị và chọn số đại diện, trang_thai: da-duyet}
 10.13.9: {ten: Bài toán thực tế về điều kiện của số trung bình (điểm cần đạt, giá trị lớn nhất), trang_thai: da-duyet}
 11.9.4: {ten: Số trung bình của mẫu số liệu ghép nhóm (bảng tần số hoặc tần số tương đối ghép nhóm), trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị P03 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 02 Dạng 2), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
+10.13.10: {ten: Tìm tứ phân vị của mẫu số liệu có cỡ mẫu chẵn, trang_thai: da-duyet}
+10.13.11: {ten: Tìm tứ phân vị của mẫu số liệu có cỡ mẫu lẻ, trang_thai: da-duyet}
+10.13.12: {ten: Tìm mốt của mẫu số liệu và ý nghĩa thực tế của mốt, trang_thai: da-duyet}
+10.13.13: {ten: Tổng hợp số trung bình, trung vị, tứ phân vị và mốt của một mẫu số liệu, trang_thai: da-duyet}
+10.13.14: {ten: So sánh hai mẫu số liệu qua các số đặc trưng đo xu thế trung tâm, trang_thai: da-duyet}
+10.13.15: {ten: Chọn số đặc trưng đại diện; ảnh hưởng của giá trị bất thường đến số trung bình, trung vị, mốt, trang_thai: da-duyet}

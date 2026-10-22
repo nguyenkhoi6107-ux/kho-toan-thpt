@@ -1,0 +1,33 @@
+%% ma: L10-B13-0087
+%% lop: 10
+%% chuong: 5
+%% bai: 13
+%% dang: 10.13.10
+%% loai: TN4
+%% muc: VD
+%% dap_an: "C"
+%% nguon: "chuyen-de-cac-so-dac-trung-cua-mau-so-lieu-khong-ghep-nhom-toan-10-chuong-trinh-moi.pdf (GV. Phan Nhật Linh) (P03), Bài 02 Dạng 2 Phần I Câu 12"
+%% kien_thuc: "Lớp 10 Bài 13 (trung vị, tứ phân vị)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Biểu đồ cột vẽ lại bằng TikZ theo số liệu gốc; trục đứng bắt đầu từ 6,5 (ghi rõ vạch chia). Tự duyệt theo yêu cầu giáo viên 22/10/2026."
+\begin{ex}
+Trong kì thi tốt nghiệp THPT năm 2022, $10$ địa phương có điểm trung bình môn Toán cao nhất cả nước được cho trong biểu đồ sau:
+\begin{center}
+\begin{tikzpicture}[x=1.05cm,y=4cm]
+  \foreach \v/\t [count=\i] in {7.4/Nam Định,7.15/Bình Dương,7.06/TP. Hồ Chí Minh,7/Ninh Bình,7/Thái Bình,6.98/Hà Nam,6.92/Vĩnh Phúc,6.92/Hải Phòng,6.88/Bắc Ninh,6.82/Tiền Giang}{
+    \fill[blue!55] (\i-.35,6.5) rectangle (\i+.35,\v);
+    \draw (\i-.35,6.5) rectangle (\i+.35,\v);
+    \node[above,font=\scriptsize] at (\i,\v) {\pgfmathprintnumber[use comma,fixed,precision=2]{\v}};
+    \node[rotate=40,anchor=north east,font=\scriptsize] at (\i+.15,6.48) {\t};
+  }
+  \draw[truc] (0.3,6.5)--(10.8,6.5);
+  \draw[truc] (0.3,6.5)--(0.3,7.55);
+  \foreach \y in {6.5,7,7.5}{\draw (0.25,\y)--(0.35,\y); \node[left,font=\scriptsize] at (0.25,\y) {\pgfmathprintnumber[use comma,fixed,precision=1]{\y}};}
+\end{tikzpicture}
+\end{center}
+Các tứ phân vị của mẫu số liệu là
+\choice{$Q_1=6{,}92;Q_2=7;Q_3=7{,}06$}{$Q_1=6{,}88;Q_2=6{,}99;Q_3=7{,}06$}{\True $Q_1=6{,}92;Q_2=6{,}99;Q_3=7{,}06$}{$Q_1=6{,}94;Q_2=6{,}99;Q_3=7{,}06$}
+\loigiai{Sắp xếp: $6{,}82$; $6{,}88$; $6{,}92$; $6{,}92$; $6{,}98$; $7$; $7$; $7{,}06$; $7{,}15$; $7{,}4$.
+
+$Q_2=\dfrac{6{,}98+7}2=6{,}99$; nửa dưới có trung vị $Q_1=6{,}92$; nửa trên có trung vị $Q_3=7{,}06$. Chọn C.}
+\end{ex}
