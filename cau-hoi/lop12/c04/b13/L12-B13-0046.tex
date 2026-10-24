@@ -1,0 +1,40 @@
+%% ma: L12-B13-0046
+%% lop: 12
+%% chuong: 4
+%% bai: 13
+%% dang: 12.13.2
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "121"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 3 Câu 4"
+%% kien_thuc: "Lớp 10 Bài 16 (hàm số bậc hai, đỉnh parabol); Lớp 12 Bài 1 (cực trị), Bài 4 (tâm đối xứng của đồ thị hàm bậc ba), Bài 13 (thể tích vật thể qua diện tích thiết diện S(x))"
+%% ghi_chu: "Sửa đề gốc: (1) tâm đối xứng I(-2;-16/5) mâu thuẫn với g(0) = -4 và cực đại M(-4;-16/5) (hàm bậc ba đối xứng qua I thì g(0) = -16/5), hình gốc vẽ I thấp hơn M; sửa thành I(-2;-18/5); (2) 'hướng xuống dưới' mâu thuẫn với hình (parabol có đỉnh thấp nhất), sửa thành 'quay bề lõm lên trên'; (3) bổ sung 'cắt trục tung tại điểm có tung độ -4' cho f (gốc chỉ thể hiện trên hình, thiếu thì không xác định được f); (4) 'cách trục tung một khoảng bằng x' với h = 4 - x cho độ sâu âm khi khoảng cách > 4, sửa thành 'có hoành độ x'. Hình vẽ lại bằng công thức thật. Đáp án tự giải"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Người ta thực hiện khảo sát một cái hồ để đo lượng nước của hồ sau một cơn bão. Trong mặt phẳng với hệ trục tọa độ $Oxy$ (đơn vị trên mỗi trục tọa độ tương ứng với $1$ m), hình phẳng $(H)$ biểu diễn bề mặt của hồ và được giới hạn bởi hai đồ thị hàm số $y=f(x)$, $y=g(x)$ như hình bên. Hàm số $f(x)=ax^2+bx+c$ ($a,b,c$ là các hằng số thực) có đồ thị là parabol quay bề lõm lên trên, đi qua điểm $A\left(2;\dfrac{12}5\right)$, cắt trục tung tại điểm có tung độ bằng $-4$ và có đỉnh tại điểm có hoành độ bằng $-3$. Hàm số $g(x)=dx^3+ex^2+fx+g$ ($d,e,f,g$ là các hằng số thực) cắt trục tung tại điểm có tung độ bằng $-4$, có điểm cực đại $M\left(-4;-\dfrac{16}5\right)$ và có tâm đối xứng tại điểm $I\left(-2;-\dfrac{18}5\right)$. Biết rằng tại mọi điểm thuộc hình phẳng $(H)$ có hoành độ $x$, độ sâu của nước trong hồ được xác định bởi hàm số $h(x)=4-x$ (m). Thể tích của nước trong hồ sau cơn bão bằng bao nhiêu mét khối $(\mathrm m^3)$ \textit{(làm tròn kết quả đến hàng đơn vị)}?
+\begin{center}
+\begin{tikzpicture}[scale=.42]
+  \begin{scope}
+    \clip (-9.5,-8.6) rectangle (6,4.3);
+    \fill[gray!25] plot[domain=-6:0,samples=60] (\x,{\x*\x*\x/40+0.15*\x*\x-4}) -- plot[domain=0:-6,samples=60] (\x,{0.4*\x*\x+2.4*\x-4}) -- cycle;
+    \draw[khuat] plot[domain=-8.6:2.6,samples=80] (\x,{0.4*\x*\x+2.4*\x-4});
+    \draw[khuat] plot[domain=-9.5:5.5,samples=80] (\x,{\x*\x*\x/40+0.15*\x*\x-4});
+    \draw[thick] plot[domain=-6:0,samples=60] (\x,{\x*\x*\x/40+0.15*\x*\x-4});
+    \draw[thick] plot[domain=-6:0,samples=60] (\x,{0.4*\x*\x+2.4*\x-4});
+  \end{scope}
+  \draw[truc] (-9.5,0)--(6.2,0) node[below]{$x$};
+  \draw[truc] (0,-8.8)--(0,4.6) node[left]{$y$};
+  \path (0,0) node[below left]{$O$};
+  \draw[phu] (-3,0) node[above]{$-3$}--(-3,-7.6);
+  \fill (2,2.4) circle (3pt) (-4,-3.2) circle (3pt) (-2,-3.6) circle (3pt) (0,-4) circle (3pt) (-3,-7.6) circle (3pt);
+  \path (2,2.4) node[right]{$A$} (-4,-3.2) node[above]{$M$} (-2,-3.6) node[above right]{$I$} (0,-4) node[below right]{$-4$}
+        (-2.2,-5.6) node{Hồ} (-8.3,3.2) node{$y=f(x)$} (4,-4.6) node{$y=g(x)$};
+\end{tikzpicture}
+\end{center}
+\shortans{121}
+\loigiai{$f(0)=c=-4$, $-\dfrac b{2a}=-3$, $f(2)=4a+2b-4=\dfrac{12}5$ nên $a=\dfrac25$, $b=\dfrac{12}5$: $f(x)=\dfrac25x^2+\dfrac{12}5x-4$.
+$g''(-2)=0$, $g'(-4)=0$, $g(0)=-4$, $g(-4)=-\dfrac{16}5$ cho $g(x)=\dfrac1{40}x^3+\dfrac3{20}x^2-4$ (kiểm tra $g(-2)=-\dfrac{18}5$).
+$g(x)-f(x)=\dfrac1{40}x^3-\dfrac14x^2-\dfrac{12}5x=0\Leftrightarrow x\in\{-6;0;16\}$; $(H)$ ứng với $x\in[-6;0]$, trên đó $g\ge f$.
+Thiết diện vuông góc với $Ox$ tại $x$ có diện tích $S(x)=\left(g(x)-f(x)\right)(4-x)$.
+\[V=\int_{-6}^{0}\left(\frac1{40}x^3-\frac14x^2-\frac{12}5x\right)(4-x)\,\mathrm dx=\frac{3033}{25}=121{,}32\approx121\ \mathrm m^3.\]}
+\end{ex}

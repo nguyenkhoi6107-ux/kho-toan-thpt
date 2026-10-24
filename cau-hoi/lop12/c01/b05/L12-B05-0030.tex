@@ -1,0 +1,37 @@
+%% ma: L12-B05-0030
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.21
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "4889"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 3 Câu 2"
+%% kien_thuc: "Lớp 11 Bài 24-25 (góc nhị diện), Bài 27 (thể tích khối chóp, khối lăng trụ), Bài 14 (thiết diện song song đáy, tỉ số đồng dạng); Lớp 12 Bài 2 (giá trị lớn nhất bằng đạo hàm)"
+%% ghi_chu: "Đề gốc viết 'các cạnh A', D', E' lần lượt tiếp xúc với các cạnh bên', đã sửa thành 'các đỉnh ... nằm trên các cạnh bên'. Hình vẽ lại theo số liệu (lăng kính ở vị trí cho thể tích lớn nhất, k = 2/3). Đáp án tự giải"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Người ta dự định thiết kế một chiếc hộp trong suốt có dạng hình khối chóp $S.ABC$ có thể tích bằng $11\,000\ \mathrm{cm}^3$. Đáy của chiếc hộp có dạng hình tam giác $ABC$ cân tại $A$ với đường cao $AH=30$ cm và cạnh bên $SA$ vuông góc với mặt phẳng đáy $(ABC)$. Góc được tạo bởi mặt phẳng bên $(SBC)$ và mặt phẳng đáy $(ABC)$ có số đo bằng $45^\circ$. Bên trong chiếc hộp, người ta trưng bày một lăng kính có dạng hình lăng trụ tam giác $ADE.A'D'E'$ với đáy dưới $ADE$ nằm trên mặt phẳng đáy $(ABC)$ và đáy trên $A'D'E'$ có các đỉnh $A'$, $D'$, $E'$ lần lượt nằm trên các cạnh bên $SA$, $SB$, $SC$ của chiếc hộp. Thể tích của lăng kính đạt giá trị lớn nhất bằng bao nhiêu xăng-ti-mét khối $(\mathrm{cm}^3)$ (làm tròn kết quả đến hàng đơn vị)?
+\begin{center}
+\begin{tikzpicture}[scale=1.4,x={(.09cm,-.035cm)},y={(.035cm,.025cm)},z={(0cm,.09cm)}]
+  \path (0,0,0) coordinate (A) (30,-36.67,0) coordinate (B) (30,36.67,0) coordinate (C) (30,0,0) coordinate (H)
+        (0,0,30) coordinate (S) (0,0,10) coordinate (A1) (20,-24.44,10) coordinate (D1) (20,24.44,10) coordinate (E1)
+        (20,-24.44,0) coordinate (D) (20,24.44,0) coordinate (E);
+  \fill[gray!20] (A)--(D)--(D1)--(A1)--cycle;
+  \draw (S)--(A)--(B)--(C)--cycle (S)--(B);
+  \draw[khuat] (A)--(C) (A)--(H)--(S) (D)--(E) (E)--(E1) (D1)--(E1)--(A1);
+  \draw (D)--(D1)--(A1);
+  \draw[thick] (A)--(A1);
+  \draw (H) ++(158.7:.3cm) arc[start angle=158.7,end angle=125.8,radius=.3cm];
+  \foreach \P in {A1,D1,E1,D,E,H} \fill (\P) circle (.8pt);
+  \path (S) node[above]{$S$} (A) node[left]{$A$} (B) node[below]{$B$} (C) node[right]{$C$} (H) node[below right]{$H$}
+        (A1) node[left]{$A'$} (D1) node[below left]{$D'$} (E1) node[above right]{$E'$}
+        (D) node[below left]{$D$} (E) node[below right]{$E$} ($(H)+(142:.55cm)$) node[font=\footnotesize]{$45^\circ$};
+\end{tikzpicture}
+\end{center}
+\shortans{4889}
+\loigiai{$BC\perp AH$, $BC\perp SA$ nên $\widehat{SHA}=45^\circ$, $SA=AH=30$. $V_{S.ABC}=\dfrac13\cdot30\cdot S_{ABC}=11\,000\Rightarrow S_{ABC}=1\,100$.
+Đặt $AA'=h$, $k=\dfrac{SA'}{SA}=\dfrac{30-h}{30}\in(0;1)$. Tam giác $A'D'E'$ đồng dạng với $ABC$ tỉ số $k$, nên $S_{ADE}=S_{A'D'E'}=1\,100k^2$, $h=30(1-k)$.
+$V=1\,100k^2\cdot30(1-k)=33\,000\left(k^2-k^3\right)$, $V'=0\Leftrightarrow k=\dfrac23$.
+$V_{\max}=33\,000\cdot\dfrac4{27}\approx4\,888{,}9\approx4\,889\ \mathrm{cm}^3$.}
+\end{ex}

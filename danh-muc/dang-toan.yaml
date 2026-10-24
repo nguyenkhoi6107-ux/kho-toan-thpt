@@ -441,3 +441,21 @@
 10.14.11: {ten: Tìm giá trị chưa biết của mẫu khi biết số trung bình và độ lệch chuẩn, trang_thai: da-duyet}
 10.14.12: {ten: Tổng hợp các số đặc trưng đo xu thế trung tâm và đo độ phân tán của một mẫu số liệu, trang_thai: da-duyet}
 10.14.13: {ten: Phương sai và độ lệch chuẩn của mẫu số liệu đọc từ biểu đồ, trang_thai: da-duyet}
+# --- Đơn vị M06 (Ảnh giáo viên gửi 24/10/2026: Thi thử TN THPT 2027 đợt IV, Aimbet); giáo viên yêu cầu tự duyệt ---
+10.6.2: {ten: "Cánh buồm tam giác chia bởi hai đoạn từ một đỉnh theo tỉ lệ: định lí côsin, diện tích, góc từng mảnh, tổng giá bán", trang_thai: da-duyet}
+10.17.1: {ten: "Xét dấu tích của hai tam thức bậc hai (có nghiệm bội chẵn)", trang_thai: da-duyet}
+10.24.2: {ten: "Số tập con gồm k phần tử của một tập hợp (tổ hợp)", trang_thai: da-duyet}
+11.4.3: {ten: "Số nghiệm của phương trình tan(ax + b) = m trên một khoảng", trang_thai: da-duyet}
+11.9.5: {ten: "Tứ phân vị thứ nhất của mẫu số liệu ghép nhóm", trang_thai: da-duyet}
+11.20.3: {ten: "Quỹ đạo elip của vệ tinh có vận tốc theo hàm lôgarit: trục lớn, trục bé, vị trí có vận tốc cho trước, so sánh vận tốc (Đúng/Sai)", trang_thai: da-duyet}
+11.21.11: {ten: "Hai mô hình tăng trưởng mũ: tìm hằng số từ hai dữ kiện, năm tổng vượt một ngưỡng", trang_thai: da-duyet}
+11.29.1: {ten: "Xác suất xếp các tòa nhà vào hai phân khu có điều kiện vị trí và cấp số cộng (công thức cộng xác suất)", trang_thai: da-duyet}
+11.30.1: {ten: "Xác suất giao của biến cố đối và biến cố độc lập", trang_thai: da-duyet}
+12.1.20: {ten: "Đọc giá trị cực đại, giá trị cực tiểu từ bảng biến thiên và tính tổng", trang_thai: da-duyet}
+12.5.21: {ten: "Tối ưu thể tích lăng trụ đặt trong hình chóp có cạnh bên vuông góc đáy (đáy trên là thiết diện song song đáy)", trang_thai: da-duyet}
+12.11.14: {ten: "Nguyên hàm của 1/(x + a) thỏa F(x0) cho trước, tính giá trị F tại điểm khác", trang_thai: da-duyet}
+12.11.15: {ten: "Lợi nhuận có thuế môi trường khi vượt sản lượng: tìm thuế bằng nguyên hàm, đạo hàm lợi nhuận, lợi nhuận lớn nhất (Đúng/Sai)", trang_thai: da-duyet}
+12.15.22: {ten: "Phương trình mặt phẳng đi qua một điểm và vuông góc với đường thẳng cho bởi phương trình chính tắc", trang_thai: da-duyet}
+12.16.7: {ten: "Côsin góc giữa mặt phẳng cắt (cho vectơ pháp tuyến) và mặt đất trong mô hình tọa độ hóa", trang_thai: da-duyet}
+12.17.15: {ten: "Xác định điểm nằm trong, nằm ngoài mặt cầu bằng khoảng cách đến tâm", trang_thai: da-duyet}
+12.19.17: {ten: "Hai loài với một đặc điểm nhận dạng: xác suất toàn phần, Bayes, xác suất phân loại sai (Đúng/Sai)", trang_thai: da-duyet}

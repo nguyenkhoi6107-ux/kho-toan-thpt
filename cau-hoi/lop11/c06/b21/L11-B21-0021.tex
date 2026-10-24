@@ -1,0 +1,20 @@
+%% ma: L11-B21-0021
+%% lop: 11
+%% chuong: 6
+%% bai: 21
+%% dang: 11.21.11
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2034"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 3 Câu 1"
+%% kien_thuc: "Bài 18 (lũy thừa), Bài 21 (phương trình, bất phương trình mũ); thử giá trị nguyên bằng máy tính cầm tay"
+%% ghi_chu: "Hiểu X(n), Y(m) là khối lượng xử lí trong năm thứ n, m (khớp dữ kiện năm 2022, 2023); nếu cộng dồn các năm thì đáp số là 2031. Đáp án tự giải"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Tại một thành phố, cảng container $X$ có khối lượng hàng hóa được xử lí (đơn vị: tấn) sau $n$ năm $(n>0)$ kể từ khi cảng $X$ bắt đầu đi vào hoạt động vào năm $2021$ được xác định bởi công thức $X(n)=ab^{2n}$, với $a,b$ là các hằng số dương. Người ta nhận thấy rằng khối lượng hàng hóa được xử lí bởi cảng $X$ vào năm $2022$ và năm $2023$ lần lượt là $144\,000$ tấn và $207\,360$ tấn. Cảng container $Y$ bắt đầu đi vào hoạt động vào năm $2025$ và có khối lượng hàng hóa được xử lí (đơn vị: tấn) sau $m$ năm $(m>0)$ kể từ khi cảng $Y$ bắt đầu đi vào hoạt động được xác định bởi công thức $Y(m)=2ab^m$. Khi tổng khối lượng hàng hóa được xử lí bởi cả hai cảng $X$ và $Y$ vượt quá $12$ triệu tấn, các băng chuyền được thay thế để đảm bảo tốc độ vận chuyển hàng hóa. Vào năm bao nhiêu thì các băng chuyền được thay thế?
+\shortans{2034}
+\loigiai{$ab^2=144\,000$, $ab^4=207\,360\Rightarrow b^2=1{,}44$, $b=1{,}2$, $a=100\,000$.
+Năm $N$: $n=N-2021$, $m=N-2025$; tổng $T(N)=10^5\cdot1{,}44^{N-2021}+2\cdot10^5\cdot1{,}2^{N-2025}$ tăng theo $N$.
+$T(2033)\approx7\,949\,685+859\,963\approx8{,}81\cdot10^6<12\cdot10^6$; $T(2034)\approx11\,447\,546+1\,031\,956\approx12{,}48\cdot10^6>12\cdot10^6$.
+Vậy năm $2034$.}
+\end{ex}

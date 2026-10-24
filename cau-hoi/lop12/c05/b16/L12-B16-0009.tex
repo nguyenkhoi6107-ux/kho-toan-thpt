@@ -1,0 +1,36 @@
+%% ma: L12-B16-0009
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.7
+%% loai: TLN
+%% muc: VD
+%% dap_an: "0,89"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 3 Câu 3"
+%% kien_thuc: "Bài 14 (vectơ pháp tuyến), Bài 16 (góc giữa hai mặt phẳng); thừa dữ kiện SH = 3/5 SA (chỉ để xác định vị trí mặt phẳng, không cần cho lời giải)"
+%% ghi_chu: "Dữ kiện SH = 3/5 SA và kích thước khối chóp thừa với câu hỏi (góc chỉ phụ thuộc vectơ pháp tuyến); đã kiểm mặt phẳng qua H cắt cả bốn cạnh bên (tỉ số SE/SB = SG/SD ≈ 0,44, SF/SC ≈ 0,35). Hình vẽ lại theo tọa độ thật. Đáp án tự giải"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một khối cát có dạng hình chóp $S.ABCD$ có chiều cao bằng $5$ m và đáy là hình vuông với độ dài của mỗi cạnh bằng $3{,}6$ m. Trong không gian với hệ trục tọa độ $Oxyz$ (đơn vị trên mỗi trục tọa độ tương ứng với $1$ dm) và mặt phẳng $(Oxy)$ biểu diễn mặt đất, tâm của đáy của khối cát trùng với gốc tọa độ $O$ và điểm $C$, điểm $B$, điểm $S$ lần lượt nằm trên trục hoành, trục tung, trục cao. Để chế tác một vật trang trí, người ta thực hiện một nhát cắt qua khối cát nằm trên mặt phẳng $(\alpha)$ có vectơ pháp tuyến $\vec n=\left(9\sqrt2;0;-25\right)$. Mặt phẳng $(\alpha)$ cắt các cạnh bên $SA$, $SB$, $SC$, $SD$ lần lượt tại các điểm $H$, $E$, $F$, $G$ và $SH=\dfrac35SA$. Giá trị côsin của góc được tạo bởi nhát cắt và mặt đất bằng bao nhiêu \textit{(không làm tròn các phép tính trung gian; làm tròn kết quả cuối cùng đến hàng phần trăm)}?
+\begin{center}
+\begin{tikzpicture}[scale=1.15,x={(.05cm,-.03cm)},y={(.1cm,.02cm)},z={(0cm,.06cm)}]
+  \def\k{25.456}
+  \path (-\k,0,0) coordinate (A) (0,\k,0) coordinate (B) (\k,0,0) coordinate (C) (0,-\k,0) coordinate (D)
+        (0,0,50) coordinate (S) (0,0,0) coordinate (O)
+        (-15.274,0,20) coordinate (H) (0,11.315,27.776) coordinate (E) (8.986,0,32.351) coordinate (F) (0,-11.315,27.776) coordinate (G);
+  \fill[gray!25] (H)--(E)--(F)--(G)--cycle;
+  \draw (S)--(D)--(C)--(B)--cycle (S)--(C) (G)--(F)--(E);
+  \draw[khuat] (S)--(A) (D)--(A)--(B) (G)--(H)--(E) (O)--(C) (O)--(B) (O)--(S);
+  \draw[truc] (C)--(\k+12,0,0) node[below]{$x$};
+  \draw[truc] (B)--(0,\k+12,0) node[above]{$y$};
+  \draw[truc] (S)--(0,0,60) node[left]{$z$};
+  \foreach \P in {A,B,C,D,S,O,H,E,F,G} \fill (\P) circle (1pt);
+  \path (A) node[below]{$A$} (B) node[below right]{$B$} (C) node[below]{$C$} (D) node[left]{$D$}
+        (S) node[right]{$S$} (O) node[below]{$O$} (H) node[above left]{$H$} (E) node[above right]{$E$}
+        (F) node[below left]{$F$} (G) node[left]{$G$};
+\end{tikzpicture}
+\end{center}
+\shortans{0,89}
+\loigiai{Mặt đất $(Oxy)$ có vectơ pháp tuyến $\vec k=(0;0;1)$.
+$\cos\left((\alpha),(Oxy)\right)=\dfrac{\left|\vec n\cdot\vec k\right|}{|\vec n|\cdot|\vec k|}=\dfrac{25}{\sqrt{162+625}}=\dfrac{25}{\sqrt{787}}\approx0{,}89$.}
+\end{ex}

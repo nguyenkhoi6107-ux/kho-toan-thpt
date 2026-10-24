@@ -1,0 +1,35 @@
+%% ma: L10-B06-0002
+%% lop: 10
+%% chuong: 3
+%% bai: 6
+%% dang: 10.6.2
+%% loai: TLN
+%% muc: VD
+%% dap_an: "3,85"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 3 Câu 6"
+%% kien_thuc: "Bài 6 (định lí côsin, công thức diện tích tam giác), tỉ lệ đoạn thẳng"
+%% ghi_chu: "Bổ sung 'với B, C thuộc cạnh AD' (gốc chỉ thể hiện trên hình). Hình vẽ lại đúng tỉ lệ (góc APD = 60°); bỏ phần thân thuyền vì chỉ là hình trang trí, không chứa dữ kiện toán. Đáp án tự giải"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Người ta dự định làm một cánh buồm được làm bằng vải có dạng hình tam giác có độ dài của ba cạnh $AP$, $AD$, $PD$ lần lượt là $25$ dm, $35$ dm, $40$ dm. Cánh buồm được kết hợp từ mảng vải màu vàng (tam giác $ABP$), mảng vải màu xanh (tam giác $BCP$), mảng vải màu đỏ (tam giác $CDP$) với $B$, $C$ thuộc cạnh $AD$ sao cho $\dfrac{AB}{15}=\dfrac{BC}{12}=\dfrac{CD}8$ và giá tiền để làm ra mỗi $\mathrm m^2$ vải màu vàng, màu xanh, màu đỏ lần lượt là $100$ nghìn đồng, $90$ nghìn đồng, $105$ nghìn đồng. Giá bán cho mỗi mảng vải màu $C$ (đơn vị: nghìn đồng) được xác định bởi công thức $C=10ab\cos c$, với $a$ là giá tiền của mỗi $\mathrm m^2$ vải (đơn vị: nghìn đồng), $b$ là diện tích của mảng vải màu (đơn vị: $\mathrm m^2$), $c$ là góc tại điểm $P$ tương ứng của mảng vải màu (đơn vị: độ), tức là góc $\alpha$, góc $\beta$, góc $\theta$ lần lượt tương ứng với mảng vải màu vàng, màu xanh, màu đỏ. Giá bán của cánh buồm bằng bao nhiêu triệu đồng \textit{(không làm tròn các phép tính trung gian; làm tròn kết quả cuối cùng đến hàng phần trăm)}?
+\begin{center}
+\begin{tikzpicture}[scale=.13]
+  \path (0,0) coordinate (P) (0,40) coordinate (D) (-21.651,12.5) coordinate (A)
+        (-12.372,24.286) coordinate (B) (-4.949,33.714) coordinate (C);
+  \draw[line width=1.6pt,gray] (0,-6)--(0,43);
+  \draw[thick] (A)--(D)--(P)--cycle (P)--(B) (P)--(C);
+  \path (P) node[below left]{$P$} (A) node[left]{$A$} (B) node[above left]{$B$} (C) node[above left]{$C$} (D) node[left]{$D$};
+  \path (-11.3,12.3) node[font=\footnotesize]{Vàng} (-6.8,19.3) node[font=\footnotesize]{Xanh} (-1.9,25.5) node[font=\scriptsize]{Đỏ};
+  \draw (P)++(150:4) arc[start angle=150,end angle=117,radius=4];
+  \draw (P)++(117:6) arc[start angle=117,end angle=98.35,radius=6];
+  \draw (P)++(98.35:8) arc[start angle=98.35,end angle=90,radius=8];
+  \path (P)+(133.5:5.3) node[font=\scriptsize]{$\alpha$} (P)+(107.7:7.3) node[font=\scriptsize]{$\beta$} (P)+(94.2:9.6) node[font=\scriptsize]{$\theta$};
+\end{tikzpicture}
+\end{center}
+\shortans{3,85}
+\loigiai{$AB=15$, $BC=12$, $CD=8$ (dm). $\cos\widehat{PAD}=\dfrac{25^2+35^2-40^2}{2\cdot25\cdot35}=\dfrac17$, $\sin\widehat{PAD}=\dfrac{4\sqrt3}7$, đường cao từ $P$: $h=25\cdot\dfrac{4\sqrt3}7=\dfrac{100\sqrt3}7$ dm.
+$PB^2=625+225-2\cdot25\cdot15\cdot\dfrac17=\dfrac{5200}7$, $PC^2=625+729-2\cdot25\cdot27\cdot\dfrac17=\dfrac{8128}7$.
+Diện tích ($\mathrm m^2$): $b_1=\dfrac{15h}{200}\approx1{,}8558$, $b_2=\dfrac{12h}{200}\approx1{,}4846$, $b_3=\dfrac{8h}{200}\approx0{,}9897$.
+Định lí côsin trong từng tam giác: $\cos\alpha\approx0{,}83863$, $\cos\beta\approx0{,}94752$, $\cos\theta\approx0{,}98940$.
+Giá bán $\approx1\,556{,}30+1\,266{,}03+1\,028{,}21\approx3\,850{,}54$ nghìn đồng $\approx3{,}85$ triệu đồng.}
+\end{ex}

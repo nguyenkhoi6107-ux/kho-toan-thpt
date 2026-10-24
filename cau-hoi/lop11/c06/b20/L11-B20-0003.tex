@@ -1,0 +1,38 @@
+%% ma: L11-B20-0003
+%% lop: 11
+%% chuong: 6
+%% bai: 20
+%% dang: 11.20.3
+%% loai: DS
+%% muc: [TH, VD, VD, TH]
+%% dap_an: "ĐSĐS"
+%% nguon: "Ảnh giáo viên gửi 24/10/2026 (M06): Kỳ thi thử đợt IV, Thi thử TN THPT 2027 (Biên soạn: Aimbet), Phần 2 Câu 4"
+%% kien_thuc: "Lớp 10 Bài 22 (elip: định nghĩa, a, b, c, khoảng cách từ tiêu điểm đến đỉnh trên trục lớn), Lớp 11 Bài 19 (lôgarit), Bài 20 (tính đơn điệu của hàm số lôgarit)"
+%% ghi_chu: "Đề gốc ghi a tính theo km nhưng r tính theo m, khi đó 2a/r < 1 và v âm trên cả quỹ đạo (vô lý); đã sửa thành a và r cùng tính theo km. Ý a) đề gốc viết 'tâm của tiêu điểm còn lại', đã sửa thành 'tiêu điểm còn lại'. Hình vẽ lại đúng tỉ lệ (tâm Trái Đất ở tiêu điểm F1). Xếp ở Lớp 11 Bài 20 vì dùng hàm lôgarit (elip là kiến thức lớp 10)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một vệ tinh nhân tạo chuyển động quanh Trái Đất theo quỹ đạo có dạng hình elip $(E)$ và nhận tâm của Trái Đất là một tiêu điểm. Vận tốc của vệ tinh $v$ (đơn vị: m/s) được xác định bởi hàm số $v=2500\ln\left(\dfrac{2a}{r}\right)$, với $a$ là một nửa độ dài của trục lớn của quỹ đạo và $r$ là khoảng cách từ vệ tinh đến tâm của Trái Đất ($a$ và $r$ cùng tính theo đơn vị km). Độ cao của vệ tinh đạt giá trị lớn nhất (tại viễn điểm) và giá trị nhỏ nhất (tại cận điểm) lần lượt là $20\,000$ km và $400$ km. Giả sử Trái Đất là một hình cầu có độ dài của bán kính bằng $6\,400$ km.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+  \def\a{2.075}\def\b{1.675}\def\c{1.225}
+  \draw[khuat] (0,0) ellipse ({\a} and {\b});
+  \shade[ball color=gray!40] (-\c,0) circle (.8);
+  \fill (-\c,0) circle (1pt) (\c,0) circle (1pt);
+  \path (-\c,0) node[below]{$F_1$} (\c,0) node[below]{$F_2$};
+  \draw[->,thin] (-2.75,-1.25) node[below left,font=\footnotesize]{Trái Đất} -- (-1.75,-.55);
+  \path (75:{\a} and {\b}) coordinate (V);
+  \fill[black!70] (V) ++(-.12,-.06) rectangle ++(.24,.12);
+  \path (V) node[above right]{vệ tinh};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True Tổng khoảng cách từ vệ tinh đến tâm của Trái Đất và từ vệ tinh đến tiêu điểm còn lại của quỹ đạo bằng $33\,200$ km.}
+{Tổng độ dài của trục lớn và trục bé của quỹ đạo lớn hơn $60\,000$ km.}
+{\True Có đúng hai vị trí trên quỹ đạo mà tại đó vận tốc của vệ tinh bằng $2000$ m/s.}
+{Vận tốc của vệ tinh tại viễn điểm lớn hơn vận tốc của vệ tinh tại cận điểm.}
+\loigiai{$r_{\max}=20\,000+6\,400=26\,400$, $r_{\min}=400+6\,400=6\,800$ (km).
+$2a=r_{\max}+r_{\min}=33\,200$: a) đúng. $a=16\,600$, $c=a-r_{\min}=9\,800$, $b=\sqrt{a^2-c^2}=\sqrt{179\,520\,000}\approx13\,398{,}5$.
+$2a+2b\approx59\,997<60\,000$: b) sai.
+$v=2000\Leftrightarrow r=\dfrac{2a}{e^{0{,}8}}\approx14\,918\in(6\,800;26\,400)$; mỗi giá trị $r$ thuộc khoảng này ứng với đúng hai điểm của elip (đối xứng qua trục lớn): c) đúng.
+$v$ giảm khi $r$ tăng, viễn điểm có $r$ lớn nhất nên vận tốc nhỏ nhất: d) sai.}
+\end{ex}
