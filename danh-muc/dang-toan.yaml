@@ -384,20 +384,20 @@
 12.8.39: {ten: "Vị trí hai khinh khí cầu: tọa độ theo hướng, trung điểm, khoảng cách (Đúng/Sai)", trang_thai: da-duyet}
 12.8.40: {ten: "Tọa độ tâm các khối lập phương con và trọng tâm tam giác tạo bởi các tâm", trang_thai: da-duyet}
 12.14.14: {ten: "Tháp leo trượt: tọa độ đỉnh mái chóp, cặp vectơ chỉ phương của mặt trượt, giao với mặt đất, diện tích mặt trượt (Đúng/Sai)", trang_thai: da-duyet}
-12.15.19: {ten: "Phương trình tham số của đường thẳng đi qua hai điểm", trang_thai: de-xuat}
-12.15.20: {ten: "Đường thẳng nằm trong mặt phẳng, cắt và vuông góc với đường thẳng cho trước (tích có hướng hai vectơ)", trang_thai: de-xuat}
-12.15.21: {ten: "Phương trình đường trung tuyến của tam giác trong không gian Oxyz", trang_thai: de-xuat}
-12.17.14: {ten: "Phương trình mặt cầu theo tâm, điểm đi qua, đường kính, trọng tâm tam giác (Đúng/Sai)", trang_thai: de-xuat}
-12.11.13: {ten: "Nguyên hàm của tổng hàm số mũ và hằng số", trang_thai: de-xuat}
-12.12.19: {ten: "Tích phân hàm phân thức (x-1)/x đưa về tổng", trang_thai: de-xuat}
-12.13.24: {ten: "Thể tích khối tròn xoay của miền giữa đường cong mũ, đường thẳng và trục Oy (hiệu hai thể tích, cần tìm tham số)", trang_thai: de-xuat}
-12.18.9: {ten: "Công thức nhân xác suất P(AB) = P(A)P(B|A) trong bài toán thời tiết", trang_thai: de-xuat}
-12.18.10: {ten: "Xác suất có điều kiện khi gieo xúc xắc hai lần", trang_thai: de-xuat}
-12.18.11: {ten: "Xác suất có điều kiện khi gieo một xúc xắc: biến cố số 5 và số lẻ (Đúng/Sai)", trang_thai: de-xuat}
-12.19.14: {ten: "Nhận biết công thức Bayes", trang_thai: de-xuat}
-12.19.15: {ten: "Xác suất toàn phần từ tỉ lệ phần trăm bi xanh, bi đen được đánh số", trang_thai: de-xuat}
-12.19.16: {ten: "Xác suất toàn phần: máy tính hoạt động tốt và khả năng đậu bài kiểm tra", trang_thai: de-xuat}
-12.8.41: {ten: "Giá trị nhỏ nhất của biểu thức MA^2 + kMB^2 với M thuộc trục tọa độ", trang_thai: de-xuat}
+12.15.19: {ten: "Phương trình tham số của đường thẳng đi qua hai điểm", trang_thai: da-duyet}
+12.15.20: {ten: "Đường thẳng nằm trong mặt phẳng, cắt và vuông góc với đường thẳng cho trước (tích có hướng hai vectơ)", trang_thai: da-duyet}
+12.15.21: {ten: "Phương trình đường trung tuyến của tam giác trong không gian Oxyz", trang_thai: da-duyet}
+12.17.14: {ten: "Phương trình mặt cầu theo tâm, điểm đi qua, đường kính, trọng tâm tam giác (Đúng/Sai)", trang_thai: da-duyet}
+12.11.13: {ten: "Nguyên hàm của tổng hàm số mũ và hằng số", trang_thai: da-duyet}
+12.12.19: {ten: "Tích phân hàm phân thức (x-1)/x đưa về tổng", trang_thai: da-duyet}
+12.13.24: {ten: "Thể tích khối tròn xoay của miền giữa đường cong mũ, đường thẳng và trục Oy (hiệu hai thể tích, cần tìm tham số)", trang_thai: da-duyet}
+12.18.9: {ten: "Công thức nhân xác suất P(AB) = P(A)P(B|A) trong bài toán thời tiết", trang_thai: da-duyet}
+12.18.10: {ten: "Xác suất có điều kiện khi gieo xúc xắc hai lần", trang_thai: da-duyet}
+12.18.11: {ten: "Xác suất có điều kiện khi gieo một xúc xắc: biến cố số 5 và số lẻ (Đúng/Sai)", trang_thai: da-duyet}
+12.19.14: {ten: "Nhận biết công thức Bayes", trang_thai: da-duyet}
+12.19.15: {ten: "Xác suất toàn phần từ tỉ lệ phần trăm bi xanh, bi đen được đánh số", trang_thai: da-duyet}
+12.19.16: {ten: "Xác suất toàn phần: máy tính hoạt động tốt và khả năng đậu bài kiểm tra", trang_thai: da-duyet}
+12.8.41: {ten: "Giá trị nhỏ nhất của biểu thức MA^2 + kMB^2 với M thuộc trục tọa độ", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị P01 (Chuyên đề số đặc trưng MSL không ghép nhóm - Bài 01), tự duyệt theo yêu cầu giáo viên 22/10/2026 ---
 10.12.1: {ten: Phân biệt số đúng và số gần đúng; đọc số gần đúng và độ chính xác từ kết quả a ± d, trang_thai: da-duyet}
 10.12.2: {ten: Đánh giá sai số tuyệt đối khi biết giá trị đúng hoặc khoảng chứa giá trị đúng, trang_thai: da-duyet}
