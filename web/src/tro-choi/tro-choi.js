@@ -111,7 +111,7 @@ if (typeof module !== 'undefined') {
 if (typeof window !== 'undefined' && document.getElementById('game')) (function () {
   const $ = (s, r = document) => r.querySelector(s);
   const root = $('#game');
-  let cfg = null, byMa = new Map(), st = null, timerId = null, showSol = false;
+  let cfg = null, byMa = new Map(), st = null, timerId = null, showSol = false, shownAt = 0;
 
   const save = () => { try { localStorage.setItem(KEY_STATE, JSON.stringify(st)); } catch { } };
   const qOf = (t) => byMa.get(t.ma);
@@ -176,7 +176,8 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
 
   /* màn hình bảng */
   function drawBoard() {
-    const grid = h('div', { class: 'g-grid', style: `--cols:${Math.min(6, Math.ceil(Math.sqrt(st.tiles.length * 1.6)))}` },
+    const cols = Math.min(6, Math.ceil(Math.sqrt(st.tiles.length * 1.6))), rows = Math.ceil(st.tiles.length / cols);
+    const grid = h('div', { class: 'g-grid', style: `--cols:${cols};--rows:${rows}` },
       st.tiles.map((t, i) => {
         const own = t.owner;
         return h('button', {
@@ -297,7 +298,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
     } else if (st.phase === 'steal') {
       side.append(h('div', { class: 'g-who' }, 'Đội nào giơ tay trước?'),
         h('div', { class: 'g-pad col' }, stealTeams(st).map((i) => h('button', {
-          class: 'g-key wide', style: '--c:' + color(i), onclick: () => { st.answering = i; draft = {}; draw(); },
+          class: 'g-key wide', style: '--c:' + color(i), onclick: () => { if (Date.now() - shownAt < 600) return; st.answering = i; draft = {}; draw(); },
         }, st.teams[i].name))),
         h('button', { class: 'btn ghost', onclick: () => { finishTile(st); draw(); } }, 'Không đội nào'));
     } else {
@@ -313,6 +314,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
 
     const main = h('section', { class: 'g-q' }, head, stemEl(q, t, reveal), reveal && showSol ? solutionEl(q) : null);
     root.replaceChildren(topBar(), scoreBar(), h('div', { class: 'g-q-wrap' }, main, side));
+    shownAt = Date.now();
     drawTimer();
     save();
   }
