@@ -118,7 +118,7 @@
     const el = $('#timer'); if (!el || !ctl || ctl.phase !== 'question') return;
     const s = Math.max(0, Math.ceil((P.deadline - Date.now()) / 1000));
     el.textContent = s + 's'; el.classList.toggle('low', s <= 5);
-    if (!s && !sent()) { root.querySelectorAll('.ans button, .ans input').forEach((b) => (b.disabled = true)); const st = $('#status'); if (st) { st.textContent = '⏰ Hết giờ! Chờ công bố đáp án…'; st.className = 'status'; } }
+    if (!s && !sent()) { root.querySelectorAll('.answers button, .answers input').forEach((b) => (b.disabled = true)); const st = $('#status'); if (st) { st.textContent = '⏰ Hết giờ! Chờ công bố đáp án…'; st.className = 'status'; } }
   }
   function stemEl(q) {
     const b = h('div', { class: 'stem' }, h('div', { html: renderRich(q.de) }));
@@ -147,7 +147,7 @@
   function questionCard() {
     const q = ctl.q, s = sent(), m = me();
     const card = h('div', { class: 'card' }, h('div', { class: 'tags' }, h('span', { class: 'tag' }, ctl.muc || '')), stemEl(q));
-    const area = h('div', { class: 'ans' });
+    const area = h('div', { class: 'answers' });
     if (q.loai === 'TN4') {
       q.choices.forEach((c, i) => {
         const L = 'ABCD'[i];
@@ -199,7 +199,7 @@
     const card = h('div', { class: 'card' },
       h('div', { class: 'verdict ' + verdict[0] }, h('div', null, verdict[1]), fresh ? h('b', null, '+' + fmt(m.last || 0)) : null),
       stemEl(q));
-    if (q.loai === 'TN4') card.append(h('div', { class: 'ans' }, q.choices.map((c, i) => h('div', {
+    if (q.loai === 'TN4') card.append(h('div', { class: 'answers' }, q.choices.map((c, i) => h('div', {
       class: 'opt-btn ro' + ('ABCD'[i] === k.dap_an ? ' right' : s?.ans === 'ABCD'[i] ? ' wrong' : ''),
     }, h('b', null, 'ABCD'[i]), h('span', { html: strip(renderRich(c)) })))));
     card.append(h('div', { class: 'keybox' }, h('div', null, h('small', null, 'Bạn trả lời'), myAnsText(q, s?.ans)), h('div', null, h('small', null, 'Đáp án'), h('b', null, keyText(q, k)))));
