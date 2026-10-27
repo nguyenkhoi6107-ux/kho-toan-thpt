@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đấu Trường Toán</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23ffd75e'/%3E%3Cpath d='M9 9h14M9 16h14M9 23h8' stroke='%232a2a2a' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  /* Trang điện thoại: chỉ có phòng chơi, không có đường dẫn sang kho. */
+  body { padding: 0; background: var(--paper); font-size: 16px; }
+  #play { max-width: 620px; margin: 0 auto; padding: 12px 14px 40px; }
+  .card { border: 1.5px solid var(--line); border-radius: 20px; background: #fff; padding: 16px; margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+  .card.center { text-align: center; align-items: center; }
+  .card h1 { font-size: 26px; color: var(--accent); }
+  .lbl { display: flex; flex-direction: column; gap: 6px; font-size: 14px; color: var(--muted); }
+  .input { border: 1.5px solid var(--line); border-radius: 14px; padding: 12px 14px; font-size: 18px; width: 100%; background: #fff; color: var(--ink); }
+  .input.num { font-size: 24px; font-variant-numeric: tabular-nums; }
+  .btn.wide { width: 100%; justify-content: center; font-size: 17px; padding: 13px; border-radius: 14px; }
+  .msg { background: #ffe3e0; border: 1px solid #b3261e; border-radius: 12px; padding: 8px 12px; color: #7a1a14; font-size: 14px; }
+  .rules { font-size: 13.5px; color: var(--muted); } .rules ul { margin: 6px 0 0; padding-left: 18px; }
+  .hud { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; background: var(--paper); padding: 6px 0; z-index: 5; }
+  .who { font-weight: 600; max-width: 40vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .conn { font-size: 12px; color: #b3261e; } .conn.ok { color: #2f7d32; }
+  .pill { border: 1.2px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 13.5px; background: #fff; font-variant-numeric: tabular-nums; }
+  .pill.timer { font-weight: 700; font-size: 16px; min-width: 52px; text-align: center; }
+  .pill.timer.low { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .tags { display: flex; gap: 6px; }
+  .stem { font-size: 17px; line-height: 1.6; overflow-x: auto; }
+  .stem .fig img { max-height: 260px; }
+  .ans { display: flex; flex-direction: column; gap: 10px; }
+  .opt-btn { display: flex; gap: 10px; align-items: baseline; text-align: left; border: 1.5px solid var(--line); border-radius: 14px; background: #fff; padding: 12px 14px; font: inherit; font-size: 17px; cursor: pointer; color: var(--ink); }
+  .opt-btn b { flex: none; width: 22px; }
+  .opt-btn.on { background: var(--ink); color: #fff; }
+  .opt-btn[disabled]:not(.on) { opacity: .5; }
+  .opt-btn.right { background: var(--g); border-color: #2f7d32; } .opt-btn.wrong { background: #ffe3e0; border-color: #b3261e; }
+  .ds-row { border: 1.2px solid #dcd9cd; border-radius: 14px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .ds-k { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tf { border: 1.5px solid var(--line); border-radius: 12px; background: #fff; padding: 9px; font: inherit; font-weight: 600; color: var(--ink); }
+  .tf.on { background: var(--ink); color: #fff; }
+  .keys { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .keys button { border: 1.5px solid var(--line); border-radius: 12px; background: #f6f4ee; padding: 10px; font: inherit; font-size: 16px; color: var(--ink); }
+  .help { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pu { flex: 1; border: 1.5px dashed var(--line); border-radius: 12px; background: #fff; padding: 9px; font: inherit; font-size: 14px; color: var(--ink); }
+  .pu.on { background: var(--y); border-style: solid; } .pu[disabled] { opacity: .45; }
+  .status { font-size: 14.5px; color: var(--muted); text-align: center; min-height: 20px; } .status.ok { color: #2f7d32; }
+  .verdict { display: flex; align-items: center; justify-content: space-between; border-radius: 14px; padding: 12px 16px; font-size: 19px; font-weight: 600; }
+  .verdict.wait { background: #f1efe8; } .verdict.ok { background: var(--g); } .verdict.part { background: #fff1c9; } .verdict.no { background: #ffe3e0; }
+  .verdict b { font-size: 26px; }
+  .opt-btn.ro { cursor: default; }
+  .keybox { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 15px; }
+  .keybox > div { background: #f6f4ee; border-radius: 12px; padding: 8px 12px; } .keybox small { display: block; color: var(--muted); font-size: 12px; }
+  .sol { border-top: 1.5px dashed #ccc; padding-top: 10px; font-size: 15.5px; overflow-x: auto; }
+  .rank { font-size: 64px; font-weight: 700; line-height: 1; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+  .stats > div { background: #f6f4ee; border-radius: 12px; padding: 10px; } .stats small { display: block; color: var(--muted); } .stats b { font-size: 22px; }
+  table.mini { width: 100%; border-collapse: collapse; font-size: 15px; } table.mini td { padding: 6px 8px; border-bottom: 1px solid #eee; text-align: left; }
+  table.mini td.r { text-align: right; font-weight: 600; } table.mini tr.me { background: var(--y); }
+  .big-emoji { font-size: 44px; }
+  .link { background: none; border: 0; color: var(--muted); text-decoration: underline; font: inherit; font-size: 13px; }
+</style>
+</head>
+<body>
+<main id="play" aria-live="polite"></main>
+<script src="../vendor/katex/katex.min.js"></script>
+<script src="../vendor/mqtt.min.js"></script>
+<script src="../hien-thi.js"></script>
+<script src="ket-noi.js"></script>
+<script src="choi.js"></script>
+</body>
+</html>

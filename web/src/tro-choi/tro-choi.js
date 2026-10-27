@@ -13,46 +13,11 @@
 const KEY_CFG = 'toankho.game.v1';
 const KEY_STATE = 'toankho.game.state.v1';
 const KEY_HIST = 'toankho.game.hist.v1';   // các bước đã làm, để hoàn tác (tối đa 50 bước)
-const MUC_ORDER = ['NB', 'TH', 'VD', 'VDC'];
-const MUC_TEN = { NB: 'Nhận biết', TH: 'Thông hiểu', VD: 'Vận dụng', VDC: 'Vận dụng cao' };
 const TEAM_COLORS = ['var(--y)', 'var(--p)', 'var(--b)', 'var(--g)'];
 
-/* ---------- phần tính toán (không đụng tới giao diện, kiểm thử được bằng node) ---------- */
+/* levelOf, sameShort, grade, MUC_TEN nằm ở cham.js (dùng chung với Đấu Trường). */
 
-// Mức của câu: TN4/TLN lấy mức của câu; Đ/S lấy mức cao nhất trong các ý được hỏi.
-function levelOf(q, y) {
-  let list = q.muc || [];
-  if (q.loai === 'DS' && list.length === 4 && y && y.length) list = y.map((i) => list[i]);
-  list = list.filter((m) => MUC_ORDER.includes(m));
-  if (!list.length) return 'TH';
-  return list.reduce((a, b) => (MUC_ORDER.indexOf(b) > MUC_ORDER.indexOf(a) ? b : a));
-}
-
-// Cùng cách chuẩn hoá với Apps Script (bỏ khoảng trắng, đổi dấu trừ, phẩy → chấm),
-// thêm so sánh theo giá trị số để "4,90" và "4,9" được coi là bằng nhau.
-function normShort(v) {
-  return String(v ?? '').replace(/\s+/g, '').replace(/[−–—]/g, '-').replace(/,/g, '.');
-}
-function sameShort(a, b) {
-  const x = normShort(a), y = normShort(b);
-  if (!x || !y) return false;
-  const num = /^[-+]?(\d+\.?\d*|\.\d+)$/;
-  if (num.test(x) && num.test(y)) return Number(x) === Number(y);
-  return x === y;
-}
-
-// Tỉ lệ đúng của một lần trả lời, từ 0 đến 1.
-// ans: TN4 → 'A'..'D'; TLN → chuỗi; DS → { [chỉ số ý]: 'Đ' | 'S' }.
-function grade(q, ans, y) {
-  if (q.loai === 'TN4') return ans && ans === q.dap_an ? 1 : 0;
-  if (q.loai === 'TLN') return sameShort(ans, q.tln || q.dap_an) ? 1 : 0;
-  if (q.loai === 'DS') {
-    if (!y || !y.length) return 0;
-    const ok = y.filter((i) => ans && ans[i] && ans[i] === q.dap_an[i]).length;
-    return ok / y.length;
-  }
-  return 0;
-}
+/* ---------- phần tính toán (không đụng tới giao diện) ---------- */
 
 const award = (pts, ratio) => Math.round(pts * ratio);
 
@@ -104,9 +69,6 @@ function ranking(st) {
   return st.teams.map((t, i) => ({ ...t, i })).sort((a, b) => b.score - a.score);
 }
 
-if (typeof module !== 'undefined') {
-  module.exports = { levelOf, normShort, sameShort, grade, award, newGame, submit, stealTeams, backToBoard, ranking };
-}
 
 /* ---------- giao diện ---------- */
 if (typeof window !== 'undefined' && document.getElementById('game')) (function () {

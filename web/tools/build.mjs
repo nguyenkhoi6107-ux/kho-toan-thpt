@@ -270,6 +270,9 @@ const kout = path.join(OUT, 'vendor', 'katex');
 fs.mkdirSync(path.join(kout, 'fonts'), { recursive: true });
 for (const f of ['katex.min.css', 'katex.min.js']) fs.copyFileSync(path.join(kdist, f), path.join(kout, f));
 for (const f of fs.readdirSync(path.join(kdist, 'fonts'))) if (f.endsWith('.woff2')) fs.copyFileSync(path.join(kdist, 'fonts', f), path.join(kout, 'fonts', f));
+// thư viện cho Đấu Trường: MQTT (truyền tin thời gian thực) và mã QR
+fs.copyFileSync(path.join(WEB, 'node_modules', 'mqtt', 'dist', 'mqtt.min.js'), path.join(OUT, 'vendor', 'mqtt.min.js'));
+fs.copyFileSync(path.join(WEB, 'node_modules', 'qrcode-generator', 'qrcode.js'), path.join(OUT, 'vendor', 'qrcode.js'));
 // dropped woff/ttf: KaTeX css lists woff2 first; strip fallbacks so không 404
 {
   const p = path.join(kout, 'katex.min.css');

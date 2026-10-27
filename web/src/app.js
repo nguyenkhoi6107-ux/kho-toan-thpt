@@ -396,7 +396,7 @@ function summary() {
   box.append(h('button', { class: 'btn', disabled: !missing, onclick: fillRandom }, 'Bốc ngẫu nhiên phần còn thiếu'),
     h('button', { class: 'btn ghost', disabled: !total, onclick: previewExam }, 'Xem trước đề'),
     h('button', { class: 'btn', style: 'background:var(--g);color:var(--ink);font-weight:600', disabled: !total, onclick: openAssignOnlineModal }, 'Giao bài online (Link & QR)'),
-    h('button', { class: 'btn', style: 'background:var(--p);color:var(--ink);font-weight:600', disabled: !total, onclick: openGameModal }, 'Chơi trên lớp (Bảng ô số)'),
+    h('button', { class: 'btn', style: 'background:var(--p);color:var(--ink);font-weight:600', disabled: !total, onclick: openGameModal }, 'Trò chơi trên lớp'),
     h('button', { class: 'btn', style: 'background:var(--y);color:var(--ink)', disabled: !total, onclick: exportExam }, 'Xuất LaTeX cho Overleaf'),
     h('button', { class: 'btn ghost', disabled: !total, onclick: () => { if (confirm('Xóa toàn bộ câu đã chọn trong đề?')) { LOAI_KEYS.forEach((k) => (e.picks[k] = [])); saveExam(); render(); } } }, 'Làm lại từ đầu'),
     h('p', { class: 'note' }, 'Chỉ dùng câu đã duyệt (chính thức). Câu thêm từ Thư viện cũng nằm trong đề này.'));
@@ -527,8 +527,8 @@ function teacherCodeField() {
   return { inp, el: h('div', { class: 'field grow' }, h('label', null, 'Mã giáo viên (nhớ trên máy này)'), inp, h('div', { style: 'margin-top:4px' }, forget)) };
 }
 
-/* ---------- CHƠI TRÊN LỚP (Bảng ô số, chạy ở tro-choi/) ---------- */
-const GAME_DEF = { soDoi: 2, doi: ['Đội 1', 'Đội 2', 'Đội 3', 'Đội 4'], diem: { NB: 10, TH: 20, VD: 30, VDC: 40 }, giay: { NB: 30, TH: 45, VD: 90, VDC: 120 } };
+/* ---------- TRÒ CHƠI TRÊN LỚP: Bảng ô số (tro-choi/) và Đấu Trường (dau-truong/) ---------- */
+const GAME_DEF = { kieu: 'bang', soDoi: 2, doi: ['Đội 1', 'Đội 2', 'Đội 3', 'Đội 4'], diem: { NB: 10, TH: 20, VD: 30, VDC: 40 }, giay: { NB: 30, TH: 45, VD: 90, VDC: 120 } };
 function openGameModal() {
   const pref = Object.assign({}, GAME_DEF, store.get('toankho.game.pref.v1', {}));
   const qs = chosen().flatMap(([, list]) => list);
@@ -550,9 +550,10 @@ function openGameModal() {
   // điểm và thời gian theo mức
   const diem = { ...pref.diem }, giay = { ...pref.giay };
   const numIn = (obj, k, min, max) => { const i = h('input', { type: 'number', min, max, value: obj[k], style: 'width:90px' }); i.onchange = () => { obj[k] = Math.min(max, Math.max(min, +i.value || min)); i.value = obj[k]; }; return i; };
+  const diemCell = (el) => h('td', { class: 'col-diem' }, el);
   const mucTable = h('table', { class: 'tex-table ruled', style: 'margin:0' },
-    h('tr', null, h('td', null, h('b', null, 'Mức độ')), h('td', null, h('b', null, 'Điểm ô')), h('td', null, h('b', null, 'Thời gian (giây)'))),
-    Object.keys(MUC).map((k) => h('tr', null, h('td', null, MUC[k]), h('td', null, numIn(diem, k, 1, 1000)), h('td', null, numIn(giay, k, 5, 900)))));
+    h('tr', null, h('td', null, h('b', null, 'Mức độ')), diemCell(h('b', null, 'Điểm ô')), h('td', null, h('b', null, 'Thời gian (giây)'))),
+    Object.keys(MUC).map((k) => h('tr', null, h('td', null, MUC[k]), diemCell(numIn(diem, k, 1, 1000)), h('td', null, numIn(giay, k, 5, 900)))));
 
   // chọn ý cho câu Đ/S
   const dsList = h('div', { class: 'qlist', style: 'gap:8px' });
@@ -572,21 +573,43 @@ function openGameModal() {
     draw(); dsList.append(row);
   });
 
+  // hình thức chơi
+  let kieu = pref.kieu === 'dau' ? 'dau' : 'bang';
+  const KIEU = {
+    bang: { ten: 'Bảng ô số', mo: 'Chiếu lên màn hình, chia đội, giáo viên nhập câu trả lời đội đọc to. Trả lời chưa đúng thì đội khác được giành quyền.' },
+    dau: { ten: 'Đấu Trường', mo: 'Mỗi em trả lời trên điện thoại riêng (quét mã QR, không cần tài khoản). Máy chiếu giữ đáp án và chấm, điện thoại chỉ nhận đề.' },
+  };
+  const kieuBox = h('div', { class: 'row' }), moTa = h('p', { class: 'muted small', style: 'margin:6px 0 0' });
+  const teamSec = h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Các đội'), teamBox);
+  const mucNote = h('p', { class: 'muted small' });
+  const drawKieu = () => {
+    kieuBox.replaceChildren(...Object.keys(KIEU).map((k) => h('button', { type: 'button', class: 'chip' + (kieu === k ? ' on' : ''), onclick: () => { kieu = k; drawKieu(); } }, KIEU[k].ten)));
+    moTa.textContent = KIEU[kieu].mo + ` Có ${usableQs.length} câu dùng được` + (nTL ? `, bỏ ${nTL} câu tự luận vì máy không chấm được.` : '.');
+    teamSec.hidden = kieu !== 'bang';
+    mucTable.querySelectorAll('.col-diem').forEach((c) => { c.hidden = kieu !== 'bang'; });
+    mucNote.textContent = kieu === 'bang'
+      ? 'Câu Đúng/Sai lấy mức cao nhất trong các ý được hỏi. Điểm câu Đúng/Sai = điểm ô × (số ý đúng ÷ số ý được hỏi).'
+      : 'Điểm theo luật Đấu Trường: 600 + thưởng tốc độ (tối đa 400) + thưởng chuỗi (tối đa 300). Câu Đúng/Sai đúng một phần thì nhận phần điểm tương ứng.';
+  };
+
   const body = h('div', { class: 'qlist', style: 'gap:18px' },
-    h('p', { class: 'muted small', style: 'margin:0' }, `Trò chơi "Bảng ô số" chiếu lên màn hình: các đội lần lượt chọn ô, giáo viên nhập câu trả lời của đội. Trả lời chưa đúng thì đội khác được giành quyền. Có ${usableQs.length} câu dùng được` + (nTL ? `, bỏ ${nTL} câu tự luận vì máy không chấm được.` : '.')),
-    h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Các đội'), teamBox),
-    h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Điểm và thời gian theo mức độ'), mucTable,
-      h('p', { class: 'muted small' }, 'Câu Đúng/Sai lấy mức cao nhất trong các ý được hỏi. Điểm câu Đúng/Sai = điểm ô × (số ý đúng ÷ số ý được hỏi).')),
+    h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Hình thức'), kieuBox, moTa),
+    teamSec,
+    h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Thời gian theo mức độ'), mucTable, mucNote),
     Object.keys(ys).length ? h('div', null, h('h3', { style: 'margin-bottom:8px' }, 'Ý được hỏi ở câu Đúng/Sai'), dsList) : null);
+  drawKieu();
 
   const go = h('button', { class: 'btn', disabled: !usableQs.length, onclick: () => {
     const doi = names.slice(0, soDoi).map((v, i) => v.trim() || 'Đội ' + (i + 1));
-    store.set('toankho.game.pref.v1', { soDoi, doi: names, diem, giay });
-    store.set('toankho.game.v1', { id: Date.now(), ten: state.exam.title, doi, diem, giay, items: usableQs.map((q) => ({ ma: q.ma, y: ys[q.ma] || null })) });
+    store.set('toankho.game.pref.v1', { kieu, soDoi, doi: names, diem, giay });
+    const items = usableQs.map((q) => ({ ma: q.ma, y: ys[q.ma] || null }));
+    const url = kieu === 'bang' ? 'tro-choi/' : 'dau-truong/chieu.html';
+    if (kieu === 'bang') store.set('toankho.game.v1', { id: Date.now(), ten: state.exam.title, doi, diem, giay, items });
+    else store.set('toankho.dautruong.v1', { id: Date.now(), ten: state.exam.title, giay, items });
     closeModal();
-    if (!window.open('tro-choi/', '_blank')) location.href = 'tro-choi/';
-  } }, 'Bắt đầu trò chơi');
-  openModal('Chơi trên lớp · Bảng ô số', body, [go, h('span', { class: 'small muted', style: 'align-self:center' }, 'Trò chơi mở ở tab mới. Bấm "Toàn màn hình" khi chiếu.')]);
+    if (!window.open(url, '_blank')) location.href = url;
+  } }, 'Bắt đầu');
+  openModal('Trò chơi trên lớp', body, [go, h('span', { class: 'small muted', style: 'align-self:center' }, 'Trò chơi mở ở tab mới. Bấm "Toàn màn hình" khi chiếu.')]);
 }
 
 /* ---------- GIAO BÀI ONLINE ---------- */
@@ -860,7 +883,7 @@ async function renderHelp(root) {
       h('li', null, h('b', null, 'Tìm bài tập: '), 'vào ', h('i', null, 'Thư viện'), ' → chọn lớp → chọn chương (thẻ màu) → chọn bài/dạng ở cột trái. Lọc thêm theo loại câu và mức độ. Gõ vào ô tìm kiếm để tìm theo mã, nội dung, nguồn.'),
       h('li', null, h('b', null, 'Xem trực tiếp: '), 'công thức và hình được hiển thị sẵn; bấm ', h('i', null, 'Xem đáp án'), ' khi cần (đáp án và lời giải mặc định ẩn).'),
       h('li', null, h('b', null, 'Lấy LaTeX: '), 'bấm ', h('i', null, 'Lấy LaTeX'), ' để chép mã một câu, hoặc ', h('i', null, 'Lấy LaTeX cả danh sách'), ' để chép nhiều câu đang lọc.'),
-      h('li', null, h('b', null, 'Chơi trên lớp: '), 'chọn câu ở ', h('i', null, 'Tạo đề'), ' → bấm ', h('i', null, 'Chơi trên lớp (Bảng ô số)'), ' → đặt số đội, điểm, thời gian, chọn ý cho câu Đúng/Sai → trò chơi mở ở tab mới để chiếu lên màn hình. Tải lại trang không mất ván đang chơi; bấm nhầm thì dùng nút Hoàn tác (Ctrl+Z).'),
+      h('li', null, h('b', null, 'Trò chơi trên lớp: '), 'chọn câu ở ', h('i', null, 'Tạo đề'), ' → bấm ', h('i', null, 'Trò chơi trên lớp'), ' → chọn hình thức. ', h('i', null, 'Bảng ô số'), ': chia đội, chiếu lên màn hình, bấm nhầm thì dùng nút Hoàn tác (Ctrl+Z). ', h('i', null, 'Đấu Trường'), ': học sinh quét mã QR, trả lời trên điện thoại; máy chiếu giữ đáp án và chấm. Tải lại trang không mất ván đang chơi.'),
       h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.'),
       h('li', null, h('b', null, 'Theo dõi kết quả: '), 'vào ', h('i', null, 'Bài đã giao'), ' (biểu tượng cột) → chọn bài để xem bảng điểm, phổ điểm, tỉ lệ đúng từng câu; đóng sớm, gia hạn hoặc xoá bài; bấm ', h('i', null, 'Tạo đề ôn'), ' để máy lấy câu mới thuộc các dạng học sinh làm chưa tốt.')),
     h('h2', { style: 'margin-top:22px' }, 'Cập nhật dữ liệu'),

@@ -13,6 +13,8 @@
   "type": "module",
   "dependencies": {
     "katex": "^0.16.11",
+    "mqtt": "^5.16.1",
+    "qrcode-generator": "^1.5.2",
     "yaml": "^2.5.1"
   },
   "private": true
