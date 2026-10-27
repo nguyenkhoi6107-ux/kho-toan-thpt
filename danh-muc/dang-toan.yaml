@@ -460,7 +460,6 @@
 12.17.15: {ten: "Xác định điểm nằm trong, nằm ngoài mặt cầu bằng khoảng cách đến tâm", trang_thai: da-duyet}
 12.19.17: {ten: "Hai loài với một đặc điểm nhận dạng: xác suất toàn phần, Bayes, xác suất phân loại sai (Đúng/Sai)", trang_thai: da-duyet}
 # --- Đề xuất từ đơn vị M07 (CĐ2.1–CĐ2.6, Lê Minh Khôi – Nguyễn Anh Khôi), ngày 27/10/2026 ---
-12.6.18: {ten: "Điều kiện ba vectơ đồng phẳng (chỉ dùng cho câu cách ly)", trang_thai: da-duyet}
 12.6.19: {ten: "Quy tắc ba điểm, quy tắc hiệu, quy tắc hình bình hành, vectơ-không, vectơ bằng nhau (chọn mệnh đề đúng/sai)", trang_thai: da-duyet}
 12.6.20: {ten: "Hệ thức vectơ với trọng tâm tứ diện, trọng tâm tam giác và trung điểm", trang_thai: da-duyet}
 12.6.21: {ten: "Vectơ lực cùng hướng, tỉ số độ lớn (tích của vectơ với một số) trong bài toán thực tế", trang_thai: da-duyet}
@@ -482,7 +481,6 @@
 12.8.55: {ten: "Tháp leo trượt: kích thước, diện tích mặt trượt song song với dây căng", trang_thai: da-duyet}
 12.14.15: {ten: "Ứng dụng tích có hướng trong vật lí: moment lực, lực từ, công suất tấm pin", trang_thai: da-duyet}
 12.14.16: {ten: "Bốn điểm đồng phẳng, điều kiện bốn điểm tạo thành tứ diện (dùng phương trình mặt phẳng)", trang_thai: da-duyet}
-12.14.17: {ten: "Điều kiện đồng phẳng của ba vectơ bằng tích có hướng (chỉ dùng cho câu cách ly)", trang_thai: da-duyet}
 12.14.18: {ten: "Diện tích tam giác, đường cao tam giác bằng tích có hướng", trang_thai: da-duyet}
 12.14.19: {ten: "Thể tích tứ diện, hình hộp và đường cao bằng tích có hướng và khoảng cách từ điểm đến mặt phẳng", trang_thai: da-duyet}
 # --- Giáo viên chuyển L12-B08-0007 sang Bài 15, ngày 27/10/2026 ---
