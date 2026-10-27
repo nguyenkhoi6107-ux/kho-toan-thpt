@@ -12,6 +12,7 @@
 
 const KEY_CFG = 'toankho.game.v1';
 const KEY_STATE = 'toankho.game.state.v1';
+const KEY_HIST = 'toankho.game.hist.v1';   // các bước đã làm, để hoàn tác (tối đa 50 bước)
 const MUC_ORDER = ['NB', 'TH', 'VD', 'VDC'];
 const MUC_TEN = { NB: 'Nhận biết', TH: 'Thông hiểu', VD: 'Vận dụng', VDC: 'Vận dụng cao' };
 const TEAM_COLORS = ['var(--y)', 'var(--p)', 'var(--b)', 'var(--g)'];
@@ -113,7 +114,16 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
   const root = $('#game');
   let cfg = null, byMa = new Map(), st = null, timerId = null, showSol = false, shownAt = 0;
 
-  const save = () => { try { localStorage.setItem(KEY_STATE, JSON.stringify(st)); } catch { } };
+  let hist = [];
+  const save = () => { try { localStorage.setItem(KEY_STATE, JSON.stringify(st)); localStorage.setItem(KEY_HIST, JSON.stringify(hist)); } catch { } };
+  // Ghi lại trạng thái trước mỗi thao tác làm đổi điểm, ô hay lượt; Hoàn tác lấy lại đúng trạng thái đó.
+  const snap = () => { hist.push(JSON.stringify({ ...st, running: false })); if (hist.length > 50) hist.shift(); };
+  function undo() {
+    if (!hist.length) return;
+    st = JSON.parse(hist.pop());
+    draft = {}; showSol = false;
+    draw();
+  }
   const qOf = (t) => byMa.get(t.ma);
   const color = (i) => TEAM_COLORS[i % TEAM_COLORS.length];
   const strip = (html) => html.replace(/^<p>|<\/p>$/g, '');
@@ -131,6 +141,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
     byMa = new Map(D.cau_hoi.map((q) => [q.ma, q]));
     try { st = JSON.parse(localStorage.getItem(KEY_STATE) || 'null'); } catch { st = null; }
     if (!st || st.cfgId !== cfg.id || st.tiles.some((t) => !byMa.has(t.ma))) st = newGame(cfg, byMa);
+    else { try { hist = JSON.parse(localStorage.getItem(KEY_HIST) || '[]'); } catch { hist = []; } }
     if (!st.tiles.length) return fail('Không có câu dùng được', 'Câu tự luận không đưa vào trò chơi. Hãy chọn câu trắc nghiệm, Đúng/Sai hoặc trả lời ngắn.');
     st.running = false;          // mở lại trang thì đồng hồ đứng, giáo viên bấm chạy tiếp
     draw();
@@ -162,7 +173,8 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
   }
   function topBar(extra) {
     const fs = h('button', { class: 'btn ghost sm', onclick: () => { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(); } }, 'Toàn màn hình');
-    return h('div', { class: 'g-top' }, h('div', { class: 'g-title' }, cfg.ten || 'Bảng ô số'), h('span', { class: 'grow' }), extra || null, fs);
+    const un = h('button', { class: 'btn ghost sm', disabled: !hist.length, title: 'Quay lại trước thao tác vừa rồi (phím Ctrl+Z)', onclick: undo }, '↶ Hoàn tác');
+    return h('div', { class: 'g-top' }, h('div', { class: 'g-title' }, cfg.ten || 'Bảng ô số'), h('span', { class: 'grow' }), un, extra || null, fs);
   }
 
   function draw() {
@@ -191,13 +203,14 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
           : h('span', { class: 'g-tile-s' }, `${t.pts} điểm · ${MUC_TEN[t.muc]}`));
       }));
     root.replaceChildren(
-      topBar(h('button', { class: 'btn ghost sm', onclick: () => { if (confirm('Kết thúc trò chơi ngay và xem tổng kết?')) { st.phase = 'end'; draw(); } } }, 'Kết thúc sớm')),
+      topBar(h('button', { class: 'btn ghost sm', onclick: () => { if (confirm('Kết thúc trò chơi ngay và xem tổng kết?')) { snap(); st.phase = 'end'; draw(); } } }, 'Kết thúc sớm')),
       scoreBar(),
       h('div', { class: 'g-turn' }, 'Lượt chọn ô: ', h('b', { style: '--c:' + color(st.turn) }, st.teams[st.turn].name)),
       grid);
   }
   function openTile(i) {
     const t = st.tiles[i];
+    snap();
     Object.assign(st, { cur: i, phase: 'q', answering: st.turn, left: t.time });
     showSol = false; draft = {};
     st.running = true;
@@ -231,6 +244,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
   }
   function commit(q, t, skip) {
     if (!skip && !ready(q, t)) return;
+    snap();
     submit(st, q, skip ? (q.loai === 'DS' ? {} : '') : draft.v);
     draft = {};
     draw();
@@ -298,9 +312,9 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
     } else if (st.phase === 'steal') {
       side.append(h('div', { class: 'g-who' }, 'Đội nào giơ tay trước?'),
         h('div', { class: 'g-pad col' }, stealTeams(st).map((i) => h('button', {
-          class: 'g-key wide', style: '--c:' + color(i), onclick: () => { if (Date.now() - shownAt < 600) return; st.answering = i; draft = {}; draw(); },
+          class: 'g-key wide', style: '--c:' + color(i), onclick: () => { if (Date.now() - shownAt < 600) return; snap(); st.answering = i; draft = {}; draw(); },
         }, st.teams[i].name))),
-        h('button', { class: 'btn ghost', onclick: () => { finishTile(st); draw(); } }, 'Không đội nào'));
+        h('button', { class: 'btn ghost', onclick: () => { snap(); finishTile(st); draw(); } }, 'Không đội nào'));
     } else {
       const own = t.owner;
       side.append(
@@ -308,7 +322,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
         h('div', { class: 'g-key-ans' }, h('small', null, 'Đáp án'), h('div', null, correctText(q, t))),
         h('div', { class: 'g-actions' },
           h('button', { class: 'btn ghost', onclick: () => { showSol = !showSol; drawQuestion(); } }, showSol ? 'Ẩn lời giải' : 'Xem lời giải'),
-          h('button', { class: 'btn', onclick: () => { backToBoard(st); draw(); } }, st.tiles.every((x) => x.done) ? 'Xem tổng kết' : 'Về bảng')));
+          h('button', { class: 'btn', onclick: () => { snap(); backToBoard(st); draw(); } }, st.tiles.every((x) => x.done) ? 'Xem tổng kết' : 'Về bảng')));
     }
     side.append(triesEl(t) || '');
 
@@ -342,7 +356,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
       h('span', { class: 'tag' }, nSai ? `${nSai} lượt sai` : 'Bỏ qua')));
     });
     root.replaceChildren(
-      topBar(h('button', { class: 'btn ghost sm', onclick: () => { if (confirm('Chơi lại từ đầu với cùng bộ câu hỏi?')) { st = newGame(cfg, byMa); draw(); } } }, 'Chơi lại')),
+      topBar(h('button', { class: 'btn ghost sm', onclick: () => { if (confirm('Chơi lại từ đầu với cùng bộ câu hỏi?')) { st = newGame(cfg, byMa); hist = []; draw(); } } }, 'Chơi lại')),
       h('div', { class: 'g-end' },
         h('section', null, h('h2', null, 'Bảng xếp hạng'), board),
         h('section', null, h('h2', null, 'Câu cần chữa'), h('p', { class: 'muted small' }, 'Bấm vào một câu để hiện đề, đáp án và lời giải.'), list)),
@@ -350,6 +364,7 @@ if (typeof window !== 'undefined' && document.getElementById('game')) (function 
   }
 
   document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && e.target.tagName !== 'INPUT') { e.preventDefault(); undo(); return; }
     if (e.target.tagName === 'INPUT') return;
     if (e.key === ' ' && st?.phase === 'q') { e.preventDefault(); setTimer(!st.running); }
   });
