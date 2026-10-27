@@ -1,0 +1,34 @@
+%% ma: L12-B14-0046
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.15
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 36"
+%% kien_thuc: "Bài 14 (tích có hướng), Bài 8 (tích vô hướng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.14.15 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 35–36; đã chép vào từng câu; nhắc lại định nghĩa vectơ n trong câu 36"
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$ (đơn vị dài trên các trục là mét), một tấm pin năng lượng mặt trời được lắp trên mái của một ngôi nhà. Tấm pin có thể được xem như một mặt phẳng hình chữ nhật với tọa độ các đỉnh là $A(8;0;0)$, $B(8;18;0)$, $C(0;18;8)$ và $D(0;0;8)$ (xem hình minh họa).
+\begin{center}
+\begin{tikzpicture}[scale=.2,x={(-.5cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \path (8,0,0) coordinate (A) (8,18,0) coordinate (B) (0,18,8) coordinate (C) (0,0,8) coordinate (D) (0,18,0) coordinate (E);
+  \fill[gray!15] (B)--(C)--(E)--cycle; \draw[gray] (B)--(C)--(E)--cycle;
+  \fill[blue!50] (A)--(B)--(C)--(D)--cycle;
+  \foreach \t in {.2,.4,.6,.8} {\draw[white] ($(A)!\t!(B)$)--($(D)!\t!(C)$); \draw[white] ($(A)!\t!(D)$)--($(B)!\t!(C)$);}
+  \draw (A)--(B)--(C)--(D)--cycle;
+  \draw[truc] (0,0,0)--(11,0,0) node[left]{$x$}; \draw[truc] (0,0,0)--(0,23,0) node[right]{$y$}; \draw[truc] (D)--(0,0,12) node[left]{$z$};
+  \draw[khuat] (0,0,0)--(D);
+  \foreach \X in {A,B,C,D} \fill[orange] (\X) circle (8pt);
+  \path (A) node[left]{$A$} (B) node[below right]{$B$} (C) node[above right]{$C$} (D) node[above left]{$D$} (0,0,0) node[above left]{$O$};
+\end{tikzpicture}
+\end{center}
+Giả sử vectơ đơn vị $\vec s=\left(\dfrac1{\sqrt3};\dfrac1{\sqrt3};\dfrac1{\sqrt3}\right)$ hướng thẳng về phía Mặt Trời tại một thời điểm trong ngày và dòng năng lượng mặt trời là vectơ $\vec F=900\cdot\vec s$ ($\mathrm{W/m^2}$). Tính lượng công suất điện dự kiến $P$ mà tấm pin có thể tạo ra, biết công suất điện được tính bằng công thức $P=\vec F\cdot\vec n$ với $\vec n=\left[\overrightarrow{AB},\overrightarrow{AD}\right]$ (đơn vị W).
+\choice{\True $86400\sqrt3$ W}{$129600\sqrt3$ W}{$86400$ W}{$43200\sqrt3$ W}
+\loigiai{$\vec n=\left[\overrightarrow{AB},\overrightarrow{AD}\right]=(144;0;144)$, $\vec F=\dfrac{900}{\sqrt3}(1;1;1)$.
+
+$P=\dfrac{900}{\sqrt3}(144+0+144)=\dfrac{259200}{\sqrt3}=86400\sqrt3$ W.}
+\end{ex}

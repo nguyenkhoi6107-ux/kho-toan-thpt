@@ -1,0 +1,35 @@
+%% ma: L12-B14-0043
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.15
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 33"
+%% kien_thuc: "Bài 14 (độ dài tích có hướng), Bài 6 (góc giữa hai vectơ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.14.15 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc chỉ ghi tau = |[r; F]| và nhắc góc theta; đã ghi rõ công thức |r|.|F|.sin theta (đề gốc định nghĩa theta nhưng chưa nêu công thức)"
+\begin{ex}
+Một cậu bé bóp phanh xe đạp bằng cách tác dụng một lực hướng thẳng đứng xuống dưới có độ lớn $20$ lb lên bàn đạp khi đùi đĩa (crank) dài $6$ in đang tạo với phương ngang một góc $40^\circ$ (xem hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=.5]
+  \draw[fill=gray!15] (0,0) circle (3);
+  \foreach \a in {0,72,...,288} \draw[fill=white] (\a:1.8) circle (.55);
+  \draw[fill=white] (0,0) circle (.4);
+  \draw[line width=3pt,gray] (0,0)--(140:4.2);
+  \draw[fill=gray!40] ($(140:4.2)+(-.9,-.25)$) rectangle ++(1.8,.5);
+  \draw[->,thick,red] (140:4.2)--++(0,-3.2) node[midway,left]{$20$ lb};
+  \draw[phu] (-4.5,0)--(0,0);
+  \draw (-1,0) arc (180:140:1) node[midway,left]{$40^\circ$};
+  \path (140:2.6) node[above right]{$6$ in} (0,0) node[below right]{$P$};
+  \fill (0,0) circle (2pt);
+\end{tikzpicture}
+\end{center}
+Biết rằng độ lớn của moment lực $\tau$ tại tâm trục quay $P$ được tính bằng công thức $\tau=\left|\left[\vec r,\vec F\right]\right|=|\vec r|\cdot|\vec F|\cdot\sin\theta$, trong đó $\vec r$ là vectơ vị trí từ tâm quay đến điểm đặt lực, $\vec F$ là vectơ lực tác dụng, và $\theta$ là góc giữa hai vectơ $\vec r$ và $\vec F$. Tính độ lớn moment lực sinh ra tại điểm $P$ theo đơn vị là foot-pound (ft$\cdot$lb), biết rằng $1$ ft $=12$ in (làm tròn kết quả đến hàng phần trăm).
+\choice{\True $7{,}66$ ft$\cdot$lb}{$6{,}43$ ft$\cdot$lb}{$91{,}93$ ft$\cdot$lb}{$77{,}13$ ft$\cdot$lb}
+\loigiai{$|\vec r|=6$ in $=0{,}5$ ft, $\theta=90^\circ+40^\circ=130^\circ$.
+
+$\tau=0{,}5\cdot20\cdot\sin130^\circ\approx7{,}66$ ft$\cdot$lb.}
+\end{ex}

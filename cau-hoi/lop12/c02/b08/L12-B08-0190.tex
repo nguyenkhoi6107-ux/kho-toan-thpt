@@ -1,0 +1,31 @@
+%% ma: L12-B08-0190
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.3
+%% loai: TN4
+%% muc: NB
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 20"
+%% kien_thuc: "Bài 8 (khoảng cách hai điểm)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 20–21; đã chép vào từng câu"
+\begin{ex}
+Một phân tử methane ($\mathrm{CH_4}$) có một nguyên tử carbon nằm tại gốc tọa độ $O(0;0;0)$ và bốn nguyên tử hydrogen nằm tại các điểm $P(1;1;-1)$, $Q(1;-1;1)$, $R(-1;1;1)$ và $S(-1;-1;-1)$ (xem hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=1.2,x={(-.6cm,-.25cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \foreach \a/\b in {{(1,1,1)}/{(1,-1,1)},{(1,-1,1)}/{(-1,-1,1)},{(-1,-1,1)}/{(-1,1,1)},{(-1,1,1)}/{(1,1,1)},{(1,1,-1)}/{(1,-1,-1)},{(1,-1,-1)}/{(-1,-1,-1)},{(-1,-1,-1)}/{(-1,1,-1)},{(-1,1,-1)}/{(1,1,-1)},{(1,1,1)}/{(1,1,-1)},{(1,-1,1)}/{(1,-1,-1)},{(-1,-1,1)}/{(-1,-1,-1)},{(-1,1,1)}/{(-1,1,-1)}} \draw[phu] \a--\b;
+  \draw[truc] (0,0,0)--(2,0,0) node[left]{$x$};
+  \draw[truc] (0,0,0)--(0,1.8,0) node[below]{$y$};
+  \draw[truc] (0,0,0)--(0,0,1.6) node[left]{$z$};
+  \path (1,1,-1) coordinate (P) (1,-1,1) coordinate (Q) (-1,1,1) coordinate (R) (-1,-1,-1) coordinate (S) (0,0,0) coordinate (O);
+  \draw[teal] (P)--(Q)--(R)--cycle (S)--(P) (S)--(Q) (S)--(R);
+  \draw[orange,thick] (O)--(P) (O)--(Q) (O)--(R) (O)--(S);
+  \foreach \X in {P,Q,R,S,O} \fill (\X) circle (1.4pt);
+  \path (P) node[below right]{$P(1;1;-1)$} (Q) node[left]{$Q(1;-1;1)$} (R) node[above right]{$R(-1;1;1)$} (S) node[below left]{$S(-1;-1;-1)$} (O) node[below right]{$O$};
+\end{tikzpicture}
+\end{center}
+Khoảng cách giữa hai nguyên tử hydrogen đặt tại vị trí $P$ và $R$ là
+\choice{\True $2\sqrt2$}{$2$}{$\sqrt6$}{$4$}
+\loigiai{$\overrightarrow{PR}=(-2;0;2)$, $PR=2\sqrt2$.}
+\end{ex}

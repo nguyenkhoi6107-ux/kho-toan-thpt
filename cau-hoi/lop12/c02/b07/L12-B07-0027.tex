@@ -1,0 +1,33 @@
+%% ma: L12-B07-0027
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "CĐ2.2.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 2 Tọa độ của vectơ trong không gian), Câu 29"
+%% kien_thuc: "Bài 7 (tọa độ điểm khi gắn hệ trục), lớp 8 (định lí Pythagore)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.7.10 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Bổ sung câu chữ cách chọn trục theo hình gốc"
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình thoi tâm $O$ và $SA\perp(ABCD)$. Biết độ dài các cạnh $SB=5\sqrt5$, $AB=5$, $AC=8$. Thiết lập hệ tọa độ $Oxyz$ có gốc tọa độ trùng với điểm $O$, các tia $Ox$, $Oy$ lần lượt chứa $D$, $C$ và tia $Oz$ cùng hướng với $\overrightarrow{AS}$ (như hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=.5,x={(-.55cm,-.5cm)},y={(1cm,0cm)},z={(0cm,.55cm)}]
+  \path (0,0,0) coordinate (O) (0,-4,0) coordinate (A) (0,4,0) coordinate (C) (3,0,0) coordinate (D) (-3,0,0) coordinate (B) (0,-4,10) coordinate (S);
+  \draw (S)--(D)--(C)--(B)--cycle (S)--(C);
+  \draw[khuat] (S)--(A) (D)--(A)--(B) (A)--(C) (B)--(D);
+  \draw[truc,red] (D)--++(1.6,0,0) node[left]{$x$};
+  \draw[truc,red] (C)--++(0,2,0) node[right]{$y$};
+  \draw[truc,red] (O)--(0,0,13) node[right]{$z$};
+  \foreach \P in {O,A,B,C,D,S} \fill (\P) circle (3pt);
+  \path (S) node[above left]{$S$} (A) node[above left]{$A$} (B) node[right]{$B$} (C) node[below]{$C$} (D) node[below]{$D$} (O) node[below left]{$O$};
+\end{tikzpicture}
+\end{center}
+Biết rằng tọa độ các điểm $S$, $D$ là $S(x_S;y_S;z_S)$, $D(x_D;y_D;z_D)$. Tính giá trị $K=x_D^2+y_S^2+z_S^2$.
+\choice{$K=100$}{\True $K=125$}{$K=116$}{$K=25$}
+\loigiai{$OA=4$, $OD=\sqrt{25-16}=3$, $SA=\sqrt{125-25}=10$.
+
+$D(3;0;0)$, $S(0;-4;10)$ nên $K=9+16+100=125$.}
+\end{ex}

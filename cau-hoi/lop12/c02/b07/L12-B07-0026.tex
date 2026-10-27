@@ -1,0 +1,32 @@
+%% ma: L12-B07-0026
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.2.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 2 Tọa độ của vectơ trong không gian), Câu 28"
+%% kien_thuc: "Bài 7 (tọa độ điểm khi gắn hệ trục), Bài 6 (quy tắc hình hộp)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.7.10 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Bổ sung câu chữ cách chọn trục theo hình gốc; hình vẽ không theo tỉ lệ chiều cao"
+\begin{ex}
+Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=6$, $AD=8$ và $AA'=\sqrt7$. Thiết lập hệ tọa độ $Oxyz$ có gốc tọa độ trùng với điểm $A$, các tia $Ox$, $Oy$, $Oz$ lần lượt chứa các điểm $D$, $B$, $A'$ (như hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=.42,x={(-.6cm,-.55cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \path (0,0,0) coordinate (A) (0,6,0) coordinate (B) (8,6,0) coordinate (C) (8,0,0) coordinate (D);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,0,8.5) coordinate (\P');
+  \draw (D)--(C)--(B)--(B')--(A')--(D')--cycle (D')--(C')--(B') (C)--(C');
+  \draw[khuat] (D)--(A)--(B) (A)--(A');
+  \draw[truc,red] (D)--++(1.6,0,0) node[left]{$x$};
+  \draw[truc,red] (B)--++(0,2,0) node[right]{$y$};
+  \draw[truc,red] (A')--++(0,0,1.6) node[left]{$z$};
+  \path (A) node[above left]{$A$} (B) node[above right]{$B$} (C) node[below right]{$C$} (D) node[below]{$D$}
+        (A') node[above left]{$A'$} (B') node[right]{$B'$} (C') node[below right]{$C'$} (D') node[left]{$D'$};
+\end{tikzpicture}
+\end{center}
+Tọa độ của điểm $C'$ là
+\choice{\True $C'\left(8;6;\sqrt7\right)$}{$C'\left(6;8;\sqrt7\right)$}{$C'\left(8;\sqrt7;6\right)$}{$C'\left(6;\sqrt7;8\right)$}
+\loigiai{$D(8;0;0)$, $B(0;6;0)$, $A'\left(0;0;\sqrt7\right)$ nên $\overrightarrow{AC'}=\overrightarrow{AD}+\overrightarrow{AB}+\overrightarrow{AA'}$ cho $C'\left(8;6;\sqrt7\right)$.}
+\end{ex}

@@ -1,0 +1,35 @@
+%% ma: L12-B07-0034
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 29"
+%% kien_thuc: "Bài 7 (tọa độ điểm khi gắn hệ trục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.7.10 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 29–30; đã chép vào từng câu"
+\begin{ex}
+Trong không gian $Oxyz$ (mỗi đơn vị dài trên các trục tương ứng $1$ mét, mặt phẳng ngang là mặt đất $(Oxy)$), cho một tháp chơi dành cho trẻ em leo trèo và trượt. Tháp hai tầng, tầng 1 là hình lập phương cạnh $2$ m, tầng hai có hình hộp chữ nhật cao $1$ m (cùng đáy với tầng 1) và một mái hình chóp tứ giác đều cao $1$ m. Từ đỉnh $S$ của tháp, một sợi dây được cố định tại điểm $P(1;7;0)$ để hỗ trợ leo trèo. Một bề mặt trượt hình chữ nhật được gắn vào mép tháp tại độ cao $2$ m sao cho mặt trượt song song với dây hỗ trợ leo và chạm đất (xem hình vẽ). Hệ trục tọa độ được chọn sao cho gốc $O(0;0;0)$ trùng với một góc của đáy tháp và đáy tháp nằm trong góc phần tư thứ nhất của mặt phẳng $(Oxy)$.
+\begin{center}
+\begin{tikzpicture}[scale=.85,x={(-.5cm,-.42cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \draw[truc] (0,0,0)--(4,0,0) node[left]{$x$};
+  \draw[truc] (0,2,0)--(0,8.5,0) node[right]{$y$};
+  \draw[truc] (0,0,4)--(0,0,5.5) node[left]{$z$};
+  \path (2,0,0) coordinate (A) (2,2,0) coordinate (B) (2,5,0) coordinate (C) (2,0,2) coordinate (E) (2,2,2) coordinate (F) (2,0,3) coordinate (H) (2,2,3) coordinate (G)
+        (0,2,2) coordinate (F0) (0,5,0) coordinate (C0) (1,1,4) coordinate (S) (1,7,0) coordinate (P);
+  \fill[gray!45] (F0)--(F)--(C)--(C0)--cycle; \draw (F0)--(F)--(C)--(C0);
+  \draw (A)--(B)--(0,2,0) (A)--(H)--(G)--(B) (E)--(F) (G)--(0,2,3)--(0,2,0) (H)--(0,0,3)--(0,2,3) (S)--(H) (S)--(G) (S)--(0,2,3);
+  \draw[khuat] (0,0,0)--(A) (0,0,0)--(0,2,0) (0,0,0)--(0,0,3) (S)--(0,0,3);
+  \draw[red] (S)--(P); \fill (P) circle (2pt) node[right]{$P$};
+  \draw[<->] (2,-.6,2)--(2,-.6,3) node[midway,left]{$1$ m};
+  \path (S) node[above]{$S$} (A) node[below]{$A$} (B) node[below]{$B$} (C) node[below]{$C$} (E) node[below right]{$E$} (F) node[below right]{$F$} (H) node[above right]{$H$} (G) node[above right]{$G$} (0,0,0) node[above left]{$O$}
+        ($(A)!.5!(B)$) node[below]{$2$m};
+\end{tikzpicture}
+\end{center}
+Tọa độ của điểm $S$ là
+\choice{\True $S(1;1;4)$}{$S(1;1;3)$}{$S(2;2;4)$}{$S(0;0;4)$}
+\loigiai{Đáy tháp là hình vuông $[0;2]\times[0;2]$, tâm $(1;1)$; độ cao đỉnh $2+1+1=4$. Vậy $S(1;1;4)$.}
+\end{ex}

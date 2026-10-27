@@ -1,0 +1,25 @@
+%% ma: L12-B06-0081
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.13
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 8"
+%% kien_thuc: "Bài 6 (tổng hai vectơ, bình phương vô hướng)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một thiết bị thăm dò lặn xuống đáy biển với vận tốc tự thân có độ lớn $7$ m/s. Vùng biển có dòng hải lưu chảy với tốc độ $3{,}5$ m/s. Biết góc giữa hướng lặn của thiết bị và hướng dòng hải lưu là $60^\circ$ (hình minh họa). Tính tốc độ di chuyển thực tế của thiết bị (làm tròn kết quả đến hàng phần trăm).
+\begin{center}
+\begin{tikzpicture}[scale=.45]
+  \draw[->,thick] (0,0)--(7,0) node[midway,below]{$\vec u$ ($7$ m/s)};
+  \draw[->,thick,blue] (0,0)--(1.75,3.03) node[left]{$\vec w$ ($3{,}5$ m/s)};
+  \draw[phu] (7,0)--(8.75,3.03)--(1.75,3.03);
+  \draw[->,thick,red] (0,0)--(8.75,3.03) node[right]{$\vec v_{\text{thực}}$};
+  \draw (1,0) arc (0:60:1) node[midway,right]{$60^\circ$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $9{,}26$ m/s}{$8{,}50$ m/s}{$10{,}12$ m/s}{$9{,}08$ m/s}
+\loigiai{$\vec v=\vec u+\vec w$, $|\vec v|^2=7^2+3{,}5^2+2\cdot7\cdot3{,}5\cos60^\circ=85{,}75\Rightarrow|\vec v|\approx9{,}26$ m/s.}
+\end{ex}

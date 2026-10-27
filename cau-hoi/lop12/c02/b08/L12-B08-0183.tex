@@ -1,0 +1,34 @@
+%% ma: L12-B08-0183
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.5
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 6"
+%% kien_thuc: "Bài 7 (tọa độ điểm theo khoảng cách đến mặt phẳng tọa độ), Bài 8 (ba điểm thẳng hàng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc ghi 'chim bói cá ở góc phần tư thứ nhất'; đã diễn đạt lại thành hoành độ, tung độ dương theo hình"
+\begin{ex}
+Với hệ trục tọa độ $Oxyz$ sao cho $O$ nằm trên mặt nước, mặt phẳng $(Oxy)$ là mặt nước, trục $Oz$ hướng lên trên (đơn vị dài là mét). Một con chim bói cá đang ở vị trí $A$ cách mặt nước $2$ m, cách mặt phẳng $(Oxz)$, $(Oyz)$ lần lượt là $3$ m và $1$ m, phóng thẳng xuống vị trí $F$ của con cá. Biết con cá cách mặt nước $50$ cm, cách mặt phẳng $(Oxz)$, $(Oyz)$ lần lượt là $1$ m và $1{,}5$ m. Giả sử con chim bói cá và con cá đều có hoành độ, tung độ dương (như hình vẽ). Tìm tọa độ điểm $B$ lúc chim bói cá vừa tiếp xúc với mặt nước.
+\begin{center}
+\begin{tikzpicture}[scale=1.5,x={(-.5cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \fill[blue!10] (2.2,-.6,0)--(2.2,3.8,0)--(-.8,3.8,0)--(-.8,-.6,0)--cycle;
+  \draw[truc] (0,0,0)--(2.4,0,0) node[below left]{$x$};
+  \draw[truc] (0,0,0)--(0,4.2,0) node[right]{$y$};
+  \draw[truc] (0,0,-.8)--(0,0,2.6) node[left]{$z$};
+  \path (1,3,2) coordinate (A) (1.5,1,-.5) coordinate (F) (1.4,1.4,0) coordinate (B);
+  \draw[phu] (0,0,2)--(0,3,2)--(A) (1,3,0)--(A) (0,3,0)--(1,3,0)--(1,0,0);
+  \draw[phu] (1.5,0,0)--(1.5,1,0)--(0,1,0) (1.5,1,0)--(F);
+  \draw[thick,red] (A)--(B); \draw[thick,red,dashed] (B)--(F);
+  \foreach \P in {A,B,F} \fill (\P) circle (1.3pt);
+  \path (A) node[above right]{$A$} (B) node[left]{$B$} (F) node[below]{$F$} (0,0,0) node[above left]{$O$}
+        (0,0,2) node[left]{$2$} (1.5,0,0) node[left]{$1{,}5$} (0,1,0) node[above]{$1$} (0,3,0) node[above]{$3$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $B(1{,}4;1{,}4;0)$}{$B(1{,}5;1;0)$}{$B(1{,}2;1{,}6;0)$}{$B(1;3;0)$}
+\loigiai{$A(1;3;2)$, $F(1{,}5;1;-0{,}5)$, $\overrightarrow{AF}=(0{,}5;-2;-2{,}5)$.
+
+$B=A+t\overrightarrow{AF}$ có cao độ $2-2{,}5t=0\Rightarrow t=0{,}8$, $B(1{,}4;1{,}4;0)$.}
+\end{ex}

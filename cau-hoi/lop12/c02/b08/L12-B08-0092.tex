@@ -1,0 +1,30 @@
+%% ma: L12-B08-0092
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.12
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "CĐ2.2.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 2 Tọa độ của vectơ trong không gian), Câu 26"
+%% kien_thuc: "Bài 8 (tọa độ vectơ, hai vectơ bằng nhau), Bài 6 (vectơ bằng nhau trong hình hộp)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Trong không gian $Oxyz$, cho hình hộp $ABCD.EFGH$ (như hình vẽ) có tọa độ các đỉnh $A(1;7;1)$, $F(1;0;3)$, $G(2;9;1)$ và $C(-1;5;4)$.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \path (0,0) coordinate (D) (2.6,0) coordinate (C) (3.8,1.4) coordinate (B) (1.2,1.4) coordinate (A);
+  \path (-.4,2.1) coordinate (H) (2.2,2.1) coordinate (G) (3.4,3.5) coordinate (F) (.8,3.5) coordinate (E);
+  \draw (D)--(C)--(B)--(F)--(E)--(H)--cycle (H)--(G)--(F) (G)--(C);
+  \draw[khuat] (D)--(A)--(B) (A)--(E);
+  \foreach \P in {A,B,C,D,E,F,G,H} \fill (\P) circle (1pt);
+  \path (A) node[below right]{$A$} (B) node[right]{$B$} (C) node[below right]{$C$} (D) node[below left]{$D$}
+        (E) node[above]{$E$} (F) node[above right]{$F$} (G) node[below left]{$G$} (H) node[above left]{$H$};
+\end{tikzpicture}
+\end{center}
+Tọa độ của điểm $H$ là
+\choice{$H(5;20;-6)$}{\True $H(5;20;-4)$}{$H(20;-4;5)$}{$H(5;4;20)$}
+\loigiai{$\overrightarrow{AE}=\overrightarrow{CG}=(3;4;-3)\Rightarrow E(4;11;-2)$.
+
+$\overrightarrow{EH}=\overrightarrow{FG}=(1;9;-2)\Rightarrow H(5;20;-4)$.}
+\end{ex}

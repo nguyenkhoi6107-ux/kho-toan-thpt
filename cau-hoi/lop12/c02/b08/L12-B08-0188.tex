@@ -1,0 +1,31 @@
+%% ma: L12-B08-0188
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.4
+%% loai: TN4
+%% muc: VD
+%% dap_an: "C"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 16"
+%% kien_thuc: "Bài 8 (tọa độ vectơ, khoảng cách), chuyển động thẳng đều, lớp 10 (giá trị nhỏ nhất của tam thức bậc hai)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc nhắc 'như hình vẽ dưới đây' nhưng không có hình; đã vẽ hình minh họa hệ trục và hai điểm A, B"
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$ với mặt đất là mặt phẳng $(Oxy)$, đơn vị dài trên mỗi trục là ki-lô-mét. Trục $Ox$ hướng về Nam, trục $Oy$ hướng về Đông và trục $Oz$ hướng lên trên như hình vẽ dưới đây. Tại thời điểm ban đầu, người ta quan sát thấy hai khinh khí cầu có tọa độ lần lượt là $A(3;4;5)$ và $B(-2;-3;4)$.
+\begin{center}
+\begin{tikzpicture}[scale=.4,x={(-.5cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \draw[truc] (-3,0,0)--(5,0,0) node[below left]{$x$ (Nam)};
+  \draw[truc] (0,-4,0)--(0,6,0) node[right]{$y$ (Đông)};
+  \draw[truc] (0,0,0)--(0,0,7) node[left]{$z$};
+  \path (3,4,5) coordinate (A) (-2,-3,4) coordinate (B);
+  \draw[phu] (3,0,0)--(3,4,0)--(0,4,0) (3,4,0)--(A) (-2,0,0)--(-2,-3,0)--(0,-3,0) (-2,-3,0)--(B);
+  \fill (A) circle (4pt) node[right]{$A$} (B) circle (4pt) node[left]{$B$};
+  \path (0,0,0) node[below right]{$O$};
+\end{tikzpicture}
+\end{center}
+Khinh khí cầu thứ nhất bay thẳng về phía Tây với tốc độ không đổi $40$ km/h và luôn giữ nguyên độ cao. Khinh khí cầu thứ hai bay thẳng về phía Nam với tốc độ không đổi là $25$ km/h nhưng đồng thời hạ độ cao sao cho đường bay của nó hợp với mặt đất một góc $30^\circ$. Xác định khoảng cách nhỏ nhất giữa hai khinh khí cầu theo đơn vị ki-lô-mét (làm tròn kết quả đến hàng phần chục).
+\choice{$5{,}5$ km}{$6{,}1$ km}{\True $3{,}4$ km}{$3{,}2$ km}
+\loigiai{Sau $t$ giờ: $A_t(3;4-40t;5)$, $B_t\left(-2+\dfrac{25\sqrt3}2t;-3;4-12{,}5t\right)$ (khinh khí cầu thứ hai chạm đất khi $t=0{,}32$).
+
+$d^2(t)=\left(5-\dfrac{25\sqrt3}2t\right)^2+(7-40t)^2+(1+12{,}5t)^2$ nhỏ nhất tại $t\approx0{,}169\in[0;0{,}32]$, $d_{\min}\approx3{,}4$ km.}
+\end{ex}

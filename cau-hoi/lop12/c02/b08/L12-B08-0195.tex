@@ -1,0 +1,28 @@
+%% ma: L12-B08-0195
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 31"
+%% kien_thuc: "Bài 7 (tọa độ điểm), Bài 8 (tọa độ vectơ, hai vectơ bằng nhau)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Hình minh họa dưới đây là sơ đồ một ngôi nhà trong hệ trục tọa độ $Oxyz$, trong đó nền nhà, bốn bức tường và hai mái nhà đều là hình chữ nhật. Gốc tọa độ $O(0;0;0)$ đặt tại một góc nền nhà. Biết tọa độ điểm $A(4;0;0)$, điểm $P(2;0;4)$ và điểm $C(0;5;0)$. Biết rằng mái nhà có đỉnh là đoạn thẳng $PQ$ song song với trục $Oy$.
+\begin{center}
+\begin{tikzpicture}[scale=.75,x={(1.3cm,0cm)},y={(.55cm,.45cm)},z={(0cm,1cm)}]
+  \path (0,0,0) coordinate (O) (4,0,0) coordinate (A) (4,5,0) coordinate (B) (0,5,0) coordinate (C) (0,0,3) coordinate (E) (4,0,3) coordinate (F) (4,5,3) coordinate (G) (0,5,3) coordinate (H) (2,0,4) coordinate (P) (2,5,4) coordinate (Q);
+  \fill[blue!8] (O)--(A)--(F)--(E)--cycle; \fill[blue!8] (A)--(B)--(G)--(F)--cycle; \fill[orange!15] (E)--(P)--(Q)--(H)--cycle; \fill[orange!15] (P)--(F)--(G)--(Q)--cycle;
+  \draw (O)--(A)--(B)--(G)--(F)--(E)--cycle (A)--(F) (E)--(P)--(F) (P)--(Q)--(G) (Q)--(H);
+  \draw[khuat] (O)--(C)--(B) (C)--(H)--(G) (E)--(H);
+  \draw[truc] (A)--(5,0,0) node[right]{$x$}; \draw[truc] (E)--(0,0,5) node[left]{$z$}; \draw[truc] (C)--(0,6.5,0) node[above]{$y$};
+  \foreach \X in {O,A,B,C,E,F,G,H,P,Q} \fill (\X) circle (1.2pt);
+  \path (O) node[below]{$O(0;0;0)$} (A) node[below]{$A$} (B) node[right]{$B$} (C) node[above left]{$C$} (E) node[left]{$E(0;0;3)$} (F) node[below right]{$F$} (G) node[right]{$G(4;5;3)$} (H) node[above left]{$H$} (P) node[above left]{$P(2;0;4)$} (Q) node[above]{$Q$};
+\end{tikzpicture}
+\end{center}
+Tọa độ của điểm $Q$ là
+\choice{\True $Q(2;5;4)$}{$Q(4;5;4)$}{$Q(2;0;5)$}{$Q(4;0;5)$}
+\loigiai{$PQ\parallel Oy$ và $PQ=OC=5$ (mái là hình chữ nhật) nên $\overrightarrow{PQ}=(0;5;0)$, $Q(2;5;4)$.}
+\end{ex}

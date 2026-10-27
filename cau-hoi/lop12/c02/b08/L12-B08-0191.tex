@@ -1,0 +1,31 @@
+%% ma: L12-B08-0191
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.23
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 21"
+%% kien_thuc: "Bài 8 (góc giữa hai vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 20–21; đã chép vào từng câu"
+\begin{ex}
+Một phân tử methane ($\mathrm{CH_4}$) có một nguyên tử carbon nằm tại gốc tọa độ $O(0;0;0)$ và bốn nguyên tử hydrogen nằm tại các điểm $P(1;1;-1)$, $Q(1;-1;1)$, $R(-1;1;1)$ và $S(-1;-1;-1)$ (xem hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=1.2,x={(-.6cm,-.25cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \foreach \a/\b in {{(1,1,1)}/{(1,-1,1)},{(1,-1,1)}/{(-1,-1,1)},{(-1,-1,1)}/{(-1,1,1)},{(-1,1,1)}/{(1,1,1)},{(1,1,-1)}/{(1,-1,-1)},{(1,-1,-1)}/{(-1,-1,-1)},{(-1,-1,-1)}/{(-1,1,-1)},{(-1,1,-1)}/{(1,1,-1)},{(1,1,1)}/{(1,1,-1)},{(1,-1,1)}/{(1,-1,-1)},{(-1,-1,1)}/{(-1,-1,-1)},{(-1,1,1)}/{(-1,1,-1)}} \draw[phu] \a--\b;
+  \draw[truc] (0,0,0)--(2,0,0) node[left]{$x$};
+  \draw[truc] (0,0,0)--(0,1.8,0) node[below]{$y$};
+  \draw[truc] (0,0,0)--(0,0,1.6) node[left]{$z$};
+  \path (1,1,-1) coordinate (P) (1,-1,1) coordinate (Q) (-1,1,1) coordinate (R) (-1,-1,-1) coordinate (S) (0,0,0) coordinate (O);
+  \draw[teal] (P)--(Q)--(R)--cycle (S)--(P) (S)--(Q) (S)--(R);
+  \draw[orange,thick] (O)--(P) (O)--(Q) (O)--(R) (O)--(S);
+  \foreach \X in {P,Q,R,S,O} \fill (\X) circle (1.4pt);
+  \path (P) node[below right]{$P(1;1;-1)$} (Q) node[left]{$Q(1;-1;1)$} (R) node[above right]{$R(-1;1;1)$} (S) node[below left]{$S(-1;-1;-1)$} (O) node[below right]{$O$};
+\end{tikzpicture}
+\end{center}
+Tính góc giữa hai vectơ $\overrightarrow{OS}$ và $\overrightarrow{OR}$ liên kết nguyên tử carbon với hai nguyên tử hydrogen tại $S$ và $R$ (còn gọi là góc liên kết) (làm tròn kết quả đến hàng phần trăm).
+\choice{\True $109{,}47^\circ$}{$120{,}00^\circ$}{$104{,}50^\circ$}{$90{,}00^\circ$}
+\loigiai{$\cos\left(\overrightarrow{OS},\overrightarrow{OR}\right)=\dfrac{1-1-1}{\sqrt3\cdot\sqrt3}=-\dfrac13\Rightarrow$ góc $\approx109{,}47^\circ$.}
+\end{ex}

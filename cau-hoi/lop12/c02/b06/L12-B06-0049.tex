@@ -1,0 +1,29 @@
+%% ma: L12-B06-0049
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "CĐ2.1.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 1 Vectơ trong không gian), Câu 9"
+%% kien_thuc: "Bài 6 (vectơ bằng nhau, quy tắc ba điểm, quy tắc hình hộp)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc dùng chung hình cho Câu 8–10; đã chép giả thiết và hình vào từng câu"
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ như hình vẽ sau.
+\begin{center}
+\begin{tikzpicture}[scale=2.2,x={(1cm,0cm)},y={(.55cm,.38cm)},z={(0cm,1cm)}]
+  \path (0,0,0) coordinate (P1) (1,0,0) coordinate (P2) (1,1,0) coordinate (P3) (0,1,0) coordinate (P4)
+        (0,0,1) coordinate (Q1) (1,0,1) coordinate (Q2) (1,1,1) coordinate (Q3) (0,1,1) coordinate (Q4);
+  \draw (P1)--(P2)--(P3)--(Q3)--(Q4)--(Q1)--cycle (Q1)--(Q2)--(Q3) (P2)--(Q2);
+  \draw[khuat] (P1)--(P4)--(P3) (P4)--(Q4);
+  
+  \path (P1) node[below left]{$B$} (P2) node[below right]{$C$} (P3) node[right]{$D$} (P4) node[left]{$A$}
+        (Q1) node[left]{$B'$} (Q2) node[below left]{$C'$} (Q3) node[above right]{$D'$} (Q4) node[above left]{$A'$};
+\end{tikzpicture}
+\end{center}
+Mệnh đề nào dưới đây đúng?
+\choice{$\overrightarrow{C'A'}=\overrightarrow{AC}$}{$\overrightarrow{AB}=\overrightarrow{CD}$}{\True $\overrightarrow{AB}+\overrightarrow{C'D'}=\vec 0$}{$\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AD}=\overrightarrow{AA'}$}
+\loigiai{$\overrightarrow{C'D'}=\overrightarrow{CD}=-\overrightarrow{AB}$ nên $\overrightarrow{AB}+\overrightarrow{C'D'}=\vec 0$. Còn $\overrightarrow{C'A'}=\overrightarrow{CA}=-\overrightarrow{AC}$, $\overrightarrow{AB}=\overrightarrow{DC}=-\overrightarrow{CD}$, $\overrightarrow{AB}+\overrightarrow{AC}+\overrightarrow{AD}=2\overrightarrow{AC}$.}
+\end{ex}

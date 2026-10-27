@@ -1,0 +1,30 @@
+%% ma: L12-B06-0067
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.13
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "CĐ2.1.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 1 Vectơ trong không gian), Câu 27"
+%% kien_thuc: "Bài 6 (quy tắc hình hộp, bình phương vô hướng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình gốc vẽ đáy như hình chữ nhật; đã vẽ lại đáy hình bình hành góc DAB = 120 độ (tỉ lệ thu nhỏ)"
+\begin{ex}
+Cho hình hộp đứng $ABCD.A'B'C'D'$, trong đó mặt đáy là hình bình hành với $\widehat{DAB}=120^\circ$. Biết độ dài các cạnh $AB=25$, $AD=12$ và $AA'=12$ (minh họa như hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=.12]
+  \path (0,0) coordinate (D) (25,0) coordinate (C) (11.2,4.2) coordinate (A) (36.2,4.2) coordinate (B);
+  \foreach \P in {A,B,C,D} \path (\P)+(0,12) coordinate (\P');
+  \draw (D)--(C)--(B)--(B')--(A')--(D')--cycle (D')--(C')--(B') (C)--(C');
+  \draw[khuat] (D)--(A)--(B) (A)--(A') (A)--(C');
+  \path (A) node[below right]{$A$} (B) node[right]{$B$} (C) node[below]{$C$} (D) node[below left]{$D$}
+        (A') node[above]{$A'$} (B') node[above right]{$B'$} (C') node[below right]{$C'$} (D') node[left]{$D'$};
+\end{tikzpicture}
+\end{center}
+Tính $\left|\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}\right|$.
+\choice{$12$}{$\sqrt{469}$}{\True $\sqrt{613}$}{$25$}
+\loigiai{$\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}=\overrightarrow{AC'}$; $\overrightarrow{AB}\cdot\overrightarrow{AD}=25\cdot12\cdot\cos120^\circ=-150$, $\overrightarrow{AA'}$ vuông góc với $\overrightarrow{AB}$, $\overrightarrow{AD}$.
+
+$AC'^2=25^2+12^2+12^2+2\cdot(-150)=613\Rightarrow\left|\overrightarrow{AC'}\right|=\sqrt{613}$.}
+\end{ex}

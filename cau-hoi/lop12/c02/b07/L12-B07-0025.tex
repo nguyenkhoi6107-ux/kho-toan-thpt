@@ -1,0 +1,37 @@
+%% ma: L12-B07-0025
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.10
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "CĐ2.2.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 2 Tọa độ của vectơ trong không gian), Câu 27"
+%% kien_thuc: "Bài 7 (tọa độ điểm khi gắn hệ trục), Bài 8 (tọa độ vectơ, trung điểm)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.7.10 đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Hình gốc vẽ các trục Ox, Oy dời song song tại C, B; đề bổ sung câu chữ 'các tia Ox, Oy, Oz lần lượt chứa C, B, A'' cho đúng với hình"
+\begin{ex}
+Cho hình lăng trụ đứng $ABC.A'B'C'$ có đáy là tam giác vuông tại $A$, $AB=2\sqrt3$, $AC=3$, $AA'=5$. Gọi $I$, $M$ lần lượt là trung điểm của $AB$, $B'C'$. Thiết lập hệ tọa độ $Oxyz$ có gốc tọa độ trùng với điểm $A$, các tia $Ox$, $Oy$, $Oz$ lần lượt chứa các điểm $C$, $B$, $A'$ (như hình vẽ).
+\begin{center}
+\begin{tikzpicture}[scale=.75,x={(.8cm,.45cm)},y={(-.75cm,.45cm)},z={(0cm,.8cm)}]
+  \path (0,0,0) coordinate (A) (3,0,0) coordinate (C) (0,3.464,0) coordinate (B);
+  \foreach \P in {A,B,C} \path (\P)+(0,0,5) coordinate (\P');
+  \path ($(B)!.5!(A)$) coordinate (I) ($(B')!.5!(C')$) coordinate (M);
+  \draw (B)--(A)--(C)--(C')--(B')--(B) (A)--(A') (A')--(B') (A')--(C') (A')--(M);
+  \draw[khuat] (B)--(C);
+  \draw[truc,red] (A')--++(0,0,1.4) node[left]{$z$};
+  \draw[truc,red] (B)--++(0,1,0) node[left]{$y$};
+  \draw[truc,red] (C)--++(1,0,0) node[right]{$x$};
+  \draw (A)++(.35,0,0)--++(0,.35,0)--++(-.35,0,0);
+  \foreach \P in {A,B,C,A',B',C',I,M} \fill (\P) circle (1.2pt);
+  \path (A) node[below]{$A$} (B) node[left]{$B$} (C) node[right]{$C$} (A') node[below right]{$A'$}
+        (B') node[above left]{$B'$} (C') node[above right]{$C'$} (I) node[below left]{$I$} (M) node[above]{$M$};
+\end{tikzpicture}
+\end{center}
+Tọa độ của vectơ $\overrightarrow{IM}$ là
+\choice{$\overrightarrow{IM}=\left(0;\dfrac32;5\right)$}{$\overrightarrow{IM}=\left(\dfrac32;5;0\right)$}{\True $\overrightarrow{IM}=\left(\dfrac32;0;5\right)$}{$\overrightarrow{IM}=\left(-\dfrac32;0;5\right)$}
+\loigiai{$I\left(0;\sqrt3;0\right)$, $B'\left(0;2\sqrt3;5\right)$, $C'(3;0;5)\Rightarrow M\left(\dfrac32;\sqrt3;5\right)$.
+
+$\overrightarrow{IM}=\left(\dfrac32;0;5\right)$.}
+\end{ex}

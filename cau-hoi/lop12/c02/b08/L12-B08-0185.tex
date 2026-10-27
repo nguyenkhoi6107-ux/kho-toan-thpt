@@ -1,0 +1,34 @@
+%% ma: L12-B08-0185
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.27
+%% loai: TN4
+%% muc: TH
+%% dap_an: "B"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 13"
+%% kien_thuc: "Bài 7 (tọa độ theo các hướng), Bài 8 (trọng tâm tam giác, khoảng cách)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 13–14; đã chép vào từng câu"
+\begin{ex}
+Ba chiếc flycam I, II, III được điều khiển cùng bay lên tại một địa điểm. Sau một thời gian bay, chiếc flycam thứ nhất (I) cách mặt đất $3$ m, cách điểm xuất phát $3$ m về phía Nam và $2$ m về phía Đông. Chiếc flycam thứ hai (II) cách mặt đất $6$ m, cách điểm xuất phát $9$ m về phía Nam và $9$ m về phía Đông. Chiếc flycam thứ ba (III) cách mặt đất $6$ m, cách điểm xuất phát $6$ m về phía Bắc và $4$ m về phía Tây. Quy ước hệ trục tọa độ $Oxyz$ với gốc tọa độ $O$ trùng với điểm xuất phát của ba chiếc flycam, mặt đất là tập hợp các điểm có cao độ bằng $0$, hai tia $Ox$, $Oy$ lần lượt hướng về phía Nam và phía Đông, đơn vị dài trên mỗi trục là mét (hình minh họa).
+\begin{center}
+\begin{tikzpicture}[scale=.3,x={(-.4cm,-.5cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \fill[green!10] (12,-8,0)--(12,12,0)--(-8,12,0)--(-8,-8,0)--cycle;
+  \draw[truc] (0,0,0)--(13,0,0) node[below left]{$x$ (Nam)};
+  \draw[truc] (0,-8,0)--(0,13,0) node[right]{$y$ (Đông)};
+  \draw[truc] (0,0,0)--(0,0,9) node[right]{$z$};
+  \path (3,2,3) coordinate (I) (9,9,6) coordinate (II) (-6,-4,6) coordinate (III);
+  \draw[phu] (3,0,0)--(3,2,0)--(0,2,0) (3,2,0)--(I);
+  \draw[phu] (9,0,0)--(9,9,0)--(0,9,0) (9,9,0)--(II);
+  \draw[phu] (-6,0,0)--(-6,-4,0)--(0,-4,0) (-6,-4,0)--(III);
+  \foreach \P in {I,II,III} \fill (\P) circle (6pt);
+  \path (I) node[right]{I} (II) node[right]{II} (III) node[left]{III} (0,0,0) node[below right]{$O$};
+\end{tikzpicture}
+\end{center}
+Gọi $G$ là trọng tâm của tam giác tạo bởi vị trí của ba chiếc flycam I, II và III. Khoảng cách từ điểm xuất phát $O$ đến trọng tâm $G$ gần nhất với giá trị nào sau đây?
+\choice{$5{,}74$ m}{\True $5{,}87$ m}{$6{,}16$ m}{$9{,}38$ m}
+\loigiai{I$(3;2;3)$, II$(9;9;6)$, III$(-6;-4;6)$, $G\left(2;\dfrac73;5\right)$.
+
+$OG=\sqrt{4+\dfrac{49}9+25}\approx5{,}87$ m.}
+\end{ex}

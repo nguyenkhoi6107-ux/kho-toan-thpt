@@ -1,0 +1,31 @@
+%% ma: L12-B14-0045
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.3
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 35"
+%% kien_thuc: "Bài 14 (tích có hướng), Bài 8 (tọa độ vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc dùng chung giả thiết và hình cho Câu 35–36; đã chép vào từng câu"
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$ (đơn vị dài trên các trục là mét), một tấm pin năng lượng mặt trời được lắp trên mái của một ngôi nhà. Tấm pin có thể được xem như một mặt phẳng hình chữ nhật với tọa độ các đỉnh là $A(8;0;0)$, $B(8;18;0)$, $C(0;18;8)$ và $D(0;0;8)$ (xem hình minh họa).
+\begin{center}
+\begin{tikzpicture}[scale=.2,x={(-.5cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \path (8,0,0) coordinate (A) (8,18,0) coordinate (B) (0,18,8) coordinate (C) (0,0,8) coordinate (D) (0,18,0) coordinate (E);
+  \fill[gray!15] (B)--(C)--(E)--cycle; \draw[gray] (B)--(C)--(E)--cycle;
+  \fill[blue!50] (A)--(B)--(C)--(D)--cycle;
+  \foreach \t in {.2,.4,.6,.8} {\draw[white] ($(A)!\t!(B)$)--($(D)!\t!(C)$); \draw[white] ($(A)!\t!(D)$)--($(B)!\t!(C)$);}
+  \draw (A)--(B)--(C)--(D)--cycle;
+  \draw[truc] (0,0,0)--(11,0,0) node[left]{$x$}; \draw[truc] (0,0,0)--(0,23,0) node[right]{$y$}; \draw[truc] (D)--(0,0,12) node[left]{$z$};
+  \draw[khuat] (0,0,0)--(D);
+  \foreach \X in {A,B,C,D} \fill[orange] (\X) circle (8pt);
+  \path (A) node[left]{$A$} (B) node[below right]{$B$} (C) node[above right]{$C$} (D) node[above left]{$D$} (0,0,0) node[above left]{$O$};
+\end{tikzpicture}
+\end{center}
+Tọa độ của vectơ $\vec n=\left[\overrightarrow{AB},\overrightarrow{AD}\right]$ là
+\choice{\True $\vec n=(144;0;144)$}{$\vec n=(144;144;0)$}{$\vec n=(0;144;144)$}{$\vec n=(-144;0;144)$}
+\loigiai{$\overrightarrow{AB}=(0;18;0)$, $\overrightarrow{AD}=(-8;0;8)$, $\vec n=(18\cdot8-0;0\cdot(-8)-0\cdot8;0-18\cdot(-8))=(144;0;144)$.}
+\end{ex}

@@ -1,0 +1,30 @@
+%% ma: L12-B06-0063
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.16
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "CĐ2.1.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 1 Vectơ trong không gian), Câu 23"
+%% kien_thuc: "Bài 6 (góc giữa hai vectơ trong không gian)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ như hình vẽ.
+\begin{center}
+\begin{tikzpicture}[scale=2.2,x={(1cm,0cm)},y={(.55cm,.38cm)},z={(0cm,1cm)}]
+  \path (0,0,0) coordinate (P1) (1,0,0) coordinate (P2) (1,1,0) coordinate (P3) (0,1,0) coordinate (P4)
+        (0,0,1) coordinate (Q1) (1,0,1) coordinate (Q2) (1,1,1) coordinate (Q3) (0,1,1) coordinate (Q4);
+  \draw (P1)--(P2)--(P3)--(Q3)--(Q4)--(Q1)--cycle (Q1)--(Q2)--(Q3) (P2)--(Q2);
+  \draw[khuat] (P1)--(P4)--(P3) (P4)--(Q4);
+  
+  \path (P1) node[below left]{$D$} (P2) node[below right]{$C$} (P3) node[right]{$B$} (P4) node[left]{$A$}
+        (Q1) node[left]{$D'$} (Q2) node[below left]{$C'$} (Q3) node[above right]{$B'$} (Q4) node[above left]{$A'$};
+\end{tikzpicture}
+\end{center}
+Khẳng định nào sau đây là sai?
+\choice{$\left(\overrightarrow{AB},\overrightarrow{A'D'}\right)=90^\circ$}{$\left(\overrightarrow{AB},\overrightarrow{A'C'}\right)=45^\circ$}{$\left(\overrightarrow{AC},\overrightarrow{B'D'}\right)=90^\circ$}{\True $\left(\overrightarrow{A'A},\overrightarrow{CB'}\right)=45^\circ$}
+\loigiai{$\overrightarrow{A'D'}=\overrightarrow{AD}\perp\overrightarrow{AB}$; $\overrightarrow{A'C'}=\overrightarrow{AC}$ tạo với $\overrightarrow{AB}$ góc $45^\circ$; $\overrightarrow{B'D'}=\overrightarrow{BD}\perp\overrightarrow{AC}$.
+
+$\overrightarrow{CB'}=\overrightarrow{DA'}$, góc giữa $\overrightarrow{A'A}$ và $\overrightarrow{DA'}$ là $180^\circ-\widehat{AA'D}=135^\circ$ nên D sai.}
+\end{ex}

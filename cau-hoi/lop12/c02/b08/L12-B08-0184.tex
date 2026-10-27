@@ -1,0 +1,33 @@
+%% ma: L12-B08-0184
+%% lop: 12
+%% chuong: 2
+%% bai: 8
+%% dang: 12.8.4
+%% loai: TN4
+%% muc: VD
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 7"
+%% kien_thuc: "Bài 8 (tọa độ vectơ, độ dài), chuyển động thẳng đều (vectơ vận tốc)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình gốc có thêm điểm D', E' và góc 45 độ không dùng trong đề; đã vẽ lại sơ đồ đường bay (không theo tỉ lệ)"
+\begin{ex}
+Trong không gian $Oxyz$ (đơn vị dài trên mỗi trục tọa độ là ki-lô-mét), mặt đất là mặt phẳng $(Oxy)$. Lúc đó, một chiếc máy bay bắt đầu di chuyển từ điểm $A(700;850;100)$ với vận tốc không đổi $150$ km/h theo hướng về điểm $B(800;900;200)$. Khi tới điểm $B$, máy bay thay đổi hướng bay theo hướng về điểm $C(1100;1400;300)$ với vận tốc giữ nguyên là $150$ km/h. Máy bay di chuyển theo hướng mới trong $30\sqrt{35}$ phút (tức là tới điểm mới $D\in BC$) thì bất ngờ gặp gió lớn khiến hướng bay của nó lệch đi và vận tốc giảm còn $120$ km/h. Máy bay tiếp tục bay theo hướng lệch trong $30$ phút đến vị trí $E$ (hình minh họa). Tổng quãng đường máy bay đã di chuyển trong cả hành trình gần nhất với giá trị nào sau đây?
+\begin{center}
+\begin{tikzpicture}[scale=.55,x={(1cm,0cm)},y={(.5cm,.35cm)},z={(0cm,1cm)}]
+  \fill[gray!12] (0,0,0)--(13,0,0)--(13,16,0)--(0,16,0)--cycle;
+  \draw[truc] (0,0,0)--(13.5,0,0) node[right]{$x$};
+  \draw[truc] (0,0,0)--(0,16.5,0) node[above]{$y$};
+  \draw[truc] (0,0,0)--(0,0,4.5) node[left]{$z$};
+  \path (7,8.5,1) coordinate (A) (8,9,2) coordinate (B) (11,14,3) coordinate (C) (10.22,12.7,2.74) coordinate (D) (10.6,13,3.4) coordinate (E);
+  \draw[thick,->] (A)--(B); \draw[thick,->] (B)--(D); \draw[khuat] (D)--(C); \draw[thick,->,red] (D)--(E);
+  \foreach \P in {A,B,C,D,E} \fill (\P) circle (1.5pt);
+  \path (A) node[below]{$A$} (B) node[above left]{$B$} (C) node[right]{$C$} (D) node[below right]{$D$} (E) node[above]{$E$} (0,0,0) node[below left]{$O$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $654$ km}{$620$ km}{$680$ km}{$600$ km}
+\loigiai{$AB=\sqrt{100^2+50^2+100^2}=150$ km. $BC=100\sqrt{35}\approx591{,}6$ km.
+
+$BD=150\cdot\dfrac{30\sqrt{35}}{60}=75\sqrt{35}\approx443{,}7$ km $<BC$; $DE=120\cdot0{,}5=60$ km.
+
+Tổng $150+75\sqrt{35}+60\approx654$ km.}
+\end{ex}

@@ -1,0 +1,27 @@
+%% ma: L12-B07-0029
+%% lop: 12
+%% chuong: 2
+%% bai: 7
+%% dang: 12.7.7
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "CĐ2.6.pdf giáo viên gửi 27/10/2026 (M07, Lê Minh Khôi – Nguyễn Anh Khôi, Chương II Chủ đề 6 Ứng dụng vào các bài toán thực tế), Câu 9"
+%% kien_thuc: "Bài 7 (tọa độ theo các hướng Đông, Tây, Nam, Bắc), Bài 8 (khoảng cách hai điểm)"
+%% trang_thai: chinh-thuc
+\begin{ex}
+Một chiếc khinh khí cầu bay lên tại một địa điểm. Sau một thời gian bay, chiếc khinh khí cầu cách điểm xuất phát về phía Đông $8$ km và về phía Nam $6$ km, đồng thời cách mặt đất $500$ m. Chọn hệ trục tọa độ $Oxyz$ với gốc tọa độ đặt tại điểm xuất phát của khinh khí cầu, mặt phẳng $(Oxy)$ trùng với mặt đất, tia $Ox$ hướng về phía Nam, tia $Oy$ hướng về phía Đông, tia $Oz$ hướng thẳng đứng lên trời và đơn vị dài trên mỗi trục là ki-lô-mét (hình vẽ, không theo tỉ lệ). Khoảng cách từ chiếc khinh khí cầu đến vị trí xuất phát của nó bằng bao nhiêu?
+\begin{center}
+\begin{tikzpicture}[scale=.45,x={(-.5cm,-.45cm)},y={(1cm,0cm)},z={(0cm,1cm)}]
+  \draw[truc,red] (0,0,0)--(8,0,0) node[below left]{$x$ (Nam)};
+  \draw[truc,red] (0,0,0)--(0,10,0) node[right]{$y$ (Đông)};
+  \draw[truc,red] (0,0,0)--(0,0,3) node[left]{$z$};
+  \draw[khuat] (6,0,0)--(6,8,0)--(0,8,0); \draw[khuat] (6,8,0)--(6,8,1.2);
+  \draw[blue] (0,0,0)--(6,8,1.2) node[pos=.4,above]{$d$};
+  \fill (6,8,1.2) circle (3pt) node[above right]{$K$};
+  \path (3,0,0) node[below right]{$6$ km} (0,4,0) node[above]{$8$ km} (6,8,0) node[below right]{$0{,}5$ km} (0,0,0) node[above left]{$O$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $10{,}01$ km}{$10{,}50$ km}{$14{,}50$ km}{$10{,}00$ km}
+\loigiai{Khinh khí cầu ở $K(6;8;0{,}5)$, $OK=\sqrt{36+64+0{,}25}\approx10{,}01$ km.}
+\end{ex}
