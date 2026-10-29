@@ -1,0 +1,26 @@
+%% ma: L12-B03-0017
+%% lop: 12
+%% chuong: 1
+%% bai: 3
+%% dang: 12.3.1
+%% loai: TN4
+%% muc: NB
+%% dap_an: "A"
+%% nguon: "HK1-DeOn_1_1.pdf (M10, Đề ôn tập học kì 1 Toán 12, Đề số 2), Phần I Câu 8"
+%% kien_thuc: "Bài 3 (đường tiệm cận)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Hình gốc chỉ cho hai đường tiệm cận x = 1, y = 2; bản kho vẽ minh họa bằng đồ thị y = (2x + 1)/(x − 1)."
+\begin{ex}
+Cho hàm số $y=f(x)$ có đồ thị như hình bên. Phát biểu nào sau đây là đúng?
+\begin{center}\begin{tikzpicture}[x=0.6cm,y=0.5cm]
+\draw[truc] (-4.5,0)--(5.2,0) node[below] {$x$};
+\draw[truc] (0,-4.5)--(0,8.2) node[left] {$y$};
+\node[below left] at (0,0) {$O$};
+\draw[thick] (1,-4.5)--(1,8) (-4.5,2)--(5.2,2);
+\node[below right] at (1,0) {$1$}; \node[above left] at (0,2) {$2$};
+\draw[thick,smooth,samples=80,domain=-4.5:0.5] plot (\x,{(2*\x+1)/(\x-1)});
+\draw[thick,smooth,samples=80,domain=1.43:5.2] plot (\x,{(2*\x+1)/(\x-1)});
+\end{tikzpicture}\end{center}
+\choice{\True Đồ thị hàm số có đường tiệm cận đứng $x=1$, đường tiệm cận ngang $y=2$}{Đồ thị hàm số có đường tiệm cận đứng $x=2$, đường tiệm cận ngang $y=1$}{Đồ thị hàm số có đường tiệm cận đứng $x=2$, đường tiệm cận ngang $y=0$}{Đồ thị hàm số có đường tiệm cận đứng $x=0$, đường tiệm cận ngang $y=1$}
+\loigiai{Từ đồ thị, tiệm cận đứng là $x=1$, tiệm cận ngang là $y=2$.}
+\end{ex}

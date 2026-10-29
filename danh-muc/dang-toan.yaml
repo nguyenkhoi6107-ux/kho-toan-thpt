@@ -485,3 +485,85 @@
 12.14.19: {ten: "Thể tích tứ diện, hình hộp và đường cao bằng tích có hướng và khoảng cách từ điểm đến mặt phẳng", trang_thai: da-duyet}
 # --- Giáo viên chuyển L12-B08-0007 sang Bài 15, ngày 27/10/2026 ---
 12.15.23: {ten: "Hai máy bay chuyển động thẳng đều trong Oxyz: phương trình đường bay, khoảng cách tại một thời điểm, va chạm, khoảng cách lớn nhất (Đúng/Sai)", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị M08, M09, M10 (đề cương Hoàng Văn Thụ, đề ôn Ngô Quyền, Đề ôn HK1 Toán 12 số 2), ngày 29/10/2026 ---
+11.3.3: {ten: "Nhận biết tập giá trị, tính chẵn lẻ, chu kì của các hàm số lượng giác", trang_thai: de-xuat}
+11.3.4: {ten: "Tập xác định của hàm số y = tan(ax + b) hoặc y = cot(ax + b)", trang_thai: de-xuat}
+11.3.5: {ten: "Tập xác định của hàm số phân thức có mẫu chứa tan x", trang_thai: de-xuat}
+11.3.6: {ten: "Giá trị lớn nhất, nhỏ nhất của hàm số lượng giác (đưa về sin, cos bậc nhất hoặc tam thức theo sin, cos)", trang_thai: de-xuat}
+11.3.7: {ten: "Nhận dạng hàm số lượng giác từ đồ thị", trang_thai: de-xuat}
+11.3.8: {ten: "Hàm số lượng giác dạng a + b cos(ωx) hoặc a sin²x + b: chu kì, chẵn lẻ, giá trị lớn nhất, nhỏ nhất (Đúng/Sai)", trang_thai: de-xuat}
+11.3.9: {ten: "Mô hình mực nước h = m + a cos(ωt): xác định hệ số từ mực nước cao nhất, thấp nhất", trang_thai: de-xuat}
+11.1.1: {ten: "Nhận biết đẳng thức lượng giác cơ bản (1 + tan²α, tan α·cot α)", trang_thai: de-xuat}
+11.1.2: {ten: "Rút gọn biểu thức dùng giá trị lượng giác của các góc có liên quan đặc biệt", trang_thai: de-xuat}
+11.1.3: {ten: "Độ dài cung tròn khi biết bán kính và số đo cung (radian)", trang_thai: de-xuat}
+11.1.4: {ten: "Quãng đường bánh xe lăn được khi biết góc quay hoặc số vòng quay", trang_thai: de-xuat}
+11.1.5: {ten: "Tính sin α·cos α khi biết sin α + cos α", trang_thai: de-xuat}
+11.1.6: {ten: "Dấu của các giá trị lượng giác khi biết góc thuộc một góc phần tư", trang_thai: de-xuat}
+11.1.7: {ten: "Hệ thức giữa giá trị lượng giác các góc trong tam giác (A + B + C = π)", trang_thai: de-xuat}
+11.2.1: {ten: "Biến đổi tổng thành tích", trang_thai: de-xuat}
+11.2.2: {ten: "Công thức cộng: tính sin(α + β), cos(α − β) khi biết giá trị lượng giác của hai góc nhọn (Đúng/Sai)", trang_thai: de-xuat}
+11.2.3: {ten: "Tính giá trị lượng giác của tổng, hiệu hai góc khi biết giá trị lượng giác và góc phần tư", trang_thai: de-xuat}
+11.2.4: {ten: "Nhận biết công thức cộng, công thức nhân đôi (chọn khẳng định đúng hoặc sai)", trang_thai: de-xuat}
+11.2.5: {ten: "Công thức cộng của tang: tính tan(α ± π/k) khi biết tan α", trang_thai: de-xuat}
+11.2.6: {ten: "Tính tan α khi biết cos 2α và góc phần tư (công thức hạ bậc)", trang_thai: de-xuat}
+11.2.7: {ten: "Tính các giá trị lượng giác của 2α, α/2, α ± π/6 khi biết cos α và góc phần tư (tự luận)", trang_thai: de-xuat}
+11.2.8: {ten: "Tính sin 2α, sin 4α khi biết sin α + cos α (tự luận)", trang_thai: de-xuat}
+11.2.9: {ten: "Chứng minh đẳng thức lượng giác (tự luận)", trang_thai: de-xuat}
+11.4.4: {ten: "Điều kiện có nghiệm của phương trình sin x = m, cos x = m", trang_thai: de-xuat}
+11.4.5: {ten: "Nghiệm của phương trình lượng giác cơ bản với giá trị đặc biệt", trang_thai: de-xuat}
+11.4.6: {ten: "Giải phương trình tan(ax + b) = m", trang_thai: de-xuat}
+11.4.7: {ten: "Phương trình đưa về dạng sin u = sin v, cos u = cos v (kể cả cos u = −cos v)", trang_thai: de-xuat}
+11.4.8: {ten: "Số nghiệm của phương trình sin(ax + b) = m hoặc cos(ax + b) = m trên một đoạn", trang_thai: de-xuat}
+11.4.9: {ten: "Phương trình cos x = m (sin x = m): họ nghiệm, số nghiệm, tổng nghiệm, nghiệm lớn nhất trên một đoạn (Đúng/Sai)", trang_thai: de-xuat}
+11.4.10: {ten: "Giải các phương trình lượng giác cơ bản (tự luận nhiều ý)", trang_thai: de-xuat}
+11.4.11: {ten: "Tập xác định của hàm số có mẫu a sin(kx) + b (giải phương trình lượng giác cơ bản)", trang_thai: de-xuat}
+11.5.4: {ten: "Nhận biết dãy số tăng, dãy số giảm", trang_thai: de-xuat}
+11.5.5: {ten: "Tính số hạng của dãy số cho bởi hệ thức truy hồi u_n = f(u_{n−1})", trang_thai: de-xuat}
+11.6.6: {ten: "Nhận biết cấp số cộng", trang_thai: de-xuat}
+11.6.7: {ten: "Dãy số truy hồi u_{n+1} = u_n + d: số hạng, số hạng tổng quát, vị trí số hạng (Đúng/Sai)", trang_thai: de-xuat}
+11.6.8: {ten: "Cấp số cộng: số hạng tổng quát, vị trí số hạng, tổng n số hạng đầu (Đúng/Sai)", trang_thai: de-xuat}
+11.6.9: {ten: "Tìm các số lập thành cấp số cộng khi biết tổng và tổng bình phương", trang_thai: de-xuat}
+11.6.10: {ten: "Bài toán xếp theo hàng (gạch, ghế, cây), hàng sau hơn hàng trước một số không đổi: tổng số phần tử", trang_thai: de-xuat}
+11.6.11: {ten: "Tìm các số hạng chưa biết xen giữa của cấp số cộng", trang_thai: de-xuat}
+11.6.12: {ten: "Bài toán thực tế cấp số cộng: số hạng thứ n và tổng n số hạng đầu (lương, lợi nhuận, quãng đường)", trang_thai: de-xuat}
+11.10.1: {ten: "Các điều kiện xác định một mặt phẳng", trang_thai: de-xuat}
+11.10.2: {ten: "Giao tuyến của hai mặt phẳng (SAC) và (SBD) trong hình chóp", trang_thai: de-xuat}
+11.10.3: {ten: "Giao điểm của đường thẳng và mặt phẳng (dùng mặt phẳng phụ)", trang_thai: de-xuat}
+11.10.4: {ten: "Số mặt, số cạnh của hình chóp", trang_thai: de-xuat}
+11.10.5: {ten: "Giao tuyến, giao điểm trong hình chóp có các cặp cạnh đáy cắt nhau (Đúng/Sai)", trang_thai: de-xuat}
+11.10.6: {ten: "Tỉ số SQ/SD khi mặt phẳng qua ba điểm trên ba cạnh bên cắt cạnh bên thứ tư của hình chóp đáy hình bình hành", trang_thai: de-xuat}
+11.11.1: {ten: "Vị trí tương đối của hai đường thẳng trong không gian", trang_thai: de-xuat}
+11.11.2: {ten: "Giao tuyến, giao điểm, vị trí tương đối trong hình chóp có trung điểm các cạnh (Đúng/Sai)", trang_thai: de-xuat}
+11.11.3: {ten: "Mặt phẳng qua trọng tâm và hai trung điểm cắt tứ diện: tỉ số độ dài", trang_thai: de-xuat}
+11.11.4: {ten: "Tìm giao tuyến, giao điểm và tính tỉ số trong hình chóp đáy hình bình hành (tự luận)", trang_thai: de-xuat}
+11.4.12: {ten: "Hàm số y = a·sin/cos/tan(ωx + φ) + b: giá trị tại một điểm, chu kì, tập xác định, tập giá trị, số nghiệm phương trình trên một đoạn (Đúng/Sai)", trang_thai: de-xuat}
+11.7.4: {ten: "Công thức số hạng tổng quát của cấp số nhân", trang_thai: de-xuat}
+11.7.5: {ten: "Nhận biết cấp số nhân", trang_thai: de-xuat}
+11.7.6: {ten: "Tìm số số hạng n khi biết tổng n số hạng đầu của cấp số nhân", trang_thai: de-xuat}
+11.7.7: {ten: "Bài toán thực tế cấp số nhân: đại lượng tăng hoặc giảm theo một tỉ lệ không đổi (vi khuẩn, bóng nảy, con lắc)", trang_thai: de-xuat}
+11.7.8: {ten: "Dãy số cho bởi công thức số hạng tổng quát: cấp số cộng, tổng, dãy a^{u_n} là cấp số nhân (Đúng/Sai)", trang_thai: de-xuat}
+11.7.9: {ten: "Dãy số truy hồi u_n = q·u_{n−1}: bị chặn, tăng giảm, cấp số nhân, tổng một dãy liên quan (Đúng/Sai)", trang_thai: de-xuat}
+11.7.10: {ten: "Bài toán hàng ghế: nhận biết cấp số cộng, cấp số nhân, số hạng, tổng (Đúng/Sai)", trang_thai: de-xuat}
+11.6.13: {ten: "Bài toán hàng ghế cấp số cộng: số hạng, tổng, tổng tăng thêm khi thêm hàng (Đúng/Sai)", trang_thai: de-xuat}
+11.6.14: {ten: "Tổng n số hạng đầu của cấp số cộng khi biết tổng hai số hạng cách đều hai đầu", trang_thai: de-xuat}
+11.9.6: {ten: "Giá trị đại diện của một nhóm số liệu", trang_thai: de-xuat}
+11.9.7: {ten: "Nhóm chứa mốt của mẫu số liệu ghép nhóm", trang_thai: de-xuat}
+11.9.8: {ten: "Số trung bình, trung vị của mẫu số liệu ghép nhóm và đánh giá theo tiêu chí cho trước (tự luận)", trang_thai: de-xuat}
+11.1.8: {ten: "Giá trị biểu thức thuần nhất bậc nhất theo sin α, cos α khi biết tan α", trang_thai: de-xuat}
+11.1.9: {ten: "Hai góc lượng giác có cùng điểm biểu diễn trên đường tròn lượng giác", trang_thai: de-xuat}
+11.1.10: {ten: "Số đo của góc lượng giác (Ou, Ov) khi biết số đo góc hình học uOv", trang_thai: de-xuat}
+11.1.11: {ten: "Đổi số đo góc giữa radian và độ", trang_thai: de-xuat}
+11.2.10: {ten: "Rút gọn biểu thức bằng công thức cộng (sin a sin b + cos a cos b, cos a cos b − sin a sin b)", trang_thai: de-xuat}
+12.1.21: {ten: "Đọc khoảng đồng biến, nghịch biến từ dấu của đạo hàm trên các khoảng", trang_thai: de-xuat}
+12.1.22: {ten: "Đọc tọa độ điểm cực đại, cực tiểu từ đồ thị hàm số (hàm phân thức)", trang_thai: de-xuat}
+12.1.23: {ten: "Chọn hàm số có đúng hai điểm cực trị trong bốn hàm số cho trước", trang_thai: de-xuat}
+12.1.24: {ten: "Hàm số bậc ba: đạo hàm, khoảng đồng biến, vị trí hai điểm cực trị, so sánh giá trị (Đúng/Sai)", trang_thai: de-xuat}
+12.1.25: {ten: "Số khoảng đồng biến của hàm số y = f(x + a) khi biết biểu thức f'(x)", trang_thai: de-xuat}
+12.2.9: {ten: "Đọc giá trị lớn nhất, nhỏ nhất trên một đoạn từ đồ thị (so sánh giá trị đầu mút với cực trị) và tính biểu thức của m, M", trang_thai: de-xuat}
+12.2.10: {ten: "Giá trị lớn nhất, nhỏ nhất của hàm phân thức bậc nhất trên bậc nhất trên một đoạn (dùng tính đơn điệu)", trang_thai: de-xuat}
+12.3.13: {ten: "Đếm số đường tiệm cận của đồ thị hàm phân thức bậc hai trên bậc hai (tính bằng đại số)", trang_thai: de-xuat}
+12.4.14: {ten: "Hàm phân thức bậc hai trên bậc nhất: tập xác định, cực trị, tâm đối xứng, tiệm cận (Đúng/Sai)", trang_thai: de-xuat}
+12.4.15: {ten: "Hàm phân thức bậc nhất trên bậc nhất: tính đơn điệu, tiệm cận, tâm đối xứng, giá trị nhỏ nhất trên đoạn (Đúng/Sai)", trang_thai: de-xuat}
+12.5.22: {ten: "Hàm cầu bậc nhất và hàm doanh thu bậc hai: đạo hàm, điểm tới hạn, tiệm cận (Đúng/Sai)", trang_thai: de-xuat}
+12.5.23: {ten: "Tối ưu diện tích bồn chứa hình hộp chữ nhật không nắp khi biết thể tích, tính chi phí sản xuất", trang_thai: de-xuat}
+12.5.24: {ten: "Mô hình chi phí xử lí ô nhiễm C(x) = (ax + b)/(−x + d): xác định hệ số từ đồ thị và tính chi phí", trang_thai: de-xuat}

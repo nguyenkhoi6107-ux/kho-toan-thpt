@@ -1,0 +1,32 @@
+%% ma: L12-B05-0034
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.24
+%% loai: TLN
+%% muc: VD
+%% dap_an: "18"
+%% nguon: "HK1-DeOn_1_1.pdf (M10, Đề ôn tập học kì 1 Toán 12, Đề số 2), Phần III Câu 5"
+%% kien_thuc: "Bài 3 (đường tiệm cận), Bài 4 (khảo sát và vẽ đồ thị hàm số), Bài 5 (ứng dụng đạo hàm giải quyết vấn đề thực tiễn)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 12.5.24"
+\begin{ex}
+Để loại bỏ $x\%$ chất gây ô nhiễm môi trường từ khí thải của một nhà máy, người ta ước tính chi phí (triệu đồng) cần bỏ ra được mô hình hoá bởi hàm số có dạng $C(x)=\dfrac{ax+b}{-x+d}$ (như hình vẽ), $0\le x<100$.
+\begin{center}\begin{tikzpicture}[x=0.012cm,y=0.002cm]
+\begin{scope}
+\clip (-320,-1600) rectangle (420,1600);
+\draw[thick,smooth,samples=120,domain=-320:88.9] plot (\x,{2*\x/((100-\x)/100)});
+\draw[thick,smooth,samples=120,domain=111.1:420] plot (\x,{2*\x/((100-\x)/100)});
+\end{scope}
+\draw[truc] (-330,0)--(440,0) node[below] {$x$};
+\draw[truc] (0,-1600)--(0,1750) node[left] {$y$};
+\node[above left] at (0,0) {$O$};
+\draw[phu] (100,-1600)--(100,1600) (-330,-200)--(420,-200);
+\node[above right] at (100,0) {$100$}; \node[below left] at (0,-200) {$-200$};
+\end{tikzpicture}\end{center}
+Tính chi phí chênh lệch (tỉ đồng) phải bỏ ra để loại bỏ $90\%$ và loại bỏ $99\%$ chất gây ô nhiễm từ khí thải của nhà máy.
+\shortans{18}
+\loigiai{Từ đồ thị: tiệm cận đứng $x=d=100$; tiệm cận ngang $y=-a=-200\Rightarrow a=200$; đồ thị qua $O$ nên $b=0$. Vậy $C(x)=\dfrac{200x}{100-x}$.
+
+$C(99)-C(90)=19\,800-1\,800=18\,000$ (triệu đồng) $=18$ tỉ đồng.}
+\end{ex}

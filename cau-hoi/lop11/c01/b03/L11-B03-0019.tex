@@ -1,0 +1,30 @@
+%% ma: L11-B03-0019
+%% lop: 11
+%% chuong: 1
+%% bai: 3
+%% dang: 11.3.7
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "de-on-tap-giua-ki-1-toan-11-nam-2026-2027-truong-thpt-ngo-quyen-da-nang.pdf (M09, Đề ôn tập giữa kì 1 Toán 11 THPT Ngô Quyền, Đà Nẵng), Mã đề 0112, Phần I Câu 3"
+%% kien_thuc: "Bài 3 (hàm số lượng giác)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.3.7"
+\begin{ex}
+Đường cong trong hình dưới đây là đồ thị của một hàm số trong bốn hàm số được liệt kê ở bốn phương án A, B, C, D. Hỏi hàm số đó là hàm số nào?
+\begin{center}\begin{tikzpicture}[x=0.35cm,y=0.9cm]
+\draw[truc] (-14,0)--(14.4,0) node[below] {$x$};
+\draw[truc] (0,-1.5)--(0,1.6) node[left] {$y$};
+\node[below left] at (0,0) {$O$};
+\foreach \v in {-12.566,-9.425,-6.283,-3.1416,3.1416,6.283,9.425,12.566} \draw (\v,0.08)--(\v,-0.08);
+\foreach \v/\t in {-9.425/-3\pi,3.1416/\pi} \node[above] at (\v,0) {\scriptsize$\t$};
+\foreach \v/\t in {-3.1416/-\pi,9.425/3\pi} \node[below] at (\v,0) {\scriptsize$\t$};
+\node[below left] at (-12.566,0) {\scriptsize$-4\pi$}; \node[below right] at (-6.283,0) {\scriptsize$-2\pi$};
+\node[below right] at (6.283,0) {\scriptsize$2\pi$}; \node[below left] at (12.566,0) {\scriptsize$4\pi$};
+\draw[phu] (-3.1416,0)--(-3.1416,1)--(0,1) (3.1416,0)--(3.1416,-1)--(0,-1);
+\node[left] at (0,1) {$1$}; \node[left] at (0,-1) {$-1$};
+\draw[thick,smooth,samples=200,domain=-13.8:13.8] plot (\x,{-sin(\x/2 r)});
+\end{tikzpicture}\end{center}
+\choice{$y=\sin\dfrac{x}{2}$}{$y=\cos\dfrac{x}{2}$}{$y=-\cos\dfrac{x}{4}$}{\True $y=\sin\left(-\dfrac{x}{2}\right)$}
+\loigiai{Đồ thị đi qua $O$ nên loại B, C. Tại $x=\pi$ hàm số đạt giá trị $-1$, mà $\sin\dfrac\pi2=1$ nên loại A. Vậy $y=\sin\left(-\dfrac x2\right)$ (chu kì $4\pi$, $y(\pi)=-1$).}
+\end{ex}

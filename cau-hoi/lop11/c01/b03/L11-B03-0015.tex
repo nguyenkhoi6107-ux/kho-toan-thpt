@@ -1,0 +1,29 @@
+%% ma: L11-B03-0015
+%% lop: 11
+%% chuong: 1
+%% bai: 3
+%% dang: 11.3.7
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "de-cuong-giua-ky-1-toan-11-nam-2026-2027-truong-thpt-hoang-van-thu-ha-noi-2-8.pdf (M08, Đề cương giữa kì 1 Toán 11 THPT Hoàng Văn Thụ, Hà Nội), Đề minh họa, Phần I Câu 4"
+%% kien_thuc: "Bài 3 (hàm số lượng giác)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.3.7"
+\begin{ex}
+Đường cong trong hình dưới đây là đồ thị của hàm số nào?
+\begin{center}\begin{tikzpicture}[x=0.8cm,y=0.9cm]
+\draw[truc] (-7,0)--(7.2,0) node[below] {$x$};
+\draw[truc] (0,-1.5)--(0,1.6) node[left] {$y$};
+\node[above left] at (0,0) {$O$};
+\foreach \v/\t in {-6.2832/-2\pi,6.2832/2\pi} \node[above] at (\v,0) {$\t$};
+\foreach \v/\t in {-3.1416/-\pi,3.1416/\pi} \node[below] at (\v,0) {$\t$};
+\node[below right] at (-4.7124,0) {$-\frac{3\pi}{2}$}; \node[below left] at (-1.5708,0) {$-\frac{\pi}{2}$};
+\node[below right] at (1.5708,0) {$\frac{\pi}{2}$}; \node[below left] at (4.7124,0) {$\frac{3\pi}{2}$};
+\draw[phu] (-3.1416,0)--(-3.1416,1)--(3.1416,1)--(3.1416,0);
+\node[above left] at (0,1) {$1$}; \node[below right] at (0,-1) {$-1$};
+\draw[thick,smooth,samples=150,domain=-6.9:6.9] plot (\x,{-cos(\x r)});
+\end{tikzpicture}\end{center}
+\choice{\True $y=-\cos x$}{$y=|\cos x|$}{$y=\cos|x|$}{$y=\cos x$}
+\loigiai{Đồ thị đi qua $(0;-1)$ và có giá trị âm nên loại B; $\cos|x|$ và $\cos x$ đều bằng $1$ tại $x=0$ nên loại C, D. Vậy hàm số là $y=-\cos x$.}
+\end{ex}

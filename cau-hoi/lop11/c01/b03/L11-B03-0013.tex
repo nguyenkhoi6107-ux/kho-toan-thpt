@@ -1,0 +1,27 @@
+%% ma: L11-B03-0013
+%% lop: 11
+%% chuong: 1
+%% bai: 3
+%% dang: 11.3.9
+%% loai: TLN
+%% muc: TH
+%% dap_an: "12"
+%% nguon: "de-cuong-giua-ky-1-toan-11-nam-2026-2027-truong-thpt-hoang-van-thu-ha-noi-2-8.pdf (M08, Đề cương giữa kì 1 Toán 11 THPT Hoàng Văn Thụ, Hà Nội), Phần 3 Câu 5"
+%% kien_thuc: "Bài 3 (hàm số lượng giác)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất 11.3.9"
+\begin{ex}
+Mực nước cao nhất tại một cảng biển là $12$ m khi thủy triều lên cao và sau $12$ giờ khi thủy triều xuống thấp thì mực nước thấp nhất là $8$ m. Đồ thị dưới đây mô tả sự thay đổi chiều cao của mực nước tại cảng trong vòng $24$ giờ tính từ lúc nửa đêm. Biết chiều cao của mực nước $h$ (m) theo thời gian $t$ (h) $(0\le t\le24)$ được cho bởi công thức $h=m+a\cos\left(\dfrac{\pi}{12}t\right)$ với $m$, $a$ là các số thực dương cho trước. Tính giá trị $T=m+a$.
+\begin{center}\begin{tikzpicture}[x=0.28cm,y=0.3cm]
+\draw[truc] (-0.5,0)--(26.5,0) node[below] {$t$ (h)};
+\draw[truc] (0,-0.5)--(0,14) node[left] {$h$ (m)};
+\node[below left] at (0,0) {$O$};
+\draw[phu] (0,8)--(12,8)--(12,0) (24,12)--(24,0);
+\node[left] at (0,12) {$12$}; \node[left] at (0,8) {$8$};
+\node[below] at (12,0) {$12$}; \node[below] at (24,0) {$24$};
+\draw[thick,smooth,samples=100,domain=0:24] plot (\x,{10+2*cos(pi*\x/12 r)});
+\fill (0,12) circle (1.5pt) (12,8) circle (1.5pt) (24,12) circle (1.5pt);
+\end{tikzpicture}\end{center}
+\shortans{12}
+\loigiai{Vì $a>0$ nên $h$ lớn nhất khi $\cos\dfrac{\pi t}{12}=1$ và nhỏ nhất khi $\cos\dfrac{\pi t}{12}=-1$: $m+a=12$, $m-a=8$. Vậy $m=10$, $a=2$, $T=m+a=12$.}
+\end{ex}
