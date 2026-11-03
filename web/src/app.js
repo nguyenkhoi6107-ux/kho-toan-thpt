@@ -398,11 +398,22 @@ function summary() {
     h('button', { class: 'btn', style: 'background:var(--g);color:var(--ink);font-weight:600', disabled: !total, onclick: openAssignOnlineModal }, 'Giao bài online (Link & QR)'),
     h('button', { class: 'btn', style: 'background:var(--p);color:var(--ink);font-weight:600', disabled: !total, onclick: openGameModal }, 'Trò chơi trên lớp'),
     h('button', { class: 'btn', style: 'background:var(--y);color:var(--ink)', disabled: !total, onclick: exportExam }, 'Xuất LaTeX cho Overleaf'),
+    h('button', { class: 'btn ghost', disabled: !total, title: 'Mở web Giáo án online trên máy của giáo viên và gắn các câu này thành phiếu bài tập của một buổi', onclick: sendToGiaoAn }, 'Chuyển sang giáo án (phiếu bài tập)'),
     h('button', { class: 'btn ghost', disabled: !total, onclick: () => { if (confirm('Xóa toàn bộ câu đã chọn trong đề?')) { LOAI_KEYS.forEach((k) => (e.picks[k] = [])); saveExam(); render(); } } }, 'Làm lại từ đầu'),
     h('p', { class: 'note' }, 'Chỉ dùng câu đã duyệt (chính thức). Câu thêm từ Thư viện cũng nằm trong đề này.'));
   return box;
 }
 function chosen() { const e = state.exam; return LOAI_KEYS.map((k) => [k, e.picks[k].map((m) => byMa.get(m)).filter(Boolean)]); }
+// Gửi các câu đã chọn sang web "Giáo án online" chạy trên máy giáo viên (chỉ gửi mã câu và tên đề, qua địa chỉ link).
+// Giáo án tự kiểm lại từng mã theo kho chính thức của nó rồi hỏi gắn vào phiếu của buổi nào.
+const giaoAnUrl = () => { try { return localStorage.getItem('toankho.giao_an_url') || 'http://127.0.0.1:5190'; } catch { return 'http://127.0.0.1:5190'; } };
+function sendToGiaoAn() {
+  const ma = chosen().flatMap(([, qs]) => qs.map((q) => q.ma));
+  if (!ma.length) return;
+  const q = new URLSearchParams({ nhan: ma.join(','), ten: state.exam.title || '' });
+  window.open(`${giaoAnUrl()}/?${q}`, '_blank', 'noopener');
+  toast(`Đã gửi ${ma.length} câu sang giáo án. Nếu tab mới không mở được, hãy bật web giáo án (npm start) rồi bấm lại.`);
+}
 function previewExam() {
   const body = h('div', { class: 'qlist' });
   let n = 0;
@@ -885,6 +896,7 @@ async function renderHelp(root) {
       h('li', null, h('b', null, 'Lấy LaTeX: '), 'bấm ', h('i', null, 'Lấy LaTeX'), ' để chép mã một câu, hoặc ', h('i', null, 'Lấy LaTeX cả danh sách'), ' để chép nhiều câu đang lọc.'),
       h('li', null, h('b', null, 'Trò chơi trên lớp: '), 'chọn câu ở ', h('i', null, 'Tạo đề'), ' → bấm ', h('i', null, 'Trò chơi trên lớp'), ' → chọn hình thức. ', h('i', null, 'Bảng ô số'), ': chia đội, chiếu lên màn hình, bấm nhầm thì dùng nút Hoàn tác (Ctrl+Z). ', h('i', null, 'Đấu Trường'), ': học sinh quét mã QR, trả lời trên điện thoại; máy chiếu giữ đáp án và chấm. Tải lại trang không mất ván đang chơi.'),
       h('li', null, h('b', null, 'Tạo đề & Giao bài online: '), 'vào ', h('i', null, 'Tạo đề'), ' → đặt số câu từng loại → chọn bài/chương → chọn tay hoặc để máy bốc ngẫu nhiên → bấm ', h('i', null, 'Giao bài online'), ' để lấy link & mã QR cho học sinh làm trên điện thoại, hoặc ', h('i', null, 'Xuất LaTeX'), '.'),
+      h('li', null, h('b', null, 'Phiếu bài tập cho giáo án: '), 'chọn câu ở ', h('i', null, 'Tạo đề'), ' → bấm ', h('i', null, 'Chuyển sang giáo án'), ' → web Giáo án online trên máy giáo viên (phải đang chạy) hỏi gắn phiếu vào buổi nào.'),
       h('li', null, h('b', null, 'Theo dõi kết quả: '), 'vào ', h('i', null, 'Bài đã giao'), ' (biểu tượng cột) → chọn bài để xem bảng điểm, phổ điểm, tỉ lệ đúng từng câu; đóng sớm, gia hạn hoặc xoá bài; bấm ', h('i', null, 'Tạo đề ôn'), ' để máy lấy câu mới thuộc các dạng học sinh làm chưa tốt.')),
     h('h2', { style: 'margin-top:22px' }, 'Cập nhật dữ liệu'),
     h('p', null, 'Trang này tự dựng lại từ kho GitHub mỗi khi có thay đổi mới (khoảng 1–3 phút sau khi push). Nếu câu hỏi mới chưa hiện, hãy tải lại trang.'),
