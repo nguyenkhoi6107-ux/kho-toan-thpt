@@ -568,29 +568,29 @@
 12.5.23: {ten: "Tối ưu diện tích bồn chứa hình hộp chữ nhật không nắp khi biết thể tích, tính chi phí sản xuất", trang_thai: da-duyet}
 12.5.24: {ten: "Mô hình chi phí xử lí ô nhiễm C(x) = (ax + b)/(−x + d): xác định hệ số từ đồ thị và tính chi phí", trang_thai: da-duyet}
 # --- Đề xuất từ tài liệu Toán 11 Thầy Duy (Chương 3 + Chương 4 bài 5), 03/11/2026 ---
-11.14.1: {ten: "Xác định ảnh của điểm, đoạn thẳng, hình qua phép chiếu song song", trang_thai: de-xuat}
-11.14.2: {ten: "Tính chất của phép chiếu song song", trang_thai: de-xuat}
-11.14.3: {ten: "Hình biểu diễn của một hình không gian", trang_thai: de-xuat}
-11.14.4: {ten: "Tỉ số độ dài, diện tích qua phép chiếu song song", trang_thai: de-xuat}
-11.15.1: {ten: "Chứng minh giới hạn của dãy số bằng cách xét lim(u_n − L) = 0", trang_thai: de-xuat}
-11.15.2: {ten: "Nhận biết mệnh đề và khái niệm về giới hạn của dãy số", trang_thai: de-xuat}
-11.15.3: {ten: "Giới hạn của dãy số dạng phân thức (đa thức trên đa thức)", trang_thai: de-xuat}
-11.15.4: {ten: "Giới hạn của dãy số dạng lũy thừa a^n", trang_thai: de-xuat}
-11.15.5: {ten: "Giới hạn của dãy số chứa căn thức", trang_thai: de-xuat}
-11.15.6: {ten: "Giới hạn của dãy số cho bởi tổng hoặc công thức truy hồi", trang_thai: de-xuat}
-11.15.7: {ten: "Tổng của cấp số nhân lùi vô hạn và số thập phân vô hạn tuần hoàn", trang_thai: de-xuat}
-11.15.8: {ten: "Giới hạn của tổng có các số hạng triệt tiêu liên tiếp (tách phân thức)", trang_thai: de-xuat}
-11.15.9: {ten: "Bài toán thực tế dùng tổng của cấp số nhân lùi vô hạn", trang_thai: de-xuat}
-11.16.1: {ten: "Giới hạn của hàm số tại một điểm dạng 0/0 (phân thức hữu tỉ)", trang_thai: de-xuat}
-11.16.2: {ten: "Giới hạn của hàm số tại một điểm dạng 0/0 chứa căn thức", trang_thai: de-xuat}
-11.16.3: {ten: "Giới hạn của hàm số tại vô cực (phân thức, căn thức)", trang_thai: de-xuat}
-11.16.4: {ten: "Giới hạn của hàm số dạng ∞ − ∞ và 0·∞", trang_thai: de-xuat}
-11.16.5: {ten: "Giới hạn một bên của hàm số (trị tuyệt đối, tử khác 0 và mẫu tiến về 0)", trang_thai: de-xuat}
-11.16.6: {ten: "Giới hạn của hàm số cho bởi nhiều công thức", trang_thai: de-xuat}
-11.16.7: {ten: "Nhận biết khái niệm, quy tắc và kết quả giới hạn của hàm số", trang_thai: de-xuat}
-11.16.8: {ten: "Bài toán thực tế và hình học dùng giới hạn của hàm số", trang_thai: de-xuat}
-11.17.1: {ten: "Xét tính liên tục của hàm số tại một điểm", trang_thai: de-xuat}
-11.17.2: {ten: "Tìm tham số để hàm số liên tục (gián đoạn) tại một điểm", trang_thai: de-xuat}
-11.17.3: {ten: "Chứng minh phương trình có nghiệm bằng tính liên tục", trang_thai: de-xuat}
-11.17.4: {ten: "Nhận biết khái niệm, định lí về hàm số liên tục", trang_thai: de-xuat}
-11.17.5: {ten: "Tìm tham số để hàm số liên tục trên một khoảng hoặc trên ℝ", trang_thai: de-xuat}
+11.14.1: {ten: "Xác định ảnh của điểm, đoạn thẳng, hình qua phép chiếu song song", trang_thai: da-duyet}
+11.14.2: {ten: "Tính chất của phép chiếu song song", trang_thai: da-duyet}
+11.14.3: {ten: "Hình biểu diễn của một hình không gian", trang_thai: da-duyet}
+11.14.4: {ten: "Tỉ số độ dài, diện tích qua phép chiếu song song", trang_thai: da-duyet}
+11.15.1: {ten: "Chứng minh giới hạn của dãy số bằng cách xét lim(u_n − L) = 0", trang_thai: da-duyet}
+11.15.2: {ten: "Nhận biết mệnh đề và khái niệm về giới hạn của dãy số", trang_thai: da-duyet}
+11.15.3: {ten: "Giới hạn của dãy số dạng phân thức (đa thức trên đa thức)", trang_thai: da-duyet}
+11.15.4: {ten: "Giới hạn của dãy số dạng lũy thừa a^n", trang_thai: da-duyet}
+11.15.5: {ten: "Giới hạn của dãy số chứa căn thức", trang_thai: da-duyet}
+11.15.6: {ten: "Giới hạn của dãy số cho bởi tổng hoặc công thức truy hồi", trang_thai: da-duyet}
+11.15.7: {ten: "Tổng của cấp số nhân lùi vô hạn và số thập phân vô hạn tuần hoàn", trang_thai: da-duyet}
+11.15.8: {ten: "Giới hạn của tổng có các số hạng triệt tiêu liên tiếp (tách phân thức)", trang_thai: da-duyet}
+11.15.9: {ten: "Bài toán thực tế dùng tổng của cấp số nhân lùi vô hạn", trang_thai: da-duyet}
+11.16.1: {ten: "Giới hạn của hàm số tại một điểm dạng 0/0 (phân thức hữu tỉ)", trang_thai: da-duyet}
+11.16.2: {ten: "Giới hạn của hàm số tại một điểm dạng 0/0 chứa căn thức", trang_thai: da-duyet}
+11.16.3: {ten: "Giới hạn của hàm số tại vô cực (phân thức, căn thức)", trang_thai: da-duyet}
+11.16.4: {ten: "Giới hạn của hàm số dạng ∞ − ∞ và 0·∞", trang_thai: da-duyet}
+11.16.5: {ten: "Giới hạn một bên của hàm số (trị tuyệt đối, tử khác 0 và mẫu tiến về 0)", trang_thai: da-duyet}
+11.16.6: {ten: "Giới hạn của hàm số cho bởi nhiều công thức", trang_thai: da-duyet}
+11.16.7: {ten: "Nhận biết khái niệm, quy tắc và kết quả giới hạn của hàm số", trang_thai: da-duyet}
+11.16.8: {ten: "Bài toán thực tế và hình học dùng giới hạn của hàm số", trang_thai: da-duyet}
+11.17.1: {ten: "Xét tính liên tục của hàm số tại một điểm", trang_thai: da-duyet}
+11.17.2: {ten: "Tìm tham số để hàm số liên tục (gián đoạn) tại một điểm", trang_thai: da-duyet}
+11.17.3: {ten: "Chứng minh phương trình có nghiệm bằng tính liên tục", trang_thai: da-duyet}
+11.17.4: {ten: "Nhận biết khái niệm, định lí về hàm số liên tục", trang_thai: da-duyet}
+11.17.5: {ten: "Tìm tham số để hàm số liên tục trên một khoảng hoặc trên ℝ", trang_thai: da-duyet}
