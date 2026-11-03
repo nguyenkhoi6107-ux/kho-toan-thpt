@@ -1,0 +1,26 @@
+%% ma: L11-B16-0062
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.4
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐSSS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 2, Câu 6 (tr.378)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Bảng đáp án gốc: a Đ, b S, c Đ, d Đ. Theo L = (a-1)/b thì c), d) là Sai (kho giải ra Đ S S S). Có thể đề gốc in nhầm dấu ở c), d) (a - 2b = 1, a - b = 1 thì Đúng); nhờ giáo viên đối chiếu bản gốc."
+\begin{ex}
+Cho $a,b$ là các số thực khác $0$. Biết giới hạn $L=\lim\limits_{x\to-\infty}\dfrac{\sqrt{x^2-3x}+ax}{bx-1}$. Khi đó
+\choiceTF
+{\True $L=3$ khi $\dfrac{a-1}b=3$.}
+{$L=6$ khi $\dfrac{a-1}b=4$.}
+{$L=2$ khi $a+2b=1$.}
+{$L=1$ khi $a+b=1$.}
+\loigiai{\sloppy Với $x<0$: $\sqrt{x^2-3x}=-x\sqrt{1-\frac3x}$. Chia tử và mẫu cho $x$: $L=\lim\dfrac{-\sqrt{1-\frac3x}+a}{b-\frac1x}=\dfrac{a-1}b$.
+a) $L=3\Leftrightarrow\dfrac{a-1}b=3$. Đúng.
+b) $L=6\Leftrightarrow\dfrac{a-1}b=6\ne4$. Sai.
+c) $L=2\Leftrightarrow a-1=2b\Leftrightarrow a-2b=1$; với $a+2b=1$ thì $L=\dfrac{-2b}b=-2\ne2$. Sai.
+d) $L=1\Leftrightarrow a-b=1$; với $a+b=1$ thì $L=\dfrac{-b}b=-1\ne1$. Sai.}
+\end{ex}

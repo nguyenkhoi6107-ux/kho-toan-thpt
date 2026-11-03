@@ -1,0 +1,23 @@
+%% ma: L11-B15-0010
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.5
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Dạng 4, Ví dụ 10 (tr.313)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Ý b) cần nhân lượng liên hợp bậc ba (hằng đẳng thức hiệu hai lập phương), SGK Bài 15 chưa nêu tường minh nhưng là phép biến đổi đại số cơ bản."
+\begin{ex}
+Tính các giới hạn sau:
+
+a) $\lim\dfrac{\sqrt{4n^2+1}+2n-1}{\sqrt{n^2+4n+1}+n}$;
+
+b) $\lim\dfrac{n^2+\sqrt[3]{1-n^6}}{\sqrt{n^4+1}+n^2}$.
+\loigiai{\sloppy a) Chia tử và mẫu cho $n$: \[\dfrac{\sqrt{4+\frac1{n^2}}+2-\frac1n}{\sqrt{1+\frac4n+\frac1{n^2}}+1}\to\dfrac{2+2}{1+1}=2.\]
+
+b) Đặt $\sqrt[3]{1-n^6}=-n^2\sqrt[3]{1-\frac1{n^6}}$. Tử \[=n^2\left(1-\sqrt[3]{1-\frac1{n^6}}\right)=n^2\cdot\dfrac{\frac1{n^6}}{1+\sqrt[3]{1-\frac1{n^6}}+\sqrt[3]{\left(1-\frac1{n^6}\right)^2}}\] (dùng $1-a^3=(1-a)(1+a+a^2)$ với $a=\sqrt[3]{1-\frac1{n^6}}$), nên tử $\sim\dfrac{1}{3n^4}\to0$. Mẫu $=n^2\left(\sqrt{1+\frac1{n^4}}+1\right)\sim2n^2$. Vậy giới hạn bằng $0$.}
+\end{ex}

@@ -1,0 +1,18 @@
+%% ma: L11-B16-0051
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.2
+%% loai: TN4
+%% muc: VDC
+%% dap_an: "D"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 1, Câu 39 (tr.372)"
+%% kien_thuc: "Lớp 11 Bài 16; giới hạn lượng giác cơ bản lim sin x/x (ngoài SGK KNTT Bài 16, chương trình nâng cao)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Câu dùng giới hạn (1−cos kx)/x^2 và sin x/x khi x→0, kiến thức không có trong SGK KNTT Bài 16; nhờ giáo viên quyết định có giữ lại."
+\begin{ex}
+Cho hàm số $y=f(x)=\dfrac{1-\cos3x\cos5x\cos7x}{\sin^27x}$. Tính $\lim\limits_{x\to0}f(x)$.
+\choice{$\dfrac{83}{49}$}{$\dfrac{105}{49}$}{$\dfrac{15}{49}$}{\True $\dfrac{83}{98}$}
+\loigiai{\sloppy Dùng $\lim\limits_{x\to0}\dfrac{1-\cos kx}{x^2}=\dfrac{k^2}2$ và $\lim\dfrac{\sin7x}{x}=7$. Phân tích $1-\cos3x\cos5x\cos7x=(1-\cos3x)+\cos3x(1-\cos5x)+\cos3x\cos5x(1-\cos7x)$, chia cho $x^2$ ta được giới hạn $\dfrac92+\dfrac{25}2+\dfrac{49}2=\dfrac{83}2$. Mẫu $\dfrac{\sin^27x}{x^2}\to49$. Vậy giới hạn $=\dfrac{83}{98}$.}
+\end{ex}

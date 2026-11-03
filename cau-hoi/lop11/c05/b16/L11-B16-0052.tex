@@ -1,0 +1,18 @@
+%% ma: L11-B16-0052
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.2
+%% loai: TN4
+%% muc: VDC
+%% dap_an: "B"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 1, Câu 40 (tr.372)"
+%% kien_thuc: "Lớp 11 Bài 16; đạo hàm (dùng g(1)=g'(1)=0 để tử có nghiệm kép; học ở Bài 31, sau Bài 16)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Lời giải dùng điều kiện nghiệm kép qua đạo hàm (Bài 31); có thể thay bằng phân tích nhân liên hợp. Nhờ giáo viên quyết định xếp bài."
+\begin{ex}
+Cho biết $\lim\limits_{x\to1}\dfrac{\sqrt{ax^2+1}-bx-2}{x^3-3x+2}$ ($a,b\in\mathbb R$) có kết quả là một số thực. Giá trị của biểu thức $a^2+b^2$ bằng
+\choice{$6+5\sqrt3$}{\True $\dfrac{45}{16}$}{$\dfrac94$}{$87-48\sqrt3$}
+\loigiai{\sloppy Mẫu $x^3-3x+2=(x-1)^2(x+2)$. Để giới hạn hữu hạn, tử phải có nghiệm kép $x=1$: $g(x)=\sqrt{ax^2+1}-bx-2$ thỏa $g(1)=0$ và $g^{\prime}(1)=0$, tức $\sqrt{a+1}=b+2$ và $\dfrac a{\sqrt{a+1}}=b$. Thay $s=\sqrt{a+1}$: $s=\dfrac{a}{s}+2\Rightarrow s^2=a+2s\Rightarrow s=\dfrac12$, nên $a=-\dfrac34$, $b=\dfrac a s=-\dfrac32$ (và $b+2=\dfrac12=s$, đúng). Vậy $a^2+b^2=\dfrac9{16}+\dfrac94=\dfrac{45}{16}$.}
+\end{ex}

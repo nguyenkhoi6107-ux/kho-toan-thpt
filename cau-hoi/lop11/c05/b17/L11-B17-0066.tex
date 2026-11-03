@@ -1,0 +1,24 @@
+%% ma: L11-B17-0066
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.5
+%% loai: DS
+%% muc: [TH, TH, TH, VD]
+%% dap_an: "SĐSS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 2, Câu 6 (tr.417)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Bảng đáp án gốc: ý a Đ (b Đ, c S, d S); nhưng f(10) = 10 + 17 = 27, không phải 17 như đề in, nên kho giải ý a là Sai. Nghi lỗi in (27 → 17); cần giáo viên đối chiếu."
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}x^2+ax+b&\text{khi }x<-5\\x+17&\text{khi }-5\le x\le10\\ax+b+10&\text{khi }x>10\end{cases}$ liên tục trên $\mathbb R$. Khi đó
+\choiceTF
+{$f(-5)=12$; $f(10)=17$.}
+{\True $a>0$.}
+{$b>0$.}
+{$a+b=2$.}
+\loigiai{\sloppy Liên tục tại $-5$: $25-5a+b=12$; liên tục tại $10$: $10a+b+10=27$. Suy ra $a=2$, $b=-3$.
+a) $f(-5)=-5+17=12$ nhưng $f(10)=10+17=27\ne17$. Sai.
+b) $a=2>0$. Đúng. c) $b=-3<0$. Sai. d) $a+b=-1\ne2$. Sai.}
+\end{ex}

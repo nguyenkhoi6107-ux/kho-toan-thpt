@@ -1,0 +1,26 @@
+%% ma: L11-B17-0062
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.1
+%% loai: DS
+%% muc: [VD, TH, TH, VD]
+%% dap_an: "ĐSSĐ"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 2, Câu 2 (tr.414)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}\dfrac{1-\sqrt{5x+11}}{2x^2-5x-18}&\text{khi }x>-2\\4-x^2&\text{khi }x\le-2\end{cases}$
+
+và $g(x)=\begin{cases}\dfrac{x^2-x-6}{x+2}&\text{khi }x\ne-2\\2x+a&\text{khi }x=-2\end{cases}$.
+\choiceTF
+{\True Ta có $\lim\limits_{x\to-2^+}f(x)=\dfrac5{26}$.}
+{Hàm số $f(x)$ liên tục tại điểm $x_0=-2$.}
+{Để hàm số $g(x)$ liên tục tại điểm $x_0=-2$ thì $a=1$.}
+{\True Khi $a=-1$ thì hàm số $y=f(x)\cdot g(x)$ gián đoạn tại điểm $x_0=-2$.}
+\loigiai{\sloppy a) $1-\sqrt{5x+11}=\dfrac{-5(x+2)}{1+\sqrt{5x+11}}$ và $2x^2-5x-18=(x+2)(2x-9)$ nên $\lim\limits_{x\to-2^+}f(x)=\dfrac{-5}{2\cdot(-13)}=\dfrac5{26}$. Đúng.
+b) $f(-2)=4-4=0\ne\dfrac5{26}$. Sai.
+c) $\lim\limits_{x\to-2}g(x)=\lim(x-3)=-5$, $g(-2)=a-4$; liên tục khi $a=-1$. Vậy $a=1$ sai.
+d) Khi $a=-1$, $g$ liên tục tại $-2$ và $g(-2)=-5\ne0$; $f$ có giới hạn trái bằng $0$, giới hạn phải bằng $\dfrac5{26}$ khác nhau nên $f\cdot g$ có giới hạn trái $0$ và giới hạn phải $-\dfrac{25}{26}$: gián đoạn. Đúng.}
+\end{ex}

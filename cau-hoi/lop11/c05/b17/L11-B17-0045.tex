@@ -1,0 +1,17 @@
+%% ma: L11-B17-0045
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.2
+%% loai: TN4
+%% muc: VDC
+%% dap_an: "A"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 1, Câu 25 (tr.405)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}\dfrac{\sqrt{ax^2+1}-bx-2}{4x^3-3x+1}&\text{khi }x\ne\dfrac12\\\dfrac c2&\text{khi }x=\dfrac12\end{cases}$ ($a,b,c\in\mathbb R$). Biết hàm số liên tục tại $x=\dfrac12$. Tính $S=abc$.
+\choice{\True $S=-36$.}{$S=18$.}{$S=36$.}{$S=-18$.}
+\loigiai{\sloppy $4x^3-3x+1=(x+1)(2x-1)^2$ có nghiệm kép $x=\dfrac12$, nên để $f$ có giới hạn hữu hạn thì tử $N(x)=\sqrt{ax^2+1}-bx-2$ cũng phải có nghiệm kép tại $\dfrac12$: $N\left(\dfrac12\right)=0$ và $N^{\prime}\left(\dfrac12\right)=0$. Đặt $s=\sqrt{\dfrac a4+1}$: $s=\dfrac b2+2$ và $N^{\prime}=\dfrac{ax}{\sqrt{ax^2+1}}-b=\dfrac a{2s}-b=0\Rightarrow a=2bs$. Từ $a=4s^2-4$ và $b=2s-4$ suy ra $4s^2-4=2s(2s-4)\Rightarrow s=\dfrac12$, $b=-3$, $a=-3$. Khi đó $\lim\limits_{x\to1/2}\dfrac{\sqrt{1-3x^2}+3x-2}{(x+1)(2x-1)^2}=-2$, nên $\dfrac c2=-2$, $c=-4$ và $S=(-3)(-3)(-4)=-36$.}
+\end{ex}

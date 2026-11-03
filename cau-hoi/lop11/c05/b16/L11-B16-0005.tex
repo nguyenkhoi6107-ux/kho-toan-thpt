@@ -1,0 +1,30 @@
+%% ma: L11-B16-0005
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.3
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Dạng 2, Ví dụ 5 (tr.354)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Tính các giới hạn sau:
+
+a) $A=\lim\limits_{x\to+\infty}\dfrac{2x^3-3x^2+4x+1}{x^4-5x^3+2x^2-x+3}$;
+
+b) $B=\lim\limits_{x\to-\infty}\dfrac{x+\sqrt{x^2+2}}{\sqrt[3]{8x^3+x^2+1}}$;
+
+c) $C=\lim\limits_{x\to+\infty}\left(\sqrt{x+\sqrt x}-\sqrt x\right)$;
+
+d) $D=\lim\limits_{x\to+\infty}x\left(\sqrt{x^2+1}-x\right)$.
+\loigiai{\sloppy a) Chia tử và mẫu cho $x^4$: \[A=\lim\dfrac{\frac2x-\frac3{x^2}+\frac4{x^3}+\frac1{x^4}}{1-\frac5x+\frac2{x^2}-\frac1{x^3}+\frac3{x^4}}=0.\]
+
+b) Với $x<0$: $x+\sqrt{x^2+2}=\dfrac{2}{\sqrt{x^2+2}-x}$, nên tử $\to0$ còn mẫu $\sim2x$: $B=\lim\dfrac{2}{\left(\sqrt{x^2+2}-x\right)\sqrt[3]{8x^3+x^2+1}}=0$.
+
+c) \[\sqrt{x+\sqrt x}-\sqrt x=\dfrac{\sqrt x}{\sqrt{x+\sqrt x}+\sqrt x}=\dfrac1{\sqrt{1+\frac1{\sqrt x}}+1}\to\dfrac12.\]
+
+d) \[x\left(\sqrt{x^2+1}-x\right)=\dfrac{x}{\sqrt{x^2+1}+x}=\dfrac1{\sqrt{1+\frac1{x^2}}+1}\to\dfrac12.\]}
+\end{ex}

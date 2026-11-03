@@ -1,0 +1,26 @@
+%% ma: L11-B15-0074
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.5
+%% loai: DS
+%% muc: [NB, TH, TH, VDC]
+%% dap_an: "ĐSĐS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 2, Câu 4 (tr.337)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Ý d) của đề gốc không nêu rõ cách xác định b, c; kho hiểu b√3 + c là cách viết với c = 0 (đáp án gốc: Sai). Nhờ giáo viên xem lại cách phát biểu."
+\begin{ex}
+Cho giới hạn $L=\lim\dfrac{\sqrt[3]{an^3+5n^2-7}}{\sqrt{3n^2-n+2}}$. Khi đó
+\choiceTF
+{\True Khi $a=1$ thì $L=\dfrac1{\sqrt3}$.}
+{Khi $a=0$ thì $L=\dfrac13$.}
+{\True Khi $a>0$ thì $L>0$.}
+{Khi $L=b\sqrt3+c$ với $b,c$ là các tham số thì $P=\dfrac{a+c}{b^3}=\dfrac12$.}
+\loigiai{\sloppy Với $a\ne0$: \[L=\lim\dfrac{\sqrt[3]{a+\frac5n-\frac7{n^3}}}{\sqrt{3-\frac1n+\frac2{n^2}}}=\dfrac{\sqrt[3]a}{\sqrt3}.\]
+a) $a=1$: $L=\dfrac1{\sqrt3}$. Đúng.
+b) $a=0$: tử $=\sqrt[3]{5n^2-7}\sim n^{2/3}$, mẫu $\sim\sqrt3\,n$, nên $L=0\ne\dfrac13$. Sai.
+c) $a>0$: $L=\dfrac{\sqrt[3]a}{\sqrt3}>0$. Đúng.
+d) $L=\dfrac{\sqrt[3]a}{3}\sqrt3$ nên $b=\dfrac{\sqrt[3]a}3$, $c=0$, và $P=\dfrac{a}{b^3}=27\ne\dfrac12$. Sai.}
+\end{ex}

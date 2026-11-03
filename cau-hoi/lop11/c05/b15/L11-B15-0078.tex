@@ -1,0 +1,26 @@
+%% ma: L11-B15-0078
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.9
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 2, Câu 8 (tr.340)"
+%% kien_thuc: "Lớp 11 Bài 15; Bài 7 (tổng n số hạng đầu của cấp số nhân)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Bảng đáp án gốc ghi ý c) là Sai; kho đánh giá ý c) là Đúng (mức lương sau n chu kì 3 năm bằng 5 000 000·(26/25)^n). Cần giáo viên xem lại ý c) (có thể đề muốn hỏi tổng tiền lương)."
+\begin{ex}
+Ông An bắt đầu đi làm với mức lương khởi điểm là $5\,000\,000$ đồng một tháng. Cứ sau một chu kỳ $3$ năm thì ông An được tăng lương $4\%$.
+\choiceTF
+{\True Mức lương ông An nhận được sau $3$ năm là $5\,200\,000$ đồng.}
+{Tổng số tiền lương ông An nhận được sau $6$ năm đầu là $374\,400\,000$ đồng.}
+{\True Dự đoán công thức tính số tiền lương ông An được nhận $u_n$, sau $n$ chu kì năm công tác là $u_n=5\,000\,000\cdot\left(\dfrac{26}{25}\right)^n$ đồng.}
+{\True Giả sử ông An đi làm sau đúng $35$ năm thì được về hưu. Tổng số tiền lương ông nhận được trong cả quá trình công tác là $2\,612\,277\,740$ đồng.}
+\loigiai{\sloppy Mỗi chu kỳ tăng $4\%$ nên mức lương nhân với $1{,}04=\dfrac{26}{25}$.
+a) $5\,000\,000\cdot1{,}04=5\,200\,000$. Đúng.
+b) $3$ năm đầu: $36\cdot5\,000\,000=180\,000\,000$; $3$ năm kế: $36\cdot5\,200\,000=187\,200\,000$; tổng $=367\,200\,000\ne374\,400\,000$. Sai.
+c) Mức lương sau $n$ chu kỳ là $u_n=5\,000\,000\left(\dfrac{26}{25}\right)^n$. Đúng.
+d) $35$ năm $=11$ chu kỳ đầy đủ ($33$ năm) và $2$ năm: tổng \[=36\cdot5\,000\,000\cdot\dfrac{1{,}04^{11}-1}{0{,}04}+24\cdot5\,000\,000\cdot1{,}04^{11}\approx2\,612\,277\,740\] đồng. Đúng.}
+\end{ex}

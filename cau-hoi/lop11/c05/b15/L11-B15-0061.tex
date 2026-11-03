@@ -1,0 +1,17 @@
+%% ma: L11-B15-0061
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.6
+%% loai: TN4
+%% muc: VD
+%% dap_an: "C"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 1, Câu 50 (tr.332)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho dãy số $(u_n)$ biết $\begin{cases}u_1=-2\\u_n=3u_{n-1}-1,\ \forall n\ge2\end{cases}$. Tính $L=\lim\dfrac{u_n}{3^n}$.
+\choice{Không xác định.}{$L=+\infty$}{\True $L=-\dfrac56$}{$L=0$}
+\loigiai{\sloppy Đặt $v_n=u_n-\dfrac12$. Khi đó $v_n=3v_{n-1}$, $v_1=-\dfrac52$ nên $v_n=-\dfrac52\cdot3^{n-1}$ và $u_n=\dfrac12-\dfrac52\cdot3^{n-1}$. Vậy $\dfrac{u_n}{3^n}=\dfrac1{2\cdot3^n}-\dfrac56\to-\dfrac56$.}
+\end{ex}

@@ -1,0 +1,21 @@
+%% ma: L11-B15-0007
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.6
+%% loai: TL
+%% muc: VDC
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Dạng 3, Ví dụ 7 (tr.311)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Đã kiểm số: u_n -> -1 (u_2=-3/7, u_3=-31/39, ...), đáp số 0. Câu vượt mức tính toán thông thường nên xếp VDC."
+\begin{ex}
+Cho dãy số $(u_n)$ xác định bởi $u_1=1$; $u_{n+1}=\dfrac{u_n-4}{u_n+6}$ $(\forall n\ge1)$. Tính giới hạn $\lim\dfrac{u_{n+1}+1}{u_n+4}$.
+\loigiai{\sloppy Ta có $u_{n+1}+1=\dfrac{2(u_n+1)}{u_n+6}$ và $u_{n+1}+4=\dfrac{5(u_n+4)}{u_n+6}$. Đặt $v_n=\dfrac{u_n+1}{u_n+4}$ thì $v_{n+1}=\dfrac25v_n$, $v_1=\dfrac25$ nên $v_n=\left(\dfrac25\right)^n\to0$.
+
+Từ $u_n+1=v_n(u_n+4)$ suy ra $u_n=\dfrac{4v_n-1}{1-v_n}\to-1$.
+
+Vậy $\dfrac{u_{n+1}+1}{u_n+4}=v_{n+1}\cdot\dfrac{u_{n+1}+4}{u_n+4}\to0\cdot\dfrac{3}{3}=0$.}
+\end{ex}

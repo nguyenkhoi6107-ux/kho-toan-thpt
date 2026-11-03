@@ -1,0 +1,28 @@
+%% ma: L11-B14-0001
+%% lop: 11
+%% chuong: 4
+%% bai: 14
+%% dang: 11.14.1
+%% loai: TL
+%% muc: NB
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 4 Bài 5, Dạng 1, Ví dụ 1 (tr.522)"
+%% kien_thuc: "Lớp 11 Bài 14 (phép chiếu song song)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.14.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Hình gốc dựng lại bằng TikZ theo hình trong tài liệu (A ở dưới E, B dưới F, C dưới G, D dưới H)."
+\begin{ex}
+Cho hình hộp $ABCD.EFGH$. Xác định hình chiếu của điểm $A$ trên mặt phẳng $(CDHG)$ theo phương $BC$ và theo phương $BG$.
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(.8cm,.5cm)},z={(0cm,1cm)}]
+\coordinate (B) at (0,0,0); \coordinate (C) at (3,0,0); \coordinate (A) at (0,2,0); \coordinate (D) at (3,2,0);
+\coordinate (F) at (0,0,2.2); \coordinate (G) at (3,0,2.2); \coordinate (E) at (0,2,2.2); \coordinate (H) at (3,2,2.2);
+\draw (B)--(C)--(G)--(F)--cycle; \draw (F)--(E)--(H)--(G); \draw (C)--(D)--(H);
+\draw[khuat] (A)--(B); \draw[khuat] (A)--(D); \draw[khuat] (A)--(E);
+\foreach \p/\pos in {A/above right,B/below left,C/below right,D/right,E/above left,F/left,G/below right,H/above right}{\fill (\p) circle(1pt); \node[\pos] at (\p){$\p$};}
+\end{tikzpicture}
+\end{center}
+\loigiai{\sloppy Hình hộp có $AD\parallel BC$ nên đường thẳng qua $A$ song song với $BC$ là đường $AD$, cắt $(CDHG)$ tại $D$. Vậy hình chiếu của $A$ theo phương $BC$ là điểm $D$.
+
+Tứ giác $ABGH$ có $AB\parallel HG$ và $AB=HG$ nên là hình bình hành, suy ra $AH\parallel BG$. Đường thẳng qua $A$ song song với $BG$ là đường $AH$, cắt $(CDHG)$ tại $H$. Vậy hình chiếu của $A$ theo phương $BG$ là điểm $H$.}
+\end{ex}

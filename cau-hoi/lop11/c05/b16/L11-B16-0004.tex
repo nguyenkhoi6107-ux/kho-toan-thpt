@@ -1,0 +1,31 @@
+%% ma: L11-B16-0004
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.2
+%% loai: TL
+%% muc: VDC
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Dạng 1, Ví dụ 4 (tr.354)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Các ý nhiều bước nhân liên hợp (căn bậc ba, hai lượng liên hợp) nên xếp VDC."
+\begin{ex}
+Tìm giới hạn
+
+a) $\lim\limits_{x\to-1}\dfrac{x^2-1}{2x+\sqrt{3x^2+1}}$;
+
+b) $\lim\limits_{x\to5}\dfrac{2x-5\sqrt{x-1}}{3-\sqrt{x+4}}$;
+
+c) $\lim\limits_{x\to0}\dfrac{1-\sqrt[3]{12x+1}}{4x}$;
+
+d) $\lim\limits_{x\to-4}\dfrac{\sqrt{2x+9}-x-5}{\sqrt[3]{x+5}+\sqrt[3]{x+3}}$.
+\loigiai{\sloppy a) Nhân liên hợp mẫu: \[\dfrac{(x^2-1)\left(2x-\sqrt{3x^2+1}\right)}{4x^2-(3x^2+1)}=\dfrac{(x^2-1)\left(2x-\sqrt{3x^2+1}\right)}{x^2-1}=2x-\sqrt{3x^2+1}\to-4.\]
+
+b) $\dfrac{2x-5\sqrt{x-1}}{3-\sqrt{x+4}}$: tử $=\dfrac{4x^2-25(x-1)}{2x+5\sqrt{x-1}}=\dfrac{(4x-5)(x-5)}{2x+5\sqrt{x-1}}$, mẫu $=\dfrac{5-x}{3+\sqrt{x+4}}$. Giới hạn \[=-\lim\dfrac{(4x-5)\left(3+\sqrt{x+4}\right)}{2x+5\sqrt{x-1}}=-\dfrac{15\cdot6}{20}=-\dfrac92.\]
+
+c) $1-\sqrt[3]{12x+1}=\dfrac{-12x}{1+\sqrt[3]{12x+1}+\sqrt[3]{(12x+1)^2}}$, nên giới hạn $=\lim\dfrac{-3}{1+\sqrt[3]{12x+1}+\sqrt[3]{(12x+1)^2}}=-1$.
+
+d) Tử: $\sqrt{2x+9}-(x+5)=\dfrac{2x+9-(x+5)^2}{\sqrt{2x+9}+x+5}=\dfrac{-(x+4)^2}{\sqrt{2x+9}+x+5}$. Mẫu (dùng $a^3+b^3=(a+b)(a^2-ab+b^2)$ với $a=\sqrt[3]{x+5}$, $b=\sqrt[3]{x+3}$): $a+b=\dfrac{2x+8}{\sqrt[3]{(x+5)^2}-\sqrt[3]{(x+5)(x+3)}+\sqrt[3]{(x+3)^2}}$. Do đó biểu thức \[=\dfrac{-(x+4)\left[\sqrt[3]{(x+5)^2}-\sqrt[3]{(x+5)(x+3)}+\sqrt[3]{(x+3)^2}\right]}{2\left(\sqrt{2x+9}+x+5\right)};\] thừa số $(x+4)\to0$ còn phần còn lại có giới hạn hữu hạn ($\sqrt{2x+9}+x+5\to2$), nên giới hạn bằng $0$.}
+\end{ex}

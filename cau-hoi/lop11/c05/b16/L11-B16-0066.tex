@@ -1,0 +1,29 @@
+%% ma: L11-B16-0066
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.8
+%% loai: TLN
+%% muc: VD
+%% dap_an: "2"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 3, Câu 5 (tr.381)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Đề gốc ghi 'độ dài AH' nhưng công thức và đáp số 2 là của đường cao OH (AH sẽ tiến tới +vô cùng), nên kho sửa AH thành OH. Hình TikZ do kho dựng (A(4;0) minh họa)."
+\begin{ex}
+Trong hệ trục toạ độ $Oxy$, lấy điểm $A$ thuộc tia $Ox$ và điểm $B(0;2)$ thuộc tia $Oy$. Giả sử hoành độ điểm $A$ là $a>0$. Độ dài đường cao $OH$ của tam giác $OAB$ được tính theo công thức $\dfrac{2a}{\sqrt{4+a^2}}$. Khi điểm $A$ dịch chuyển ra vô cực theo chiều dương trục $Ox$ thì độ dài $OH$ thay đổi về gần giá trị bao nhiêu?
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[truc] (-0.4,0)--(5.2,0) node[below]{$x$};
+\draw[truc] (0,-0.4)--(0,2.9) node[left]{$y$};
+\draw (0,2)--(4,0);
+\draw (0,0)--(0.8,1.6);
+\draw (0.8,1.6)++(0.12,0.06)--++(-0.06,0.12)--++(-0.12,-0.06);
+\fill (0,2) circle(1pt) (4,0) circle(1pt) (0.8,1.6) circle(1pt);
+\path (0,2) node[above right]{$B$} (0,2) node[left]{$2$} (0.8,1.6) node[above right]{$H$} (0,0) node[below left]{$O$} (4,0) node[above]{$A$} (4,0) node[below]{$a$} (5.2,0) node[above]{};
+\end{tikzpicture}
+\end{center}
+\shortans{2}
+\loigiai{\sloppy $OH=\dfrac{2a}{\sqrt{4+a^2}}=\dfrac2{\sqrt{\frac4{a^2}+1}}\to2$ khi $a\to+\infty$.}
+\end{ex}

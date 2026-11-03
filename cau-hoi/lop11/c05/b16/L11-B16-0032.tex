@@ -1,0 +1,17 @@
+%% ma: L11-B16-0032
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.6
+%% loai: TN4
+%% muc: VD
+%% dap_an: "D"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 1, Câu 20 (tr.366)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Gọi $a$, $b$ là các giá trị để hàm số $f(x)=\begin{cases}\dfrac{x^2+ax+b}{x^2-4}&\text{khi }x<-2\\x+1&\text{khi }x\ge-2\end{cases}$ có giới hạn hữu hạn khi $x$ dần tới $-2$. Tính $3a-b$.
+\choice{$8$}{$4$}{$24$}{\True $12$}
+\loigiai{\sloppy Giới hạn phải: $\lim\limits_{x\to-2^+}(x+1)=-1$. Để giới hạn trái hữu hạn, tử phải triệt tiêu tại $-2$: $4-2a+b=0\Rightarrow b=2a-4$, khi đó tử $=(x+2)(x+a-2)$ và $\lim\limits_{x\to-2^-}\dfrac{x+a-2}{x-2}=\dfrac{a-4}{-4}$. Hai giới hạn bằng nhau: $\dfrac{a-4}{-4}=-1\Rightarrow a=8$, $b=12$, nên $3a-b=12$.}
+\end{ex}

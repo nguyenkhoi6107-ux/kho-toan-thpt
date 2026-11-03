@@ -1,0 +1,17 @@
+%% ma: L11-B16-0053
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.2
+%% loai: TN4
+%% muc: VDC
+%% dap_an: "B"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 1, Câu 41 (tr.372)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho $f(x)$ là đa thức thỏa mãn $\lim\limits_{x\to2}\dfrac{f(x)-20}{x-2}=10$. Tính $T=\lim\limits_{x\to2}\dfrac{\sqrt[3]{6f(x)+5}-5}{x^2+x-6}$.
+\choice{$T=\dfrac{12}{25}$}{\True $T=\dfrac4{25}$}{$T=\dfrac4{15}$}{$T=\dfrac6{25}$}
+\loigiai{\sloppy Từ giả thiết, $f(2)=20$ (đa thức liên tục) và $\dfrac{f(x)-20}{x-2}\to10$. Đặt $A=\sqrt[3]{6f(x)+5}$: $A-5=\dfrac{6f(x)+5-125}{A^2+5A+25}=\dfrac{6\left(f(x)-20\right)}{A^2+5A+25}$. Mà $x^2+x-6=(x-2)(x+3)$. Do đó \[T=\lim\dfrac{6}{(x+3)\left(A^2+5A+25\right)}\cdot\dfrac{f(x)-20}{x-2}=\dfrac{6\cdot10}{5\cdot75}=\dfrac4{25}.\]}
+\end{ex}

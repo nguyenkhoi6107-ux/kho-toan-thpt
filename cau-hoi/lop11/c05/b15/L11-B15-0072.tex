@@ -1,0 +1,25 @@
+%% ma: L11-B15-0072
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.5
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SSĐS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 2, Câu 2 (tr.337)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Đặt $I=\lim\left(\sqrt{n^2+a^2n}-\sqrt{n^2+(a+2)n+1}\right)$. Khi đó
+\choiceTF
+{Ta biến đổi được $I=\lim\dfrac{n-1}{\sqrt{n^2+n}+\sqrt{n^2+1}}$.}
+{Nếu $I=0$ thì có $3$ giá trị $a$ thỏa mãn.}
+{\True Nếu $I=0$ thì tổng các giá trị $a$ tìm được bằng $1$.}
+{Có $2$ giá trị $a$ nguyên để $I=1$.}
+\loigiai{\sloppy Nhân lượng liên hợp: $I=\lim\dfrac{(a^2-a-2)n-1}{\sqrt{n^2+a^2n}+\sqrt{n^2+(a+2)n+1}}=\dfrac{a^2-a-2}{2}$.
+a) Biểu thức tử là $(a^2-a-2)n-1$, phụ thuộc $a$, không thể luôn là $n-1$. Sai.
+b) $I=0\Leftrightarrow a^2-a-2=0\Leftrightarrow a\in\{-1;2\}$: có $2$ giá trị. Sai.
+c) Tổng hai giá trị là $-1+2=1$. Đúng.
+d) $I=1\Leftrightarrow a^2-a-4=0\Leftrightarrow a=\dfrac{1\pm\sqrt{17}}2$, không có giá trị nguyên. Sai.}
+\end{ex}

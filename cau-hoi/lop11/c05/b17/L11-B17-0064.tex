@@ -1,0 +1,24 @@
+%% ma: L11-B17-0064
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.2
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "SĐSS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 2, Câu 4 (tr.415)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho hàm số $y=f(x)=\begin{cases}\dfrac{\left|2x^2-7x+6\right|}{x-2}&\text{khi }x<2\\a+\dfrac{1-x}{2+x}&\text{khi }x\ge2\end{cases}$. Khi đó
+\choiceTF
+{Khi $a=3$ thì $\lim\limits_{x\to2^+}f(x)=\dfrac{11}2$.}
+{\True $\lim\limits_{x\to2^-}f(x)=-1$.}
+{Để hàm số liên tục tại $x_0=2$ thì $a=-\dfrac12$.}
+{Biết $a$ là giá trị để hàm số $f(x)$ liên tục tại $x_0=2$, thì bất phương trình $-x^2+ax+\dfrac74>0$ có $1$ nghiệm nguyên.}
+\loigiai{\sloppy a) $\lim\limits_{x\to2^+}f(x)=a+\dfrac{1-2}{2+2}=a-\dfrac14=\dfrac{11}4$ khi $a=3$; vậy $\dfrac{11}2$ sai.
+b) Với $x$ gần $2$ và $x<2$: $2x^2-7x+6=(2x-3)(x-2)<0$ nên $\left|2x^2-7x+6\right|=-(2x-3)(x-2)$ và $f(x)=-(2x-3)\to-1$. Đúng.
+c) Liên tục khi $a-\dfrac14=-1\Leftrightarrow a=-\dfrac34$. Vậy $a=-\dfrac12$ sai.
+d) Với $a=-\dfrac34$: $-x^2-\dfrac34x+\dfrac74>0\Leftrightarrow-\dfrac74<x<1$, nghiệm nguyên là $-1$ và $0$ ($2$ nghiệm). Vậy "có $1$ nghiệm nguyên" sai.}
+\end{ex}

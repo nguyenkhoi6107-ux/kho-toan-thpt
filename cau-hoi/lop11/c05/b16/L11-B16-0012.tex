@@ -1,0 +1,26 @@
+%% ma: L11-B16-0012
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.6
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Dạng 3, Ví dụ 12 (tr.357)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Tìm các giới hạn một bên và giới hạn (nếu có) của các hàm số sau.
+
+a) $f(x)=\begin{cases}\sqrt{9-x^2}&\text{với }-3\le x\le3\\\dfrac1{\sqrt{x^2-9}}&\text{với }x>3\end{cases}$ khi $x\to3$.
+
+b) $f(x)=\begin{cases}\dfrac{\sqrt{x+3}-2}{x-1}&\text{với }x>1\\\dfrac{x^2-3x+2}{4\left(3x^2-5x+2\right)}&\text{với }x<1\end{cases}$ khi $x\to1$.
+
+c) $f(x)=\begin{cases}\dfrac{\sqrt{1-x}-\sqrt{1+x}}x&\text{với }x<0\\5+\dfrac{4-x}{x+1}&\text{với }x\ge0\end{cases}$ khi $x\to0$.
+\loigiai{\sloppy a) $\lim\limits_{x\to3^-}f(x)=\lim\sqrt{9-x^2}=0$; $\lim\limits_{x\to3^+}f(x)=\lim\dfrac1{\sqrt{x^2-9}}=+\infty$. Hai giới hạn một bên khác nhau nên không tồn tại $\lim\limits_{x\to3}f(x)$.
+
+b) $x\to1^+$: $\dfrac{\sqrt{x+3}-2}{x-1}=\dfrac1{\sqrt{x+3}+2}\to\dfrac14$. $x\to1^-$: $\dfrac{(x-1)(x-2)}{4(x-1)(3x-2)}=\dfrac{x-2}{4(3x-2)}\to-\dfrac14$. Hai giới hạn một bên khác nhau nên không tồn tại $\lim\limits_{x\to1}f(x)$.
+
+c) $x\to0^-$: $\dfrac{\sqrt{1-x}-\sqrt{1+x}}x=\dfrac{-2}{\sqrt{1-x}+\sqrt{1+x}}\to-1$. $x\to0^+$: $5+\dfrac{4-x}{x+1}\to9$. Hai giới hạn một bên khác nhau nên không tồn tại $\lim\limits_{x\to0}f(x)$.}
+\end{ex}

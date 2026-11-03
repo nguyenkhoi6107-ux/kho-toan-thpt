@@ -1,0 +1,18 @@
+%% ma: L11-B17-0022
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 1, Câu 2 (tr.398)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+%% ghi_chu: "Bảng đáp án gốc ghi D, nhưng D sai (f gián đoạn vẫn có thể có nghiệm); đáp án đúng là C (kho tự giải). Cần giáo viên đối chiếu."
+\begin{ex}
+Cho hàm số $f(x)$ xác định trên $[a;b]$. Tìm mệnh đề \textbf{đúng}.
+\choice{Nếu hàm số $f(x)$ liên tục trên $[a;b]$ và $f(a)\cdot f(b)>0$ thì phương trình $f(x)=0$ không có nghiệm trong khoảng $(a;b)$.}{Nếu $f(a)\cdot f(b)<0$ thì phương trình $f(x)=0$ có ít nhất một nghiệm trong khoảng $(a;b)$.}{\True Nếu hàm số $f(x)$ liên tục, tăng trên $[a;b]$ và $f(a)\cdot f(b)>0$ thì phương trình $f(x)=0$ không có nghiệm trong khoảng $(a;b)$.}{Nếu phương trình $f(x)=0$ có nghiệm trong khoảng $(a;b)$ thì hàm số $f(x)$ phải liên tục trên $(a;b)$.}
+\loigiai{\sloppy A sai: $f(x)=x^2$ trên $[-1;1]$ có $f(-1)f(1)=1>0$ nhưng $f(0)=0$. B sai: thiếu giả thiết $f$ liên tục (ví dụ $f(x)=\dfrac1x$ trên $[-1;1]$, $f(-1)f(1)<0$ nhưng vô nghiệm). D sai: $f(x)=\begin{cases}0&x=0\\1&x\ne0\end{cases}$ có nghiệm $x=0$ nhưng gián đoạn. C đúng: $f$ tăng nên $f(a)\le f(x)\le f(b)$; vì $f(a)f(b)>0$ nên $f(a)$ và $f(b)$ cùng dấu, suy ra $f(x)$ cùng dấu với chúng với mọi $x\in[a;b]$ (nếu $f(a),f(b)>0$ thì $f(x)\ge f(a)>0$; nếu $f(a),f(b)<0$ thì $f(x)\le f(b)<0$), nên $f(x)=0$ vô nghiệm.}
+\end{ex}

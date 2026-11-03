@@ -1,0 +1,17 @@
+%% ma: L11-B15-0059
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.6
+%% loai: TN4
+%% muc: VD
+%% dap_an: "A"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 1, Câu 48 (tr.331)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Dãy số $(u_n)$ nào sau đây có giới hạn khác số $1$ khi $n$ dần đến dương vô cùng?
+\choice{\True $u_n=\dfrac{(2017-n)^{2018}}{n(2018-n)^{2017}}$.}{$u_n=n\left(\sqrt{n^2+2018}-\sqrt{n^2+2016}\right)$.}{$\begin{cases}u_1=2017\\u_{n+1}=\dfrac12(u_n+1),\ n=1,2,3\ldots\end{cases}$}{$u_n=\dfrac1{1\cdot2}+\dfrac1{2\cdot3}+\dfrac1{3\cdot4}+\cdots+\dfrac1{n(n+1)}$.}
+\loigiai{\sloppy A: $(2017-n)^{2018}=(n-2017)^{2018}$ và $(2018-n)^{2017}=-(n-2018)^{2017}$, nên $u_n\to\dfrac{1}{-1}=-1\ne1$. B: $u_n=\dfrac{2n}{\sqrt{n^2+2018}+\sqrt{n^2+2016}}\to1$. C: $u_{n+1}-1=\dfrac{u_n-1}2$ nên $u_n\to1$. D: $u_n=1-\dfrac1{n+1}\to1$. Vậy chọn A.}
+\end{ex}

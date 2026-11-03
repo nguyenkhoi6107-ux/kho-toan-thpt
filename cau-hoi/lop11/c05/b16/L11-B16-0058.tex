@@ -1,0 +1,25 @@
+%% ma: L11-B16-0058
+%% lop: 11
+%% chuong: 5
+%% bai: 16
+%% dang: 11.16.4
+%% loai: DS
+%% muc: [NB, TH, VD, VD]
+%% dap_an: "SĐSĐ"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 2, Phần 2, Câu 2 (tr.375)"
+%% kien_thuc: "Lớp 11 Bài 16 (giới hạn của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.16.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho $\lim\limits_{x\to-\infty}\dfrac{a\sqrt{x^2+1}+2023}{x+2024}=\dfrac12$; $\lim\limits_{x\to+\infty}\left(\sqrt{x^2+bx+1}-x\right)=2$. Khi đó
+\choiceTF
+{$a>0$.}
+{\True $b>0$.}
+{$a>b$.}
+{\True $P=4a+b=2$.}
+\loigiai{\sloppy Với $x<0$: $\sqrt{x^2+1}=-x\sqrt{1+\frac1{x^2}}$, nên $\dfrac{a\sqrt{x^2+1}+2023}{x+2024}\to-a=\dfrac12\Rightarrow a=-\dfrac12$. Và $\sqrt{x^2+bx+1}-x=\dfrac{bx+1}{\sqrt{x^2+bx+1}+x}\to\dfrac b2=2\Rightarrow b=4$.
+a) $a=-\dfrac12<0$. Sai.
+b) $b=4>0$. Đúng.
+c) $a=-\dfrac12<4=b$. Sai.
+d) $4a+b=-2+4=2$. Đúng.}
+\end{ex}

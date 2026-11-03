@@ -1,0 +1,25 @@
+%% ma: L11-B15-0075
+%% lop: 11
+%% chuong: 5
+%% bai: 15
+%% dang: 11.15.5
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 1, Phần 2, Câu 5 (tr.337)"
+%% kien_thuc: "Lớp 11 Bài 15 (giới hạn của dãy số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.15.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho giới hạn $L=\lim\sqrt{3+\dfrac{an^2-1}{3+n^2}-\dfrac1{2^n}}$. Khi đó
+\choiceTF
+{\True $L=2$ khi $a=1$.}
+{$L=3$ thì có $2$ giá trị nguyên $a$ thỏa mãn.}
+{\True $L>3$ khi $a>6$.}
+{\True Có $3$ giá trị nguyên của $a$ thuộc $(0;20)$ sao cho $\lim\sqrt{3+\dfrac{an^2-1}{3+n^2}-\dfrac1{2^n}}$ là một số nguyên.}
+\loigiai{\sloppy $\dfrac{an^2-1}{3+n^2}\to a$ và $\dfrac1{2^n}\to0$, nên $L=\sqrt{3+a}$ (với $a\ge-3$).
+a) $a=1$: $L=2$. Đúng.
+b) $L=3\Leftrightarrow3+a=9\Leftrightarrow a=6$: chỉ $1$ giá trị. Sai.
+c) $L>3\Leftrightarrow3+a>9\Leftrightarrow a>6$. Đúng.
+d) $a\in(0;20)$ nguyên, $L$ nguyên khi $3+a\in\{4;9;16\}$ (vì $3+a\le22$), tức $a\in\{1;6;13\}$: có $3$ giá trị. Đúng.}
+\end{ex}

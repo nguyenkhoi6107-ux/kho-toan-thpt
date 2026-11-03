@@ -1,0 +1,22 @@
+%% ma: L11-B17-0068
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.4
+%% loai: DS
+%% muc: [TH, TH, TH, TH]
+%% dap_an: "SSĐS"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 2, Câu 8 (tr.417)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}\dfrac{2x+6}{3x^2-27}&\text{khi }x\ne\pm3\\-\dfrac19&\text{khi }x=\pm3\end{cases}$. Khi đó
+\choiceTF
+{Hàm số liên tục tại mọi điểm trừ các điểm thuộc khoảng $(-3;3)$.}
+{Hàm số liên tục tại mọi điểm trừ điểm $x=-3$.}
+{\True Hàm số liên tục tại mọi điểm trừ điểm $x=3$.}
+{Hàm số liên tục trên $\mathbb R$.}
+\loigiai{\sloppy Với $x\ne\pm3$: $f(x)=\dfrac{2(x+3)}{3(x-3)(x+3)}=\dfrac2{3(x-3)}$ liên tục. Tại $x=-3$: $\lim\limits_{x\to-3}f(x)=\dfrac2{3(-6)}=-\dfrac19=f(-3)$, liên tục. Tại $x=3$: $\lim\limits_{x\to3}\dfrac2{3(x-3)}$ không hữu hạn ($f$ không có giới hạn hữu hạn) nên gián đoạn tại $x=3$.
+Vậy hàm số liên tục tại mọi điểm trừ $x=3$: chỉ ý c) đúng.}
+\end{ex}

@@ -1,0 +1,22 @@
+%% ma: L11-B17-0063
+%% lop: 11
+%% chuong: 5
+%% bai: 17
+%% dang: 11.17.5
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐSĐĐ"
+%% nguon: "tai-lieu-hoc-tap-mon-toan-lop-11-theo-chuong-trinh-giao-duc-pho-thong-2018.pdf (Lớp Toán Thầy Duy, Phạm Lê Duy, THPT Chu Văn An), Chương 3 Bài 3, Phần 2, Câu 3 (tr.415)"
+%% kien_thuc: "Lớp 11 Bài 17 (hàm số liên tục)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới đề xuất (11.17.x), chờ giáo viên duyệt dạng; tài liệu gốc không có lời giải mẫu, đáp án do kho tự giải và kiểm bằng sympy."
+\begin{ex}
+Cho hàm số $f(x)=\begin{cases}\dfrac{x-\sqrt{x+2}}{x^2-4}&\text{khi }x>2\\x^2+ax+3b&\text{khi }x<2\\2a+b-6&\text{khi }x=2\end{cases}$ liên tục tại $x=2$. Khi đó
+\choiceTF
+{\True $a>0$.}
+{$b>0$.}
+{\True $a>b$.}
+{\True $I=a+b=\dfrac{19}{32}$.}
+\loigiai{\sloppy \[\lim\limits_{x\to2^+}\dfrac{x-\sqrt{x+2}}{x^2-4}=\lim\dfrac{(x-2)(x+1)}{(x-2)(x+2)\left(x+\sqrt{x+2}\right)}=\dfrac3{4\cdot4}=\dfrac3{16}.\] Liên tục: $2a+b-6=\dfrac3{16}$ và $4+2a+3b=\dfrac3{16}$. Trừ hai phương trình: $2b+10=0\Rightarrow b=-5$, $a=\dfrac{179}{32}$.
+a) $a>0$. Đúng. b) $b=-5<0$. Sai. c) $a>b$. Đúng. d) $a+b=\dfrac{179}{32}-5=\dfrac{19}{32}$. Đúng.}
+\end{ex}
