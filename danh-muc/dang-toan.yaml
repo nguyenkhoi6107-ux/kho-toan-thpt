@@ -598,7 +598,7 @@
 12.16.8: {ten: "Góc giữa hai đường thẳng (kể cả trục tọa độ) biết vectơ chỉ phương hoặc phương trình tham số, chính tắc", trang_thai: da-duyet}
 12.16.9: {ten: "Góc giữa hai mặt phẳng cho bởi phương trình tổng quát (kể cả mặt phẳng tọa độ)", trang_thai: da-duyet}
 12.16.10: {ten: "Góc giữa đường thẳng và mặt phẳng cho bởi phương trình (kể cả đường thẳng chứa trục tọa độ)", trang_thai: da-duyet}
-12.16.11: {ten: "Hai đường thẳng trong một mặt phẳng cùng đi qua một điểm và cùng cách một đường thẳng cho trước một khoảng: góc giữa hai đường thẳng đó", trang_thai: de-xuat}
+12.16.11: {ten: "Hai đường thẳng trong một mặt phẳng cùng đi qua một điểm và cùng cách một đường thẳng cho trước một khoảng: góc giữa hai đường thẳng đó", trang_thai: da-duyet}
 12.16.12: {ten: "Đường thẳng song song với một mặt phẳng và tạo với mặt phẳng khác góc lớn nhất (khảo sát hàm số theo tham số)", trang_thai: da-duyet}
 12.16.13: {ten: "Kim tự tháp Kheops: tọa độ hóa hình chóp tứ giác đều, góc giữa hai đường thẳng BG và SA", trang_thai: da-duyet}
 12.16.14: {ten: "Hình chóp tam giác có đáy vuông cân và chân đường cao là trung điểm một cạnh: tọa độ hóa, côsin góc giữa hai mặt phẳng", trang_thai: da-duyet}
