@@ -1,0 +1,47 @@
+%% ma: L12-B16-0020
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.13
+%% loai: TN4
+%% muc: VD
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 04/11/2026 (Huỳnh Văn Ánh, Chuyên đề V - Phương pháp tọa độ trong không gian), Đề test theo bài, Phần I Câu 11"
+%% kien_thuc: "Bài 16 (góc giữa hai đường thẳng), Bài 7 và Bài 8 (tọa độ hóa hình chóp đều, tích vô hướng), Lớp 11 (hình chóp đều, đường cao của chóp đều)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.16.13 mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc D khớp (sympy): cos = 219/căn 471161 = 0,3190..., góc khoảng 71,39 độ. Ảnh chụp kim tự tháp trong đề gốc là ảnh minh họa đời sống, không chứa dữ kiện toán nên bỏ; thay bằng hình chóp S.ABCD vẽ bằng TikZ (G nằm trên mặt (SCD) bị khuất nên BG vẽ nét đứt). Phân vân giữa VD và VDC, chọn mức thấp hơn."
+\begin{ex}
+Kim tự tháp Kheops ở Ai Cập có dạng hình chóp $S.ABCD$, có đáy là hình vuông với cạnh dài $230$ m, các cạnh bên bằng nhau và dài $219$ m (theo britannica.com) (hình vẽ). Gọi $G$ là trọng tâm tam giác $SCD$. Tính góc giữa hai đường thẳng $BG$ và $SA$ (làm tròn tới hàng đơn vị độ).
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(0.8cm,0.5cm)},z={(0cm,1cm)},scale=0.9]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (4,0,0);
+  \coordinate (C) at (4,4,0);
+  \coordinate (D) at (0,4,0);
+  \coordinate (S) at (2,2,2.55);
+  \coordinate (G) at (2,3.3333,0.85);
+  \draw[khuat] (D)--(A) (D)--(C) (D)--(S) (B)--(G);
+  \draw (A)--(B)--(C) (S)--(A) (S)--(B) (S)--(C);
+  \fill (G) circle (1.3pt);
+  \node[above,font=\footnotesize] at (S) {$S$};
+  \node[below left,font=\footnotesize] at (A) {$A$};
+  \node[below right,font=\footnotesize] at (B) {$B$};
+  \node[right,font=\footnotesize] at (C) {$C$};
+  \node[above left,font=\footnotesize] at (D) {$D$};
+  \node[right,font=\footnotesize] at (G) {$G$};
+\end{tikzpicture}
+\end{center}
+\choice{$66^\circ$}{$69^\circ$}{$70^\circ$}{\True $71^\circ$}
+\loigiai{Gọi $O=AC\cap BD$. Vì $S.ABCD$ là hình chóp đều nên $SO\perp(ABCD)$. Đặt $AB=230=a$, $SA=219=b$. Khi đó $OA=OB=OC=OD=\dfrac{a\sqrt2}2$ và $SO=\sqrt{SA^2-OA^2}=\dfrac{\sqrt{4b^2-2a^2}}2$.
+
+Chọn hệ trục $Oxyz$ với $Ox$ qua $C$, $Oy$ qua $D$, $Oz$ qua $S$: $A\left(-\dfrac{a\sqrt2}2;0;0\right)$, $B\left(0;-\dfrac{a\sqrt2}2;0\right)$, $C\left(\dfrac{a\sqrt2}2;0;0\right)$, $D\left(0;\dfrac{a\sqrt2}2;0\right)$, $S\left(0;0;\dfrac{\sqrt{4b^2-2a^2}}2\right)$.
+
+Vì $G$ là trọng tâm tam giác $SCD$ nên $G\left(\dfrac{a\sqrt2}6;\dfrac{a\sqrt2}6;\dfrac{\sqrt{4b^2-2a^2}}6\right)$.
+
+Ta có $\overrightarrow{SA}=\left(-\dfrac{a\sqrt2}2;0;-\dfrac{\sqrt{4b^2-2a^2}}2\right)$, $\overrightarrow{BG}=\left(\dfrac{a\sqrt2}6;\dfrac{2a\sqrt2}3;\dfrac{\sqrt{4b^2-2a^2}}6\right)$.
+
+$|\overrightarrow{SA}\cdot\overrightarrow{BG}|=\dfrac{b^2}3$, $|\overrightarrow{SA}|=b$, $|\overrightarrow{BG}|=\dfrac{\sqrt{b^2+8a^2}}3$. Suy ra $\cos(SA,BG)=\dfrac{b}{\sqrt{b^2+8a^2}}=\dfrac{219}{\sqrt{471161}}\approx0{,}3191$.
+
+Vậy $(SA,BG)\approx71^\circ$. Chọn D.}
+\end{ex}

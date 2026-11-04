@@ -1,0 +1,30 @@
+%% ma: L12-B16-0022
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.15
+%% loai: DS
+%% muc: [TH, TH, VD, VD]
+%% dap_an: "ĐĐSS"
+%% nguon: "Ảnh giáo viên gửi 04/11/2026 (Huỳnh Văn Ánh, Chuyên đề V - Phương pháp tọa độ trong không gian), Đề test theo bài, Phần II Câu 1"
+%% kien_thuc: "Bài 16 (góc giữa hai mặt phẳng), Bài 14 (phương trình mặt phẳng theo đoạn chắn, vectơ pháp tuyến), Lớp 11 Bài 23 và Bài 25 (đường thẳng vuông góc với mặt phẳng, hai mặt phẳng vuông góc)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.16.15 mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc Đúng, Đúng, Sai, Sai khớp (sympy): cos((SBC),(ABC)) = 2/7, cos((SBC),(P)) = 11 căn 3 chia 21. Đề gốc in 'ba điểm' nhưng liệt kê bốn điểm S, A, B, C (lời giải gốc ghi 'Bốn điểm'), bản kho sửa thành 'bốn điểm'. Gốc không có hình toán học."
+\begin{ex}
+Trong không gian $Oxyz$, cho hình chóp $S.ABC$ có bốn điểm $S(0;0;3)$, $A(0;0;0)$, $B(1;0;0)$, $C(0;2;0)$ và mặt phẳng $(P)\colon x+y+z-3=0$.
+\choiceTF
+{\True Côsin góc giữa hai mặt phẳng $(SAB)$ và mặt phẳng $(ABC)$ bằng $0$.}
+{\True Góc giữa hai mặt phẳng $(SAC)$ và mặt phẳng $(ABC)$ bằng $90^\circ$.}
+{Côsin góc giữa hai mặt phẳng $(SBC)$ và mặt phẳng $(ABC)$ bằng $\dfrac37$.}
+{Côsin góc giữa hai mặt phẳng $(SBC)$ và mặt phẳng $(P)$ bằng $\dfrac{10\sqrt3}{21}$.}
+\loigiai{Ta có $\overrightarrow{AB}=(1;0;0)$, $\overrightarrow{AC}=(0;2;0)$, $\overrightarrow{AS}=(0;0;3)$ nên $SA\perp AB$ và $SA\perp AC$, suy ra $SA\perp(ABC)$.
+
+a) $SA\perp(ABC)$ nên $(SAB)\perp(ABC)$, do đó $\cos((SAB),(ABC))=\cos90^\circ=0$. Đúng.
+
+b) $SA\perp(ABC)$ nên $(SAC)\perp(ABC)$, do đó góc giữa hai mặt phẳng bằng $90^\circ$. Đúng.
+
+c) $(SBC)\colon\dfrac x1+\dfrac y2+\dfrac z3=1\Leftrightarrow6x+3y+2z-6=0$ nên $\vec n_{(SBC)}=(6;3;2)$. $(ABC)\colon z=0$ có $\vec n_{(ABC)}=(0;0;1)$. Khi đó $\cos((SBC),(ABC))=\dfrac{|2|}{\sqrt{36+9+4}\cdot1}=\dfrac27\neq\dfrac37$. Sai.
+
+d) $(P)$ có $\vec n_{(P)}=(1;1;1)$. Khi đó $\cos((SBC),(P))=\dfrac{|6+3+2|}{7\cdot\sqrt3}=\dfrac{11\sqrt3}{21}\neq\dfrac{10\sqrt3}{21}$. Sai.}
+\end{ex}

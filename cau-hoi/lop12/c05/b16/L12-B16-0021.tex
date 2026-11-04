@@ -1,0 +1,41 @@
+%% ma: L12-B16-0021
+%% lop: 12
+%% chuong: 5
+%% bai: 16
+%% dang: 12.16.14
+%% loai: TN4
+%% muc: VD
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 04/11/2026 (Huỳnh Văn Ánh, Chuyên đề V - Phương pháp tọa độ trong không gian), Đề test theo bài, Phần I Câu 12"
+%% kien_thuc: "Bài 16 (góc giữa hai mặt phẳng), Bài 14 (phương trình mặt phẳng theo đoạn chắn), Lớp 11 Bài 23 và Bài 25 (đường thẳng vuông góc với mặt phẳng, góc giữa hai mặt phẳng), Bài 7 (tọa độ hóa)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.16.14 mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Đáp án gốc D khớp (sympy). Hình gốc nằm trong lời giải (hệ trục Hxyz); bản kho vẽ hình chóp S.ABC trong đề, không thêm hệ trục hay đường phụ. AC vẽ nét đứt vì nằm sau hai mặt (SAB), (SBC)."
+\begin{ex}
+Cho hình chóp $S.ABC$ có đáy là tam giác vuông cân tại $B$ có $AB=BC=4$. Gọi $H$ là trung điểm của $AB$, $SH\perp(ABC)$. Mặt phẳng $(SBC)$ tạo với mặt đáy một góc $60^\circ$. Côsin góc giữa hai mặt phẳng $(SAC)$ và $(ABC)$ bằng
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0cm)},y={(0.8cm,0.5cm)},z={(0cm,1cm)},scale=0.8]
+  \coordinate (A) at (0,0,0);
+  \coordinate (B) at (4,0,0);
+  \coordinate (C) at (4,4,0);
+  \coordinate (H) at (2,0,0);
+  \coordinate (S) at (2,0,3.4641);
+  \draw[khuat] (A)--(C);
+  \draw (A)--(B)--(C) (S)--(A) (S)--(B) (S)--(C) (S)--(H);
+  \fill (H) circle (1.3pt);
+  \node[above,font=\footnotesize] at (S) {$S$};
+  \node[below left,font=\footnotesize] at (A) {$A$};
+  \node[below right,font=\footnotesize] at (B) {$B$};
+  \node[right,font=\footnotesize] at (C) {$C$};
+  \node[below,font=\footnotesize] at (H) {$H$};
+\end{tikzpicture}
+\end{center}
+\choice{$\dfrac{\sqrt5}5$}{$\dfrac{\sqrt5}4$}{$\dfrac{\sqrt{10}}5$}{\True $\dfrac1{\sqrt7}$}
+\loigiai{Ta có $BC\perp AB$ và $BC\perp SH$ nên $BC\perp(SAB)$. Do $(SBC)\cap(ABC)=BC$, $(SAB)\perp BC$, $(SAB)\cap(SBC)=SB$, $(SAB)\cap(ABC)=AB$ nên $((SBC),(ABC))=(SB,AB)=\widehat{SBA}=60^\circ$. Suy ra $SH=BH\tan60^\circ=2\sqrt3$.
+
+Chọn hệ trục $Hxyz$ với $Hx$ qua $B$, $Hz$ qua $S$ và $Hy\parallel BC$: $H(0;0;0)$, $A(-2;0;0)$, $B(2;0;0)$, $C(2;4;0)$, $S(0;0;2\sqrt3)$, trung điểm $I$ của $AC$ là $I(0;2;0)$. Mặt phẳng $(ABC)$ có phương trình $z=0$.
+
+Mặt phẳng $(SAC)$ cắt các trục $Hx,Hy,Hz$ tại $A(-2;0;0)$, $I(0;2;0)$, $S(0;0;2\sqrt3)$ nên có phương trình $\dfrac x{-2}+\dfrac y2+\dfrac z{2\sqrt3}=1\Leftrightarrow-3x+3y+\sqrt3z-6=0$.
+
+Gọi $\varphi$ là góc giữa $(SAC)$ và $(ABC)$: $\cos\varphi=\dfrac{|\sqrt3|}{1\cdot\sqrt{9+9+3}}=\dfrac1{\sqrt7}$. Chọn D.}
+\end{ex}
