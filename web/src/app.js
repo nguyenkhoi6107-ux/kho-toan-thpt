@@ -908,6 +908,7 @@ async function renderHelp(root) {
 /* ---------- định tuyến ---------- */
 function render(opt = {}) {
   const y = window.scrollY;
+  const treeY = $('.tree')?.scrollTop || 0;   // thanh Bài & dạng cuộn riêng, dựng lại thì phải trả về đúng chỗ
   const view = $('#view');
   const root = document.createElement('div');
   document.querySelectorAll('.rail-btn').forEach((b) => b.classList.toggle('on', b.dataset.view === state.view));
@@ -915,6 +916,7 @@ function render(opt = {}) {
   view.style.minHeight = view.offsetHeight + 'px';
   view.replaceChildren(...root.childNodes);
   window.scrollTo(0, opt.toTop ? 0 : y);
+  const tree = $('.tree'); if (tree && !opt.toTop) tree.scrollTop = treeY;
   requestAnimationFrame(() => {
     view.style.minHeight = '';
     if (opt.focusList) {
