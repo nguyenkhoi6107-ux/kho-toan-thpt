@@ -1,0 +1,38 @@
+%% ma: L12-B05-0036
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.25
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "473"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần III Câu 1"
+%% kien_thuc: "Bài 5 (tối ưu hóa bằng đạo hàm); Lớp 10 (tích vô hướng, hợp hai vận tốc); Bài 1 (giá trị nhỏ nhất của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.5.25 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập (hợp vận tốc: tốc độ thực dọc AC bằng 2x/AC), kiểm bằng sympy: T_min = 300 + 100*sqrt(3) = 473,2 giây. Hình vẽ minh họa, không theo tỉ lệ."
+\begin{ex}
+Trong một buổi tập luyện của lính đặc công, một chiến sỹ cần phối hợp bơi và chạy bộ để từ điểm $A$ ở bờ sông bên này đến điểm $B$ về phía hạ lưu của bờ sông bên kia (tham khảo hình vẽ bên dưới). Bờ sông thẳng, hai bờ song song và cách nhau một khoảng $AH=300\,\mathrm m$ và $HB=900\,\mathrm m$. Dòng nước chảy từ $H$ về phía $B$ với vận tốc không đổi là $1\,\mathrm{m/s}$. Chiến sỹ dự định bơi thẳng từ điểm $A$ đến một điểm thuộc đoạn $HB$, sau đó tiếp tục chạy bộ từ điểm đó về điểm $B$. Biết vận tốc bơi của chiến sỹ đối với dòng nước là $1\,\mathrm{m/s}$ và vận tốc chạy trên bờ của chiến sỹ là $3\,\mathrm{m/s}$. Hỏi chiến sỹ cần ít nhất bao nhiêu giây để hoàn thành kế hoạch trên (kết quả làm tròn đến hàng đơn vị)?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \draw (-.6,2.2)--(6.6,2.2) (-.6,0)--(6.6,0);
+  \draw[khuat] (-.2,.7)--(6.6,.7) (-.2,1.5)--(6.6,1.5);
+  \draw (0,0)--(0,2.2);
+  \draw (0,2.0)--(.2,2.0)--(.2,2.2);
+  \draw (0,0)--(3,2.2);
+  \draw[->] (2.3,1.1)--(3.3,1.1);
+  \fill (0,0) circle(1pt) (3,2.2) circle(1pt) (6,2.2) circle(1pt) (0,2.2) circle(1pt);
+  \path (0,2.2) node[above]{$H$} (3,2.2) node[above]{$C$} (6,2.2) node[above]{$B$} (0,0) node[below]{$A$}
+        (3.4,1.0) node[above right,font=\footnotesize]{Nước}
+        (-.6,2.2) node[left]{Bờ} (-.6,0) node[left]{Bờ};
+\end{tikzpicture}
+\end{center}
+\shortans{473}
+\loigiai{Gọi $C$ là điểm tới trên đoạn $HB$, $HC=x$ $(0<x\le900)$, khi đó $AC=\sqrt{90000+x^2}$.
+Gọi $s$ là tốc độ thực của chiến sỹ dọc $AC$, $\vec e$ là vectơ đơn vị theo hướng $AC$, $\vec u$ là vận tốc dòng nước $(|\vec u|=1)$. Vận tốc bơi so với nước là $s\vec e-\vec u$ có độ dài bằng $1$:
+$s^2-2s\,\vec e\cdot\vec u+1=1\Rightarrow s=2\,\vec e\cdot\vec u=\dfrac{2x}{AC}$.
+Thời gian bơi: $\dfrac{AC}{s}=\dfrac{AC^2}{2x}=\dfrac{90000+x^2}{2x}$; thời gian chạy: $\dfrac{900-x}3$.
+Tổng thời gian $T(x)=\dfrac{45000}x+\dfrac x6+300$.
+$T'(x)=-\dfrac{45000}{x^2}+\dfrac16=0\Leftrightarrow x=300\sqrt3\approx519{,}6\in(0;900]$.
+$T$ nhỏ nhất tại $x=300\sqrt3$: $T_{\min}=300+100\sqrt3\approx473{,}2$. Vậy cần ít nhất khoảng $473$ giây.}
+\end{ex}

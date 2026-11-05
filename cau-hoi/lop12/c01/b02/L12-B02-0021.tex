@@ -1,0 +1,30 @@
+%% ma: L12-B02-0021
+%% lop: 12
+%% chuong: 1
+%% bai: 2
+%% dang: 12.2.13
+%% loai: DS
+%% muc: [NB, VD, TH, TH]
+%% dap_an: "ĐĐĐS"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần II Câu 1"
+%% kien_thuc: "Bài 2 (giá trị lớn nhất, nhỏ nhất trên đoạn); Bài 1 (cực trị, đơn điệu); Lớp 11 (đạo hàm của hàm hợp, hàm số mũ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.2.13 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Mức từng ý: a) NB, b) VD, c) TH, d) TH."
+\begin{ex}
+Cho hàm số $y=f(x)=\mathrm e^{x^3-3x^2}$.
+\choiceTF
+{\True Hàm số $f(x)$ xác định với mọi $x\in\mathbb R$.}
+{\True Trên $[1;5]$, giá trị nhỏ nhất và giá trị lớn nhất của hàm số $f(x)$ lần lượt là $\mathrm e^a$ và $\mathrm e^b$ (với $a,b\in\mathbb Z$). Khi đó, $a+b=46$.}
+{\True Hàm số $f(x)$ có giá trị cực tiểu là $\mathrm e^{-4}$.}
+{Hàm số $f(x)$ đồng biến trên khoảng $(1;+\infty)$.}
+\loigiai{a) Hàm mũ xác định với mọi số thực nên $f(x)$ xác định trên $\mathbb R$. Đúng.
+
+b) Đặt $u(x)=x^3-3x^2$, $u'(x)=3x^2-6x=0\Leftrightarrow x=0$ hoặc $x=2$; trên $[1;5]$ chỉ nhận $x=2$.
+$u(1)=-2$, $u(2)=-4$, $u(5)=50$ nên $\min u=-4$, $\max u=50$.
+Hàm $\mathrm e^u$ đồng biến theo $u$ nên $\min f=\mathrm e^{-4}$, $\max f=\mathrm e^{50}$, suy ra $a=-4$, $b=50$, $a+b=46$. Đúng.
+
+c) $f'(x)=(3x^2-6x)\mathrm e^{x^3-3x^2}$ đổi dấu từ âm sang dương tại $x=2$ nên hàm số đạt cực tiểu tại $x=2$, giá trị cực tiểu $f(2)=\mathrm e^{-4}$. Đúng.
+
+d) $f'(x)<0$ với $1<x<2$ nên $f(x)$ nghịch biến trên $(1;2)$, do đó không đồng biến trên $(1;+\infty)$. Sai.}
+\end{ex}

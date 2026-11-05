@@ -1,0 +1,29 @@
+%% ma: L12-B06-0089
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.23
+%% loai: TN4
+%% muc: NB
+%% dap_an: "B"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 19"
+%% kien_thuc: "Bài 6 (hai vectơ bằng nhau, vectơ đối trong hình lăng trụ)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.6.23 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập."
+\begin{ex}
+Cho hình lăng trụ $ABC.A'B'C'$ (tham khảo hình vẽ). Vectơ nào dưới đây bằng vectơ $\overrightarrow{AA'}$?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,0); \coordinate (C) at (3,0); \coordinate (B) at (1.5,-1);
+  \coordinate (A') at (0,2.6); \coordinate (C') at (3,2.6); \coordinate (B') at (1.5,1.6);
+  \draw (A)--(B)--(C) (A')--(B')--(C')--cycle (A)--(A') (B)--(B') (C)--(C');
+  \draw[khuat] (A)--(C);
+  \path (A) node[left]{$A$} (B) node[below]{$B$} (C) node[right]{$C$}
+        (A') node[above left]{$A'$} (B') node[below right,font=\footnotesize]{$B'$} (C') node[above right]{$C'$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{C'C}$}{\True $\overrightarrow{CC'}$}{$\overrightarrow{AB'}$}{$\overrightarrow{B'B}$}
+\loigiai{$AA'$ và $CC'$ là hai cạnh bên của hình lăng trụ nên song song, bằng nhau và cùng hướng: $\overrightarrow{AA'}=\overrightarrow{CC'}$.
+$\overrightarrow{C'C}$ và $\overrightarrow{B'B}$ là các vectơ đối của $\overrightarrow{AA'}$; $\overrightarrow{AB'}$ không cùng phương với $\overrightarrow{AA'}$.}
+\end{ex}

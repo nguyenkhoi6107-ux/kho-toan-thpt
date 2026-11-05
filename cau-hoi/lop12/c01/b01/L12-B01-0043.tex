@@ -1,0 +1,32 @@
+%% ma: L12-B01-0043
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.4
+%% loai: TN4
+%% muc: NB
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 17"
+%% kien_thuc: "Bài 1 (cực trị của hàm số đọc từ đồ thị)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Hình dựng lại từ hàm số y=-x^3+3x^2-4 (cực tiểu (0;-4), cực đại (2;0), đi qua (1;-2), (3;-4), (-1;0)) khớp các số liệu trên hình gốc. Hỏi điểm cực đại (dạng 12.1.4 gốc hỏi điểm cực tiểu, cùng mô hình). kho.py trung báo trùng với L12-B01-0004 vì số nằm trong hình; đồ thị khác (cực đại (2;0), cực tiểu (0;-4)) và hỏi điểm cực đại nên không trùng."
+\begin{ex}
+Cho hàm số $y=h(x)$ liên tục trên $\mathbb R$ và có đồ thị như hình vẽ bên. Điểm cực đại của đồ thị hàm số đã cho là
+\begin{center}
+\begin{tikzpicture}[scale=.8]
+  \begin{scope}
+    \clip (-1.7,-4.9) rectangle (3.6,1.7);
+    \draw[thick,domain=-1.25:3.25,samples=100,smooth] plot (\x,{-\x*\x*\x+3*\x*\x-4});
+  \end{scope}
+  \draw[truc] (-1.8,0)--(3.7,0) node[below]{$x$};
+  \draw[truc] (0,-5)--(0,1.9) node[left]{$y$};
+  \draw[phu] (0,-4)--(3,-4)--(3,0) (1,0)--(1,-2)--(0,-2);
+  \path (0,0) node[above left]{\footnotesize$O$} (-1,0) node[above left]{\footnotesize$-1$}
+        (1,0) node[above]{\footnotesize$1$} (2,0) node[above right]{\footnotesize$2$} (3,0) node[above right]{\footnotesize$3$}
+        (0,-2) node[below left]{\footnotesize$-2$} (0,-4) node[below left]{\footnotesize$-4$};
+\end{tikzpicture}
+\end{center}
+\choice{$(0;-4)$}{$x=2$}{\True $(2;0)$}{$x=0$}
+\loigiai{Đồ thị đi lên rồi đi xuống tại điểm $(2;0)$ (đồ thị tiếp xúc trục hoành) nên đó là điểm cực đại của đồ thị hàm số.
+Điểm $(0;-4)$ là điểm cực tiểu. Điểm cực đại của đồ thị là một điểm có tọa độ, không phải giá trị $x=2$.}
+\end{ex}

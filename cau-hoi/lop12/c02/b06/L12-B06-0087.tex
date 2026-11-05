@@ -1,0 +1,29 @@
+%% ma: L12-B06-0087
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.23
+%% loai: TN4
+%% muc: NB
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 14"
+%% kien_thuc: "Bài 6 (vectơ cùng hướng, ngược hướng, trung điểm đoạn thẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.6.23 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập."
+\begin{ex}
+Cho tứ diện $ABCD$, gọi $I$ là trung điểm của cạnh $AB$ (tham khảo hình vẽ). Vectơ $\overrightarrow{IA}$ ngược hướng với vectơ nào dưới đây?
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \coordinate (A) at (0,2.3); \coordinate (B) at (-1.8,0); \coordinate (D) at (1.8,0); \coordinate (C) at (0,-1.1);
+  \coordinate (I) at ($(A)!.5!(B)$);
+  \draw (A)--(B) (A)--(D) (A)--(C) (B)--(C) (C)--(D);
+  \draw[khuat] (B)--(D);
+  \fill (I) circle(1pt);
+  \path (A) node[above]{$A$} (B) node[left]{$B$} (D) node[right]{$D$} (C) node[below]{$C$} (I) node[left]{$I$};
+\end{tikzpicture}
+\end{center}
+\choice{$\overrightarrow{BA}$}{$\overrightarrow{BI}$}{$\overrightarrow{CD}$}{\True $\overrightarrow{AB}$}
+\loigiai{$I$ nằm giữa $A$ và $B$ nên $\overrightarrow{IA}$ cùng hướng với $\overrightarrow{BI}$ và $\overrightarrow{BA}$, ngược hướng với $\overrightarrow{AB}$.
+Vectơ $\overrightarrow{CD}$ không cùng phương với $\overrightarrow{IA}$ nên không ngược hướng.}
+\end{ex}

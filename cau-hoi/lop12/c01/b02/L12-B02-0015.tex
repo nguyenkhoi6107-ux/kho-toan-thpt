@@ -1,0 +1,26 @@
+%% ma: L12-B02-0015
+%% lop: 12
+%% chuong: 1
+%% bai: 2
+%% dang: 12.2.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 3"
+%% kien_thuc: "Bài 2 (giá trị nhỏ nhất của hàm số trên đoạn đọc từ bảng biến thiên)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Dạng 12.2.4 gốc hỏi tổng M + m; câu này hỏi giá trị nhỏ nhất, cùng mô hình đọc từ bảng biến thiên. kho.py trung gợi ý thay số so với L12-B02-0007 (khung 0,80) nhưng khác bảng biến thiên và hỏi giá trị nhỏ nhất; giữ lại."
+\begin{ex}
+Cho hàm số $y=f(x)$ liên tục trên $\mathbb R$ và có bảng biến thiên như dưới đây:
+\begin{center}
+\begin{tikzpicture}
+  \tkzTabInit[lgt=1.5,espcl=2.4]{$x$/.8,$y'$/.8,$y$/2.4}{$-\infty$,$-1$,$1$,$+\infty$}
+  \tkzTabLine{,+,0,-,d,+,}
+  \tkzTabVar{-/$-2$,+/$5$,-/$0$,+/$1$}
+\end{tikzpicture}
+\end{center}
+Giá trị nhỏ nhất của hàm số $y=f(x)$ trên đoạn $[-1;1]$ bằng
+\choice{$-1$}{$5$}{$-2$}{\True $0$}
+\loigiai{Trên đoạn $[-1;1]$, $f'(x)<0$ với $-1<x<1$ nên hàm số nghịch biến.
+Do đó $\min\limits_{[-1;1]}f(x)=f(1)=0$.}
+\end{ex}

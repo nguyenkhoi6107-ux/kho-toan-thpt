@@ -602,3 +602,14 @@
 12.16.13: {ten: "Kim tự tháp Kheops: tọa độ hóa hình chóp tứ giác đều, góc giữa hai đường thẳng BG và SA", trang_thai: da-duyet}
 12.16.14: {ten: "Hình chóp tam giác có đáy vuông cân và chân đường cao là trung điểm một cạnh: tọa độ hóa, côsin góc giữa hai mặt phẳng", trang_thai: da-duyet}
 12.16.15: {ten: "Tứ diện vuông S.ABC trong Oxyz: góc giữa các mặt phẳng (SAB), (SAC), (SBC), (ABC) và mặt phẳng (P) (Đúng/Sai)", trang_thai: da-duyet}
+# --- Đề xuất từ đơn vị M11 (Kiểm tra giữa HK1 Toán 12, THPT Hồ Thị Bi, mã đề 1133), ngày 05/11/2026 ---
+12.1.26: {ten: "Đọc giá trị cực tiểu từ bảng biến thiên của hàm số không xác định tại một điểm", trang_thai: de-xuat}
+12.1.27: {ten: "Khoảng thời gian dài nhất vận tốc giảm dần của chuyển động có độ cao là hàm bậc ba", trang_thai: de-xuat}
+12.2.11: {ten: "Bảng xét dấu đạo hàm và giới hạn: giá trị lớn nhất, nhỏ nhất trên một khoảng (không đạt)", trang_thai: de-xuat}
+12.2.12: {ten: "Giá trị nhỏ nhất của hàm số x - 1/x trên một đoạn (dùng tính đơn điệu)", trang_thai: de-xuat}
+12.2.13: {ten: "Hàm e^{u(x)} với u là hàm bậc ba: xác định, giá trị lớn nhất, nhỏ nhất, cực tiểu, đơn điệu (Đúng/Sai)", trang_thai: de-xuat}
+12.3.14: {ten: "Đếm số đường tiệm cận của hàm phân thức bậc hai trên bậc nhất cho bằng đồ thị (đứng và xiên)", trang_thai: de-xuat}
+12.5.25: {ten: "Tối ưu thời gian bơi qua sông có dòng nước chảy rồi chạy trên bờ", trang_thai: de-xuat}
+12.5.26: {ten: "Tối ưu tổng chi phí hành trình du thuyền (nhiên liệu theo vận tốc và lương theo giờ)", trang_thai: de-xuat}
+12.6.23: {ten: "Nhận biết vectơ cùng hướng, ngược hướng, bằng nhau với vectơ cho trước trong tứ diện và lăng trụ", trang_thai: de-xuat}
+12.6.24: {ten: "Ba lực tại một điểm (hai lực trong mặt phẳng có góc cho trước, lực thứ ba vuông góc): tìm độ lớn một lực khi biết hợp lực", trang_thai: de-xuat}

@@ -1,0 +1,36 @@
+%% ma: L12-B06-0090
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.8
+%% loai: DS
+%% muc: [TH, TH, NB, TH]
+%% dap_an: "ĐSSĐ"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần II Câu 2"
+%% kien_thuc: "Bài 6 (tích vô hướng, góc giữa hai vectơ, độ dài vectơ, quy tắc hình bình hành); Lớp 11 (đường thẳng vuông góc với mặt phẳng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Mức từng ý: a) TH, b) TH, c) NB, d) TH. Hình dựng lại từ dữ kiện đề (SA vuông góc đáy), SA vẽ theo tỉ lệ a√2."
+\begin{ex}
+Cho hình chóp $S.ABCD$ có đáy $ABCD$ là hình vuông cạnh $a$, $SA\perp(ABCD)$; $SA=a\sqrt2$ (tham khảo hình vẽ).
+\begin{center}
+\begin{tikzpicture}[x={(1.8cm,0cm)},y={(.9cm,.6cm)},z={(0cm,1.5cm)}]
+  \coordinate (A) at (0,1,0); \coordinate (B) at (1,1,0); \coordinate (C) at (1,0,0); \coordinate (D) at (0,0,0);
+  \coordinate (S) at (0,1,1.414);
+  \draw[khuat] (A)--(B) (A)--(D) (A)--(S);
+  \draw (B)--(C)--(D) (S)--(B) (S)--(C) (S)--(D);
+  \path (S) node[above]{$S$} (A) node[above left,font=\footnotesize]{$A$} (B) node[right]{$B$} (C) node[below]{$C$} (D) node[below left]{$D$};
+\end{tikzpicture}
+\end{center}
+\choiceTF
+{\True $\overrightarrow{SB}\cdot\overrightarrow{DC}=a^2$.}
+{Số đo góc giữa hai vectơ $\overrightarrow{AB}$ và $\overrightarrow{CD}$ bằng $0^\circ$.}
+{$\left|\overrightarrow{SB}\right|=a\sqrt5$.}
+{\True $\overrightarrow{SA}+\overrightarrow{SC}=\overrightarrow{SB}+\overrightarrow{SD}$.}
+\loigiai{a) $\overrightarrow{DC}=\overrightarrow{AB}$ nên $\overrightarrow{SB}\cdot\overrightarrow{DC}=(\overrightarrow{SA}+\overrightarrow{AB})\cdot\overrightarrow{AB}=\overrightarrow{SA}\cdot\overrightarrow{AB}+AB^2=0+a^2=a^2$ (vì $SA\perp AB$). Đúng.
+
+b) $\overrightarrow{CD}=-\overrightarrow{AB}$ nên góc giữa $\overrightarrow{AB}$ và $\overrightarrow{CD}$ bằng $180^\circ$. Sai.
+
+c) $SB^2=SA^2+AB^2=2a^2+a^2=3a^2$ nên $|\overrightarrow{SB}|=a\sqrt3\ne a\sqrt5$. Sai.
+
+d) Gọi $O$ là tâm hình vuông $ABCD$: $\overrightarrow{SA}+\overrightarrow{SC}=2\overrightarrow{SO}=\overrightarrow{SB}+\overrightarrow{SD}$. Đúng.}
+\end{ex}

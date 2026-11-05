@@ -1,0 +1,34 @@
+%% ma: L12-B01-0041
+%% lop: 12
+%% chuong: 1
+%% bai: 1
+%% dang: 12.1.2
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 8"
+%% kien_thuc: "Bài 1 (tính đơn điệu: đọc từ đồ thị)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Hình dựng lại từ hàm số y=x^4-4x^2+2 (cực tiểu (±√2;-2), cực đại (0;2)) khớp các số liệu trên hình gốc. kho.py trung báo trùng với L12-B01-0002, 0003, 0034 vì số nằm trong hình; hàm số, hình và phương án khác nên không trùng."
+\begin{ex}
+Cho hàm số có đồ thị như hình vẽ bên.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+  \begin{scope}
+    \clip (-2.4,-2.9) rectangle (2.4,3.2);
+    \draw[thick,domain=-2.2:2.2,samples=100,smooth] plot (\x,{\x*\x*\x*\x-4*\x*\x+2});
+  \end{scope}
+  \draw[truc] (-2.5,0)--(2.6,0) node[below]{$x$};
+  \draw[truc] (0,-2.9)--(0,3.3) node[left]{$y$};
+  \draw[phu] (-1.4142,0)--(-1.4142,-2)--(1.4142,-2)--(1.4142,0);
+  \path (0,0) node[below left]{\footnotesize$O$}
+        (-1.4142,0) node[above left]{\footnotesize$-\sqrt2$} (1.4142,0) node[above right]{\footnotesize$\sqrt2$}
+        (0,2) node[above right]{\footnotesize$2$} (0,-2) node[below right]{\footnotesize$-2$};
+\end{tikzpicture}
+\end{center}
+Hàm số đã cho đồng biến trên khoảng nào sau đây?
+\choice{$(0;+\infty)$}{$(-\sqrt2;2)$}{\True $(-\sqrt2;0)$}{$(-2;2)$}
+\loigiai{Từ đồ thị, hàm số có cực tiểu tại $x=-\sqrt2$ và $x=\sqrt2$, cực đại tại $x=0$.
+Đồ thị đi lên (từ trái sang phải) trên $(-\sqrt2;0)$ và $(\sqrt2;+\infty)$.
+Trong các khoảng đã cho chỉ có $(-\sqrt2;0)$ nằm trọn trong khoảng đồng biến.}
+\end{ex}

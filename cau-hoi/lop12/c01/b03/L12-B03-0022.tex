@@ -1,0 +1,38 @@
+%% ma: L12-B03-0022
+%% lop: 12
+%% chuong: 1
+%% bai: 3
+%% dang: 12.3.14
+%% loai: TN4
+%% muc: TH
+%% dap_an: "A"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 20"
+%% kien_thuc: "Bài 3 (đường tiệm cận đứng, tiệm cận xiên đọc từ đồ thị)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.3.14 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Hình dựng lại từ hàm số y=(x^2-5)/(x-2), có kẻ lưới và hai đường tiệm cận nét đứt như hình gốc."
+\begin{ex}
+Cho hàm số $y=f(x)=\dfrac{x^2-5}{x-2}$ có đồ thị như hình vẽ sau:
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+  \draw[gray!35,step=1,very thin] (-3.5,-1.5) grid (5,7.5);
+  \begin{scope}
+    \clip (-3.5,-1.5) rectangle (5,7.5);
+    \draw[thick,domain=-3.5:1.97,samples=100,smooth] plot (\x,{(\x*\x-5)/(\x-2)});
+    \draw[thick,domain=2.03:5,samples=100,smooth] plot (\x,{(\x*\x-5)/(\x-2)});
+    \draw[khuat] (2,-1.5)--(2,7.5);
+    \draw[khuat,domain=-3.5:5.5] plot (\x,{\x+2});
+  \end{scope}
+  \draw[truc] (-3.7,0)--(5.2,0) node[below]{$x$};
+  \draw[truc] (0,-1.6)--(0,7.7) node[left]{$y$};
+  \foreach \i in {-3,-2,-1,1,2,3,4} \draw (\i,0.08)--(\i,-0.08) node[below,font=\scriptsize]{$\i$};
+  \foreach \j in {1,2,...,7} \draw (0.08,\j)--(-0.08,\j) node[left,font=\scriptsize]{$\j$};
+  \node[below left,font=\scriptsize] at (0,0) {$O$};
+\end{tikzpicture}
+\end{center}
+Đồ thị hàm số đã cho có bao nhiêu đường tiệm cận?
+\choice{\True $2$}{$0$}{$1$}{$3$}
+\loigiai{Từ đồ thị: đường thẳng $x=2$ là tiệm cận đứng và đường thẳng $y=x+2$ là tiệm cận xiên.
+Kiểm tra bằng đại số: $f(x)=x+2-\dfrac1{x-2}$, $\lim\limits_{x\to2^\pm}|f(x)|=+\infty$ và $\lim\limits_{x\to\pm\infty}[f(x)-(x+2)]=0$; đồ thị không có tiệm cận ngang.
+Vậy đồ thị có $2$ đường tiệm cận.}
+\end{ex}

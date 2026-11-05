@@ -1,0 +1,21 @@
+%% ma: L12-B05-0037
+%% lop: 12
+%% chuong: 1
+%% bai: 5
+%% dang: 12.5.26
+%% loai: TLN
+%% muc: VD
+%% dap_an: "57,9"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần III Câu 2"
+%% kien_thuc: "Bài 5 (tối ưu chi phí bằng đạo hàm); Bài 1 (giá trị nhỏ nhất của hàm số)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.5.26 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập, kiểm bằng sympy: x = sqrt(23500/7) = 57,94 km/h."
+\begin{ex}
+Công ty du lịch Hòa Bình muốn mở một tour du lịch bằng du thuyền trên biển và giám đốc công ty đang tính toán các chi phí cần thiết để vận hành du thuyền. Để tính toán chi phí, giám đốc Hòa Bình đã mô hình hóa lượng dầu diesel tiêu thụ ước tính theo hàm số $G(x)=\dfrac{250}x+\dfrac x{10}$ (lít/$\mathrm{km}$), với $x$ là vận tốc của du thuyền (giả định rằng vận tốc này duy trì không đổi trong suốt quá trình di chuyển). Biết rằng giá dầu diesel là $17{,}5$ nghìn đồng/lít. Ngoài ra, công ty cần tuyển thuyền trưởng với mức lương $1{,}5$ triệu đồng mỗi giờ để lái du thuyền này trong toàn bộ chuyến du lịch dài $640\,\mathrm{km}$. Hỏi thuyền trưởng phải duy trì vận tốc của du thuyền bằng bao nhiêu $\mathrm{km/h}$ để tổng chi phí của công ty là thấp nhất? (kết quả làm tròn đến hàng phần mười)
+\shortans{57,9}
+\loigiai{Chi phí dầu cho cả chuyến: $640\cdot G(x)\cdot17{,}5$ (nghìn đồng). Thời gian đi: $\dfrac{640}x$ giờ nên chi phí lương: $1500\cdot\dfrac{640}x$ (nghìn đồng).
+Tổng chi phí $C(x)=640\left[17{,}5\left(\dfrac{250}x+\dfrac x{10}\right)+\dfrac{1500}x\right]=640\left(\dfrac{5875}x+1{,}75x\right)$ với $x>0$.
+$C'(x)=640\left(-\dfrac{5875}{x^2}+1{,}75\right)=0\Leftrightarrow x=\sqrt{\dfrac{23500}7}\approx57{,}9$.
+$C'$ đổi dấu từ âm sang dương tại điểm này nên $C$ nhỏ nhất. Vận tốc cần duy trì khoảng $57{,}9\,\mathrm{km/h}$.}
+\end{ex}

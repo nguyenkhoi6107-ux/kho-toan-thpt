@@ -1,0 +1,28 @@
+%% ma: L12-B06-0086
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.16
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 12"
+%% kien_thuc: "Bài 6 (góc giữa hai vectơ); Lớp 10 (tam giác đều)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập. Hình dựng lại từ dữ kiện đề (hình lập phương, đáy ABCD với A ở phía sau bên trái). kho.py trung báo trùng với L12-B06-0027, 0029 vì cùng khung hình lập phương; cặp vectơ và đáp án khác (120 độ) nên không trùng."
+\begin{ex}
+Cho hình lập phương $ABCD.A'B'C'D'$ (tham khảo hình vẽ). Số đo góc giữa hai vectơ $\overrightarrow{AB'}$ và $\overrightarrow{CA}$ bằng
+\begin{center}
+\begin{tikzpicture}[x={(1.6cm,0cm)},y={(.8cm,.55cm)},z={(0cm,1.6cm)}]
+  \coordinate (D) at (0,0,0); \coordinate (C) at (1,0,0); \coordinate (B) at (1,1,0); \coordinate (A) at (0,1,0);
+  \coordinate (D') at (0,0,1); \coordinate (C') at (1,0,1); \coordinate (B') at (1,1,1); \coordinate (A') at (0,1,1);
+  \draw (D)--(C)--(B) (D')--(C')--(B')--(A')--cycle (D)--(D') (C)--(C') (B)--(B');
+  \draw[khuat] (B)--(A)--(D) (A)--(A');
+  \path (A) node[above left,font=\footnotesize]{$A$} (B) node[right,font=\footnotesize]{$B$} (C) node[below,font=\footnotesize]{$C$} (D) node[below left,font=\footnotesize]{$D$}
+        (A') node[above left,font=\footnotesize]{$A'$} (B') node[above right,font=\footnotesize]{$B'$} (C') node[below right,font=\footnotesize]{$C'$} (D') node[left,font=\footnotesize]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{$45^\circ$}{$60^\circ$}{$90^\circ$}{\True $120^\circ$}
+\loigiai{Ba đoạn $AB'$, $B'C$, $CA$ là ba đường chéo của các mặt hình lập phương nên bằng nhau, tam giác $AB'C$ đều và $\widehat{B'AC}=60^\circ$.
+Vì $\overrightarrow{CA}=-\overrightarrow{AC}$ nên $(\overrightarrow{AB'},\overrightarrow{CA})=180^\circ-(\overrightarrow{AB'},\overrightarrow{AC})=180^\circ-60^\circ=120^\circ$.}
+\end{ex}

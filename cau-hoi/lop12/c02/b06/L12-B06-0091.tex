@@ -1,0 +1,34 @@
+%% ma: L12-B06-0091
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.24
+%% loai: TLN
+%% muc: VD
+%% dap_an: "10,3"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần III Câu 4"
+%% kien_thuc: "Bài 6 (tổng của các vectơ, tích vô hướng, độ dài vectơ tổng); Lớp 10 (giải phương trình bậc hai)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng mới 12.6.24 đang đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập, kiểm bằng sympy: F1 = 3 + sqrt(53) = 10,28 N. Hình vẽ minh họa, các vectơ không theo đúng góc 120 độ."
+\begin{ex}
+Có ba lực $\vec{F_1}$, $\vec{F_2}$, $\vec{F_3}$ cùng tác động vào một cái bàn tại cùng một điểm (tham khảo hình vẽ minh họa). Hai lực $\vec{F_1}$, $\vec{F_2}$ có giá cùng nằm trong mặt phẳng chứa mặt bàn và góc giữa hai vectơ $\vec{F_1}$, $\vec{F_2}$ bằng $120^\circ$; lực $\vec{F_3}$ có giá vuông góc với mặt phẳng chứa mặt bàn. Biết lực $\vec{F_2}$ có độ lớn $6\,\mathrm N$, lực $\vec{F_3}$ có độ lớn $8\,\mathrm N$ và hợp lực của ba lực $\vec{F_1}$, $\vec{F_2}$, $\vec{F_3}$ có độ lớn $12\,\mathrm N$. Độ lớn của lực $\vec{F_1}$ bằng bao nhiêu $\mathrm N$ (làm tròn kết quả đến hàng phần mười)?
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \fill[gray!10] (-2.6,0)--(2.2,0)--(3.2,1.1)--(-1.6,1.1)--cycle;
+  \draw (-2.6,0)--(2.2,0)--(3.2,1.1) (-2.6,0)--(-1.6,1.1)--(3.2,1.1);
+  \draw (-2.6,0)--(-2.6,-.15)--(2.2,-.15)--(3.2,.95) (2.2,0)--(2.2,-.15);
+  \draw (-2.45,-.15)--(-2.45,-2) (2.05,-.15)--(2.05,-2) (3.05,.95)--(3.05,-.85);
+  \draw[khuat] (-1.5,-.15)--(-1.5,-.85);
+  \fill (.2,.55) circle(1pt);
+  \draw[->,thick] (.2,.55)--(.2,2.1) node[right]{$\vec{F_3}$};
+  \draw[->,thick] (.2,.55)--(2.6,.7) node[above]{$\vec{F_1}$};
+  \draw[->,thick] (.2,.55)--(-1.4,.3) node[above left]{$\vec{F_2}$};
+\end{tikzpicture}
+\end{center}
+\shortans{10,3}
+\loigiai{Gọi $\vec F=\vec{F_1}+\vec{F_2}+\vec{F_3}$. Vì $\vec{F_3}$ vuông góc với mặt phẳng chứa $\vec{F_1}$, $\vec{F_2}$ nên $\vec{F_3}\cdot(\vec{F_1}+\vec{F_2})=0$ và
+$|\vec F|^2=|\vec{F_1}+\vec{F_2}|^2+|\vec{F_3}|^2\Rightarrow144=|\vec{F_1}+\vec{F_2}|^2+64\Rightarrow|\vec{F_1}+\vec{F_2}|^2=80$.
+Đặt $|\vec{F_1}|=x>0$: $|\vec{F_1}+\vec{F_2}|^2=x^2+36+2\cdot x\cdot6\cos120^\circ=x^2-6x+36$.
+Do đó $x^2-6x+36=80\Leftrightarrow x^2-6x-44=0\Leftrightarrow x=3+\sqrt{53}\approx10{,}3$ (loại nghiệm âm).}
+\end{ex}

@@ -1,0 +1,28 @@
+%% ma: L12-B06-0084
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: NB
+%% dap_an: "A"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 5"
+%% kien_thuc: "Bài 6 (quy tắc ba điểm, hai vectơ bằng nhau trong hình hộp)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập."
+\begin{ex}
+Cho hình hộp $ABCD.A'B'C'D'$ (tham khảo hình vẽ). Mệnh đề nào dưới đây là đúng?
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+  \path (0,0) coordinate (B) (3,0) coordinate (C) (4,1.1) coordinate (D) (1,1.1) coordinate (A);
+  \foreach \P in {A,B,C,D} \path (\P)+(.4,2.2) coordinate (\P');
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A');
+  \path (A) node[above left]{$A$} (B) node[below left]{$B$} (C) node[below]{$C$} (D) node[right]{$D$}
+        (A') node[above left]{$A'$} (B') node[left]{$B'$} (C') node[right]{$C'$} (D') node[above right]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{\True $\overrightarrow{AB}+\overrightarrow{CC'}=\overrightarrow{AB'}$}{$\overrightarrow{AB}+\overrightarrow{CC'}=\overrightarrow{BC'}$}{$\overrightarrow{AB}+\overrightarrow{CC'}=\overrightarrow{AC'}$}{$\overrightarrow{AB}+\overrightarrow{CC'}=\overrightarrow{AD'}$}
+\loigiai{Hai cạnh bên $CC'$ và $BB'$ song song, bằng nhau và cùng hướng nên $\overrightarrow{CC'}=\overrightarrow{BB'}$.
+Do đó $\overrightarrow{AB}+\overrightarrow{CC'}=\overrightarrow{AB}+\overrightarrow{BB'}=\overrightarrow{AB'}$.}
+\end{ex}

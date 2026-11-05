@@ -1,0 +1,28 @@
+%% ma: L12-B06-0088
+%% lop: 12
+%% chuong: 2
+%% bai: 6
+%% dang: 12.6.1
+%% loai: TN4
+%% muc: TH
+%% dap_an: "D"
+%% nguon: "Ảnh giáo viên gửi 05/11/2026 (M11): Kiểm tra giữa HK1 Toán 12 (2026-2027), THPT Hồ Thị Bi (TP.HCM), mã đề 1133, Phần I Câu 15"
+%% kien_thuc: "Bài 6 (quy tắc hình hộp, độ dài vectơ)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc không kèm đáp án; đã giải độc lập."
+\begin{ex}
+Cho hình hộp chữ nhật $ABCD.A'B'C'D'$ có $AB=2$, $AD=4$ và $AA'=2$ (tham khảo hình vẽ). Tính $\left|\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}\right|$.
+\begin{center}
+\begin{tikzpicture}[x={(.75cm,0cm)},y={(.5cm,.35cm)},z={(0cm,.75cm)}]
+  \coordinate (B) at (0,0,0); \coordinate (C) at (4,0,0); \coordinate (D) at (4,2,0); \coordinate (A) at (0,2,0);
+  \coordinate (B') at (0,0,2); \coordinate (C') at (4,0,2); \coordinate (D') at (4,2,2); \coordinate (A') at (0,2,2);
+  \draw (B)--(C)--(D) (B')--(C')--(D')--(A')--cycle (B)--(B') (C)--(C') (D)--(D');
+  \draw[khuat] (B)--(A)--(D) (A)--(A');
+  \path (A) node[above left,font=\footnotesize]{$A$} (B) node[below left,font=\footnotesize]{$B$} (C) node[below,font=\footnotesize]{$C$} (D) node[right,font=\footnotesize]{$D$}
+        (A') node[above left,font=\footnotesize]{$A'$} (B') node[left,font=\footnotesize]{$B'$} (C') node[below right,font=\footnotesize]{$C'$} (D') node[above right,font=\footnotesize]{$D'$};
+\end{tikzpicture}
+\end{center}
+\choice{$2\sqrt5$}{$8$}{$24$}{\True $2\sqrt6$}
+\loigiai{Theo quy tắc hình hộp, $\overrightarrow{AB}+\overrightarrow{AD}+\overrightarrow{AA'}=\overrightarrow{AC'}$.
+Do $ABCD.A'B'C'D'$ là hình hộp chữ nhật nên $AC'=\sqrt{AB^2+AD^2+AA'^2}=\sqrt{4+16+4}=2\sqrt6$.}
+\end{ex}
