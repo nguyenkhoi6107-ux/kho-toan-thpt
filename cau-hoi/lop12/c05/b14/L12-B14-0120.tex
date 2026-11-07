@@ -1,0 +1,30 @@
+%% ma: L12-B14-0120
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.34
+%% loai: DS
+%% muc: [NB, TH, TH, VD]
+%% dap_an: "ĐSĐS"
+%% nguon: "Ảnh giáo viên gửi 07/11/2026 (Tư Duy Mở - tuduymo.com, đề tự luyện Phương trình mặt phẳng, đề khoảng cách), Câu 16"
+%% kien_thuc: "Bài 14 (hai mặt phẳng song song, khoảng cách từ một điểm đến mặt phẳng)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.14.34 mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Tài liệu gốc không kèm đáp án; đáp án do Claude giải và kiểm bằng sympy."
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$, cho mặt phẳng $(P)\colon x+3y+z-3=0$ và mặt phẳng $(Q)\colon -x-3y-z-11=0$.
+\choiceTF
+{\True $(P)\parallel(Q)$.}
+{$d\left((P),(Q)\right)=8$.}
+{\True Tập hợp các điểm cách đều $(P)$, $(Q)$ là mặt phẳng $(R)\colon x+3y+z+4=0$.}
+{Tập hợp các điểm nằm giữa $(P)$, $(Q)$ sao cho khoảng cách từ nó đến $(P)$ gấp $3$ lần khoảng cách từ nó đến $(Q)$ là mặt phẳng $(\alpha)\colon x+3y+z+3=0$.}
+\loigiai{$(Q)\colon x+3y+z+11=0$. Đặt $f=x+3y+z$.
+
+a) Cùng vectơ pháp tuyến, $-3\ne11$. Đúng.
+
+b) $d=\dfrac{|-3-11|}{\sqrt{11}}=\dfrac{14}{\sqrt{11}}\ne8$. Sai.
+
+c) $|f-3|=|f+11|\Leftrightarrow f=-4$. Đúng.
+
+d) Điểm nằm giữa: $-11<f<3$, $3-f=3(f+11)\Leftrightarrow f=-\dfrac{15}2$: $(\alpha)\colon 2x+6y+2z+15=0$. Sai.}
+\end{ex}

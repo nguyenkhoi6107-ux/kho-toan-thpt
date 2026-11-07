@@ -619,3 +619,18 @@
 12.14.22: {ten: "Điều kiện hai mặt phẳng vuông góc (tìm tham số, xét mệnh đề)", trang_thai: da-duyet}
 12.14.23: {ten: "Vectơ pháp tuyến của mặt phẳng khi biết hình chiếu vuông góc của một điểm lên mặt phẳng", trang_thai: da-duyet}
 12.14.24: {ten: "Mặt phẳng đi qua hai điểm và song song với một trục tọa độ", trang_thai: da-duyet}
+# --- Đề xuất từ ảnh giáo viên gửi 07/11/2026 (Hoàng Diệu & Sào Nam 2026; Tư Duy Mở - đề tự luyện Phương trình mặt phẳng) ---
+12.14.25: {ten: "Phương trình mặt phẳng đi qua một điểm và có vectơ pháp tuyến cho trước", trang_thai: de-xuat}
+12.14.26: {ten: "Cặp vectơ chỉ phương của mặt phẳng cho bởi phương trình tổng quát", trang_thai: de-xuat}
+12.14.27: {ten: "Mặt phẳng đi qua một điểm và vuông góc với hai mặt phẳng cho trước", trang_thai: de-xuat}
+12.14.28: {ten: "Tập hợp điểm có tọa độ chứa tham số là một mặt phẳng: tìm phương trình, giao với trục, khoảng cách", trang_thai: de-xuat}
+12.14.29: {ten: "Mặt phẳng đặc biệt: mặt phẳng tọa độ, mặt phẳng song song hoặc chứa trục tọa độ", trang_thai: de-xuat}
+12.14.30: {ten: "Mặt phẳng cắt ba trục tọa độ: trực tâm tam giác ABC, thể tích tứ diện OABC nhỏ nhất", trang_thai: de-xuat}
+12.14.31: {ten: "Khối đa diện giới hạn bởi các mặt phẳng (hình hộp, lăng trụ): thể tích", trang_thai: de-xuat}
+12.14.32: {ten: "Khoảng cách giữa hai mặt phẳng song song; mặt phẳng song song cách một điểm hoặc một mặt phẳng một khoảng cho trước", trang_thai: de-xuat}
+12.14.33: {ten: "Vị trí của hai điểm đối với mặt phẳng (cùng phía, khác phía)", trang_thai: de-xuat}
+12.14.34: {ten: "Tập hợp điểm cách đều hoặc có tỉ số khoảng cách cho trước đến hai mặt phẳng (Đúng/Sai)", trang_thai: de-xuat}
+12.14.35: {ten: "Mặt phẳng thẳng đứng chứa quỹ đạo chuyển động trong bài toán thực tế (mặt phẳng chứa trục Oz)", trang_thai: de-xuat}
+12.14.36: {ten: "Mặt phẳng đi qua điểm A sao cho khoảng cách từ điểm B đến mặt phẳng lớn nhất", trang_thai: de-xuat}
+12.14.37: {ten: "Giao điểm của ba mặt phẳng (giải hệ ba phương trình)", trang_thai: de-xuat}
+12.16.16: {ten: "Mặt phẳng cắt ba trục: giao điểm, thể tích tứ diện, điểm nguyên thuộc mặt phẳng, góc với mặt phẳng khác (Đúng/Sai)", trang_thai: de-xuat}

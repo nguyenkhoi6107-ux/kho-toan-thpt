@@ -1,0 +1,21 @@
+%% ma: L12-B14-0103
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.30
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "27"
+%% nguon: "Ảnh giáo viên gửi 07/11/2026 (Tư Duy Mở - tuduymo.com, đề tự luyện Phương trình mặt phẳng, đề lập phương trình mặt phẳng), Câu 21"
+%% kien_thuc: "Bài 14 (phương trình mặt phẳng theo đoạn chắn), Bài 2 (giá trị lớn nhất của hàm số bằng đạo hàm), hàm số bậc hai (lớp 10)"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng 12.14.30 mới đề xuất, chờ giáo viên duyệt."
+%% ghi_chu: "Tài liệu gốc không kèm đáp án; đáp án do Claude giải và kiểm bằng sympy. Lời giải phổ biến dùng bất đẳng thức Cô-si ba số (ngoài SGK KNTT); lời giải ở đây chỉ dùng hàm bậc hai và đạo hàm."
+\begin{ex}
+Trong không gian với hệ trục tọa độ $Oxyz$, gọi mặt phẳng $(P)\colon ax+by+cz+3=0$ là mặt phẳng cắt ba trục tọa độ $Ox$, $Oy$, $Oz$ lần lượt tại ba điểm $A$, $B$, $C$. Trong đó $a$, $b$, $c$ là ba số thực dương thỏa mãn hệ thức $a+2b+3c=3$. Hãy xác định giá trị nhỏ nhất của thể tích tứ diện $OABC$.
+\shortans{27}
+\loigiai{$A\left(-\dfrac3a;0;0\right)$, $B\left(0;-\dfrac3b;0\right)$, $C\left(0;0;-\dfrac3c\right)$, $V=\dfrac16\cdot\dfrac{27}{abc}=\dfrac{9}{2abc}$.
+Với $c$ cố định ($0<c<1$): $a+2b=3-3c$, $ab=\dfrac12\cdot a\cdot2b\le\dfrac{(3-3c)^2}{8}$ (dấu bằng khi $a=2b$).
+Xét $f(c)=\dfrac{c(3-3c)^2}{8}$ trên $(0;1)$: $f'(c)=\dfrac{9(1-c)(1-3c)}{8}$, $f$ lớn nhất tại $c=\dfrac13$, $f\left(\dfrac13\right)=\dfrac16$.
+Suy ra $abc\le\dfrac16$, $V\ge27$; dấu bằng khi $a=1$, $b=\dfrac12$, $c=\dfrac13$. Giá trị nhỏ nhất bằng $27$.}
+\end{ex}
