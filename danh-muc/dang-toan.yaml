@@ -614,8 +614,8 @@
 12.6.23: {ten: "Nhận biết vectơ cùng hướng, ngược hướng, bằng nhau với vectơ cho trước trong tứ diện và lăng trụ", trang_thai: da-duyet}
 12.6.24: {ten: "Ba lực tại một điểm (hai lực trong mặt phẳng có góc cho trước, lực thứ ba vuông góc): tìm độ lớn một lực khi biết hợp lực", trang_thai: da-duyet}
 # --- Đề xuất từ tài liệu Chuyên đề Phương trình mặt phẳng (Nguyễn Anh Khôi - Lê Minh Khôi), ngày 07/11/2026 ---
-12.14.20: {ten: "Phương trình mặt phẳng đi qua ba điểm không thẳng hàng (tích có hướng hoặc nhận ra mặt phẳng tọa độ)", trang_thai: de-xuat}
-12.14.21: {ten: "Phương trình mặt phẳng theo đoạn chắn (ba điểm trên ba trục tọa độ, hình chiếu của điểm lên các trục)", trang_thai: de-xuat}
-12.14.22: {ten: "Điều kiện hai mặt phẳng vuông góc (tìm tham số, xét mệnh đề)", trang_thai: de-xuat}
-12.14.23: {ten: "Vectơ pháp tuyến của mặt phẳng khi biết hình chiếu vuông góc của một điểm lên mặt phẳng", trang_thai: de-xuat}
-12.14.24: {ten: "Mặt phẳng đi qua hai điểm và song song với một trục tọa độ", trang_thai: de-xuat}
+12.14.20: {ten: "Phương trình mặt phẳng đi qua ba điểm không thẳng hàng (tích có hướng hoặc nhận ra mặt phẳng tọa độ)", trang_thai: da-duyet}
+12.14.21: {ten: "Phương trình mặt phẳng theo đoạn chắn (ba điểm trên ba trục tọa độ, hình chiếu của điểm lên các trục)", trang_thai: da-duyet}
+12.14.22: {ten: "Điều kiện hai mặt phẳng vuông góc (tìm tham số, xét mệnh đề)", trang_thai: da-duyet}
+12.14.23: {ten: "Vectơ pháp tuyến của mặt phẳng khi biết hình chiếu vuông góc của một điểm lên mặt phẳng", trang_thai: da-duyet}
+12.14.24: {ten: "Mặt phẳng đi qua hai điểm và song song với một trục tọa độ", trang_thai: da-duyet}
