@@ -634,3 +634,10 @@
 12.14.36: {ten: "Mặt phẳng đi qua điểm A sao cho khoảng cách từ điểm B đến mặt phẳng lớn nhất", trang_thai: da-duyet}
 12.14.37: {ten: "Giao điểm của ba mặt phẳng (giải hệ ba phương trình)", trang_thai: da-duyet}
 12.16.16: {ten: "Mặt phẳng cắt ba trục: giao điểm, thể tích tứ diện, điểm nguyên thuộc mặt phẳng, góc với mặt phẳng khác (Đúng/Sai)", trang_thai: da-duyet}
+# --- Dạng do giáo viên cung cấp (Chuyên đề VI – Toán 10, Bài 15 Hàm số), ngày 21/11/2026 ---
+10.15.1: {ten: "Tìm tập xác định của hàm số", trang_thai: da-duyet}
+10.15.2: {ten: "Tìm điều kiện để hàm số xác định trên một tập K cho trước", trang_thai: da-duyet}
+10.15.3: {ten: "Tập giá trị của hàm số", trang_thai: da-duyet}
+10.15.4: {ten: "Tính đồng biến, nghịch biến của hàm số", trang_thai: da-duyet}
+10.15.5: {ten: "Tìm điều kiện của tham số để hàm số đồng biến (nghịch biến) trên một tập hợp cho trước", trang_thai: da-duyet}
+10.15.6: {ten: "Bài toán thực tế về hàm số", trang_thai: da-duyet}

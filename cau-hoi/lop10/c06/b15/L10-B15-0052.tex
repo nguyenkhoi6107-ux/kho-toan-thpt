@@ -1,0 +1,29 @@
+%% ma: L10-B15-0052
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.6
+%% loai: TL
+%% muc: VD
+%% dap_an: "-"
+%% nguon: "Ảnh giáo viên gửi 21/11/2026: Chuyên đề VI – Toán 10 – Chương VI (Hàm số – đồ thị và ứng dụng), tr. 199–203, Dạng 6 Câu 2"
+%% kien_thuc: "Lớp 10 Bài 15 (hàm số trong thực tế); định lí Pythagore, hằng đẳng thức (lớp 8)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Dạng do giáo viên cung cấp (21/11/2026). Hình vẽ lại bằng TikZ theo hình gốc (minh họa, không theo tỉ lệ)."
+\begin{ex}
+Hai con tàu đang ở cùng một vĩ tuyến và cách nhau $5$ hải lý. Đồng thời cả hai con tàu cùng khởi hành, một tàu chạy về hướng nam với $6$ hải lý/giờ, còn tàu kia chạy về vị trí hiện tại của tàu thứ nhất với vận tốc $7$ hải lý/giờ. Hãy xác định thời điểm mà khoảng cách của hai tàu là nhỏ nhất.
+\begin{center}
+\begin{tikzpicture}[scale=.8,font=\small]
+\draw[khuat] (-.3,0)--(6,0);
+\draw[khuat] (0,.3)--(0,-3.6);
+\draw[khuat] (0,-2.8)--(2.3,0) node[midway,right]{$d$};
+\draw[-stealth] (3.2,.45)--(2.2,.45);
+\draw[-stealth] (-.5,-1)--(-.5,-2);
+\node[diem] at (0,0) {}; \node[above left] at (0,0) {$A$};
+\node[diem] at (5.5,0) {}; \node[above] at (5.5,0) {$B$};
+\node[diem] at (2.3,0) {}; \node[above] at (2.3,0) {$B_1$};
+\node[diem] at (0,-2.8) {}; \node[left] at (0,-2.8) {$A_1$};
+\end{tikzpicture}
+\end{center}
+\loigiai{Sau $t$ giờ ($0\le t\le\tfrac57$): $AA_1=6t$, $AB_1=5-7t$. Tam giác $AA_1B_1$ vuông tại $A$ nên\[d^2=(6t)^2+(5-7t)^2=85t^2-70t+25=85\left(t-\tfrac7{17}\right)^2+\tfrac{180}{17}.\]$d$ nhỏ nhất khi $t=\tfrac7{17}$ giờ (khoảng $24{,}7$ phút), khi đó $d=\sqrt{\tfrac{180}{17}}=\tfrac{6\sqrt{85}}{17}\approx3{,}25$ hải lý.}
+\end{ex}
