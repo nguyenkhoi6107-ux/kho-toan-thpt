@@ -641,3 +641,11 @@
 10.15.4: {ten: "Tính đồng biến, nghịch biến của hàm số", trang_thai: da-duyet}
 10.15.5: {ten: "Tìm điều kiện của tham số để hàm số đồng biến (nghịch biến) trên một tập hợp cho trước", trang_thai: da-duyet}
 10.15.6: {ten: "Bài toán thực tế về hàm số", trang_thai: da-duyet}
+# --- Đề xuất từ ảnh giáo viên gửi 25/11/2026 (ôn tập Phương trình mặt phẳng) ---
+12.14.38: {ten: "Mặt phẳng tiếp xúc với mặt cầu tại một điểm (vectơ pháp tuyến là bán kính IA)", trang_thai: de-xuat}
+12.14.39: {ten: "Hình chóp có đáy là hình vuông, SA vuông góc đáy: phương trình mặt phẳng (SAC) nhận BD làm vectơ pháp tuyến", trang_thai: de-xuat}
+12.14.40: {ten: "Điều kiện hai mặt phẳng song song (tìm tham số)", trang_thai: de-xuat}
+12.14.41: {ten: "Giao điểm của mặt phẳng với trục tọa độ", trang_thai: de-xuat}
+12.14.42: {ten: "Mặt phẳng cho bởi phương trình tổng quát: vectơ pháp tuyến, giao với trục, khoảng cách từ điểm, mặt phẳng song song (Đúng/Sai)", trang_thai: de-xuat}
+12.14.43: {ten: "Mặt phẳng đi qua một điểm và cắt ba tia tọa độ sao cho 1/OA² + 1/OB² + 1/OC² nhỏ nhất", trang_thai: de-xuat}
+12.14.44: {ten: "Mặt phẳng đi qua hai điểm và song song với đường thẳng đi qua hai điểm khác (tích có hướng)", trang_thai: de-xuat}

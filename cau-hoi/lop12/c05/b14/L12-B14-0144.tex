@@ -1,0 +1,44 @@
+%% ma: L12-B14-0144
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.6
+%% loai: TLN
+%% muc: VD
+%% dap_an: "11"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (tài liệu ôn tập Phương trình mặt phẳng), Phần III Câu 5 (hai mái nhà kho)"
+%% kien_thuc: "Bài 14 (phương trình mặt phẳng đi qua ba điểm, điểm thuộc hai mặt phẳng)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đề gốc có hình; hình dựng lại từ số liệu của đề (không theo tỉ lệ). Thêm câu: mỗi mái nhà là một phần của một mặt phẳng, để đề đủ dữ kiện; điểm P nằm trên tường trước (cùng D, A) nên b=0, đọc từ hình. Đáp án tự giải: P(5;0;6) (sympy)."
+\begin{ex}
+Hình bên dưới minh họa hình ảnh hai mái nhà của một nhà kho trong không gian với hệ tọa độ $Oxyz$ (đơn vị trên mỗi trục tọa độ là mét). Các bức tường của nhà kho đều được xây vuông góc với mặt đất, mỗi mái nhà là một phần của một mặt phẳng. Biết rằng tọa độ của điểm $P(a;b;c)$. Khi đó giá trị $a+b+c$ bằng bao nhiêu?
+\begin{center}
+\begin{tikzpicture}[x={(0.44cm,0.07cm)},y={(-0.2cm,0.14cm)},z={(0cm,0.25cm)}]
+  \coordinate (O) at (0,0,0);   \coordinate (A0) at (10,0,0);
+  \coordinate (B0) at (10,20,0);\coordinate (C0) at (0,20,0);
+  \coordinate (D) at (0,0,9);   \coordinate (A) at (10,0,9);
+  \coordinate (B) at (10,20,10);\coordinate (C) at (0,20,10);
+  \coordinate (Q) at (5,20,7);  \coordinate (P) at (5,0,6);
+  \fill[blue!10] (D)--(C)--(Q)--(P)--cycle;
+  \fill[green!12] (P)--(Q)--(B)--(A)--cycle;
+  \draw[khuat] (C0)--(B0)--(A0) (B0)--(B);
+  \draw (O)--(A0) (O)--(C0) (O)--(D) (A0)--(A) (C0)--(C);
+  \draw (D)--(C)--(Q)--(B)--(A)--(P)--(D) (P)--(Q);
+  \draw[truc] (A0)--(12.5,0,0) node[right] {$x$};
+  \draw[truc] (C0)--(0,25,0) node[left] {$y$};
+  \draw[truc] (D)--(0,0,16) node[above] {$z$};
+  \foreach \p in {D,A,B,C,Q,P} \fill (\p) circle (1.1pt);
+  \node[below right] at (O) {$O(0;0;0)$};
+  \node[left] at (D) {$D(0;0;9)$};
+  \node[right] at (A) {$A(10;0;9)$};
+  \node[above right] at (B) {$B(10;20;10)$};
+  \node[above left] at (C) {$C(0;20;10)$};
+  \node[above] at (Q) {$Q(5;20;7)$};
+  \node[below] at (P) {$P$};
+\end{tikzpicture}
+\end{center}
+\shortans{11}
+\loigiai{Mái trái là mặt phẳng $(DCQ)$: $\overrightarrow{DC}=(0;20;1)$, $\overrightarrow{DQ}=(5;20;-2)$, $\left[\overrightarrow{DC},\overrightarrow{DQ}\right]=(-60;5;-100)=-5(12;-1;20)$. Phương trình $12x-y+20z-180=0$.
+Mái phải là mặt phẳng $(ABQ)$: $\overrightarrow{AB}=(0;20;1)$, $\overrightarrow{AQ}=(-5;20;-2)$, $\left[\overrightarrow{AB},\overrightarrow{AQ}\right]=(-60;-5;100)=-5(12;1;-20)$. Phương trình $12x+y-20z+60=0$.
+$P$ nằm trên tường trước (cùng mặt phẳng với $D$, $A$) nên $b=0$, và $P$ thuộc cả hai mái: $12a+20c-180=0$, $12a-20c+60=0$. Cộng hai vế: $24a=120\Rightarrow a=5$, rồi $c=6$. Vậy $P(5;0;6)$ và $a+b+c=11$.}
+\end{ex}

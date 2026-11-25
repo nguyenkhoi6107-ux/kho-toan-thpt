@@ -1,0 +1,20 @@
+%% ma: L12-B14-0145
+%% lop: 12
+%% chuong: 5
+%% bai: 14
+%% dang: 12.14.43
+%% loai: TLN
+%% muc: VDC
+%% dap_an: "-9"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (tài liệu ôn tập Phương trình mặt phẳng), Phần III Câu 6"
+%% kien_thuc: "Bài 14 (phương trình mặt phẳng theo đoạn chắn, khoảng cách từ điểm đến mặt phẳng); d(O,(P))≤ OM"
+%% trang_thai: cho-duyet
+%% ly_do: "Dạng toán mới đề xuất, chờ giáo viên duyệt"
+%% ghi_chu: "Đáp án tự giải (sympy): mặt phẳng x+2y+3z-14=0, các giao điểm với tia Ox,Oy,Oz đều dương."
+\begin{ex}
+Trong không gian $Oxyz$, mặt phẳng $(P)$ đi qua $M(1;2;3)$ và cắt các tia $Ox$, $Oy$, $Oz$ tại các điểm $A,B,C$ sao cho $T=\dfrac1{OA^2}+\dfrac1{OB^2}+\dfrac1{OC^2}$ đạt giá trị nhỏ nhất có dạng $x+ay+bz+c=0$. Tính $a+b+c$.
+\shortans{-9}
+\loigiai{Gọi $A(p;0;0)$, $B(0;q;0)$, $C(0;0;r)$ với $p,q,r>0$; $(P)\colon\dfrac xp+\dfrac yq+\dfrac zr=1$ có $d(O,(P))=\dfrac1{\sqrt{\frac1{p^2}+\frac1{q^2}+\frac1{r^2}}}$, nên $T=\dfrac1{d^2(O,(P))}$.
+Vì $M\in(P)$ nên $d(O,(P))\le OM$, suy ra $T\ge\dfrac1{OM^2}=\dfrac1{14}$, dấu bằng khi $OM\perp(P)$.
+Khi đó $(P)$ nhận $\overrightarrow{OM}=(1;2;3)$ làm vectơ pháp tuyến: $(x-1)+2(y-2)+3(z-3)=0\Leftrightarrow x+2y+3z-14=0$ (cắt các tia tại $14$, $7$, $\dfrac{14}3$, thỏa mãn). Vậy $a=2$, $b=3$, $c=-14$ và $a+b+c=-9$.}
+\end{ex}
