@@ -1,0 +1,29 @@
+%% ma: L10-B15-0105
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: DS
+%% muc: [NB, TH, NB, NB]
+%% dap_an: "SĐĐS"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần II Câu 1"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, đồng biến nghịch biến); hàm số y=ax^2, phương trình bậc hai (lớp 9)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Ý c gốc ghi 'Đồ thị của hàm số ... nghịch biến', đã sửa lời thành 'Hàm số ... nghịch biến'."
+\begin{ex}
+Cho đồ thị các hàm số $y=-2x+3$; $y=2x^2$. Xét tính đúng sai của các khẳng định sau:
+\begin{center}\begin{tikzpicture}[scale=.8]
+\draw[truc] (-2,0)--(2,0) node[below]{$x$};
+\draw[truc] (0,-.6)--(0,6) node[left]{$y$};
+\node[below] at (-1,0) {\footnotesize$-1$}; \node[below right] at (0,0) {\footnotesize$O$};
+\draw[thick,domain=-1.7:1.7,smooth] plot (\x,{2*(\x)^2}) node[right] {\footnotesize$y=2x^2$};
+\draw[thick,domain=-1.4:1.45] plot (\x,{-2*(\x)+3});
+\node[right] at (0.95,1.1) {\footnotesize$y=-2x+3$};
+\end{tikzpicture}\end{center}
+\choiceTF
+{Đồ thị hàm số $y=-2x+3$ là một đường cong.}
+{\True Đồ thị hàm số $y=-2x+3$ cắt đồ thị hàm số $y=2x^2$ tại hai điểm.}
+{\True Hàm số $y=-2x+3$ nghịch biến trên $\mathbb R$.}
+{Hàm số $y=2x^2$ nghịch biến trên khoảng $(0;+\infty)$.}
+\loigiai{a) Đồ thị là đường thẳng: Sai. b) $2x^2=-2x+3\Leftrightarrow2x^2+2x-3=0$ có $\Delta'=7>0$ nên có hai giao điểm: Đúng. c) $a=-2<0$: Đúng. d) Với $0<x_1<x_2$ thì $2x_1^2<2x_2^2$ nên hàm số đồng biến: Sai.}
+\end{ex}

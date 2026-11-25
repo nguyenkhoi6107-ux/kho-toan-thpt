@@ -1,0 +1,30 @@
+%% ma: L10-B15-0108
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: DS
+%% muc: [NB, NB, NB, TH]
+%% dap_an: "SĐĐS"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần II Câu 4"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, tập giá trị, đồng biến nghịch biến)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ thị vẽ lại theo y = -x^2/2 (khớp các điểm (-1;-1/2), (-2;-2) của hình gốc)."
+\begin{ex}
+Cho hàm số $f(x)$ có đồ thị như hình vẽ. Xét tính đúng sai của các khẳng định sau:
+\begin{center}\begin{tikzpicture}[scale=.9]
+\draw[truc] (-3,0)--(3,0) node[below]{$x$};
+\draw[truc] (0,-3.4)--(0,.8) node[left]{$y$};
+\draw[phu] (-2,0)--(-2,-2)--(0,-2) (-1,0)--(-1,-.5)--(0,-.5);
+\node[above] at (-2,0) {\footnotesize$-2$}; \node[above] at (-1,0) {\footnotesize$-1$};
+\node[above right] at (0,0) {\footnotesize$O$};
+\node[right] at (0,-.5) {\footnotesize$-\frac12$}; \node[right] at (0,-2) {\footnotesize$-2$};
+\draw[thick,domain=-2.5:2.5,smooth] plot (\x,{-(\x)^2/2});
+\end{tikzpicture}\end{center}
+\choiceTF
+{Điểm $A\left(-1;\dfrac12\right)$ thuộc đồ thị của hàm số.}
+{\True Hàm số $f(x)$ nghịch biến trên khoảng $(0;+\infty)$.}
+{\True Hàm số $f(x)$ đồng biến trên khoảng $(-2;0)$.}
+{Tập giá trị của hàm số là $\mathbb R$.}
+\loigiai{a) $f(-1)=-\tfrac12\ne\tfrac12$: Sai. b) Đồ thị đi xuống trên $(0;+\infty)$: Đúng. c) Đồ thị đi lên trên $(-\infty;0)$ nên đồng biến trên $(-2;0)$: Đúng. d) $f(x)\le0$ nên tập giá trị là $(-\infty;0]$: Sai.}
+\end{ex}

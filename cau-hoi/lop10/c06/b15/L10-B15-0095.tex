@@ -1,0 +1,30 @@
+%% ma: L10-B15-0095
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần I Câu 6"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, sự đồng biến, nghịch biến của hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ thị vẽ lại: đoạn thẳng từ (-3;2) đến (-1;4), phần còn lại là y = (x-1)^2 trên [-1;2] (khớp các điểm (0;1), (1;0), (2;1) của hình gốc)."
+\begin{ex}
+Cho hàm số $y=f(x)$ xác định trên đoạn $[-3;2]$ và có đồ thị như hình vẽ sau.
+\begin{center}\begin{tikzpicture}[scale=.7]
+\draw[gray!30,densely dotted] (-3.5,-1.5) grid (2.5,4.5);
+\draw[truc] (-3.6,0)--(2.8,0) node[below]{$x$};
+\draw[truc] (0,-1.5)--(0,4.8) node[left]{$y$};
+\draw[phu] (-3,0)--(-3,2)--(0,2) (-1,0)--(-1,4)--(0,4) (0,1)--(2,1)--(2,0);
+\node[below] at (-3,0) {\footnotesize$-3$}; \node[below] at (-1,0) {\footnotesize$-1$};
+\node[below] at (2,0) {\footnotesize$2$}; \node[below right] at (0,0) {\footnotesize$O$};
+\node[right] at (0,4) {\footnotesize$4$}; \node[above right] at (0,2) {\footnotesize$2$};
+\draw[thick] (-3,2)--(-1,4);
+\draw[thick,domain=-1:2,smooth,samples=60] plot (\x,{(\x-1)^2});
+\fill (-3,2) circle (1.5pt) (2,1) circle (1.5pt);
+\end{tikzpicture}\end{center}
+Khẳng định nào dưới đây là khẳng định \textbf{sai}?
+\choice{Hàm số đồng biến trên khoảng $(-3;-1)$.}{Hàm số đồng biến trên khoảng $(1;2)$.}{\True Hàm số nghịch biến trên khoảng $(-3;0)$.}{Hàm số nghịch biến trên khoảng $(-1;0)$.}
+\loigiai{Trên $(-3;-1)$ đồ thị đi lên, trên $(-1;1)$ đi xuống, trên $(1;2)$ đi lên. Do đó khẳng định ``nghịch biến trên $(-3;0)$'' sai.}
+\end{ex}

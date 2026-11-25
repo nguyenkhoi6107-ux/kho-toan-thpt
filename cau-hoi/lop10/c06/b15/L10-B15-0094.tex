@@ -1,0 +1,26 @@
+%% ma: L10-B15-0094
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: TN4
+%% muc: NB
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần I Câu 5"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, sự đồng biến, nghịch biến của hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ thị vẽ lại theo hàm y = x^3 - 3x^2 + 1 (khớp các điểm (0;1), (2;-3) của hình gốc)."
+\begin{ex}
+Cho hàm số có đồ thị như hình bên dưới.
+\begin{center}\begin{tikzpicture}[scale=.75]
+\draw[truc] (-1.2,0)--(3.6,0) node[below]{$x$};
+\draw[truc] (0,-3.8)--(0,2) node[left]{$y$};
+\draw[phu] (0,-3)--(2,-3)--(2,0);
+\node[above] at (2,0) {\footnotesize$2$}; \node[left] at (0,-3) {\footnotesize$-3$};
+\node[above right] at (0,1) {\footnotesize$1$}; \node[below left] at (0,0) {\footnotesize$O$};
+\draw[thick,domain=-.75:3.2,smooth,samples=80] plot (\x,{(\x)^3-3*(\x)^2+1});
+\end{tikzpicture}\end{center}
+Khẳng định nào sau đây là đúng?
+\choice{Hàm số nghịch biến trên khoảng $(0;3)$.}{Hàm số đồng biến trên khoảng $(-\infty;1)$.}{\True Hàm số nghịch biến trên khoảng $(0;2)$.}{Hàm số đồng biến trên khoảng $(-\infty;3)$.}
+\loigiai{Trên $(0;2)$ đồ thị đi xuống nên hàm số nghịch biến trên $(0;2)$.}
+\end{ex}

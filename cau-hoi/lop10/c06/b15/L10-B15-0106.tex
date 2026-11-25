@@ -1,0 +1,30 @@
+%% ma: L10-B15-0106
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: DS
+%% muc: [TH, NB, NB, TH]
+%% dap_an: "SĐĐĐ"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần II Câu 2"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, tập giá trị, đồng biến nghịch biến)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đường gấp khúc vẽ lại qua các đỉnh (-4;2), (-3;0), (-1;3), (0;5), (2;2), (4;1), (5;2), (7;3) đọc từ lưới ô của hình gốc."
+\begin{ex}
+Cho hàm số $y=f(x)$ có đồ thị là đường gấp khúc như hình bên, mỗi ô tương ứng một đơn vị. Xét tính đúng sai của các khẳng định sau:
+\begin{center}\begin{tikzpicture}[scale=.55]
+\draw[gray!30,densely dotted] (-5,-1) grid (8,6);
+\draw[truc] (-5,0)--(8.3,0) node[below]{$x$};
+\draw[truc] (0,-1)--(0,6.4) node[left]{$y$};
+\draw[phu] (-4,0)--(-4,2)--(5,2)--(5,0) (-1,0)--(-1,3)--(0,3) (2,0)--(2,2) (4,0)--(4,1)--(0,1) (7,0)--(7,3);
+\node[below] at (-4,0) {\footnotesize$-4$}; \node[below] at (7,0) {\footnotesize$7$};
+\node[below right] at (0,0) {\footnotesize$O$}; \node[above left] at (0,5) {\footnotesize$5$};
+\draw[thick] (-4,2)--(-3,0)--(-1,3)--(0,5)--(2,2)--(4,1)--(5,2)--(7,3);
+\end{tikzpicture}\end{center}
+\choiceTF
+{Tập giá trị hàm số $T=[-4;7]$.}
+{\True Ta thấy điểm $(-4;2)$, $(4;1)$ thuộc đồ thị hàm số, điểm $(2;3)$ không thuộc đồ thị hàm số.}
+{\True Ta có: $f(-1)=3$, $f(5)=2$.}
+{\True Hàm số đã cho đồng biến trên các khoảng $(-3;0)$, $(4;7)$; hàm số nghịch biến trên các khoảng $(-4;-3)$, $(0;4)$.}
+\loigiai{a) Giá trị nhỏ nhất là $0$ (tại $x=-3$), lớn nhất là $5$ (tại $x=0$) nên $T=[0;5]$: Sai. b) $f(-4)=2$, $f(4)=1$, $f(2)=2\ne3$: Đúng. c) Đọc trên đồ thị: Đúng. d) Đồ thị đi lên trên $(-3;0)$, $(4;7)$ và đi xuống trên $(-4;-3)$, $(0;4)$: Đúng.}
+\end{ex}

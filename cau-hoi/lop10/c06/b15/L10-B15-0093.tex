@@ -1,0 +1,27 @@
+%% ma: L10-B15-0093
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: TN4
+%% muc: NB
+%% dap_an: "B"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần I Câu 4"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, sự đồng biến, nghịch biến của hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ thị vẽ lại theo hàm y = -x^4 + 2x^2 + 1 (khớp các điểm (±1;2), (0;1) của hình gốc)."
+\begin{ex}
+Cho hàm số $y=f(x)$ có đồ thị là đường cong trong hình bên.
+\begin{center}\begin{tikzpicture}[scale=.9]
+\draw[truc] (-2,0)--(2.2,0) node[below]{$x$};
+\draw[truc] (0,-.5)--(0,2.8) node[left]{$y$};
+\draw[phu] (-1,0)--(-1,2)--(1,2)--(1,0) (0,1)--(.15,1);
+\node[below] at (-1,0) {\footnotesize$-1$}; \node[below] at (1,0) {\footnotesize$1$};
+\node[below left] at (0,0) {\footnotesize$O$};
+\node[above right] at (0,2) {\footnotesize$2$}; \node[below right] at (0,1) {\footnotesize$1$};
+\draw[thick,domain=-1.55:1.55,smooth,samples=80] plot (\x,{-(\x)^4+2*(\x)^2+1});
+\end{tikzpicture}\end{center}
+Hàm số đã cho đồng biến trên khoảng nào dưới đây?
+\choice{$(-\infty;0)$}{\True $(0;1)$}{$(1;+\infty)$}{$(-1;0)$}
+\loigiai{Trên $(0;1)$ đồ thị đi lên nên hàm số đồng biến trên $(0;1)$.}
+\end{ex}

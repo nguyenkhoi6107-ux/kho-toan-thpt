@@ -1,0 +1,26 @@
+%% ma: L10-B15-0100
+%% lop: 10
+%% chuong: 6
+%% bai: 15
+%% dang: 10.15.4
+%% loai: TN4
+%% muc: TH
+%% dap_an: "C"
+%% nguon: "Ảnh giáo viên gửi 25/11/2026 (lô 2): Bài tập trắc nghiệm – Toán 10 Bài 15 Hàm số (sự biến thiên, đồ thị), Phần I Câu 11"
+%% kien_thuc: "Lớp 10 Bài 15 (đồ thị, sự đồng biến, nghịch biến của hàm số)"
+%% trang_thai: chinh-thuc
+%% ghi_chu: "Đồ thị vẽ lại là đường thẳng y = x + 2 qua (-2;0) và (0;2) như hình gốc."
+\begin{ex}
+Cho hàm số $f(x)=ax+b$ có đồ thị như hình vẽ.
+\begin{center}\begin{tikzpicture}[scale=.6]
+\draw[gray!30,densely dotted] (-4,-1.5) grid (4,4.5);
+\draw[truc] (-4,0)--(4.2,0) node[below]{$x$};
+\draw[truc] (0,-1.5)--(0,4.6) node[left]{$y$};
+\node[below right] at (-2,0) {\footnotesize$-2$}; \node[below right] at (0,0) {\footnotesize$O$};
+\node[left] at (0,2) {\footnotesize$2$};
+\draw[thick,domain=-3.5:2.2] plot (\x,{(\x)+2});
+\end{tikzpicture}\end{center}
+Khẳng định nào sau đây là đúng?
+\choice{$f(0)>f(2023)$}{$f(2022)>f(2023)$}{\True $f(2022)<f(2023)$}{$f(-2022)<f(-2023)$}
+\loigiai{Đồ thị đi lên từ trái sang phải nên hàm số đồng biến trên $\mathbb R$. Do $2022<2023$ nên $f(2022)<f(2023)$.}
+\end{ex}
